@@ -1,0 +1,73 @@
+Traceback (most recent call last):
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/home/saketh/.cache/uv/archive-v0/bvt7dYhsIj6ilzLqqPyMB/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 42, in wrapper
+    return await fn(self, instruction, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saketh/.cache/uv/archive-v0/bvt7dYhsIj6ilzLqqPyMB/lib/python3.13/site-packages/harbor/agents/installed/claude_code.py", line 1126, in run
+    await self.exec_as_agent(
+    ...<10 lines>...
+    )
+  File "/home/saketh/.cache/uv/archive-v0/bvt7dYhsIj6ilzLqqPyMB/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 366, in exec_as_agent
+    return await self._exec(
+           ^^^^^^^^^^^^^^^^^
+        environment, command, env=env, cwd=cwd, timeout_sec=timeout_sec
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/saketh/.cache/uv/archive-v0/bvt7dYhsIj6ilzLqqPyMB/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 313, in _exec
+    result = await environment.exec(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/saketh/.cache/uv/archive-v0/bvt7dYhsIj6ilzLqqPyMB/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 496, in exec
+    return await self._run_docker_compose_command(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        exec_command, check=False, timeout_sec=timeout_sec
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/saketh/.cache/uv/archive-v0/bvt7dYhsIj6ilzLqqPyMB/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 296, in _run_docker_compose_command
+    stdout_bytes, stderr_bytes = await process.communicate()
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 201, in communicate
+    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 181, in _read_stream
+    output = await stream.read()
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 723, in read
+    block = await self.read(self._limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 730, in read
+    await self._wait_for_data('read')
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/saketh/.cache/uv/archive-v0/bvt7dYhsIj6ilzLqqPyMB/lib/python3.13/site-packages/harbor/trial/trial.py", line 360, in _execute_agent
+    await asyncio.wait_for(
+    ...<6 lines>...
+    )
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 506, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/timeouts.py", line 116, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/saketh/.cache/uv/archive-v0/bvt7dYhsIj6ilzLqqPyMB/lib/python3.13/site-packages/harbor/trial/trial.py", line 957, in run
+    await self._execute_agent()
+  File "/home/saketh/.cache/uv/archive-v0/bvt7dYhsIj6ilzLqqPyMB/lib/python3.13/site-packages/harbor/trial/trial.py", line 369, in _execute_agent
+    raise AgentTimeoutError(
+        f"Agent execution timed out after {self._agent_timeout_sec} seconds"
+    ) from e
+harbor.trial.trial.AgentTimeoutError: Agent execution timed out after 10800.0 seconds

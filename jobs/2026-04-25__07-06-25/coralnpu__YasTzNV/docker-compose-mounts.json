@@ -1,0 +1,9 @@
+{
+  "services": {
+    "main": {
+      "volumes": [
+        "/home/saketh/.claude/.credentials.json:/home/builder/.claude/.credentials.json"
+      ]
+    }
+  }
+}

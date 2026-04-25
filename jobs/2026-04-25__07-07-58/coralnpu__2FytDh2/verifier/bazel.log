@@ -1,0 +1,1390 @@
+Starting local Bazel server and connecting to it...
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+DEBUG: /home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/external/tflite_micro/third_party/repo.bzl:86:14: 
+Warning: skipping import of repository 'bazel_skylib' because it already exists.
+Computing main repo mapping: 
+ERROR: Could not trash dir in '/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/bazel-workers': /home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/bazel-workers/_moved_trash_dir -> /home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/bazel-workers/_stale_trash (Invalid cross-device link)
+Loading: 
+Loading: 0 packages loaded
+Analyzing: 2440 targets (77 packages loaded, 0 targets configured)
+Analyzing: 2440 targets (77 packages loaded, 0 targets configured)
+
+Analyzing: 2440 targets (156 packages loaded, 304 targets configured)
+[130 / 131] Executing genrule //fpga/ip/ispyocto:grey_bars_320x240_raw_gen; 0s processwrapper-sandbox
+INFO: From Executing genrule //fpga/ip/ispyocto:grey_bars_320x240_raw_gen:
+Generating test_pattern_320x240.raw (320x240)
+Analyzing: 2440 targets (198 packages loaded, 6172 targets configured)
+[271 / 272] Executing genrule //fpga:unpack_ispyocto; 0s processwrapper-sandbox
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:multi_fifo.sv': target 'multi_fifo.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:adder.sv': target 'adder.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:edff_2d.sv': target 'edff_2d.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:arb_round_robin.sv': target 'arb_round_robin.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:edff.sv': target 'edff.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:barrel_shifter.sv': target 'barrel_shifter.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:dff.sv': target 'dff.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:handshake_ff.sv': target 'handshake_ff.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:compressor_4_2.sv': target 'compressor_4_2.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:handshake_multi_fifo.sv': target 'handshake_multi_fifo.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:compressor_3_2.sv': target 'compressor_3_2.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:cdffr.sv': target 'cdffr.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+Analyzing: 2440 targets (233 packages loaded, 7370 targets configured)
+[272 / 274] checking cached actions
+ERROR: /app/fpga/rtl/BUILD: no such target '//fpga/rtl:chip_nexus.sv': target 'chip_nexus.sv' not declared in package 'fpga/rtl' defined by /app/fpga/rtl/BUILD
+Analyzing: 2440 targets (419 packages loaded, 9473 targets configured)
+[272 / 325] checking cached actions
+Analyzing: 2440 targets (530 packages loaded, 15133 targets configured)
+[272 / 325] checking cached actions
+ERROR: /app/fpga/BUILD:568:8: no such target '//fpga/rtl:chip_nexus.sv': target 'chip_nexus.sv' not declared in package 'fpga/rtl' defined by /app/fpga/rtl/BUILD and referenced by '//fpga:check_pins_test'
+Analyzing: 2440 targets (612 packages loaded, 22081 targets configured)
+[293 / 352] checking cached actions
+Analyzing: 2440 targets (621 packages loaded, 25910 targets configured)
+[301 / 363] Creating runfiles tree bazel-out/k8-fastbuild/bin/coralnpu_test_utils/rvv_cpp_util_header_generator.runfiles; 0s local
+ERROR: /app/fpga/BUILD:148:11: Compiling fpga/sw/dma.c failed: missing input file '//fpga:sw/dma.c'
+ERROR: /app/fpga/BUILD:148:11: Compiling fpga/sw/dma.c failed: missing input file '//fpga:sw/dma.h'
+ERROR: /app/fpga/BUILD:148:11: Compiling fpga/sw/dma.c failed: missing input file '//fpga:sw/dma.h'
+ERROR: /app/fpga/BUILD:148:11: Compiling fpga/sw/dma.c failed: 3 input file(s) do not exist
+Analyzing: 2440 targets (652 packages loaded, 26899 targets configured)
+[372 / 606] Compiling hdl/verilog/sram_backdoor.cc; 0s processwrapper-sandbox ... (3 actions running)
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/display_renderer.cc'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/display_renderer.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/dma.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/dma.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/display_renderer.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: 10 input file(s) do not exist
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi_flash.c'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: 9 input file(s) do not exist
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/i2c.c'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: 5 input file(s) do not exist
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/uart.c'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: 5 input file(s) do not exist
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: missing input file '//fpga:sw/clk.c'
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: 3 input file(s) do not exist
+Analyzing: 2440 targets (656 packages loaded, 29130 targets configured)
+[425 / 656] Compiling hdl/verilog/sram_backdoor.cc; 1s processwrapper-sandbox ... (2 actions running)
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:17:11: Compiling sw/utils/nexus_loader/spi_master.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.cc'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:17:11: Compiling sw/utils/nexus_loader/spi_master.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.h'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:17:11: Compiling sw/utils/nexus_loader/spi_master.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.h'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:17:11: Compiling sw/utils/nexus_loader/spi_master.cc failed: 3 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 35226 targets configured)
+[440 / 676] Compiling hdl/verilog/sram_backdoor.cc; 2s processwrapper-sandbox ... (2 actions running)
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:adder.sv': target 'adder.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:arb_round_robin.sv': target 'arb_round_robin.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:barrel_shifter.sv': target 'barrel_shifter.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:handshake_ff.sv': target 'handshake_ff.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:handshake_multi_fifo.sv': target 'handshake_multi_fifo.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:cdffr.sv': target 'cdffr.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:compressor_3_2.sv': target 'compressor_3_2.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:compressor_4_2.sv': target 'compressor_4_2.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:dff.sv': target 'dff.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:edff.sv': target 'edff.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:edff_2d.sv': target 'edff_2d.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:multi_fifo.sv': target 'multi_fifo.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+Analyzing: 2440 targets (658 packages loaded, 36283 targets configured)
+[454 / 1,289] Compiling tests/systemc/instruction_trace.cc; 1s processwrapper-sandbox ... (2 actions running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[625 / 2,848] Compiling tests/verilator_sim/elf.cc; 0s processwrapper-sandbox ... (2 actions running)
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: missing input file '//fpga:sw/gpio.c'
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: 3 input file(s) do not exist
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/display_hal.c'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: 6 input file(s) do not exist
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/spi.c'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: 5 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[761 / 4,209] Creating runfiles tree bazel-out/k8-fastbuild/bin/sw/opt/litert-micro/test/conv_sim_test.runfiles; 0s local
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[1,088 / 4,963] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/tlul/tlul2axi_cocotb_test_test_backpressure_cocotb_runner.sh.runfiles; 0s local ... (5 actions, 4 running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[1,333 / 5,129] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/tlul/tlul_integrity_cocotb_test_test_request_integrity_gen_cocotb_runner.sh.runfiles; 0s local ... (4 actions running)
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/display_hal.c'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: 6 input file(s) do not exist
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/spi.c'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: 5 input file(s) do not exist
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/i2c.c'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: 5 input file(s) do not exist
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: missing input file '//fpga:sw/gpio.c'
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: 3 input file(s) do not exist
+ERROR: /app/fpga/BUILD:210:19: Compiling fpga/sw/add_uint32_m1.cc failed: missing input file '//fpga:sw/add_uint32_m1.cc'
+ERROR: /app/fpga/BUILD:210:19: Compiling fpga/sw/add_uint32_m1.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:210:19: Compiling fpga/sw/add_uint32_m1.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:210:19: Compiling fpga/sw/add_uint32_m1.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:210:19: Compiling fpga/sw/add_uint32_m1.cc failed: 4 input file(s) do not exist
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:46:8: Compiling sw/utils/nexus_loader/test.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.h'
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[1,872 / 5,258] Executing genrule //coralnpu_test_utils:rvv_cpp_util_header; 1s processwrapper-sandbox ... (5 actions running)
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:23:10: Compiling sw/utils/nexus_loader/main.cc failed: missing input file '//sw/utils/nexus_loader:main.cc'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:46:8: Compiling sw/utils/nexus_loader/test.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.h'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:23:10: Compiling sw/utils/nexus_loader/main.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.h'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:46:8: Compiling sw/utils/nexus_loader/test.cc failed: 2 input file(s) do not exist
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:23:10: Compiling sw/utils/nexus_loader/main.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.h'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:23:10: Compiling sw/utils/nexus_loader/main.cc failed: 3 input file(s) do not exist
+ERROR: /app/examples/BUILD.bazel:24:19: Compiling examples/rvv_add_intrinsic.cc failed: missing input file '//examples:rvv_add_intrinsic.cc'
+ERROR: /app/examples/BUILD.bazel:24:19: Compiling examples/rvv_add_intrinsic.cc failed: 1 input file(s) do not exist
+ERROR: /app/fpga/BUILD:154:19: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/clk_test.c'
+ERROR: /app/fpga/BUILD:154:19: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:154:19: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:154:19: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:154:19: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:154:19: Compiling fpga/sw/clk_test.c failed: 5 input file(s) do not exist
+ERROR: /app/fpga/BUILD:364:19: Compiling fpga/sw/timer.cc failed: missing input file '//fpga:sw/timer.cc'
+ERROR: /app/fpga/BUILD:364:19: Compiling fpga/sw/timer.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:364:19: Compiling fpga/sw/timer.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:364:19: Compiling fpga/sw/timer.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:364:19: Compiling fpga/sw/timer.cc failed: 4 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[2,227 / 5,333] 1 / 43 tests, 1 failed; Compiling tests/cocotb/rvv/arithmetics/template_widen_mul_int8_int16.cc; 0s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[2,336 / 5,406] 1 / 43 tests, 1 failed; Compiling tests/cocotb/rvv/arithmetics/template_div_uint8_m1.cc; 0s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[2,543 / 5,468] 1 / 43 tests, 1 failed; Executing genrule //tests/cocotb/tutorial/tfmicro:mobilenet_v1_025_224_int8_dummy_h; 1s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[2,995 / 6,391] 1 / 43 tests, 1 failed; Compiling tests/cocotb/rvv/arithmetics/template_widen_add_int16_int32.cc; 2s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[3,040 / 6,417] 1 / 43 tests, 1 failed; Executing genrule //tests/cocotb/tutorial:hello_world_tflite_cc; 2s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[3,170 / 6,417] 1 / 43 tests, 1 failed; Compiling tests/cocotb/rvv/arithmetics/rvv_vx_arithmetics.cc; 0s processwrapper-sandbox ... (8 actions running)
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi_flash.c'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: 9 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[3,328 / 6,427] 1 / 43 tests, 1 failed; Compiling tests/cocotb/rvv/arithmetics/rvv_vx_arithmetics.cc; 0s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[3,503 / 6,490] 1 / 43 tests, 1 failed; Compiling tests/cocotb/rvv/arithmetics/rvv_vx_arithmetics.cc; 0s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: 9 input file(s) do not exist
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memcpy_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memcpy_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memcpy_test.cc failed: 2 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: 6 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: 9 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: 5 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/mobilenet_v1_025_partial_layers.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/mobilenet_v1_025_partial_layers.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/mobilenet_v1_025_partial_layers.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/mobilenet_v1_025_partial_layers.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/mobilenet_v1_025_partial_layers.cc failed: 4 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/run_partial_mobilenet.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/run_partial_mobilenet.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/run_partial_mobilenet.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/run_partial_mobilenet.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/run_partial_mobilenet.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/run_partial_mobilenet.cc failed: 5 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[4,416 / 6,498] 1 / 43 tests, 1 failed; Executing genrule //tests/cocotb/tutorial:hello_world_tflite_cc; 1s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[4,799 / 6,498] 1 / 43 tests, 1 failed; scala @//hdl/chisel/src/coralnpu:CoralNPUScmInfo; 0s worker ... (8 actions running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[4,952 / 6,498] 1 / 43 tests, 1 failed; scala @//hdl/chisel/src/coralnpu:CoralNPUScmInfo; 1s worker ... (8 actions running)
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: 4 input file(s) do not exist
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: missing input file '//fpga:sw/isp_cam_test.c'
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: missing input file '//fpga:sw/yocto_isp_register_address.h'
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: missing input file '//fpga:sw/yocto_isp_register_address.h'
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: 6 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: 4 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: missing input file '//sw/opt/litert-micro:pooling.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: 3 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/test/BUILD:20:19: Compiling sw/opt/litert-micro/test/max_pool_test.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:20:19: Compiling sw/opt/litert-micro/test/max_pool_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:20:19: Compiling sw/opt/litert-micro/test/max_pool_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:20:19: Compiling sw/opt/litert-micro/test/max_pool_test.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:20:19: Compiling sw/opt/litert-micro/test/max_pool_test.cc failed: 4 input file(s) do not exist
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: missing input file '//fpga:sw/gpio_test.cc'
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: 6 input file(s) do not exist
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/i2c_camera_test.cc'
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: 6 input file(s) do not exist
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/i2c_camera_test.cc'
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: 6 input file(s) do not exist
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: missing input file '//fpga:sw/spi_test.cc'
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: 6 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[4,989 / 6,498] 1 / 43 tests, 1 failed; scala @//hdl/chisel/src/coralnpu:CoralNPUScmInfo; 3s worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[5,001 / 6,498] 1 / 43 tests, 1 failed; Compiling tests/cocotb/tutorial/tflite_micro_test.cc; 2s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: missing input file '//fpga:sw/display_test.cc'
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: 6 input file(s) do not exist
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:374:15: scala @//hdl/chisel/src/coralnpu:coralnpu_params failed: missing input file '//hdl/chisel/src/coralnpu:MemorySize.scala'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:374:15: scala @//hdl/chisel/src/coralnpu:coralnpu_params failed: missing input file '//hdl/chisel/src/coralnpu:Parameters.scala'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:374:15: scala @//hdl/chisel/src/coralnpu:coralnpu_params failed: 2 input file(s) do not exist
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:267:15: scala @//hdl/chisel/src/coralnpu:RstSync failed: missing input file '//hdl/chisel/src/coralnpu:RstSync.scala'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:267:15: scala @//hdl/chisel/src/coralnpu:RstSync failed: missing input file '//hdl/verilog:RstSync.sv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:267:15: scala @//hdl/chisel/src/coralnpu:RstSync failed: 2 input file(s) do not exist
+ERROR: /app/hdl/chisel/src/common/BUILD:135:15: scala @//hdl/chisel/src/common:sv_generation_utils failed: missing input file '//hdl/chisel/src/common:SvGenerationUtils.scala'
+ERROR: /app/hdl/chisel/src/common/BUILD:135:15: scala @//hdl/chisel/src/common:sv_generation_utils failed: 1 input file(s) do not exist
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:245:15: scala @//hdl/chisel/src/coralnpu:clock_gate failed: missing input file '//hdl/chisel/src/coralnpu:ClockGate.scala'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:245:15: scala @//hdl/chisel/src/coralnpu:clock_gate failed: missing input file '//hdl/verilog:ClockGate.sv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:245:15: scala @//hdl/chisel/src/coralnpu:clock_gate failed: 2 input file(s) do not exist
+ERROR: /app/hdl/chisel/src/common/BUILD:61:15: scala @//hdl/chisel/src/common:aligner failed: missing input file '//hdl/chisel/src/common:Aligner.scala'
+ERROR: /app/hdl/chisel/src/common/BUILD:61:15: scala @//hdl/chisel/src/common:aligner failed: missing input file '//hdl/verilog/rvv/design:Aligner.sv'
+ERROR: /app/hdl/chisel/src/common/BUILD:61:15: scala @//hdl/chisel/src/common:aligner failed: 2 input file(s) do not exist
+ERROR: /app/hdl/chisel/src/common/BUILD:82:15: scala @//hdl/chisel/src/common:scatter_gather failed: missing input file '//hdl/chisel/src/common:ScatterGather.scala'
+ERROR: /app/hdl/chisel/src/common/BUILD:82:15: scala @//hdl/chisel/src/common:scatter_gather failed: 1 input file(s) do not exist
+ERROR: /app/hdl/chisel/src/common/BUILD:22:15: scala @//hdl/chisel/src/common:library failed: missing input file '//hdl/chisel/src/common:Library.scala'
+ERROR: /app/hdl/chisel/src/common/BUILD:22:15: scala @//hdl/chisel/src/common:library failed: 1 input file(s) do not exist
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:374:15: scala @//hdl/chisel/src/coralnpu:coralnpu_params [for tool] failed: missing input file '//hdl/chisel/src/coralnpu:MemorySize.scala'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:374:15: scala @//hdl/chisel/src/coralnpu:coralnpu_params [for tool] failed: missing input file '//hdl/chisel/src/coralnpu:Parameters.scala'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:374:15: scala @//hdl/chisel/src/coralnpu:coralnpu_params [for tool] failed: 2 input file(s) do not exist
+ERROR: /app/hdl/chisel/src/common/BUILD:22:15: scala @//hdl/chisel/src/common:library [for tool] failed: missing input file '//hdl/chisel/src/common:Library.scala'
+ERROR: /app/hdl/chisel/src/common/BUILD:22:15: scala @//hdl/chisel/src/common:library [for tool] failed: 1 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[5,153 / 6,498] 24 / 43 tests, 24 failed; Compiling tests/cocotb/tutorial/tflite_micro_test.cc; 3s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/flash_tool.c'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/flash_tool_status.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/flash_tool_status.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: 10 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[5,172 / 6,498] 30 / 43 tests, 30 failed; Compiling tests/cocotb/tutorial/tflite_micro_test.cc; 4s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memset_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memset_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memset_test.cc failed: 2 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[5,208 / 6,498] 35 / 43 tests, 35 failed; Compiling tests/cocotb/tutorial/tflite_micro_test.cc; 5s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/tests/cocotb/tutorial/counters/BUILD:27:19: Compiling tests/cocotb/tutorial/counters/inst_cycle_counter_example.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/counters/BUILD:27:19: Compiling tests/cocotb/tutorial/counters/inst_cycle_counter_example.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/counters/BUILD:27:19: Compiling tests/cocotb/tutorial/counters/inst_cycle_counter_example.cc failed: 2 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[5,297 / 6,498] 37 / 43 tests, 37 failed; Compiling tests/cocotb/tutorial/tflite_micro_test.cc; 6s processwrapper-sandbox ... (9 actions, 8 running)
+ERROR: /app/examples/BUILD.bazel:19:19: Compiling examples/hello_world_add_floats.cc failed: missing input file '//examples:hello_world_add_floats.cc'
+ERROR: /app/examples/BUILD.bazel:19:19: Compiling examples/hello_world_add_floats.cc failed: 1 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: 8 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: 9 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: 5 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[5,437 / 6,498] 38 / 43 tests, 38 failed; Compiling tests/cocotb/tutorial/tflite_micro_test.cc; 7s processwrapper-sandbox ... (9 actions, 8 running)
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: 5 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[5,483 / 6,498] 38 / 43 tests, 38 failed; Compiling tests/cocotb/rvv/arithmetics/vnclipu_test.cc; 0s processwrapper-sandbox ... (7 actions, 6 running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[5,573 / 6,498] 39 / 43 tests, 39 failed; Compiling tests/cocotb/rvv/arithmetics/template_mul_int32_m1.cc; 0s processwrapper-sandbox ... (8 actions, 6 running)
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: missing input file '//fpga:sw/clk.c'
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: 3 input file(s) do not exist
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/uart.c'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: 5 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[5,852 / 6,498] 39 / 43 tests, 39 failed; Compiling tests/cocotb/rvv/load_store/load8_index8.cc; 0s processwrapper-sandbox ... (6 actions, 5 running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[6,051 / 6,498] 39 / 43 tests, 39 failed; Testing //fpga:flash_tool_test; 1s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/sw/coralnpu_sim/BUILD:21:17: Compiling sw/coralnpu_sim/coralnpu_v2_sim_pybind.cc failed: missing input file '//sw/coralnpu_sim:coralnpu_v2_sim_pybind.cc'
+ERROR: /app/sw/coralnpu_sim/BUILD:21:17: Compiling sw/coralnpu_sim/coralnpu_v2_sim_pybind.cc failed: 1 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: 9 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: 9 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[6,259 / 6,498] 43 / 43 tests, 42 failed; Compiling tests/cocotb/rvv/arithmetics/template_redsum_int32_m1.cc; 0s processwrapper-sandbox ... (8 actions running)
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: missing input file '//sw/opt/litert-micro:logistic.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: 3 input file(s) do not exist
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[6,366 / 6,498] 43 / 43 tests, 42 failed; Linking tests/cocotb/rvv/arithmetics/rvv_mul_uint8_m1.elf; 0s processwrapper-sandbox ... (7 actions, 6 running)
+Analyzing: 2440 targets (658 packages loaded, 36843 targets configured)
+[6,490 / 6,498] 43 / 43 tests, 42 failed; ObjCopy tests/cocotb/rvv/load_store/load8_stride2_m1.bin; 0s processwrapper-sandbox ... (5 actions, 4 running)
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_xbar_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga/ip/i2c_master:i2c_master_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_scalar_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:alu_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:check_pins_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga/ip/coralnpu_chisel_subsystem_highmem:coralnpu_chisel_subsystem_highmem_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:core_mini_verification_axi_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_itcm512kb_dtcm512kb_tests_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_9x2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:dvu_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_arithmetic_m1_vanilla_ops', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_float_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_coralnpu_isa_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:core_mini_axi_tb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_burst_types_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_hartsel', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//utils/coralnpu_soc_loader:run_isp_cam_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:core_mini_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_rand_instr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_burst_types_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_unreachable_prefetch_fault', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:chip_verilator_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_exceptions_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_highmem_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_xbar_cocotb_test_16bit_writes_to_sram', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_riscv_dv', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_highmem_axi_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:coralnpu_rvv', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_highmem_axi_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_axi_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_index8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_reduction_m1_failure_ops', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/rvv/rvv_opt:cocotb_rvv_opt_test_rvv_memcpy_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:rvv_core_mini_verification_axi_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store_strided_all_vtypes_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vmsof_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_segment2_stride6_m1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_verification_axi_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_slow_bready', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_highmem_testharness_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_index32_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga/ip/ispyocto:isp_wrapper_sim_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_itcm512kb_dtcm512kb_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_unit_all_vtypes_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga/ip/coralnpu_chisel_subsystem_highmem:generate_core_file', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:coralnpu', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:dvu_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_frm_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_store8_unit_m2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:coralnpu_float_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vcpop_exception_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_xbar_testharness_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:rvv_core_mini_axi_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_model', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:core_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga/ip/coralnpu_chisel_subsystem_highmem:rtl_files', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:mlu_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_unreachable_prefetch_fault', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vill_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_master_write_alignment', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1icache_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_cocotb_test_boot_addr_override', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_vslide1up_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_highmem_tests_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_model', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_finish_txn_before_halt_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:core_mini_verification_axi_tb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_xbar_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vmsbf_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_verification_axi_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_testharness_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_dv', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_stride4_m1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool16stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_cocotb_test_software_interrupt', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_run_wfi_in_all_slots', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_breakpoint', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga/ip/coralnpu_chisel_subsystem_default:rtl_files', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_cocotb_test_timer_interrupt', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_vnclip_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:chip_verilator_highmem_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_verification_axi_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_tlul_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store8_index16', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:dma_integration_cocotb_test_dma_csr_access', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/rvv/rvv_opt:cocotb_rvv_opt_test_rvv_memset_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_highmem_cocotb_test_freertos_test_freertos', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_slow_bready', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_testharness_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_rand_instr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_itcm512kb_dtcm512kb_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_cocotb_test_ddr_access_via_spi', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_xbar_testharness_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_xbar_testharness_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_riscv_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:copy_chip_verilator_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_itcm512kb_dtcm512kb_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:mlu_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_tlul_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_highmem_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv16to32stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_tlul_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_breakpoint', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:core_mini_axi_non_incr_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_coralnpu_isa_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_unreachable_prefetch_fault', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_rand_instr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_finish_txn_before_halt_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_cocotb_test_tlul_passthrough', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_ml_ops_cocotb_test_core_mini_rvv_float_matmul_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_finish_txn_before_halt_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store32_seg_unit', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_master_write_alignment', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:mlu_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_xbar_model', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_index32', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store32_index8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_segment2_stride6_m1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial:tutorial_core_mini_axi_tutorial', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:spi_flash_sim_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:core_mini_itcm512kb_dtcm512kb_axi_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hw_sim:libcoralnpu_simulator_rvv.so', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:coralnpu_scalar_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool64stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:coralnpu_rvv_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:dbus2axi_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_axi_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_4x1_h2w2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_xbar_cocotb_test_wide_to_narrow_integrity', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vfirst_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_hartsel', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_single_step', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:trivial_pass_sim_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_riscv_dv', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_riscv_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_scalar_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_cocotb_test_ddr_access', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:l1icache_tb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_xbar_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:rvv_core_mini_itcm512kb_dtcm512kb_axi_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_rvv_load', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_cocotb_test_program_execution_via_spi', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_xbar_cocotb_test_test_host_32_to_coralnpu_device', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_stride4_m1_partial', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:rvv_core_mini_highmem_axi_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_frm_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_xbar_cocotb_test_coralnpu_core_to_uart1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_single_step', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vstart_store', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_ndmreset', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_reduction_m1_vanilla_ops', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_master_write_alignment', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_write_read_memory_stress_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:core_scalar_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store_unit_all_vtypes_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:dma_integration_cocotb_test_dma_descriptor_chain', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vmsif_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:l1dcachebank_tb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_verification_axi_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_store16_unit_m2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_vnclipu_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_vslide1down_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_nonexistent_register', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_stride2_mf4', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_run_wfi_in_all_slots', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_unreachable_prefetch_fault', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_viota_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_scalar_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_highmem_axi_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_run_wfi_in_all_slots', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_testharness_model', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_rvv_add', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_highmem_axi_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store16_index16', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_index16_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_vnsrl_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:dbus2axi_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hw_sim:libcoralnpu_simulator.so', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_seg_unit', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_18x1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_rvv_exceptions_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_verification_axi_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:backdoor_load_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:core_mini_axi_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store8_index32', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_cocotb_test_ibus_fetch_from_sram', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vcompress_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_highmem_tests_slow_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_highmem_axi_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_verification_axi_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_vslidedown_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_xbar_cocotb_test_test_host_32_to_coralnpu_device_csr_read', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_37x1_h2w2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_backdoor_load_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1dcache_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1icache_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:core_mini_itcm512kb_dtcm512kb_axi_tb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_verification_axi_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1dcachebank_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_scalar_registers', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:gpio_integration_cocotb_test_gpio_integration', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:alu_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_probe_impl', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:rvv_core_mini_highmem_axi_tb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_rvv_exceptions_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_highmem_tests_slow_core_mini_rvv_matmul_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1icache_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:dma_sim_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_strided_all_vtypes_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_model', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store8_index8_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_backdoor_load_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga/ip/ispyocto:isp_wrapper_sim_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:rtl_files', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store8_index8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_highmem_testharness_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:rvv_core_mini_axi_tb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_vnsra_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hw_sim:core_mini_axi_simulator_rvv', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_highmem_tests_slow_core_mini_axi_run_wfi_in_all_slots_highmem', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:spi_master_cocotb_test_spi_master_basic_tx', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_16_16', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_testharness_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_xbar_cocotb_test_coralnpu_core_to_invalid_addr', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_highmem_testharness_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:alu_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_itcm512kb_dtcm512kb_axi_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store32_index32', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_registers', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_highmem_testharness_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_xbar_lib', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vcpop_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_probe_impl', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_riscv_dv', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_index8_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_48x48_h2w2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_write_read_memory_stress_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_highmem_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_itcm512kb_dtcm512kb_tests_core_mini_axi_run_wfi_in_all_slots_itcm512kb_dtcm512kb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:spi_master_cocotb_test_spi_master_half_duplex_rx', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_store_whole_register_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga/ip/ispyocto:isp_wrapper_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_slow_bready', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:coralnpu_uncached_fetch_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_index16', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_lib', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_run_wfi_in_all_slots', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_cocotb_test_boot_addr_sram', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial:hello_world_float_core_mini_axi_core_mini_axi_tutorial', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_widen_math_ops_test_impl', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_index16_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool32stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_scalar_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_highmem_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:copy_chip_verilator_highmem_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_tlul_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:dbus2axi_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_frm_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_cocotb_test_plic', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:l1dcache_tb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_xbar_testharness_model', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_halt_resume', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_stride4_mf2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_cocotb_test_tlul_width_bridge_bug_reproduction', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store16_seg_unit', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_scalar_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:coralnpu_scalar', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_unit_masked', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_xbar_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hw_sim:core_mini_axi_wrapper_example', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_exceptions_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1dcache_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_slow_bready', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_stride2_m1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_itcm512kb_dtcm512kb_axi_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_store_bits', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store16_index32', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1dcachebank_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1dcache_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_halt_resume', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_highmem_tests_core_mini_rvv_matmul_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_store8_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga/ip/coralnpu_chisel_subsystem_default:generate_core_file', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1dcachebank_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_highmem_testharness_model', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:dvu_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_backdoor_load_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:rvv_core_mini_verification_axi_tb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_vslideup_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_itcm512kb_dtcm512kb_tests_core_mini_rvv_matmul_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_xbar_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:core_mini_highmem_axi_tb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_rand_instr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_verification_axi_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_tlul_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_frm_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:core_mini_highmem_axi_sim', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1dcache_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_index32_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_float_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_seg_unit', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_axi_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_nonexistent_register', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_xbar_testharness_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:rvv_core_mini_itcm512kb_dtcm512kb_axi_tb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:alu_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1dcachebank_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:dbus2axi_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_tlul_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_vsetvl_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_exceptions_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_scalar_registers', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_index8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_testharness_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store32_index16', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:trivial_pass_highmem_sim_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_xbar_testharness_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv8to8stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_backdoor_load_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1icache_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_index32_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_testharness_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_master_write_alignment', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_highmem_axi_model', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_stride2_m1_partial', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_index16_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_cocotb_test_program_execution_via_host', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_verification_axi_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store16_index8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:build_chip_verilator', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_stride8_m1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:flash_tool_sim_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_stride8_m1_partial', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_axi_bundle', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_xbar_cocotb_test_coralnpu_core_to_coralnpu_device', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_itcm512kb_dtcm512kb_axi_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_xbar_cocotb_test_test_host_32_to_coralnpu_device_specific_addr', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/counters:cocotb_counter_test_inst_cycle_counter_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:spi_master_cocotb_test_spi_master_half_duplex_tx', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hw_sim:core_mini_axi_wrapper', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_float_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:build_chip_verilator_highmem', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:dvu_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_coralnpu_isa_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_exceptions_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:dma_integration_cocotb_test_dma_mem_to_mem', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_seg_unit', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv8to8stride1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:mlu_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_ndmreset', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_index8_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vl_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_highmem_tests_core_mini_axi_run_wfi_in_all_slots_highmem', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_index8_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:dvu_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hw_sim:core_mini_axi_simulator_example', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_itcm512kb_dtcm512kb_axi_model', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_store32_unit_m2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:core_mini_verification_axi_cc_library_emit_verilog_binary', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:alu_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store_unit_masked', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_highmem_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_float_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga/ip/coralnpu_chisel_subsystem_default:coralnpu_chisel_subsystem_default_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_itcm512kb_dtcm512kb_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_chisel_subsystem_cocotb_test_ddr_burst_pattern_repro', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_itcm512kb_dtcm512kb_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_registers', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:coralnpu_core_axi_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1dcache_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_finish_txn_before_halt_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vcsr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_riscv_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hw_sim:core_mini_axi_simulator', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:dbus2axi_tb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_index8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//fpga:clk_sim_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:mlu_cc_library', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_xbar_cocotb_test_interleaved_hosts_to_sram', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tlul:coralnpu_xbar_cocotb_test_coralnpu_core_to_sram', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_ml_ops_cocotb_test_core_mini_rvv_matmul_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/soc:coralnpu_chisel_subsystem_highmem_testharness_cc_library_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_coralnpu_isa_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:dbus2axi_cc_library_cc', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1icache_cc_library_emit_verilog', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//hdl/chisel/src/coralnpu:l1dcachebank_cc_library_emit_verilog', it will not be built.
+Analysis failed
+INFO: Analyzed 2440 targets (658 packages loaded, 36843 targets configured).
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store8_seg_unit', it will not be built.
+Analysis failed
+INFO: Analysis succeeded for only 1722 of 2440 top-level targets
+INFO: Found 1945 targets and 43 test targets...
+Use --verbose_failures to see the command lines of failed build steps.
+INFO: Elapsed time: 65.729s, Critical Path: 10.90s
+INFO: 1866 processes: 1046 internal, 818 processwrapper-sandbox, 2 worker.
+ERROR: Build did NOT complete successfully
+FAILED: 
+//hdl/chisel/src/bus:dma_engine_test                            FAILED TO BUILD
+//hdl/chisel/src/bus:gpio_test                                  FAILED TO BUILD
+//hdl/chisel/src/bus:spi2tlulv2_test                            FAILED TO BUILD
+//hdl/chisel/src/bus:spi_master_test                            FAILED TO BUILD
+//hdl/chisel/src/bus:tlul_to_sram_test                          FAILED TO BUILD
+(Skipping other failed to build tests)
+//fpga:flash_tool_test                                                   PASSED in 1.9s
+
+Executed 1 out of 43 tests: 1 test passes and 42 fail to build.
+There were tests whose specified size is too big. Use the --test_verbose_timeout_warnings command line option to see which ones these are.
+INFO: Build Event Protocol files produced successfully.

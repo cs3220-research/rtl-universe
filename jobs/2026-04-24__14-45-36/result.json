@@ -1,0 +1,34 @@
+{
+    "id": "33e2df28-448d-4524-9bdf-dbef3def929b",
+    "started_at": "2026-04-24T14:45:36.612135",
+    "finished_at": "2026-04-24T15:45:28.560245",
+    "n_total_trials": 1,
+    "stats": {
+        "n_trials": 1,
+        "n_errors": 1,
+        "evals": {
+            "claude-code__adhoc": {
+                "n_trials": 1,
+                "n_errors": 1,
+                "metrics": [
+                    {
+                        "mean": 0.003279
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.003279": [
+                            "coralnpu__d96pVjh"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "NonZeroAgentExitCodeError": [
+                        "coralnpu__d96pVjh"
+                    ]
+                }
+            }
+        }
+    }
+}

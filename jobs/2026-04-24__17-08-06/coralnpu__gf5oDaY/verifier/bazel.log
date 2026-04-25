@@ -1,0 +1,1157 @@
+Another command (pid=114609) is running. Waiting for it to complete on the server (server_pid=1297)...
+Another command (pid=115174) is running. Waiting for it to complete on the server (server_pid=1297)...
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+Analyzing: 2440 targets (62 packages loaded, 0 targets configured)
+Analyzing: 2440 targets (62 packages loaded, 9 targets configured)
+
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: missing input file '//fpga:sw/clk.c'
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/uart.c'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: 5 input file(s) do not exist
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: 3 input file(s) do not exist
+ERROR: /app/fpga/BUILD:148:11: Compiling fpga/sw/dma.c failed: missing input file '//fpga:sw/dma.c'
+ERROR: /app/fpga/BUILD:148:11: Compiling fpga/sw/dma.c failed: missing input file '//fpga:sw/dma.h'
+ERROR: /app/fpga/BUILD:148:11: Compiling fpga/sw/dma.c failed: missing input file '//fpga:sw/dma.h'
+ERROR: /app/fpga/BUILD:148:11: Compiling fpga/sw/dma.c failed: 3 input file(s) do not exist
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/i2c.c'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi_flash.c'
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: missing input file '//fpga:sw/gpio.c'
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: 9 input file(s) do not exist
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: 5 input file(s) do not exist
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/display_renderer.cc'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/display_renderer.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/dma.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/dma.h'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:17:11: Compiling sw/utils/nexus_loader/spi_master.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.cc'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:17:11: Compiling sw/utils/nexus_loader/spi_master.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.h'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:17:11: Compiling sw/utils/nexus_loader/spi_master.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/spi.c'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/display_hal.c'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: 6 input file(s) do not exist
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/display_renderer.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:174:11: Compiling fpga/sw/display_renderer.cc failed: 10 input file(s) do not exist
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: 3 input file(s) do not exist
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: 5 input file(s) do not exist
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:17:11: Compiling sw/utils/nexus_loader/spi_master.cc failed: 3 input file(s) do not exist
+Analyzing: 2440 targets (108 packages loaded, 5745 targets configured)
+[352 / 352] no actions running
+ERROR: /app/fpga/rtl/BUILD: no such target '//fpga/rtl:chip_nexus.sv': target 'chip_nexus.sv' not declared in package 'fpga/rtl' defined by /app/fpga/rtl/BUILD
+Analyzing: 2440 targets (283 packages loaded, 12458 targets configured)
+[356 / 703] checking cached actions
+Analyzing: 2440 targets (306 packages loaded, 13662 targets configured)
+[519 / 1,481] checking cached actions
+ERROR: /app/fpga/BUILD:568:8: no such target '//fpga/rtl:chip_nexus.sv': target 'chip_nexus.sv' not declared in package 'fpga/rtl' defined by /app/fpga/rtl/BUILD and referenced by '//fpga:check_pins_test'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:23:10: Compiling sw/utils/nexus_loader/main.cc failed: missing input file '//sw/utils/nexus_loader:main.cc'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:23:10: Compiling sw/utils/nexus_loader/main.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.h'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:23:10: Compiling sw/utils/nexus_loader/main.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.h'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:23:10: Compiling sw/utils/nexus_loader/main.cc failed: 3 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 23329 targets configured)
+[857 / 2,145] checking cached actions
+Analyzing: 2440 targets (404 packages loaded, 24150 targets configured)
+[1,089 / 2,495] checking cached actions
+Analyzing: 2440 targets (404 packages loaded, 24962 targets configured)
+[1,267 / 2,946] Compiling absl/base/log_severity.cc [for tool]; 0s processwrapper-sandbox
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[1,871 / 4,761] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 0s multiplex-worker ... (3 actions, 2 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[1,887 / 5,115] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 1s multiplex-worker ... (4 actions, 3 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[2,018 / 5,264] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 2s multiplex-worker ... (6 actions, 5 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[2,247 / 5,534] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 3s multiplex-worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[2,447 / 5,706] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 4s multiplex-worker ... (7 actions running)
+INFO: From Building external/bazel_tools/tools/java/runfiles/libauto_bazel_repository.jar (1 source file) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[2,891 / 6,153] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 5s multiplex-worker ... (7 actions, 6 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[3,042 / 6,293] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 6s multiplex-worker ... (7 actions, 6 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[3,148 / 6,391] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 8s multiplex-worker ... (7 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[3,213 / 6,451] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 9s multiplex-worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[3,225 / 6,456] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 10s multiplex-worker ... (7 actions, 6 running)
+INFO: From Building external/bazel_tools/tools/java/runfiles/librunfiles.jar (2 source files) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[3,278 / 6,515] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 11s multiplex-worker ... (7 actions, 6 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[3,469 / 6,674] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 12s multiplex-worker ... (6 actions, 5 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[3,636 / 6,807] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 13s multiplex-worker ... (6 actions, 5 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[3,767 / 6,908] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 14s multiplex-worker ... (6 actions, 5 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[3,926 / 7,036] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 15s multiplex-worker ... (7 actions, 6 running)
+INFO: From Building external/bazel_tools/tools/java/runfiles/libauto_bazel_repository_processor.jar (1 source file) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[3,991 / 7,078] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 16s multiplex-worker ... (6 actions, 5 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,442 / 7,612] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 18s multiplex-worker ... (8 actions running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scala_test/librunner.jar (1 source file) and running annotation processors (AutoBazelRepositoryProcessor) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,620 / 7,633] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 19s multiplex-worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,630 / 7,634] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 20s multiplex-worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,632 / 7,634] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 22s multiplex-worker ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,638 / 7,635] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 23s multiplex-worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,641 / 7,635] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 24s multiplex-worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,642 / 7,635] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 25s multiplex-worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,642 / 7,635] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 27s multiplex-worker ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,645 / 7,635] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 28s multiplex-worker ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,650 / 7,636] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 30s multiplex-worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,653 / 7,636] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 31s multiplex-worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,657 / 7,636] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 32s multiplex-worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,659 / 7,636] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 33s multiplex-worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,663 / 7,636] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 34s multiplex-worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,667 / 7,636] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 35s multiplex-worker ... (8 actions, 7 running)
+INFO: From Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,688 / 7,671] Foreign Cc - CMake: Building systemc; 34s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,696 / 7,679] Foreign Cc - CMake: Building systemc; 35s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,702 / 7,686] Foreign Cc - CMake: Building systemc; 36s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/compileoptions/libcompileoptions.jar (1 source file) [for tool]:
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-reflect.jar": no such file or directory
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-library.jar": no such file or directory
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/jar/libjar.jar (2 source files) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/io_utils/libio_utils.jar (2 source files) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,714 / 7,689] Foreign Cc - CMake: Building systemc; 37s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/i2c_camera_test.cc'
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:353:19: Compiling fpga/sw/i2c_camera_test.cc failed: 6 input file(s) do not exist
+ERROR: /app/fpga/BUILD:240:21: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/clk_test.c'
+ERROR: /app/fpga/BUILD:240:21: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:240:21: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:240:21: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:240:21: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:240:21: Compiling fpga/sw/clk_test.c failed: 5 input file(s) do not exist
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/flash_tool.c'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/flash_tool_status.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/flash_tool_status.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:266:19: Compiling fpga/sw/flash_tool.c failed: 10 input file(s) do not exist
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi_flash.c'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:187:11: Compiling fpga/sw/spi_flash.c failed: 9 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[4,837 / 7,771] Foreign Cc - CMake: Building systemc; 39s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/fpga/BUILD:210:19: Compiling fpga/sw/add_uint32_m1.cc failed: missing input file '//fpga:sw/add_uint32_m1.cc'
+ERROR: /app/fpga/BUILD:210:19: Compiling fpga/sw/add_uint32_m1.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:210:19: Compiling fpga/sw/add_uint32_m1.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:210:19: Compiling fpga/sw/add_uint32_m1.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:210:19: Compiling fpga/sw/add_uint32_m1.cc failed: 4 input file(s) do not exist
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/i2c_camera_test.cc'
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:344:19: Compiling fpga/sw/i2c_camera_test.cc failed: 6 input file(s) do not exist
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/i2c.c'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: missing input file '//fpga:sw/i2c.h'
+ERROR: /app/fpga/BUILD:141:11: Compiling fpga/sw/i2c.c failed: 5 input file(s) do not exist
+ERROR: /app/examples/BUILD.bazel:24:19: Compiling examples/rvv_add_intrinsic.cc failed: missing input file '//examples:rvv_add_intrinsic.cc'
+ERROR: /app/examples/BUILD.bazel:24:19: Compiling examples/rvv_add_intrinsic.cc failed: 1 input file(s) do not exist
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memset_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memset_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memset_test.cc failed: 2 input file(s) do not exist
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: missing input file '//fpga:sw/gpio_test.cc'
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:225:19: Compiling fpga/sw/gpio_test.cc failed: 6 input file(s) do not exist
+ERROR: /app/fpga/BUILD:154:19: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/clk_test.c'
+ERROR: /app/fpga/BUILD:154:19: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:154:19: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:154:19: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:154:19: Compiling fpga/sw/clk_test.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:154:19: Compiling fpga/sw/clk_test.c failed: 5 input file(s) do not exist
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: missing input file '//fpga:sw/display_test.cc'
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:197:19: Compiling fpga/sw/display_test.cc failed: 6 input file(s) do not exist
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/display_hal.c'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:163:11: Compiling fpga/sw/display_hal.c failed: 6 input file(s) do not exist
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: missing input file '//fpga:sw/gpio.c'
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:128:11: Compiling fpga/sw/gpio.c failed: 3 input file(s) do not exist
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/spi.c'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:134:11: Compiling fpga/sw/spi.c failed: 5 input file(s) do not exist
+ERROR: /app/fpga/BUILD:364:19: Compiling fpga/sw/timer.cc failed: missing input file '//fpga:sw/timer.cc'
+ERROR: /app/fpga/BUILD:364:19: Compiling fpga/sw/timer.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:364:19: Compiling fpga/sw/timer.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:364:19: Compiling fpga/sw/timer.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:364:19: Compiling fpga/sw/timer.cc failed: 4 input file(s) do not exist
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/uart.c'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:121:11: Compiling fpga/sw/uart.c failed: 5 input file(s) do not exist
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: missing input file '//fpga:sw/clk.c'
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:115:11: Compiling fpga/sw/clk.c failed: 3 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[5,035 / 7,784] Foreign Cc - CMake: Building systemc; 40s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[5,217 / 7,784] Foreign Cc - CMake: Building systemc; 41s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/examples/BUILD.bazel:19:19: Compiling examples/hello_world_add_floats.cc failed: missing input file '//examples:hello_world_add_floats.cc'
+ERROR: /app/examples/BUILD.bazel:19:19: Compiling examples/hello_world_add_floats.cc failed: 1 input file(s) do not exist
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memcpy_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memcpy_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memcpy_test.cc failed: 2 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[5,495 / 7,786] Foreign Cc - CMake: Building systemc; 42s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:46:8: Compiling sw/utils/nexus_loader/test.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.h'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:46:8: Compiling sw/utils/nexus_loader/test.cc failed: missing input file '//sw/utils/nexus_loader:spi_master.h'
+ERROR: /app/sw/utils/nexus_loader/BUILD.bazel:46:8: Compiling sw/utils/nexus_loader/test.cc failed: 2 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/counters/BUILD:27:19: Compiling tests/cocotb/tutorial/counters/inst_cycle_counter_example.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/counters/BUILD:27:19: Compiling tests/cocotb/tutorial/counters/inst_cycle_counter_example.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/counters/BUILD:27:19: Compiling tests/cocotb/tutorial/counters/inst_cycle_counter_example.cc failed: 2 input file(s) do not exist
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: missing input file '//fpga:sw/spi_test.cc'
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:216:19: Compiling fpga/sw/spi_test.cc failed: 6 input file(s) do not exist
+ERROR: /app/fpga/BUILD:148:11: Compiling fpga/sw/dma.c failed: missing input file '//fpga:sw/dma.c'
+ERROR: /app/fpga/BUILD:148:11: Compiling fpga/sw/dma.c failed: missing input file '//fpga:sw/dma.h'
+ERROR: /app/fpga/BUILD:148:11: Compiling fpga/sw/dma.c failed: missing input file '//fpga:sw/dma.h'
+ERROR: /app/fpga/BUILD:148:11: Compiling fpga/sw/dma.c failed: 3 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[5,852 / 7,989] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/fpga/BUILD:332:21: Compiling fpga/sw/spi_flash_test.cc failed: missing input file '//fpga:sw/spi_flash_test.cc'
+ERROR: /app/fpga/BUILD:332:21: Compiling fpga/sw/spi_flash_test.cc failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:332:21: Compiling fpga/sw/spi_flash_test.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:332:21: Compiling fpga/sw/spi_flash_test.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:332:21: Compiling fpga/sw/spi_flash_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:332:21: Compiling fpga/sw/spi_flash_test.cc failed: missing input file '//fpga:sw/gpio.h'
+ERROR: /app/fpga/BUILD:332:21: Compiling fpga/sw/spi_flash_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:332:21: Compiling fpga/sw/spi_flash_test.cc failed: missing input file '//fpga:sw/spi.h'
+ERROR: /app/fpga/BUILD:332:21: Compiling fpga/sw/spi_flash_test.cc failed: missing input file '//fpga:sw/spi_flash.h'
+ERROR: /app/fpga/BUILD:332:21: Compiling fpga/sw/spi_flash_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:332:21: Compiling fpga/sw/spi_flash_test.cc failed: 10 input file(s) do not exist
+ERROR: /app/fpga/BUILD:234:21: Compiling fpga/sw/trivial_pass_test.cc failed: missing input file '//fpga:sw/trivial_pass_test.cc'
+ERROR: /app/fpga/BUILD:234:21: Compiling fpga/sw/trivial_pass_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:234:21: Compiling fpga/sw/trivial_pass_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:234:21: Compiling fpga/sw/trivial_pass_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:234:21: Compiling fpga/sw/trivial_pass_test.cc failed: 4 input file(s) do not exist
+ERROR: /app/fpga/BUILD:249:21: Compiling fpga/sw/trivial_pass_test.cc failed: missing input file '//fpga:sw/trivial_pass_test.cc'
+ERROR: /app/fpga/BUILD:249:21: Compiling fpga/sw/trivial_pass_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:249:21: Compiling fpga/sw/trivial_pass_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:249:21: Compiling fpga/sw/trivial_pass_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:249:21: Compiling fpga/sw/trivial_pass_test.cc failed: 4 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[6,312 / 8,217] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 10s processwrapper-sandbox ... (8 actions running)
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: 9 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[6,543 / 8,219] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 11s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/sw/opt/litert-micro/test/BUILD:20:19: Compiling sw/opt/litert-micro/test/max_pool_test.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:20:19: Compiling sw/opt/litert-micro/test/max_pool_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:20:19: Compiling sw/opt/litert-micro/test/max_pool_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:20:19: Compiling sw/opt/litert-micro/test/max_pool_test.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:20:19: Compiling sw/opt/litert-micro/test/max_pool_test.cc failed: 4 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: missing input file '//sw/opt/litert-micro:pooling.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: 3 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: 4 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: missing input file '//sw/opt/litert-micro:logistic.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: 3 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: 6 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/test/BUILD:32:19: Compiling sw/opt/litert-micro/test/conv_test.cc failed: 8 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: 5 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: 9 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[6,672 / 8,223] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 12s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[6,846 / 8,227] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 14s processwrapper-sandbox ... (8 actions running)
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: 9 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: 9 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[6,904 / 8,273] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 15s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,064 / 8,426] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 16s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,095 / 8,429] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 17s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Compiling src/google/protobuf/compiler/kotlin/generator.cc [for tool]:
+In file included from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/java/_virtual_includes/helpers/google/protobuf/compiler/java/helpers.h:23,
+                 from external/com_google_protobuf/src/google/protobuf/compiler/kotlin/generator.cc:18:
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h: In instantiation of 'void google::protobuf::io::AnnotationProtoCollector<AnnotationProto>::AddAnnotation(size_t, size_t, const std::string&, const std::vector<int>&, std::optional<google::protobuf::io::AnnotationCollector::Semantic>) [with AnnotationProto = google::protobuf::GeneratedCodeInfo; size_t = long unsigned int; std::string = std::__cxx11::basic_string<char>]':
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h:123:8:   required from here
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h:127:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<int>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  127 |     for (int i = 0; i < path.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,097 / 8,429] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/enum.cc [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,101 / 8,434] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/enum.cc [for tool]; 10s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,102 / 8,434] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/kotlin/message.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,104 / 8,434] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/kotlin/message.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,109 / 8,434] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/field.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,109 / 8,434] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/field.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,112 / 8,434] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,115 / 8,434] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/field_generators/enum_field.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Compiling src/google/protobuf/compiler/kotlin/file.cc [for tool]:
+In file included from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/java/_virtual_includes/helpers/google/protobuf/compiler/java/helpers.h:23,
+                 from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/java/_virtual_includes/helpers/google/protobuf/compiler/java/context.h:15,
+                 from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/kotlin/_virtual_includes/kotlin_internal/google/protobuf/compiler/kotlin/message.h:12,
+                 from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/kotlin/_virtual_includes/kotlin_internal/google/protobuf/compiler/kotlin/file.h:18,
+                 from external/com_google_protobuf/src/google/protobuf/compiler/kotlin/file.cc:8:
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h: In instantiation of 'void google::protobuf::io::AnnotationProtoCollector<AnnotationProto>::AddAnnotation(size_t, size_t, const std::string&, const std::vector<int>&, std::optional<google::protobuf::io::AnnotationCollector::Semantic>) [with AnnotationProto = google::protobuf::GeneratedCodeInfo; size_t = long unsigned int; std::string = std::__cxx11::basic_string<char>]':
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h:123:8:   required from here
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h:127:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<int>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  127 |     for (int i = 0; i < path.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,117 / 8,434] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/field_generators/enum_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,139 / 8,439] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/generator.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,140 / 8,439] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/generator.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,141 / 8,439] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/field_generators/map_field.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,143 / 8,439] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/field_generators/map_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,144 / 8,439] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/field_generators/message_field.cc [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Compiling src/google/protobuf/compiler/java/full/message_builder.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message_builder.cc: In member function 'void google::protobuf::compiler::java::MessageBuilderGenerator::GenerateDescriptorMethods(google::protobuf::io::Printer*)':
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message_builder.cc:214:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::FieldDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  214 |     for (int i = 0; i < map_fields.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message_builder.cc:240:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::FieldDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  240 |     for (int i = 0; i < map_fields.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,149 / 8,439] 1 / 304 tests, 1 failed; Compiling src/V3Timing.cpp [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,286 / 8,439] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/file.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,289 / 8,445] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/file.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,291 / 8,445] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/field_generators/string_field.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,291 / 8,445] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/field_generators/string_field.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Compiling src/google/protobuf/compiler/java/full/message.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message.cc: In member function 'void google::protobuf::compiler::java::ImmutableMessageGenerator::GenerateDescriptorMethods(google::protobuf::io::Printer*)':
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message.cc:807:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::FieldDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  807 |     for (int i = 0; i < map_fields.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,296 / 8,445] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,297 / 8,445] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,298 / 8,445] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,489 / 8,451] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 11s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,490 / 8,451] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 12s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,493 / 8,451] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 14s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: 4 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,500 / 8,451] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 15s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,503 / 8,453] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 16s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Compiling src/google/protobuf/compiler/java/full/enum.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc: In member function 'virtual void google::protobuf::compiler::java::EnumNonLiteGenerator::Generate(google::protobuf::io::Printer*)':
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:77:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   77 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:85:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   85 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:125:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<google::protobuf::compiler::java::EnumNonLiteGenerator::Alias>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  125 |   for (int i = 0; i < aliases_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:209:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  209 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc: In member function 'bool google::protobuf::compiler::java::EnumNonLiteGenerator::CanUseEnumValues()':
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:383:32: warning: comparison of integer expressions of different signedness: 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+  383 |   if (canonical_values_.size() != descriptor_->value_count()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,507 / 8,455] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 15s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,509 / 8,455] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 17s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,515 / 8,463] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 18s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,517 / 8,463] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 19s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,519 / 8,465] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 20s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,525 / 8,469] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 21s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,528 / 8,469] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 23s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,533 / 8,471] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/full/string_field.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/fpga/BUILD:256:21: Compiling fpga/sw/dma_test.cc failed: missing input file '//fpga:sw/dma_test.cc'
+ERROR: /app/fpga/BUILD:256:21: Compiling fpga/sw/dma_test.cc failed: missing input file '//fpga:sw/dma.h'
+ERROR: /app/fpga/BUILD:256:21: Compiling fpga/sw/dma_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:256:21: Compiling fpga/sw/dma_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:256:21: Compiling fpga/sw/dma_test.cc failed: missing input file '//fpga:sw/dma.h'
+ERROR: /app/fpga/BUILD:256:21: Compiling fpga/sw/dma_test.cc failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:256:21: Compiling fpga/sw/dma_test.cc failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:256:21: Compiling fpga/sw/dma_test.cc failed: 7 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,554 / 8,477] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/full/string_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,561 / 8,489] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/csharp/csharp_map_field.cc [for tool]; 4s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,562 / 8,489] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/full/enum_field.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,566 / 8,493] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/full/enum_field.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,569 / 8,493] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/lite/message_builder.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,573 / 8,493] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/lite/string_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,580 / 8,497] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/full/primitive_field.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,581 / 8,497] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/lite/enum_field.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,587 / 8,499] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/lite/enum_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/mobilenet_v1_025_partial_layers.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/mobilenet_v1_025_partial_layers.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/mobilenet_v1_025_partial_layers.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/mobilenet_v1_025_partial_layers.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/mobilenet_v1_025_partial_layers.cc failed: 4 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/run_partial_mobilenet.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/run_partial_mobilenet.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/run_partial_mobilenet.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/run_partial_mobilenet.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/run_partial_mobilenet.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:32:19: Compiling tests/cocotb/tutorial/tfmicro/run_partial_mobilenet.cc failed: 5 input file(s) do not exist
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/npusim_examples/BUILD:31:19: Compiling tests/npusim_examples/run_full_mobilenet_v1.cc failed: 9 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,712 / 8,504] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/full/map_field.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,717 / 8,508] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/full/map_field.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,720 / 8,508] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/lite/primitive_field.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,721 / 8,508] 1 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/lite/primitive_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,725 / 8,521] 1 / 304 tests, 1 failed; Compiling external/verilator/V3Const__gen.cpp; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,729 / 8,523] 1 / 304 tests, 1 failed; Compiling external/verilator/V3Const__gen.cpp; 6s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,735 / 8,543] 2 / 304 tests, 1 failed; Compiling external/verilator/V3Const__gen.cpp; 8s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,737 / 8,543] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/lite/map_field.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,738 / 8,543] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/lite/map_field.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,739 / 8,543] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/lite/map_field.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,740 / 8,543] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/lite/map_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,744 / 8,545] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/lite/message_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,753 / 8,549] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/primitive_field.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,755 / 8,549] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/name_resolver.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,758 / 8,551] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/name_resolver.cc [for tool]; 4s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,759 / 8,551] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/names.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,762 / 8,551] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/names.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Compiling src/google/protobuf/compiler/java/lite/enum.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/java/lite/enum.cc: In member function 'virtual void google::protobuf::compiler::java::EnumLiteGenerator::Generate(google::protobuf::io::Printer*)':
+external/com_google_protobuf/src/google/protobuf/compiler/java/lite/enum.cc:70:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   70 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/lite/enum.cc:94:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<google::protobuf::compiler::java::EnumLiteGenerator::Alias>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   94 |   for (int i = 0; i < aliases_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/lite/enum.cc:165:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  165 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,769 / 8,557] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/php/php_generator.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,771 / 8,557] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/php/php_generator.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,775 / 8,559] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/php/php_generator.cc [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,776 / 8,559] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/php/php_generator.cc [for tool]; 10s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,783 / 8,563] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/java/helpers.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,788 / 8,565] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/python/pyi_generator.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,789 / 8,565] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/message_field.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,798 / 8,569] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/rust/generator.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,800 / 8,569] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/rust/generator.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,804 / 8,573] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/rust/generator.cc [for tool]; 6s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,814 / 8,577] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/message.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,820 / 8,591] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/message.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,822 / 8,593] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/message.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,823 / 8,593] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/rust/message.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,832 / 8,599] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/python/generator.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,841 / 8,603] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/python/generator.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,846 / 8,608] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/python/generator.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,853 / 8,612] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/python/generator.cc [for tool]; 10s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,857 / 8,614] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/map_field.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,863 / 8,616] 2 / 304 tests, 1 failed; Compiling src/V3AstNodes.cpp; 5s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,868 / 8,625] 2 / 304 tests, 1 failed; Compiling src/V3AstNodes.cpp; 6s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Compiling src/google/protobuf/compiler/rust/relative_path.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/rust/relative_path.cc: In member function 'std::string google::protobuf::compiler::rust::RelativePath::Relative(const google::protobuf::compiler::rust::RelativePath&) const':
+external/com_google_protobuf/src/google/protobuf/compiler/rust/relative_path.cc:65:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::basic_string_view<char> >::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   65 |   for (int i = 0; i < current_segments.size(); ++i) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,874 / 8,631] 2 / 304 tests, 1 failed; Compiling src/V3AstNodes.cpp; 8s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,880 / 8,654] 2 / 304 tests, 1 failed; Compiling src/V3AstNodes.cpp; 9s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,883 / 8,654] 2 / 304 tests, 1 failed; Compiling src/V3AstNodes.cpp; 11s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,887 / 8,654] 2 / 304 tests, 1 failed; Compiling src/V3AstNodes.cpp; 13s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,888 / 8,654] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,890 / 8,654] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,893 / 8,671] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,895 / 8,671] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 10s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,897 / 8,671] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 12s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,906 / 8,675] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/generator.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,911 / 8,678] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/generator.cc [for tool]; 5s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,918 / 8,694] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/rust/accessors/singular_message.cc [for tool]; 4s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,928 / 8,702] 2 / 304 tests, 1 failed; Compiling src/V3StatsReport.cpp; 3s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,930 / 8,702] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/text_format.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,935 / 8,702] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/text_format.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,937 / 8,702] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/text_format.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,948 / 8,704] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/text_format.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,965 / 8,712] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/text_format.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,969 / 8,717] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/file.cc [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,975 / 8,719] 2 / 304 tests, 1 failed; Compiling src/V3StackCount.cpp; 3s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,977 / 8,719] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/io/printer.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,980 / 8,719] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/io/printer.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,982 / 8,721] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/io/printer.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,995 / 8,727] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/field.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[7,998 / 8,727] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/field.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,001 / 8,734] 2 / 304 tests, 1 failed; Compiling src/V3SplitVar.cpp; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,005 / 8,736] 2 / 304 tests, 1 failed; Compiling src/V3SplitVar.cpp; 6s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,016 / 8,740] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/message.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,021 / 8,742] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/message.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,027 / 8,745] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/extension.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,030 / 8,745] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 2s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,031 / 8,745] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,039 / 8,749] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,050 / 8,755] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,052 / 8,755] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,064 / 8,765] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,070 / 8,769] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,076 / 8,771] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 10s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,088 / 8,779] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/generated_message_tctable_gen.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,094 / 8,781] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/enum.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: missing input file '//fpga:sw/isp_cam_test.c'
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: missing input file '//fpga:sw/yocto_isp_register_address.h'
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: missing input file '//fpga:sw/yocto_isp_register_address.h'
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: missing input file '//fpga:sw/clk.h'
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: missing input file '//fpga:sw/uart.h'
+ERROR: /app/fpga/BUILD:370:19: Compiling fpga/sw/isp_cam_test.c failed: 6 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: 5 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: 5 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,147 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/compiler/objectivec/enum.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,151 / 8,783] 2 / 304 tests, 1 failed; Compiling absl/strings/cord.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,154 / 8,783] 2 / 304 tests, 1 failed; Compiling src/V3Combine.cpp; 3s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,165 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/extension_set.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,165 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/extension_set.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,168 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/extension_set.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,169 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/generated_message_reflection.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,171 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/generated_message_reflection.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,174 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/generated_message_reflection.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,175 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,176 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 10s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,180 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 11s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,183 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 13s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,183 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 14s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,184 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 15s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,187 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 16s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,189 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 18s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,191 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 19s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,192 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 21s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,193 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 22s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,196 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 24s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,198 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 25s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,200 / 8,783] 2 / 304 tests, 1 failed; Compiling src/google/protobuf/descriptor.cc [for tool]; 26s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,204 / 8,783] 2 / 304 tests, 1 failed; Compiling src/V3EmitCFunc.cpp; 3s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,205 / 8,783] 2 / 304 tests, 1 failed; Compiling src/V3EmitCHeaders.cpp; 3s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,206 / 8,783] 2 / 304 tests, 1 failed; Compiling src/V3EmitCHeaders.cpp; 4s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,211 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3EmitCImp.cpp; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,215 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3EmitCImp.cpp; 6s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,218 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3EmitCModel.cpp; 6s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,220 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3EmitCSyms.cpp; 4s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,227 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Sched.cpp; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,230 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Sched.cpp; 6s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,235 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3File.cpp; 3s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,237 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3File.cpp; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,244 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Sampled.cpp; 3s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,251 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Gate.cpp; 4s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,256 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Gate.cpp; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,257 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Reloop.cpp; 2s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,259 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Hasher.cpp; 3s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,261 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Hasher.cpp; 4s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/worker/libworker.jar (1 source file) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/scalac.jar (4 source files) [for tool]:
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-reflect.jar": no such file or directory
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-library.jar": no such file or directory
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,268 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Hasher.cpp; 5s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/reporter/libreporter.jar (2 source files) [for tool]:
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-reflect.jar": no such file or directory
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-library.jar": no such file or directory
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+INFO: From Building external/bazel_tools/src/main/protobuf/libworker_protocol_proto-speed.jar (1 source jar) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,272 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Randomize.cpp; 3s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,272 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Randomize.cpp; 4s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,273 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Randomize.cpp; 5s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Building external/io_bazel_rules_scala/src/protobuf/io/bazel/rules_scala/libdiagnostics_proto-speed.jar (1 source jar) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,276 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Randomize.cpp; 6s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/reporter/libscala_deps_proto-speed.jar (1 source jar) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,280 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3LinkDot.cpp; 7s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,281 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3LinkDot.cpp; 9s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,282 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3LinkParse.cpp; 5s processwrapper-sandbox ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,286 / 8,782] 2 / 304 tests, 1 failed; Building external/com_google_protobuf/java/core/libcore.jar (43 source files, 1 source jar) [for tool]; 5s multiplex-worker ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,288 / 8,782] 2 / 304 tests, 1 failed; Building external/com_google_protobuf/java/core/libcore.jar (43 source files, 1 source jar) [for tool]; 7s multiplex-worker ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,289 / 8,782] 2 / 304 tests, 1 failed; Building external/com_google_protobuf/java/core/libcore.jar (43 source files, 1 source jar) [for tool]; 8s multiplex-worker ... (9 actions, 8 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,291 / 8,782] 2 / 304 tests, 1 failed; Building external/com_google_protobuf/java/core/libcore.jar (43 source files, 1 source jar) [for tool]; 9s multiplex-worker ... (8 actions, 7 running)
+INFO: From Building external/com_google_protobuf/java/core/libcore.jar (43 source files, 1 source jar) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,294 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Options.cpp; 5s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,302 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Options.cpp; 6s processwrapper-sandbox ... (8 actions, 7 running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,308 / 8,782] 2 / 304 tests, 1 failed; Compiling src/V3Options.cpp; 8s processwrapper-sandbox ... (8 actions running)
+ERROR: /app/sw/coralnpu_sim/BUILD:21:17: Compiling sw/coralnpu_sim/coralnpu_v2_sim_pybind.cc failed: missing input file '//sw/coralnpu_sim:coralnpu_v2_sim_pybind.cc'
+ERROR: /app/sw/coralnpu_sim/BUILD:21:17: Compiling sw/coralnpu_sim/coralnpu_v2_sim_pybind.cc failed: 1 input file(s) do not exist
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,478 / 8,782] 5 / 304 tests, 4 failed; Compiling src/V3Param.cpp; 4s processwrapper-sandbox ... (6 actions running)
+ERROR: /app/hdl/chisel/src/bus/BUILD:29:15: scala @//hdl/chisel/src/bus:bus [for tool] failed: (Exit 1): scalac failed: error executing Scalac command (from target //hdl/chisel/src/bus:bus) bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/scalac @bazel-out/k8-opt-exec-ST-a828a81199fe/bin/hdl/chisel/src/bus/bus.jar-0.params
+hdl/chisel/src/bus/Axi2TLUL.scala:18: warning: Unused import
+import chisel3.util._
+                    ^
+hdl/chisel/src/bus/TLUL2Axi.scala:18: warning: Unused import
+import chisel3.util._
+                    ^
+hdl/chisel/src/bus/TlulFifoAsync.scala:18: warning: Unused import
+import chisel3.util._
+                    ^
+hdl/chisel/src/bus/TlulFifoSync.scala:18: warning: Unused import
+import chisel3.util._
+                    ^
+hdl/chisel/src/bus/TlulSocket1N.scala:18: warning: Unused import
+import chisel3.util._
+                    ^
+hdl/chisel/src/bus/TlulSocketM1.scala:18: warning: Unused import
+import chisel3.util._
+                    ^
+hdl/chisel/src/bus/Axi2TLUL.scala:45: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+hdl/chisel/src/bus/TLUL2Axi.scala:46: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+hdl/chisel/src/bus/TlulFifoAsync.scala:36: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+hdl/chisel/src/bus/TlulFifoSync.scala:36: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+hdl/chisel/src/bus/TlulSocket1N.scala:44: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+hdl/chisel/src/bus/TlulSocketM1.scala:60: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+hdl/chisel/src/bus/TlulSocketM1.scala:67: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+error: No warnings can be incurred under -Werror.
+13 warnings
+1 error
+Build failed
+java.lang.RuntimeException: Build failed
+	at io.bazel.rulesscala.scalac.ScalacInvoker.invokeCompiler(ScalacInvoker.java:55)
+	at io.bazel.rulesscala.scalac.ScalacWorker.compileScalaSources(ScalacWorker.java:257)
+	at io.bazel.rulesscala.scalac.ScalacWorker.work(ScalacWorker.java:73)
+	at io.bazel.rulesscala.worker.Worker.persistentWorkerMain(Worker.java:86)
+	at io.bazel.rulesscala.worker.Worker.workerMain(Worker.java:39)
+	at io.bazel.rulesscala.scalac.ScalacWorker.main(ScalacWorker.java:33)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,681 / 8,782] 6 / 304 tests, 5 failed; Compiling src/V3Param.cpp; 6s processwrapper-sandbox ... (5 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,740 / 8,782] 17 / 304 tests, 16 failed; Compiling src/V3Param.cpp; 7s processwrapper-sandbox ... (4 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,741 / 8,782] 17 / 304 tests, 16 failed; Compiling src/V3ParseGrammar.cpp; 9s processwrapper-sandbox ... (3 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,742 / 8,782] 17 / 304 tests, 16 failed; Compiling src/V3ParseGrammar.cpp; 10s processwrapper-sandbox ... (2 actions running)
+ERROR: /app/hdl/chisel/src/bus/BUILD:29:15: scala @//hdl/chisel/src/bus:bus failed: (Exit 1): scalac failed: error executing Scalac command (from target //hdl/chisel/src/bus:bus) bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/scalac @bazel-out/k8-fastbuild/bin/hdl/chisel/src/bus/bus.jar-0.params
+hdl/chisel/src/bus/Axi2TLUL.scala:18: warning: Unused import
+import chisel3.util._
+                    ^
+hdl/chisel/src/bus/TLUL2Axi.scala:18: warning: Unused import
+import chisel3.util._
+                    ^
+hdl/chisel/src/bus/TlulFifoAsync.scala:18: warning: Unused import
+import chisel3.util._
+                    ^
+hdl/chisel/src/bus/TlulFifoSync.scala:18: warning: Unused import
+import chisel3.util._
+                    ^
+hdl/chisel/src/bus/TlulSocket1N.scala:18: warning: Unused import
+import chisel3.util._
+                    ^
+hdl/chisel/src/bus/TlulSocketM1.scala:18: warning: Unused import
+import chisel3.util._
+                    ^
+hdl/chisel/src/bus/Axi2TLUL.scala:45: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+hdl/chisel/src/bus/TLUL2Axi.scala:46: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+hdl/chisel/src/bus/TlulFifoAsync.scala:36: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+hdl/chisel/src/bus/TlulFifoSync.scala:36: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+hdl/chisel/src/bus/TlulSocket1N.scala:44: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+hdl/chisel/src/bus/TlulSocketM1.scala:60: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+hdl/chisel/src/bus/TlulSocketM1.scala:67: warning: @nowarn annotation does not suppress any warnings
+@nowarn
+ ^
+error: No warnings can be incurred under -Werror.
+13 warnings
+1 error
+Build failed
+java.lang.RuntimeException: Build failed
+	at io.bazel.rulesscala.scalac.ScalacInvoker.invokeCompiler(ScalacInvoker.java:55)
+	at io.bazel.rulesscala.scalac.ScalacWorker.compileScalaSources(ScalacWorker.java:257)
+	at io.bazel.rulesscala.scalac.ScalacWorker.work(ScalacWorker.java:73)
+	at io.bazel.rulesscala.worker.Worker.persistentWorkerMain(Worker.java:86)
+	at io.bazel.rulesscala.worker.Worker.workerMain(Worker.java:39)
+	at io.bazel.rulesscala.scalac.ScalacWorker.main(ScalacWorker.java:33)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,781 / 8,782] 17 / 304 tests, 16 failed; [Prepa] Linking external/verilator/verilator_bin
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,781 / 8,782] 17 / 304 tests, 16 failed; Linking external/verilator/verilator_bin; 1s processwrapper-sandbox
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,782 / 8,794] 292 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:instruction_buffer_test; 1s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,782 / 8,794] 292 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:instruction_buffer_test; 11s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,782 / 8,794] 293 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:instruction_buffer_test; 27s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,783 / 8,794] 293 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:instruction_buffer_test; 28s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,783 / 8,794] 293 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:instruction_buffer_test; 38s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,783 / 8,794] 294 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:instruction_buffer_test; 53s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,784 / 8,794] 294 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:instruction_buffer_test; 55s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,784 / 8,794] 294 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:instruction_buffer_test; 64s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,784 / 8,794] 294 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:instruction_buffer_test; 94s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,784 / 8,794] 295 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:instruction_buffer_test; 97s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,785 / 8,794] 296 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:instruction_buffer_test; 98s processwrapper-sandbox ... (8 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,787 / 8,794] 297 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:circular_buffer_multi_test; 99s processwrapper-sandbox ... (7 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,787 / 8,794] 298 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:circular_buffer_multi_test; 100s processwrapper-sandbox ... (7 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,788 / 8,794] 298 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:circular_buffer_multi_test; 102s processwrapper-sandbox ... (6 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,788 / 8,794] 298 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:circular_buffer_multi_test; 111s processwrapper-sandbox ... (6 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,788 / 8,794] 299 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:circular_buffer_multi_test; 115s processwrapper-sandbox ... (6 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,789 / 8,794] 299 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:circular_buffer_multi_test; 117s processwrapper-sandbox ... (5 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,789 / 8,794] 300 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:circular_buffer_multi_test; 120s processwrapper-sandbox ... (5 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,790 / 8,794] 300 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:fma_test; 121s processwrapper-sandbox ... (4 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,790 / 8,794] 300 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:fma_test; 131s processwrapper-sandbox ... (4 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,790 / 8,794] 301 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:fma_test; 136s processwrapper-sandbox ... (4 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,791 / 8,794] 301 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:fma_test; 137s processwrapper-sandbox ... (3 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,791 / 8,794] 302 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:fma_test; 145s processwrapper-sandbox ... (3 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,792 / 8,794] 302 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:fma_test; 146s processwrapper-sandbox ... (2 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,792 / 8,794] 303 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:fma_test; 149s processwrapper-sandbox ... (2 actions running)
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,793 / 8,794] 303 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:fma_test; 151s processwrapper-sandbox
+Analyzing: 2440 targets (404 packages loaded, 25118 targets configured)
+[8,793 / 8,794] 304 / 304 tests, 291 failed; Testing //hdl/chisel/src/common:fma_test; 159s processwrapper-sandbox
+INFO: Analyzed 2440 targets (404 packages loaded, 25118 targets configured).
+WARNING: errors encountered while analyzing target '//fpga:check_pins_test', it will not be built.
+Analysis failed
+INFO: Analysis succeeded for only 1829 of 2440 top-level targets
+INFO: Found 2135 targets and 304 test targets...
+INFO: Elapsed time: 618.644s, Critical Path: 209.45s
+INFO: 1054 processes: 108 internal, 931 processwrapper-sandbox, 15 worker.
+ERROR: Build did NOT complete successfully
+FAILED: 
+//fpga:flash_tool_test                                          (cached) PASSED in 2.5s
+//fpga:clk_sim_test                                             FAILED TO BUILD
+//fpga:dma_sim_test                                             FAILED TO BUILD
+//fpga:spi_flash_sim_test                                       FAILED TO BUILD
+//fpga:trivial_pass_highmem_sim_test                            FAILED TO BUILD
+//fpga:trivial_pass_sim_test                                    FAILED TO BUILD
+(Skipping other failed to build tests)
+//hdl/chisel/src/common:aligner_test                                     PASSED in 44.5s
+//hdl/chisel/src/common:async_queue_smoke_test                           PASSED in 17.7s
+//hdl/chisel/src/common:circular_buffer_multi_test                       PASSED in 120.5s
+//hdl/chisel/src/common:common_test                                      PASSED in 27.1s
+//hdl/chisel/src/common:fifo_state_test                                  PASSED in 118.0s
+//hdl/chisel/src/common:fma_test                                         PASSED in 159.8s
+//hdl/chisel/src/common:fp_test                                          PASSED in 100.7s
+//hdl/chisel/src/common:index_allocator_test                             PASSED in 52.4s
+//hdl/chisel/src/common:instruction_buffer_test                          PASSED in 98.3s
+//hdl/chisel/src/common:library_test                                     PASSED in 136.0s
+//hdl/chisel/src/common:scatter_gather_test                              PASSED in 53.8s
+//hdl/chisel/src/common:sv_generation_utils_test                         PASSED in 97.2s
+
+Executed 12 out of 304 tests: 13 tests pass and 291 fail to build.
+There were tests whose specified size is too big. Use the --test_verbose_timeout_warnings command line option to see which ones these are.
+INFO: Build Event Protocol files produced successfully.

@@ -1,0 +1,105 @@
+{
+    "id": "a9c7d09a-16bd-41a1-adb2-8683b98e08e4",
+    "task_name": "coralnpu",
+    "trial_name": "coralnpu__gf5oDaY",
+    "trial_uri": "file:///data/saketh/research/cs3220-research/rtl-universe/jobs/2026-04-24__17-08-06/coralnpu__gf5oDaY",
+    "task_id": {
+        "path": "minrepro_task/coralnpu"
+    },
+    "source": null,
+    "task_checksum": "81daa8943d92c63554f6c8c8057345d266903ec6322d4829b3b36ce773f46b13",
+    "config": {
+        "task": {
+            "path": "minrepro_task/coralnpu",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "coralnpu__gf5oDaY",
+        "trials_dir": "jobs/2026-04-24__17-08-06",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "claude-code",
+            "import_path": null,
+            "model_name": "sonnet",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "233183bd-c492-460e-9a11-8ee11d39e3b3"
+    },
+    "agent_info": {
+        "name": "claude-code",
+        "version": "2.1.119",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": 7978309,
+        "n_cache_tokens": 7692679,
+        "n_output_tokens": 51698,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.042623
+        }
+    },
+    "exception_info": {
+        "exception_type": "AgentTimeoutError",
+        "exception_message": "Agent execution timed out after 10800.0 seconds",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py\", line 507, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/home/saketh/.cache/uv/archive-v0/cBILrIZwwGYTrz53BSvBS/lib/python3.13/site-packages/harbor/agents/installed/base.py\", line 42, in wrapper\n    return await fn(self, instruction, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/saketh/.cache/uv/archive-v0/cBILrIZwwGYTrz53BSvBS/lib/python3.13/site-packages/harbor/agents/installed/claude_code.py\", line 1126, in run\n    await self.exec_as_agent(\n    ...<10 lines>...\n    )\n  File \"/home/saketh/.cache/uv/archive-v0/cBILrIZwwGYTrz53BSvBS/lib/python3.13/site-packages/harbor/agents/installed/base.py\", line 366, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n        environment, command, env=env, cwd=cwd, timeout_sec=timeout_sec\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/saketh/.cache/uv/archive-v0/cBILrIZwwGYTrz53BSvBS/lib/python3.13/site-packages/harbor/agents/installed/base.py\", line 313, in _exec\n    result = await environment.exec(\n             ^^^^^^^^^^^^^^^^^^^^^^^\n    ...<5 lines>...\n    )\n    ^\n  File \"/home/saketh/.cache/uv/archive-v0/cBILrIZwwGYTrz53BSvBS/lib/python3.13/site-packages/harbor/environments/docker/docker.py\", line 496, in exec\n    return await self._run_docker_compose_command(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        exec_command, check=False, timeout_sec=timeout_sec\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/saketh/.cache/uv/archive-v0/cBILrIZwwGYTrz53BSvBS/lib/python3.13/site-packages/harbor/environments/docker/docker.py\", line 296, in _run_docker_compose_command\n    stdout_bytes, stderr_bytes = await process.communicate()\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py\", line 201, in communicate\n    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py\", line 181, in _read_stream\n    output = await stream.read()\n             ^^^^^^^^^^^^^^^^^^^\n  File \"/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py\", line 723, in read\n    block = await self.read(self._limit)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py\", line 730, in read\n    await self._wait_for_data('read')\n  File \"/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py\", line 539, in _wait_for_data\n    await self._waiter\nasyncio.exceptions.CancelledError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/saketh/.cache/uv/archive-v0/cBILrIZwwGYTrz53BSvBS/lib/python3.13/site-packages/harbor/trial/trial.py\", line 360, in _execute_agent\n    await asyncio.wait_for(\n    ...<6 lines>...\n    )\n  File \"/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py\", line 506, in wait_for\n    async with timeouts.timeout(timeout):\n               ~~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/timeouts.py\", line 116, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/saketh/.cache/uv/archive-v0/cBILrIZwwGYTrz53BSvBS/lib/python3.13/site-packages/harbor/trial/trial.py\", line 957, in run\n    await self._execute_agent()\n  File \"/home/saketh/.cache/uv/archive-v0/cBILrIZwwGYTrz53BSvBS/lib/python3.13/site-packages/harbor/trial/trial.py\", line 369, in _execute_agent\n    raise AgentTimeoutError(\n        f\"Agent execution timed out after {self._agent_timeout_sec} seconds\"\n    ) from e\nharbor.trial.trial.AgentTimeoutError: Agent execution timed out after 10800.0 seconds\n",
+        "occurred_at": "2026-04-24T20:08:31.413154"
+    },
+    "started_at": "2026-04-24T21:08:12.186868Z",
+    "finished_at": "2026-04-25T00:19:04.691467Z",
+    "environment_setup": {
+        "started_at": "2026-04-24T21:08:12.564225Z",
+        "finished_at": "2026-04-24T21:08:14.609542Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-04-24T21:08:14.609597Z",
+        "finished_at": "2026-04-24T21:08:31.375361Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-04-24T21:08:31.375478Z",
+        "finished_at": "2026-04-25T00:08:31.398231Z"
+    },
+    "verifier": {
+        "started_at": "2026-04-25T00:08:31.636840Z",
+        "finished_at": "2026-04-25T00:18:50.776986Z"
+    },
+    "step_results": null
+}
