@@ -14,8 +14,8 @@ FROM debian:bookworm AS base
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
-ARG _UID=1000
-ARG _GID=1000
+ARG _UID=1005
+ARG _GID=1005
 ARG _USERNAME=builder
 ENV HOME=/home/${_USERNAME}
 
@@ -91,6 +91,16 @@ FROM warm AS final
 
 COPY --chown=builder:builder skeleton/ /app/
 RUN set -eux; \
+    # ── Scrub warm-build artifacts that leak the green implementation ──
+    # Sandbox stash: contains generated Verilog from the warm Chisel build
+    find ~/.cache/bazel -path "*/sandbox/sandbox_stash" -type d -exec rm -rf {} + 2>/dev/null || true; \
+    # Test logs from the warm run (show pass/fail patterns, assertion messages)
+    find ~/.cache/bazel -path "*/testlogs" -type d -exec rm -rf {} + 2>/dev/null || true; \
+    # Project-specific build outputs (generated .sv, .jar, runfiles) — keep external tool binaries
+    for d in hdl tests sw examples fpga build coralnpu_test_utils hw_sim; do \
+        find ~/.cache/bazel -path "*/bin/$d" -type d -exec rm -rf {} + 2>/dev/null || true; \
+    done; \
+    # ── Set up the skeleton workspace ──
     cd /app; \
     git init -q; \
     git add -A; \

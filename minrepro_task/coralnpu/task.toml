@@ -5,8 +5,8 @@ version = "1.0"
 timeout_sec = 3600.0
 
 [agent]
-# Agent has up to 3 h to implement the missing RTL/firmware.
-timeout_sec = 10800.0
+# Agent has up to 10 h to implement the missing RTL/firmware.
+timeout_sec = 36000.0
 
 [environment]
 # Image bakes ~30 GB of bazel cache and a host-compiled Verilator + firtool.
