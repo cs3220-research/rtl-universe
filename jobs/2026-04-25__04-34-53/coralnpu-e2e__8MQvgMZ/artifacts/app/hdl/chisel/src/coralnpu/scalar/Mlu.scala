@@ -54,9 +54,9 @@ class Mlu(p: Parameters) extends Module {
   val selAddr = selReq.bits.addr
 
   // ── Combinational multiply ────────────────────────────────────────────────
-  val product64s  = (selRs1.asSInt * selRs2.asSInt).asUInt  // signed × signed
-  val product64u  = selRs1 * selRs2                          // unsigned × unsigned
-  val product64su = (selRs1.asSInt * selRs2).asUInt          // signed × unsigned
+  val product64s  = (selRs1.asSInt * selRs2.asSInt).asUInt                              // signed × signed
+  val product64u  = selRs1 * selRs2                                                      // unsigned × unsigned
+  val product64su = (selRs1.asSInt * Cat(0.U(1.W), selRs2).asSInt).asUInt               // signed × unsigned
 
   val mulResult = Wire(UInt(32.W))
   mulResult := 0.U
@@ -76,7 +76,11 @@ class Mlu(p: Parameters) extends Module {
   // Capture when a valid request comes in and output register is empty/consumed
   val capture = selValid && (!resultValid || io.rd.fire)
 
-  when (io.rd.fire && !selValid) {
+  // Delay the "consumed" signal by one cycle so the result is visible for the
+  // full cycle in which rd.fire is asserted (consumer can sample in that cycle).
+  val consumed = RegNext(io.rd.fire && !selValid, false.B)
+
+  when (consumed && !capture) {
     resultValid := false.B
   } .elsewhen (capture) {
     resultValid := true.B

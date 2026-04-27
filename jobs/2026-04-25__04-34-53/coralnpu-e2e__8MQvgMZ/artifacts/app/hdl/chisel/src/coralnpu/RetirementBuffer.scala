@@ -17,12 +17,6 @@ package coralnpu
 import chisel3._
 import chisel3.util._
 
-/** Retirement buffer configuration constants. */
-object RetirementBufferConfig {
-  val size     = 8
-  val idxWidth = 4  // log2(size) + 1
-}
-
 /** Retirement buffer — tracks in-flight instructions from dispatch to commit.
   *
   * Stores (pc, inst) pairs indexed by a small circular buffer, allowing
@@ -87,6 +81,7 @@ class RetirementBuffer(p: Parameters, size: Int = RetirementBufferConfig.size)
   }
 
   for (i <- 0 until size) {
+    io.entries(i).valid := valid(i)
     io.entries(i).pc   := pcMem(i)
     io.entries(i).inst := instMem(i)
     io.entries(i).idx  := i.U

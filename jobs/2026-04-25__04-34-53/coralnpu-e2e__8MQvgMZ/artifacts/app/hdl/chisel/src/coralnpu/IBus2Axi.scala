@@ -46,26 +46,36 @@ class IBus2Axi(p: Parameters) extends Module {
   val addrReg = Reg(UInt(p.addrBits.W))
 
   // AXI write channel: unused, tie off
-  io.axi.write.addr.valid       := false.B
-  io.axi.write.addr.bits.id    := 0.U
-  io.axi.write.addr.bits.addr  := 0.U
-  io.axi.write.addr.bits.len   := 0.U
-  io.axi.write.addr.bits.size  := 2.U
-  io.axi.write.addr.bits.burst := 1.U
-  io.axi.write.data.valid       := false.B
-  io.axi.write.data.bits.data  := 0.U
-  io.axi.write.data.bits.strb  := 0.U
-  io.axi.write.data.bits.last  := false.B
-  io.axi.write.resp.ready      := false.B
+  io.axi.write.addr.valid        := false.B
+  io.axi.write.addr.bits.id     := 0.U
+  io.axi.write.addr.bits.addr   := 0.U
+  io.axi.write.addr.bits.len    := 0.U
+  io.axi.write.addr.bits.size   := 2.U
+  io.axi.write.addr.bits.burst  := 1.U
+  io.axi.write.addr.bits.prot   := 0.U
+  io.axi.write.addr.bits.lock   := 0.U
+  io.axi.write.addr.bits.cache  := 0.U
+  io.axi.write.addr.bits.qos    := 0.U
+  io.axi.write.addr.bits.region := 0.U
+  io.axi.write.data.valid        := false.B
+  io.axi.write.data.bits.data   := 0.U
+  io.axi.write.data.bits.strb   := 0.U
+  io.axi.write.data.bits.last   := false.B
+  io.axi.write.resp.ready       := false.B
 
   // AXI read defaults
-  io.axi.read.addr.valid        := false.B
-  io.axi.read.addr.bits.id     := 0.U
-  io.axi.read.addr.bits.addr   := addrReg
-  io.axi.read.addr.bits.len    := 0.U
-  io.axi.read.addr.bits.size   := log2Ceil(p.fetchDataBits / 8).U
-  io.axi.read.addr.bits.burst  := 1.U  // INCR
-  io.axi.read.data.ready       := false.B
+  io.axi.read.addr.valid         := false.B
+  io.axi.read.addr.bits.id      := 0.U
+  io.axi.read.addr.bits.addr    := addrReg
+  io.axi.read.addr.bits.len     := 0.U
+  io.axi.read.addr.bits.size    := log2Ceil(p.fetchDataBits / 8).U
+  io.axi.read.addr.bits.burst   := 1.U  // INCR
+  io.axi.read.addr.bits.prot    := 0.U
+  io.axi.read.addr.bits.lock    := 0.U
+  io.axi.read.addr.bits.cache   := 0.U
+  io.axi.read.addr.bits.qos     := 0.U
+  io.axi.read.addr.bits.region  := 0.U
+  io.axi.read.data.ready        := false.B
 
   // IBus defaults
   io.ibus.ready := false.B

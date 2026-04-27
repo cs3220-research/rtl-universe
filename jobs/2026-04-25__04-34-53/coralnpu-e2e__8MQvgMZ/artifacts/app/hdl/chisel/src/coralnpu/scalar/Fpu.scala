@@ -16,6 +16,8 @@ package coralnpu
 
 import chisel3._
 import chisel3.util._
+import chisel3.experimental.ExtModule
+import chisel3.util.HasExtModuleInline
 import common.Fp32
 
 // BlackBox FPU implementation using SystemVerilog shortreal arithmetic.
@@ -32,7 +34,7 @@ import common.Fp32
 //
 // The module registers all outputs on the positive clock edge, providing
 // exactly 1 cycle of pipeline latency.
-class FpuBB extends BlackBox with HasExtModuleInline {
+class FpuBB extends ExtModule with HasExtModuleInline {
   val io = IO(new Bundle {
     val clk      = Input(Clock())
     val rst      = Input(Bool())

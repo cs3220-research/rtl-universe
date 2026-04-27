@@ -15,7 +15,7 @@
 package coralnpu
 
 import chisel3._
-import chisel3.util._
+import chisel3.experimental.IntParam
 
 /** BlackBox wrapping the parameterizable single-port SRAM (hdl/verilog/Sram.v).
   *
@@ -39,12 +39,19 @@ class Sram(val depth: Int, val dataWidth: Int, val baseAddr: Long = 0L)
   private val addrWidth = chisel3.util.log2Ceil(depth)
 
   val io = IO(new Bundle {
-    val clk   = Input(Clock())
-    val en    = Input(Bool())
-    val write = Input(Bool())
-    val addr  = Input(UInt(addrWidth.W))
-    val wdata = Input(UInt(dataWidth.W))
-    val wmask = Input(UInt((dataWidth / 8).W))
-    val rdata = Output(UInt(dataWidth.W))
+    val clk      = Input(Clock())
+    val en       = Input(Bool())
+    val write    = Input(Bool())
+    val addr     = Input(UInt(addrWidth.W))
+    val wdata    = Input(UInt(dataWidth.W))
+    val wmask    = Input(UInt((dataWidth / 8).W))
+    val rdata    = Output(UInt(dataWidth.W))
+    val bd_en    = Input(Bool())
+    val bd_addr  = Input(UInt(addrWidth.W))
+    val bd_rdata = Output(UInt(dataWidth.W))
+    val bd_wen   = Input(Bool())
+    val bd_waddr = Input(UInt(addrWidth.W))
+    val bd_wdata = Input(UInt(dataWidth.W))
+    val bd_wmask = Input(UInt((dataWidth / 8).W))
   })
 }

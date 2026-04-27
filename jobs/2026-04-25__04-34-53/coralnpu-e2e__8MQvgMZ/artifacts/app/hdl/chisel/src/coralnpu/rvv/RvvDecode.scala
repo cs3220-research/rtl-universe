@@ -56,7 +56,7 @@ object RvvS1DecodeInstruction {
     out.bits.vs1         := vs1_rs1
     out.bits.vs2         := vs2
     out.bits.vm          := vm
-    out.bits.imm         := vs1_rs1.asSInt
+    out.bits.imm         := Cat(vs1_rs1(4), vs1_rs1(4, 0)).asSInt
     out.bits.rs1         := vs1_rs1
     out.bits.funct3      := funct3
     out.bits.isMemory    := false.B

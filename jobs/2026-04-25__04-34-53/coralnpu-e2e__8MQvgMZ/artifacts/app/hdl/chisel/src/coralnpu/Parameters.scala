@@ -31,7 +31,7 @@ class Parameters {
   // Fetch / instruction-path width
   // ---------------------------------------------------------------------------
   /** Width (in bits) of the instruction-fetch data bus. */
-  var fetchDataBits: Int = 32
+  var fetchDataBits: Int = 256
 
   // ---------------------------------------------------------------------------
   // Address space
@@ -73,6 +73,13 @@ class Parameters {
   // ---------------------------------------------------------------------------
   // Derived helpers
   // ---------------------------------------------------------------------------
+
+  /** Data-bus width (bits) for the secondary AXI-2 interface; mirrors lsuDataBits. */
+  def axi2DataBits: Int = lsuDataBits
+
+  /** Address width (bits) for the secondary AXI-2 interface; mirrors addrBits. */
+  def axi2AddrBits: Int = addrBits
+
   /** Byte width of the LSU data bus. */
   def lsuDataBytes: Int = lsuDataBits / 8
 

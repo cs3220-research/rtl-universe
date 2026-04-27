@@ -73,6 +73,12 @@ class CoreAxi(p: Parameters, val topName: String = "CoreMiniAxi")
   val io_dm_req = IO(Flipped(Decoupled(new DebugModuleReq)))
   val io_dm_rsp = IO(Decoupled(new DebugModuleRsp))
 
+  // ── Comprehensive debug port ────────────────────────────────────────────────
+  val io_debug = IO(new CoreDebugBundle(p))
+
+  // ── Comprehensive debug port ────────────────────────────────────────────────
+  val io_debug = IO(new CoreDebugBundle(p))
+
   // ── Clock gate + reset synchroniser ───────────────────────────────────────
   val cg      = Module(new ClockGate)
   val rstSync = Module(new RstSync)
@@ -99,6 +105,7 @@ class CoreAxi(p: Parameters, val topName: String = "CoreMiniAxi")
 
     core.io.dm_req <> io_dm_req
     core.io.dm_rsp <> io_dm_rsp
+    core.io.debug  <> io_debug
 
     io_wfi    := core.io.wfi
     io_halted := core.io.halted
@@ -113,7 +120,7 @@ class CoreAxi(p: Parameters, val topName: String = "CoreMiniAxi")
   *
   * Parses command-line flags and emits SystemVerilog plus a C++ parameter header.
   */
-class EmitCore extends App {
+object EmitCore extends App {
   val p = new Parameters
 
   var moduleName = "CoreMini"
@@ -127,6 +134,7 @@ class EmitCore extends App {
     key match {
       case "moduleName"         => moduleName          = value
       case "outputDir"          => outputDir           = value
+      case "target-dir"         => outputDir           = value
       case "enableFloat"        => p.enableFloat        = value.toLowerCase != "false"
       case "enableRvv"          => p.enableRvv          = value.toLowerCase != "false"
       case "enableFetchL0"      => p.enableFetchL0      = value.toLowerCase != "false"
@@ -146,12 +154,22 @@ class EmitCore extends App {
     if (p.useTlul)      () => new CoreTlul(p, moduleName + "Tlul")
     else                () => new CoreAxi(p, moduleName + "Axi")
 
-  // Emit SystemVerilog
-  circt.stage.ChiselStage.emitSystemVerilogFile(
+  val topName = if (p.useTlul) moduleName + "Tlul" else moduleName + "Axi"
+  val svName  = s"$topName.sv"
+  val zipName = s"$topName.zip"
+
+  // Emit SystemVerilog as a single combined file (blackboxes ClockGate/RstSync/Sram excluded)
+  val svContent = _root_.circt.stage.ChiselStage.emitSystemVerilog(
     topModule(),
-    Array("--target-dir", outputDir),
-    firtoolOpts = Array("-disable-all-randomization", "-strip-debug-info")
+    firtoolOpts = Array(
+      "-disable-all-randomization",
+      "-strip-debug-info",
+      "--default-layer-specialization=disable",
+    )
   )
+  val svWriter = new java.io.FileWriter(s"$outputDir/$svName")
+  svWriter.write(svContent)
+  svWriter.close()
 
   // Emit C++ parameter header
   val hdrContent =
@@ -170,11 +188,22 @@ class EmitCore extends App {
 #define KP_rvvVlen                  128
 #define KP_retirementBufferSize     ${RetirementBufferConfig.size}
 #define KP_retirementBufferIdxWidth ${RetirementBufferConfig.idxWidth}
+#define KP_itcmSizeKBytes           ${p.itcmSizeBytes / 1024}
+#define KP_dtcmSizeKBytes           ${p.dtcmSizeBytes / 1024}
 
 #endif  // VCORE_PARAMETERS_H_
 """
-  val hdrName = s"V${moduleName}Axi_parameters.h"
+  val hdrName = s"V${topName}_parameters.h"
   val fw = new java.io.FileWriter(s"$outputDir/$hdrName")
   fw.write(hdrContent)
   fw.close()
+
+  // Emit zip containing the generated SV file (required by chisel_cc_library genrule)
+  val svBytes = java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(s"$outputDir/$svName"))
+  val zos = new java.util.zip.ZipOutputStream(
+    new java.io.FileOutputStream(s"$outputDir/$zipName"))
+  zos.putNextEntry(new java.util.zip.ZipEntry(svName))
+  zos.write(svBytes)
+  zos.closeEntry()
+  zos.close()
 }

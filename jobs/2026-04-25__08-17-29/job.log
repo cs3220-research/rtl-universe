@@ -52,3 +52,6 @@ Check `rules/` for the project-specific bazel rules (`chisel.bzl`,
 `coco_tb.bzl`, `coralnpu_v2.bzl`) — BUILD files already reference the targets
 you need to produce.
 ' 2>&1 </dev/null | tee /logs/agent/claude-code.txt
+No Claude Code session directory found
+Exception AgentTimeoutError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached

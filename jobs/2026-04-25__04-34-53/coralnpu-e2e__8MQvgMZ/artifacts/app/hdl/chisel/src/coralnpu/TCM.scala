@@ -63,15 +63,20 @@ class TCM(val sizeBytes: Int, val baseAddr: Long = 0L) extends Module {
 
   val sram = Module(new SramNx128(sizeBytes, baseAddr))
 
-  // CPU wins when active; otherwise fall through to back-door.
-  val cpuActive = io.cpu.en
-  sram.io.valid := Mux(cpuActive, io.cpu.en,    io.backdoor.en)
-  sram.io.write := Mux(cpuActive, io.cpu.we,    io.backdoor.we)
-  sram.io.addr  := Mux(cpuActive, io.cpu.addr,  io.backdoor.addr)(byteAddrWidth - 1, log2Ceil(dataBytes))
-  sram.io.wdata := Mux(cpuActive, io.cpu.wdata, io.backdoor.wdata)
-  sram.io.wmask := Mux(cpuActive, io.cpu.wmask, io.backdoor.wmask)
+  // CPU is the sole user of the main SRAM port (reads and writes).
+  sram.io.valid := io.cpu.en
+  sram.io.write := io.cpu.we
+  sram.io.addr  := io.cpu.addr(byteAddrWidth - 1, log2Ceil(dataBytes))
+  sram.io.wdata := io.cpu.wdata
+  sram.io.wmask := io.cpu.wmask
+  io.cpu.rdata  := sram.io.rdata
 
-  // Read data is broadcast to both ports; the caller knows which one is active.
-  io.cpu.rdata      := sram.io.rdata
-  io.backdoor.rdata := sram.io.rdata
+  // Backdoor uses independent DPI ports so it never conflicts with the CPU.
+  sram.io.bd_en    := io.backdoor.en && !io.backdoor.we
+  sram.io.bd_addr  := io.backdoor.addr(byteAddrWidth - 1, log2Ceil(dataBytes))
+  io.backdoor.rdata := sram.io.bd_rdata
+  sram.io.bd_wen   := io.backdoor.en && io.backdoor.we
+  sram.io.bd_waddr := io.backdoor.addr(byteAddrWidth - 1, log2Ceil(dataBytes))
+  sram.io.bd_wdata := io.backdoor.wdata
+  sram.io.bd_wmask := io.backdoor.wmask
 }

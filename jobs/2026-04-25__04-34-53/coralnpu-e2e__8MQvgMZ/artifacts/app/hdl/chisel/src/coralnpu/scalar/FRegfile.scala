@@ -67,13 +67,14 @@ class FRegfile(p: Parameters, nReadPorts: Int, nWritePorts: Int) extends Module 
   val scoreboard = RegInit(0.U(32.W))
   io.scoreboard := scoreboard
 
-  // Build a mask of all registers being written this cycle
-  val writeMask = Wire(UInt(32.W))
-  writeMask := 0.U
-  for (wp <- io.write_ports) {
-    when (wp.valid) {
-      writeMask := writeMask | (1.U << wp.addr)
-    }
+  // Build a mask of all registers being written this cycle.
+  // Each write port contributes a one-hot bit; we OR all contributions.
+  val writeMask: UInt = if (nWritePorts == 0) {
+    0.U(32.W)
+  } else {
+    io.write_ports.map { wp =>
+      Mux(wp.valid, UIntToOH(wp.addr, 32), 0.U(32.W))
+    }.reduce(_ | _)
   }
 
   // Next scoreboard: set bits first, then clear written entries

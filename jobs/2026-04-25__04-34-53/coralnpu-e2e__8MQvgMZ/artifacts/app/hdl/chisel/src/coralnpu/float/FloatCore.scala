@@ -15,8 +15,6 @@
 package coralnpu
 
 import chisel3._
-import chisel3.util._
-import common.Fp32
 
 // FloatCore wraps an FPU pipeline.  It accepts commands via a Valid
 // interface and produces results on a Decoupled output.

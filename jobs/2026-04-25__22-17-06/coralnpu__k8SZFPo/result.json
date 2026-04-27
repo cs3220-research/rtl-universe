@@ -1,0 +1,107 @@
+{
+    "id": "c7099b7e-3832-4ca6-8bbb-f0cb0695be1a",
+    "task_name": "coralnpu",
+    "trial_name": "coralnpu__k8SZFPo",
+    "trial_uri": "file:///data/saketh/research/cs3220-research/rtl-universe/jobs/2026-04-25__22-17-06/coralnpu__k8SZFPo",
+    "task_id": {
+        "path": "minrepro_task/coralnpu"
+    },
+    "source": null,
+    "task_checksum": "a0ced5eaa1b71da131eb114d95239f56c96e14e5bb1dbbc6aa05cf79a5c70d59",
+    "config": {
+        "task": {
+            "path": "minrepro_task/coralnpu",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "coralnpu__k8SZFPo",
+        "trials_dir": "jobs/2026-04-25__22-17-06",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "claude-code",
+            "import_path": null,
+            "model_name": "sonnet",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "CLAUDE_CONFIG_DIR": "/home/builder/.claude"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": [
+                "/tmp/harbor-claude-creds:/home/builder/.claude"
+            ],
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "e9f39f38-b1ea-4da2-9718-ca61abbd45ea"
+    },
+    "agent_info": {
+        "name": "claude-code",
+        "version": "2.1.119",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": null,
+    "exception_info": {
+        "exception_type": "NonZeroAgentExitCodeError",
+        "exception_message": "Command failed (exit 137): export PATH=\"$HOME/.local/bin:$PATH\"; claude --verbose --output-format=stream-json --permission-mode=bypassPermissions --print -- '# Coral NPU — Restore the RTL and Firmware\n\nYou are in `/app`, a bazel-based monorepo for the **Coral NPU** — a 32-bit\nRISC-V ML accelerator with a scalar core, a 128-bit SIMD vector pipeline, and a\nmatrix MAC engine (see `doc/overview.md`, `doc/integration_guide.md`, and\n`README.md` for the architecture).\n\nThe **test infrastructure is intact**, but all the code it exercises has been\nremoved:\n\n- Chisel RTL under `hdl/chisel/src/` (test specs `*Test.scala` / `*Spec.scala` kept).\n- Hand-written Verilog under `hdl/verilog/`.\n- Firmware C/C++ under `sw/` (test files kept).\n- `examples/` and the FPGA integration sources under `fpga/ip/`, `fpga/rtl/`, `fpga/sw/`.\n\n**Your task**: restore the missing sources so that `bazel test //...` passes.\n\n## Environment\n\n- `bazel 7.4.1`, `openjdk-17`, `clang-19`, `python3.11`, `srecord`, `xxd`\n  are pre-installed.\n- The bazel output_base is pre-warmed (external repos + Verilator + firtool +\n  TFLite-micro are already built). Your first `bazel test` invocation should\n  start executing cocotb sims within a few minutes rather than rebuilding the\n  toolchain.\n- `/app` is a fresh git repo with one `init` commit — feel free to use it.\n\n## Scoring\n\nReward is **proportional**: `passed_test_targets / total_test_targets` (float\nin `[0, 1]`). Getting a subset of targets to build and pass still earns partial\ncredit. The denominator is the count of `*_test` targets bazel discovers under\n`//...` after default tag filtering (`-vcs,-synthesis,-power`). On a green\ncheckout this is 305.\n\n## Useful commands\n\n```bash\nbazel test //...                              # run everything\nbazel query '\"'\"'kind(\".*_test\", //...)'\"'\"' | wc -l  # list all test targets\nbazel test //hdl/chisel/src/common:fma_test   # run a single Chisel unit test\nbazel test //tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_isa_test  # a single cocotb target\n```\n\nCheck `rules/` for the project-specific bazel rules (`chisel.bzl`,\n`coco_tb.bzl`, `coralnpu_v2.bzl`) — BUILD files already reference the targets\nyou need to produce.\n' 2>&1 </dev/null | tee /logs/agent/claude-code.txt\nstdout: {\"type\":\"system\",\"subtype\":\"init\",\"cwd\":\"/app\",\"session_id\":\"864eadbd-0d0e-43f2-9f25-47cfe5b667c0\",\"tools\":[\"Task\",\"AskUserQuestion\",\"Bash\",\"CronCreate\",\"CronDelete\",\"CronList\",\"Edit\",\"EnterPlanMode\",\"EnterWorktree\",\"ExitPlanMode\",\"ExitWorktree\",\"Glob\",\"Grep\",\"NotebookEdit\",\"Read\",\"ScheduleWakeup\",\"Skill\",\"TaskOutput\",\"TaskStop\",\"TodoWrite\",\"ToolSearch\",\"WebFetch\",\"WebSearch\",\"Write\",\"mcp__claude_ai_Gmail__create_draft\",\"mcp__claude_ai_Gmail__create_label\",\"mcp__claude_ai_Gmail__get_thread\",\"mcp__claude_ai_Gmail__label_message\",\"mcp__claude_ai_Gmail__label_thread\",\"mcp__claude_ai_Gmail__list_drafts\",\"mcp__claude_ai_Gmail__list_labels\",\"mcp__claude_ai_Gmail__search_threads\",\"mcp__claude_ai_Gmail__unlabel_message\",\"mcp__claude_ai_Gmail__unlabel_thread\",\"mcp__claude_ai_Google_Calendar__create_event\",\"mcp__claude_ai_Google_Calendar__delete_event\",\"mcp__claude_ai_Google_Calendar__get_event\",\"mcp__claude_ai_Google_Calendar__list_calendars\",\"mcp__claude_ai_Google_Calendar__list_events\",\"mcp__ ... [truncated]\nstderr: None",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/home/saketh/.cache/uv/archive-v0/X6YZS5UJaEdv-mgdS80TZ/lib/python3.13/site-packages/harbor/trial/trial.py\", line 957, in run\n    await self._execute_agent()\n  File \"/home/saketh/.cache/uv/archive-v0/X6YZS5UJaEdv-mgdS80TZ/lib/python3.13/site-packages/harbor/trial/trial.py\", line 360, in _execute_agent\n    await asyncio.wait_for(\n    ...<6 lines>...\n    )\n  File \"/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py\", line 507, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/home/saketh/.cache/uv/archive-v0/X6YZS5UJaEdv-mgdS80TZ/lib/python3.13/site-packages/harbor/agents/installed/base.py\", line 42, in wrapper\n    return await fn(self, instruction, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/saketh/.cache/uv/archive-v0/X6YZS5UJaEdv-mgdS80TZ/lib/python3.13/site-packages/harbor/agents/installed/claude_code.py\", line 1126, in run\n    await self.exec_as_agent(\n    ...<10 lines>...\n    )\n  File \"/home/saketh/.cache/uv/archive-v0/X6YZS5UJaEdv-mgdS80TZ/lib/python3.13/site-packages/harbor/agents/installed/base.py\", line 366, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n        environment, command, env=env, cwd=cwd, timeout_sec=timeout_sec\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/saketh/.cache/uv/archive-v0/X6YZS5UJaEdv-mgdS80TZ/lib/python3.13/site-packages/harbor/agents/installed/base.py\", line 329, in _exec\n    raise NonZeroAgentExitCodeError(\n    ...<3 lines>...\n    )\nharbor.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 137): export PATH=\"$HOME/.local/bin:$PATH\"; claude --verbose --output-format=stream-json --permission-mode=bypassPermissions --print -- '# Coral NPU — Restore the RTL and Firmware\n\nYou are in `/app`, a bazel-based monorepo for the **Coral NPU** — a 32-bit\nRISC-V ML accelerator with a scalar core, a 128-bit SIMD vector pipeline, and a\nmatrix MAC engine (see `doc/overview.md`, `doc/integration_guide.md`, and\n`README.md` for the architecture).\n\nThe **test infrastructure is intact**, but all the code it exercises has been\nremoved:\n\n- Chisel RTL under `hdl/chisel/src/` (test specs `*Test.scala` / `*Spec.scala` kept).\n- Hand-written Verilog under `hdl/verilog/`.\n- Firmware C/C++ under `sw/` (test files kept).\n- `examples/` and the FPGA integration sources under `fpga/ip/`, `fpga/rtl/`, `fpga/sw/`.\n\n**Your task**: restore the missing sources so that `bazel test //...` passes.\n\n## Environment\n\n- `bazel 7.4.1`, `openjdk-17`, `clang-19`, `python3.11`, `srecord`, `xxd`\n  are pre-installed.\n- The bazel output_base is pre-warmed (external repos + Verilator + firtool +\n  TFLite-micro are already built). Your first `bazel test` invocation should\n  start executing cocotb sims within a few minutes rather than rebuilding the\n  toolchain.\n- `/app` is a fresh git repo with one `init` commit — feel free to use it.\n\n## Scoring\n\nReward is **proportional**: `passed_test_targets / total_test_targets` (float\nin `[0, 1]`). Getting a subset of targets to build and pass still earns partial\ncredit. The denominator is the count of `*_test` targets bazel discovers under\n`//...` after default tag filtering (`-vcs,-synthesis,-power`). On a green\ncheckout this is 305.\n\n## Useful commands\n\n```bash\nbazel test //...                              # run everything\nbazel query '\"'\"'kind(\".*_test\", //...)'\"'\"' | wc -l  # list all test targets\nbazel test //hdl/chisel/src/common:fma_test   # run a single Chisel unit test\nbazel test //tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_isa_test  # a single cocotb target\n```\n\nCheck `rules/` for the project-specific bazel rules (`chisel.bzl`,\n`coco_tb.bzl`, `coralnpu_v2.bzl`) — BUILD files already reference the targets\nyou need to produce.\n' 2>&1 </dev/null | tee /logs/agent/claude-code.txt\nstdout: {\"type\":\"system\",\"subtype\":\"init\",\"cwd\":\"/app\",\"session_id\":\"864eadbd-0d0e-43f2-9f25-47cfe5b667c0\",\"tools\":[\"Task\",\"AskUserQuestion\",\"Bash\",\"CronCreate\",\"CronDelete\",\"CronList\",\"Edit\",\"EnterPlanMode\",\"EnterWorktree\",\"ExitPlanMode\",\"ExitWorktree\",\"Glob\",\"Grep\",\"NotebookEdit\",\"Read\",\"ScheduleWakeup\",\"Skill\",\"TaskOutput\",\"TaskStop\",\"TodoWrite\",\"ToolSearch\",\"WebFetch\",\"WebSearch\",\"Write\",\"mcp__claude_ai_Gmail__create_draft\",\"mcp__claude_ai_Gmail__create_label\",\"mcp__claude_ai_Gmail__get_thread\",\"mcp__claude_ai_Gmail__label_message\",\"mcp__claude_ai_Gmail__label_thread\",\"mcp__claude_ai_Gmail__list_drafts\",\"mcp__claude_ai_Gmail__list_labels\",\"mcp__claude_ai_Gmail__search_threads\",\"mcp__claude_ai_Gmail__unlabel_message\",\"mcp__claude_ai_Gmail__unlabel_thread\",\"mcp__claude_ai_Google_Calendar__create_event\",\"mcp__claude_ai_Google_Calendar__delete_event\",\"mcp__claude_ai_Google_Calendar__get_event\",\"mcp__claude_ai_Google_Calendar__list_calendars\",\"mcp__claude_ai_Google_Calendar__list_events\",\"mcp__ ... [truncated]\nstderr: None\n",
+        "occurred_at": "2026-04-25T22:18:54.379908"
+    },
+    "started_at": "2026-04-26T02:17:09.373670Z",
+    "finished_at": "2026-04-26T02:18:55.458642Z",
+    "environment_setup": {
+        "started_at": "2026-04-26T02:17:09.581262Z",
+        "finished_at": "2026-04-26T02:17:11.680638Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-04-26T02:17:11.680769Z",
+        "finished_at": "2026-04-26T02:17:28.266223Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-04-26T02:17:28.266474Z",
+        "finished_at": "2026-04-26T02:18:54.376376Z"
+    },
+    "verifier": {
+        "started_at": "2026-04-26T02:18:54.530217Z",
+        "finished_at": "2026-04-26T02:18:54.602484Z"
+    },
+    "step_results": null
+}

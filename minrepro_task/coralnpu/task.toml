@@ -1,12 +1,12 @@
 version = "1.0"
 
 [verifier]
-# Warm-cache bazel test //... is ~10-15 min; allow generous headroom for slow targets.
-timeout_sec = 3600.0
+# E2E cocotb sims can take 100s+ each; 215 targets need ~3h with 8 CPUs.
+timeout_sec = 10800.0
 
 [agent]
-# Agent has up to 10 h to implement the missing RTL/firmware.
-timeout_sec = 36000.0
+# Agent has up to 24 h to implement the missing RTL/firmware.
+timeout_sec = 86400.0
 
 [environment]
 # Image bakes ~30 GB of bazel cache and a host-compiled Verilator + firtool.

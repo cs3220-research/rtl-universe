@@ -17,7 +17,7 @@ package coralnpu
 import chisel3._
 import chisel3.util._
 
-import common.{IDiv, IDivReq}
+import common.IDiv
 
 object DvuOp extends ChiselEnum {
   val DIV, DIVU, REM, REMU = Value

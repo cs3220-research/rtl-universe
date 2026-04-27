@@ -37,7 +37,7 @@ class L1ICache(p: Parameters) extends Module {
 }
 
 /** Chisel emission entry-point for the L1ICache standalone build. */
-class EmitL1ICache extends App {
+object EmitL1ICache extends App {
   val p = new Parameters
   circt.stage.ChiselStage.emitSystemVerilog(new L1ICache(p))
 }

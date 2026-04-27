@@ -24,7 +24,7 @@ class Fetcher(p: Parameters) extends Module {
   val nInst = p.fetchDataBits / 32
 
   val io = IO(new Bundle {
-    val ctrl  = Flipped(Valid(UInt(32.W)))
+    val ctrl  = Flipped(Decoupled(UInt(32.W)))
     val ibus  = new IBusBundle(p.fetchDataBits)
     val fetch = Valid(new Bundle {
       val addr = UInt(32.W)
@@ -36,7 +36,11 @@ class Fetcher(p: Parameters) extends Module {
   val pendingValid = RegInit(false.B)
   val pendingAddr  = RegInit(0.U(32.W))
 
-  when (io.ctrl.valid) {
+  // Accept a new ctrl request when we are idle (not waiting for ibus response)
+  val idle = !pendingValid || (io.ibus.valid && io.ibus.ready)
+  io.ctrl.ready := idle
+
+  when (io.ctrl.fire) {
     pendingValid := true.B
     pendingAddr  := io.ctrl.bits
   } .elsewhen (io.ibus.valid && io.ibus.ready) {
@@ -79,10 +83,10 @@ class FetchControl(p: Parameters) extends Module {
     }))
     val bufferRequest = new Bundle {
       val nValid = Output(UInt(4.W))
-      val nReady = Input(UInt(4.W))
+      val nReady = Input(UInt(5.W))
     }
-    val bufferSpaces = Input(UInt(4.W))
-    val csr          = new CsrReadPort
+    val bufferSpaces = Input(UInt(5.W))
+    val csr          = Input(new CsrReadPort)
     val branch       = Flipped(Valid(UInt(32.W)))
   })
 
@@ -118,7 +122,7 @@ class FetchControl(p: Parameters) extends Module {
   def isJal(inst: UInt): Bool = inst(6,0) === "b1101111".U(7.W)
 
   // Find index of first JAL in the fetch group (priority: lower index wins)
-  val jalIdx = Wire(UInt(4.W))
+  val jalIdx = Wire(UInt(log2Ceil(nInst + 1).W))
   jalIdx := nInst.U
   for (i <- (nInst-1) to 0 by -1) {
     when (isJal(io.fetchData.bits.inst(i))) {
@@ -126,7 +130,9 @@ class FetchControl(p: Parameters) extends Module {
     }
   }
   val hasJal = jalIdx < nInst.U
-  val nFetch  = Mux(hasJal, jalIdx +& 1.U, nInst.U)(3,0)
+  // nFetch: number of instructions from this group to send (1..nInst)
+  val nFetch = Wire(UInt(log2Ceil(nInst + 1).W))
+  nFetch := Mux(hasJal, jalIdx + 1.U, nInst.U)
 
   // ── Backpressure ─────────────────────────────────────────────────────────
   // Can issue a new fetch only if the buffer has room for an entire fetch group
@@ -139,17 +145,21 @@ class FetchControl(p: Parameters) extends Module {
   //  - branch is not valid this cycle either
   val dataGood = io.fetchData.valid && !branchActive && !io.branch.valid
 
-  val nToSend = Wire(UInt(4.W))
+  // nValid: clamp to what the buffer can accept this cycle
+  val nToSend = Wire(UInt(log2Ceil(nInst + 1).W))
   nToSend := 0.U
   when (dataGood) {
-    nToSend := Mux(io.bufferRequest.nReady < nFetch, io.bufferRequest.nReady, nFetch)(3,0)
+    nToSend := Mux(io.bufferRequest.nReady < nFetch, io.bufferRequest.nReady, nFetch)
   }
-  io.bufferRequest.nValid := nToSend
+  io.bufferRequest.nValid := nToSend(3,0)
 
   // ── Advance PC after data consumed ─────────────────────────────────────────
   when (dataGood && !branchResolve) {
-    // Advance nextPC past the fetched group
-    nextPC := io.fetchData.bits.addr + (nFetch << 2)(31,0)
+    // If a JAL is present: next PC = JAL address (branch will redirect later)
+    // Otherwise:           next PC = addr + nFetch * 4 (sequential)
+    nextPC := Mux(hasJal,
+      io.fetchData.bits.addr + (jalIdx << 2),
+      io.fetchData.bits.addr + (nFetch << 2).asUInt)
   }
 
   // ── fetchAddr handshake ─────────────────────────────────────────────────────

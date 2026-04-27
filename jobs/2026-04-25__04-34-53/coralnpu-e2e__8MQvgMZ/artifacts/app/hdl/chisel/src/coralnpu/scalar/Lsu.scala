@@ -69,28 +69,25 @@ class Lsu(p: Parameters) extends Module {
 
   // ── Write data replication ─────────────────────────────────────────────────
   // For 32-bit bus: wdata is the word; for wider bus replicate across all lanes
-  private def mkWdata(wdata32: UInt): UInt =
-    if (dataBits == 32) wdata32
-    else {
-      // replicate 32-bit word to fill bus width
-      val nReps = dataBytes / 4
-      VecInit(Seq.fill(nReps)(wdata32)).asUInt
-    }
+  private def mkWdata(wdata32: UInt): UInt = {
+    // Replicate 32-bit word to fill bus width
+    // (mask selects the correct byte lane; replication simplifies hardware)
+    val nReps = dataBytes / 4
+    VecInit(Seq.fill(nReps)(wdata32)).asUInt
+  }
 
   // ── Write mask ────────────────────────────────────────────────────────────
   private def mkWmask(addr: UInt, size: UInt): UInt = {
-    val base = Wire(UInt(4.W))
-    base := MuxCase("b1111".U, Seq(
+    // 4-bit narrow mask (for the 32-bit portion being written)
+    val narrow = Wire(UInt(4.W))
+    narrow := MuxCase("b1111".U, Seq(
       (size === 0.U) -> "b0001".U,
       (size === 1.U) -> "b0011".U
     ))
-    if (dataBytes == 4) base
-    else {
-      // shift the 4-bit mask to the right byte lane
-      val off   = byteOff(addr)
-      val wide  = (base << off)(dataBytes-1, 0)
-      wide
-    }
+    // Shift the narrow mask to the correct byte lane within the bus word
+    val off  = byteOff(addr)
+    val mask = (narrow << off)(dataBytes-1, 0)
+    mask
   }
 
   // ── Determine active request ──────────────────────────────────────────────
@@ -148,9 +145,12 @@ class Lsu(p: Parameters) extends Module {
 
   // Extract 32-bit sub-word from bus return data
   val rawData = io.dbus.rdata
-  val shift   = if (dataBytes == 4) 0.U else
-                  (ldMetaAddr(log2Ceil(dataBytes)-1, 0) ## 0.U(3.W))(4,0)  // byte offset * 8
-  val shifted32 = (rawData >> shift)(31,0)
+  val shifted32 = {
+    // Shift right by (byte_offset * 8) to align the requested sub-word to bit 0
+    val boff  = ldMetaAddr(log2Ceil(dataBytes)-1, 0)   // byte offset within bus word
+    val shift = Cat(boff, 0.U(3.W))                     // bit offset = byte_off * 8
+    (rawData >> shift)(31,0)
+  }
 
   val rdByte = Cat(Fill(24, Mux(ldMetaSignExt, shifted32(7),  false.B)), shifted32(7,0))
   val rdHalf = Cat(Fill(16, Mux(ldMetaSignExt, shifted32(15), false.B)), shifted32(15,0))

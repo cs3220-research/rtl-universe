@@ -56,6 +56,8 @@ class Core(p: Parameters) extends Module {
     val dm_rsp = Decoupled(new DebugModuleRsp)
 
     val te = Input(Bool())
+
+    val debug = new CoreDebugBundle(p)
   })
 
   // ── CSR module ─────────────────────────────────────────────────────────────
@@ -73,6 +75,8 @@ class Core(p: Parameters) extends Module {
   io.fault              := score.io.fault
   score.io.dm_req       <> io.dm_req
   score.io.dm_rsp       <> io.dm_rsp
+  score.io.debug        <> io.debug
+  score.io.debug        <> io.debug
 
   csrMod.io.halted      := score.io.halted
   csrMod.io.fault       := score.io.fault
@@ -190,7 +194,17 @@ class Core(p: Parameters) extends Module {
 
     extPort.readDataAddr.ready  := dbus2axi.io.dbus.ready && !extPort.writeDataAddr.valid
     extPort.writeDataAddr.ready := dbus2axi.io.dbus.ready &&  extPort.writeDataAddr.valid
-    extPort.readData.valid      := dbus2axi.io.dbus.ready && extPort.readDataAddr.valid
+    // Use a register to break the combinational cycle:
+    // extPort.readData.valid must NOT depend on extPort.readDataAddr.valid because
+    // readDataAddr.valid ← address ← regfile_bypass ← dbus.rdata ← source.readData.bits
+    //   ← ports(2).readData.valid ← extPort.readData.valid  (cycle!)
+    val extPendingRead = RegInit(false.B)
+    when(dbus2axi.io.dbus.valid && !dbus2axi.io.dbus.write) {
+      extPendingRead := true.B
+    } .elsewhen(dbus2axi.io.dbus.ready) {
+      extPendingRead := false.B
+    }
+    extPort.readData.valid      := dbus2axi.io.dbus.ready && extPendingRead
     extPort.readData.bits       := dbus2axi.io.dbus.rdata
     fabricMux.io.periBusy(2)   := extPort.readDataAddr.valid || extPort.writeDataAddr.valid
 

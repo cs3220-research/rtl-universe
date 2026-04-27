@@ -33,20 +33,34 @@ class SramNx128(val sizeBytes: Int, val baseAddr: Long = 0L) extends Module {
   private val addrWidth = log2Ceil(numWords)
 
   val io = IO(new Bundle {
-    val valid = Input(Bool())
-    val write = Input(Bool())
-    val addr  = Input(UInt(addrWidth.W))
-    val wdata = Input(UInt(dataBits.W))
-    val wmask = Input(UInt(dataBytes.W))  // byte-enable strobe
-    val rdata = Output(UInt(dataBits.W))
+    val valid    = Input(Bool())
+    val write    = Input(Bool())
+    val addr     = Input(UInt(addrWidth.W))
+    val wdata    = Input(UInt(dataBits.W))
+    val wmask    = Input(UInt(dataBytes.W))  // byte-enable strobe
+    val rdata    = Output(UInt(dataBits.W))
+    val bd_en    = Input(Bool())
+    val bd_addr  = Input(UInt(addrWidth.W))
+    val bd_rdata = Output(UInt(dataBits.W))
+    val bd_wen   = Input(Bool())
+    val bd_waddr = Input(UInt(addrWidth.W))
+    val bd_wdata = Input(UInt(dataBits.W))
+    val bd_wmask = Input(UInt(dataBytes.W))
   })
 
   val sram = Module(new Sram(numWords, dataBits, baseAddr))
-  sram.io.clk   := clock
-  sram.io.en    := io.valid
-  sram.io.write := io.write
-  sram.io.addr  := io.addr
-  sram.io.wdata := io.wdata
-  sram.io.wmask := io.wmask
-  io.rdata      := sram.io.rdata
+  sram.io.clk      := clock
+  sram.io.en       := io.valid
+  sram.io.write    := io.write
+  sram.io.addr     := io.addr
+  sram.io.wdata    := io.wdata
+  sram.io.wmask    := io.wmask
+  io.rdata         := sram.io.rdata
+  sram.io.bd_en    := io.bd_en
+  sram.io.bd_addr  := io.bd_addr
+  io.bd_rdata      := sram.io.bd_rdata
+  sram.io.bd_wen   := io.bd_wen
+  sram.io.bd_waddr := io.bd_waddr
+  sram.io.bd_wdata := io.bd_wdata
+  sram.io.bd_wmask := io.bd_wmask
 }

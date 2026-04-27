@@ -82,13 +82,69 @@ class DispatchDebugInfo extends Bundle {
   val instInst = UInt(32.W)
 }
 
+/** Retirement buffer configuration constants (shared between coralnpu_base and retirement_buffer). */
+object RetirementBufferConfig {
+  val size     = 8
+  val idxWidth = 4  // log2(size) + 1
+}
+
 // Retirement buffer entry debug info
 class RetirementBufferDebugEntry(rvvVlen: Int = 32) extends Bundle {
+  val valid = Bool()
   val pc   = UInt(32.W)
   val inst = UInt(32.W)
-  val idx  = UInt(8.W)
+  val idx  = UInt(RetirementBufferConfig.idxWidth.W)
   val data = UInt(rvvVlen.W)
   val trap = Bool()
+}
+
+// Comprehensive debug IO bundle for CoreDebug
+class CoreDebugBundle(p: Parameters) extends Bundle {
+  val en     = Input(UInt(4.W))
+  val cycles = Output(UInt(32.W))
+  val addr   = Vec(4, Output(UInt(32.W)))
+  val inst   = Vec(4, Output(UInt(32.W)))
+  val dbus   = Output(new Bundle {
+    val valid = Bool()
+    val bits  = new Bundle {
+      val addr  = UInt(32.W)
+      val wdata = UInt(p.lsuDataBits.W)
+      val write = Bool()
+    }
+  })
+  val dispatch          = Vec(4, Output(new DispatchDebugInfo))
+  val regfile_writeAddr = Vec(4, Output(new Bundle {
+    val valid = Bool()
+    val bits  = UInt(5.W)
+  }))
+  val regfile_writeData = Vec(6, Output(new Bundle {
+    val valid = Bool()
+    val bits  = new Bundle {
+      val addr = UInt(5.W)
+      val data = UInt(32.W)
+    }
+  }))
+  val float_writeAddr = Output(new Bundle {
+    val valid = Bool()
+    val bits  = UInt(5.W)
+  })
+  val float_writeData = Vec(2, Output(new Bundle {
+    val valid = Bool()
+    val bits  = new Bundle {
+      val addr = UInt(32.W)
+      val data = UInt(32.W)
+    }
+  }))
+  val rb_inst = Vec(RetirementBufferConfig.size, Output(new Bundle {
+    val valid = Bool()
+    val bits  = new Bundle {
+      val pc   = UInt(32.W)
+      val inst = UInt(32.W)
+      val idx  = UInt(RetirementBufferConfig.idxWidth.W)
+      val data = UInt(32.W)
+      val trap = Bool()
+    }
+  }))
 }
 
 // Memory region type

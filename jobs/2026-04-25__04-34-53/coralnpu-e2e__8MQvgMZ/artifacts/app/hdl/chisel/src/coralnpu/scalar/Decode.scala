@@ -107,10 +107,10 @@ object Decoder {
     val isZbb = Wire(Bool())
     isZbb := false.B
 
-    // Zbb single-source ops (opcode=OP-IMM-like or OP, specific funct7/funct3/rs2)
-    val isCLZ   = (opcode === OPC_OP) && (funct7 === "b0110000".U) && (funct3 === "b001".U) && (rs2 === 0.U)
-    val isCTZ   = (opcode === OPC_OP) && (funct7 === "b0110000".U) && (funct3 === "b001".U) && (rs2 === 1.U)
-    val isCPOP  = (opcode === OPC_OP) && (funct7 === "b0110000".U) && (funct3 === "b001".U) && (rs2 === 2.U)
+    // Zbb single-source ops (all encoded as OP-IMM with specific funct7/funct3/rs2 fields)
+    val isCLZ   = (opcode === OPC_OPIMM) && (funct7 === "b0110000".U) && (funct3 === "b001".U) && (rs2 === 0.U)
+    val isCTZ   = (opcode === OPC_OPIMM) && (funct7 === "b0110000".U) && (funct3 === "b001".U) && (rs2 === 1.U)
+    val isCPOP  = (opcode === OPC_OPIMM) && (funct7 === "b0110000".U) && (funct3 === "b001".U) && (rs2 === 2.U)
     // SEXT.B / SEXT.H (encoded as OP-IMM with funct7=0x30, funct3=0x1)
     val isSEXTB = (opcode === OPC_OPIMM) && (funct7 === "b0110000".U) && (funct3 === "b001".U) && (rs2 === 4.U)
     val isSEXTH = (opcode === OPC_OPIMM) && (funct7 === "b0110000".U) && (funct3 === "b001".U) && (rs2 === 5.U)
@@ -125,7 +125,7 @@ object Decoder {
     val isMIN   = (opcode === OPC_OP) && (funct7 === "b0000101".U) && (funct3 === "b100".U)
     val isMINU  = (opcode === OPC_OP) && (funct7 === "b0000101".U) && (funct3 === "b101".U)
     // Rotate
-    val isROL   = (opcode === OPC_OP)    && (funct7 === "b0110000".U) && (funct3 === "b001".U) && (rs2 =/= 0.U) && (rs2 =/= 1.U) && (rs2 =/= 2.U) && (rs2 =/= 4.U) && (rs2 =/= 5.U)
+    val isROL   = (opcode === OPC_OP) && (funct7 === "b0110000".U) && (funct3 === "b001".U)
     val isROR   = (opcode === OPC_OP)    && (funct7 === "b0110000".U) && (funct3 === "b101".U)
     val isRORI  = (opcode === OPC_OPIMM) && (funct7 === "b0110000".U) && (funct3 === "b101".U)
     // ORC.B and REV8

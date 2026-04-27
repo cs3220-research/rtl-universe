@@ -63,3 +63,6 @@ TARGETS=$(bazel query '"'"'(//tests/cocotb/... except //tests/cocotb/tlul/...) u
 bazel test $TARGETS --keep_going
 ```
 ' 2>&1 </dev/null | tee /logs/agent/claude-code.txt
+Wrote Claude Code trajectory to jobs/2026-04-25__04-34-53/coralnpu-e2e__8MQvgMZ/agent/trajectory.json
+Exception AgentTimeoutError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached

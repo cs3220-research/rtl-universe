@@ -41,7 +41,7 @@ class DBus2AxiV2(p: Parameters) extends Module {
   // -------------------------------------------------------------------------
   // State machine
   // -------------------------------------------------------------------------
-  private object State extends ChiselEnum {
+  object State extends ChiselEnum {
     val sIdle, sWriteAddr, sWriteData, sWriteResp, sReadAddr, sReadData = Value
   }
   import State._
@@ -58,21 +58,31 @@ class DBus2AxiV2(p: Parameters) extends Module {
   // -------------------------------------------------------------------------
   // AXI default tie-offs
   // -------------------------------------------------------------------------
-  io.axi.read.addr.valid        := false.B
-  io.axi.read.addr.bits.id     := 0.U
-  io.axi.read.addr.bits.addr   := addrReg
-  io.axi.read.addr.bits.len    := 0.U
-  io.axi.read.addr.bits.size   := Log2(sizeReg)
-  io.axi.read.addr.bits.burst  := 1.U  // INCR
+  io.axi.read.addr.valid         := false.B
+  io.axi.read.addr.bits.id      := 0.U
+  io.axi.read.addr.bits.addr    := addrReg
+  io.axi.read.addr.bits.len     := 0.U
+  io.axi.read.addr.bits.size    := Log2(sizeReg)
+  io.axi.read.addr.bits.burst   := 1.U  // INCR
+  io.axi.read.addr.bits.prot    := 0.U
+  io.axi.read.addr.bits.lock    := 0.U
+  io.axi.read.addr.bits.cache   := 0.U
+  io.axi.read.addr.bits.qos     := 0.U
+  io.axi.read.addr.bits.region  := 0.U
 
-  io.axi.read.data.ready       := false.B
+  io.axi.read.data.ready        := false.B
 
-  io.axi.write.addr.valid       := false.B
-  io.axi.write.addr.bits.id    := 0.U
-  io.axi.write.addr.bits.addr  := addrReg & ~(sizeReg - 1.U)  // aligned
-  io.axi.write.addr.bits.len   := 0.U
-  io.axi.write.addr.bits.size  := Log2(sizeReg)
-  io.axi.write.addr.bits.burst := 1.U  // INCR
+  io.axi.write.addr.valid        := false.B
+  io.axi.write.addr.bits.id     := 0.U
+  io.axi.write.addr.bits.addr   := addrReg & ~(sizeReg - 1.U)  // aligned
+  io.axi.write.addr.bits.len    := 0.U
+  io.axi.write.addr.bits.size   := Log2(sizeReg)
+  io.axi.write.addr.bits.burst  := 1.U  // INCR
+  io.axi.write.addr.bits.prot   := 0.U
+  io.axi.write.addr.bits.lock   := 0.U
+  io.axi.write.addr.bits.cache  := 0.U
+  io.axi.write.addr.bits.qos    := 0.U
+  io.axi.write.addr.bits.region := 0.U
 
   io.axi.write.data.valid       := false.B
   io.axi.write.data.bits.data  := wdataReg
@@ -152,7 +162,7 @@ class DBus2AxiV2(p: Parameters) extends Module {
 }
 
 /** Chisel emission entry-point for the DBus2AxiV2 standalone build. */
-class EmitDBus2Axi extends App {
+object EmitDBus2Axi extends App {
   val p = new Parameters
-  circt.stage.ChiselStage.emitSystemVerilog(new DBus2AxiV2(p))
+  _root_.circt.stage.ChiselStage.emitSystemVerilog(new DBus2AxiV2(p))
 }

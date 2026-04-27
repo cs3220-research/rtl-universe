@@ -65,10 +65,10 @@ class CoreAxiCSR(p: Parameters) extends Module {
   io.pcStart := pcStartReg
 
   // ---------------------------------------------------------------------------
-  // STATUS register (read-only): [0]=internal, [1]=halted, [2]=fault,
-  //                               [31:4]=coralnpu_csr.value(0) upper bits
+  // STATUS register (read-only): returns coralnpu_csr.value(0) directly.
+  // Bits [2:0] also carry: [0]=internal, [1]=halted, [2]=fault.
   // ---------------------------------------------------------------------------
-  val statusReg = Cat(io.coralnpu_csr.value(0)(31, 3), io.fault, io.halted, io.internal)
+  val statusReg = io.coralnpu_csr.value(0)
 
   // ---------------------------------------------------------------------------
   // AXI slave FSM

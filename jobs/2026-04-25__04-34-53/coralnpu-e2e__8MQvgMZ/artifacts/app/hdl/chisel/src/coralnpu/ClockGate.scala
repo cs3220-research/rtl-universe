@@ -15,7 +15,6 @@
 package coralnpu
 
 import chisel3._
-import chisel3.util._
 
 /** BlackBox referencing the external ClockGate.sv Verilog module.
   *

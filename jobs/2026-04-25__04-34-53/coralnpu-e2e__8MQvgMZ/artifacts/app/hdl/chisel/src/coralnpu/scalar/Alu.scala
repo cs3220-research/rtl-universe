@@ -93,8 +93,9 @@ class Alu(p: Parameters) extends Module {
   }
 
   // CTZ: count trailing zeros – reverse then CLZ
+  // Reversal: put x(31) at bit 0, x(0) at bit 31
   def ctz32(x: UInt): UInt = {
-    val rev = VecInit((0 until 32).map(i => x(i))).asUInt
+    val rev = VecInit((31 to 0 by -1).map(i => x(i))).asUInt
     clz32(rev)
   }
 
@@ -112,11 +113,15 @@ class Alu(p: Parameters) extends Module {
   // ROL / ROR (32-bit)
   def rol32(x: UInt, shamt: UInt): UInt = {
     val s = shamt(4,0)
-    (x << s) | (x >> (32.U - s))
+    val left  = (x << s)(31,0)
+    val right = (x >> (32.U - s))(31,0)
+    left | right
   }
   def ror32(x: UInt, shamt: UInt): UInt = {
     val s = shamt(4,0)
-    (x >> s) | (x << (32.U - s))
+    val right = (x >> s)(31,0)
+    val left  = (x << (32.U - s))(31,0)
+    right | left
   }
 
   val result = Wire(UInt(32.W))
@@ -137,8 +142,8 @@ class Alu(p: Parameters) extends Module {
     is (AluOp.MAXU)  { result := Mux(rs1 > rs2, rs1, rs2)         }
     is (AluOp.MIN)   { result := Mux(rs1.asSInt < rs2.asSInt, rs1, rs2) }
     is (AluOp.MINU)  { result := Mux(rs1 < rs2, rs1, rs2)         }
-    is (AluOp.ROL)   { result := rol32(rs1, rs2)(31,0)             }
-    is (AluOp.ROR)   { result := ror32(rs1, rs2)(31,0)             }
+    is (AluOp.ROL)   { result := rol32(rs1, rs2) }
+    is (AluOp.ROR)   { result := ror32(rs1, rs2) }
   }
 
   // ── Registered output (1-cycle latency) ──────────────────────────────────
