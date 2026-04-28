@@ -93,12 +93,12 @@ Record the **full green test count** — this becomes the scoring denominator.
 **Keep** (stays in skeleton):
 - All test files (`*Test*`, `*Spec*`, `*_test.*`, `*_tb.*`)
 - Test utilities and helpers
-- BUILD files, WORKSPACE, `.bazelrc`
+- Build system config (BUILD files, Makefiles, CMakeLists, `.core` files,
+  `Bender.yml`, WORKSPACE, `.bazelrc`, etc.)
 - Documentation (`doc/`, `README.md`)
-- Bazel rules (`rules/*.bzl`)
-- Third-party dependencies (`third_party/`)
-- Toolchain configs
-- Platform definitions
+- Build rules and scripts (`rules/*.bzl`, `Makefile`, etc.)
+- Third-party / vendored dependencies
+- Toolchain and platform configs
 
 ### 1.4 Estimate Resource Requirements
 
@@ -177,104 +177,142 @@ in `minrepro_task/tools/sync-skeleton.sh`.
 
 ## Phase 3: Create the Dockerfile
 
-The Dockerfile uses a **3-stage build** to pre-warm the build cache:
+### Deciding the Docker Build Strategy
 
-### Stage 1: Base Toolchain
+The Dockerfile needs to accomplish two things: (1) install tools so the agent
+can build and test, and (2) capture the green test count for scoring. Whether
+you also need to **warm a build cache** depends on how the build system works.
 
-Install all build dependencies. For a typical RTL repo:
+A warm stage pre-populates a build cache so the agent's first build reuses
+previously compiled artifacts. This is valuable only when the build system has
+a **content-addressed cache that survives source changes** — where editing one
+`.sv` file recompiles only that module's downstream targets, not the entire
+project. The key question: does the build system's cache key depend on the
+specific file content, or does any source change invalidate everything?
+
+**Warm the cache when:**
+- The cache is keyed per-file or per-action, so unchanged dependencies stay
+  cached even as the agent edits implementation files (e.g., bazel's
+  `output_base`, cmake with ccache)
+- Compiling toolchain dependencies from source is part of the build graph
+  rather than pre-installed via apt (e.g., building Verilator or firtool
+  from source as a bazel external)
+- Rebuilding from cold would waste >10 minutes of agent time
+
+**Skip the warm stage when:**
+- The build system recompiles everything when any source changes (no
+  incremental rebuild), so the warm cache would be immediately invalidated
+- All tools are pre-installed binaries (apt/pip) rather than built during
+  the project build
+- Total cold build time is already fast (<5 min)
+
+### Stage 1: Base Toolchain (always needed)
+
 ```dockerfile
 FROM debian:bookworm AS base
 
-# System packages: build tools, Java (for bazel), Python, HDL tools
 RUN apt-get update && apt-get install -y \
-    build-essential curl git openjdk-17-jdk-headless \
-    python3 python3-pip python3-venv clang lld \
-    <repo-specific-deps> && \
-    # Install bazel (or other build system)
-    ...
+    build-essential curl git python3 python3-pip \
+    <repo-specific-tools> && \
+    rm -rf /var/lib/apt/lists/*
 
 # Create non-root user matching host UID for bind-mount compatibility
 ARG _UID=1005
 ARG _GID=1005
 RUN addgroup --gid ${_GID} builder && \
-    adduser --uid ${_UID} --gid ${_GID} --disabled-password builder
+    adduser --uid ${_UID} --gid ${_GID} --disabled-password builder && \
+    mkdir -p /home/builder/.cache && chown builder:builder /home/builder/.cache
 RUN mkdir -p /logs/verifier && chown -R ${_UID}:${_GID} /logs
 USER builder
 ```
 
 **Important:** Set `_UID` / `_GID` to match the host user that will run
 Harbor. Mismatched UIDs cause permission denied errors on bind-mounted log
-directories.
+directories. Also create `~/.cache` explicitly — some tools (FuseSoC, pip)
+need it and it may not exist for a fresh user.
 
-### Stage 2: Pre-warm Build Cache
+### Capturing the Green Test Count
 
-Copy the full green source and run the complete test suite. This populates
-the build cache so the agent's first build reuses pre-compiled tools
-(Verilator, firtool, TFLM, etc.):
+Whether or not you warm the cache, you need to run the green source to count
+passing tests. Use a temporary build stage:
+
+```dockerfile
+FROM base AS count
+COPY --chown=builder:builder warm_src/ /app/
+COPY --chown=builder:builder count_tests.sh /tmp/count_tests.sh
+RUN chmod +x /tmp/count_tests.sh && /tmp/count_tests.sh
+```
+
+Put the test-counting logic in `count_tests.sh` (a separate script file),
+not inline in the Dockerfile RUN command. Docker `RUN` uses `/bin/sh`, which
+has different escaping rules from bash — `$()` subshells, `grep -oP` Perl
+regex, and loop constructs break in subtle ways when inlined. **Extracting
+complex shell into `.sh` files is the single most important thing you can do
+to avoid Docker build failures.**
+
+### With Warm Cache (3-stage)
+
+When warming is worthwhile, the count stage doubles as the warm stage:
 
 ```dockerfile
 FROM base AS warm
 COPY --chown=builder:builder warm_src/ /app/
-RUN cd /app && \
-    git init -q && git add -A && \
-    git -c user.email=x@x -c user.name=x commit -q -m init && \
-    # Run full build + test to warm cache
-    bazel test //... --keep_going --test_output=errors 2>&1 \
-      | tee /tmp/warm.log | tail -20 || true && \
-    # Capture baseline test set
-    grep -E "^//[^ ]+ +PASSED in " /tmp/warm.log \
-      | awk '{print $1}' | sort -u > /tmp/_all_tests && \
-    wc -l < /tmp/_all_tests > /tmp/_total && \
-    # Clear /app but keep build cache
-    find /app -mindepth 1 -maxdepth 1 -not -name '.cache' \
-      -exec rm -rf {} +
-```
+COPY --chown=builder:builder warm.sh /tmp/warm.sh
+RUN chmod +x /tmp/warm.sh && /tmp/warm.sh
+# warm.sh: runs tests, captures count to /tmp/_total, clears /app but
+# keeps ~/.cache (the build cache)
 
-### Stage 3: Final Image with Hardening
-
-Copy the skeleton and **scrub warm-build artifacts** that could leak the
-green implementation to the agent:
-
-```dockerfile
 FROM warm AS final
 COPY --chown=builder:builder skeleton/ /app/
+COPY --chown=builder:builder harden.sh /tmp/harden.sh
+RUN chmod +x /tmp/harden.sh && /tmp/harden.sh
+```
 
-RUN set -eux; \
-    # ── HARDENING: Scrub warm-build artifacts ──
-    # Sandbox stash: generated Verilog/binaries from warm Chisel build
-    find ~/.cache/bazel -path "*/sandbox/sandbox_stash" -type d \
-      -exec rm -rf {} + 2>/dev/null || true; \
-    # Test logs from warm run (leak pass/fail patterns)
-    find ~/.cache/bazel -path "*/testlogs" -type d \
-      -exec rm -rf {} + 2>/dev/null || true; \
-    # Project-specific build outputs (generated .sv, .jar, .elf)
-    # Keep external tool binaries (Verilator, firtool, etc.)
-    for d in hdl tests sw examples fpga build; do \
-        find ~/.cache/bazel -path "*/bin/$d" -type d \
-          -exec rm -rf {} + 2>/dev/null || true; \
-    done; \
-    # ── Set up skeleton workspace ──
-    cd /app; \
-    git init -q; git add -A; \
-    git -c user.email=x@x -c user.name=x commit -q -m init; \
-    mkdir -p .harbor; \
-    mv /tmp/_all_tests .harbor/all_tests; \
-    mv /tmp/_total .harbor/total_tests
+### Without Warm Cache (2-stage)
 
+When warming adds no value, just count and discard:
+
+```dockerfile
+FROM base AS count
+COPY --chown=builder:builder warm_src/ /app/
+COPY --chown=builder:builder count_tests.sh /tmp/count_tests.sh
+RUN chmod +x /tmp/count_tests.sh && /tmp/count_tests.sh
+
+FROM base AS final
+COPY --chown=builder:builder skeleton/ /app/
+COPY --from=count /tmp/_total /app/.harbor/total_tests
+COPY --from=count /tmp/_all_tests /app/.harbor/all_tests
+RUN cd /app && git init -q && git add -A && \
+    git -c user.email=x@x -c user.name=x commit -q -m init
 WORKDIR /app
 ```
 
-### Why Hardening Matters
+### Hardening: What to Scrub and Why
 
-Without scrubbing, agents will discover and exploit cached build artifacts:
-- **Sandbox stash**: Contains generated Verilog from the warm Chisel build.
-  Agents can read these to reverse-engineer the correct implementation.
-- **Test logs**: Reveal which tests pass/fail and assertion messages.
-- **Build outputs**: Generated `.sv`, `.jar`, compiled `.elf` files from the
-  green source give away the answers.
-- **External deps** (`external/`): These are open-source third-party code
-  (Verilator, TFLite-Micro reference kernels). Kept for build speed; accessing
-  them is borderline but not direct cheating.
+Agents can cheat by reading artifacts from the warm build that encode the
+green implementation. There are three categories of leaky artifacts to
+identify and scrub for **any** build system:
+
+**Category 1: Generated/elaborated source.** Any file the build produces
+that is a transformed representation of the implementation. If deleting the
+green source and rebuilding would regenerate these files, they encode the
+answers. Examples: Chisel→Verilog output, Verilator→C++ elaboration,
+preprocessed RTL file lists, concatenated netlists. Look in the build
+system's output directories for generated source files.
+
+**Category 2: Compiled objects and cached actions.** Binary artifacts from
+compiling the green source: `.o` files, `.a` archives, linked executables,
+simulation binaries, action caches. Less directly useful to agents but
+reveal structure. Look for directories that grow large during the warm build
+and contain files named after project modules.
+
+**Category 3: Logs and metadata.** Test logs, build event logs, coverage
+reports from the warm run. These reveal which tests pass/fail and what
+assertion messages look like. Look for log files created during test execution.
+
+**The hardening rule:** after the warm stage, delete everything in categories
+1–3 while preserving pre-compiled external tools (simulators, compilers, ISS
+binaries) that don't encode project-specific information.
 
 In our testing, an unhardened task scored 95.8% while the same hardened task
 scored ~9% — the difference was almost entirely cache exploitation.
@@ -318,24 +356,34 @@ See `minrepro_task/coralnpu/instruction.md` for a reference.
 
 ### test.sh (Verifier)
 
-The verifier runs after the agent finishes and computes a reward:
+The verifier runs after the agent finishes and computes a reward. Two
+important patterns:
+
+1. **Always `mkdir -p /logs/verifier` at the start.** Harbor bind-mounts
+   this directory from the host at runtime, which can override permissions
+   set during Docker build. Defensive mkdir ensures the directory exists
+   and is writable regardless of mount state.
+
+2. **Put complex parsing logic in a helper script** rather than relying on
+   inline regex. The verifier must parse test output to count passes — this
+   varies by build system. A separate `parse_results.sh` or inline Python
+   is more reliable than fragile grep chains.
 
 ```bash
 #!/bin/bash
 set -euo pipefail
+mkdir -p /logs/verifier
 cd /app
 
-# Run all tests
-bazel test //... --keep_going --test_output=errors 2>&1 \
-  | tee /logs/verifier/bazel.log | tail -20 || true
+# Run all tests (adapt the command to your build system)
+<build-system-test-command> 2>&1 | tee /logs/verifier/test.log || true
 
-# Count passing tests
-PASSED=$(grep -cE "^//[^ ]+ +(\(cached\) )?PASSED in " \
-  /logs/verifier/bazel.log || echo 0)
+# Count passing tests (adapt parsing to your test output format)
+PASSED=$(<parse pass count from /logs/verifier/test.log>)
 TOTAL=$(cat .harbor/total_tests)
 
 # Compute reward
-REWARD=$(python3 -c "print($PASSED / $TOTAL)")
+REWARD=$(python3 -c "print(${PASSED:-0} / ${TOTAL:-1})")
 echo "$REWARD" > /logs/verifier/reward.txt
 ```
 
@@ -449,19 +497,33 @@ uvx harbor run \
 
 ---
 
-## Anti-Cheat Checklist
+## Pre-Ship Checklist
 
-Before shipping a task, verify these hardening measures:
+Before shipping a task, verify:
 
-- [ ] `sandbox/sandbox_stash/` scrubbed in Dockerfile Stage 3
-- [ ] `testlogs/` scrubbed in Dockerfile Stage 3
-- [ ] Project-specific `bin/` outputs scrubbed (generated Verilog, JARs, ELFs)
-- [ ] No green source files remain in the image (check with `find /app`)
-- [ ] `.harbor/` directory only contains test target lists and counts
-- [ ] Docker image doesn't contain the full green commit history
-- [ ] External deps (`external/`) are third-party only, not project code
-- [ ] `warm_src/` is NOT included in the final Docker stage
+**Structural:**
+- [ ] Dockerfile builds without errors
+- [ ] skeleton/ is populated (implementation files zeroed/truncated, tests intact)
+- [ ] Complex shell logic is in `.sh` script files, not inline Dockerfile RUN
+- [ ] Green test count is captured and stored in `.harbor/total_tests`
+
+**Verifier:**
+- [ ] test.sh starts with `mkdir -p /logs/verifier`
+- [ ] test.sh writes reward (float in [0,1]) to `/logs/verifier/reward.txt`
+- [ ] Test-output parsing works for the specific build system's format
+
+**Hardening:**
+- [ ] Category 1 artifacts scrubbed (generated/elaborated source from build)
+- [ ] Category 2 artifacts scrubbed (compiled objects, linked binaries)
+- [ ] Category 3 artifacts scrubbed (test logs, coverage reports)
+- [ ] No green source files remain in the final image
+- [ ] `.harbor/` contains only test target lists and counts
+- [ ] `warm_src/` is NOT in the final Docker stage
 - [ ] Solution script (`solve.sh`) runs on the host, not baked into the image
+
+**Scoring:**
+- [ ] Unsolved skeleton produces reward ~0
+- [ ] Solved (green source restored) produces reward 1.0
 
 ---
 
