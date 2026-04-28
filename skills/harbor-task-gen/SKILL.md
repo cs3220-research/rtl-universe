@@ -405,40 +405,41 @@ docker exec "$CONTAINER_ID" bash -c 'cd /app && git add -A && \
 
 Always create **two variants** for every repo:
 
-1. **`<name>`** — the full task, all tests scored. This is the definitive
-   benchmark. Agents get partial credit for any tests that pass.
+1. **`<name>-full`** — all tests scored. This is the definitive benchmark.
+   Agents get partial credit for any tests that pass.
 
-2. **`<name>-lite`** — a smaller scored subset for faster iteration. This
-   gives quicker signal during development and costs less per run.
+2. **`<name>-e2e`** — only end-to-end / integration tests scored. These are
+   the tests that exercise the system as a whole rather than individual
+   modules in isolation. This variant focuses on whether the agent can produce
+   a working system, not just correct components.
 
-The `-lite` variant uses the same Docker image and skeleton as the full
-variant — only `test.sh` and `instruction.md` differ (they filter which
-tests count toward the score).
+Both variants use the same Docker image and skeleton — only `test.sh` and
+`instruction.md` differ (they filter which tests count toward the score).
 
-### How to choose the `-lite` subset
+### How to define the E2E subset
 
-Pick the subset that provides the fastest meaningful signal. The right split
-depends on the repo's test architecture:
+The E2E subset should include tests that **run the integrated design** and
+would fail if any major subsystem is broken, while excluding tests that
+exercise a single module in isolation:
 
-- **If there's a natural unit/integration boundary** (e.g., Chisel ScalaTest
-  unit tests vs cocotb E2E simulations), score only the unit tests in `-lite`.
-  They compile and run faster, and passing them proves the agent got individual
-  modules right even if the system doesn't boot end-to-end.
+- **If the repo has distinct test frameworks** (e.g., unit tests via
+  ScalaTest/cocotb per-module + integration tests via full-chip Verilator
+  simulation), the E2E set is the integration tests.
 
-- **If all tests use the same framework** (e.g., all Verilator sims, all
-  FuseSoC testbenches), pick the smallest/fastest subset that still exercises
-  meaningful RTL. Often this is a "smoke" set of 5-10 representative tests.
+- **If all tests use the same framework** (e.g., all FuseSoC testbenches),
+  the E2E set is the top-level testbench(es) that instantiate the full
+  design, excluding sub-module testbenches.
 
-- **If there's a difficulty gradient** (e.g., some tests only need a few
-  modules while others need the full SoC), score the easiest tier in `-lite`.
+- **If the repo tests via firmware execution** (e.g., RISC-V cores running
+  ISA tests through the full pipeline), those are inherently E2E — include
+  all of them. Exclude any pure RTL lint or formal checks.
 
-The `-lite` variant should have at least 3 scored tests (fewer than that and
-partial credit is too coarse-grained) and should complete its verifier run in
-under 30 minutes.
+The E2E subset should have at least 3 scored tests and should represent the
+tests that matter most for "does this design actually work."
 
 ### Capturing the subset
 
-During the count/warm stage, capture both the full test list and the lite
+During the count/warm stage, capture both the full test list and the E2E
 subset:
 
 ```bash
@@ -446,13 +447,13 @@ subset:
 <run all tests, parse pass list> > /tmp/_all_tests
 wc -l < /tmp/_all_tests > /tmp/_total
 
-# Lite subset (filtered)
-<query or filter for the lite subset> > /tmp/_lite_targets
-wc -l < /tmp/_lite_targets > /tmp/_lite_total
+# E2E subset (filtered)
+<query or filter for the E2E subset> > /tmp/_e2e_targets
+wc -l < /tmp/_e2e_targets > /tmp/_e2e_total
 ```
 
-The `-lite` variant's `test.sh` reads `.harbor/lite_targets` and scores
-against `.harbor/lite_total` instead of the full set.
+The `-e2e` variant's `test.sh` reads `.harbor/e2e_targets` and scores
+against `.harbor/e2e_total` instead of the full set.
 
 ---
 
