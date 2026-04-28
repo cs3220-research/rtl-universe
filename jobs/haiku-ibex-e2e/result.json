@@ -1,0 +1,30 @@
+{
+    "id": "1e1fe757-2e9d-4003-acd7-5b70bb651a4d",
+    "started_at": "2026-04-28T17:39:22.363495",
+    "finished_at": "2026-04-28T17:52:27.627726",
+    "n_total_trials": 1,
+    "stats": {
+        "n_trials": 1,
+        "n_errors": 0,
+        "evals": {
+            "claude-code__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "ibex-e2e__PLwBMqT"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        }
+    }
+}

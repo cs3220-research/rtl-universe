@@ -1,0 +1,35 @@
+INFO: Preparing secworks:crypto:aes:1.0.0
+INFO: Setting up project
+WARNING: This backend is deprecated and will eventually be removed. Please migrate to the flow API instead.  See https://edalize.readthedocs.io/en/latest/ref/migrations.html#migrating-from-the-tool-api-to-the-flow-api for more details.
+INFO: Building
+INFO: iverilog -stb_aes_key_mem -c secworks_crypto_aes_1.0.0.scr -o secworks_crypto_aes_1.0.0 
+
+ERROR: src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:153: error: Unable to bind wire/reg/memory `dut.round_key_update' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:156: error: Unable to bind wire/reg/memory `dut.prev_key0_reg' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:156: error: Unable to bind wire/reg/memory `dut.prev_key0_new' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:156: error: Unable to bind wire/reg/memory `dut.prev_key0_we' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:158: error: Unable to bind wire/reg/memory `dut.prev_key1_reg' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:158: error: Unable to bind wire/reg/memory `dut.prev_key1_new' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:158: error: Unable to bind wire/reg/memory `dut.prev_key1_we' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:161: error: Unable to bind wire/reg/memory `dut.rcon_new' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:161: error: Unable to bind wire/reg/memory `dut.rcon_set' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:161: error: Unable to bind wire/reg/memory `dut.rcon_next' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:161: error: Unable to bind wire/reg/memory `dut.rcon_we' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:164: error: Unable to bind wire/reg/memory `dut.round_key_gen.w0' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:164: error: Unable to bind wire/reg/memory `dut.round_key_gen.w1' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:165: error: Unable to bind wire/reg/memory `dut.round_key_gen.w2' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:165: error: Unable to bind wire/reg/memory `dut.round_key_gen.w3' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:167: error: Unable to bind wire/reg/memory `dut.round_key_gen.w4' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:167: error: Unable to bind wire/reg/memory `dut.round_key_gen.w5' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:168: error: Unable to bind wire/reg/memory `dut.round_key_gen.w6' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:168: error: Unable to bind wire/reg/memory `dut.round_key_gen.w7' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:170: error: Unable to bind wire/reg/memory `dut.round_key_gen.rconw' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:171: error: Unable to bind wire/reg/memory `dut.round_key_gen.tw' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:171: error: Unable to bind wire/reg/memory `dut.round_key_gen.trw' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:173: error: Unable to bind wire/reg/memory `dut.key_mem_new' in `tb_aes_key_mem.dump_dut_state'
+src/secworks_crypto_aes_1.0.0/src/tb/tb_aes_key_mem.v:173: error: Unable to bind wire/reg/memory `dut.key_mem_we' in `tb_aes_key_mem.dump_dut_state'
+24 error(s) during elaboration.
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 24
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_key_mem-icarus'

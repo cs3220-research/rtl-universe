@@ -1,0 +1,38 @@
+=== Running FuseSoC target: tb_aes ===
+
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'
+  target=tb_aes  tc=20  passed=0
+=== Running FuseSoC target: tb_aes_core ===
+1 error(s) during elaboration.
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 1
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_core-icarus'
+  target=tb_aes_core  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_key_mem ===
+24 error(s) during elaboration.
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 24
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_key_mem-icarus'
+  target=tb_aes_key_mem  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_encipher_block ===
+     ============================================
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_encipher_block-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_encipher_block-icarus'
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_encipher_block-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_encipher_block-icarus'
+  target=tb_aes_encipher_block  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_decipher_block ===
+3 error(s) during elaboration.
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 3
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_decipher_block-icarus'
+  target=tb_aes_decipher_block  tc=0  passed=0
+
+Total: passed=0 / denominator=40
+reward: 0.000000  (passed=0, total=40)

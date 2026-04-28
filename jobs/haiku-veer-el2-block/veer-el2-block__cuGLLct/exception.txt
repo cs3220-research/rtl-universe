@@ -1,0 +1,48 @@
+Traceback (most recent call last):
+  File "/home/saketh/.cache/uv/archive-v0/cXJfYIdAWm7HQpLmM4MwK/lib/python3.13/site-packages/harbor/trial/trial.py", line 947, in run
+    await self._setup_environment()
+  File "/home/saketh/.cache/uv/archive-v0/cXJfYIdAWm7HQpLmM4MwK/lib/python3.13/site-packages/harbor/trial/trial.py", line 313, in _setup_environment
+    await self._start_environment_with_retry()
+  File "/home/saketh/.cache/uv/archive-v0/cXJfYIdAWm7HQpLmM4MwK/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 193, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saketh/.cache/uv/archive-v0/cXJfYIdAWm7HQpLmM4MwK/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saketh/.cache/uv/archive-v0/cXJfYIdAWm7HQpLmM4MwK/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saketh/.cache/uv/archive-v0/cXJfYIdAWm7HQpLmM4MwK/lib/python3.13/site-packages/tenacity/_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+  File "/home/saketh/.cache/uv/archive-v0/cXJfYIdAWm7HQpLmM4MwK/lib/python3.13/site-packages/tenacity/__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ~~~~~~~~~~~~~~~~~^^
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/saketh/.cache/uv/archive-v0/cXJfYIdAWm7HQpLmM4MwK/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saketh/.cache/uv/archive-v0/cXJfYIdAWm7HQpLmM4MwK/lib/python3.13/site-packages/harbor/trial/trial.py", line 325, in _start_environment_with_retry
+    await asyncio.wait_for(
+    ...<4 lines>...
+    )
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/home/saketh/.cache/uv/archive-v0/cXJfYIdAWm7HQpLmM4MwK/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 341, in start
+    await self._run_docker_compose_command(["build"])
+  File "/home/saketh/.cache/uv/archive-v0/cXJfYIdAWm7HQpLmM4MwK/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 318, in _run_docker_compose_command
+    raise RuntimeError(
+    ...<5 lines>...
+    )
+RuntimeError: Docker compose command failed for environment veer-el2-block. Command: docker compose --project-name veer-el2-block__cugllct --project-directory /data/saketh/research/cs3220-research/rtl-universe/minrepro_task/veer-el2-block/environment -f /home/saketh/.cache/uv/archive-v0/cXJfYIdAWm7HQpLmM4MwK/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /home/saketh/.cache/uv/archive-v0/cXJfYIdAWm7HQpLmM4MwK/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /data/saketh/research/cs3220-research/rtl-universe/jobs/haiku-veer-el2-block/veer-el2-block__cuGLLct/docker-compose-mounts.json build. Return code: 17. Stdout:  Service main  Building
+#0 building with "default" instance using docker driver
+
+#1 [main internal] load build definition from Dockerfile
+#1 transferring dockerfile: 4.66kB done
+#1 DONE 0.0s
+failed to solve: dockerfile parse error on line 95: unknown instruction: echo
+. Stderr: None. 

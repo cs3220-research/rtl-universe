@@ -1,0 +1,30 @@
+{
+    "id": "f5643236-496f-4c9e-a9b9-ca7b5c8e4b3e",
+    "started_at": "2026-04-28T17:46:38.503974",
+    "finished_at": "2026-04-28T18:16:11.341679",
+    "n_total_trials": 1,
+    "stats": {
+        "n_trials": 1,
+        "n_errors": 0,
+        "evals": {
+            "claude-code__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "veer-el2-block__rqWpLiA"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        }
+    }
+}

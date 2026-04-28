@@ -1,0 +1,13 @@
+=== [1/5] CS Registers testbench ===
+tb_cs_registers: FAILED
+=== Building simple-system simulator ===
+=== [2/5] SW test: hello_test ===
+hello_test: SKIP (simulator binary missing — RTL compile failed)
+=== [3/5] SW test: dit_test ===
+dit_test: SKIP (simulator binary missing — RTL compile failed)
+=== [4/5] SW test: dummy_instr_test ===
+dummy_instr_test: SKIP (simulator binary missing — RTL compile failed)
+=== [5/5] SW test: pmp_smoke_test ===
+pmp_smoke_test: SKIP (simulator binary missing — RTL compile failed)
+
+Total: passed=0 / total=5

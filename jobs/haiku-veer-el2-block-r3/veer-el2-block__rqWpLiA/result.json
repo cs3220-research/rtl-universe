@@ -1,0 +1,106 @@
+{
+    "id": "7f3ae295-2d21-4e05-aedb-cde918d5084e",
+    "task_name": "veer-el2-block",
+    "trial_name": "veer-el2-block__rqWpLiA",
+    "trial_uri": "file:///data/saketh/research/cs3220-research/rtl-universe/jobs/haiku-veer-el2-block-r3/veer-el2-block__rqWpLiA",
+    "task_id": {
+        "path": "minrepro_task/veer-el2-block"
+    },
+    "source": null,
+    "task_checksum": "f2f7082b60c9a045a8689b0a922895c46f96bfbfa8555a9335f5206785fd38f8",
+    "config": {
+        "task": {
+            "path": "minrepro_task/veer-el2-block",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "veer-el2-block__rqWpLiA",
+        "trials_dir": "jobs/haiku-veer-el2-block-r3",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "claude-code",
+            "import_path": null,
+            "model_name": "haiku",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "CLAUDE_CONFIG_DIR": "/home/builder/.claude"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": [
+                "/tmp/harbor-claude-creds:/home/builder/.claude"
+            ],
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "f5643236-496f-4c9e-a9b9-ca7b5c8e4b3e"
+    },
+    "agent_info": {
+        "name": "claude-code",
+        "version": "2.1.121",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-04-28T21:46:41.532566Z",
+    "finished_at": "2026-04-28T22:16:11.337592Z",
+    "environment_setup": {
+        "started_at": "2026-04-28T21:46:41.883145Z",
+        "finished_at": "2026-04-28T21:59:46.173128Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-04-28T21:59:46.173178Z",
+        "finished_at": "2026-04-28T22:00:01.048257Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-04-28T22:00:01.048359Z",
+        "finished_at": "2026-04-28T22:02:10.066589Z"
+    },
+    "verifier": {
+        "started_at": "2026-04-28T22:02:10.199653Z",
+        "finished_at": "2026-04-28T22:14:43.321924Z"
+    },
+    "step_results": null
+}

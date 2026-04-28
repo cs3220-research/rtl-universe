@@ -1,0 +1,223 @@
+Trial cva6-smoke__6dA6u8B failed: Docker compose command failed for environment cva6-smoke. Command: docker compose --project-name cva6-smoke__6da6u8b --project-directory /data/saketh/research/cs3220-research/rtl-universe/minrepro_task/cva6-smoke/environment -f /home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /data/saketh/research/cs3220-research/rtl-universe/jobs/haiku-cva6-smoke-r3/cva6-smoke__6dA6u8B/docker-compose-mounts.json build. Return code: 17. Stdout:  Service main  Building
+#0 building with "default" instance using docker driver
+
+#1 [main internal] load build definition from Dockerfile
+#1 transferring dockerfile: 9.64kB done
+#1 DONE 0.0s
+
+#2 [main internal] load metadata for docker.io/library/debian:bookworm
+#2 DONE 0.1s
+
+#3 [main base 1/5] FROM docker.io/library/debian:bookworm@sha256:8a8cd02c5912770b4980228a54d4aff9e4f986f1eb2525d2d371dec5232cefcc
+#3 DONE 0.0s
+
+#4 [main internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [main base 6/9] WORKDIR /home/builder
+#5 CACHED
+
+#6 [main base 7/9] RUN set -eux;     export VERILATOR_INSTALL_DIR=/tools/verilator;     cd /tmp;     git clone https://github.com/verilator/verilator.git verilator-src;     cd verilator-src;     git checkout v5.008;     autoconf;     ./configure --prefix="${VERILATOR_INSTALL_DIR}";     make -j$(nproc);     make install;     cd /tmp; rm -rf verilator-src
+#6 CACHED
+
+#7 [main base 5/9] RUN mkdir -p /tools && chown -R 1005:1005 /tools
+#7 CACHED
+
+#8 [main base 4/9] RUN mkdir -p /logs/verifier && chown -R 1005:1005 /logs
+#8 CACHED
+
+#9 [main base 2/9] RUN set -eux;     ln -snf "/usr/share/zoneinfo/UTC" /etc/localtime;     echo "UTC" > /etc/timezone;     echo 'APT::Get::Assume-Yes "true";' > /etc/apt/apt.conf.d/90assumeyes;     apt-get update;     apt-get install -y -qq         autoconf automake autotools-dev bc bison build-essential         ca-certificates cmake curl device-tree-compiler flex         gawk git gnupg help2man libboost-regex-dev libboost-system-dev         libexpat-dev libfl-dev libfl2 libgmp-dev libmpc-dev libmpfr-dev         libtool make ninja-build pkg-config python3 python3-pip         python3-venv python-is-python3 rsync sudo tzdata wget;     rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [main base 3/9] RUN addgroup --gid 1005 builder &&     adduser --home /home/builder --disabled-password --gecos ""             --uid 1005 --gid 1005 builder &&     chown builder:builder /home/builder
+#10 CACHED
+
+#11 [main base 8/9] RUN set -eux;     cd /tmp;     TOOLCHAIN_URL="https://github.com/riscv-collab/riscv-gnu-toolchain/releases/download/2024.02.02/riscv64-elf-ubuntu-22.04-gcc-nightly-2024.02.02-nightly.tar.gz";     wget -q "${TOOLCHAIN_URL}" -O toolchain.tar.gz;     mkdir -p /tools/riscv;     tar xzf toolchain.tar.gz -C /tools/riscv --strip-components=1;     rm toolchain.tar.gz
+#11 CACHED
+
+#12 [main internal] load build context
+#12 transferring context: 125.02MB 1.4s done
+#12 DONE 1.5s
+
+#13 [main base 9/9] RUN pip3 install --break-system-packages --user --no-cache-dir pyyaml pytest mako
+#13 1.052 Collecting pyyaml
+#13 1.123   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+#13 1.170      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 18.6 MB/s eta 0:00:00
+#13 1.328 Collecting pytest
+#13 1.338   Downloading pytest-9.0.3-py3-none-any.whl (375 kB)
+#13 1.344      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 375.2/375.2 kB 163.3 MB/s eta 0:00:00
+#13 1.400 Collecting mako
+#13 1.405   Downloading mako-1.3.12-py3-none-any.whl (78 kB)
+#13 1.409      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 114.1 MB/s eta 0:00:00
+#13 1.456 Collecting iniconfig>=1.0.1
+#13 1.459   Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+#13 1.511 Collecting packaging>=22
+#13 1.515   Downloading packaging-26.2-py3-none-any.whl (100 kB)
+#13 1.519      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.2/100.2 kB 161.5 MB/s eta 0:00:00
+#13 1.570 Collecting pluggy<2,>=1.5
+#13 1.573   Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+#13 1.634 Collecting pygments>=2.7.2
+#13 1.638   Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+#13 1.651      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 125.8 MB/s eta 0:00:00
+#13 1.836 Collecting MarkupSafe>=0.9.2
+#13 1.844   Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#13 1.908 Installing collected packages: pyyaml, pygments, pluggy, packaging, MarkupSafe, iniconfig, pytest, mako
+#13 2.824   WARNING: The script pygmentize is installed in '/home/builder/.local/bin' which is not on PATH.
+#13 2.824   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+#13 3.413   WARNING: The scripts py.test and pytest are installed in '/home/builder/.local/bin' which is not on PATH.
+#13 3.413   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+#13 3.531   WARNING: The script mako-render is installed in '/home/builder/.local/bin' which is not on PATH.
+#13 3.531   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+#13 3.592 Successfully installed MarkupSafe-3.0.3 iniconfig-2.3.0 mako-1.3.12 packaging-26.2 pluggy-1.6.0 pygments-2.20.0 pytest-9.0.3 pyyaml-6.0.3
+#13 DONE 4.3s
+
+#14 [main warm 1/8] COPY --chown=builder:builder warm_src/ /app/
+#14 DONE 0.6s
+
+#15 [main warm 2/8] RUN set -eux;     cd /app;     git init -q; git add -A;     git -c user.email=x@x -c user.name=x commit -q -m init
+#15 0.211 + cd /app
+#15 0.211 + git init -q
+#15 0.283 + git add -A
+#15 2.587 + git -c user.email=x@x -c user.name=x commit -q -m init
+#15 DONE 3.0s
+
+#16 [main warm 3/8] RUN set -eux;     cd /app;     git submodule update --init --recursive         core/cache_subsystem/hpdcache core/cvfpu         corev_apu/axi_mem_if corev_apu/riscv-dbg corev_apu/rv_plic         corev_apu/register_interface 2>&1 | tail -10 || true;     HPDCACHE_HASH="acf97c95f2b0bf895143ed5559b04629a474548d";     [ -f core/cache_subsystem/hpdcache/rtl/hpdcache.Flist ] || {         rm -rf core/cache_subsystem/hpdcache;         git clone https://github.com/openhwgroup/cv-hpdcache.git             core/cache_subsystem/hpdcache;         cd core/cache_subsystem/hpdcache &&             git checkout "${HPDCACHE_HASH}" 2>/dev/null || true && cd /app; };     CVFPU_HASH="a74d99a32bd11ce0b05a82b0d6d26f98df3bba65";     [ -f core/cvfpu/src/fpnew_pkg.sv ] || {         rm -rf core/cvfpu;         git clone https://github.com/openhwgroup/cvfpu.git core/cvfpu;         cd core/cvfpu && git checkout "${CVFPU_HASH}" 2>/dev/null || true && cd /app; };     [ -d corev_apu/axi_mem_if/src ] ||         git clone https://github.com/pulp-platform/axi_mem_if.git corev_apu/axi_mem_if;     [ -d corev_apu/riscv-dbg/src ] || {         git clone https://github.com/pulp-platform/riscv-dbg.git corev_apu/riscv-dbg;         cd corev_apu/riscv-dbg && git submodule update --init --recursive 2>/dev/null || true && cd /app; };     [ -d corev_apu/rv_plic/rtl ] ||         git clone https://github.com/pulp-platform/rv_plic.git corev_apu/rv_plic;     [ -d corev_apu/register_interface/src ] ||         git clone https://github.com/pulp-platform/register_interface.git             corev_apu/register_interface;     echo "submodules ready"
+#16 0.217 + cd /app
+#16 0.217 + git submodule update --init --recursive core/cache_subsystem/hpdcache core/cvfpu corev_apu/axi_mem_if corev_apu/riscv-dbg corev_apu/rv_plic corev_apu/register_interface
+#16 0.218 + tail -10
+#16 0.249 error: pathspec 'core/cache_subsystem/hpdcache' did not match any file(s) known to git
+#16 0.249 error: pathspec 'core/cvfpu' did not match any file(s) known to git
+#16 0.249 error: pathspec 'corev_apu/axi_mem_if' did not match any file(s) known to git
+#16 0.249 error: pathspec 'corev_apu/riscv-dbg' did not match any file(s) known to git
+#16 0.249 error: pathspec 'corev_apu/rv_plic' did not match any file(s) known to git
+#16 0.249 error: pathspec 'corev_apu/register_interface' did not match any file(s) known to git
+#16 0.249 + HPDCACHE_HASH=acf97c95f2b0bf895143ed5559b04629a474548d
+#16 0.249 + [ -f core/cache_subsystem/hpdcache/rtl/hpdcache.Flist ]
+#16 0.249 + rm -rf core/cache_subsystem/hpdcache
+#16 0.258 + git clone https://github.com/openhwgroup/cv-hpdcache.git core/cache_subsystem/hpdcache
+#16 0.259 Cloning into 'core/cache_subsystem/hpdcache'...
+#16 1.062 + cd core/cache_subsystem/hpdcache
+#16 1.062 + git checkout acf97c95f2b0bf895143ed5559b04629a474548d
+#16 1.093 + cd /app
+#16 1.093 + CVFPU_HASH=a74d99a32bd11ce0b05a82b0d6d26f98df3bba65
+#16 1.093 + [ -f core/cvfpu/src/fpnew_pkg.sv ]
+#16 1.093 + rm -rf core/cvfpu
+#16 1.094 + git clone https://github.com/openhwgroup/cvfpu.git core/cvfpu
+#16 1.095 Cloning into 'core/cvfpu'...
+#16 1.806 + cd core/cvfpu
+#16 1.806 + git checkout a74d99a32bd11ce0b05a82b0d6d26f98df3bba65
+#16 1.816 + cd /app
+#16 1.816 + [ -d corev_apu/axi_mem_if/src ]
+#16 1.816 + git clone https://github.com/pulp-platform/axi_mem_if.git corev_apu/axi_mem_if
+#16 1.817 Cloning into 'corev_apu/axi_mem_if'...
+#16 2.083 + [ -d corev_apu/riscv-dbg/src ]
+#16 2.083 + git clone https://github.com/pulp-platform/riscv-dbg.git corev_apu/riscv-dbg
+#16 2.084 Cloning into 'corev_apu/riscv-dbg'...
+#16 2.443 + cd corev_apu/riscv-dbg
+#16 2.443 + git submodule update --init --recursive
+#16 2.467 + cd /app
+#16 2.467 + [ -d corev_apu/rv_plic/rtl ]
+#16 2.467 + git clone https://github.com/pulp-platform/rv_plic.git corev_apu/rv_plic
+#16 2.468 Cloning into 'corev_apu/rv_plic'...
+#16 2.712 + [ -d corev_apu/register_interface/src ]
+#16 2.712 + git clone https://github.com/pulp-platform/register_interface.git corev_apu/register_interface
+#16 2.713 Cloning into 'corev_apu/register_interface'...
+#16 3.090 submodules ready
+#16 3.090 + echo submodules ready
+#16 DONE 3.3s
+
+#17 [main warm 4/8] RUN set -eux;     git clone --depth=1 https://github.com/riscv-software-src/riscv-isa-sim /tmp/spike-src;     cd /tmp/spike-src; mkdir build && cd build;     ../configure --prefix=/tools/spike;     make -j$(nproc) yaml-cpp-static yaml-cpp;     make -j$(nproc); make install;     cd / && rm -rf /tmp/spike-src
+#17 0.221 + git clone --depth=1 https://github.com/riscv-software-src/riscv-isa-sim /tmp/spike-src
+#17 0.227 Cloning into '/tmp/spike-src'...
+#17 0.720 + cd /tmp/spike-src
+#17 0.720 + mkdir build
+#17 0.721 + cd build
+#17 0.721 + ../configure --prefix=/tools/spike
+#17 0.811 checking build system type... x86_64-pc-linux-gnu
+#17 0.926 checking host system type... x86_64-pc-linux-gnu
+#17 0.926 checking for gcc... gcc
+#17 0.957 checking whether the C compiler works... yes
+#17 1.017 checking for C compiler default output file name... a.out
+#17 1.018 checking for suffix of executables... 
+#17 1.061 checking whether we are cross compiling... no
+#17 1.118 checking for suffix of object files... o
+#17 1.141 checking whether the compiler supports GNU C... yes
+#17 1.162 checking whether gcc accepts -g... yes
+#17 1.184 checking for gcc option to enable C11 features... none needed
+#17 1.267 checking for g++... g++
+#17 1.289 checking whether the compiler supports GNU C++... yes
+#17 1.311 checking whether g++ accepts -g... yes
+#17 1.343 checking for g++ option to enable C++11 features... none needed
+#17 1.443 checking for ar... ar
+#17 1.443 checking for ranlib... ranlib
+#17 1.444 checking for dtc... /usr/bin/dtc
+#17 1.444 checking for stdio.h... yes
+#17 1.470 checking for stdlib.h... yes
+#17 1.507 checking for string.h... yes
+#17 1.547 checking for inttypes.h... yes
+#17 1.589 checking for stdint.h... yes
+#17 1.630 checking for strings.h... yes
+#17 1.673 checking for sys/stat.h... yes
+#17 1.719 checking for sys/types.h... yes
+#17 1.764 checking for unistd.h... yes
+#17 1.813 checking whether byte ordering is bigendian... no
+#17 1.912 checking for a BSD-compatible install... /usr/bin/install -c
+#17 1.922 checking for __int128_t... yes
+#17 2.033 checking whether the linker accepts -Wl,--export-dynamic... yes
+#17 2.093 checking whether the C++ compiler accepts -relocatable-pch... no
+#17 2.114 configure: configuring default subproject : fesvr
+#17 2.114 checking for pthread_create in -lpthread... yes
+#17 2.174 checking for struct statx.stx_ino... yes
+#17 2.233 checking for struct statx.stx_mnt_id... yes
+#17 2.291 configure: configuring default subproject : riscv
+#17 2.301 checking for boostlib >= 1.53 (105300)... yes
+#17 2.326 checking whether the Boost::ASIO library is available... yes
+#17 7.786 checking for main in -lboost_system... yes
+#17 7.847 checking whether the Boost::Regex library is available... yes
+#17 9.387 checking for exit in -lboost_regex... yes
+#17 9.449 checking for main in -lboost_system... (cached) yes
+#17 9.449 checking for main in -lboost_regex... yes
+#17 9.510 checking for library containing dlopen... none required
+#17 9.571 checking for pthread_create in -lpthread... (cached) yes
+#17 9.571 configure: configuring default subproject : disasm
+#17 9.571 configure: configuring default subproject : customext
+#17 9.571 configure: configuring default subproject : fdt
+#17 9.571 configure: configuring default subproject : softfloat
+#17 9.572 configure: configuring default subproject : spike_main
+#17 9.572 configure: configuring default subproject : spike_dasm
+#17 9.589 configure: creating ./config.status
+#17 9.678 config.status: creating fesvr.mk
+#17 9.690 config.status: creating riscv.mk
+#17 9.705 config.status: creating disasm.mk
+#17 9.717 config.status: creating customext.mk
+#17 9.730 config.status: creating fdt.mk
+#17 9.743 config.status: creating softfloat.mk
+#17 9.756 config.status: creating spike_main.mk
+#17 9.768 config.status: creating spike_dasm.mk
+#17 9.780 config.status: creating Makefile
+#17 9.794 config.status: creating riscv-fesvr.pc
+#17 9.807 config.status: creating riscv-disasm.pc
+#17 9.819 config.status: creating riscv-riscv.pc
+#17 9.832 config.status: creating config.h
+#17 9.861 + nproc
+#17 9.862 + make -j24 yaml-cpp-static yaml-cpp
+#17 9.963 make: *** No rule to make target 'yaml-cpp-static'.  Stop.
+#17 ERROR: process "/bin/sh -c set -eux;     git clone --depth=1 https://github.com/riscv-software-src/riscv-isa-sim /tmp/spike-src;     cd /tmp/spike-src; mkdir build && cd build;     ../configure --prefix=/tools/spike;     make -j$(nproc) yaml-cpp-static yaml-cpp;     make -j$(nproc); make install;     cd / && rm -rf /tmp/spike-src" did not complete successfully: exit code: 2
+------
+ > [main warm 4/8] RUN set -eux;     git clone --depth=1 https://github.com/riscv-software-src/riscv-isa-sim /tmp/spike-src;     cd /tmp/spike-src; mkdir build && cd build;     ../configure --prefix=/tools/spike;     make -j$(nproc) yaml-cpp-static yaml-cpp;     make -j$(nproc); make install;     cd / && rm -rf /tmp/spike-src:
+9.756 config.status: creating spike_main.mk
+9.768 config.status: creating spike_dasm.mk
+9.780 config.status: creating Makefile
+9.794 config.status: creating riscv-fesvr.pc
+9.807 config.status: creating riscv-disasm.pc
+9.819 config.status: creating riscv-riscv.pc
+9.832 config.status: creating config.h
+9.861 + nproc
+9.862 + make -j24 yaml-cpp-static yaml-cpp
+9.963 make: *** No rule to make target 'yaml-cpp-static'.  Stop.
+------
+failed to solve: process "/bin/sh -c set -eux;     git clone --depth=1 https://github.com/riscv-software-src/riscv-isa-sim /tmp/spike-src;     cd /tmp/spike-src; mkdir build && cd build;     ../configure --prefix=/tools/spike;     make -j$(nproc) yaml-cpp-static yaml-cpp;     make -j$(nproc); make install;     cd / && rm -rf /tmp/spike-src" did not complete successfully: exit code: 2
+. Stderr: None. 
+Failed to download artifact '/app' (best-effort)
+Not retrying trial because the maximum number of retries has been reached

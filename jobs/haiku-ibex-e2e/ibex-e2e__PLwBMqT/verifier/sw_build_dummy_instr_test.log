@@ -1,0 +1,5 @@
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o dummy_instr_test.o dummy_instr_test.c
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o busy_work.o busy_work.S
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -T /app/examples/sw/simple_system/common/link.ld /app/examples/sw/simple_system/common/simple_system_common.o dummy_instr_test.o busy_work.o /app/examples/sw/simple_system/common/crt0.o -o dummy_instr_test.elf 
+riscv32-unknown-elf-objcopy -O binary dummy_instr_test.elf dummy_instr_test.bin
+srec_cat dummy_instr_test.bin -binary -offset 0x0000 -byte-swap 4 -o dummy_instr_test.vmem -vmem

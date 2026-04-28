@@ -1,0 +1,28 @@
+{
+    "id": "03b9db06-0b5a-45ca-9c62-a5cd5e10a156",
+    "started_at": "2026-04-28T17:46:38.504082",
+    "finished_at": "2026-04-28T17:46:49.175190",
+    "n_total_trials": 1,
+    "stats": {
+        "n_trials": 1,
+        "n_errors": 1,
+        "evals": {
+            "claude-code__adhoc": {
+                "n_trials": 0,
+                "n_errors": 1,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {},
+                "exception_stats": {
+                    "RuntimeError": [
+                        "caliptra-rtl-fw__2SMzhgj"
+                    ]
+                }
+            }
+        }
+    }
+}

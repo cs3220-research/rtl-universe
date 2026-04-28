@@ -1,0 +1,85 @@
+INFO: Preparing secworks:crypto:aes:1.0.0
+INFO: Setting up project
+WARNING: This backend is deprecated and will eventually be removed. Please migrate to the flow API instead.  See https://edalize.readthedocs.io/en/latest/ref/migrations.html#migrating-from-the-tool-api-to-the-flow-api for more details.
+INFO: Building
+INFO: Running
+vvp -n -M. -l icarus.log   secworks_crypto_aes_1.0.0 -fst 
+   -= Testbench for aes encipher block started =-
+     ============================================
+
+Dumping all variables to tb_aes_encipher_block vcd file.
+FST info: dumpfile tb_aes_encipher_block.vcd opened for output.
+--- Toggle reset.
+
+--- test_nist_enc_128_1: Started.
+--- ECB mode test started.
+--- ERROR: Testcase NOT successful.
+--- Expected: 0x3ad77bb40d7a3660a89ecaf32466ef97
+--- Got:      0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+--- ECB mode test completed.
+--- test_nist_enc_128_1: Completed.
+
+--- test_nist_enc_128_2: Started.
+--- ECB mode test started.
+--- ERROR: Testcase NOT successful.
+--- Expected: 0xf5d3d58503b9699de785895a96fdbaaf
+--- Got:      0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+--- ECB mode test completed.
+--- test_nist_enc_128_2: Completed.
+
+--- test_nist_enc_128_3: Started.
+--- ECB mode test started.
+--- ERROR: Testcase NOT successful.
+--- Expected: 0x43b1cd7f598ece23881b00e3ed030688
+--- Got:      0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+--- ECB mode test completed.
+--- test_nist_enc_128_3: Completed.
+
+--- test_nist_enc_128_4: Started.
+--- ECB mode test started.
+--- ERROR: Testcase NOT successful.
+--- Expected: 0x7b0c785e27e8ad3f8223207104725dd4
+--- Got:      0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+--- ECB mode test completed.
+--- test_nist_enc_128_4: Completed.
+
+--- test_nist_enc_256_1: Started.
+--- ECB mode test started.
+--- ERROR: Testcase NOT successful.
+--- Expected: 0xf3eed1bdb5d2a03c064b5a7e3db181f8
+--- Got:      0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+--- ECB mode test completed.
+--- test_nist_enc_256_1: Completed.
+
+--- test_nist_enc_256_2: Started.
+--- ECB mode test started.
+--- ERROR: Testcase NOT successful.
+--- Expected: 0x591ccb10d410ed26dc5ba74a31362870
+--- Got:      0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+--- ECB mode test completed.
+--- test_nist_enc_256_2: Completed.
+
+--- test_nist_enc_256_3: Started.
+--- ECB mode test started.
+--- ERROR: Testcase NOT successful.
+--- Expected: 0xb6ed21b99ca6f4f9f153e7b1beafed1d
+--- Got:      0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+--- ECB mode test completed.
+--- test_nist_enc_256_3: Completed.
+
+--- test_nist_enc_256_4: Started.
+--- ECB mode test started.
+--- ERROR: Testcase NOT successful.
+--- Expected: 0x23304b7a39f9f3ff067d8d8f9e24ecc7
+--- Got:      0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+--- ECB mode test completed.
+--- test_nist_enc_256_4: Completed.
+
+--- 08 tests completed - 08 test cases did not complete successfully.
+
+   -= Testbench for aes encipher block completed =-
+     ============================================
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_encipher_block-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_encipher_block-icarus'
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_encipher_block-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_encipher_block-icarus'

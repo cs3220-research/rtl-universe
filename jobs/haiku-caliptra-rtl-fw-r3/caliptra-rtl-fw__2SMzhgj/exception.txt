@@ -1,0 +1,93 @@
+Traceback (most recent call last):
+  File "/home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/harbor/trial/trial.py", line 947, in run
+    await self._setup_environment()
+  File "/home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/harbor/trial/trial.py", line 313, in _setup_environment
+    await self._start_environment_with_retry()
+  File "/home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 193, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/tenacity/_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+  File "/home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/tenacity/__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ~~~~~~~~~~~~~~~~~^^
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/harbor/trial/trial.py", line 325, in _start_environment_with_retry
+    await asyncio.wait_for(
+    ...<4 lines>...
+    )
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 341, in start
+    await self._run_docker_compose_command(["build"])
+  File "/home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 318, in _run_docker_compose_command
+    raise RuntimeError(
+    ...<5 lines>...
+    )
+RuntimeError: Docker compose command failed for environment caliptra-rtl-fw. Command: docker compose --project-name caliptra-rtl-fw__2smzhgj --project-directory /data/saketh/research/cs3220-research/rtl-universe/minrepro_task/caliptra-rtl-fw/environment -f /home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /home/saketh/.cache/uv/archive-v0/IIXBXJsiK5JQXSP0MMoCh/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /data/saketh/research/cs3220-research/rtl-universe/jobs/haiku-caliptra-rtl-fw-r3/caliptra-rtl-fw__2SMzhgj/docker-compose-mounts.json build. Return code: 17. Stdout:  Service main  Building
+#0 building with "default" instance using docker driver
+
+#1 [main internal] load build definition from Dockerfile
+#1 transferring dockerfile: 3.50kB done
+#1 DONE 0.0s
+
+#2 [main internal] load metadata for docker.io/library/debian:bookworm
+#2 DONE 0.1s
+
+#3 [main base 1/5] FROM docker.io/library/debian:bookworm@sha256:8a8cd02c5912770b4980228a54d4aff9e4f986f1eb2525d2d371dec5232cefcc
+#3 DONE 0.0s
+
+#4 [main internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [main internal] load build context
+#5 transferring context: 161.28MB 2.0s done
+#5 DONE 2.1s
+
+#6 [main base 2/3] RUN set -eux;     ln -snf "/usr/share/zoneinfo/UTC" /etc/localtime;     echo "UTC" > /etc/timezone;     apt-get update;     apt-get install -y --no-install-recommends         autoconf automake autotools-dev         bc bison build-essential ccache cmake curl         flex gawk git help2man libfl2 libfl-dev         libgmp-dev libmpc-dev libmpfr-dev         ninja-build numactl perl python3 python3-pip         python3-yaml rsync texinfo unzip wget xxd;         apt-get install -y --no-install-recommends verilator;         wget -q https://github.com/sifive/freedom-tools/releases/download/v2020.12.0/riscv64-unknown-elf-toolchain-10.2.0-2020.12.8-x86_64-linux-ubuntu14.tar.gz         -O /tmp/riscv.tar.gz 2>/dev/null ||     apt-get install -y --no-install-recommends gcc-riscv64-unknown-elf;         addgroup --gid 1005 builder;     adduser --home /home/builder --disabled-password --gecos ""             --uid 1005 --gid 1005 builder;     chown builder:builder /home/builder;     mkdir -p /home/builder/.cache;     chown builder:builder /home/builder/.cache;     mkdir -p /logs/verifier;     chown -R 1005:1005 /logs;     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [main base 3/3] WORKDIR /app
+#7 CACHED
+
+#8 [main final 1/5] COPY --chown=builder:builder skeleton/ /app/
+#8 DONE 2.6s
+
+#9 [main count 1/3] COPY --chown=builder:builder warm_src/ /app/
+#9 DONE 2.7s
+
+#10 [main count 2/3] COPY --chown=builder:builder count_tests.sh /tmp/count_tests.sh
+#10 DONE 0.1s
+
+#11 [main count 3/3] RUN chmod +x /tmp/count_tests.sh && /tmp/count_tests.sh
+#11 0.253 [count_tests] Building Verilator simulation binary...
+#11 0.577 make: Entering directory '/tmp/verilated_image'
+#11 0.577 rv_gcc_version is 12.2.0
+#11 0.577 make: *** No rule to make target '/Axi4PC.sv', needed by 'verilator-build'.  Stop.
+#11 0.577 make: Leaving directory '/tmp/verilated_image'
+#11 ERROR: process "/bin/sh -c chmod +x /tmp/count_tests.sh && /tmp/count_tests.sh" did not complete successfully: exit code: 2
+------
+ > [main count 3/3] RUN chmod +x /tmp/count_tests.sh && /tmp/count_tests.sh:
+0.253 [count_tests] Building Verilator simulation binary...
+0.577 make: Entering directory '/tmp/verilated_image'
+0.577 rv_gcc_version is 12.2.0
+0.577 make: *** No rule to make target '/Axi4PC.sv', needed by 'verilator-build'.  Stop.
+0.577 make: Leaving directory '/tmp/verilated_image'
+------
+failed to solve: process "/bin/sh -c chmod +x /tmp/count_tests.sh && /tmp/count_tests.sh" did not complete successfully: exit code: 2
+. Stderr: None. 

@@ -1,0 +1,6 @@
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o /app/examples/sw/simple_system/common/simple_system_common.o /app/examples/sw/simple_system/common/simple_system_common.c
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o hello_test.o hello_test.c
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o /app/examples/sw/simple_system/common/crt0.o /app/examples/sw/simple_system/common/crt0.S
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -T /app/examples/sw/simple_system/common/link.ld /app/examples/sw/simple_system/common/simple_system_common.o hello_test.o  /app/examples/sw/simple_system/common/crt0.o -o hello_test.elf 
+riscv32-unknown-elf-objcopy -O binary hello_test.elf hello_test.bin
+srec_cat hello_test.bin -binary -offset 0x0000 -byte-swap 4 -o hello_test.vmem -vmem

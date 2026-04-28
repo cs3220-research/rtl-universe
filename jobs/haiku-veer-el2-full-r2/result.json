@@ -1,0 +1,28 @@
+{
+    "id": "2d6cc076-8db7-4485-a14f-1f2ece34a39a",
+    "started_at": "2026-04-28T17:42:37.740783",
+    "finished_at": "2026-04-28T17:46:05.472872",
+    "n_total_trials": 1,
+    "stats": {
+        "n_trials": 1,
+        "n_errors": 1,
+        "evals": {
+            "claude-code__adhoc": {
+                "n_trials": 0,
+                "n_errors": 1,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {},
+                "exception_stats": {
+                    "RuntimeError": [
+                        "veer-el2-full__7MAt9hX"
+                    ]
+                }
+            }
+        }
+    }
+}

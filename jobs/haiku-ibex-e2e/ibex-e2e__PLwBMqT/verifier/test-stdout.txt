@@ -1,0 +1,108 @@
+=== Building simple-system simulator ===
+WARNING: Not adding library . (/app). Library ibex already registered for this location
+INFO: Preparing lowrisc:dv:dv_fcov_macros:0
+INFO: Preparing lowrisc:dv:secded_enc:0
+INFO: Preparing lowrisc:dv_verilator:ibex_pcounts:0
+INFO: Preparing lowrisc:dv_verilator:simutil_verilator:0
+INFO: Preparing lowrisc:ibex:ibex_pkg:0.1
+INFO: Preparing lowrisc:prim_generic:ram_1p_pkg:0
+INFO: Preparing lowrisc:prim_generic:ram_2p_pkg:0
+INFO: Preparing lowrisc:prim_generic:rom_pkg:0
+INFO: Preparing lowrisc:prim:util_get_scramble_params:0
+INFO: Preparing lowrisc:prim:util_memload:0
+INFO: Preparing lowrisc:tool:check_tool_requirements:0.1
+INFO: Preparing lowrisc:dv_verilator:memutil_dpi:0
+INFO: Preparing lowrisc:lint:common:0.1
+INFO: Preparing lowrisc:dv_verilator:memutil_verilator:0
+INFO: Preparing lowrisc:prim:assert:0.1
+INFO: Preparing lowrisc:prim:cipher_pkg:0.1
+INFO: Preparing lowrisc:prim_generic:and2:0
+INFO: Preparing lowrisc:prim_generic:buf:0
+INFO: Preparing lowrisc:prim_generic:clock_buf:0
+INFO: Preparing lowrisc:prim_generic:clock_gating:0
+INFO: Preparing lowrisc:prim_generic:flop:0
+INFO: Preparing lowrisc:prim_generic:flop_no_rst:0
+INFO: Preparing lowrisc:prim_generic:prim_pkg:0
+INFO: Preparing lowrisc:prim_generic:usb_diff_rx:0
+INFO: Preparing lowrisc:prim_generic:xnor2:0
+INFO: Preparing lowrisc:prim_generic:xor2:0
+INFO: Preparing lowrisc:prim:pad_wrapper_pkg:0
+INFO: Preparing lowrisc:prim:secded:0.1
+INFO: Preparing lowrisc:ibex:ibex_icache:0.1
+INFO: Preparing lowrisc:ibex:ibex_tracer:0.1
+INFO: Preparing lowrisc:prim:cdc_rand_delay:0
+INFO: Preparing lowrisc:prim:cipher:0
+INFO: Preparing lowrisc:prim:count:0
+INFO: Preparing lowrisc:prim_generic:clock_mux2:0
+INFO: Preparing lowrisc:prim_generic:pad_attr:0
+INFO: Preparing lowrisc:prim_generic:pad_wrapper:0
+INFO: Preparing lowrisc:prim_generic:ram_1p:0
+INFO: Preparing lowrisc:prim_generic:ram_1r1w:0
+INFO: Preparing lowrisc:prim_generic:ram_2p:0
+INFO: Preparing lowrisc:prim_generic:rom:0
+INFO: Preparing lowrisc:prim:lfsr:0.1
+INFO: Preparing lowrisc:prim:mubi_pkg:0.1
+INFO: Preparing lowrisc:prim:sec_anchor:0.1
+INFO: Preparing lowrisc:prim:util:0.1
+INFO: Preparing lowrisc:ibex:sim_shared:0
+INFO: Preparing lowrisc:prim_generic:clock_inv:0
+INFO: Preparing lowrisc:prim_generic:flop_2sync:0
+INFO: Preparing lowrisc:prim_generic:flop_en:0
+INFO: Preparing lowrisc:prim:mubi:0.1
+INFO: Preparing lowrisc:prim:onehot:0
+INFO: Preparing lowrisc:prim:onehot_check:0
+INFO: Preparing lowrisc:prim:ram_1p_adv:0.1
+INFO: Preparing lowrisc:ibex:ibex_core:0.1
+INFO: Preparing lowrisc:prim_generic:clock_div:0
+INFO: Preparing lowrisc:prim_generic:rst_sync:0
+INFO: Preparing lowrisc:prim:ram_1p_scr:0.1
+INFO: Preparing lowrisc:ibex:ibex_top:0.1
+INFO: Preparing lowrisc:prim_generic:all:0.1
+INFO: Preparing lowrisc:ibex:ibex_top_tracing:0.1
+INFO: Preparing lowrisc:ibex:ibex_simple_system_core:0
+INFO: Preparing lowrisc:ibex:ibex_simple_system:0
+INFO: Setting up project
+WARNING: This backend is deprecated and will eventually be removed. Please migrate to the flow API instead.  See https://edalize.readthedocs.io/en/latest/ref/migrations.html#migrating-from-the-tool-api-to-the-flow-api for more details.
+INFO: Running pre_build script check_tool_requirements
+INFO: Tool verilator present: Sufficiently recent version (found 4.210; needed 4.210)
+INFO: Tool edalize present: Sufficiently recent version (found 0.6.8; needed 0.2.0)
+INFO: Building simulation model
+INFO: verilator -f lowrisc_ibex_ibex_simple_system_0.vc -DDISABLE_PRIM_CDC_RAND_DELAY --trace --trace-fst --trace-structs --trace-params --trace-max-array 1024 -CFLAGS "-std=c++17 -Wall -DVM_TRACE_FMT_FST -DTOPLEVEL_NAME=ibex_simple_system -g" -LDFLAGS "-pthread -lutil -lelf" -Wall --unroll-count 72
+
+ERROR: %Error: Specified --top-module 'ibex_simple_system' was not found in design.
+%Error: Exiting due to 1 error(s)
+make: *** [Makefile:15: Vibex_simple_system.mk] Error 1
+
+ERROR: Failed to build lowrisc:ibex:ibex_simple_system:0 : '['make']' exited with an error: 2
+Entering directory '/app/build/lowrisc_ibex_ibex_simple_system_0/sim-verilator'
+=== [1/4] SW test: hello_test ===
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o /app/examples/sw/simple_system/common/simple_system_common.o /app/examples/sw/simple_system/common/simple_system_common.c
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o hello_test.o hello_test.c
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o /app/examples/sw/simple_system/common/crt0.o /app/examples/sw/simple_system/common/crt0.S
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -T /app/examples/sw/simple_system/common/link.ld /app/examples/sw/simple_system/common/simple_system_common.o hello_test.o  /app/examples/sw/simple_system/common/crt0.o -o hello_test.elf 
+riscv32-unknown-elf-objcopy -O binary hello_test.elf hello_test.bin
+srec_cat hello_test.bin -binary -offset 0x0000 -byte-swap 4 -o hello_test.vmem -vmem
+hello_test: SKIP (simulator binary missing — RTL compile failed)
+=== [2/4] SW test: dit_test ===
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o dit_test.o dit_test.c
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o count_ones_zeros.o count_ones_zeros.S
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -T /app/examples/sw/simple_system/common/link.ld /app/examples/sw/simple_system/common/simple_system_common.o dit_test.o count_ones_zeros.o /app/examples/sw/simple_system/common/crt0.o -o dit_test.elf 
+riscv32-unknown-elf-objcopy -O binary dit_test.elf dit_test.bin
+srec_cat dit_test.bin -binary -offset 0x0000 -byte-swap 4 -o dit_test.vmem -vmem
+dit_test: SKIP (simulator binary missing — RTL compile failed)
+=== [3/4] SW test: dummy_instr_test ===
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o dummy_instr_test.o dummy_instr_test.c
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o busy_work.o busy_work.S
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -T /app/examples/sw/simple_system/common/link.ld /app/examples/sw/simple_system/common/simple_system_common.o dummy_instr_test.o busy_work.o /app/examples/sw/simple_system/common/crt0.o -o dummy_instr_test.elf 
+riscv32-unknown-elf-objcopy -O binary dummy_instr_test.elf dummy_instr_test.bin
+srec_cat dummy_instr_test.bin -binary -offset 0x0000 -byte-swap 4 -o dummy_instr_test.vmem -vmem
+dummy_instr_test: SKIP (simulator binary missing — RTL compile failed)
+=== [4/4] SW test: pmp_smoke_test ===
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o pmp_smoke_test.o pmp_smoke_test.c
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -T /app/examples/sw/simple_system/common/link.ld /app/examples/sw/simple_system/common/simple_system_common.o pmp_smoke_test.o  /app/examples/sw/simple_system/common/crt0.o -o pmp_smoke_test.elf 
+riscv32-unknown-elf-objcopy -O binary pmp_smoke_test.elf pmp_smoke_test.bin
+srec_cat pmp_smoke_test.bin -binary -offset 0x0000 -byte-swap 4 -o pmp_smoke_test.vmem -vmem
+pmp_smoke_test: SKIP (simulator binary missing — RTL compile failed)
+
+Total: passed=0 / total=4
+reward: 0.000000  (passed=0, total=4)

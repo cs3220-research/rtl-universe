@@ -1,0 +1,30 @@
+{
+    "id": "338971ad-107b-4bc0-bce1-f52b37996954",
+    "started_at": "2026-04-28T17:39:22.193648",
+    "finished_at": "2026-04-28T17:50:12.973525",
+    "n_total_trials": 1,
+    "stats": {
+        "n_trials": 1,
+        "n_errors": 0,
+        "evals": {
+            "claude-code__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "secworks-aes-full__m9W8SiA"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        }
+    }
+}
