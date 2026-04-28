@@ -74,8 +74,7 @@ or on failure:
 ```
 
 Total test cases across all testbenches (green baseline): **~65** individual
-test cases (20 + 20 + 9 + 8 + 8 respectively, where key-mem tests cover
-multiple round keys per key).
+test cases (20 + 20 + 9 + 8 + 8 respectively).
 
 Getting a subset of modules correct still earns partial credit.
 

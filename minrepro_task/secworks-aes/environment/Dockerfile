@@ -4,14 +4,12 @@
 # Testbenches:  tb_aes, tb_aes_core, tb_aes_key_mem,
 #               tb_aes_encipher_block, tb_aes_decipher_block
 #
-# Stage 1: base toolchain (iverilog, python3/pip, fusesoc)
-# Stage 2: pre-warm — register core with FuseSoC, run all testbenches once to
-#           establish the authoritative pass/fail count.
-# Stage 3: wipe /app, COPY code-stripped skeleton, scrub any warm artifacts.
-#
-# The warm stage builds nothing persistently cacheable (iverilog re-compiles
-# in seconds) so there is no build-cache to prime; the value here is capturing
-# the baseline test count and verifying the green source is fully passing.
+# Build strategy: 2-stage (no warm cache).
+#   iverilog recompiles in seconds and has no content-addressed cache that
+#   survives source changes. All tools are pre-installed via apt/pip, so
+#   there is no build graph to warm. Total cold build time is <1 min.
+#   Stage 1 (count): run green source to capture total test count.
+#   Stage 2 (final): start fresh from base, drop stripped skeleton at /app.
 
 FROM debian:bookworm AS base
 
@@ -31,14 +29,13 @@ RUN set -eux; \
         build-essential ca-certificates curl git \
         iverilog \
         python3 python3-pip python3-venv \
-        rsync sudo; \
-    # Install FuseSoC via pip
+        rsync; \
     pip3 install --break-system-packages fusesoc; \
-    # Create the non-root builder user
     addgroup --gid ${_GID} ${_USERNAME}; \
     adduser --home ${HOME} --disabled-password --gecos "" \
             --uid ${_UID} --gid ${_GID} ${_USERNAME}; \
     chown ${_USERNAME}:${_USERNAME} ${HOME}; \
+    mkdir -p /home/${_USERNAME}/.cache && chown -R ${_UID}:${_GID} /home/${_USERNAME}/.cache; \
     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /logs/verifier && chown -R ${_UID}:${_GID} /logs
@@ -47,45 +44,39 @@ USER ${_USERNAME}
 WORKDIR ${HOME}
 
 # ---------------------------------------------------------------------------
-# Stage 2: pre-warm — register the green source with FuseSoC and run all
-# five testbenches to establish the passing test count.
+# Stage 1: count — run all testbenches on the green source to record the
+# authoritative total test-case count.  This stage is thrown away; nothing
+# from its build artifacts leaks into the final image.
 # ---------------------------------------------------------------------------
-FROM base AS warm
+FROM base AS count
 
 USER root
 RUN mkdir -p /home/builder/.cache/fusesoc && chown -R builder:builder /home/builder/.cache
 USER builder
+
 COPY --chown=builder:builder warm_src/ /app/
-COPY --chown=builder:builder warm.sh /tmp/warm.sh
-RUN chmod +x /tmp/warm.sh && /tmp/warm.sh
-
+COPY --chown=builder:builder count_tests.sh /tmp/count_tests.sh
+RUN chmod +x /tmp/count_tests.sh && /tmp/count_tests.sh
 
 # ---------------------------------------------------------------------------
-# Stage 3: final image — stripped skeleton at /app.
+# Stage 2: final — clean base image with stripped skeleton at /app.
+# No warm cache is copied in; agents start from a cold build.
 # ---------------------------------------------------------------------------
-FROM warm AS final
+FROM base AS final
+
+USER root
+RUN mkdir -p /home/builder/.cache/fusesoc && chown -R builder:builder /home/builder/.cache
+USER builder
 
 COPY --chown=builder:builder skeleton/ /app/
+COPY --from=count /tmp/_total /app/.harbor/total_tests
+COPY --from=count /tmp/_all_tests /app/.harbor/all_tests
 
 RUN set -eux; \
-    # ── HARDENING: scrub warm-run artifacts ──
-    # FuseSoC build artefacts live under build/ by default in the workdir
-    rm -rf /app/build 2>/dev/null || true; \
-    # VCD waveform dumps from the warm run
-    find /app -name "*.vcd" -delete 2>/dev/null || true; \
-    # Any compiled simulation binaries
-    find /app -name "*.sim" -delete 2>/dev/null || true; \
-    # Warm run logs
-    rm -f /tmp/tb_aes*.log; \
-    \
-    # ── Set up skeleton workspace ──
     cd /app; \
+    fusesoc library add aes /app; \
     git init -q; \
     git add -A; \
-    git -c user.email=x@x -c user.name=x commit -q -m init; \
-    mkdir -p .harbor; \
-    mv /tmp/_all_tests  .harbor/all_tests; \
-    mv /tmp/_total      .harbor/total_tests; \
-    cp .harbor/total_tests .harbor/warm_total
+    git -c user.email=x@x -c user.name=x commit -q -m init
 
 WORKDIR /app

@@ -1,6 +1,6 @@
 #!/bin/bash
 # Reference solution: restore the canonical green RTL sources into the task
-# container.  Runs on the Harbor host (outside the container).
+# container. Runs on the Harbor host (outside the container).
 #
 # Usage: solve.sh <container>
 
@@ -14,17 +14,15 @@ fi
 container="$1"
 here="$(cd "$(dirname "$0")" && pwd)"
 
-# The full green source lives at environment/warm_src relative to the task dir.
-# Only the RTL files were stripped, so we copy just src/rtl/ from warm_src.
 warm="$here/../environment/warm_src"
 if [ ! -d "$warm" ]; then
     echo "error: warm source not found at $warm" >&2
-    echo "       Ensure environment/warm_src/ is populated." >&2
+    echo "       Ensure environment/warm_src/ is populated (run sync-skeleton.sh)." >&2
     exit 1
 fi
 
-# Copy the implementation RTL files into the container (restores all 7 stripped files)
-docker cp "$warm/src/rtl/." "$container":/app/src/rtl/
+# Restore the stripped RTL implementation files from warm_src/src/
+docker cp "$warm/src/." "$container":/app/src/
 
 # Commit so the agent's git history is clean
 docker exec "$container" bash -c \

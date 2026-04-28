@@ -7,7 +7,7 @@ version = "1.0"
 timeout_sec = 900.0
 
 [agent]
-# Agents need time to understand AES spec, implement 7 RTL modules, and
+# Agents need time to understand the AES spec, implement 7 RTL modules, and
 # iterate on failing tests. 24 h is the safe upper bound.
 timeout_sec = 86400.0
 
