@@ -403,20 +403,56 @@ docker exec "$CONTAINER_ID" bash -c 'cd /app && git add -A && \
 
 ## Phase 5: Task Variants
 
-Consider creating multiple task variants with different scoring subsets:
+Always create **two variants** for every repo:
 
-| Variant | Scored Targets | Purpose |
-|---------|---------------|---------|
-| `<name>` (all) | All `*_test` targets | Full difficulty benchmark |
-| `<name>-e2e` | Only E2E/integration tests | Focuses on system-level correctness |
-| `<name>-unit` | Only unit tests | Easier; tests module-level code |
+1. **`<name>`** — the full task, all tests scored. This is the definitive
+   benchmark. Agents get partial credit for any tests that pass.
 
-For E2E variants, capture the scored target set during the warm stage:
+2. **`<name>-lite`** — a smaller scored subset for faster iteration. This
+   gives quicker signal during development and costs less per run.
+
+The `-lite` variant uses the same Docker image and skeleton as the full
+variant — only `test.sh` and `instruction.md` differ (they filter which
+tests count toward the score).
+
+### How to choose the `-lite` subset
+
+Pick the subset that provides the fastest meaningful signal. The right split
+depends on the repo's test architecture:
+
+- **If there's a natural unit/integration boundary** (e.g., Chisel ScalaTest
+  unit tests vs cocotb E2E simulations), score only the unit tests in `-lite`.
+  They compile and run faster, and passing them proves the agent got individual
+  modules right even if the system doesn't boot end-to-end.
+
+- **If all tests use the same framework** (e.g., all Verilator sims, all
+  FuseSoC testbenches), pick the smallest/fastest subset that still exercises
+  meaningful RTL. Often this is a "smoke" set of 5-10 representative tests.
+
+- **If there's a difficulty gradient** (e.g., some tests only need a few
+  modules while others need the full SoC), score the easiest tier in `-lite`.
+
+The `-lite` variant should have at least 3 scored tests (fewer than that and
+partial credit is too coarse-grained) and should complete its verifier run in
+under 30 minutes.
+
+### Capturing the subset
+
+During the count/warm stage, capture both the full test list and the lite
+subset:
 
 ```bash
-bazel query '<e2e-target-query>' | sort -u > /tmp/_e2e_targets
-comm -12 /tmp/_all_tests /tmp/_e2e_raw > /tmp/_e2e_targets
+# Full list (all passing tests)
+<run all tests, parse pass list> > /tmp/_all_tests
+wc -l < /tmp/_all_tests > /tmp/_total
+
+# Lite subset (filtered)
+<query or filter for the lite subset> > /tmp/_lite_targets
+wc -l < /tmp/_lite_targets > /tmp/_lite_total
 ```
+
+The `-lite` variant's `test.sh` reads `.harbor/lite_targets` and scores
+against `.harbor/lite_total` instead of the full set.
 
 ---
 
