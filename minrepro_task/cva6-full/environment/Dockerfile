@@ -86,7 +86,7 @@ RUN set -eux; \
 # ---------------------------------------------------------------------------
 # Install Python dependencies (riscv-dv)
 # ---------------------------------------------------------------------------
-RUN pip3 install --user --no-cache-dir \
+RUN pip3 install --break-system-packages --user --no-cache-dir \
     pyyaml \
     pytest \
     mako

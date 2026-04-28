@@ -60,7 +60,7 @@ RUN set -eux; \
     tar xzf toolchain.tar.gz -C /tools/riscv --strip-components=1; \
     rm toolchain.tar.gz
 
-RUN pip3 install --user --no-cache-dir pyyaml pytest mako
+RUN pip3 install --break-system-packages --user --no-cache-dir pyyaml pytest mako
 
 ENV RISCV=/tools/riscv
 ENV VERILATOR_INSTALL_DIR=/tools/verilator

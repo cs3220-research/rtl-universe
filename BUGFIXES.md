@@ -1,0 +1,11 @@
+# Bugfixes Log
+
+Tracking issues found during dynamic test runs and the fixes applied.
+
+| Timestamp | Task | Issue | Fix | Skill Update Needed |
+|-----------|------|-------|-----|-------------------|
+| 2026-04-28 | veer-el2-block, veer-el2-full | Dockerfile parse error: inline Python heredoc (`<<'PYEOF'`) inside RUN not understood by Docker parser | Extracted warm-stage logic into `warm.sh` script file, replaced inline RUN with `COPY warm.sh` + `RUN ./warm.sh` | Skill already warns about this but eval agents still generated inline heredocs. Strengthen to: "NEVER use heredocs or inline Python inside Dockerfile RUN. Always use a separate .sh file." |
+| 2026-04-28 | veer-el2-block/full, cva6-full/smoke | `externally-managed-environment` error: Debian bookworm pip refuses to install without `--break-system-packages` | Added `--break-system-packages` to all `pip3 install` calls in Dockerfiles and warm scripts | Skill should include `--break-system-packages` in all pip install examples, or recommend using a venv |
+| 2026-04-28 | caliptra-full, caliptra-rtl-fw | Missing submodule (`adams-bridge`): shallow clone didn't init submodules, causing `No rule to make target` during Docker build | Ran `git submodule update --init --recursive` and re-synced warm_src | Skill should note: "If the repo uses git submodules, initialize them before syncing warm_src. Use `git clone --recurse-submodules` or run `git submodule update --init --recursive`." |
+| 2026-04-28 | veer-el2-full | Spike ISS build from source fails in Docker (exit 128 during git clone or configure) | Needs investigation: either network issue during Docker build, or configure flags wrong for rv32imac target | Skill should recommend pre-built tool binaries where available (apt/tarball) over building from source in Docker — source builds are fragile and slow |
+| 2026-04-28 | cva6-smoke | CVA6 submodules (corev_apu/register_interface etc.) not populated in Docker context | Same root cause as caliptra — shallow clone + rsync doesn't carry submodule content | Skill should add explicit submodule handling guidance: either populate submodules before sync, or add git submodule init/update inside the Dockerfile |
