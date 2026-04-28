@@ -1,0 +1,23 @@
+{
+  "skill_name": "harbor-task-gen",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have an RTL repo at repos/coralnpu that uses bazel with Chisel and cocotb tests. Convert it into Harbor benchmark tasks. The repo has 305 test targets including unit tests, Verilator testbenches, and cocotb E2E simulations.",
+      "expected_output": "Complete Harbor task structure with Dockerfile (3-stage with warm cache + hardening), task.toml (24h agent timeout, 3h verifier timeout), instruction.md, test.sh verifier, solve.sh, and sync-skeleton.sh. Skeleton should strip Chisel implementation but keep test specs.",
+      "files": ["repos/coralnpu"]
+    },
+    {
+      "id": 2,
+      "prompt": "I have a RISC-V core repo that uses cmake + verilator for testing. There are about 50 test targets: some run ISA compliance tests via verilator, others are C++ unit tests for individual pipeline stages. I want to create a Harbor task from it.",
+      "expected_output": "Harbor task adapted for cmake build system. Dockerfile installs cmake, verilator, riscv-gcc toolchain. Warm stage runs cmake build + ctest. Skeleton strips RTL sources but keeps testbench files and cmake configuration. Hardening scrubs cmake build directory artifacts.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Create an E2E-only variant of an existing Harbor task. The full task has 305 targets but I want a variant that only scores the ~189 cocotb end-to-end simulation tests, excluding component-level unit tests.",
+      "expected_output": "New task variant directory with modified test.sh that queries only E2E targets, separate task.toml, instruction.md explaining the E2E-only scoring, and e2e_targets file captured during warm stage.",
+      "files": []
+    }
+  ]
+}
