@@ -24,7 +24,7 @@ if [ ! -d "$WARM_SRC" ]; then
   exit 1
 fi
 
-for task in coralnpu coralnpu-e2e; do
+for task in coralnpu-full coralnpu-e2e; do
   dest="$ROOT/$task/environment"
   mkdir -p "$dest/skeleton" "$dest/warm_src"
 

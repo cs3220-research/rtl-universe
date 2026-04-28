@@ -403,24 +403,45 @@ docker exec "$CONTAINER_ID" bash -c 'cd /app && git add -A && \
 
 ## Phase 5: Task Variants
 
-Always create **two variants** for every repo:
+### Required variants
 
-1. **`<name>-full`** — all tests scored. This is the definitive benchmark.
-   Agents get partial credit for any tests that pass.
+Every repo must have these two (unless all tests are inherently E2E, in
+which case `-full` and `-e2e` are identical — just create one task named
+`<name>-full`):
 
-2. **`<name>-e2e`** — only end-to-end / integration tests scored. These are
-   the tests that exercise the system as a whole rather than individual
-   modules in isolation. This variant focuses on whether the agent can produce
-   a working system, not just correct components.
+1. **`<name>-full`** — all tests scored. The definitive benchmark.
+
+2. **`<name>-e2e`** — only end-to-end / integration tests scored. Tests
+   that exercise the integrated design and would fail if any major subsystem
+   is broken. Excludes per-module isolation tests, lint checks, and formal.
 
 Both variants use the same Docker image and skeleton — only `test.sh` and
-`instruction.md` differ (they filter which tests count toward the score).
+`instruction.md` differ.
+
+### Optional additional variants
+
+If the repo has meaningful dimensions beyond the full/e2e split, create
+additional task variants. These provide richer benchmarking signal. Examples:
+
+- **`<name>-block`** — per-module isolation tests only (opposite of E2E).
+  Useful when the repo has cocotb/UVM block-level testbenches that test
+  individual modules. Easier than full — agents can pass these without
+  getting the whole system to boot.
+
+- **`<name>-fw`** — both RTL and firmware stripped. Maximum difficulty for
+  repos where firmware is normally kept in the skeleton. Tests whether the
+  agent can write both hardware and software.
+
+- **`<name>-smoke`** — a small representative subset (5-10 tests) for fast
+  iteration. Useful for very large test suites where the full verifier
+  takes hours.
+
+Only create extra variants when they represent a genuinely different
+challenge, not just a random subset of the same tests.
 
 ### How to define the E2E subset
 
-The E2E subset should include tests that **run the integrated design** and
-would fail if any major subsystem is broken, while excluding tests that
-exercise a single module in isolation:
+The E2E subset includes tests that **run the integrated design**:
 
 - **If the repo has distinct test frameworks** (e.g., unit tests via
   ScalaTest/cocotb per-module + integration tests via full-chip Verilator
@@ -434,26 +455,23 @@ exercise a single module in isolation:
   ISA tests through the full pipeline), those are inherently E2E — include
   all of them. Exclude any pure RTL lint or formal checks.
 
-The E2E subset should have at least 3 scored tests and should represent the
-tests that matter most for "does this design actually work."
+The E2E subset should have at least 3 scored tests.
 
-### Capturing the subset
+### Capturing the subsets
 
-During the count/warm stage, capture both the full test list and the E2E
-subset:
+During the count/warm stage, capture the full test list and any subsets:
 
 ```bash
 # Full list (all passing tests)
 <run all tests, parse pass list> > /tmp/_all_tests
 wc -l < /tmp/_all_tests > /tmp/_total
 
-# E2E subset (filtered)
-<query or filter for the E2E subset> > /tmp/_e2e_targets
+# E2E subset
+<query or filter for E2E tests> > /tmp/_e2e_targets
 wc -l < /tmp/_e2e_targets > /tmp/_e2e_total
 ```
 
-The `-e2e` variant's `test.sh` reads `.harbor/e2e_targets` and scores
-against `.harbor/e2e_total` instead of the full set.
+Each variant's `test.sh` reads its corresponding target list from `.harbor/`.
 
 ---
 
