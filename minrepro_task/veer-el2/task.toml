@@ -1,0 +1,17 @@
+version = "1.0"
+
+[verifier]
+# Verilator sim compilation + all block-level cocotb tests + top-level tests.
+# Measured: ~45 min cold; ~15 min warm. 3x warm budget = 45 min.
+timeout_sec = 3600.0
+
+[agent]
+# Agent has up to 24 h to restore stripped RTL.
+timeout_sec = 86400.0
+
+[environment]
+# Verilator build of 40+ SV modules is memory-heavy; picolibc + RISC-V GCC cross.
+build_timeout_sec = 5400.0
+cpus = 8
+memory_mb = 32768
+storage_mb = 61440
