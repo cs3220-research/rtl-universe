@@ -1,0 +1,38 @@
+=== Running FuseSoC target: tb_aes ===
+***
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 2
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'
+  target=tb_aes  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_core ===
+***
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 2
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_core-icarus'
+  target=tb_aes_core  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_key_mem ===
+***
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 3
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_key_mem-icarus'
+  target=tb_aes_key_mem  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_encipher_block ===
+***
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 3
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_encipher_block-icarus'
+  target=tb_aes_encipher_block  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_decipher_block ===
+***
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 2
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_decipher_block-icarus'
+  target=tb_aes_decipher_block  tc=0  passed=0
+
+Total: passed=0 / denominator=40
+reward: 0.000000  (passed=0, total=40)
