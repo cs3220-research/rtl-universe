@@ -136,7 +136,25 @@ minrepro_task/
     └── ...
 ```
 
-### 2.2 Strip Implementation Files
+### 2.2 Prepare the Source (Submodules!)
+
+Before creating the skeleton, ensure the source repo is complete. Many RTL
+repos use git submodules for vendored IPs, third-party libraries, or shared
+infrastructure. If submodules are not initialized, the skeleton and warm_src
+will be missing critical files, and Docker builds will fail with cryptic
+"No rule to make target" or "file not found" errors.
+
+```bash
+cd "$GREEN_SOURCE"
+git submodule update --init --recursive
+```
+
+If you cloned with `--depth 1`, submodules may not initialize properly.
+Use `git clone --recurse-submodules` instead, or run the submodule update
+after cloning. Check for `.gitmodules` at the repo root to detect whether
+submodules exist.
+
+### 2.3 Strip Implementation Files
 
 Create `.skeleton/` by copying the full repo and removing implementation:
 
@@ -167,7 +185,7 @@ Adapt the stripping patterns to the specific repo. The principle: if a BUILD
 file references a source file as a `src`, strip it. If it's in `test_srcs` or
 a test rule, keep it.
 
-### 2.3 Create sync-skeleton.sh
+### 2.4 Create sync-skeleton.sh
 
 This script regenerates `environment/skeleton/` and `environment/warm_src/` for
 each task variant from the canonical sources. See the reference implementation
@@ -212,7 +230,7 @@ specific file content, or does any source change invalidate everything?
 FROM debian:bookworm AS base
 
 RUN apt-get update && apt-get install -y \
-    build-essential curl git python3 python3-pip \
+    build-essential curl git python3 python3-pip python3-venv \
     <repo-specific-tools> && \
     rm -rf /var/lib/apt/lists/*
 
@@ -226,10 +244,21 @@ RUN mkdir -p /logs/verifier && chown -R ${_UID}:${_GID} /logs
 USER builder
 ```
 
-**Important:** Set `_UID` / `_GID` to match the host user that will run
-Harbor. Mismatched UIDs cause permission denied errors on bind-mounted log
-directories. Also create `~/.cache` explicitly — some tools (FuseSoC, pip)
-need it and it may not exist for a fresh user.
+**Important notes for the base stage:**
+
+- Set `_UID` / `_GID` to match the host user that will run Harbor.
+  Mismatched UIDs cause permission denied errors on bind-mounted log dirs.
+- Create `~/.cache` explicitly — tools like FuseSoC and pip need it.
+- **Debian bookworm requires `--break-system-packages`** on all `pip3
+  install` calls (or use a venv). Without it, pip refuses to install
+  packages outside a virtual environment. Include this flag in every pip
+  command in both Dockerfiles and `.sh` scripts.
+- **Prefer pre-built tool binaries** (apt packages, GitHub release tarballs)
+  over building from source inside Docker. Source builds (e.g., building
+  Spike ISS or Verilator from git) are slow, fragile, and may fail due to
+  network issues or missing dependencies. If a tool must be built from
+  source, do it in a dedicated early stage so failures are isolated and
+  the layer is cached.
 
 ### Capturing the Green Test Count
 
@@ -244,11 +273,18 @@ RUN chmod +x /tmp/count_tests.sh && /tmp/count_tests.sh
 ```
 
 Put the test-counting logic in `count_tests.sh` (a separate script file),
-not inline in the Dockerfile RUN command. Docker `RUN` uses `/bin/sh`, which
-has different escaping rules from bash — `$()` subshells, `grep -oP` Perl
-regex, and loop constructs break in subtle ways when inlined. **Extracting
-complex shell into `.sh` files is the single most important thing you can do
-to avoid Docker build failures.**
+not inline in the Dockerfile RUN command. This is not optional — it is the
+single most common cause of Docker build failures in generated tasks:
+
+- Docker `RUN` executes with `/bin/sh`, not bash. Heredocs (`<<'EOF'`),
+  inline Python (`python3 - <<'PYEOF'`), `$()` subshells, `grep -oP` Perl
+  regex, and bash-style arithmetic all break silently or produce parse errors.
+- Even simple `for` loops with conditionals become unreadable when escaped
+  for Dockerfile syntax.
+- The fix is always the same: write a `.sh` file, COPY it in, `RUN` it.
+
+Any logic beyond a single simple command belongs in a script file. When in
+doubt, use a script file.
 
 ### With Warm Cache (3-stage)
 
