@@ -1,0 +1,522 @@
+Trial veer-el2-full__VCyZf3p failed: Docker compose command failed for environment veer-el2-full. Command: docker compose --project-name veer-el2-full__vcyzf3p --project-directory /data/saketh/research/cs3220-research/rtl-universe/minrepro_task/veer-el2-full/environment -f /home/saketh/.cache/uv/archive-v0/q8y60HsjR0XunSPhH_MAa/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /home/saketh/.cache/uv/archive-v0/q8y60HsjR0XunSPhH_MAa/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /data/saketh/research/cs3220-research/rtl-universe/jobs/sonnet-veer-el2-full/veer-el2-full__VCyZf3p/docker-compose-mounts.json build. Return code: 17. Stdout:  Service main  Building
+#0 building with "default" instance using docker driver
+
+#1 [main internal] load build definition from Dockerfile
+#1 transferring dockerfile: 4.35kB done
+#1 DONE 0.0s
+
+#2 [main auth] library/debian:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [main internal] load metadata for docker.io/library/debian:bookworm
+#3 DONE 0.3s
+
+#4 [main internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [main base 1/7] FROM docker.io/library/debian:bookworm@sha256:8a8cd02c5912770b4980228a54d4aff9e4f986f1eb2525d2d371dec5232cefcc
+#5 DONE 0.0s
+
+#6 [main internal] load build context
+#6 transferring context: 105.58kB 0.1s done
+#6 DONE 0.1s
+
+#7 [main base 3/7] RUN addgroup --gid 1005 builder &&     adduser --uid 1005 --gid 1005 --disabled-password --gecos "" builder &&     mkdir -p /home/builder/.cache &&     chown -R 1005:1005 /home/builder
+#7 CACHED
+
+#8 [main base 2/7] RUN apt-get update && apt-get install -y     autoconf     build-essential     ca-certificates     curl     git     help2man     libfl2     libfl-dev     libgoogle-perftools-dev     make     numactl     perl     perl-doc     python3     python3-pip     python3-dev     verilator     && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [main base 4/7] RUN mkdir -p /logs/verifier && chown -R 1005:1005 /logs
+#9 CACHED
+
+#10 [main base 5/7] COPY install_python_deps.sh /tmp/install_python_deps.sh
+#10 DONE 0.0s
+
+#11 [main base 6/7] RUN chmod +x /tmp/install_python_deps.sh && /tmp/install_python_deps.sh
+#11 0.512 WARNING: The directory '/home/builder/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+#11 0.796 Collecting cocotb==1.8.0
+#11 0.853   Downloading cocotb-1.8.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.8 MB)
+#11 0.918      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 60.5 MB/s eta 0:00:00
+#11 0.962 Collecting cocotb-bus==0.2.1
+#11 0.965   Downloading cocotb-bus-0.2.1.tar.gz (28 kB)
+#11 0.977   Installing build dependencies: started
+#11 3.025   Installing build dependencies: finished with status 'done'
+#11 3.027   Getting requirements to build wheel: started
+#11 3.231   Getting requirements to build wheel: finished with status 'done'
+#11 3.232   Preparing metadata (pyproject.toml): started
+#11 3.437   Preparing metadata (pyproject.toml): finished with status 'done'
+#11 3.466 Collecting cocotb-coverage==1.1.0
+#11 3.471   Downloading cocotb_coverage-1.1.0-py3-none-any.whl (31 kB)
+#11 3.500 Collecting cocotb-test==0.2.4
+#11 3.503   Downloading cocotb-test-0.2.4.tar.gz (16 kB)
+#11 3.510   Preparing metadata (setup.py): started
+#11 3.764   Preparing metadata (setup.py): finished with status 'done'
+#11 3.875 Collecting pytest==7.4.1
+#11 3.880   Downloading pytest-7.4.1-py3-none-any.whl (324 kB)
+#11 3.884      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 324.2/324.2 kB 180.8 MB/s eta 0:00:00
+#11 3.931 Collecting pytest-html==3.2.0
+#11 3.934   Downloading pytest_html-3.2.0-py3-none-any.whl (16 kB)
+#11 3.966 Collecting pytest-timeout==2.1.0
+#11 3.969   Downloading pytest_timeout-2.1.0-py3-none-any.whl (12 kB)
+#11 3.998 Collecting pytest-md==0.2.0
+#11 4.001   Downloading pytest_md-0.2.0-py3-none-any.whl (6.1 kB)
+#11 4.041 Collecting pyuvm==2.9.1
+#11 4.047   Downloading pyuvm-2.9.1-py3-none-any.whl (40 kB)
+#11 4.052      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.4/40.4 kB 113.9 MB/s eta 0:00:00
+#11 4.470 Collecting scipy==1.13.1
+#11 4.473   Downloading scipy-1.13.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38.6 MB)
+#11 4.850      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.6/38.6 MB 117.2 MB/s eta 0:00:00
+#11 5.033 Collecting nox
+#11 5.036   Downloading nox-2026.4.10-py3-none-any.whl (75 kB)
+#11 5.038      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.5/75.5 kB 215.2 MB/s eta 0:00:00
+#11 5.069 Collecting find-libpython
+#11 5.072   Downloading find_libpython-0.5.1-py3-none-any.whl (9.2 kB)
+#11 5.107 Collecting python-constraint
+#11 5.111   Downloading python-constraint-1.4.0.tar.bz2 (18 kB)
+#11 5.129   Preparing metadata (setup.py): started
+#11 5.393   Preparing metadata (setup.py): finished with status 'done'
+#11 5.525 Collecting pyyaml
+#11 5.528   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+#11 5.536      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 132.7 MB/s eta 0:00:00
+#11 5.590 Collecting iniconfig
+#11 5.592   Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+#11 5.642 Collecting packaging
+#11 5.644   Downloading packaging-26.2-py3-none-any.whl (100 kB)
+#11 5.647      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.2/100.2 kB 225.9 MB/s eta 0:00:00
+#11 5.686 Collecting pluggy<2.0,>=0.12
+#11 5.689   Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+#11 5.733 Collecting py>=1.8.2
+#11 5.736   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)
+#11 5.739      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.7/98.7 kB 127.9 MB/s eta 0:00:00
+#11 5.788 Collecting pytest-metadata
+#11 5.791   Downloading pytest_metadata-3.1.1-py3-none-any.whl (11 kB)
+#11 6.520 Collecting numpy<2.3,>=1.22.4
+#11 6.524   Downloading numpy-2.2.6-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+#11 6.669      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 117.1 MB/s eta 0:00:00
+#11 6.812 Collecting argcomplete<4,>=1.9.4
+#11 6.815   Downloading argcomplete-3.6.3-py3-none-any.whl (43 kB)
+#11 6.818      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.8/43.8 kB 177.8 MB/s eta 0:00:00
+#11 6.860 Collecting attrs>=24.1
+#11 6.862   Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+#11 6.865      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.5/67.5 kB 205.1 MB/s eta 0:00:00
+#11 6.912 Collecting colorlog<7,>=2.6.1
+#11 6.915   Downloading colorlog-6.10.1-py3-none-any.whl (11 kB)
+#11 6.945 Collecting dependency-groups>=1.1
+#11 6.948   Downloading dependency_groups-1.3.1-py3-none-any.whl (8.7 kB)
+#11 6.997 Collecting humanize>=4
+#11 7.000   Downloading humanize-4.15.0-py3-none-any.whl (132 kB)
+#11 7.003      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 132.2/132.2 kB 233.5 MB/s eta 0:00:00
+#11 7.158 Collecting virtualenv>=20.15
+#11 7.164   Downloading virtualenv-21.3.0-py3-none-any.whl (7.6 MB)
+#11 7.229      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.6/7.6 MB 119.3 MB/s eta 0:00:00
+#11 7.342 Collecting distlib<1,>=0.3.7
+#11 7.345   Downloading distlib-0.4.0-py2.py3-none-any.whl (469 kB)
+#11 7.350      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 469.0/469.0 kB 154.3 MB/s eta 0:00:00
+#11 7.418 Collecting filelock<4,>=3.24.2
+#11 7.420   Downloading filelock-3.29.0-py3-none-any.whl (39 kB)
+#11 7.477 Collecting platformdirs<5,>=3.9.1
+#11 7.479   Downloading platformdirs-4.9.6-py3-none-any.whl (21 kB)
+#11 7.508 Collecting python-discovery>=1.2.2
+#11 7.511   Downloading python_discovery-1.2.2-py3-none-any.whl (31 kB)
+#11 7.621 Building wheels for collected packages: cocotb-bus, cocotb-test, python-constraint
+#11 7.622   Building wheel for cocotb-bus (pyproject.toml): started
+#11 7.868   Building wheel for cocotb-bus (pyproject.toml): finished with status 'done'
+#11 7.869   Created wheel for cocotb-bus: filename=cocotb_bus-0.2.1-py3-none-any.whl size=34948 sha256=c362e83f5803ccc10d39f7e658ee628431ce5ccfe2271d59243befb5ffd8f665
+#11 7.869   Stored in directory: /tmp/pip-ephem-wheel-cache-ldh3140v/wheels/f3/40/c4/456859501d450830880eb944793719ae31e972bdb1ef60f64d
+#11 7.872   Building wheel for cocotb-test (setup.py): started
+#11 8.205   Building wheel for cocotb-test (setup.py): finished with status 'done'
+#11 8.205   Created wheel for cocotb-test: filename=cocotb_test-0.2.4-py3-none-any.whl size=16268 sha256=4b55d1d059c5cf726c83e2aa8d118c28d0d256db24196d28a94dc6f4e7f0bffd
+#11 8.206   Stored in directory: /tmp/pip-ephem-wheel-cache-ldh3140v/wheels/b0/1b/82/7b91bf5dea834d5e632de9828824817c8b51be2516dbf52d77
+#11 8.208   Building wheel for python-constraint (setup.py): started
+#11 8.557   Building wheel for python-constraint (setup.py): finished with status 'done'
+#11 8.558   Created wheel for python-constraint: filename=python_constraint-1.4.0-py2.py3-none-any.whl size=24057 sha256=38b4270528b58f609c4ea32448eb38252fb04931f7dc162605826ece86ac6547
+#11 8.558   Stored in directory: /tmp/pip-ephem-wheel-cache-ldh3140v/wheels/1e/af/a9/990ae7e6a78319b7d7afaab2d14e7e5ae349d5613db5ae28fd
+#11 8.560 Successfully built cocotb-bus cocotb-test python-constraint
+#11 8.735 Installing collected packages: python-constraint, distlib, pyyaml, py, pluggy, platformdirs, packaging, numpy, iniconfig, humanize, find-libpython, filelock, colorlog, attrs, argcomplete, scipy, python-discovery, pytest, dependency-groups, cocotb, virtualenv, pyuvm, pytest-timeout, pytest-metadata, pytest-md, cocotb-test, cocotb-coverage, cocotb-bus, pytest-html, nox
+#11 16.48 Successfully installed argcomplete-3.6.3 attrs-26.1.0 cocotb-1.8.0 cocotb-bus-0.2.1 cocotb-coverage-1.1.0 cocotb-test-0.2.4 colorlog-6.10.1 dependency-groups-1.3.1 distlib-0.4.0 filelock-3.29.0 find-libpython-0.5.1 humanize-4.15.0 iniconfig-2.3.0 nox-2026.4.10 numpy-2.2.6 packaging-26.2 platformdirs-4.9.6 pluggy-1.6.0 py-1.11.0 pytest-7.4.1 pytest-html-3.2.0 pytest-md-0.2.0 pytest-metadata-3.1.1 pytest-timeout-2.1.0 python-constraint-1.4.0 python-discovery-1.2.2 pyuvm-2.9.1 pyyaml-6.0.3 scipy-1.13.1 virtualenv-21.3.0
+#11 16.48 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#11 16.65 Python deps installed OK
+#11 DONE 17.2s
+
+#12 [main base 7/7] WORKDIR /home/builder
+#12 DONE 0.0s
+
+#13 [main final 1/8] COPY --chown=builder:builder skeleton/ /app/
+#13 DONE 0.2s
+
+#14 [main count 1/5] COPY --chown=builder:builder warm_src/ /app/
+#14 DONE 0.2s
+
+#15 [main count 2/5] COPY --chown=builder:builder count_tests.sh /tmp/count_tests.sh
+#15 DONE 0.0s
+
+#16 [main count 3/5] COPY --chown=builder:builder parse_nox_results.py /tmp/parse_nox_results.py
+#16 DONE 0.0s
+
+#17 [main count 4/5] RUN chmod +x /tmp/count_tests.sh && chmod +x /tmp/parse_nox_results.py
+#17 DONE 0.2s
+
+#18 [main count 5/5] RUN cd /app && /tmp/count_tests.sh
+#18 0.360 nox > Running session pic_verify(coverage='all', testName='test_reset', blockName='pic')
+#18 0.361 nox > Creating virtual environment (virtualenv) using python3 in .nox/pic_verify-coverage-all-testname-test_reset-blockname-pic
+#18 1.093 nox > python -m pip install -r requirements.txt
+#18 17.48 nox > make -C ./pic all COVERAGE_TYPE=all MODULE=test_reset COCOTB_RESULTS_FILE=test_reset.xml
+#18 22.70 nox > Command make -C ./pic all COVERAGE_TYPE=all MODULE=test_reset COCOTB_RESULTS_FILE=test_reset.xml failed with exit code 2
+#18 22.70 nox > Session pic_verify(coverage='all', testName='test_reset', blockName='pic') failed.
+#18 22.70 nox > Running session pic_verify(coverage='all', testName='test_clken', blockName='pic')
+#18 22.70 nox > Creating virtual environment (virtualenv) using python3 in .nox/pic_verify-coverage-all-testname-test_clken-blockname-pic
+#18 23.06 nox > python -m pip install -r requirements.txt
+#18 32.64 nox > make -C ./pic all COVERAGE_TYPE=all MODULE=test_clken COCOTB_RESULTS_FILE=test_clken.xml
+#18 37.83 nox > Command make -C ./pic all COVERAGE_TYPE=all MODULE=test_clken COCOTB_RESULTS_FILE=test_clken.xml failed with exit code 2
+#18 37.83 nox > Session pic_verify(coverage='all', testName='test_clken', blockName='pic') failed.
+#18 37.83 nox > Running session pic_verify(coverage='all', testName='test_config', blockName='pic')
+#18 37.83 nox > Creating virtual environment (virtualenv) using python3 in .nox/pic_verify-coverage-all-testname-test_config-blockname-pic
+#18 38.20 nox > python -m pip install -r requirements.txt
+#18 47.73 nox > make -C ./pic all COVERAGE_TYPE=all MODULE=test_config COCOTB_RESULTS_FILE=test_config.xml
+#18 52.93 nox > Command make -C ./pic all COVERAGE_TYPE=all MODULE=test_config COCOTB_RESULTS_FILE=test_config.xml failed with exit code 2
+#18 52.93 nox > Session pic_verify(coverage='all', testName='test_config', blockName='pic') failed.
+#18 52.93 nox > Running session pic_verify(coverage='all', testName='test_pending', blockName='pic')
+#18 52.93 nox > Creating virtual environment (virtualenv) using python3 in .nox/pic_verify-coverage-all-testname-test_pending-blockname-pic
+#18 53.30 nox > python -m pip install -r requirements.txt
+#18 62.83 nox > make -C ./pic all COVERAGE_TYPE=all MODULE=test_pending COCOTB_RESULTS_FILE=test_pending.xml
+#18 67.98 nox > Command make -C ./pic all COVERAGE_TYPE=all MODULE=test_pending COCOTB_RESULTS_FILE=test_pending.xml failed with exit code 2
+#18 67.98 nox > Session pic_verify(coverage='all', testName='test_pending', blockName='pic') failed.
+#18 67.98 nox > Running session pic_verify(coverage='all', testName='test_prioritization', blockName='pic')
+#18 67.98 nox > Creating virtual environment (virtualenv) using python3 in .nox/pic_verify-coverage-all-testname-test_prioritization-blockname-pic
+#18 68.34 nox > python -m pip install -r requirements.txt
+#18 77.94 nox > make -C ./pic all COVERAGE_TYPE=all MODULE=test_prioritization COCOTB_RESULTS_FILE=test_prioritization.xml
+#18 83.07 nox > Command make -C ./pic all COVERAGE_TYPE=all MODULE=test_prioritization COCOTB_RESULTS_FILE=test_prioritization.xml failed with exit code 2
+#18 83.07 nox > Session pic_verify(coverage='all', testName='test_prioritization', blockName='pic') failed.
+#18 83.07 nox > Running session pic_verify(coverage='all', testName='test_servicing', blockName='pic')
+#18 83.07 nox > Creating virtual environment (virtualenv) using python3 in .nox/pic_verify-coverage-all-testname-test_servicing-blockname-pic
+#18 83.44 nox > python -m pip install -r requirements.txt
+#18 92.99 nox > make -C ./pic all COVERAGE_TYPE=all MODULE=test_servicing COCOTB_RESULTS_FILE=test_servicing.xml
+#18 98.16 nox > Command make -C ./pic all COVERAGE_TYPE=all MODULE=test_servicing COCOTB_RESULTS_FILE=test_servicing.xml failed with exit code 2
+#18 98.16 nox > Session pic_verify(coverage='all', testName='test_servicing', blockName='pic') failed.
+#18 98.16 nox > Running session pic_gw_verify(coverage='all', testName='test_gateway', blockName='pic_gw')
+#18 98.16 nox > Creating virtual environment (virtualenv) using python3 in .nox/pic_gw_verify-coverage-all-testname-test_gateway-blockname-pic_gw
+#18 98.52 nox > python -m pip install -r requirements.txt
+#18 108.1 nox > make -C ./pic_gw all COVERAGE_TYPE=all MODULE=test_gateway COCOTB_RESULTS_FILE=test_gateway.xml
+#18 113.3 nox > Command make -C ./pic_gw all COVERAGE_TYPE=all MODULE=test_gateway COCOTB_RESULTS_FILE=test_gateway.xml failed with exit code 2
+#18 113.3 nox > Session pic_gw_verify(coverage='all', testName='test_gateway', blockName='pic_gw') failed.
+#18 113.3 nox > Running session dec_tl_verify(coverage='all', testName='test_dec_tl', blockName='dec_tl')
+#18 113.3 nox > Creating virtual environment (virtualenv) using python3 in .nox/dec_tl_verify-coverage-all-testname-test_dec_tl-blockname-dec_tl
+#18 113.6 nox > python -m pip install -r requirements.txt
+#18 123.2 nox > make -C ./dec_tl all COVERAGE_TYPE=all MODULE=test_dec_tl COCOTB_RESULTS_FILE=test_dec_tl.xml
+#18 128.4 nox > Command make -C ./dec_tl all COVERAGE_TYPE=all MODULE=test_dec_tl COCOTB_RESULTS_FILE=test_dec_tl.xml failed with exit code 2
+#18 128.4 nox > Session dec_tl_verify(coverage='all', testName='test_dec_tl', blockName='dec_tl') failed.
+#18 128.4 nox > Running session dec_ib_verify(coverage='all', testName='test_dec_ib', blockName='dec_ib')
+#18 128.4 nox > Creating virtual environment (virtualenv) using python3 in .nox/dec_ib_verify-coverage-all-testname-test_dec_ib-blockname-dec_ib
+#18 128.8 nox > python -m pip install -r requirements.txt
+#18 138.5 nox > make -C ./dec_ib all COVERAGE_TYPE=all MODULE=test_dec_ib COCOTB_RESULTS_FILE=test_dec_ib.xml
+#18 143.6 nox > Command make -C ./dec_ib all COVERAGE_TYPE=all MODULE=test_dec_ib COCOTB_RESULTS_FILE=test_dec_ib.xml failed with exit code 2
+#18 143.6 nox > Session dec_ib_verify(coverage='all', testName='test_dec_ib', blockName='dec_ib') failed.
+#18 143.6 nox > Running session dma_verify(coverage='all', testName='test_reset', blockName='dma')
+#18 143.6 nox > Creating virtual environment (virtualenv) using python3 in .nox/dma_verify-coverage-all-testname-test_reset-blockname-dma
+#18 144.0 nox > python -m pip install -r requirements.txt
+#18 153.7 nox > make -C ./dma all COVERAGE_TYPE=all MODULE=test_reset COCOTB_RESULTS_FILE=test_reset.xml
+#18 158.9 nox > Command make -C ./dma all COVERAGE_TYPE=all MODULE=test_reset COCOTB_RESULTS_FILE=test_reset.xml failed with exit code 2
+#18 158.9 nox > Session dma_verify(coverage='all', testName='test_reset', blockName='dma') failed.
+#18 158.9 nox > Running session dma_verify(coverage='all', testName='test_read', blockName='dma')
+#18 158.9 nox > Creating virtual environment (virtualenv) using python3 in .nox/dma_verify-coverage-all-testname-test_read-blockname-dma
+#18 159.2 nox > python -m pip install -r requirements.txt
+#18 168.8 nox > make -C ./dma all COVERAGE_TYPE=all MODULE=test_read COCOTB_RESULTS_FILE=test_read.xml
+#18 174.0 nox > Command make -C ./dma all COVERAGE_TYPE=all MODULE=test_read COCOTB_RESULTS_FILE=test_read.xml failed with exit code 2
+#18 174.0 nox > Session dma_verify(coverage='all', testName='test_read', blockName='dma') failed.
+#18 174.0 nox > Running session dma_verify(coverage='all', testName='test_write', blockName='dma')
+#18 174.0 nox > Creating virtual environment (virtualenv) using python3 in .nox/dma_verify-coverage-all-testname-test_write-blockname-dma
+#18 174.4 nox > python -m pip install -r requirements.txt
+#18 184.0 nox > make -C ./dma all COVERAGE_TYPE=all MODULE=test_write COCOTB_RESULTS_FILE=test_write.xml
+#18 189.2 nox > Command make -C ./dma all COVERAGE_TYPE=all MODULE=test_write COCOTB_RESULTS_FILE=test_write.xml failed with exit code 2
+#18 189.2 nox > Session dma_verify(coverage='all', testName='test_write', blockName='dma') failed.
+#18 189.2 nox > Running session dma_verify(coverage='all', testName='test_address', blockName='dma')
+#18 189.2 nox > Creating virtual environment (virtualenv) using python3 in .nox/dma_verify-coverage-all-testname-test_address-blockname-dma
+#18 189.6 nox > python -m pip install -r requirements.txt
+#18 199.1 nox > make -C ./dma all COVERAGE_TYPE=all MODULE=test_address COCOTB_RESULTS_FILE=test_address.xml
+#18 204.3 nox > Command make -C ./dma all COVERAGE_TYPE=all MODULE=test_address COCOTB_RESULTS_FILE=test_address.xml failed with exit code 2
+#18 204.3 nox > Session dma_verify(coverage='all', testName='test_address', blockName='dma') failed.
+#18 204.3 nox > Running session dma_verify(coverage='all', testName='test_ecc', blockName='dma')
+#18 204.3 nox > Creating virtual environment (virtualenv) using python3 in .nox/dma_verify-coverage-all-testname-test_ecc-blockname-dma
+#18 204.7 nox > python -m pip install -r requirements.txt
+#18 214.4 nox > make -C ./dma all COVERAGE_TYPE=all MODULE=test_ecc COCOTB_RESULTS_FILE=test_ecc.xml
+#18 219.6 nox > Command make -C ./dma all COVERAGE_TYPE=all MODULE=test_ecc COCOTB_RESULTS_FILE=test_ecc.xml failed with exit code 2
+#18 219.6 nox > Session dma_verify(coverage='all', testName='test_ecc', blockName='dma') failed.
+#18 219.6 nox > Running session dma_verify(coverage='all', testName='test_debug_read', blockName='dma')
+#18 219.6 nox > Creating virtual environment (virtualenv) using python3 in .nox/dma_verify-coverage-all-testname-test_debug_read-blockname-dma
+#18 219.9 nox > python -m pip install -r requirements.txt
+#18 229.8 nox > make -C ./dma all COVERAGE_TYPE=all MODULE=test_debug_read COCOTB_RESULTS_FILE=test_debug_read.xml
+#18 235.0 nox > Command make -C ./dma all COVERAGE_TYPE=all MODULE=test_debug_read COCOTB_RESULTS_FILE=test_debug_read.xml failed with exit code 2
+#18 235.0 nox > Session dma_verify(coverage='all', testName='test_debug_read', blockName='dma') failed.
+#18 235.0 nox > Running session dma_verify(coverage='all', testName='test_debug_write', blockName='dma')
+#18 235.0 nox > Creating virtual environment (virtualenv) using python3 in .nox/dma_verify-coverage-all-testname-test_debug_write-blockname-dma
+#18 235.4 nox > python -m pip install -r requirements.txt
+#18 245.0 nox > make -C ./dma all COVERAGE_TYPE=all MODULE=test_debug_write COCOTB_RESULTS_FILE=test_debug_write.xml
+#18 250.2 nox > Command make -C ./dma all COVERAGE_TYPE=all MODULE=test_debug_write COCOTB_RESULTS_FILE=test_debug_write.xml failed with exit code 2
+#18 250.2 nox > Session dma_verify(coverage='all', testName='test_debug_write', blockName='dma') failed.
+#18 250.2 nox > Running session dma_verify(coverage='all', testName='test_debug_address', blockName='dma')
+#18 250.2 nox > Creating virtual environment (virtualenv) using python3 in .nox/dma_verify-coverage-all-testname-test_debug_address-blockname-dma
+#18 250.6 nox > python -m pip install -r requirements.txt
+#18 260.2 nox > make -C ./dma all COVERAGE_TYPE=all MODULE=test_debug_address COCOTB_RESULTS_FILE=test_debug_address.xml
+#18 265.4 nox > Command make -C ./dma all COVERAGE_TYPE=all MODULE=test_debug_address COCOTB_RESULTS_FILE=test_debug_address.xml failed with exit code 2
+#18 265.4 nox > Session dma_verify(coverage='all', testName='test_debug_address', blockName='dma') failed.
+#18 265.4 nox > Running session ifu_compress_verify(coverage='all', testName='test_compress', blockName='ifu_compress')
+#18 265.4 nox > Creating virtual environment (virtualenv) using python3 in .nox/ifu_compress_verify-coverage-all-testname-test_compress-blockname-ifu_compress
+#18 265.8 nox > python -m pip install -r requirements.txt
+#18 275.4 nox > make -C ./ifu_compress all COVERAGE_TYPE=all MODULE=test_compress COCOTB_RESULTS_FILE=test_compress.xml
+#18 280.6 nox > Command make -C ./ifu_compress all COVERAGE_TYPE=all MODULE=test_compress COCOTB_RESULTS_FILE=test_compress.xml failed with exit code 2
+#18 280.6 nox > Session ifu_compress_verify(coverage='all', testName='test_compress', blockName='ifu_compress') failed.
+#18 280.6 nox > Running session ifu_mem_ctl_verify(coverage='all', testName='test_miss', blockName='ifu_mem_ctl')
+#18 280.6 nox > Creating virtual environment (virtualenv) using python3 in .nox/ifu_mem_ctl_verify-coverage-all-testname-test_miss-blockname-ifu_mem_ctl
+#18 280.9 nox > python -m pip install -r requirements.txt
+#18 290.5 nox > make -C ./ifu_mem_ctl all COVERAGE_TYPE=all MODULE=test_miss COCOTB_RESULTS_FILE=test_miss.xml
+#18 295.7 nox > Command make -C ./ifu_mem_ctl all COVERAGE_TYPE=all MODULE=test_miss COCOTB_RESULTS_FILE=test_miss.xml failed with exit code 2
+#18 295.7 nox > Session ifu_mem_ctl_verify(coverage='all', testName='test_miss', blockName='ifu_mem_ctl') failed.
+#18 295.7 nox > Running session ifu_mem_ctl_verify(coverage='all', testName='test_err', blockName='ifu_mem_ctl')
+#18 295.7 nox > Creating virtual environment (virtualenv) using python3 in .nox/ifu_mem_ctl_verify-coverage-all-testname-test_err-blockname-ifu_mem_ctl
+#18 296.0 nox > python -m pip install -r requirements.txt
+#18 305.7 nox > make -C ./ifu_mem_ctl all COVERAGE_TYPE=all MODULE=test_err COCOTB_RESULTS_FILE=test_err.xml
+#18 310.9 nox > Command make -C ./ifu_mem_ctl all COVERAGE_TYPE=all MODULE=test_err COCOTB_RESULTS_FILE=test_err.xml failed with exit code 2
+#18 310.9 nox > Session ifu_mem_ctl_verify(coverage='all', testName='test_err', blockName='ifu_mem_ctl') failed.
+#18 310.9 nox > Running session ifu_mem_ctl_verify(coverage='all', testName='test_err_stop', blockName='ifu_mem_ctl')
+#18 310.9 nox > Creating virtual environment (virtualenv) using python3 in .nox/ifu_mem_ctl_verify-coverage-all-testname-test_err_stop-blockname-ifu_mem_ctl
+#18 311.3 nox > python -m pip install -r requirements.txt
+#18 321.1 nox > make -C ./ifu_mem_ctl all COVERAGE_TYPE=all MODULE=test_err_stop COCOTB_RESULTS_FILE=test_err_stop.xml
+#18 326.3 nox > Command make -C ./ifu_mem_ctl all COVERAGE_TYPE=all MODULE=test_err_stop COCOTB_RESULTS_FILE=test_err_stop.xml failed with exit code 2
+#18 326.3 nox > Session ifu_mem_ctl_verify(coverage='all', testName='test_err_stop', blockName='ifu_mem_ctl') failed.
+#18 326.3 nox > Running session exu_alu_verify(coverage='all', testName='test_arith', blockName='exu_alu')
+#18 326.3 nox > Creating virtual environment (virtualenv) using python3 in .nox/exu_alu_verify-coverage-all-testname-test_arith-blockname-exu_alu
+#18 326.7 nox > python -m pip install -r requirements.txt
+#18 336.3 nox > make -C ./exu_alu all COVERAGE_TYPE=all MODULE=test_arith COCOTB_RESULTS_FILE=test_arith.xml
+#18 341.6 nox > Command make -C ./exu_alu all COVERAGE_TYPE=all MODULE=test_arith COCOTB_RESULTS_FILE=test_arith.xml failed with exit code 2
+#18 341.6 nox > Session exu_alu_verify(coverage='all', testName='test_arith', blockName='exu_alu') failed.
+#18 341.6 nox > Running session exu_alu_verify(coverage='all', testName='test_logic', blockName='exu_alu')
+#18 341.6 nox > Creating virtual environment (virtualenv) using python3 in .nox/exu_alu_verify-coverage-all-testname-test_logic-blockname-exu_alu
+#18 342.0 nox > python -m pip install -r requirements.txt
+#18 351.7 nox > make -C ./exu_alu all COVERAGE_TYPE=all MODULE=test_logic COCOTB_RESULTS_FILE=test_logic.xml
+#18 356.9 nox > Command make -C ./exu_alu all COVERAGE_TYPE=all MODULE=test_logic COCOTB_RESULTS_FILE=test_logic.xml failed with exit code 2
+#18 356.9 nox > Session exu_alu_verify(coverage='all', testName='test_logic', blockName='exu_alu') failed.
+#18 356.9 nox > Running session exu_alu_verify(coverage='all', testName='test_zbb', blockName='exu_alu')
+#18 356.9 nox > Creating virtual environment (virtualenv) using python3 in .nox/exu_alu_verify-coverage-all-testname-test_zbb-blockname-exu_alu
+#18 357.3 nox > python -m pip install -r requirements.txt
+#18 367.0 nox > make -C ./exu_alu all COVERAGE_TYPE=all MODULE=test_zbb COCOTB_RESULTS_FILE=test_zbb.xml
+#18 372.2 nox > Command make -C ./exu_alu all COVERAGE_TYPE=all MODULE=test_zbb COCOTB_RESULTS_FILE=test_zbb.xml failed with exit code 2
+#18 372.2 nox > Session exu_alu_verify(coverage='all', testName='test_zbb', blockName='exu_alu') failed.
+#18 372.2 nox > Running session exu_alu_verify(coverage='all', testName='test_zbs', blockName='exu_alu')
+#18 372.2 nox > Creating virtual environment (virtualenv) using python3 in .nox/exu_alu_verify-coverage-all-testname-test_zbs-blockname-exu_alu
+#18 372.5 nox > python -m pip install -r requirements.txt
+#18 382.3 nox > make -C ./exu_alu all COVERAGE_TYPE=all MODULE=test_zbs COCOTB_RESULTS_FILE=test_zbs.xml
+#18 387.4 nox > Command make -C ./exu_alu all COVERAGE_TYPE=all MODULE=test_zbs COCOTB_RESULTS_FILE=test_zbs.xml failed with exit code 2
+#18 387.4 nox > Session exu_alu_verify(coverage='all', testName='test_zbs', blockName='exu_alu') failed.
+#18 387.4 nox > Running session exu_alu_verify(coverage='all', testName='test_zbp', blockName='exu_alu')
+#18 387.4 nox > Creating virtual environment (virtualenv) using python3 in .nox/exu_alu_verify-coverage-all-testname-test_zbp-blockname-exu_alu
+#18 387.8 nox > python -m pip install -r requirements.txt
+#18 397.5 nox > make -C ./exu_alu all COVERAGE_TYPE=all MODULE=test_zbp COCOTB_RESULTS_FILE=test_zbp.xml
+#18 402.7 nox > Command make -C ./exu_alu all COVERAGE_TYPE=all MODULE=test_zbp COCOTB_RESULTS_FILE=test_zbp.xml failed with exit code 2
+#18 402.7 nox > Session exu_alu_verify(coverage='all', testName='test_zbp', blockName='exu_alu') failed.
+#18 402.7 nox > Running session exu_alu_verify(coverage='all', testName='test_zba', blockName='exu_alu')
+#18 402.7 nox > Creating virtual environment (virtualenv) using python3 in .nox/exu_alu_verify-coverage-all-testname-test_zba-blockname-exu_alu
+#18 403.0 nox > python -m pip install -r requirements.txt
+#18 412.8 nox > make -C ./exu_alu all COVERAGE_TYPE=all MODULE=test_zba COCOTB_RESULTS_FILE=test_zba.xml
+#18 418.0 nox > Command make -C ./exu_alu all COVERAGE_TYPE=all MODULE=test_zba COCOTB_RESULTS_FILE=test_zba.xml failed with exit code 2
+#18 418.0 nox > Session exu_alu_verify(coverage='all', testName='test_zba', blockName='exu_alu') failed.
+#18 418.0 nox > Running session exu_mul_verify(coverage='all', testName='test_mul', blockName='exu_mul')
+#18 418.0 nox > Creating virtual environment (virtualenv) using python3 in .nox/exu_mul_verify-coverage-all-testname-test_mul-blockname-exu_mul
+#18 418.4 nox > python -m pip install -r requirements.txt
+#18 428.1 nox > make -C ./exu_mul all COVERAGE_TYPE=all MODULE=test_mul COCOTB_RESULTS_FILE=test_mul.xml
+#18 433.3 nox > Command make -C ./exu_mul all COVERAGE_TYPE=all MODULE=test_mul COCOTB_RESULTS_FILE=test_mul.xml failed with exit code 2
+#18 433.3 nox > Session exu_mul_verify(coverage='all', testName='test_mul', blockName='exu_mul') failed.
+#18 433.3 nox > Running session exu_div_verify(coverage='all', testName='test_div', blockName='exu_div')
+#18 433.3 nox > Creating virtual environment (virtualenv) using python3 in .nox/exu_div_verify-coverage-all-testname-test_div-blockname-exu_div
+#18 433.7 nox > python -m pip install -r requirements.txt
+#18 443.3 nox > make -C ./exu_div all COVERAGE_TYPE=all MODULE=test_div COCOTB_RESULTS_FILE=test_div.xml
+#18 448.4 nox > Command make -C ./exu_div all COVERAGE_TYPE=all MODULE=test_div COCOTB_RESULTS_FILE=test_div.xml failed with exit code 2
+#18 448.4 nox > Session exu_div_verify(coverage='all', testName='test_div', blockName='exu_div') failed.
+#18 448.4 nox > Running session iccm_verify(coverage='all', testName='test_readwrite', blockName='iccm')
+#18 448.4 nox > Creating virtual environment (virtualenv) using python3 in .nox/iccm_verify-coverage-all-testname-test_readwrite-blockname-iccm
+#18 448.8 nox > python -m pip install -r requirements.txt
+#18 458.4 nox > make -C ./iccm all COVERAGE_TYPE=all MODULE=test_readwrite COCOTB_RESULTS_FILE=test_readwrite.xml
+#18 463.6 nox > Command make -C ./iccm all COVERAGE_TYPE=all MODULE=test_readwrite COCOTB_RESULTS_FILE=test_readwrite.xml failed with exit code 2
+#18 463.6 nox > Session iccm_verify(coverage='all', testName='test_readwrite', blockName='iccm') failed.
+#18 463.6 nox > Running session dccm_verify(coverage='all', testName='test_readwrite', blockName='dccm')
+#18 463.6 nox > Creating virtual environment (virtualenv) using python3 in .nox/dccm_verify-coverage-all-testname-test_readwrite-blockname-dccm
+#18 464.0 nox > python -m pip install -r requirements.txt
+#18 473.6 nox > make -C ./dccm all COVERAGE_TYPE=all MODULE=test_readwrite COCOTB_RESULTS_FILE=test_readwrite.xml
+#18 478.8 nox > Command make -C ./dccm all COVERAGE_TYPE=all MODULE=test_readwrite COCOTB_RESULTS_FILE=test_readwrite.xml failed with exit code 2
+#18 478.8 nox > Session dccm_verify(coverage='all', testName='test_readwrite', blockName='dccm') failed.
+#18 478.8 nox > Running session dcls_verify(coverage='all', testName='test_lockstep', blockName='dcls')
+#18 478.8 nox > Creating virtual environment (virtualenv) using python3 in .nox/dcls_verify-coverage-all-testname-test_lockstep-blockname-dcls
+#18 479.2 nox > python -m pip install -r requirements.txt
+#18 488.8 nox > make -C ./dcls all COVERAGE_TYPE=all MODULE=test_lockstep COCOTB_RESULTS_FILE=test_lockstep.xml
+#18 493.9 nox > Command make -C ./dcls all COVERAGE_TYPE=all MODULE=test_lockstep COCOTB_RESULTS_FILE=test_lockstep.xml failed with exit code 2
+#18 493.9 nox > Session dcls_verify(coverage='all', testName='test_lockstep', blockName='dcls') failed.
+#18 493.9 nox > Running session lib_axi4_to_ahb_verify(coverage='all', testName='test_axi', blockName='lib_axi4_to_ahb')
+#18 493.9 nox > Creating virtual environment (virtualenv) using python3 in .nox/lib_axi4_to_ahb_verify-coverage-all-testname-test_axi-blockname-lib_axi4_to_ahb
+#18 494.3 nox > python -m pip install -r requirements.txt
+#18 503.9 nox > make -C ./lib_axi4_to_ahb all COVERAGE_TYPE=all MODULE=test_axi COCOTB_RESULTS_FILE=test_axi.xml
+#18 509.1 nox > Command make -C ./lib_axi4_to_ahb all COVERAGE_TYPE=all MODULE=test_axi COCOTB_RESULTS_FILE=test_axi.xml failed with exit code 2
+#18 509.1 nox > Session lib_axi4_to_ahb_verify(coverage='all', testName='test_axi', blockName='lib_axi4_to_ahb') failed.
+#18 509.1 nox > Running session lib_axi4_to_ahb_verify(coverage='all', testName='test_axi_read_channel', blockName='lib_axi4_to_ahb')
+#18 509.1 nox > The virtualenv name was hashed to avoid being too long.
+#18 509.1 nox > Creating virtual environment (virtualenv) using python3 in .nox/735afcd1
+#18 509.5 nox > python -m pip install -r requirements.txt
+#18 519.1 nox > make -C ./lib_axi4_to_ahb all COVERAGE_TYPE=all MODULE=test_axi_read_channel COCOTB_RESULTS_FILE=test_axi_read_channel.xml
+#18 524.3 nox > Command make -C ./lib_axi4_to_ahb all COVERAGE_TYPE=all MODULE=test_axi_read_channel COCOTB_RESULTS_FILE=test_axi_read_channel.xml failed with exit code 2
+#18 524.3 nox > Session lib_axi4_to_ahb_verify(coverage='all', testName='test_axi_read_channel', blockName='lib_axi4_to_ahb') failed.
+#18 524.3 nox > Running session lib_axi4_to_ahb_verify(coverage='all', testName='test_axi_write_channel', blockName='lib_axi4_to_ahb')
+#18 524.3 nox > The virtualenv name was hashed to avoid being too long.
+#18 524.3 nox > Creating virtual environment (virtualenv) using python3 in .nox/6154e94b
+#18 524.7 nox > python -m pip install -r requirements.txt
+#18 534.2 nox > make -C ./lib_axi4_to_ahb all COVERAGE_TYPE=all MODULE=test_axi_write_channel COCOTB_RESULTS_FILE=test_axi_write_channel.xml
+#18 539.4 nox > Command make -C ./lib_axi4_to_ahb all COVERAGE_TYPE=all MODULE=test_axi_write_channel COCOTB_RESULTS_FILE=test_axi_write_channel.xml failed with exit code 2
+#18 539.4 nox > Session lib_axi4_to_ahb_verify(coverage='all', testName='test_axi_write_channel', blockName='lib_axi4_to_ahb') failed.
+#18 539.4 nox > Running session lib_ahb_to_axi4_verify(coverage='all', testName='test_write', blockName='lib_ahb_to_axi4')
+#18 539.4 nox > Creating virtual environment (virtualenv) using python3 in .nox/lib_ahb_to_axi4_verify-coverage-all-testname-test_write-blockname-lib_ahb_to_axi4
+#18 539.7 nox > python -m pip install -r requirements.txt
+#18 549.4 nox > make -C ./lib_ahb_to_axi4 all COVERAGE_TYPE=all MODULE=test_write COCOTB_RESULTS_FILE=test_write.xml
+#18 554.6 nox > Command make -C ./lib_ahb_to_axi4 all COVERAGE_TYPE=all MODULE=test_write COCOTB_RESULTS_FILE=test_write.xml failed with exit code 2
+#18 554.6 nox > Session lib_ahb_to_axi4_verify(coverage='all', testName='test_write', blockName='lib_ahb_to_axi4') failed.
+#18 554.6 nox > Running session lib_ahb_to_axi4_verify(coverage='all', testName='test_read', blockName='lib_ahb_to_axi4')
+#18 554.6 nox > Creating virtual environment (virtualenv) using python3 in .nox/lib_ahb_to_axi4_verify-coverage-all-testname-test_read-blockname-lib_ahb_to_axi4
+#18 555.0 nox > python -m pip install -r requirements.txt
+#18 564.6 nox > make -C ./lib_ahb_to_axi4 all COVERAGE_TYPE=all MODULE=test_read COCOTB_RESULTS_FILE=test_read.xml
+#18 569.8 nox > Command make -C ./lib_ahb_to_axi4 all COVERAGE_TYPE=all MODULE=test_read COCOTB_RESULTS_FILE=test_read.xml failed with exit code 2
+#18 569.8 nox > Session lib_ahb_to_axi4_verify(coverage='all', testName='test_read', blockName='lib_ahb_to_axi4') failed.
+#18 569.8 nox > Running session pmp_verify(coverage='all', testName='test_xwr_access', blockName='pmp')
+#18 569.8 nox > Creating virtual environment (virtualenv) using python3 in .nox/pmp_verify-coverage-all-testname-test_xwr_access-blockname-pmp
+#18 570.2 nox > python -m pip install -r requirements.txt
+#18 579.8 nox > make -C ./pmp all COVERAGE_TYPE=all MODULE=test_xwr_access COCOTB_RESULTS_FILE=test_xwr_access.xml
+#18 585.0 nox > Command make -C ./pmp all COVERAGE_TYPE=all MODULE=test_xwr_access COCOTB_RESULTS_FILE=test_xwr_access.xml failed with exit code 2
+#18 585.0 nox > Session pmp_verify(coverage='all', testName='test_xwr_access', blockName='pmp') failed.
+#18 585.0 nox > Running session pmp_verify(coverage='all', testName='test_address_matching', blockName='pmp')
+#18 585.0 nox > Creating virtual environment (virtualenv) using python3 in .nox/pmp_verify-coverage-all-testname-test_address_matching-blockname-pmp
+#18 585.3 nox > python -m pip install -r requirements.txt
+#18 595.0 nox > make -C ./pmp all COVERAGE_TYPE=all MODULE=test_address_matching COCOTB_RESULTS_FILE=test_address_matching.xml
+#18 600.2 nox > Command make -C ./pmp all COVERAGE_TYPE=all MODULE=test_address_matching COCOTB_RESULTS_FILE=test_address_matching.xml failed with exit code 2
+#18 600.2 nox > Session pmp_verify(coverage='all', testName='test_address_matching', blockName='pmp') failed.
+#18 600.2 nox > Running session pmp_verify(coverage='all', testName='test_multiple_configs', blockName='pmp')
+#18 600.2 nox > Creating virtual environment (virtualenv) using python3 in .nox/pmp_verify-coverage-all-testname-test_multiple_configs-blockname-pmp
+#18 600.5 nox > python -m pip install -r requirements.txt
+#18 610.2 nox > make -C ./pmp all COVERAGE_TYPE=all MODULE=test_multiple_configs COCOTB_RESULTS_FILE=test_multiple_configs.xml
+#18 615.4 nox > Command make -C ./pmp all COVERAGE_TYPE=all MODULE=test_multiple_configs COCOTB_RESULTS_FILE=test_multiple_configs.xml failed with exit code 2
+#18 615.4 nox > Session pmp_verify(coverage='all', testName='test_multiple_configs', blockName='pmp') failed.
+#18 615.4 nox > Running session pmp_random_verify(coverage='all', testName='test_pmp_random', blockName='pmp_random')
+#18 615.4 nox > Creating virtual environment (virtualenv) using python3 in .nox/pmp_random_verify-coverage-all-testname-test_pmp_random-blockname-pmp_random
+#18 615.7 nox > python -m pip install -r requirements.txt
+#18 625.4 nox > make -C ./pmp_random all COVERAGE_TYPE=all MODULE=test_pmp_random COCOTB_RESULTS_FILE=test_pmp_random.xml
+#18 630.6 nox > Command make -C ./pmp_random all COVERAGE_TYPE=all MODULE=test_pmp_random COCOTB_RESULTS_FILE=test_pmp_random.xml failed with exit code 2
+#18 630.6 nox > Session pmp_random_verify(coverage='all', testName='test_pmp_random', blockName='pmp_random') failed.
+#18 630.6 nox > Running session dec_verify(coverage='all', testName='test_dec', blockName='dec')
+#18 630.6 nox > Creating virtual environment (virtualenv) using python3 in .nox/dec_verify-coverage-all-testname-test_dec-blockname-dec
+#18 631.0 nox > python -m pip install -r requirements.txt
+#18 640.6 nox > make -C ./dec all COVERAGE_TYPE=all MODULE=test_dec COCOTB_RESULTS_FILE=test_dec.xml
+#18 645.8 nox > Command make -C ./dec all COVERAGE_TYPE=all MODULE=test_dec COCOTB_RESULTS_FILE=test_dec.xml failed with exit code 2
+#18 645.8 nox > Session dec_verify(coverage='all', testName='test_dec', blockName='dec') failed.
+#18 645.8 nox > Running session dec_tlu_ctl_verify(coverage='all', testName='test_dec_tl', blockName='dec_tlu_ctl')
+#18 645.8 nox > Creating virtual environment (virtualenv) using python3 in .nox/dec_tlu_ctl_verify-coverage-all-testname-test_dec_tl-blockname-dec_tlu_ctl
+#18 646.1 nox > python -m pip install -r requirements.txt
+#18 655.9 nox > make -C ./dec_tlu_ctl all COVERAGE_TYPE=all MODULE=test_dec_tl COCOTB_RESULTS_FILE=test_dec_tl.xml
+#18 661.1 nox > Command make -C ./dec_tlu_ctl all COVERAGE_TYPE=all MODULE=test_dec_tl COCOTB_RESULTS_FILE=test_dec_tl.xml failed with exit code 2
+#18 661.1 nox > Session dec_tlu_ctl_verify(coverage='all', testName='test_dec_tl', blockName='dec_tlu_ctl') failed.
+#18 661.1 nox > Running session dmi_verify(coverage='all', testName='test_jtag_ir', blockName='dmi')
+#18 661.1 nox > Creating virtual environment (virtualenv) using python3 in .nox/dmi_verify-coverage-all-testname-test_jtag_ir-blockname-dmi
+#18 661.4 nox > python -m pip install -r requirements.txt
+#18 671.1 nox > make -C ./dmi all COVERAGE_TYPE=all MODULE=test_jtag_ir COCOTB_RESULTS_FILE=test_jtag_ir.xml
+#18 676.3 nox > Command make -C ./dmi all COVERAGE_TYPE=all MODULE=test_jtag_ir COCOTB_RESULTS_FILE=test_jtag_ir.xml failed with exit code 2
+#18 676.3 nox > Session dmi_verify(coverage='all', testName='test_jtag_ir', blockName='dmi') failed.
+#18 676.3 nox > Running session dmi_verify(coverage='all', testName='test_dmi_read_write', blockName='dmi')
+#18 676.3 nox > Creating virtual environment (virtualenv) using python3 in .nox/dmi_verify-coverage-all-testname-test_dmi_read_write-blockname-dmi
+#18 676.7 nox > python -m pip install -r requirements.txt
+#18 686.4 nox > make -C ./dmi all COVERAGE_TYPE=all MODULE=test_dmi_read_write COCOTB_RESULTS_FILE=test_dmi_read_write.xml
+#18 691.6 nox > Command make -C ./dmi all COVERAGE_TYPE=all MODULE=test_dmi_read_write COCOTB_RESULTS_FILE=test_dmi_read_write.xml failed with exit code 2
+#18 691.6 nox > Session dmi_verify(coverage='all', testName='test_dmi_read_write', blockName='dmi') failed.
+#18 691.6 nox > Running session dmi_verify(coverage='all', testName='test_dmi_tap_fsm', blockName='dmi')
+#18 691.6 nox > Creating virtual environment (virtualenv) using python3 in .nox/dmi_verify-coverage-all-testname-test_dmi_tap_fsm-blockname-dmi
+#18 692.0 nox > python -m pip install -r requirements.txt
+#18 701.6 nox > make -C ./dmi all COVERAGE_TYPE=all MODULE=test_dmi_tap_fsm COCOTB_RESULTS_FILE=test_dmi_tap_fsm.xml
+#18 706.9 nox > Command make -C ./dmi all COVERAGE_TYPE=all MODULE=test_dmi_tap_fsm COCOTB_RESULTS_FILE=test_dmi_tap_fsm.xml failed with exit code 2
+#18 706.9 nox > Session dmi_verify(coverage='all', testName='test_dmi_tap_fsm', blockName='dmi') failed.
+#18 706.9 nox > Running session lsu_tl_verify(coverage='all', testName='test_lsu_tl', blockName='lsu_tl')
+#18 706.9 nox > Creating virtual environment (virtualenv) using python3 in .nox/lsu_tl_verify-coverage-all-testname-test_lsu_tl-blockname-lsu_tl
+#18 707.2 nox > python -m pip install -r requirements.txt
+#18 717.0 nox > make -C ./lsu_tl all COVERAGE_TYPE=all MODULE=test_lsu_tl COCOTB_RESULTS_FILE=test_lsu_tl.xml
+#18 722.1 nox > Command make -C ./lsu_tl all COVERAGE_TYPE=all MODULE=test_lsu_tl COCOTB_RESULTS_FILE=test_lsu_tl.xml failed with exit code 2
+#18 722.1 nox > Session lsu_tl_verify(coverage='all', testName='test_lsu_tl', blockName='lsu_tl') failed.
+#18 722.1 nox > Running session dec_pmp_ctl_verify(coverage='all', testName='test_dec_pmp_ctl', blockName='dec_pmp_ctl')
+#18 722.1 nox > Creating virtual environment (virtualenv) using python3 in .nox/dec_pmp_ctl_verify-coverage-all-testname-test_dec_pmp_ctl-blockname-dec_pmp_ctl
+#18 722.5 nox > python -m pip install -r requirements.txt
+#18 732.2 nox > make -C ./dec_pmp_ctl all COVERAGE_TYPE=all MODULE=test_dec_pmp_ctl COCOTB_RESULTS_FILE=test_dec_pmp_ctl.xml
+#18 737.4 nox > Command make -C ./dec_pmp_ctl all COVERAGE_TYPE=all MODULE=test_dec_pmp_ctl COCOTB_RESULTS_FILE=test_dec_pmp_ctl.xml failed with exit code 2
+#18 737.4 nox > Session dec_pmp_ctl_verify(coverage='all', testName='test_dec_pmp_ctl', blockName='dec_pmp_ctl') failed.
+#18 737.4 nox > Ran 48 sessions in 12 minutes:
+#18 737.4 nox > * pic_verify(coverage='all', testName='test_reset', blockName='pic'): failed, took 22 seconds
+#18 737.4 nox > * pic_verify(coverage='all', testName='test_clken', blockName='pic'): failed, took 15 seconds
+#18 737.4 nox > * pic_verify(coverage='all', testName='test_config', blockName='pic'): failed, took 15 seconds
+#18 737.4 nox > * pic_verify(coverage='all', testName='test_pending', blockName='pic'): failed, took 15 seconds
+#18 737.4 nox > * pic_verify(coverage='all', testName='test_prioritization', blockName='pic'): failed, took 15 seconds
+#18 737.4 nox > * pic_verify(coverage='all', testName='test_servicing', blockName='pic'): failed, took 15 seconds
+#18 737.4 nox > * pic_gw_verify(coverage='all', testName='test_gateway', blockName='pic_gw'): failed, took 15 seconds
+#18 737.4 nox > * dec_tl_verify(coverage='all', testName='test_dec_tl', blockName='dec_tl'): failed, took 15 seconds
+#18 737.4 nox > * dec_ib_verify(coverage='all', testName='test_dec_ib', blockName='dec_ib'): failed, took 15 seconds
+#18 737.4 nox > * dma_verify(coverage='all', testName='test_reset', blockName='dma'): failed, took 15 seconds
+#18 737.4 nox > * dma_verify(coverage='all', testName='test_read', blockName='dma'): failed, took 15 seconds
+#18 737.4 nox > * dma_verify(coverage='all', testName='test_write', blockName='dma'): failed, took 15 seconds
+#18 737.4 nox > * dma_verify(coverage='all', testName='test_address', blockName='dma'): failed, took 15 seconds
+#18 737.4 nox > * dma_verify(coverage='all', testName='test_ecc', blockName='dma'): failed, took 15 seconds
+#18 737.4 nox > * dma_verify(coverage='all', testName='test_debug_read', blockName='dma'): failed, took 15 seconds
+#18 737.4 nox > * dma_verify(coverage='all', testName='test_debug_write', blockName='dma'): failed, took 15 seconds
+#18 737.4 nox > * dma_verify(coverage='all', testName='test_debug_address', blockName='dma'): failed, took 15 seconds
+#18 737.4 nox > * ifu_compress_verify(coverage='all', testName='test_compress', blockName='ifu_compress'): failed, took 15 seconds
+#18 737.4 nox > * ifu_mem_ctl_verify(coverage='all', testName='test_miss', blockName='ifu_mem_ctl'): failed, took 15 seconds
+#18 737.4 nox > * ifu_mem_ctl_verify(coverage='all', testName='test_err', blockName='ifu_mem_ctl'): failed, took 15 seconds
+#18 737.4 nox > * ifu_mem_ctl_verify(coverage='all', testName='test_err_stop', blockName='ifu_mem_ctl'): failed, took 15 seconds
+#18 737.4 nox > * exu_alu_verify(coverage='all', testName='test_arith', blockName='exu_alu'): failed, took 15 seconds
+#18 737.4 nox > * exu_alu_verify(coverage='all', testName='test_logic', blockName='exu_alu'): failed, took 15 seconds
+#18 737.4 nox > * exu_alu_verify(coverage='all', testName='test_zbb', blockName='exu_alu'): failed, took 15 seconds
+#18 737.4 nox > * exu_alu_verify(coverage='all', testName='test_zbs', blockName='exu_alu'): failed, took 15 seconds
+#18 737.4 nox > * exu_alu_verify(coverage='all', testName='test_zbp', blockName='exu_alu'): failed, took 15 seconds
+#18 737.4 nox > * exu_alu_verify(coverage='all', testName='test_zba', blockName='exu_alu'): failed, took 15 seconds
+#18 737.4 nox > * exu_mul_verify(coverage='all', testName='test_mul', blockName='exu_mul'): failed, took 15 seconds
+#18 737.4 nox > * exu_div_verify(coverage='all', testName='test_div', blockName='exu_div'): failed, took 15 seconds
+#18 737.4 nox > * iccm_verify(coverage='all', testName='test_readwrite', blockName='iccm'): failed, took 15 seconds
+#18 737.4 nox > * dccm_verify(coverage='all', testName='test_readwrite', blockName='dccm'): failed, took 15 seconds
+#18 737.4 nox > * dcls_verify(coverage='all', testName='test_lockstep', blockName='dcls'): failed, took 15 seconds
+#18 737.4 nox > * lib_axi4_to_ahb_verify(coverage='all', testName='test_axi', blockName='lib_axi4_to_ahb'): failed, took 15 seconds
+#18 737.4 nox > * lib_axi4_to_ahb_verify(coverage='all', testName='test_axi_read_channel', blockName='lib_axi4_to_ahb'): failed, took 15 seconds
+#18 737.4 nox > * lib_axi4_to_ahb_verify(coverage='all', testName='test_axi_write_channel', blockName='lib_axi4_to_ahb'): failed, took 15 seconds
+#18 737.4 nox > * lib_ahb_to_axi4_verify(coverage='all', testName='test_write', blockName='lib_ahb_to_axi4'): failed, took 15 seconds
+#18 737.4 nox > * lib_ahb_to_axi4_verify(coverage='all', testName='test_read', blockName='lib_ahb_to_axi4'): failed, took 15 seconds
+#18 737.4 nox > * pmp_verify(coverage='all', testName='test_xwr_access', blockName='pmp'): failed, took 15 seconds
+#18 737.4 nox > * pmp_verify(coverage='all', testName='test_address_matching', blockName='pmp'): failed, took 15 seconds
+#18 737.4 nox > * pmp_verify(coverage='all', testName='test_multiple_configs', blockName='pmp'): failed, took 15 seconds
+#18 737.4 nox > * pmp_random_verify(coverage='all', testName='test_pmp_random', blockName='pmp_random'): failed, took 15 seconds
+#18 737.4 nox > * dec_verify(coverage='all', testName='test_dec', blockName='dec'): failed, took 15 seconds
+#18 737.4 nox > * dec_tlu_ctl_verify(coverage='all', testName='test_dec_tl', blockName='dec_tlu_ctl'): failed, took 15 seconds
+#18 737.4 nox > * dmi_verify(coverage='all', testName='test_jtag_ir', blockName='dmi'): failed, took 15 seconds
+#18 737.4 nox > * dmi_verify(coverage='all', testName='test_dmi_read_write', blockName='dmi'): failed, took 15 seconds
+#18 737.4 nox > * dmi_verify(coverage='all', testName='test_dmi_tap_fsm', blockName='dmi'): failed, took 15 seconds
+#18 737.4 nox > * lsu_tl_verify(coverage='all', testName='test_lsu_tl', blockName='lsu_tl'): failed, took 15 seconds
+#18 737.4 nox > * dec_pmp_ctl_verify(coverage='all', testName='test_dec_pmp_ctl', blockName='dec_pmp_ctl'): failed, took 15 seconds
+#18 737.5 Traceback (most recent call last):
+#18 737.5   File "/tmp/parse_nox_results.py", line 40, in <module>
+#18 737.5     session_name = entry.get("session", "")
+#18 737.5                    ^^^^^^^^^
+#18 737.5 AttributeError: 'str' object has no attribute 'get'
+#18 ERROR: process "/bin/sh -c cd /app && /tmp/count_tests.sh" did not complete successfully: exit code: 1
+------
+ > [main count 5/5] RUN cd /app && /tmp/count_tests.sh:
+737.4 nox > * dmi_verify(coverage='all', testName='test_jtag_ir', blockName='dmi'): failed, took 15 seconds
+737.4 nox > * dmi_verify(coverage='all', testName='test_dmi_read_write', blockName='dmi'): failed, took 15 seconds
+737.4 nox > * dmi_verify(coverage='all', testName='test_dmi_tap_fsm', blockName='dmi'): failed, took 15 seconds
+737.4 nox > * lsu_tl_verify(coverage='all', testName='test_lsu_tl', blockName='lsu_tl'): failed, took 15 seconds
+737.4 nox > * dec_pmp_ctl_verify(coverage='all', testName='test_dec_pmp_ctl', blockName='dec_pmp_ctl'): failed, took 15 seconds
+737.5 Traceback (most recent call last):
+737.5   File "/tmp/parse_nox_results.py", line 40, in <module>
+737.5     session_name = entry.get("session", "")
+737.5                    ^^^^^^^^^
+737.5 AttributeError: 'str' object has no attribute 'get'
+------
+failed to solve: process "/bin/sh -c cd /app && /tmp/count_tests.sh" did not complete successfully: exit code: 1
+. Stderr: None. 
+Failed to download artifact '/app' (best-effort)
