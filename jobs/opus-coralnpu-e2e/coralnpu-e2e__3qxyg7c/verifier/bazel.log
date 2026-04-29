@@ -1,0 +1,474 @@
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+WARNING: Build option --java_runtime_version has changed, discarding analysis cache (this can be expensive, see https://bazel.build/advanced/performance/iteration-speed).
+Analyzing: 215 targets (5 packages loaded, 0 targets configured)
+Analyzing: 215 targets (5 packages loaded, 0 targets configured)
+
+Analyzing: 215 targets (62 packages loaded, 9451 targets configured)
+
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:multi_fifo.sv': target 'multi_fifo.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:edff_2d.sv': target 'edff_2d.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:edff.sv': target 'edff.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:dff.sv': target 'dff.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:compressor_4_2.sv': target 'compressor_4_2.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:compressor_3_2.sv': target 'compressor_3_2.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:cdffr.sv': target 'cdffr.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:handshake_multi_fifo.sv': target 'handshake_multi_fifo.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:handshake_ff.sv': target 'handshake_ff.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:barrel_shifter.sv': target 'barrel_shifter.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:arb_round_robin.sv': target 'arb_round_robin.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+ERROR: /app/hdl/verilog/rvv/common/BUILD: no such target '//hdl/verilog/rvv/common:adder.sv': target 'adder.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD
+Analyzing: 215 targets (157 packages loaded, 20465 targets configured)
+
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:adder.sv': target 'adder.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:arb_round_robin.sv': target 'arb_round_robin.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:barrel_shifter.sv': target 'barrel_shifter.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:handshake_ff.sv': target 'handshake_ff.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:handshake_multi_fifo.sv': target 'handshake_multi_fifo.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:cdffr.sv': target 'cdffr.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:compressor_3_2.sv': target 'compressor_3_2.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:compressor_4_2.sv': target 'compressor_4_2.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:dff.sv': target 'dff.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:edff.sv': target 'edff.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:edff_2d.sv': target 'edff_2d.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:91:15: no such target '//hdl/verilog/rvv/common:multi_fifo.sv': target 'multi_fifo.sv' not declared in package 'hdl/verilog/rvv/common' defined by /app/hdl/verilog/rvv/common/BUILD and referenced by '//hdl/chisel/src/coralnpu:coralnpu_rvv'
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_burst_types_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_arithmetic_m1_vanilla_ops', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_scalar_registers', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_strided_all_vtypes_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_probe_impl', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_float_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_highmem_tests_slow_core_mini_rvv_matmul_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_rvv_exceptions_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_itcm512kb_dtcm512kb_tests_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_probe_impl', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_coralnpu_isa_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store8_index8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_hartsel', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_rand_instr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_burst_types_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_index8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store8_index8_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_highmem_tests_slow_core_mini_axi_run_wfi_in_all_slots_highmem', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_backdoor_load_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_vnsra_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_finish_txn_before_halt_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_exceptions_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store32_index32', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_riscv_dv', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_unreachable_prefetch_fault', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_master_write_alignment', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_reduction_m1_failure_ops', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/rvv/rvv_opt:cocotb_rvv_opt_test_rvv_memcpy_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_registers', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store_strided_all_vtypes_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_48x48_h2w2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_index8_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vcpop_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_index32_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vmsof_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_segment2_stride6_m1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_write_read_memory_stress_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_riscv_dv', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool32stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_index16', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_store8_unit_m2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_itcm512kb_dtcm512kb_tests_core_mini_axi_run_wfi_in_all_slots_itcm512kb_dtcm512kb', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_store_whole_register_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_slow_bready', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_vslide1up_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_stride4_m1_partial', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_widen_math_ops_test_impl', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_frm_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vcpop_exception_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_run_wfi_in_all_slots', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_unit_all_vtypes_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_halt_resume', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vill_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_unreachable_prefetch_fault', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_highmem_tests_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial:hello_world_float_core_mini_axi_core_mini_axi_tutorial', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_stride4_mf2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_frm_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store16_seg_unit', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_dv', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_unit_masked', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_stride4_m1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vmsbf_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_exceptions_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_vslideup_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_vnclip_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_store_bits', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_breakpoint', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_run_wfi_in_all_slots', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool16stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_stride2_m1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_highmem_tests_core_mini_rvv_matmul_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_rand_instr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_slow_bready', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store8_index16', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_store8_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store16_index32', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/rvv/rvv_opt:cocotb_rvv_opt_test_rvv_memset_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_index16_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_slow_bready', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_backdoor_load_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_itcm512kb_dtcm512kb_tests_core_mini_rvv_matmul_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_frm_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_nonexistent_register', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:core_mini_axi_non_incr_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_stride8_m1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_coralnpu_isa_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_unreachable_prefetch_fault', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv16to32stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_index32_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_float_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_stride2_m1_partial', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_ml_ops_cocotb_test_core_mini_rvv_float_matmul_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_finish_txn_before_halt_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store32_index8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial:tutorial_core_mini_axi_tutorial', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_breakpoint', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_rand_instr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_vsetvl_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_index32', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_master_write_alignment', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_halt_resume', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_index8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_scalar_registers', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_finish_txn_before_halt_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store32_seg_unit', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_rand_instr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_segment2_stride6_m1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_backdoor_load_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_riscv_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vfirst_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store32_index16', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv8to8stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_riscv_dv', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_single_step', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_rvv_load', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_hartsel', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool64stride2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_index32_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_master_write_alignment', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store16_index8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_index16_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_slow_bready', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_4x1_h2w2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_frm_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_ndmreset', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_float_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_stride8_m1_partial', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vstart_store', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_single_step', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_exceptions_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_highmem_tests_slow_core_mini_axi_basic_write_read_memory', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_write_read_memory_stress_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_coralnpu_isa_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store_unit_all_vtypes_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_master_write_alignment', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_vnclipu_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_store32_unit_m2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_vslide1down_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load_store16_unit_m2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vmsif_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv8to8stride1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_run_wfi_in_all_slots', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_stride2_mf4', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_ndmreset', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_nonexistent_register', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_unreachable_prefetch_fault', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_index8_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_run_wfi_in_all_slots', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_seg_unit', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load8_seg_unit', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_viota_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_reduction_m1_vanilla_ops', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_highmem_tests_core_mini_axi_run_wfi_in_all_slots_highmem', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_16_16', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vl_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_index8_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_finish_txn_before_halt_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_arithmetic_cocotb_test_vnsrl_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/verilator_sim:backdoor_load_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store_unit_masked', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_float_csr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load32_index16_seg', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_exceptions_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_rvv_exceptions_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_18x1', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_rvv_add', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vcsr_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_registers', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_seg_unit', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_load16_index8', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_9x2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_riscv_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_vslidedown_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vcompress_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store8_seg_unit', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_riscv_tests', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store16_index16', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_coralnpu_isa_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_37x1_h2w2', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_backdoor_load_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb/tutorial/counters:cocotb_counter_test_inst_cycle_counter_test', it will not be built.
+Analysis failed
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_ml_ops_cocotb_test_core_mini_rvv_matmul_test', it will not be built.
+Analysis failed
+INFO: Analyzed 215 targets (160 packages loaded, 23264 targets configured).
+WARNING: errors encountered while analyzing target '//tests/cocotb:rvv_load_store_test_store8_index32', it will not be built.
+Analysis failed
+INFO: Found 0 test targets...
+ERROR: command succeeded, but there were loading phase errors
+INFO: Elapsed time: 3.389s, Critical Path: 0.01s
+INFO: 1 process: 1 internal.
+ERROR: Build did NOT complete successfully
+FAILED: 
+ERROR: No test targets were found, yet testing was requested
+INFO: Build Event Protocol files produced successfully.
