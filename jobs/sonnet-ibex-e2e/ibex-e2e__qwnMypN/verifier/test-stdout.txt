@@ -1,0 +1,1002 @@
+=== Building simple-system simulator ===
+WARNING: Not adding library . (/app). Library ibex already registered for this location
+INFO: Preparing lowrisc:dv:dv_fcov_macros:0
+INFO: Preparing lowrisc:dv:secded_enc:0
+INFO: Preparing lowrisc:dv_verilator:ibex_pcounts:0
+INFO: Preparing lowrisc:dv_verilator:simutil_verilator:0
+INFO: Preparing lowrisc:ibex:ibex_pkg:0.1
+INFO: Preparing lowrisc:prim_generic:ram_1p_pkg:0
+INFO: Preparing lowrisc:prim_generic:ram_2p_pkg:0
+INFO: Preparing lowrisc:prim_generic:rom_pkg:0
+INFO: Preparing lowrisc:prim:util_get_scramble_params:0
+INFO: Preparing lowrisc:prim:util_memload:0
+INFO: Preparing lowrisc:tool:check_tool_requirements:0.1
+INFO: Preparing lowrisc:dv_verilator:memutil_dpi:0
+INFO: Preparing lowrisc:lint:common:0.1
+INFO: Preparing lowrisc:dv_verilator:memutil_verilator:0
+INFO: Preparing lowrisc:prim:assert:0.1
+INFO: Preparing lowrisc:prim:cipher_pkg:0.1
+INFO: Preparing lowrisc:prim_generic:and2:0
+INFO: Preparing lowrisc:prim_generic:buf:0
+INFO: Preparing lowrisc:prim_generic:clock_buf:0
+INFO: Preparing lowrisc:prim_generic:clock_gating:0
+INFO: Preparing lowrisc:prim_generic:flop:0
+INFO: Preparing lowrisc:prim_generic:flop_no_rst:0
+INFO: Preparing lowrisc:prim_generic:prim_pkg:0
+INFO: Preparing lowrisc:prim_generic:usb_diff_rx:0
+INFO: Preparing lowrisc:prim_generic:xnor2:0
+INFO: Preparing lowrisc:prim_generic:xor2:0
+INFO: Preparing lowrisc:prim:pad_wrapper_pkg:0
+INFO: Preparing lowrisc:prim:secded:0.1
+INFO: Preparing lowrisc:ibex:ibex_icache:0.1
+INFO: Preparing lowrisc:ibex:ibex_tracer:0.1
+INFO: Preparing lowrisc:prim:cdc_rand_delay:0
+INFO: Preparing lowrisc:prim:cipher:0
+INFO: Preparing lowrisc:prim:count:0
+INFO: Preparing lowrisc:prim_generic:clock_mux2:0
+INFO: Preparing lowrisc:prim_generic:pad_attr:0
+INFO: Preparing lowrisc:prim_generic:pad_wrapper:0
+INFO: Preparing lowrisc:prim_generic:ram_1p:0
+INFO: Preparing lowrisc:prim_generic:ram_1r1w:0
+INFO: Preparing lowrisc:prim_generic:ram_2p:0
+INFO: Preparing lowrisc:prim_generic:rom:0
+INFO: Preparing lowrisc:prim:lfsr:0.1
+INFO: Preparing lowrisc:prim:mubi_pkg:0.1
+INFO: Preparing lowrisc:prim:sec_anchor:0.1
+INFO: Preparing lowrisc:prim:util:0.1
+INFO: Preparing lowrisc:ibex:sim_shared:0
+INFO: Preparing lowrisc:prim_generic:clock_inv:0
+INFO: Preparing lowrisc:prim_generic:flop_2sync:0
+INFO: Preparing lowrisc:prim_generic:flop_en:0
+INFO: Preparing lowrisc:prim:mubi:0.1
+INFO: Preparing lowrisc:prim:onehot:0
+INFO: Preparing lowrisc:prim:onehot_check:0
+INFO: Preparing lowrisc:prim:ram_1p_adv:0.1
+INFO: Preparing lowrisc:ibex:ibex_core:0.1
+INFO: Preparing lowrisc:prim_generic:clock_div:0
+INFO: Preparing lowrisc:prim_generic:rst_sync:0
+INFO: Preparing lowrisc:prim:ram_1p_scr:0.1
+INFO: Preparing lowrisc:ibex:ibex_top:0.1
+INFO: Preparing lowrisc:prim_generic:all:0.1
+INFO: Preparing lowrisc:ibex:ibex_top_tracing:0.1
+INFO: Preparing lowrisc:ibex:ibex_simple_system_core:0
+INFO: Preparing lowrisc:ibex:ibex_simple_system:0
+INFO: Setting up project
+WARNING: This backend is deprecated and will eventually be removed. Please migrate to the flow API instead.  See https://edalize.readthedocs.io/en/latest/ref/migrations.html#migrating-from-the-tool-api-to-the-flow-api for more details.
+INFO: Running pre_build script check_tool_requirements
+INFO: Tool verilator present: Sufficiently recent version (found 4.210; needed 4.210)
+INFO: Tool edalize present: Sufficiently recent version (found 0.6.8; needed 0.2.0)
+INFO: Building simulation model
+Entering directory '/app/build/lowrisc_ibex_ibex_simple_system_0/sim-verilator'
+Leaving directory '/app/build/lowrisc_ibex_ibex_simple_system_0/sim-verilator'
+=== [1/4] SW test: hello_test ===
+make: Nothing to be done for 'all'.
+Simulation of Ibex
+==================
+
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 6941
+
+Simulation running, end by pressing CTRL-c.
+FIFO[0]: addr_q0=00100080 uph=0 out_addr=00100080 instr=2c60006f c1=1 c2=0
+FIFO[1]: addr_q0=00100084 uph=0 out_addr=00100084 instr=0ff57793 c1=1 c2=0
+FIFO[2]: addr_q0=00100088 uph=0 out_addr=00100088 instr=00020737 c1=1 c2=0
+FIFO[3]: addr_q0=0010008c uph=0 out_addr=0010008c instr=8082c31c c1=0 c2=0
+DBG_CHAR: 0x00 'FIFO[4]: addr_q0=0010008c uph=1 out_addr=0010008e instr=00008082 c1=1 c2=0
+FIFO[5]: addr_q0=00000000 uph=0 out_addr=00000000 instr=00020737 c1=1 c2=0
+FIFO[6]: addr_q0=00100004 uph=0 out_addr=00100004 instr=33a0006f c1=1 c2=0
+FIFO[7]: addr_q0=0010033c uph=1 out_addr=0010033e instr=ea1ff06f c1=1 c2=0
+FIFO[8]: addr_q0=001001dc uph=1 out_addr=001001de instr=00001141 c1=1 c2=0
+FIFO[9]: addr_q0=001001e0 uph=0 out_addr=001001e0 instr=00000517 c1=1 c2=0
+FIFO[10]: addr_q0=001001e4 uph=0 out_addr=001001e4 instr=28850513 c1=1 c2=0
+FIFO[11]: addr_q0=001001e8 uph=0 out_addr=001001e8 instr=355dc606 c1=0 c2=0
+FIFO[12]: addr_q0=001001e8 uph=1 out_addr=001001ea instr=0000355d c1=1 c2=0
+FIFO[13]: addr_q0=00100090 uph=0 out_addr=00100090 instr=00020737 c1=1 c2=0
+FIFO[14]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[15]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[16]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[17]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x45 'E'
+FIFO[18]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[19]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[20]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[21]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[22]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x58 'X'
+FIFO[23]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[24]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[25]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[26]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[27]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x43 'C'
+FIFO[28]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[29]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[30]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[31]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[32]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x45 'E'
+FIFO[33]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[34]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[35]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[36]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[37]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x50 'P'
+FIFO[38]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[39]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[40]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[41]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[42]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x54 'T'
+FIFO[43]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[44]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[45]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[46]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[47]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x49 'I'
+FIFO[48]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[49]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[50]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[51]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[52]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x4f 'O'
+FIFO[53]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[54]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[55]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[56]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[57]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x4e 'N'
+FIFO[58]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[59]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[60]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[61]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[62]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x21 '!'
+FIFO[63]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[64]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[65]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[66]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[67]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x21 '!'
+FIFO[68]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[69]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[70]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[71]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[72]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x21 '!'
+FIFO[73]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[74]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[75]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[76]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[77]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x0a '
+'
+FIFO[78]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[79]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[80]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[81]: addr_q0=00100098 uph=1 out_addr=0010009a instr=00004501 c1=1 c2=0
+FIFO[82]: addr_q0=0010009c uph=0 out_addr=0010009c instr=05058082 c1=0 c2=0
+FIFO[83]: addr_q0=001001ec uph=0 out_addr=001001ec instr=00000517 c1=1 c2=0
+FIFO[84]: addr_q0=001001f0 uph=0 out_addr=001001f0 instr=28c50513 c1=1 c2=0
+FIFO[85]: addr_q0=001001f4 uph=0 out_addr=001001f4 instr=05173d71 c1=0 c2=0
+FIFO[86]: addr_q0=00100090 uph=0 out_addr=00100090 instr=00020737 c1=1 c2=0
+FIFO[87]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[88]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[89]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[90]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[91]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[92]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[93]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[94]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[95]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[96]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[97]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[98]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[99]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[100]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[101]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[102]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[103]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[104]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[105]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[106]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[107]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[108]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[109]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[110]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[111]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[112]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[113]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[114]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[115]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[116]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[117]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[118]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[119]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x0a '
+'
+DBG_CHAR: 0x4d 'M'
+DBG_CHAR: 0x45 'E'
+DBG_CHAR: 0x50 'P'
+DBG_CHAR: 0x43 'C'
+DBG_CHAR: 0x3a ':'
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x78 'x'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x0a '
+'
+DBG_CHAR: 0x4d 'M'
+DBG_CHAR: 0x43 'C'
+DBG_CHAR: 0x41 'A'
+DBG_CHAR: 0x55 'U'
+DBG_CHAR: 0x53 'S'
+DBG_CHAR: 0x45 'E'
+DBG_CHAR: 0x3a ':'
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x78 'x'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x0a '
+'
+DBG_CHAR: 0x4d 'M'
+DBG_CHAR: 0x54 'T'
+DBG_CHAR: 0x56 'V'
+DBG_CHAR: 0x41 'A'
+DBG_CHAR: 0x4c 'L'
+DBG_CHAR: 0x3a ':'
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x78 'x'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x0a '
+'
+Terminating simulation by software request.
+- src/lowrisc_ibex_sim_shared_0/rtl/sim/simulator_ctrl.sv:101: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  1240
+Wallclock time:   0.002 s
+Simulation speed: 620000 cycles/s (620 kHz)
+
+Performance Counters
+====================
+Cycles:               0
+Instructions Retired: 0
+hello_test: PASSED
+=== [2/4] SW test: dit_test ===
+make: Nothing to be done for 'all'.
+Simulation of Ibex
+==================
+
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 6952
+
+Simulation running, end by pressing CTRL-c.
+FIFO[0]: addr_q0=00100080 uph=0 out_addr=00100080 instr=3ea0006f c1=1 c2=0
+FIFO[1]: addr_q0=00100084 uph=0 out_addr=00100084 instr=0ff57793 c1=1 c2=0
+FIFO[2]: addr_q0=00100088 uph=0 out_addr=00100088 instr=00020737 c1=1 c2=0
+FIFO[3]: addr_q0=0010008c uph=0 out_addr=0010008c instr=8082c31c c1=0 c2=0
+DBG_CHAR: 0x00 'FIFO[4]: addr_q0=0010008c uph=1 out_addr=0010008e instr=00008082 c1=1 c2=0
+FIFO[5]: addr_q0=00000000 uph=0 out_addr=00000000 instr=00020737 c1=1 c2=0
+FIFO[6]: addr_q0=00100004 uph=0 out_addr=00100004 instr=45e0006f c1=1 c2=0
+FIFO[7]: addr_q0=00100460 uph=1 out_addr=00100462 instr=d7dff06f c1=1 c2=0
+FIFO[8]: addr_q0=001001dc uph=1 out_addr=001001de instr=00001141 c1=1 c2=0
+FIFO[9]: addr_q0=001001e0 uph=0 out_addr=001001e0 instr=00000517 c1=1 c2=0
+FIFO[10]: addr_q0=001001e4 uph=0 out_addr=001001e4 instr=3b450513 c1=1 c2=0
+FIFO[11]: addr_q0=001001e8 uph=0 out_addr=001001e8 instr=355dc606 c1=0 c2=0
+FIFO[12]: addr_q0=001001e8 uph=1 out_addr=001001ea instr=0000355d c1=1 c2=0
+FIFO[13]: addr_q0=00100090 uph=0 out_addr=00100090 instr=00020737 c1=1 c2=0
+FIFO[14]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[15]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[16]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[17]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x45 'E'
+FIFO[18]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[19]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[20]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[21]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[22]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x58 'X'
+FIFO[23]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[24]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[25]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[26]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[27]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x43 'C'
+FIFO[28]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[29]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[30]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[31]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[32]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x45 'E'
+FIFO[33]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[34]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[35]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[36]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[37]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x50 'P'
+FIFO[38]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[39]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[40]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[41]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[42]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x54 'T'
+FIFO[43]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[44]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[45]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[46]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[47]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x49 'I'
+FIFO[48]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[49]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[50]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[51]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[52]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x4f 'O'
+FIFO[53]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[54]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[55]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[56]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[57]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x4e 'N'
+FIFO[58]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[59]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[60]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[61]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[62]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x21 '!'
+FIFO[63]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[64]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[65]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[66]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[67]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x21 '!'
+FIFO[68]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[69]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[70]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[71]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[72]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x21 '!'
+FIFO[73]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[74]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[75]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[76]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[77]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x0a '
+'
+FIFO[78]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[79]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[80]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[81]: addr_q0=00100098 uph=1 out_addr=0010009a instr=00004501 c1=1 c2=0
+FIFO[82]: addr_q0=0010009c uph=0 out_addr=0010009c instr=05058082 c1=0 c2=0
+FIFO[83]: addr_q0=001001ec uph=0 out_addr=001001ec instr=00000517 c1=1 c2=0
+FIFO[84]: addr_q0=001001f0 uph=0 out_addr=001001f0 instr=3b850513 c1=1 c2=0
+FIFO[85]: addr_q0=001001f4 uph=0 out_addr=001001f4 instr=05173d71 c1=0 c2=0
+FIFO[86]: addr_q0=00100090 uph=0 out_addr=00100090 instr=00020737 c1=1 c2=0
+FIFO[87]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[88]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[89]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[90]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[91]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[92]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[93]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[94]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[95]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[96]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[97]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[98]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[99]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[100]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[101]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[102]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[103]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[104]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[105]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[106]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[107]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[108]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[109]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[110]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[111]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[112]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[113]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[114]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[115]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[116]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[117]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[118]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[119]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x0a '
+'
+DBG_CHAR: 0x4d 'M'
+DBG_CHAR: 0x45 'E'
+DBG_CHAR: 0x50 'P'
+DBG_CHAR: 0x43 'C'
+DBG_CHAR: 0x3a ':'
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x78 'x'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x0a '
+'
+DBG_CHAR: 0x4d 'M'
+DBG_CHAR: 0x43 'C'
+DBG_CHAR: 0x41 'A'
+DBG_CHAR: 0x55 'U'
+DBG_CHAR: 0x53 'S'
+DBG_CHAR: 0x45 'E'
+DBG_CHAR: 0x3a ':'
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x78 'x'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x0a '
+'
+DBG_CHAR: 0x4d 'M'
+DBG_CHAR: 0x54 'T'
+DBG_CHAR: 0x56 'V'
+DBG_CHAR: 0x41 'A'
+DBG_CHAR: 0x4c 'L'
+DBG_CHAR: 0x3a ':'
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x78 'x'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x0a '
+'
+Terminating simulation by software request.
+- src/lowrisc_ibex_sim_shared_0/rtl/sim/simulator_ctrl.sv:101: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  1240
+Wallclock time:   0.002 s
+Simulation speed: 620000 cycles/s (620 kHz)
+
+Performance Counters
+====================
+Cycles:               0
+Instructions Retired: 0
+dit_test: PASSED
+=== [3/4] SW test: dummy_instr_test ===
+make: Nothing to be done for 'all'.
+Simulation of Ibex
+==================
+
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 6963
+
+Simulation running, end by pressing CTRL-c.
+FIFO[0]: addr_q0=00100080 uph=0 out_addr=00100080 instr=42c0006f c1=1 c2=0
+FIFO[1]: addr_q0=00100084 uph=0 out_addr=00100084 instr=0ff57793 c1=1 c2=0
+FIFO[2]: addr_q0=00100088 uph=0 out_addr=00100088 instr=00020737 c1=1 c2=0
+FIFO[3]: addr_q0=0010008c uph=0 out_addr=0010008c instr=8082c31c c1=0 c2=0
+DBG_CHAR: 0x00 'FIFO[4]: addr_q0=0010008c uph=1 out_addr=0010008e instr=00008082 c1=1 c2=0
+FIFO[5]: addr_q0=00000000 uph=0 out_addr=00000000 instr=00020737 c1=1 c2=0
+FIFO[6]: addr_q0=00100004 uph=0 out_addr=00100004 instr=4a00006f c1=1 c2=0
+FIFO[7]: addr_q0=001004a4 uph=0 out_addr=001004a4 instr=d3bff06f c1=1 c2=0
+FIFO[8]: addr_q0=001001dc uph=1 out_addr=001001de instr=00001141 c1=1 c2=0
+FIFO[9]: addr_q0=001001e0 uph=0 out_addr=001001e0 instr=00000517 c1=1 c2=0
+FIFO[10]: addr_q0=001001e4 uph=0 out_addr=001001e4 instr=3a450513 c1=1 c2=0
+FIFO[11]: addr_q0=001001e8 uph=0 out_addr=001001e8 instr=355dc606 c1=0 c2=0
+FIFO[12]: addr_q0=001001e8 uph=1 out_addr=001001ea instr=0000355d c1=1 c2=0
+FIFO[13]: addr_q0=00100090 uph=0 out_addr=00100090 instr=00020737 c1=1 c2=0
+FIFO[14]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[15]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[16]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[17]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x45 'E'
+FIFO[18]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[19]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[20]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[21]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[22]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x58 'X'
+FIFO[23]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[24]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[25]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[26]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[27]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x43 'C'
+FIFO[28]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[29]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[30]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[31]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[32]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x45 'E'
+FIFO[33]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[34]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[35]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[36]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[37]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x50 'P'
+FIFO[38]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[39]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[40]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[41]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[42]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x54 'T'
+FIFO[43]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[44]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[45]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[46]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[47]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x49 'I'
+FIFO[48]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[49]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[50]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[51]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[52]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x4f 'O'
+FIFO[53]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[54]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[55]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[56]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[57]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x4e 'N'
+FIFO[58]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[59]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[60]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[61]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[62]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x21 '!'
+FIFO[63]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[64]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[65]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[66]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[67]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x21 '!'
+FIFO[68]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[69]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[70]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[71]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[72]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x21 '!'
+FIFO[73]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[74]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[75]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[76]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[77]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x0a '
+'
+FIFO[78]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[79]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[80]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[81]: addr_q0=00100098 uph=1 out_addr=0010009a instr=00004501 c1=1 c2=0
+FIFO[82]: addr_q0=0010009c uph=0 out_addr=0010009c instr=05058082 c1=0 c2=0
+FIFO[83]: addr_q0=001001ec uph=0 out_addr=001001ec instr=00000517 c1=1 c2=0
+FIFO[84]: addr_q0=001001f0 uph=0 out_addr=001001f0 instr=3a850513 c1=1 c2=0
+FIFO[85]: addr_q0=001001f4 uph=0 out_addr=001001f4 instr=05173d71 c1=0 c2=0
+FIFO[86]: addr_q0=00100090 uph=0 out_addr=00100090 instr=00020737 c1=1 c2=0
+FIFO[87]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[88]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[89]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[90]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[91]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[92]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[93]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[94]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[95]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[96]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[97]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[98]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[99]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[100]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[101]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[102]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[103]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[104]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[105]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[106]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[107]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[108]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[109]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[110]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[111]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[112]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[113]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[114]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[115]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[116]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[117]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[118]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[119]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x0a '
+'
+DBG_CHAR: 0x4d 'M'
+DBG_CHAR: 0x45 'E'
+DBG_CHAR: 0x50 'P'
+DBG_CHAR: 0x43 'C'
+DBG_CHAR: 0x3a ':'
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x78 'x'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x0a '
+'
+DBG_CHAR: 0x4d 'M'
+DBG_CHAR: 0x43 'C'
+DBG_CHAR: 0x41 'A'
+DBG_CHAR: 0x55 'U'
+DBG_CHAR: 0x53 'S'
+DBG_CHAR: 0x45 'E'
+DBG_CHAR: 0x3a ':'
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x78 'x'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x0a '
+'
+DBG_CHAR: 0x4d 'M'
+DBG_CHAR: 0x54 'T'
+DBG_CHAR: 0x56 'V'
+DBG_CHAR: 0x41 'A'
+DBG_CHAR: 0x4c 'L'
+DBG_CHAR: 0x3a ':'
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x78 'x'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x0a '
+'
+Terminating simulation by software request.
+- src/lowrisc_ibex_sim_shared_0/rtl/sim/simulator_ctrl.sv:101: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  1238
+Wallclock time:   0.002 s
+Simulation speed: 619000 cycles/s (619 kHz)
+
+Performance Counters
+====================
+Cycles:               0
+Instructions Retired: 0
+dummy_instr_test: PASSED
+=== [4/4] SW test: pmp_smoke_test ===
+make: Nothing to be done for 'all'.
+Simulation of Ibex
+==================
+
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 6974
+
+Simulation running, end by pressing CTRL-c.
+FIFO[0]: addr_q0=00100080 uph=0 out_addr=00100080 instr=2c60006f c1=1 c2=0
+FIFO[1]: addr_q0=00100084 uph=0 out_addr=00100084 instr=0ff57793 c1=1 c2=0
+FIFO[2]: addr_q0=00100088 uph=0 out_addr=00100088 instr=00020737 c1=1 c2=0
+FIFO[3]: addr_q0=0010008c uph=0 out_addr=0010008c instr=8082c31c c1=0 c2=0
+DBG_CHAR: 0x00 'FIFO[4]: addr_q0=0010008c uph=1 out_addr=0010008e instr=00008082 c1=1 c2=0
+FIFO[5]: addr_q0=00000000 uph=0 out_addr=00000000 instr=00020737 c1=1 c2=0
+FIFO[6]: addr_q0=00100004 uph=0 out_addr=00100004 instr=33a0006f c1=1 c2=0
+FIFO[7]: addr_q0=0010033c uph=1 out_addr=0010033e instr=ea1ff06f c1=1 c2=0
+FIFO[8]: addr_q0=001001dc uph=1 out_addr=001001de instr=00001141 c1=1 c2=0
+FIFO[9]: addr_q0=001001e0 uph=0 out_addr=001001e0 instr=00000517 c1=1 c2=0
+FIFO[10]: addr_q0=001001e4 uph=0 out_addr=001001e4 instr=20850513 c1=1 c2=0
+FIFO[11]: addr_q0=001001e8 uph=0 out_addr=001001e8 instr=355dc606 c1=0 c2=0
+FIFO[12]: addr_q0=001001e8 uph=1 out_addr=001001ea instr=0000355d c1=1 c2=0
+FIFO[13]: addr_q0=00100090 uph=0 out_addr=00100090 instr=00020737 c1=1 c2=0
+FIFO[14]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[15]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[16]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[17]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x45 'E'
+FIFO[18]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[19]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[20]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[21]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[22]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x58 'X'
+FIFO[23]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[24]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[25]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[26]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[27]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x43 'C'
+FIFO[28]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[29]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[30]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[31]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[32]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x45 'E'
+FIFO[33]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[34]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[35]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[36]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[37]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x50 'P'
+FIFO[38]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[39]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[40]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[41]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[42]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x54 'T'
+FIFO[43]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[44]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[45]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[46]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[47]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x49 'I'
+FIFO[48]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[49]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[50]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[51]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[52]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x4f 'O'
+FIFO[53]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[54]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[55]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[56]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[57]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x4e 'N'
+FIFO[58]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[59]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[60]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[61]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[62]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x21 '!'
+FIFO[63]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[64]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[65]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[66]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[67]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x21 '!'
+FIFO[68]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[69]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[70]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[71]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[72]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x21 '!'
+FIFO[73]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[74]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[75]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[76]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[77]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x0a '
+'
+FIFO[78]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[79]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[80]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[81]: addr_q0=00100098 uph=1 out_addr=0010009a instr=00004501 c1=1 c2=0
+FIFO[82]: addr_q0=0010009c uph=0 out_addr=0010009c instr=05058082 c1=0 c2=0
+FIFO[83]: addr_q0=001001ec uph=0 out_addr=001001ec instr=00000517 c1=1 c2=0
+FIFO[84]: addr_q0=001001f0 uph=0 out_addr=001001f0 instr=20c50513 c1=1 c2=0
+FIFO[85]: addr_q0=001001f4 uph=0 out_addr=001001f4 instr=05173d71 c1=0 c2=0
+FIFO[86]: addr_q0=00100090 uph=0 out_addr=00100090 instr=00020737 c1=1 c2=0
+FIFO[87]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[88]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[89]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[90]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[91]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[92]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[93]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[94]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[95]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[96]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[97]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[98]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[99]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[100]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[101]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[102]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[103]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[104]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[105]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[106]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[107]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[108]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[109]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[110]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[111]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[112]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[113]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[114]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+FIFO[115]: addr_q0=001000a0 uph=0 out_addr=001000a0 instr=bfcdc31c c1=0 c2=0
+DBG_CHAR: 0x3d '='
+FIFO[116]: addr_q0=001000a0 uph=1 out_addr=001000a2 instr=0000bfcd c1=1 c2=0
+FIFO[117]: addr_q0=00100094 uph=0 out_addr=00100094 instr=00054783 c1=1 c2=0
+FIFO[118]: addr_q0=00100098 uph=0 out_addr=00100098 instr=4501e399 c1=0 c2=0
+FIFO[119]: addr_q0=0010009c uph=1 out_addr=0010009e instr=00000505 c1=1 c2=0
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x3d '='
+DBG_CHAR: 0x0a '
+'
+DBG_CHAR: 0x4d 'M'
+DBG_CHAR: 0x45 'E'
+DBG_CHAR: 0x50 'P'
+DBG_CHAR: 0x43 'C'
+DBG_CHAR: 0x3a ':'
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x78 'x'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x0a '
+'
+DBG_CHAR: 0x4d 'M'
+DBG_CHAR: 0x43 'C'
+DBG_CHAR: 0x41 'A'
+DBG_CHAR: 0x55 'U'
+DBG_CHAR: 0x53 'S'
+DBG_CHAR: 0x45 'E'
+DBG_CHAR: 0x3a ':'
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x78 'x'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x0a '
+'
+DBG_CHAR: 0x4d 'M'
+DBG_CHAR: 0x54 'T'
+DBG_CHAR: 0x56 'V'
+DBG_CHAR: 0x41 'A'
+DBG_CHAR: 0x4c 'L'
+DBG_CHAR: 0x3a ':'
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x20 ' '
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x78 'x'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x30 '0'
+DBG_CHAR: 0x0a '
+'
+Terminating simulation by software request.
+- src/lowrisc_ibex_sim_shared_0/rtl/sim/simulator_ctrl.sv:101: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  1240
+Wallclock time:   0.002 s
+Simulation speed: 620000 cycles/s (620 kHz)
+
+Performance Counters
+====================
+Cycles:               0
+Instructions Retired: 0
+pmp_smoke_test: PASSED
+
+Total: passed=4 / total=4
+reward: 1.000000  (passed=4, total=4)
