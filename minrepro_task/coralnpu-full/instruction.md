@@ -13,7 +13,21 @@ removed:
 - Firmware C/C++ under `sw/` (test files kept).
 - `examples/` and the FPGA integration sources under `fpga/ip/`, `fpga/rtl/`, `fpga/sw/`.
 
-**Your task**: restore the missing sources so that `bazel test //...` passes.
+**Your task**: restore as many of the missing sources as you can so that
+`bazel test //...` passes as many tests as possible.
+
+## Important: Partial Credit and Persistence
+
+You are scored **proportionally** — every single test you get to pass earns
+credit. You do NOT need to complete the entire project. Even restoring a
+handful of modules that pass their unit tests is valuable progress.
+
+**Do not give up or stop early because the task looks large.** Work
+incrementally: pick a module, read its test spec, implement it, verify it
+passes, then move to the next one. You have up to 24 hours. Use all of it.
+The best strategy is to start with the simplest, most self-contained modules
+(e.g., `hdl/chisel/src/common/` has many small independent modules with
+clear test specs) and work outward.
 
 ## Environment
 

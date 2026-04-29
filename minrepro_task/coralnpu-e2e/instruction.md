@@ -13,8 +13,21 @@ removed:
 - Firmware C/C++ under `sw/` (test files kept).
 - `examples/` and the FPGA integration sources under `fpga/ip/`, `fpga/rtl/`, `fpga/sw/`.
 
-**Your task**: restore enough of the missing sources so that the end-to-end
-test subset passes.
+**Your task**: restore as many of the missing sources as you can so that the
+end-to-end test subset passes as many tests as possible.
+
+## Important: Partial Credit and Persistence
+
+You are scored **proportionally** — every single test you get to pass earns
+credit. You do NOT need to complete the entire project. Even getting a few
+E2E simulations to pass (e.g., basic AXI memory read/write) is valuable.
+
+**Do not give up or stop early because the task looks large.** Work
+incrementally: start with the core infrastructure needed to get the SoC to
+boot (bus bridges, memory controllers, basic scalar pipeline), verify with
+a single E2E test, then expand. You have up to 24 hours. Use all of it.
+The best strategy is bottom-up: get `bazel build` working for the top-level
+module first, then iteratively fix test failures.
 
 ## Scoring (E2E subset only)
 
