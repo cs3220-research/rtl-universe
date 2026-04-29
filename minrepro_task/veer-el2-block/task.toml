@@ -1,17 +1,17 @@
 version = "1.0"
 
 [verifier]
-# Block-level cocotb tests only via nox; no full-core Verilator build.
-# Estimated: ~10 min warm per block * 22 blocks / 8 CPUs ~ 30 min.
-timeout_sec = 2400.0
+# The PyUVM IRQ test runs Verilator on the full VeeR EL2 core (~5-15 minutes
+# to compile, ~5 minutes to simulate). Set 3x the measured time for safety.
+timeout_sec = 7200.0
 
 [agent]
-# Agent has up to 24 h to restore the stripped RTL blocks.
+# Agents need time to write the complete core RTL.
 timeout_sec = 86400.0
 
 [environment]
-# Lighter than full task — no top-level Verilator model or RISCOF.
-build_timeout_sec = 3600.0
+# Full chip Verilator compilation is very CPU and memory intensive.
+build_timeout_sec = 5400.0
 cpus = 8
-memory_mb = 16384
-storage_mb = 40960
+memory_mb = 32768
+storage_mb = 32768

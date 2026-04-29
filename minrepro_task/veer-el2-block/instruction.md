@@ -1,137 +1,97 @@
-# VeeR EL2 Block Tests — Restore the RTL Modules
+# VeeR EL2 RISC-V Core — Restore the RTL (E2E Variant)
 
-You are in `/app`, the root of the **CHIPS Alliance VeeR EL2** RISC-V core repository.
-VeeR EL2 is a 32-bit RV32IMC in-order core. See `README.md` and `docs/source/` for details.
+You are in `/app`, a clone of the **VeeR EL2 RISC-V core** from CHIPS Alliance.
+VeeR EL2 is a production-grade, in-order, 2-stage pipeline RISC-V core
+implementing RV32IMC with configurable DCCM, ICCM, instruction cache, PIC, and
+DMA. See `docs/source/overview.md` and `README.md` for the architecture.
 
-This is the **block-level variant**: only the block-level cocotb tests under
-`verification/block/` are scored. Each block tests one design module in isolation
-using Verilator + cocotb via a wrapper SV module.
+## What has been stripped
 
-## What was stripped
+All SystemVerilog/Verilog implementation files under `design/` have been
+**zeroed out** (truncated to empty). The test infrastructure is fully intact.
 
-All synthesizable SystemVerilog/Verilog implementation files under `design/` have been
-emptied (zero-byte). Files to restore (from `testbench/flist`):
-
-| Module | File(s) |
-|--------|---------|
-| EXU ALU | `design/exu/el2_exu_alu_ctl.sv` |
-| EXU MUL | `design/exu/el2_exu_mul_ctl.sv` |
-| EXU DIV | `design/exu/el2_exu_div_ctl.sv` |
-| EXU top | `design/exu/el2_exu.sv` |
-| DEC decode | `design/dec/el2_dec_decode_ctl.sv` |
-| DEC GPR | `design/dec/el2_dec_gpr_ctl.sv` |
-| DEC IB | `design/dec/el2_dec_ib_ctl.sv` |
-| DEC PMP | `design/dec/el2_dec_pmp_ctl.sv` |
-| DEC TLU | `design/dec/el2_dec_tlu_ctl.sv` |
-| DEC trigger | `design/dec/el2_dec_trigger.sv` |
-| DEC top | `design/dec/el2_dec.sv` |
-| DMA ctrl | `design/el2_dma_ctrl.sv` |
-| IFU blocks | `design/ifu/el2_ifu_*.sv` (8 files) |
-| LSU blocks | `design/lsu/el2_lsu*.sv` (11 files) |
-| DBG | `design/dbg/el2_dbg.sv` |
-| DMI | `design/dmi/dmi_mux.v`, `dmi_wrapper.v`, `dmi_jtag_to_core_sync.v`, `rvjtag_tap.v` |
-| PIC | `design/el2_pic_ctrl.sv` |
-| PMP | `design/el2_pmp.sv` |
-| Lib | `design/lib/beh_lib.sv`, `el2_lib.sv`, `el2_mem_if.sv`, `mem_lib.sv` |
-| Top | `design/el2_veer.sv`, `el2_veer_wrapper.sv`, `el2_mem.sv`, `el2_veer_lockstep.sv` |
-
-**Keep** (do not remove or modify): all test files, wrapper SVs, `configs/`, `tools/`, `third_party/`.
-
-## Environment
-
-Pre-installed tools:
-- `verilator` (v5.x)
-- `python3`, `pip`, `nox`
-- `cocotb` 1.8.0, `pyuvm`, `pytest`, `scipy`
-- `make`, `git`
-
-Set `RV_ROOT=/app` before running Make.
-
-## Block test structure
-
-Each block in `verification/block/<name>/` has:
-- A `Makefile` (includes `../common.mk`)
-- `testbench.py` — cocotb testbench
-- `test_*.py` — test functions
-- `*_wrapper.sv` — SV wrapper for DUT (already present, not stripped)
-- `config.vlt` — Verilator warnings suppression (if present)
-
-Tests are run via `nox` from `verification/block/`:
-
-```bash
-cd /app
-export RV_ROOT=/app
-pip install -r requirements.txt
-
-# Run all block tests:
-cd verification/block
-nox -t tests
-
-# Run a single block:
-make -C verification/block/exu_alu all
-
-# Run a single test module within a block:
-make -C verification/block/exu_alu MODULE=test_arith all
+**Stripped files** (you must restore all of them to pass the E2E test):
 ```
-
-## Block test inventory
-
-| Block | Tests |
-|-------|-------|
-| `exu_alu` | test_arith, test_logic, test_zbb, test_zbs, test_zbp, test_zba |
-| `exu_mul` | test_mul |
-| `exu_div` | test_div |
-| `dec` | test_dec |
-| `dec_ib` | test_dec_ib |
-| `dec_tl` | test_dec_tl |
-| `dec_tlu_ctl` | test_dec_tl |
-| `dec_pmp_ctl` | test_dec_pmp_ctl |
-| `dma` | test_reset, test_read, test_write, test_address, test_ecc, test_debug_read, test_debug_write, test_debug_address |
-| `dccm` | test_readwrite |
-| `iccm` | test_readwrite |
-| `ifu_compress` | test_compress |
-| `ifu_mem_ctl` | test_miss, test_err, test_err_stop |
-| `lib_ahb_to_axi4` | test_write, test_read |
-| `lib_axi4_to_ahb` | test_axi, test_axi_read_channel, test_axi_write_channel |
-| `dmi` | test_jtag_ir, test_dmi_read_write, test_dmi_tap_fsm |
-| `dcls` | test_lockstep |
-| `pmp` | test_xwr_access, test_address_matching, test_multiple_configs |
-| `pmp_random` | test_pmp_random |
-| `pic` | test_reset, test_clken, test_config, test_pending, test_prioritization, test_servicing |
-| `pic_gw` | test_gateway |
-| `lsu_tl` | test_lsu_tl |
+design/el2_veer_wrapper.sv     design/el2_veer.sv
+design/el2_veer_lockstep.sv    design/el2_mem.sv
+design/el2_pic_ctrl.sv         design/el2_dma_ctrl.sv
+design/el2_pmp.sv
+design/dbg/el2_dbg.sv
+design/dec/el2_dec.sv          design/dec/el2_dec_decode_ctl.sv
+design/dec/el2_dec_gpr_ctl.sv  design/dec/el2_dec_ib_ctl.sv
+design/dec/el2_dec_pmp_ctl.sv  design/dec/el2_dec_tlu_ctl.sv
+design/dec/el2_dec_trigger.sv
+design/dmi/dmi_wrapper.v       design/dmi/dmi_mux.v
+design/dmi/rvjtag_tap.v        design/dmi/dmi_jtag_to_core_sync.v
+design/exu/el2_exu.sv          design/exu/el2_exu_alu_ctl.sv
+design/exu/el2_exu_mul_ctl.sv  design/exu/el2_exu_div_ctl.sv
+design/ifu/el2_ifu.sv          design/ifu/el2_ifu_aln_ctl.sv
+design/ifu/el2_ifu_bp_ctl.sv   design/ifu/el2_ifu_compress_ctl.sv
+design/ifu/el2_ifu_ic_mem.sv   design/ifu/el2_ifu_iccm_mem.sv
+design/ifu/el2_ifu_ifc_ctl.sv  design/ifu/el2_ifu_mem_ctl.sv
+design/lib/beh_lib.sv          design/lib/el2_lib.sv
+design/lib/ahb_to_axi4.sv      design/lib/axi4_to_ahb.sv
+design/lib/el2_mem_if.sv       design/lib/el2_regfile_if.sv
+design/lib/mem_lib.sv
+design/lsu/el2_lsu.sv          design/lsu/el2_lsu_addrcheck.sv
+design/lsu/el2_lsu_bus_buffer.sv design/lsu/el2_lsu_bus_intf.sv
+design/lsu/el2_lsu_clkdomain.sv design/lsu/el2_lsu_dccm_ctl.sv
+design/lsu/el2_lsu_dccm_mem.sv design/lsu/el2_lsu_ecc.sv
+design/lsu/el2_lsu_lsc_ctl.sv  design/lsu/el2_lsu_stbuf.sv
+design/lsu/el2_lsu_trigger.sv
+```
 
 ## Scoring
 
-Reward is **proportional**: `passed_test_functions / total_test_functions`.
+This is the **E2E variant**: reward is **1.0** if the top-level PyUVM IRQ test
+passes, **0.0** otherwise (no partial credit). The test exercises the full core:
+fetch, decode, execute, LSU, write-back, PIC interrupt controller, and DMA
+subsystem all working together.
 
-Each cocotb test function (one entry in `results.xml`) counts as one test.
-The denominator is stored in `/app/.harbor/total_tests`.
+## Environment
 
-Getting even one block's tests passing earns partial credit. Blocks are
-**independent** — you can focus on simpler blocks like `exu_alu` first.
+- **Verilator** (Debian bookworm, ≥4.106) is pre-installed
+- **cocotb 1.8.0**, pyuvm 2.9.1, pytest, and all dependencies are installed
+  system-wide via pip
+- **Perl** is available for `configs/veer.config`
+- `RV_ROOT` must be set to `/app` before running any tests
 
-## Quick start — easiest blocks to implement first
+## The E2E test
 
-1. **`exu_alu`** — pure combinational logic (no state). ALU with rv32imc + bitmanip.
-2. **`exu_div`** / **`exu_mul`** — arithmetic units
-3. **`ifu_compress`** — RVC decompressor (combinational)
-4. **`lib_ahb_to_axi4`** / **`lib_axi4_to_ahb`** — bus bridges (from `design/lib/`)
-5. More complex: `dma`, `pic`, `dccm`/`iccm` (memories with ECC), `dec`, `lsu`
-
-## Config generation
-
-Each block Makefile auto-generates VeeR config headers in its `snapshots/default/`:
+The test is in `verification/top/test_pyuvm/`:
+- `test_pyuvm.py` — pytest wrapper that calls `make all` in the test directory
+- `test_irq/test_irq.py` — PyUVM test: drives interrupts, checks servicing
+- `Makefile` — Verilator cocotb Makefile compiling the full design via
+  `testbench/flist` (lists all RTL files)
 
 ```bash
-# Done automatically by the block Makefile; or manually:
+# Run the E2E test
 export RV_ROOT=/app
-$RV_ROOT/configs/veer.config
+cd /app/verification/top
+
+# First generate VeeR config
+$RV_ROOT/configs/veer.config -fpga_optimize=0 -set build_axi4
+
+# Run the test
+python3 -m pytest -sv test_pyuvm/test_pyuvm.py -k "test_irq" --timeout=1800
 ```
 
-## Key interfaces to understand
+## Strategy
 
-- `design/include/el2_def.sv` — parameter definitions (kept, not stripped)
-- `design/lib/el2_mem_if.sv` — memory interface types
-- `verification/block/common/` — shared Python utilities (axi.py, csrs.py, utils.py)
-- `verification/block/common.mk` — common cocotb Makefile fragment
+The E2E test compiles the **entire** VeeR EL2 design. You must implement
+all RTL files. Suggested order:
+
+1. **Leaf library modules**: `design/lib/beh_lib.sv`, `design/lib/mem_lib.sv`,
+   `design/lib/el2_mem_if.sv`, `design/lib/el2_regfile_if.sv`,
+   `design/lib/el2_lib.sv`
+2. **Protocol bridges**: `design/lib/ahb_to_axi4.sv`, `design/lib/axi4_to_ahb.sv`
+3. **DMI / debug**: `design/dmi/` (rvjtag_tap.v, dmi_wrapper.v, etc.)
+4. **EXU**: `design/exu/el2_exu_alu_ctl.sv`, `el2_exu_mul_ctl.sv`,
+   `el2_exu_div_ctl.sv`, then `el2_exu.sv`
+5. **IFU**: all `design/ifu/` files
+6. **DEC**: all `design/dec/` files
+7. **LSU**: all `design/lsu/` files
+8. **Top-level**: `el2_pic_ctrl.sv`, `el2_dma_ctrl.sv`, `el2_pmp.sv`,
+   `el2_mem.sv`, `el2_veer.sv`, `el2_veer_wrapper.sv`, `el2_veer_lockstep.sv`
+
+Read `testbench/flist` for the exact file inclusion order used by the simulator.

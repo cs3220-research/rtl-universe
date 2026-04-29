@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """
-run_tests.py — Run L0 Verilator regression tests for the verifier.
+run_e2e_tests.py — Run the E2E subset for the verifier.
 
-Reads /tmp/_test_list.json (produced by parse_tests.py).
+Runs the same E2E test list used at build time (from /app/.harbor/e2e_tests
+if present, otherwise uses the built-in list).
+
 Writes:
   /tmp/_passed_count  — integer count of passing tests
   /tmp/_passed_tests  — newline-separated list of passing test names
   /tmp/_failed_tests  — newline-separated list of failing test names
 """
-import json
 import os
 import shutil
 import subprocess
@@ -16,29 +17,48 @@ import sys
 
 CALIPTRA_ROOT = os.environ.get("CALIPTRA_ROOT", "/app")
 BUILD_DIR = "/tmp/verifier_build"
-SCRATCH = "/tmp/caliptra_verifier_workspace/scratch/tests"
+SCRATCH = "/tmp/caliptra_verifier_workspace/scratch/e2e_tests"
 TEST_TIMEOUT = 300
+
+# Built-in E2E test list (mirrors run_e2e_tests.py from the count stage)
+BUILTIN_E2E_TESTS = [
+    "smoke_test_sha256",
+    "smoke_test_sha512",
+    "smoke_test_hmac",
+    "smoke_test_sha3",
+    "smoke_test_aes_gcm",
+    "smoke_test_kv",
+    "smoke_test_kv_hmac_flow",
+    "smoke_test_kv_doe",
+    "smoke_test_kv_uds_reset",
+    "smoke_test_mbox",
+    "smoke_test_trng",
+    "smoke_test_datavault_basic",
+    "smoke_test_zeroize_crypto",
+    "smoke_test_mldsa_edge",
+    "smoke_test_mlkem",
+]
 
 os.makedirs(SCRATCH, exist_ok=True)
 
-try:
-    with open("/tmp/_test_list.json") as fh:
-        tests = json.load(fh)
-except FileNotFoundError:
-    print("ERROR: /tmp/_test_list.json not found — run parse_tests.py first")
-    sys.exit(1)
+# Load test list from .harbor/e2e_tests if available
+e2e_tests_path = "/app/.harbor/e2e_tests"
+if os.path.exists(e2e_tests_path):
+    with open(e2e_tests_path) as fh:
+        test_names = [line.strip() for line in fh if line.strip()]
+    print(f"Loaded {len(test_names)} E2E tests from {e2e_tests_path}", file=sys.stderr)
+else:
+    test_names = BUILTIN_E2E_TESTS
+    print(f"Using built-in list of {len(test_names)} E2E tests", file=sys.stderr)
 
 mfile = os.path.join(CALIPTRA_ROOT, "tools/scripts/Makefile")
 passed = []
 failed = []
 
-for i, t in enumerate(tests):
-    suite = t["suite"]
-    yml_stem = t["yml_stem"]
-    testname = t["testname"]
-    plusargs = " ".join(t["plusargs"])
-
-    print(f"[{i+1}/{len(tests)}] Running: {yml_stem} ...", flush=True)
+for i, testname in enumerate(test_names):
+    yml_stem = testname
+    plusargs = "+CLP_REGRESSION"
+    print(f"[{i+1}/{len(test_names)}] Running: {yml_stem} ...", flush=True)
 
     testdir = os.path.join(SCRATCH, yml_stem)
     if os.path.exists(testdir):
@@ -81,7 +101,7 @@ for i, t in enumerate(tests):
         print(f"  FAIL: {yml_stem} (exit={result.returncode})")
 
 print(f"\n{'='*60}")
-print(f"Results: {len(passed)} passed, {len(failed)} failed out of {len(tests)} total")
+print(f"E2E results: {len(passed)} passed, {len(failed)} failed out of {len(test_names)} total")
 print(f"{'='*60}")
 
 if passed:

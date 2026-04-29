@@ -1,98 +1,132 @@
 #!/bin/bash
-# Verifier entrypoint for the cva6-smoke Harbor task.
+# test.sh — Verifier for the cva6-e2e Harbor task (E2E subset only).
 #
-# Runs a curated set of 10 RISC-V integer ASM tests against the Verilator
-# model to give faster agent feedback than the full 228-test suite.
+# Runs the E2E subset: bare-metal ISA tests (rv64ui-p-*, rv64mi-p-*, rv64si-p-*,
+# rv64uc-p-*) and bare-metal AMO tests (rv64ua-p-*). These exercise the full
+# CVA6 pipeline in physical/supervisor mode without paging — ~79 tests total.
 #
-# Scoring denominator: 10 (stored in /app/.harbor/total_tests).
+# Writes reward (float in [0,1]) to /logs/verifier/reward.txt.
 
 set -u
 mkdir -p /logs/verifier
 cd /app
 
-# ---------------------------------------------------------------------------
-# Environment
-# ---------------------------------------------------------------------------
-export CVA6_REPO_DIR=/app
-export RISCV=/tools/riscv
-export VERILATOR_INSTALL_DIR=/tools/verilator
-export SPIKE_INSTALL_DIR=/tools/spike
-export PATH="${VERILATOR_INSTALL_DIR}/bin:${RISCV}/bin:${PATH}"
-export NUM_JOBS=8
+export RISCV="${RISCV:-/opt/riscv}"
+export SPIKE_INSTALL_DIR="${SPIKE_INSTALL_DIR:-/opt/spike}"
+export VERILATOR_INSTALL_DIR="${VERILATOR_INSTALL_DIR:-/opt/verilator}"
+export CVA6_REPO_DIR="/app"
+export TARGET_CFG="${TARGET_CFG:-cv64a6_imafdc_sv39}"
+export HPDCACHE_DIR="${CVA6_REPO_DIR}/core/cache_subsystem/hpdcache"
+export PATH="${RISCV}/bin:${VERILATOR_INSTALL_DIR}/bin:${PATH}"
+export LD_LIBRARY_PATH="${RISCV}/lib:${SPIKE_INSTALL_DIR}/lib:${LD_LIBRARY_PATH:-}"
 
-# Denominator
-if [ -r /app/.harbor/total_tests ]; then
-    TOTAL=$(cat /app/.harbor/total_tests)
+RISCV_TEST_DIR="${CVA6_REPO_DIR}/tmp/riscv-tests/build/isa"
+VER_LIB="${CVA6_REPO_DIR}/work-ver"
+VER_BIN="${VER_LIB}/Variane_testharness"
+NUM_JOBS="${NUM_JOBS:-$(nproc)}"
+MAX_CYCLES=10000000
+
+# ── Denominator: use E2E-specific count ───────────────────────────────────────
+if [ -r /app/.harbor/e2e_total_tests ]; then
+    TOTAL=$(cat /app/.harbor/e2e_total_tests)
 else
-    TOTAL=10
+    TOTAL=79
 fi
 
-echo "=== CVA6 smoke verifier: total_tests=${TOTAL} ==="
+mkdir -p "${CVA6_REPO_DIR}/tmp"
+if [ ! -d "${RISCV_TEST_DIR}" ]; then
+    ln -sf /opt/riscv-tests "${CVA6_REPO_DIR}/tmp/riscv-tests"
+fi
+
+{
+echo "=== CVA6-E2E Verifier ==="
+echo "E2E TOTAL tests expected: ${TOTAL}"
+echo ""
+
+echo "=== Building Verilator model ==="
+make verilate \
+    CVA6_REPO_DIR="${CVA6_REPO_DIR}" \
+    TARGET_CFG="${TARGET_CFG}" \
+    HPDCACHE_DIR="${HPDCACHE_DIR}" \
+    RISCV="${RISCV}" \
+    SPIKE_INSTALL_DIR="${SPIKE_INSTALL_DIR}" \
+    VERILATOR_INSTALL_DIR="${VERILATOR_INSTALL_DIR}" \
+    VL_INC_DIR="${VERILATOR_INSTALL_DIR}/share/verilator/include" \
+    NUM_JOBS="${NUM_JOBS}" \
+    2>&1 || echo "WARNING: verilate target failed"
 
 PASSED=0
 
-# ---------------------------------------------------------------------------
-# 1. Build Verilator model
-# ---------------------------------------------------------------------------
-echo "--- Building Verilator model ---"
-make verilate target=cv64a6_imafdc_sv39 NUM_JOBS=${NUM_JOBS} \
-    2>&1 | tee /logs/verifier/verilate_build.log | tail -20 || {
-    echo "ERROR: verilate build failed"
+if [ ! -x "${VER_BIN}" ]; then
+    echo "ERROR: Variane_testharness binary not found — reward = 0"
     echo "0.000000" > /logs/verifier/reward.txt
     exit 0
+fi
+
+echo "Binary: ${VER_BIN}"
+echo ""
+
+run_test() {
+    local category="$1"
+    local test_name="$2"
+    local elf_path="$3"
+    local log_file="/logs/verifier/${category}_${test_name}.log"
+
+    "${VER_BIN}" "+max-cycles=${MAX_CYCLES}" "${elf_path}" > "${log_file}" 2>&1 || true
+
+    if grep -q "SUCCESS\|PASSED\|tohost = 1\b" "${log_file}" 2>/dev/null; then
+        echo "PASS: ${category}::${test_name}"
+        PASSED=$((PASSED + 1))
+        return 0
+    else
+        echo "FAIL: ${category}::${test_name}"
+        return 1
+    fi
 }
 
-if [ ! -x /app/work-ver/Variane_testharness ]; then
-    echo "ERROR: Variane_testharness not found after build"
-    echo "0.000000" > /logs/verifier/reward.txt
-    exit 0
-fi
+# ── E2E subset from the asm list: all bare-metal (p-) tests ──────────────────
+echo "=== E2E ASM tests (bare-metal: rv64ui-p-*, rv64mi-p-*, rv64si-p-*, rv64uc-p-*) ==="
+while IFS= read -r tname; do
+    [ -z "${tname}" ] && continue
+    case "${tname}" in
+        rv64ui-p-*|rv64mi-p-*|rv64si-p-*|rv64uc-p-*)
+            elf="${RISCV_TEST_DIR}/${tname}"
+            if [ -f "${elf}" ]; then
+                run_test "asm" "${tname}" "${elf}"
+            else
+                echo "SKIP: asm::${tname} (elf not found)"
+            fi
+            ;;
+    esac
+done < "${CVA6_REPO_DIR}/ci/riscv-asm-tests.list"
 
-HARNESS=/app/work-ver/Variane_testharness
-RISCV_TEST_DIR=/app/tmp/riscv-tests/build/isa
+# ── E2E subset from the AMO list: bare-metal (p-) tests only ─────────────────
+echo "=== E2E AMO tests (bare-metal: rv64ua-p-*) ==="
+while IFS= read -r tname; do
+    [ -z "${tname}" ] && continue
+    case "${tname}" in
+        rv64ua-p-*)
+            elf="${RISCV_TEST_DIR}/${tname}"
+            if [ -f "${elf}" ]; then
+                run_test "amo" "${tname}" "${elf}"
+            else
+                echo "SKIP: amo::${tname} (elf not found)"
+            fi
+            ;;
+    esac
+done < "${CVA6_REPO_DIR}/ci/riscv-amo-tests.list"
 
-# ---------------------------------------------------------------------------
-# 2. Smoke test suite — 10 representative integer tests
-# ---------------------------------------------------------------------------
-SMOKE_TESTS=(
-    rv64ui-p-add
-    rv64ui-p-addi
-    rv64ui-p-and
-    rv64ui-p-or
-    rv64ui-p-sub
-    rv64ui-p-jal
-    rv64ui-p-jalr
-    rv64ui-p-beq
-    rv64ui-p-lw
-    rv64ui-p-sw
-)
+echo ""
+echo "=== Summary ==="
+echo "passed=${PASSED} total=${TOTAL}"
 
-echo "--- Running smoke tests ---"
-for testname in "${SMOKE_TESTS[@]}"; do
-    elf="${RISCV_TEST_DIR}/${testname}"
-    if [ ! -f "${elf}" ]; then
-        echo "MISSING: ${testname}"
-        continue
-    fi
-    if "${HARNESS}" "${elf}" \
-        > /logs/verifier/test_${testname}.log 2>&1; then
-        echo "PASS: ${testname}"
-        PASSED=$((PASSED + 1))
-    else
-        echo "FAIL: ${testname}"
-    fi
-done
+} 2>&1 | tee /logs/verifier/test.log
 
-# ---------------------------------------------------------------------------
-# Compute reward
-# ---------------------------------------------------------------------------
-echo "=== Results: passed=${PASSED}, total=${TOTAL} ==="
-
-if [ "${TOTAL:-0}" -gt 0 ]; then
-    python3 -c "print(f'{min(${PASSED}, ${TOTAL}) / ${TOTAL}:.6f}')" \
-        > /logs/verifier/reward.txt
-else
-    echo "0.000000" > /logs/verifier/reward.txt
-fi
+python3 -c "
+passed = int('${PASSED:-0}')
+total  = int('${TOTAL:-79}')
+reward = min(1.0, passed / total) if total > 0 else 0.0
+print(f'{reward:.6f}')
+" > /logs/verifier/reward.txt
 
 echo "reward: $(cat /logs/verifier/reward.txt)  (passed=${PASSED}, total=${TOTAL})"

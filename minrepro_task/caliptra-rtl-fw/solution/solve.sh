@@ -1,8 +1,8 @@
 #!/bin/bash
-# solve.sh — Reference solution for caliptra-rtl-fw Harbor task.
+# solve.sh — Reference solution for caliptra-rtl Harbor task (caliptra-e2e).
 # Run on the Harbor HOST (not inside the container).
 # Copies the full green source (warm_src) into the running container's /app,
-# restoring both RTL and firmware test C files.
+# then commits the change so the verifier sees it.
 #
 # Usage:
 #   bash solution/solve.sh <container_id_or_name>
@@ -15,7 +15,7 @@ WARM_SRC="${TASK_DIR}/environment/warm_src"
 
 if [ ! -d "${WARM_SRC}" ]; then
     echo "ERROR: warm_src not found at ${WARM_SRC}"
-    echo "Run the sync-skeleton script first or populate warm_src manually."
+    echo "Populate warm_src from repos/caliptra-rtl (with submodules initialized)."
     exit 1
 fi
 
@@ -26,6 +26,6 @@ echo "[solve] Committing restored source..."
 docker exec "${CONTAINER_ID}" bash -c '
     cd /app
     git add -A
-    git -c user.email=x@x -c user.name=x commit -q -m "restore green source (RTL + firmware)"
-    echo "[solve] Done. Container /app now has full RTL and firmware implementation."
+    git -c user.email=x@x -c user.name=x commit -q -m "restore green source"
+    echo "[solve] Done. Container /app now has the full implementation."
 '

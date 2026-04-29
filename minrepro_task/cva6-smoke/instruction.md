@@ -1,91 +1,123 @@
-# CVA6 Smoke Tests — Restore the RISC-V Core RTL (Subset)
+# CVA6 RISC-V Core — E2E Integration Test Variant
 
-You are in `/app`, the root of the **OpenHW Group CVA6** (formerly Ariane) RISC-V
-processor repository. CVA6 is a Linux-capable, 6-stage, in-order 64-bit core
-implementing RV64IMAFDC. See `README.md` for architecture details.
+You are in `/app`, a **Make + Bender + Verilator** repository for the
+**CVA6 (Ariane) RISC-V processor core**.
 
-This is the **smoke-test variant**: only 10 representative RISC-V integer ASM tests
-are scored. This makes it faster for the agent to iterate and get signal.
+This is the **E2E (end-to-end) variant** of the CVA6 task. It scores only
+the most fundamental integration tests: **bare-metal ISA tests that execute
+directly in machine mode** with no virtual memory paging. Passing any of
+these tests requires the entire pipeline to be functional.
 
-The full task (228 tests) is in the `cva6` Harbor task.
+## E2E Test Subset (~79 tests)
 
-## What was stripped
+The scored tests are:
+- `rv64ui-p-*` — User integer instructions, physical (bare-metal) mode (46 tests)
+- `rv64mi-p-*` — Machine-mode privileged instructions (7 tests)
+- `rv64si-p-*` — Supervisor-mode instructions (6 tests)
+- `rv64uc-p-*` — Compressed instructions, bare-metal (1 test)
+- `rv64ua-p-*` — Atomic (AMO) instructions, bare-metal (19 tests)
 
-Same as the full task — all synthesizable SystemVerilog implementation files in
-`core/` have been zeroed out. See `core/Flist.cva6` for the complete list.
+These tests are in the `ci/riscv-asm-tests.list` and `ci/riscv-amo-tests.list` files.
+The verifier filters for the `*-p-*` (physical/bare-metal) variants automatically.
 
-The key files to restore:
+For the full 228-test benchmark (includes virtual memory, FP, MUL, benchmarks),
+see the **cva6** task.
 
-**Minimum for any integer tests to pass:**
-- `core/cva6.sv` — top-level core
-- `core/decoder.sv`, `core/compressed_decoder.sv` — instruction decode
-- `core/alu.sv` — integer ALU (add/sub/shift/logic/compare)
-- `core/branch_unit.sv` — branch resolution
-- `core/controller.sv` — flush/stall control
-- `core/id_stage.sv`, `core/issue_stage.sv`, `core/issue_read_operands.sv`
-- `core/ex_stage.sv` — execute stage
-- `core/commit_stage.sv` — retire/writeback
-- `core/scoreboard.sv`, `core/raw_checker.sv`
-- `core/ariane_regfile_ff.sv` — integer register file
-- `core/csr_regfile.sv` — CSR file (mstatus, mepc, etc.)
-- `core/load_unit.sv`, `core/store_unit.sv`, `core/load_store_unit.sv`, `core/lsu_bypass.sv`
-- `core/frontend/frontend.sv`, `core/frontend/instr_queue.sv`, `core/frontend/instr_scan.sv`
-- `core/frontend/bht.sv`, `core/frontend/btb.sv`, `core/frontend/ras.sv`
-- `core/cache_subsystem/cva6_icache.sv`, `core/cache_subsystem/cva6_icache_axi_wrapper.sv`
-- `core/cache_subsystem/wt_dcache.sv` (+ ctrl, mem, missunit, wbuffer)
-- `core/cache_subsystem/wt_cache_subsystem.sv`, `core/cache_subsystem/wt_axi_adapter.sv`
-- `core/cache_subsystem/axi_adapter.sv`
-- `core/axi_shim.sv`
+## Repository Structure
 
-**What was kept** (do NOT modify):
-- All `core/include/*.sv` package files — intact, use as reference
-- All testbench files under `corev_apu/tb/`, `verif/`
-- All `vendor/pulp-platform/` files
-- `ci/riscv-asm-tests.list` — the 10-test smoke subset
-- `core/Flist.cva6` — Verilator file list
-
-## Environment
-
-Pre-installed tools:
-- **Verilator** v5.008 at `/tools/verilator/`
-- **RISC-V GCC** (rv64gc, linux ABI) at `/tools/riscv/`
-- **Spike** ISS at `/tools/spike/`
-- **make**, **git**, **python3**
-
-Pre-built test binaries at `/app/tmp/riscv-tests/build/isa/`.
-
-```bash
-export CVA6_REPO_DIR=/app
-export RISCV=/tools/riscv
-export VERILATOR_INSTALL_DIR=/tools/verilator
-export SPIKE_INSTALL_DIR=/tools/spike
-export PATH="/tools/verilator/bin:/tools/riscv/bin:$PATH"
+```
+Makefile                   — Top-level build system
+Bender.yml                 — PULP dependency manager
+core/                      — Core RTL (STRIPPED — you must implement)
+  cva6.sv                  — Top-level core
+  frontend/                — Fetch, branch predictor
+  id_stage.sv              — Decode
+  issue_stage.sv           — Issue and operand read
+  ex_stage.sv              — Execute
+  commit_stage.sv          — Commit
+  alu.sv                   — ALU
+  multiplier.sv            — Mul/div unit
+  load_unit.sv / store_unit.sv
+  csr_regfile.sv           — CSR registers
+  cache_subsystem/         — Caches
+  pmp/                     — Physical memory protection
+  include/                 — Package files (KEPT)
+corev_apu/tb/              — Testbench (KEPT)
+vendor/                    — Vendored libs (KEPT)
+ci/                        — Test lists (KEPT)
 ```
 
-## How to build and run
+## What Has Been Stripped
 
-```bash
-export CVA6_REPO_DIR=/app
-export RISCV=/tools/riscv
-export VERILATOR_INSTALL_DIR=/tools/verilator
-export SPIKE_INSTALL_DIR=/tools/spike
-export NUM_JOBS=8
+All RTL implementation files under `core/` have been emptied (zero bytes).
+Package files, testbenches, and vendor libraries are intact.
 
-# Build the Verilator model:
-make verilate target=cv64a6_imafdc_sv39 NUM_JOBS=$NUM_JOBS
-
-# Run a single test:
-work-ver/Variane_testharness tmp/riscv-tests/build/isa/rv64ui-p-add
-
-# Run the smoke test suite:
-for test in rv64ui-p-add rv64ui-p-addi rv64ui-p-and rv64ui-p-or rv64ui-p-sub \
-            rv64ui-p-jal rv64ui-p-jalr rv64ui-p-beq rv64ui-p-lw rv64ui-p-sw; do
-    echo -n "Testing ${test}: "
-    work-ver/Variane_testharness tmp/riscv-tests/build/isa/${test} \
-        && echo "PASS" || echo "FAIL"
-done
-```
+See the `cva6` task `instruction.md` for the full stripped/kept listing.
 
 ## Scoring
 
-Reward is proportional: `passed / 10`. Even one passing test earns 0.1 reward.
+Reward = `passed_e2e_tests / total_e2e_tests`.
+
+Even passing a single basic test like `rv64ui-p-add` (adds two registers and
+checks the result) earns partial credit. You need a working fetch-decode-execute
+pipeline for the integer tests to pass.
+
+## Environment
+
+- **Verilator 5.008** at `/opt/verilator/bin/verilator`
+- **RISC-V GNU toolchain** at `/opt/riscv/bin/`
+- **Spike ISS libraries** at `/opt/spike/lib/`
+- **riscv-tests binaries** at `/opt/riscv-tests/` (symlinked to `/app/tmp/riscv-tests`)
+- **Bender** at `/usr/local/bin/bender`
+
+## Useful Commands
+
+```bash
+# Set up environment
+export RISCV=/opt/riscv
+export SPIKE_INSTALL_DIR=/opt/spike
+export VERILATOR_INSTALL_DIR=/opt/verilator
+export VL_INC_DIR=/opt/verilator/share/verilator/include
+export CVA6_REPO_DIR=/app
+export TARGET_CFG=cv64a6_imafdc_sv39
+export HPDCACHE_DIR=/app/core/cache_subsystem/hpdcache
+export PATH=/opt/riscv/bin:/opt/verilator/bin:$PATH
+export LD_LIBRARY_PATH=/opt/riscv/lib:/opt/spike/lib:$LD_LIBRARY_PATH
+
+# Ensure riscv-tests are accessible
+mkdir -p /app/tmp && ln -sf /opt/riscv-tests /app/tmp/riscv-tests
+
+# Build the Verilator simulation
+make verilate
+
+# Run a single E2E test (simplest: integer add)
+./work-ver/Variane_testharness +max-cycles=10000000 \
+    /opt/riscv-tests/share/riscv-tests/isa/rv64ui-p-add
+
+# A passing test prints "SUCCESS" — check with:
+./work-ver/Variane_testharness +max-cycles=10000000 \
+    /opt/riscv-tests/share/riscv-tests/isa/rv64ui-p-add 2>&1 | grep -i "success\|fail"
+
+# List all E2E test ELFs
+ls /opt/riscv-tests/share/riscv-tests/isa/rv64ui-p-*
+ls /opt/riscv-tests/share/riscv-tests/isa/rv64mi-p-*
+ls /opt/riscv-tests/share/riscv-tests/isa/rv64ua-p-*
+```
+
+## Implementation Strategy
+
+The `rv64ui-p-add` test is the simplest: it loads two registers, adds them,
+and writes the result to the tohost CSR. This exercises:
+1. Instruction fetch from the boot ROM
+2. Instruction decode (R-type and I-type)
+3. Register file read
+4. ALU (addition)
+5. Register file write
+6. CSR write (tohost)
+
+Start with the ALU and basic integer datapath, then add decode, issue, and
+commit logic. The pipeline can be simplified initially (in-order, no branch
+prediction) to get basic tests passing quickly.
+
+Reference `core/include/ariane_pkg.sv` for all type definitions.
+Reference `core/include/cv64a6_imafdc_sv39_config_pkg.sv` for parameters.

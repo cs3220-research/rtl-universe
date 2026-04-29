@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """
-run_tests.py — Run L0 Verilator regression tests for the verifier.
+run_l0_tests.py — Run the L0 Verilator regression tests and record pass/fail.
 
-Reads /tmp/_test_list.json (produced by parse_tests.py).
-Writes:
-  /tmp/_passed_count  — integer count of passing tests
-  /tmp/_passed_tests  — newline-separated list of passing test names
+Reads /tmp/_test_list.json (produced by parse_l0_tests.py).
+Each test gets a fresh copy of the pre-built Verilator binary from build_dir.
+Writes results to:
+  /tmp/_all_tests     — newline-separated list of passing test names
   /tmp/_failed_tests  — newline-separated list of failing test names
+  /tmp/_total         — count of passing tests (denominator for reward)
+  /tmp/_passed_count  — same as _total (used by verifier)
 """
 import json
 import os
@@ -15,17 +17,18 @@ import subprocess
 import sys
 
 CALIPTRA_ROOT = os.environ.get("CALIPTRA_ROOT", "/app")
-BUILD_DIR = "/tmp/verifier_build"
-SCRATCH = "/tmp/caliptra_verifier_workspace/scratch/tests"
-TEST_TIMEOUT = 300
+BUILD_DIR = os.environ.get("BUILD_DIR", "/tmp/verilated_image")
+SCRATCH = "/tmp/caliptra_workspace/scratch/tests"
+TEST_TIMEOUT = int(os.environ.get("TEST_TIMEOUT", "300"))
 
 os.makedirs(SCRATCH, exist_ok=True)
 
+test_list_path = "/tmp/_test_list.json"
 try:
-    with open("/tmp/_test_list.json") as fh:
+    with open(test_list_path) as fh:
         tests = json.load(fh)
 except FileNotFoundError:
-    print("ERROR: /tmp/_test_list.json not found — run parse_tests.py first")
+    print(f"ERROR: {test_list_path} not found — run parse_l0_tests.py first")
     sys.exit(1)
 
 mfile = os.path.join(CALIPTRA_ROOT, "tools/scripts/Makefile")
@@ -40,6 +43,7 @@ for i, t in enumerate(tests):
 
     print(f"[{i+1}/{len(tests)}] Running: {yml_stem} ...", flush=True)
 
+    # Fresh test directory — copy pre-built Verilator binary
     testdir = os.path.join(SCRATCH, yml_stem)
     if os.path.exists(testdir):
         shutil.rmtree(testdir)
@@ -94,10 +98,8 @@ if failed:
     for name in sorted(failed):
         print(f"  - {name}")
 
-with open("/tmp/_passed_count", "w") as fh:
-    fh.write(str(len(passed)) + "\n")
-
-with open("/tmp/_passed_tests", "w") as fh:
+# Write result files
+with open("/tmp/_all_tests", "w") as fh:
     for name in sorted(passed):
         fh.write(name + "\n")
 
@@ -105,4 +107,10 @@ with open("/tmp/_failed_tests", "w") as fh:
     for name in sorted(failed):
         fh.write(name + "\n")
 
-print(f"\nPassed count written to /tmp/_passed_count: {len(passed)}")
+with open("/tmp/_total", "w") as fh:
+    fh.write(str(len(passed)) + "\n")
+
+with open("/tmp/_passed_count", "w") as fh:
+    fh.write(str(len(passed)) + "\n")
+
+print(f"\nPassed count written to /tmp/_total: {len(passed)}")

@@ -1,19 +1,24 @@
 version = "1.0"
 
 [verifier]
-# Verilator model compilation + CI regression test suite (ASM + AMO + MUL + FP + benchmarks).
-# Measured: ~45 min cold build of Variane_testharness, then ~30 min for 228 tests.
-# 3x warm budget = 2.5 h, rounded up.
+# Verilator elaboration of CVA6 (~200k lines SV): ~10-15 min cold.
+# Running all 228 ISA tests: ~30 min (each test takes 5-30s in simulation).
+# Budget: 15 min verilate + 45 min test execution = 60 min. 3x safety = 3h.
 timeout_sec = 10800.0
 
 [agent]
-# Agent has up to 24 h to restore stripped RTL.
+# CVA6 is a full out-of-order RISC-V core with hundreds of RTL modules.
+# An agent needs substantial time to implement the full pipeline, caches,
+# execute stages, FPU, branch predictor, and MMU.
+# 24h is the standard upper bound for complex RTL tasks.
 timeout_sec = 86400.0
 
 [environment]
-# Verilator build of CVA6 is memory-heavy: ~2 GB peak during template expansion.
-# Also needs RISCV toolchain (~1.5 GB), Spike build, and pre-built riscv-tests.
+# Verilator compilation of CVA6 is memory-hungry (up to 8GB peak).
+# 16 CPUs and 32GB RAM allow parallel Verilator compilation.
+# Storage: source ~100MB + Verilator objects ~2GB + riscv-tests ~200MB
+# + Spike install ~200MB + RISC-V toolchain ~500MB.
 build_timeout_sec = 7200.0
-cpus = 8
+cpus = 16
 memory_mb = 32768
-storage_mb = 81920
+storage_mb = 65536

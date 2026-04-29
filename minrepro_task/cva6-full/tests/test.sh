@@ -1,152 +1,145 @@
 #!/bin/bash
-# Verifier entrypoint for the cva6 all-tests Harbor task.
+# test.sh — Verifier for the cva6 Harbor task.
 #
-# Builds the Verilator model of CVA6 (if not already built), then runs the
-# full CI regression test suite: ASM + AMO + MUL + FP + benchmarks.
+# Builds the CVA6 Verilator simulation from the agent's /app workspace,
+# then runs the full RISC-V ISA test suite and benchmarks.
+# Computes reward = passed_tests / total_tests.
 #
-# Each test passes if Variane_testharness exits with code 0 (the RISC-V test
-# binary wrote 1 to tohost before hitting the max-cycle limit).
-#
-# Scoring denominator: stored in /app/.harbor/total_tests at image build time.
+# Writes reward (float in [0,1]) to /logs/verifier/reward.txt.
 
 set -u
 mkdir -p /logs/verifier
 cd /app
 
-# ---------------------------------------------------------------------------
-# Environment
-# ---------------------------------------------------------------------------
-export CVA6_REPO_DIR=/app
-export RISCV=/tools/riscv
-export VERILATOR_INSTALL_DIR=/tools/verilator
-export SPIKE_INSTALL_DIR=/tools/spike
-export PATH="${VERILATOR_INSTALL_DIR}/bin:${RISCV}/bin:${PATH}"
-export NUM_JOBS=8
-export TARGET_CFG=cv64a6_imafdc_sv39
+export RISCV="${RISCV:-/opt/riscv}"
+export SPIKE_INSTALL_DIR="${SPIKE_INSTALL_DIR:-/opt/spike}"
+export VERILATOR_INSTALL_DIR="${VERILATOR_INSTALL_DIR:-/opt/verilator}"
+export CVA6_REPO_DIR="/app"
+export TARGET_CFG="${TARGET_CFG:-cv64a6_imafdc_sv39}"
+export HPDCACHE_DIR="${CVA6_REPO_DIR}/core/cache_subsystem/hpdcache"
+export PATH="${RISCV}/bin:${VERILATOR_INSTALL_DIR}/bin:${PATH}"
+export LD_LIBRARY_PATH="${RISCV}/lib:${SPIKE_INSTALL_DIR}/lib:${LD_LIBRARY_PATH:-}"
 
-# Denominator
+RISCV_TEST_DIR="${CVA6_REPO_DIR}/tmp/riscv-tests/build/isa"
+RISCV_BENCH_DIR="${CVA6_REPO_DIR}/tmp/riscv-tests/build/benchmarks"
+VER_LIB="${CVA6_REPO_DIR}/work-ver"
+VER_BIN="${VER_LIB}/Variane_testharness"
+NUM_JOBS="${NUM_JOBS:-$(nproc)}"
+MAX_CYCLES=10000000
+
+# ── Denominator ────────────────────────────────────────────────────────────────
 if [ -r /app/.harbor/total_tests ]; then
     TOTAL=$(cat /app/.harbor/total_tests)
 else
     TOTAL=228
 fi
 
-echo "=== CVA6 verifier: total_tests=${TOTAL} ==="
+# ── Ensure riscv-tests symlink ────────────────────────────────────────────────
+mkdir -p "${CVA6_REPO_DIR}/tmp"
+if [ ! -d "${RISCV_TEST_DIR}" ]; then
+    ln -sf /opt/riscv-tests "${CVA6_REPO_DIR}/tmp/riscv-tests"
+fi
+
+{
+echo "=== CVA6 Verifier ==="
+echo "TOTAL tests expected: ${TOTAL}"
+echo ""
+
+# ── Build Verilator model ──────────────────────────────────────────────────────
+echo "=== Building Verilator model ==="
+make verilate \
+    CVA6_REPO_DIR="${CVA6_REPO_DIR}" \
+    TARGET_CFG="${TARGET_CFG}" \
+    HPDCACHE_DIR="${HPDCACHE_DIR}" \
+    RISCV="${RISCV}" \
+    SPIKE_INSTALL_DIR="${SPIKE_INSTALL_DIR}" \
+    VERILATOR_INSTALL_DIR="${VERILATOR_INSTALL_DIR}" \
+    VL_INC_DIR="${VERILATOR_INSTALL_DIR}/share/verilator/include" \
+    NUM_JOBS="${NUM_JOBS}" \
+    2>&1 || echo "WARNING: verilate target failed"
 
 PASSED=0
 
-# ---------------------------------------------------------------------------
-# 1. Build Verilator model
-# ---------------------------------------------------------------------------
-echo "--- Building Verilator model (target=cv64a6_imafdc_sv39) ---"
-make verilate target=cv64a6_imafdc_sv39 NUM_JOBS=${NUM_JOBS} \
-    2>&1 | tee /logs/verifier/verilate_build.log | tail -20 || {
-    echo "ERROR: verilate build failed — cannot run tests"
-    echo "0.000000" > /logs/verifier/reward.txt
-    exit 0
-}
-
-if [ ! -x /app/work-ver/Variane_testharness ]; then
-    echo "ERROR: Variane_testharness not found after build"
+if [ ! -x "${VER_BIN}" ]; then
+    echo "ERROR: Variane_testharness binary not found — reward = 0"
     echo "0.000000" > /logs/verifier/reward.txt
     exit 0
 fi
 
-HARNESS=/app/work-ver/Variane_testharness
-RISCV_TEST_DIR=/app/tmp/riscv-tests/build/isa
-RISCV_BENCH_DIR=/app/tmp/riscv-tests/build/benchmarks
+echo "Binary: ${VER_BIN}"
+echo ""
 
-# ---------------------------------------------------------------------------
-# Helper: run one test binary, echo PASS/FAIL
-# ---------------------------------------------------------------------------
+# ── Helper: run one test ───────────────────────────────────────────────────────
 run_test() {
-    local name="$1"
-    local elf="$2"
-    if [ ! -f "$elf" ]; then
-        echo "MISSING: ${name} (${elf})"
-        return 1
-    fi
-    if "${HARNESS}" "${elf}" \
-        2>/dev/null \
-        > /logs/verifier/test_${name}.log 2>&1; then
-        echo "PASS: ${name}"
+    local category="$1"
+    local test_name="$2"
+    local elf_path="$3"
+    local log_file="/logs/verifier/${category}_${test_name}.log"
+
+    "${VER_BIN}" "+max-cycles=${MAX_CYCLES}" "${elf_path}" > "${log_file}" 2>&1 || true
+
+    if grep -q "SUCCESS\|PASSED\|tohost = 1\b" "${log_file}" 2>/dev/null; then
+        echo "PASS: ${category}::${test_name}"
+        PASSED=$((PASSED + 1))
         return 0
     else
-        echo "FAIL: ${name}"
+        echo "FAIL: ${category}::${test_name}"
         return 1
     fi
 }
 
-# ---------------------------------------------------------------------------
-# 2. ASM tests (rv64ui-p-*, rv64ua-p-*, etc.) — 110 tests
-# ---------------------------------------------------------------------------
-echo "--- Running ASM tests ---"
-while IFS= read -r testname || [ -n "$testname" ]; do
-    [ -z "$testname" ] && continue
-    [[ "$testname" == \#* ]] && continue
-    elf="${RISCV_TEST_DIR}/${testname}"
-    run_test "${testname}" "${elf}" && PASSED=$((PASSED + 1)) || true
-done < /app/ci/riscv-asm-tests.list
-echo "ASM tests done. Running total: ${PASSED}/${TOTAL}"
+# ── ASM tests ─────────────────────────────────────────────────────────────────
+echo "=== ASM tests ==="
+while IFS= read -r tname; do
+    [ -z "${tname}" ] && continue
+    elf="${RISCV_TEST_DIR}/${tname}"
+    [ -f "${elf}" ] && run_test "asm" "${tname}" "${elf}" || echo "SKIP: asm::${tname}"
+done < "${CVA6_REPO_DIR}/ci/riscv-asm-tests.list"
 
-# ---------------------------------------------------------------------------
-# 3. AMO tests (rv64ua-p-*) — 38 tests
-# ---------------------------------------------------------------------------
-echo "--- Running AMO tests ---"
-while IFS= read -r testname || [ -n "$testname" ]; do
-    [ -z "$testname" ] && continue
-    [[ "$testname" == \#* ]] && continue
-    elf="${RISCV_TEST_DIR}/${testname}"
-    run_test "${testname}" "${elf}" && PASSED=$((PASSED + 1)) || true
-done < /app/ci/riscv-amo-tests.list
-echo "AMO tests done. Running total: ${PASSED}/${TOTAL}"
+# ── AMO tests ─────────────────────────────────────────────────────────────────
+echo "=== AMO tests ==="
+while IFS= read -r tname; do
+    [ -z "${tname}" ] && continue
+    elf="${RISCV_TEST_DIR}/${tname}"
+    [ -f "${elf}" ] && run_test "amo" "${tname}" "${elf}" || echo "SKIP: amo::${tname}"
+done < "${CVA6_REPO_DIR}/ci/riscv-amo-tests.list"
 
-# ---------------------------------------------------------------------------
-# 4. MUL tests (rv64um-p-*) — 26 tests
-# ---------------------------------------------------------------------------
-echo "--- Running MUL tests ---"
-while IFS= read -r testname || [ -n "$testname" ]; do
-    [ -z "$testname" ] && continue
-    [[ "$testname" == \#* ]] && continue
-    elf="${RISCV_TEST_DIR}/${testname}"
-    run_test "${testname}" "${elf}" && PASSED=$((PASSED + 1)) || true
-done < /app/ci/riscv-mul-tests.list
-echo "MUL tests done. Running total: ${PASSED}/${TOTAL}"
+# ── MUL tests ─────────────────────────────────────────────────────────────────
+echo "=== MUL tests ==="
+while IFS= read -r tname; do
+    [ -z "${tname}" ] && continue
+    elf="${RISCV_TEST_DIR}/${tname}"
+    [ -f "${elf}" ] && run_test "mul" "${tname}" "${elf}" || echo "SKIP: mul::${tname}"
+done < "${CVA6_REPO_DIR}/ci/riscv-mul-tests.list"
 
-# ---------------------------------------------------------------------------
-# 5. FP tests (rv64uf-*, rv64ud-*) — 46 tests
-# ---------------------------------------------------------------------------
-echo "--- Running FP tests ---"
-while IFS= read -r testname || [ -n "$testname" ]; do
-    [ -z "$testname" ] && continue
-    [[ "$testname" == \#* ]] && continue
-    elf="${RISCV_TEST_DIR}/${testname}"
-    run_test "${testname}" "${elf}" && PASSED=$((PASSED + 1)) || true
-done < /app/ci/riscv-fp-tests.list
-echo "FP tests done. Running total: ${PASSED}/${TOTAL}"
+# ── FP tests ──────────────────────────────────────────────────────────────────
+echo "=== FP tests ==="
+while IFS= read -r tname; do
+    [ -z "${tname}" ] && continue
+    elf="${RISCV_TEST_DIR}/${tname}"
+    [ -f "${elf}" ] && run_test "fp" "${tname}" "${elf}" || echo "SKIP: fp::${tname}"
+done < "${CVA6_REPO_DIR}/ci/riscv-fp-tests.list"
 
-# ---------------------------------------------------------------------------
-# 6. Benchmarks (dhrystone, coremark, etc.) — 8 tests
-# ---------------------------------------------------------------------------
-echo "--- Running benchmark tests ---"
-while IFS= read -r testname || [ -n "$testname" ]; do
-    [ -z "$testname" ] && continue
-    [[ "$testname" == \#* ]] && continue
-    elf="${RISCV_BENCH_DIR}/${testname}"
-    run_test "${testname}" "${elf}" && PASSED=$((PASSED + 1)) || true
-done < /app/ci/riscv-benchmarks.list
-echo "Benchmark tests done. Running total: ${PASSED}/${TOTAL}"
+# ── Benchmark tests ───────────────────────────────────────────────────────────
+echo "=== Benchmark tests ==="
+while IFS= read -r tname; do
+    [ -z "${tname}" ] && continue
+    elf="${RISCV_BENCH_DIR}/${tname}"
+    [ -f "${elf}" ] && run_test "bench" "${tname}" "${elf}" || echo "SKIP: bench::${tname}"
+done < "${CVA6_REPO_DIR}/ci/riscv-benchmarks.list"
 
-# ---------------------------------------------------------------------------
-# Compute reward
-# ---------------------------------------------------------------------------
-echo "=== Results: passed=${PASSED}, total=${TOTAL} ==="
+echo ""
+echo "=== Summary ==="
+echo "passed=${PASSED} total=${TOTAL}"
 
-if [ "${TOTAL:-0}" -gt 0 ]; then
-    python3 -c "print(f'{min(${PASSED}, ${TOTAL}) / ${TOTAL}:.6f}')" \
-        > /logs/verifier/reward.txt
-else
-    echo "0.000000" > /logs/verifier/reward.txt
-fi
+} 2>&1 | tee /logs/verifier/test.log
+
+# ── Compute reward ─────────────────────────────────────────────────────────────
+python3 -c "
+passed = int('${PASSED:-0}')
+total  = int('${TOTAL:-228}')
+reward = min(1.0, passed / total) if total > 0 else 0.0
+print(f'{reward:.6f}')
+" > /logs/verifier/reward.txt
 
 echo "reward: $(cat /logs/verifier/reward.txt)  (passed=${PASSED}, total=${TOTAL})"

@@ -1,19 +1,17 @@
-# Caliptra Root of Trust — Harbor benchmark task.
+# Caliptra Root of Trust — Harbor benchmark task (caliptra-e2e).
 #
-# Build strategy: NO warm cache.
+# Build strategy: NO warm cache (same as caliptra-full).
 #
-# Caliptra uses Verilator (Make-based) for simulation.  The Makefile creates
-# obj_dir/ by compiling ALL ~500 RTL files into a single monolithic binary.
-# When any RTL file changes (which the agent will do), the entire obj_dir must
-# be rebuilt — a warm obj_dir from green source gives the agent zero benefit.
-# Instead we use a 2-stage build:
+# This is the E2E variant: only the top-level integration smoke tests that
+# exercise the full Caliptra SoC are scored. Tests are selected to require
+# multiple major subsystems (crypto + key vault + VeeR + SoC interface) to
+# work together. A reward of 1.0 requires restoring all stripped RTL.
 #
-#   Stage 1 (count): Copy green source, run regression, capture pass count.
-#   Stage 2 (final): Use base image, copy skeleton, record total count.
+# SUBMODULE NOTE: The repo has one git submodule:
+#   submodules/adams-bridge  (MLDSA / ML-KEM hardware)
+# The submodule is already materialized in warm_src/ and skeleton/.
 #
-# Stage 1: base toolchain
-# Stage 2: count tests on green source (NO cache kept in final image)
-# Stage 3: final image with skeleton
+# NO inline heredocs, inline Python, or complex shell in any RUN command.
 
 # ---------------------------------------------------------------------------
 # Stage 1: base — install all needed tools
@@ -37,18 +35,11 @@ RUN set -eux; \
         flex gawk git help2man libfl2 libfl-dev \
         libgmp-dev libmpc-dev libmpfr-dev \
         ninja-build numactl perl python3 python3-pip \
-        python3-yaml rsync texinfo unzip wget xxd; \
-    \
-    # Install Verilator from apt (Debian bookworm ships a recent enough version)
-    apt-get install -y --no-install-recommends verilator; \
-    \
-    # Install RISC-V toolchain (pre-built)
-    # The Caliptra Makefile requires riscv64-unknown-elf-gcc 12.2.0
-    wget -q https://github.com/sifive/freedom-tools/releases/download/v2020.12.0/riscv64-unknown-elf-toolchain-10.2.0-2020.12.8-x86_64-linux-ubuntu14.tar.gz \
-        -O /tmp/riscv.tar.gz 2>/dev/null || \
-    apt-get install -y --no-install-recommends gcc-riscv64-unknown-elf; \
-    \
-    # Create non-root user
+        python3-yaml rsync texinfo unzip wget xxd \
+        verilator \
+        gcc-riscv64-unknown-elf binutils-riscv64-unknown-elf \
+        picolibc-riscv64-unknown-elf; \
+    pip3 install pyyaml --break-system-packages; \
     addgroup --gid ${_GID} ${_USERNAME}; \
     adduser --home ${HOME} --disabled-password --gecos "" \
             --uid ${_UID} --gid ${_GID} ${_USERNAME}; \
@@ -63,22 +54,25 @@ USER ${_USERNAME}
 WORKDIR /app
 
 # ---------------------------------------------------------------------------
-# Stage 2: count tests on green source
+# Stage 2: count — run E2E subset on green source, capture pass count
 # ---------------------------------------------------------------------------
 FROM base AS count
 
 COPY --chown=builder:builder warm_src/ /app/
 COPY --chown=builder:builder count_tests.sh /tmp/count_tests.sh
+COPY --chown=builder:builder run_e2e_tests.py /tmp/run_e2e_tests.py
+
 RUN chmod +x /tmp/count_tests.sh && /tmp/count_tests.sh
 
 # ---------------------------------------------------------------------------
-# Stage 3: final image — skeleton + test count
+# Stage 3: final — skeleton + captured test count
 # ---------------------------------------------------------------------------
 FROM base AS final
 
 COPY --chown=builder:builder skeleton/ /app/
 COPY --from=count /tmp/_total /app/.harbor/total_tests
 COPY --from=count /tmp/_all_tests /app/.harbor/all_tests
+COPY --from=count /tmp/_e2e_tests /app/.harbor/e2e_tests
 
 RUN cd /app && git init -q && git add -A && \
     git -c user.email=x@x -c user.name=x commit -q -m init

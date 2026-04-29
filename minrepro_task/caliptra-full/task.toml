@@ -1,19 +1,19 @@
 version = "1.0"
 
 [verifier]
-# Each Verilator simulation test runs Verilator build + RISC-V firmware compile
-# + simulation.  The warm Verilator binary is reused, but firmware must be
-# compiled per-test.  ~53 tests x ~30-60s each, plus any rebuild time.
-# Set to 2h to be safe; agent replaces RTL so Verilator must be rebuilt.
-timeout_sec = 7200.0
+# Each test: Verilator build (~5-10 min) + RISC-V firmware compile per test
+# + simulation per test. ~53 tests x ~30-60s each.
+# Agent must rebuild Verilator binary after changing RTL.
+# Set to 3h to be safe.
+timeout_sec = 10800.0
 
 [agent]
-# Agent needs to restore RTL SV/V files and recompile with Verilator.
+# Agent needs to restore RTL SV/V files, rebuild with Verilator, iterate.
 timeout_sec = 86400.0
 
 [environment]
 # Verilator compilation of this SoC (~500 SV files) peaks at ~8GB RAM.
-# Storage for obj_dir + RISC-V toolchain + repo.
+# Storage for obj_dir (~2GB) + RISC-V toolchain + repo.
 build_timeout_sec = 5400.0
 cpus = 8
 memory_mb = 16384
