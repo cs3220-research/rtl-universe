@@ -1,0 +1,151 @@
+Trial cva6-smoke__hb3f5Fp failed: Docker compose command failed for environment cva6-smoke. Command: docker compose --project-name cva6-smoke__hb3f5fp --project-directory /data/saketh/research/cs3220-research/rtl-universe/minrepro_task/cva6-smoke/environment -f /home/saketh/.cache/uv/archive-v0/swUEcMlTKA2O8JW3srfJw/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /home/saketh/.cache/uv/archive-v0/swUEcMlTKA2O8JW3srfJw/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /data/saketh/research/cs3220-research/rtl-universe/jobs/sonnet-cva6-smoke/cva6-smoke__hb3f5Fp/docker-compose-mounts.json build. Return code: 17. Stdout:  Service main  Building
+#0 building with "default" instance using docker driver
+
+#1 [main internal] load build definition from Dockerfile
+#1 transferring dockerfile: 9.64kB done
+#1 DONE 0.0s
+
+#2 [main auth] library/debian:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [main internal] load metadata for docker.io/library/debian:bookworm
+#3 DONE 0.2s
+
+#4 [main internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [main base 1/9] FROM docker.io/library/debian:bookworm@sha256:8a8cd02c5912770b4980228a54d4aff9e4f986f1eb2525d2d371dec5232cefcc
+#5 DONE 0.0s
+
+#6 [main internal] load build context
+#6 transferring context: 125.02MB 1.1s done
+#6 DONE 1.1s
+
+#7 [main base 4/9] RUN mkdir -p /logs/verifier && chown -R 1005:1005 /logs
+#7 CACHED
+
+#8 [main base 5/9] RUN mkdir -p /tools && chown -R 1005:1005 /tools
+#8 CACHED
+
+#9 [main base 2/9] RUN set -eux;     ln -snf "/usr/share/zoneinfo/UTC" /etc/localtime;     echo "UTC" > /etc/timezone;     echo 'APT::Get::Assume-Yes "true";' > /etc/apt/apt.conf.d/90assumeyes;     apt-get update;     apt-get install -y -qq         autoconf automake autotools-dev bc bison build-essential         ca-certificates cmake curl device-tree-compiler flex         gawk git gnupg help2man libboost-regex-dev libboost-system-dev         libexpat-dev libfl-dev libfl2 libgmp-dev libmpc-dev libmpfr-dev         libtool make ninja-build pkg-config python3 python3-pip         python3-venv python-is-python3 rsync sudo tzdata wget;     rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [main base 6/9] WORKDIR /home/builder
+#10 CACHED
+
+#11 [main base 7/9] RUN set -eux;     export VERILATOR_INSTALL_DIR=/tools/verilator;     cd /tmp;     git clone https://github.com/verilator/verilator.git verilator-src;     cd verilator-src;     git checkout v5.008;     autoconf;     ./configure --prefix="${VERILATOR_INSTALL_DIR}";     make -j$(nproc);     make install;     cd /tmp; rm -rf verilator-src
+#11 CACHED
+
+#12 [main base 3/9] RUN addgroup --gid 1005 builder &&     adduser --home /home/builder --disabled-password --gecos ""             --uid 1005 --gid 1005 builder &&     chown builder:builder /home/builder
+#12 CACHED
+
+#13 [main base 9/9] RUN pip3 install --break-system-packages --user --no-cache-dir pyyaml pytest mako
+#13 CACHED
+
+#14 [main warm 1/8] COPY --chown=builder:builder warm_src/ /app/
+#14 CACHED
+
+#15 [main base 8/9] RUN set -eux;     cd /tmp;     TOOLCHAIN_URL="https://github.com/riscv-collab/riscv-gnu-toolchain/releases/download/2024.02.02/riscv64-elf-ubuntu-22.04-gcc-nightly-2024.02.02-nightly.tar.gz";     wget -q "${TOOLCHAIN_URL}" -O toolchain.tar.gz;     mkdir -p /tools/riscv;     tar xzf toolchain.tar.gz -C /tools/riscv --strip-components=1;     rm toolchain.tar.gz
+#15 CACHED
+
+#16 [main warm 2/8] RUN set -eux;     cd /app;     git init -q; git add -A;     git -c user.email=x@x -c user.name=x commit -q -m init
+#16 CACHED
+
+#17 [main warm 3/8] RUN set -eux;     cd /app;     git submodule update --init --recursive         core/cache_subsystem/hpdcache core/cvfpu         corev_apu/axi_mem_if corev_apu/riscv-dbg corev_apu/rv_plic         corev_apu/register_interface 2>&1 | tail -10 || true;     HPDCACHE_HASH="acf97c95f2b0bf895143ed5559b04629a474548d";     [ -f core/cache_subsystem/hpdcache/rtl/hpdcache.Flist ] || {         rm -rf core/cache_subsystem/hpdcache;         git clone https://github.com/openhwgroup/cv-hpdcache.git             core/cache_subsystem/hpdcache;         cd core/cache_subsystem/hpdcache &&             git checkout "${HPDCACHE_HASH}" 2>/dev/null || true && cd /app; };     CVFPU_HASH="a74d99a32bd11ce0b05a82b0d6d26f98df3bba65";     [ -f core/cvfpu/src/fpnew_pkg.sv ] || {         rm -rf core/cvfpu;         git clone https://github.com/openhwgroup/cvfpu.git core/cvfpu;         cd core/cvfpu && git checkout "${CVFPU_HASH}" 2>/dev/null || true && cd /app; };     [ -d corev_apu/axi_mem_if/src ] ||         git clone https://github.com/pulp-platform/axi_mem_if.git corev_apu/axi_mem_if;     [ -d corev_apu/riscv-dbg/src ] || {         git clone https://github.com/pulp-platform/riscv-dbg.git corev_apu/riscv-dbg;         cd corev_apu/riscv-dbg && git submodule update --init --recursive 2>/dev/null || true && cd /app; };     [ -d corev_apu/rv_plic/rtl ] ||         git clone https://github.com/pulp-platform/rv_plic.git corev_apu/rv_plic;     [ -d corev_apu/register_interface/src ] ||         git clone https://github.com/pulp-platform/register_interface.git             corev_apu/register_interface;     echo "submodules ready"
+#17 CACHED
+
+#18 [main warm 4/8] RUN set -eux;     git clone --depth=1 https://github.com/riscv-software-src/riscv-isa-sim /tmp/spike-src;     cd /tmp/spike-src; mkdir build && cd build;     ../configure --prefix=/tools/spike;     make -j$(nproc) yaml-cpp-static yaml-cpp;     make -j$(nproc); make install;     cd / && rm -rf /tmp/spike-src
+#18 0.218 + git clone --depth=1 https://github.com/riscv-software-src/riscv-isa-sim /tmp/spike-src
+#18 0.224 Cloning into '/tmp/spike-src'...
+#18 0.801 + cd /tmp/spike-src
+#18 0.801 + mkdir build
+#18 0.802 + cd build
+#18 0.802 + ../configure --prefix=/tools/spike
+#18 0.897 checking build system type... x86_64-pc-linux-gnu
+#18 0.950 checking host system type... x86_64-pc-linux-gnu
+#18 0.951 checking for gcc... gcc
+#18 0.982 checking whether the C compiler works... yes
+#18 1.025 checking for C compiler default output file name... a.out
+#18 1.026 checking for suffix of executables... 
+#18 1.073 checking whether we are cross compiling... no
+#18 1.121 checking for suffix of object files... o
+#18 1.144 checking whether the compiler supports GNU C... yes
+#18 1.166 checking whether gcc accepts -g... yes
+#18 1.196 checking for gcc option to enable C11 features... none needed
+#18 1.258 checking for g++... g++
+#18 1.280 checking whether the compiler supports GNU C++... yes
+#18 1.303 checking whether g++ accepts -g... yes
+#18 1.326 checking for g++ option to enable C++11 features... none needed
+#18 1.428 checking for ar... ar
+#18 1.429 checking for ranlib... ranlib
+#18 1.429 checking for dtc... /usr/bin/dtc
+#18 1.430 checking for stdio.h... yes
+#18 1.457 checking for stdlib.h... yes
+#18 1.505 checking for string.h... yes
+#18 1.546 checking for inttypes.h... yes
+#18 1.589 checking for stdint.h... yes
+#18 1.631 checking for strings.h... yes
+#18 1.680 checking for sys/stat.h... yes
+#18 1.727 checking for sys/types.h... yes
+#18 1.774 checking for unistd.h... yes
+#18 1.827 checking whether byte ordering is bigendian... no
+#18 1.934 checking for a BSD-compatible install... /usr/bin/install -c
+#18 1.943 checking for __int128_t... yes
+#18 2.078 checking whether the linker accepts -Wl,--export-dynamic... yes
+#18 2.149 checking whether the C++ compiler accepts -relocatable-pch... no
+#18 2.186 configure: configuring default subproject : fesvr
+#18 2.186 checking for pthread_create in -lpthread... yes
+#18 2.257 checking for struct statx.stx_ino... yes
+#18 2.324 checking for struct statx.stx_mnt_id... yes
+#18 2.384 configure: configuring default subproject : riscv
+#18 2.393 checking for boostlib >= 1.53 (105300)... yes
+#18 2.420 checking whether the Boost::ASIO library is available... yes
+#18 7.672 checking for main in -lboost_system... yes
+#18 7.733 checking whether the Boost::Regex library is available... yes
+#18 9.209 checking for exit in -lboost_regex... yes
+#18 9.270 checking for main in -lboost_system... (cached) yes
+#18 9.270 checking for main in -lboost_regex... yes
+#18 9.332 checking for library containing dlopen... none required
+#18 9.397 checking for pthread_create in -lpthread... (cached) yes
+#18 9.397 configure: configuring default subproject : disasm
+#18 9.397 configure: configuring default subproject : customext
+#18 9.397 configure: configuring default subproject : fdt
+#18 9.398 configure: configuring default subproject : softfloat
+#18 9.398 configure: configuring default subproject : spike_main
+#18 9.398 configure: configuring default subproject : spike_dasm
+#18 9.416 configure: creating ./config.status
+#18 9.502 config.status: creating fesvr.mk
+#18 9.515 config.status: creating riscv.mk
+#18 9.529 config.status: creating disasm.mk
+#18 9.541 config.status: creating customext.mk
+#18 9.554 config.status: creating fdt.mk
+#18 9.566 config.status: creating softfloat.mk
+#18 9.579 config.status: creating spike_main.mk
+#18 9.592 config.status: creating spike_dasm.mk
+#18 9.604 config.status: creating Makefile
+#18 9.618 config.status: creating riscv-fesvr.pc
+#18 9.630 config.status: creating riscv-disasm.pc
+#18 9.643 config.status: creating riscv-riscv.pc
+#18 9.656 config.status: creating config.h
+#18 9.685 + nproc
+#18 9.686 + make -j24 yaml-cpp-static yaml-cpp
+#18 9.780 make: *** No rule to make target 'yaml-cpp-static'.  Stop.
+#18 ERROR: process "/bin/sh -c set -eux;     git clone --depth=1 https://github.com/riscv-software-src/riscv-isa-sim /tmp/spike-src;     cd /tmp/spike-src; mkdir build && cd build;     ../configure --prefix=/tools/spike;     make -j$(nproc) yaml-cpp-static yaml-cpp;     make -j$(nproc); make install;     cd / && rm -rf /tmp/spike-src" did not complete successfully: exit code: 2
+------
+ > [main warm 4/8] RUN set -eux;     git clone --depth=1 https://github.com/riscv-software-src/riscv-isa-sim /tmp/spike-src;     cd /tmp/spike-src; mkdir build && cd build;     ../configure --prefix=/tools/spike;     make -j$(nproc) yaml-cpp-static yaml-cpp;     make -j$(nproc); make install;     cd / && rm -rf /tmp/spike-src:
+9.579 config.status: creating spike_main.mk
+9.592 config.status: creating spike_dasm.mk
+9.604 config.status: creating Makefile
+9.618 config.status: creating riscv-fesvr.pc
+9.630 config.status: creating riscv-disasm.pc
+9.643 config.status: creating riscv-riscv.pc
+9.656 config.status: creating config.h
+9.685 + nproc
+9.686 + make -j24 yaml-cpp-static yaml-cpp
+9.780 make: *** No rule to make target 'yaml-cpp-static'.  Stop.
+------
+failed to solve: process "/bin/sh -c set -eux;     git clone --depth=1 https://github.com/riscv-software-src/riscv-isa-sim /tmp/spike-src;     cd /tmp/spike-src; mkdir build && cd build;     ../configure --prefix=/tools/spike;     make -j$(nproc) yaml-cpp-static yaml-cpp;     make -j$(nproc); make install;     cd / && rm -rf /tmp/spike-src" did not complete successfully: exit code: 2
+. Stderr: None. 
+Failed to download artifact '/app' (best-effort)
+Not retrying trial because the maximum number of retries has been reached
