@@ -536,6 +536,23 @@ docker exec <container> bash /tests/test.sh
 cat /logs/verifier/reward.txt  # Should be 1.000000
 ```
 
+**This step is not optional.** If the green source doesn't score 1.0 inside
+the Docker image, the task is broken — no agent can possibly succeed. Common
+causes of a broken solved score:
+
+- **Wrong tool version**: The repo needs Verilator 5.x but the Dockerfile
+  installs 4.x from apt. Tests pass on the developer's machine but fail in
+  Docker.
+- **Missing proprietary dependencies**: Some repos depend on commercial VIPs
+  (e.g., Arm AXI Protocol Checker, Mentor QVIP) that aren't in the
+  open-source checkout. If tests reference files that aren't in the repo,
+  the task can't work as a fully open-source benchmark.
+- **Incomplete submodules**: Even with submodule init, some repos have
+  nested submodules or optional dependencies that need manual setup.
+
+If the solved score is less than 1.0, investigate which tests fail and
+either fix the Docker environment or exclude those tests from scoring.
+
 ### 6.3 Quick Agent Smoke Test
 
 Run a short agent trial (1h timeout) to verify the infrastructure works:
@@ -583,8 +600,14 @@ uvx harbor run \
   -n 1 -y \
   --mounts-json "[\"$CREDS_DIR:/home/builder/.claude\"]" \
   --ae CLAUDE_CONFIG_DIR=/home/builder/.claude \
+  --ae CLAUDE_CODE_MAX_OUTPUT_TOKENS=128000 \
   --artifact /app
 ```
+
+The `CLAUDE_CODE_MAX_OUTPUT_TOKENS` flag prevents agent crashes when
+generating large files (RTL modules can be thousands of lines). The default
+32K limit is too low for RTL tasks — agents regularly need to write complete
+Verilog modules in a single response.
 
 ---
 
