@@ -372,7 +372,10 @@ timeout_sec = 10800.0
 timeout_sec = 86400.0
 
 [environment]
-# Generous for Verilator compilation + large bazel cache
+# CRITICAL: Disable internet to prevent agents from downloading the
+# original source code from GitHub. Without this, agents will curl/clone
+# the open-source repo and score 1.000 by copying, not implementing.
+allow_internet = false
 build_timeout_sec = 5400.0
 cpus = 8
 memory_mb = 32768

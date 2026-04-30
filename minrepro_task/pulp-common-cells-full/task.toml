@@ -13,6 +13,7 @@ timeout_sec = 900.0
 timeout_sec = 86400.0
 
 [environment]
+allow_internet = false
 # Verilator lint compilation is lightweight (no separate C++ compile step).
 # ECC C++ harness is small. 4 CPUs and 8 GB RAM are ample.
 # Storage: source ~10 MB + Bender dep cache ~50 MB + Verilator intermediates ~200 MB.
