@@ -1,0 +1,39 @@
+{
+    "id": "bc0e837f-bb63-48b5-ac68-2e4a6a91be9e",
+    "started_at": "2026-04-30T15:24:21.615387",
+    "updated_at": "2026-04-30T15:42:09.651558",
+    "finished_at": "2026-04-30T15:42:09.651558",
+    "n_total_trials": 1,
+    "stats": {
+        "n_completed_trials": 1,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "opencode__moonshotai/kimi-k2.6__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 1.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "ibex-full__XREygCP"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": 1345469,
+        "n_cache_tokens": 1254592,
+        "n_output_tokens": 3340,
+        "cost_usd": 0.33113587000000005
+    }
+}
