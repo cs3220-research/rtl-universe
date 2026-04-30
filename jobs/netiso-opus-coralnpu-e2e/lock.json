@@ -1,0 +1,80 @@
+{
+    "schema_version": 1,
+    "created_at": "2026-04-30T20:10:44.531876Z",
+    "harbor": {
+        "version": "0.6.3",
+        "is_editable": false
+    },
+    "invocation": [
+        "/home/saketh/.cache/uv/archive-v0/uMGaIipbmibZGrEX8TWxe/bin/harbor",
+        "run",
+        "--path",
+        "minrepro_task/coralnpu-e2e",
+        "--agent",
+        "claude-code",
+        "--model",
+        "opus",
+        "-n",
+        "1",
+        "-y",
+        "--job-name",
+        "netiso-opus-coralnpu-e2e",
+        "--mounts-json",
+        "[\"/tmp/harbor-claude-creds:/home/builder/.claude\"]",
+        "--ae",
+        "CLAUDE_CONFIG_DIR=/home/builder/.claude",
+        "--ae",
+        "CLAUDE_CODE_MAX_OUTPUT_TOKENS=****",
+        "--artifact",
+        "/app"
+    ],
+    "n_concurrent_trials": 1,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "RewardFileEmptyError",
+            "AgentTimeoutError",
+            "VerifierTimeoutError",
+            "RewardFileNotFoundError",
+            "VerifierOutputParseError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "task": {
+                "name": "coralnpu-e2e",
+                "type": "local",
+                "digest": "sha256:949476445b9254d2526981e0ded4f15a478dcec3e0d80b6260ecf36a27511b43",
+                "path": "minrepro_task/coralnpu-e2e"
+            },
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "claude-code",
+                "model_name": "opus",
+                "kwargs": {},
+                "env": {
+                    "CLAUDE_CONFIG_DIR": "/home/builder/.claude",
+                    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "****"
+                }
+            },
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "suppress_override_warnings": false,
+                "mounts_json": [
+                    "/tmp/harbor-claude-creds:/home/builder/.claude"
+                ],
+                "env": {},
+                "kwargs": {}
+            },
+            "verifier": {
+                "env": {},
+                "disable": false
+            }
+        }
+    ]
+}

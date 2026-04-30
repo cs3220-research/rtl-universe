@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "/home/saketh/.cache/uv/archive-v0/uMGaIipbmibZGrEX8TWxe/lib/python3.13/site-packages/harbor/trial/trial.py", line 954, in run
+    await self._setup_agent()
+  File "/home/saketh/.cache/uv/archive-v0/uMGaIipbmibZGrEX8TWxe/lib/python3.13/site-packages/harbor/trial/trial.py", line 351, in _setup_agent
+    await asyncio.wait_for(
+    ...<2 lines>...
+    )
+  File "/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/home/saketh/.cache/uv/archive-v0/uMGaIipbmibZGrEX8TWxe/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 392, in setup
+    await self.install(environment)
+  File "/home/saketh/.cache/uv/archive-v0/uMGaIipbmibZGrEX8TWxe/lib/python3.13/site-packages/harbor/agents/installed/claude_code.py", line 146, in install
+    await self.exec_as_agent(
+    ...<12 lines>...
+    )
+  File "/home/saketh/.cache/uv/archive-v0/uMGaIipbmibZGrEX8TWxe/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 366, in exec_as_agent
+    return await self._exec(
+           ^^^^^^^^^^^^^^^^^
+        environment, command, env=env, cwd=cwd, timeout_sec=timeout_sec
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/saketh/.cache/uv/archive-v0/uMGaIipbmibZGrEX8TWxe/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 329, in _exec
+    raise NonZeroAgentExitCodeError(
+    ...<3 lines>...
+    )
+harbor.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 6): set -euo pipefail; if command -v apk &> /dev/null; then  npm install -g @anthropic-ai/claude-code; else  curl -fsSL https://claude.ai/install.sh | bash -s --; fi && echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && export PATH="$HOME/.local/bin:$PATH" && claude --version
+stdout: curl: (6) Could not resolve host: claude.ai
+
+stderr: None
