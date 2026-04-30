@@ -66,6 +66,19 @@ Each test is compiled from C to a `.vmem` file, loaded into the Ibex
 simple-system simulator, and run. A test passes if the simulator exits with
 code 0. Test programs use `sim_halt()` to end the simulation.
 
+
+## Important: Partial Credit and Persistence
+
+You are scored **proportionally** — every single test you get to pass earns
+credit. You do NOT need to complete the entire project. Even restoring a
+handful of modules that pass their unit tests is valuable progress.
+
+**Do not give up or stop early because the task looks large.** Work
+incrementally: pick a module, read its test spec, implement it, verify it
+passes, then move to the next one. You have up to 24 hours. Use all of it.
+The best strategy is to start with the simplest, most self-contained modules
+and work outward toward integration.
+
 ## Scoring
 
 Reward is **proportional**: `passed_tests / 4` (float in `[0, 1]`).

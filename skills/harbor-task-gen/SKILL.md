@@ -385,10 +385,29 @@ Write clear instructions for the agent. Include:
 1. What the repo is and what it does
 2. What's been stripped (and what's been kept)
 3. How scoring works (proportional, partial credit)
-4. Useful commands to run tests
-5. Pointers to documentation and BUILD files
+4. **Persistence and partial credit encouragement** (see below)
+5. Useful commands to run tests
+6. Pointers to documentation and BUILD files
 
-See `minrepro_task/coralnpu/instruction.md` for a reference.
+The instruction **must** include a section like this (adapt the details):
+
+```markdown
+## Important: Partial Credit and Persistence
+
+You are scored **proportionally** — every single test you get to pass earns
+credit. You do NOT need to complete the entire project. Even restoring a
+handful of modules that pass their unit tests is valuable progress.
+
+**Do not give up or stop early because the task looks large.** Work
+incrementally: pick a module, read its test spec, implement it, verify it
+passes, then move to the next one. You have up to 24 hours. Use all of it.
+```
+
+This section is critical. Without it, capable models (especially Opus)
+survey the repo, conclude the task is too large, and quit in minutes —
+scoring 0.000 on tasks they can actually solve. In testing, adding this
+section transformed an Opus run from 0.000 (quit after 5 min) to 1.000
+(perfect score, 2.5 hours) on the same task.
 
 ### test.sh (Verifier)
 

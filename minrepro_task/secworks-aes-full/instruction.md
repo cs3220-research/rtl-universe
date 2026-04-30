@@ -60,6 +60,19 @@ Implement the seven RTL files so that all five FuseSoC testbench targets pass:
 4. `tb_aes_encipher_block` — 8 NIST encryption test vectors
 5. `tb_aes_decipher_block` — 8 NIST decryption test vectors
 
+
+## Important: Partial Credit and Persistence
+
+You are scored **proportionally** — every single test you get to pass earns
+credit. You do NOT need to complete the entire project. Even restoring a
+handful of modules that pass their unit tests is valuable progress.
+
+**Do not give up or stop early because the task looks large.** Work
+incrementally: pick a module, read its test spec, implement it, verify it
+passes, then move to the next one. You have up to 24 hours. Use all of it.
+The best strategy is to start with the simplest, most self-contained modules
+and work outward toward integration.
+
 ## Scoring
 
 Reward is **proportional across test cases**: `passed_test_cases / total_test_cases`.
