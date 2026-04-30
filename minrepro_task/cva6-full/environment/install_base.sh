@@ -25,16 +25,28 @@ apt-get install -y -qq \
     pkg-config \
     libglib2.0-dev \
     zlib1g-dev \
-    verilator \
-    gcc-riscv64-unknown-elf
+    verilator
 
 rm -rf /var/lib/apt/lists/*
 
 verilator --version
-riscv64-unknown-elf-gcc --version
 
-# Set RISCV for downstream scripts
+# ── Install RISC-V GNU toolchain (Embecosm multilib) ─────────────────────────
+# CVA6 CI uses this exact tarball. Despite the "riscv32" name, it's a multilib
+# toolchain that supports both rv32 and rv64 targets. The Debian apt package
+# gcc-riscv64-unknown-elf does NOT have the same multilib support and fails
+# to build riscv-tests rv32 variants.
+EMBECOSM_BASE="https://buildbot.embecosm.com/job/riscv32-gcc-ubuntu2204-release/10/artifact"
+RISCV_TARBALL="riscv32-embecosm-ubuntu2204-gcc13.2.0.tar.gz"
+
+mkdir -p "${RISCV_INSTALL_DIR}"
+cd /tmp
+wget -q "${EMBECOSM_BASE}/${RISCV_TARBALL}" --no-check-certificate
+tar -x -f "${RISCV_TARBALL}" --strip-components=1 -C "${RISCV_INSTALL_DIR}"
+rm -f "${RISCV_TARBALL}"
+
 export PATH="${RISCV_INSTALL_DIR}/bin:${PATH}"
+riscv32-unknown-elf-gcc --version
 
 # ── Build riscv-tests binaries ────────────────────────────────────────────────
 # Pinned to commit referenced in ci/build-riscv-tests.sh.
@@ -50,7 +62,10 @@ git submodule update --init --recursive
 autoconf
 mkdir -p build
 cd build
-../configure --prefix="${RISCV_TESTS_INSTALL}"
+# The Embecosm toolchain uses riscv32-unknown-elf- prefix (it's multilib).
+# riscv-tests autoconf defaults to looking for riscv64-unknown-elf-gcc,
+# so we must pass --host to tell it the actual target triple.
+../configure --prefix="${RISCV_TESTS_INSTALL}" --host=riscv32-unknown-elf
 make isa        -j"${NUM_JOBS}" > /dev/null
 make benchmarks -j"${NUM_JOBS}" > /dev/null
 make install
