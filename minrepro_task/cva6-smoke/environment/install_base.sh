@@ -66,12 +66,12 @@ cd build
 # riscv-tests autoconf defaults to looking for riscv64-unknown-elf-gcc,
 # so we must pass --host to tell it the actual target triple.
 ../configure --prefix="${RISCV_TESTS_INSTALL}" --host=riscv32-unknown-elf
-make isa        -j"${NUM_JOBS}" > /dev/null
-# Benchmarks use a hardcoded riscv64-unknown-elf- prefix that doesn't match
-# the Embecosm riscv32 toolchain. Skip them — CVA6 CI test lists only use
-# ISA tests for the smoke/E2E variants. Build benchmarks best-effort.
-make benchmarks -j"${NUM_JOBS}" > /dev/null 2>&1 || echo "Warning: benchmarks build failed (non-fatal)"
-make install
+make isa -j"${NUM_JOBS}" > /dev/null
+# Manually install ISA test binaries. Skip `make install` because it rebuilds
+# benchmarks which fail (riscv64-unknown-elf- prefix hardcoded in Makefile).
+mkdir -p "${RISCV_TESTS_INSTALL}/share/riscv-tests/isa"
+cp -r isa/* "${RISCV_TESTS_INSTALL}/share/riscv-tests/isa/" 2>/dev/null || true
+cp -r ../isa/*.dump "${RISCV_TESTS_INSTALL}/share/riscv-tests/isa/" 2>/dev/null || true
 cd /
 rm -rf /tmp/riscv-tests-build
 
