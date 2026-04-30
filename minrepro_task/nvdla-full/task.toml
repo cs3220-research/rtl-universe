@@ -1,0 +1,19 @@
+version = "1.0"
+
+[verifier]
+# Verilator elaboration of NVDLA (~10-20 min cold on 8 CPUs) +
+# 12 trace simulations (each up to 10 min, most complete in 1-3 min).
+# Estimated green-source runtime: ~30-60 min total.  Timeout = 3x = 3h.
+timeout_sec = 10800.0
+
+[agent]
+# Agent has up to 24 h to implement the missing RTL (266 Verilog modules).
+timeout_sec = 86400.0
+
+[environment]
+# Verilator 5.x compiled from source in the Docker base stage.
+# NVDLA Verilator compilation is memory-intensive (many generated C++ files).
+build_timeout_sec = 5400.0
+cpus = 8
+memory_mb = 32768
+storage_mb = 40960

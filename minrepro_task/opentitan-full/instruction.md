@@ -1,0 +1,224 @@
+# OpenTitan Root of Trust — Restore the Firmware Implementation
+
+You are in `/app`, a **Bazel-based** repository for **OpenTitan** — the
+lowRISC/Google open-source silicon Root of Trust. OpenTitan is a full hardware
+security platform with a RISC-V processor core (Ibex), cryptographic
+accelerators (AES, HMAC, KMAC, OTBN), and an extensive secure boot firmware
+stack (silicon_creator).
+
+This task focuses on the **host-side firmware and tooling** that can be tested
+without running a full hardware simulation. No commercial simulator is required.
+
+## Repository Structure
+
+```
+sw/device/lib/
+  base/                — Core C utilities: bitfield, math, CRC32, memory,
+  │   bitfield.h       —   mock_mmio (KEEP — header only)
+  │   bitfield.c       —   *** STRIPPED — implement register bit ops ***
+  │   math.c           —   *** STRIPPED — implement math helpers ***
+  │   crc32.c          —   *** STRIPPED — implement CRC32 ***
+  │   memory.c         —   *** STRIPPED — implement memcpy/memset ***
+  │   hardened.c       —   *** STRIPPED — implement hardened ops ***
+  │   status.c         —   *** STRIPPED — implement status reporting ***
+  │   *_unittest.cc    —   KEPT (test files)
+  dif/                 — Device Interface Functions (one per IP block)
+  │   dif_uart.c       —   *** STRIPPED — implement UART driver ***
+  │   dif_aes.c        —   *** STRIPPED — implement AES driver ***
+  │   dif_hmac.c       —   *** STRIPPED — implement HMAC driver ***
+  │   ... (42 total)   —   *** STRIPPED — implement each driver ***
+  │   dif_*_unittest.cc —  KEPT (mock register-based tests)
+  runtime/             — Low-level runtime
+  │   print.c          —   *** STRIPPED — implement dif_uart printf ***
+  crypto/impl/         — Cryptographic library
+  │   aes.c            —   *** STRIPPED ***
+  │   hash.c           —   *** STRIPPED ***
+  │   keyblob.c        —   *** STRIPPED ***
+  ujson/               — JSON serialization
+  │   ujson.c          —   *** STRIPPED ***
+
+sw/device/silicon_creator/   — Secure boot firmware (ROM code)
+  lib/
+  │   boot_data.c      —   *** STRIPPED — boot data parsing ***
+  │   boot_log.c       —   *** STRIPPED — boot logging ***
+  │   epmp_state.c     —   *** STRIPPED — PMP configuration ***
+  │   manifest.c       —   *** STRIPPED — image manifest ***
+  │   shutdown.c       —   *** STRIPPED — fault shutdown ***
+  │   *_unittest.cc    —   KEPT
+  lib/drivers/         — Low-level hardware driver layer
+  │   flash_ctrl.c     —   *** STRIPPED — flash controller ***
+  │   uart.c           —   *** STRIPPED — UART driver ***
+  │   hmac.c           —   *** STRIPPED — HMAC driver ***
+  │   alert.c          —   *** STRIPPED — alert handler ***
+  │   otp.c            —   *** STRIPPED — OTP controller ***
+  │   keymgr.c         —   *** STRIPPED — key manager ***
+  │   ... (24 total)   —   *** STRIPPED ***
+  │   *_unittest.cc    —   KEPT
+  lib/sigverify/       — Signature verification
+  │   sigverify.c      —   *** STRIPPED — ECDSA/RSA verify ***
+  │   mod_exp_ibex.c   —   *** STRIPPED — modular exponentiation ***
+  lib/boot_svc/        — Boot services
+  lib/ownership/       — Ownership transfer
+  lib/cert/            — Certificate handling (X.509)
+
+util/design/           — Design utility scripts
+  sparse-fsm-encode.py —   *** STRIPPED ***
+  lib/common.py        —   *** STRIPPED ***
+util/ipgen/ipgen.py    —   *** STRIPPED — IP generator ***
+
+hw/ip/otbn/dv/otbnsim/sim/
+  trivium.py           —   *** STRIPPED — Trivium stream cipher ***
+```
+
+## What Has Been Stripped
+
+All **C implementation files** under `sw/device/lib/` and
+`sw/device/silicon_creator/lib/` have been **truncated to zero bytes**.
+Header files (`.h`), test files (`*_unittest.cc`, `*_test.cc`, `*_test.py`),
+and BUILD files are all **intact**.
+
+Specifically stripped (you must implement):
+- `sw/device/lib/base/*.c` — bitfield, math, CRC, memory, hardened ops, status
+- `sw/device/lib/dif/dif_*.c` — all 42 device driver implementations
+- `sw/device/lib/runtime/print.c`
+- `sw/device/lib/crypto/impl/*.c` and `impl/aes_gcm/*.c`
+- `sw/device/lib/ujson/ujson.c`
+- `sw/device/silicon_creator/lib/*.c` — boot_data, boot_log, epmp, manifest, etc.
+- `sw/device/silicon_creator/lib/drivers/*.c` — all 24 silicon driver files
+- `sw/device/silicon_creator/lib/sigverify/*.c` — sigverify, mod_exp, flash_exec
+- `sw/device/silicon_creator/lib/boot_svc/*.c`
+- `sw/device/silicon_creator/lib/ownership/*.c`
+- `sw/device/silicon_creator/lib/cert/x509.c`
+- `util/design/sparse-fsm-encode.py`, `util/design/lib/common.py`
+- `util/ipgen/ipgen.py`
+- `hw/ip/otbn/dv/otbnsim/sim/trivium.py`
+
+Kept (do not modify):
+- All header files (`.h`) — they define the API you must implement
+- All test files (`*_unittest.cc`, `*_test.py`)
+- All BUILD files, MODULE.bazel, `.bazelrc`, `bazelisk.sh`
+- `.hjson` register descriptions (Bazel generates C headers from these)
+- `hw/ip/*/data/*.hjson` — register definitions for all IP blocks
+- All autogenerated code (Bazel generates it at build time)
+
+## Important: Partial Credit and Persistence
+
+You are scored **proportionally** — every single test you get to pass earns
+credit. You do NOT need to complete the entire project. Even restoring a
+handful of modules that pass their unit tests is valuable progress.
+
+**Do not give up or stop early because the task looks large.** Work
+incrementally: pick a module, read its test file and its header, implement it,
+verify it builds and tests pass, then move to the next one.
+You have up to 24 hours. Use all of it.
+
+The task has ~122 tests. Start with the simplest ones:
+1. `//sw/device/lib/base:math_builtins_unittest` — basic math functions
+2. `//sw/device/lib/base:bitfield_unittest` — bit manipulation (trivial)
+3. `//sw/device/lib/base:memory_unittest` — memcpy/memset wrappers
+4. `//sw/device/lib/dif:uart_unittest` — UART driver (small, well-documented)
+5. `//hw/ip/otbn/dv/otbnsim/sim:trivium_test` — Python Trivium cipher (~100 lines)
+
+## Scoring
+
+Reward = `passed_tests / total_tests` (proportional, partial credit).
+
+Verifier runs:
+```
+./bazelisk.sh test --keep_going <all targets>
+```
+Counts how many targets print `PASSED in` in Bazel output.
+
+## Environment
+
+- **Bazel** available via `./bazelisk.sh` (downloads the right version)
+- **Clang** pre-installed via toolchains_llvm (managed by Bazel)
+- **Python 3** pre-installed (for py_test targets)
+- **GoogleTest** managed as Bazel MODULE.bazel dependency (auto-fetched)
+- `/app` is a git repository — commit freely
+
+## Useful Commands
+
+```bash
+# Run a single test target (fast, uses Bazel incremental)
+./bazelisk.sh test //sw/device/lib/base:math_unittest
+
+# Run all tests in a package
+./bazelisk.sh test //sw/device/lib/base/...
+
+# Run all DIF unit tests
+./bazelisk.sh test //sw/device/lib/dif:uart_unittest
+
+# Run all silicon_creator tests
+./bazelisk.sh test //sw/device/silicon_creator/lib/...
+
+# Run everything (may take longer on first build)
+./bazelisk.sh test --keep_going \
+    //sw/device/lib/base/... \
+    //sw/device/lib/dif/... \
+    //sw/device/silicon_creator/lib/...
+
+# Check if a specific source builds
+./bazelisk.sh build //sw/device/lib/base:bitfield
+
+# Check which tests pass after implementing a module
+./bazelisk.sh test //sw/device/lib/dif:uart_unittest --test_output=all
+
+# Lint check Python
+./bazelisk.sh test //util/design:sparse-fsm-encode-test
+```
+
+## Implementation Guidance
+
+### C Firmware Drivers (DIF layer)
+
+Each `dif_*.c` file implements a driver for one IP block. The pattern is:
+1. Read the header file: `dif_uart.h` defines all functions you must implement
+2. Check the autogenerated register header: built from `hw/ip/uart/data/uart.hjson`
+   The register offsets and bitfields are defined there. Build it first:
+   `./bazelisk.sh build //hw/top:uart_c_regs`
+3. Read the unittest file: `dif_uart_unittest.cc` shows exactly what's tested
+4. Implement the driver using `mmio_region_read32` / `mmio_region_write32`
+
+The DIF tests use `mock_mmio` — they mock the hardware registers, so you
+don't need any RTL. Just implement the driver API correctly.
+
+### silicon_creator Drivers
+
+Located under `sw/device/silicon_creator/lib/drivers/`. Similar pattern:
+- `flash_ctrl.c` implements flash read/write/erase for the ROM
+- `uart.c` is simpler than the DIF uart — just TX byte-by-byte
+- `hmac.c` drives the HMAC accelerator via MMIO
+
+These drivers assume they run on bare metal (no OS), so they poll registers
+directly rather than using interrupts.
+
+### Base Library
+
+`sw/device/lib/base/` contains utility functions:
+- `bitfield.h` / `bitfield.c` — field extraction/insertion (use GCC builtins)
+- `math.h` / `math.c` — integer log2, ceil, floor helpers
+- `crc32.c` — standard CRC32 algorithm
+- `memory.c` — wrappers around memcpy/memset
+
+These are the simplest and fastest wins.
+
+### Python Tests
+
+- `trivium.py`: Implements the Trivium stream cipher. The test is self-contained
+  (it runs `trivium.py` as a script). Look at the expected output in the test.
+- `sparse-fsm-encode.py`: FSM state encoding tool — test checks encoding properties
+- `util/design/lib/common.py`: Shared utility library for design scripts
+
+### Register Headers
+
+The test files include headers like `hw/top/uart_regs.h`. These are generated
+by Bazel at build time from `hw/ip/uart/data/uart.hjson`. You don't need to
+write them — Bazel generates them automatically when you build the test target.
+
+If you want to inspect the register layout:
+```bash
+./bazelisk.sh build //hw/top:uart_c_regs
+# Then find the generated header in bazel-bin/
+find bazel-bin -name "uart_regs.h" 2>/dev/null
+```

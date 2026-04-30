@@ -1,0 +1,17 @@
+version = "1.0"
+
+[verifier]
+# Verilator elaboration (~10-20 min) + 7 E2E traces (each up to 10 min).
+# E2E tests tend to run longer than sanity tests (real network data).
+# Estimated green-source runtime: ~35-55 min. Timeout = 3x = 2.75h.
+timeout_sec = 10800.0
+
+[agent]
+# Agent has up to 24 h to implement the missing RTL.
+timeout_sec = 86400.0
+
+[environment]
+build_timeout_sec = 5400.0
+cpus = 8
+memory_mb = 32768
+storage_mb = 40960

@@ -1,0 +1,21 @@
+version = "1.0"
+
+[verifier]
+# E2E subset: silicon_creator (secure boot firmware) host-side unit tests.
+#   ~49 tests. With warm Bazel cache: ~5-10 min compile + 2 min test.
+#   Budget: 15 min total * 3x safety = 45 min.
+timeout_sec = 2700.0
+
+[agent]
+# silicon_creator is OpenTitan's secure boot stack: ROM, key management,
+# flash control, UART, alert, shutdown, sigverify drivers.
+# Even the E2E subset requires implementing 10+ C source modules.
+timeout_sec = 86400.0
+
+[environment]
+# Same Docker image as opentitan-full (shared environment).
+# Only test.sh differs.
+build_timeout_sec = 5400.0
+cpus = 8
+memory_mb = 16384
+storage_mb = 40960
