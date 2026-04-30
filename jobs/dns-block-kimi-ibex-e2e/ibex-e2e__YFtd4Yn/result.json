@@ -1,0 +1,95 @@
+{
+    "id": "3f538435-c3ed-4382-8f36-a098b6deff99",
+    "task_name": "ibex-e2e",
+    "trial_name": "ibex-e2e__YFtd4Yn",
+    "trial_uri": "file:///data/saketh/research/cs3220-research/rtl-universe/jobs/dns-block-kimi-ibex-e2e/ibex-e2e__YFtd4Yn",
+    "task_id": {
+        "path": "minrepro_task/ibex-e2e"
+    },
+    "source": null,
+    "task_checksum": "6514ca359c10411d7f71789023d721e7ddc5288b6d0d0ad2da1fa02555fc9627",
+    "config": {
+        "task": {
+            "path": "minrepro_task/ibex-e2e",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "ibex-e2e__YFtd4Yn",
+        "trials_dir": "jobs/dns-block-kimi-ibex-e2e",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "opencode",
+            "import_path": null,
+            "model_name": "openrouter/moonshotai/kimi-k2.6",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": true,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "8c12bb2a-ac23-46fc-a202-3d3653a0e643"
+    },
+    "agent_info": {
+        "name": "opencode",
+        "version": "unknown",
+        "model_info": {
+            "name": "moonshotai/kimi-k2.6",
+            "provider": "openrouter"
+        }
+    },
+    "agent_result": null,
+    "verifier_result": null,
+    "exception_info": {
+        "exception_type": "NonZeroAgentExitCodeError",
+        "exception_message": "Command failed (exit 1): set -euo pipefail; curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash && export NVM_DIR=\"$HOME/.nvm\" && \\. \"$NVM_DIR/nvm.sh\" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && npm -v && npm i -g opencode-ai@latest && opencode --version\nstdout:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (7) Failed to connect to raw.githubusercontent.com port 443 after 0 ms: Couldn't connect to server\nError: NVM failed to load\n\nstderr: None",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/home/saketh/.cache/uv/archive-v0/uMGaIipbmibZGrEX8TWxe/lib/python3.13/site-packages/harbor/trial/trial.py\", line 954, in run\n    await self._setup_agent()\n  File \"/home/saketh/.cache/uv/archive-v0/uMGaIipbmibZGrEX8TWxe/lib/python3.13/site-packages/harbor/trial/trial.py\", line 351, in _setup_agent\n    await asyncio.wait_for(\n    ...<2 lines>...\n    )\n  File \"/home/saketh/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py\", line 507, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/home/saketh/.cache/uv/archive-v0/uMGaIipbmibZGrEX8TWxe/lib/python3.13/site-packages/harbor/agents/installed/base.py\", line 392, in setup\n    await self.install(environment)\n  File \"/home/saketh/.cache/uv/archive-v0/uMGaIipbmibZGrEX8TWxe/lib/python3.13/site-packages/harbor/agents/installed/opencode.py\", line 88, in install\n    await self.exec_as_agent(\n    ...<11 lines>...\n    )\n  File \"/home/saketh/.cache/uv/archive-v0/uMGaIipbmibZGrEX8TWxe/lib/python3.13/site-packages/harbor/agents/installed/base.py\", line 366, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n        environment, command, env=env, cwd=cwd, timeout_sec=timeout_sec\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/saketh/.cache/uv/archive-v0/uMGaIipbmibZGrEX8TWxe/lib/python3.13/site-packages/harbor/agents/installed/base.py\", line 329, in _exec\n    raise NonZeroAgentExitCodeError(\n    ...<3 lines>...\n    )\nharbor.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): set -euo pipefail; curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash && export NVM_DIR=\"$HOME/.nvm\" && \\. \"$NVM_DIR/nvm.sh\" || true && command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } && nvm install 22 && npm -v && npm i -g opencode-ai@latest && opencode --version\nstdout:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (7) Failed to connect to raw.githubusercontent.com port 443 after 0 ms: Couldn't connect to server\nError: NVM failed to load\n\nstderr: None\n",
+        "occurred_at": "2026-04-30T16:27:44.962365"
+    },
+    "started_at": "2026-04-30T20:27:34.120278Z",
+    "finished_at": "2026-04-30T20:28:59.258780Z",
+    "environment_setup": {
+        "started_at": "2026-04-30T20:27:34.945945Z",
+        "finished_at": "2026-04-30T20:27:40.622331Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-04-30T20:27:40.622382Z",
+        "finished_at": "2026-04-30T20:27:44.794135Z"
+    },
+    "agent_execution": null,
+    "verifier": null,
+    "step_results": null
+}
