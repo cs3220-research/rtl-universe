@@ -45,6 +45,7 @@ RUN apt-get update && apt-get install -y \
     libgoogle-perftools-dev \
     make \
     numactl \
+    libbit-vector-perl \
     perl \
     perl-doc \
     python3 \

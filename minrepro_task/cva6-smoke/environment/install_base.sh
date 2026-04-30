@@ -25,30 +25,16 @@ apt-get install -y -qq \
     pkg-config \
     libglib2.0-dev \
     zlib1g-dev \
-    verilator
+    verilator \
+    gcc-riscv64-unknown-elf
 
 rm -rf /var/lib/apt/lists/*
 
-# Debian bookworm ships Verilator 5.006. CVA6 pins v5.008 in CI but the
-# difference is minor (2 patch versions). Using the apt package avoids a
-# 20-minute source build that frequently fails in Docker due to network
-# timeouts or missing dependencies.
 verilator --version
+riscv64-unknown-elf-gcc --version
 
-# ── Install RISC-V GNU toolchain (pre-built Embecosm binary) ─────────────────
-# Same source as ci/install-toolchain.sh.
-EMBECOSM_BASE="https://buildbot.embecosm.com/job/riscv32-gcc-ubuntu2204-release/10/artifact"
-RISCV64_ELF_GCC="riscv32-embecosm-ubuntu2204-gcc13.2.0.tar.gz"
-
-mkdir -p "${RISCV_INSTALL_DIR}"
-cd /tmp
-wget -q "${EMBECOSM_BASE}/${RISCV64_ELF_GCC}" --no-check-certificate
-tar -x -f "${RISCV64_ELF_GCC}" --strip-components=1 -C "${RISCV_INSTALL_DIR}"
-rm -f "${RISCV64_ELF_GCC}"
-
-# Symlink riscv64-unknown-elf-gcc to standard bin name used by riscv-tests build
+# Set RISCV for downstream scripts
 export PATH="${RISCV_INSTALL_DIR}/bin:${PATH}"
-riscv64-unknown-elf-gcc --version || riscv32-unknown-elf-gcc --version || true
 
 # ── Build riscv-tests binaries ────────────────────────────────────────────────
 # Pinned to commit referenced in ci/build-riscv-tests.sh.
