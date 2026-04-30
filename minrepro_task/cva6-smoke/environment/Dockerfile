@@ -52,6 +52,7 @@ COPY install_bender.sh /tmp/install_bender.sh
 RUN chmod +x /tmp/install_bender.sh && /tmp/install_bender.sh
 
 COPY --from=spike-builder /opt/spike /opt/spike
+RUN echo "/opt/spike/lib" > /etc/ld.so.conf.d/spike.conf && ldconfig
 
 RUN set -eux; \
     addgroup --gid ${_GID} ${_USERNAME}; \
