@@ -10,7 +10,7 @@ timeout_sec = 86400.0
 
 [environment]
 # No warm cache needed — Icarus recompiles per-run. Build is fast (<5 min total).
-build_timeout_sec = 1800.0
+build_timeout_sec = 7200.0
 cpus = 4
 memory_mb = 8192
 storage_mb = 20480
