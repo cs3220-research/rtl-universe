@@ -25,6 +25,13 @@ ENV DEBIAN_FRONTEND=noninteractive
 COPY build_spike.sh /tmp/build_spike.sh
 RUN chmod +x /tmp/build_spike.sh && /tmp/build_spike.sh
 
+FROM debian:bookworm AS verilator-builder
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+COPY build_verilator.sh /tmp/build_verilator.sh
+RUN chmod +x /tmp/build_verilator.sh && /tmp/build_verilator.sh
+
 FROM debian:bookworm AS base
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -36,6 +43,10 @@ ENV HOME=/home/${_USERNAME}
 
 COPY install_base.sh /tmp/install_base.sh
 RUN chmod +x /tmp/install_base.sh && /tmp/install_base.sh
+
+# Copy Verilator 5.008 from builder stage
+COPY --from=verilator-builder /opt/verilator /opt/verilator
+ENV PATH="/opt/verilator/bin:${PATH}"
 
 COPY install_bender.sh /tmp/install_bender.sh
 RUN chmod +x /tmp/install_bender.sh && /tmp/install_bender.sh

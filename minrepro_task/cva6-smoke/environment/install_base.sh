@@ -25,11 +25,10 @@ apt-get install -y -qq \
     pkg-config \
     libglib2.0-dev \
     zlib1g-dev \
-    verilator
+
 
 rm -rf /var/lib/apt/lists/*
 
-verilator --version
 
 # ── Install RISC-V GNU toolchain (Embecosm multilib) ─────────────────────────
 # CVA6 CI uses this exact tarball. Despite the "riscv32" name, it's a multilib
