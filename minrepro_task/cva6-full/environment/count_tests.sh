@@ -22,7 +22,7 @@ set -eux
 
 export RISCV="${RISCV:-/opt/riscv}"
 export SPIKE_INSTALL_DIR="${SPIKE_INSTALL_DIR:-/opt/spike}"
-export VERILATOR_INSTALL_DIR="${VERILATOR_INSTALL_DIR:-/opt/verilator}"
+export VERILATOR_INSTALL_DIR="${VERILATOR_INSTALL_DIR:-/usr}"
 export CVA6_REPO_DIR="/app"
 export TARGET_CFG="${TARGET_CFG:-cv64a6_imafdc_sv39}"
 export HPDCACHE_DIR="${CVA6_REPO_DIR}/core/cache_subsystem/hpdcache"

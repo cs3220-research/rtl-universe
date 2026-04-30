@@ -12,6 +12,14 @@ set -euo pipefail
 
 export RV_ROOT=/app
 
+# Generate VeeR config headers (common_defines.vh, el2_pdef.vh).
+# Block tests expect these in verification/block/snapshots/default/.
+# The config script must be run from the target directory.
+mkdir -p /app/verification/block/snapshots/default
+cd /app/verification/block/snapshots/default
+$RV_ROOT/configs/veer.config -set build_axi4
+echo "Config generated: $(ls *.vh 2>/dev/null | wc -l) header files"
+
 cd /app/verification/block
 
 # Run all tagged test sessions. nox writes status.json due to nox.options.report.

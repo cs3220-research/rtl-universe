@@ -24,29 +24,15 @@ apt-get install -y -qq \
     libyaml-cpp-dev \
     pkg-config \
     libglib2.0-dev \
-    zlib1g-dev
+    zlib1g-dev \
+    verilator
 
 rm -rf /var/lib/apt/lists/*
 
-# ── Install Verilator 5.008 from source ──────────────────────────────────────
-# The project requires Verilator 5.x for --no-timing and other flags.
-# Pinned to the tag used in ci/install-verilator.sh.
-VERILATOR_VERSION="v5.008"
-VERILATOR_INSTALL_DIR="/opt/verilator"
-
-mkdir -p /tmp/verilator-build
-cd /tmp/verilator-build
-git clone https://github.com/verilator/verilator.git
-cd verilator
-git checkout "${VERILATOR_VERSION}"
-autoconf
-./configure --prefix="${VERILATOR_INSTALL_DIR}"
-make -j"${NUM_JOBS}"
-make install
-cd /
-rm -rf /tmp/verilator-build
-
-ln -sf "${VERILATOR_INSTALL_DIR}/bin/verilator" /usr/local/bin/verilator
+# Debian bookworm ships Verilator 5.006. CVA6 pins v5.008 in CI but the
+# difference is minor (2 patch versions). Using the apt package avoids a
+# 20-minute source build that frequently fails in Docker due to network
+# timeouts or missing dependencies.
 verilator --version
 
 # ── Install RISC-V GNU toolchain (pre-built Embecosm binary) ─────────────────
