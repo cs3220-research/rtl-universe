@@ -67,7 +67,10 @@ cd build
 # so we must pass --host to tell it the actual target triple.
 ../configure --prefix="${RISCV_TESTS_INSTALL}" --host=riscv32-unknown-elf
 make isa        -j"${NUM_JOBS}" > /dev/null
-make benchmarks -j"${NUM_JOBS}" > /dev/null
+# Benchmarks use a hardcoded riscv64-unknown-elf- prefix that doesn't match
+# the Embecosm riscv32 toolchain. Skip them — CVA6 CI test lists only use
+# ISA tests for the smoke/E2E variants. Build benchmarks best-effort.
+make benchmarks -j"${NUM_JOBS}" > /dev/null 2>&1 || echo "Warning: benchmarks build failed (non-fatal)"
 make install
 cd /
 rm -rf /tmp/riscv-tests-build
