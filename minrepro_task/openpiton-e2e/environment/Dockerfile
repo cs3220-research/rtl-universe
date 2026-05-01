@@ -22,7 +22,7 @@ RUN set -eux; \
     echo 'APT::Get::Assume-Yes "true";' > /etc/apt/apt.conf.d/90assumeyes; \
     apt-get update; \
     apt-get install -y -qq \
-        build-essential ca-certificates git \
+        build-essential ca-certificates curl git \
         iverilog \
         python3 python3-pip \
         rsync; \
