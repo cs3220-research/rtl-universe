@@ -1,0 +1,1386 @@
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+Analyzing: 215 targets (0 packages loaded, 0 targets configured)
+Analyzing: 215 targets (0 packages loaded, 0 targets configured)
+
+Analyzing: 215 targets (1 packages loaded, 988 targets configured)
+
+Analyzing: 215 targets (2 packages loaded, 3906 targets configured)
+[535 / 1,334] Executing genrule //third_party/riscv-tests:shadow_riscv_env; 0s processwrapper-sandbox ... (6 actions, 5 running)
+INFO: Analyzed 215 targets (2 packages loaded, 4008 targets configured).
+[569 / 1,588] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_itcm512kb_dtcm512kb_tests_core_mini_axi_run_wfi_in_all_slots_itcm512kb_dtcm512kb_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[753 / 1,633] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 1s processwrapper-sandbox ... (8 actions, 7 running)
+[769 / 1,637] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 2s processwrapper-sandbox ... (9 actions, 8 running)
+[782 / 1,643] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 3s processwrapper-sandbox ... (9 actions, 8 running)
+[807 / 1,661] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[817 / 1,724] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[831 / 1,738] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[841 / 1,743] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[852 / 1,747] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[866 / 1,751] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 10s processwrapper-sandbox ... (7 actions, 6 running)
+[887 / 1,757] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 11s processwrapper-sandbox ... (8 actions, 7 running)
+[909 / 1,764] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 12s processwrapper-sandbox ... (8 actions, 7 running)
+[924 / 1,778] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 13s processwrapper-sandbox ... (8 actions, 7 running)
+[944 / 1,783] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 14s processwrapper-sandbox ... (8 actions, 7 running)
+[1,003 / 1,865] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 15s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[1,028 / 2,009] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 16s processwrapper-sandbox ... (8 actions, 7 running)
+[1,055 / 2,025] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 17s processwrapper-sandbox ... (9 actions, 8 running)
+[1,076 / 2,029] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 18s processwrapper-sandbox ... (8 actions, 7 running)
+[1,105 / 2,065] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 19s processwrapper-sandbox ... (8 actions, 7 running)
+[1,140 / 2,084] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 20s processwrapper-sandbox ... (8 actions, 7 running)
+[1,158 / 2,106] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 21s processwrapper-sandbox ... (8 actions, 7 running)
+[1,177 / 2,168] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 23s processwrapper-sandbox ... (8 actions, 7 running)
+[1,228 / 2,215] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 24s processwrapper-sandbox ... (8 actions, 7 running)
+[1,253 / 2,234] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 25s processwrapper-sandbox ... (8 actions, 7 running)
+[1,427 / 2,256] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 26s processwrapper-sandbox ... (8 actions, 7 running)
+[1,459 / 2,367] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 27s processwrapper-sandbox ... (8 actions running)
+[1,463 / 2,370] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 28s processwrapper-sandbox ... (8 actions running)
+[1,464 / 2,370] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 30s processwrapper-sandbox ... (8 actions, 7 running)
+[1,465 / 2,370] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 31s processwrapper-sandbox ... (8 actions, 7 running)
+[1,473 / 2,376] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 32s processwrapper-sandbox ... (8 actions running)
+[1,474 / 2,376] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 34s processwrapper-sandbox ... (8 actions running)
+[1,482 / 2,386] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 36s processwrapper-sandbox ... (8 actions, 7 running)
+[1,483 / 2,386] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 37s processwrapper-sandbox ... (8 actions, 7 running)
+[1,492 / 2,392] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 38s processwrapper-sandbox ... (9 actions, 8 running)
+[1,493 / 2,392] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 39s processwrapper-sandbox ... (9 actions, 8 running)
+[1,494 / 2,392] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 41s processwrapper-sandbox ... (8 actions, 7 running)
+[1,509 / 2,403] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 42s processwrapper-sandbox ... (8 actions running)
+[1,513 / 2,407] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 44s processwrapper-sandbox ... (8 actions, 7 running)
+[1,517 / 2,408] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 45s processwrapper-sandbox ... (8 actions, 7 running)
+[1,522 / 2,413] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 46s processwrapper-sandbox ... (8 actions, 7 running)
+[1,534 / 2,438] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 47s processwrapper-sandbox ... (8 actions, 7 running)
+[1,542 / 2,446] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 48s processwrapper-sandbox ... (9 actions, 8 running)
+[1,544 / 2,446] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 50s processwrapper-sandbox ... (8 actions, 7 running)
+[1,552 / 2,451] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 51s processwrapper-sandbox ... (8 actions, 7 running)
+[1,562 / 2,467] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 52s processwrapper-sandbox ... (8 actions, 7 running)
+[1,581 / 2,480] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 53s processwrapper-sandbox ... (8 actions, 7 running)
+[1,609 / 2,498] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 54s processwrapper-sandbox ... (8 actions, 7 running)
+[1,638 / 2,521] BootstrapGNUMake external/rules_foreign_cc/toolchains/make [for tool]; 55s processwrapper-sandbox ... (8 actions, 7 running)
+[1,668 / 2,541] Compiling src/idl_parser.cpp [for tool]; 18s processwrapper-sandbox ... (8 actions running)
+[1,688 / 2,566] Compiling src/idl_parser.cpp [for tool]; 19s processwrapper-sandbox ... (8 actions, 7 running)
+[1,707 / 2,702] Compiling src/idl_parser.cpp [for tool]; 20s processwrapper-sandbox ... (8 actions, 7 running)
+[1,722 / 2,710] Compiling src/idl_parser.cpp [for tool]; 21s processwrapper-sandbox ... (8 actions, 7 running)
+[1,756 / 2,819] Compiling src/idl_parser.cpp [for tool]; 22s processwrapper-sandbox ... (8 actions, 7 running)
+[1,778 / 2,833] Compiling src/idl_parser.cpp [for tool]; 23s processwrapper-sandbox ... (8 actions, 7 running)
+[1,800 / 2,846] Compiling src/idl_parser.cpp [for tool]; 24s processwrapper-sandbox ... (8 actions, 7 running)
+[1,821 / 2,866] Compiling src/idl_parser.cpp [for tool]; 25s processwrapper-sandbox ... (8 actions, 7 running)
+[1,845 / 2,883] Compiling src/idl_parser.cpp [for tool]; 26s processwrapper-sandbox ... (8 actions, 7 running)
+[1,864 / 2,894] Compiling src/idl_parser.cpp [for tool]; 27s processwrapper-sandbox ... (8 actions, 7 running)
+[1,894 / 2,919] Compiling src/idl_parser.cpp [for tool]; 29s processwrapper-sandbox ... (8 actions running)
+[1,910 / 2,935] Compiling src/idl_parser.cpp [for tool]; 30s processwrapper-sandbox ... (8 actions, 7 running)
+[1,934 / 2,952] Compiling src/idl_parser.cpp [for tool]; 31s processwrapper-sandbox ... (8 actions, 7 running)
+[1,950 / 2,965] Compiling absl/strings/internal/charconv_bigint.cc [for tool]; 1s processwrapper-sandbox ... (8 actions, 7 running)
+[1,980 / 2,984] Compiling src/idl_gen_text.cpp [for tool]; 1s processwrapper-sandbox ... (8 actions running)
+[1,997 / 2,995] Compiling src/idl_gen_text.cpp [for tool]; 2s processwrapper-sandbox ... (7 actions, 6 running)
+[2,027 / 3,018] Compiling src/idl_gen_text.cpp [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[2,053 / 3,036] Compiling absl/strings/charconv.cc [for tool]; 1s processwrapper-sandbox ... (8 actions, 7 running)
+[2,117 / 3,092] Compiling absl/strings/ascii.cc [for tool]; 0s processwrapper-sandbox ... (8 actions, 7 running)
+[2,150 / 3,120] Compiling grpc/src/compiler/ts_generator.cc [for tool]; 1s processwrapper-sandbox ... (8 actions, 7 running)
+[2,171 / 3,138] Compiling grpc/src/compiler/ts_generator.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[2,192 / 3,151] Compiling absl/flags/parse.cc; 1s processwrapper-sandbox ... (7 actions, 6 running)
+[2,230 / 3,179] Compiling absl/flags/parse.cc; 3s processwrapper-sandbox ... (7 actions, 6 running)
+[2,256 / 3,199] Compiling grpc/src/compiler/swift_generator.cc [for tool]; 2s processwrapper-sandbox ... (8 actions, 7 running)
+[2,289 / 3,223] Compiling absl/time/clock.cc [for tool]; 0s processwrapper-sandbox ... (8 actions, 7 running)
+[2,313 / 3,239] Compiling grpc/src/compiler/python_generator.cc [for tool]; 1s processwrapper-sandbox ... (8 actions, 7 running)
+[2,343 / 3,261] Compiling absl/time/civil_time.cc [for tool]; 1s processwrapper-sandbox ... (8 actions, 7 running)
+[2,379 / 3,287] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_scalar_registers_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[2,425 / 3,327] Compiling grpc/src/compiler/java_generator.cc [for tool]; 2s processwrapper-sandbox ... (8 actions, 7 running)
+[2,450 / 3,344] Compiling grpc/src/compiler/java_generator.cc [for tool]; 3s processwrapper-sandbox ... (8 actions running)
+[2,487 / 3,370] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_assembly_cocotb_test_core_mini_rvv_add_cocotb_runner.sh.runfiles; 0s local ... (8 actions running)
+[2,506 / 3,390] Compiling grpc/src/compiler/go_generator.cc [for tool]; 1s processwrapper-sandbox ... (8 actions, 7 running)
+[2,526 / 3,402] Compiling grpc/src/compiler/go_generator.cc [for tool]; 2s processwrapper-sandbox ... (8 actions, 7 running)
+[2,529 / 3,405] Compiling grpc/src/compiler/go_generator.cc [for tool]; 4s processwrapper-sandbox ... (8 actions running)
+[2,536 / 3,408] Compiling grpc/src/compiler/go_generator.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[2,540 / 3,411] Compiling grpc/src/compiler/go_generator.cc [for tool]; 6s processwrapper-sandbox ... (8 actions running)
+[2,544 / 3,414] Compiling grpc/src/compiler/go_generator.cc [for tool]; 7s processwrapper-sandbox ... (8 actions running)
+[2,551 / 3,421] Foreign Cc - CMake: Building systemc; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[2,552 / 3,421] Foreign Cc - CMake: Building systemc; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[2,552 / 3,421] Foreign Cc - CMake: Building systemc; 10s processwrapper-sandbox ... (9 actions, 8 running)
+[2,553 / 3,421] Foreign Cc - CMake: Building systemc; 12s processwrapper-sandbox ... (8 actions, 7 running)
+[2,553 / 3,421] Foreign Cc - CMake: Building systemc; 13s processwrapper-sandbox ... (8 actions running)
+[2,561 / 3,431] Foreign Cc - CMake: Building systemc; 14s processwrapper-sandbox ... (8 actions, 7 running)
+[2,563 / 3,431] Foreign Cc - CMake: Building systemc; 16s processwrapper-sandbox ... (8 actions, 7 running)
+[2,571 / 3,437] Foreign Cc - CMake: Building systemc; 17s processwrapper-sandbox ... (8 actions running)
+[2,574 / 3,437] Foreign Cc - CMake: Building systemc; 19s processwrapper-sandbox ... (8 actions running)
+[2,576 / 3,437] Foreign Cc - CMake: Building systemc; 20s processwrapper-sandbox ... (8 actions, 7 running)
+[2,582 / 3,444] Foreign Cc - CMake: Building systemc; 22s processwrapper-sandbox ... (9 actions, 7 running)
+[2,582 / 3,444] Foreign Cc - CMake: Building systemc; 23s processwrapper-sandbox ... (9 actions, 8 running)
+[2,587 / 3,447] Foreign Cc - CMake: Building systemc; 24s processwrapper-sandbox ... (8 actions, 7 running)
+[2,595 / 3,453] Foreign Cc - CMake: Building systemc; 26s processwrapper-sandbox ... (8 actions, 7 running)
+[2,601 / 3,456] Foreign Cc - CMake: Building systemc; 27s processwrapper-sandbox ... (8 actions running)
+[2,608 / 3,461] Foreign Cc - CMake: Building systemc; 28s processwrapper-sandbox ... (8 actions, 7 running)
+[2,635 / 3,487] Foreign Cc - CMake: Building systemc; 29s processwrapper-sandbox ... (8 actions, 7 running)
+[2,659 / 3,504] Foreign Cc - CMake: Building systemc; 31s processwrapper-sandbox ... (8 actions, 7 running)
+[2,683 / 3,523] Foreign Cc - CMake: Building systemc; 32s processwrapper-sandbox ... (8 actions, 7 running)
+[2,701 / 3,541] Foreign Cc - CMake: Building systemc; 33s processwrapper-sandbox ... (8 actions, 7 running)
+[2,739 / 3,583] Compiling src/flatc.cpp [for tool]; 4s processwrapper-sandbox ... (8 actions running)
+[2,765 / 3,634] Compiling src/flatc.cpp [for tool]; 5s processwrapper-sandbox ... (8 actions running)
+[2,793 / 3,649] Compiling src/flatc.cpp [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[2,842 / 3,713] Compiling absl/synchronization/mutex.cc [for tool]; 1s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/io_utils/libio_utils.jar (2 source files) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/jar/libjar.jar (2 source files) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[2,875 / 3,755] Compiling src/binary_annotator.cpp [for tool]; 2s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/compileoptions/libcompileoptions.jar (1 source file) [for tool]:
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-reflect.jar": no such file or directory
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-library.jar": no such file or directory
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[2,899 / 3,778] Compiling src/binary_annotator.cpp [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[2,924 / 3,793] Compiling src/binary_annotator.cpp [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[3,186 / 4,060] Compiling src/binary_annotator.cpp [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[3,203 / 4,072] Compiling src/binary_annotator.cpp [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[3,217 / 4,085] Compiling src/google/protobuf/compiler/main.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[3,234 / 4,096] Compiling src/google/protobuf/compiler/main.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[3,287 / 4,146] Compiling src/bfbs_gen_nim.cpp [for tool]; 2s processwrapper-sandbox ... (8 actions, 7 running)
+[3,309 / 4,163] Compiling src/bfbs_gen_nim.cpp [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[3,321 / 4,169] Compiling src/bfbs_gen_nim.cpp [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[3,340 / 4,181] Compiling src/bfbs_gen_nim.cpp [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[3,365 / 4,197] Compiling src/google/protobuf/compiler/subprocess.cc [for tool]; 2s processwrapper-sandbox ... (8 actions, 7 running)
+[3,385 / 4,210] Compiling absl/log/internal/vlog_config.cc [for tool]; 1s processwrapper-sandbox ... (8 actions, 7 running)
+[3,393 / 4,239] Compiling src/bfbs_gen_lua.cpp [for tool]; 2s processwrapper-sandbox ... (8 actions, 7 running)
+[3,415 / 4,266] Compiling src/bfbs_gen_lua.cpp [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[3,435 / 4,277] Compiling src/bfbs_gen_lua.cpp [for tool]; 4s processwrapper-sandbox ... (9 actions, 8 running)
+[3,456 / 4,288] Compiling src/bfbs_gen_lua.cpp [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[3,478 / 4,299] Compiling src/google/protobuf/compiler/parser.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[3,529 / 4,330] Compiling src/google/protobuf/compiler/parser.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[3,545 / 4,344] Compiling src/google/protobuf/compiler/parser.cc [for tool]; 8s processwrapper-sandbox ... (8 actions running)
+[3,554 / 4,364] Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[3,559 / 4,364] Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 10s processwrapper-sandbox ... (8 actions, 7 running)
+[3,566 / 4,368] Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 11s processwrapper-sandbox ... (8 actions, 7 running)
+[3,573 / 4,372] Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 12s processwrapper-sandbox ... (8 actions, 7 running)
+[3,587 / 4,372] Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 14s processwrapper-sandbox ... (8 actions, 7 running)
+[3,596 / 4,378] Compiling src/idl_gen_ts.cpp [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[3,604 / 4,395] Compiling src/idl_gen_ts.cpp [for tool]; 7s processwrapper-sandbox ... (8 actions running)
+[3,612 / 4,409] Compiling src/idl_gen_ts.cpp [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+[3,621 / 4,413] Compiling src/idl_gen_ts.cpp [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[3,630 / 4,415] Compiling src/google/protobuf/compiler/cpp/enum.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[3,641 / 4,422] Compiling src/google/protobuf/compiler/cpp/enum.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[3,648 / 4,422] Compiling src/google/protobuf/compiler/cpp/enum.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[3,659 / 4,431] Compiling src/google/protobuf/compiler/cpp/enum.cc [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[3,666 / 4,435] Compiling src/google/protobuf/compiler/cpp/enum.cc [for tool]; 10s processwrapper-sandbox ... (9 actions, 8 running)
+[3,673 / 4,441] Compiling src/google/protobuf/compiler/cpp/parse_function_generator.cc [for tool]; 3s processwrapper-sandbox ... (9 actions, 8 running)
+[3,676 / 4,441] Compiling src/google/protobuf/compiler/cpp/parse_function_generator.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[3,683 / 4,445] Compiling src/google/protobuf/compiler/cpp/parse_function_generator.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[3,689 / 4,447] Compiling src/google/protobuf/compiler/cpp/parse_function_generator.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[3,695 / 4,451] Compiling src/idl_gen_swift.cpp [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[3,698 / 4,451] Compiling src/idl_gen_swift.cpp [for tool]; 6s processwrapper-sandbox ... (8 actions running)
+[3,706 / 4,457] Compiling src/idl_gen_swift.cpp [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[3,718 / 4,463] Compiling src/idl_gen_swift.cpp [for tool]; 9s processwrapper-sandbox ... (9 actions, 7 running)
+[3,731 / 4,474] Compiling src/google/protobuf/compiler/cpp/padding_optimizer.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[3,735 / 4,481] Compiling src/google/protobuf/compiler/csharp/csharp_repeated_message_field.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[3,741 / 4,483] Compiling src/google/protobuf/compiler/csharp/csharp_repeated_message_field.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[3,746 / 4,488] Compiling src/V3Width.cpp; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[3,750 / 4,488] Compiling src/V3Width.cpp; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[3,755 / 4,494] Compiling src/V3Width.cpp; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[3,762 / 4,498] Compiling src/V3Width.cpp; 8s processwrapper-sandbox ... (9 actions, 8 running)
+[3,768 / 4,498] Compiling src/idl_gen_rust.cpp [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[3,779 / 4,504] Compiling src/idl_gen_rust.cpp [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[3,790 / 4,514] Compiling src/idl_gen_rust.cpp [for tool]; 10s processwrapper-sandbox ... (8 actions, 7 running)
+[3,795 / 4,518] Compiling src/idl_gen_rust.cpp [for tool]; 12s processwrapper-sandbox ... (8 actions, 7 running)
+[3,801 / 4,524] Compiling src/idl_gen_rust.cpp [for tool]; 13s processwrapper-sandbox ... (9 actions, 8 running)
+[3,803 / 4,524] Compiling src/idl_gen_rust.cpp [for tool]; 14s processwrapper-sandbox ... (9 actions, 8 running)
+[3,811 / 4,528] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[3,819 / 4,532] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 11s processwrapper-sandbox ... (8 actions, 7 running)
+[3,820 / 4,532] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 12s processwrapper-sandbox ... (8 actions, 7 running)
+[3,823 / 4,536] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 13s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Compiling src/google/protobuf/compiler/kotlin/generator.cc [for tool]:
+In file included from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/java/_virtual_includes/helpers/google/protobuf/compiler/java/helpers.h:23,
+                 from external/com_google_protobuf/src/google/protobuf/compiler/kotlin/generator.cc:18:
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h: In instantiation of 'void google::protobuf::io::AnnotationProtoCollector<AnnotationProto>::AddAnnotation(size_t, size_t, const std::string&, const std::vector<int>&, std::optional<google::protobuf::io::AnnotationCollector::Semantic>) [with AnnotationProto = google::protobuf::GeneratedCodeInfo; size_t = long unsigned int; std::string = std::__cxx11::basic_string<char>]':
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h:123:8:   required from here
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h:127:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<int>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  127 |     for (int i = 0; i < path.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~
+[3,832 / 4,543] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 15s processwrapper-sandbox ... (8 actions, 7 running)
+[3,848 / 4,563] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 16s processwrapper-sandbox ... (8 actions, 7 running)
+[3,852 / 4,567] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 17s processwrapper-sandbox ... (8 actions, 7 running)
+[3,854 / 4,567] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 18s processwrapper-sandbox ... (9 actions, 8 running)
+[3,858 / 4,567] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 19s processwrapper-sandbox ... (8 actions, 7 running)
+[3,861 / 4,567] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 21s processwrapper-sandbox ... (8 actions, 7 running)
+[3,866 / 4,570] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 22s processwrapper-sandbox ... (8 actions, 7 running)
+[3,869 / 4,579] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 23s processwrapper-sandbox ... (8 actions, 7 running)
+[3,875 / 4,581] Compiling src/google/protobuf/compiler/cpp/field_generators/map_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[3,879 / 4,581] Compiling src/google/protobuf/compiler/kotlin/file.cc [for tool]; 4s processwrapper-sandbox ... (9 actions, 8 running)
+[3,883 / 4,583] Compiling src/google/protobuf/compiler/kotlin/file.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Compiling src/google/protobuf/compiler/kotlin/file.cc [for tool]:
+In file included from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/java/_virtual_includes/helpers/google/protobuf/compiler/java/helpers.h:23,
+                 from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/java/_virtual_includes/helpers/google/protobuf/compiler/java/context.h:15,
+                 from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/kotlin/_virtual_includes/kotlin_internal/google/protobuf/compiler/kotlin/message.h:12,
+                 from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/kotlin/_virtual_includes/kotlin_internal/google/protobuf/compiler/kotlin/file.h:18,
+                 from external/com_google_protobuf/src/google/protobuf/compiler/kotlin/file.cc:8:
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h: In instantiation of 'void google::protobuf::io::AnnotationProtoCollector<AnnotationProto>::AddAnnotation(size_t, size_t, const std::string&, const std::vector<int>&, std::optional<google::protobuf::io::AnnotationCollector::Semantic>) [with AnnotationProto = google::protobuf::GeneratedCodeInfo; size_t = long unsigned int; std::string = std::__cxx11::basic_string<char>]':
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h:123:8:   required from here
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h:127:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<int>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  127 |     for (int i = 0; i < path.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~
+[3,893 / 4,587] Compiling src/google/protobuf/compiler/csharp/csharp_message.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[3,902 / 4,598] Compiling src/google/protobuf/compiler/csharp/csharp_message.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[3,912 / 4,605] Compiling src/V3Tristate.cpp; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[3,919 / 4,607] Compiling src/google/protobuf/compiler/cpp/field_generators/message_field.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[3,922 / 4,607] Compiling src/google/protobuf/compiler/cpp/field_generators/message_field.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[3,929 / 4,617] Compiling src/google/protobuf/compiler/cpp/field_generators/message_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions running)
+[3,935 / 4,619] Compiling src/google/protobuf/compiler/cpp/generator.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[3,943 / 4,621] Compiling src/idl_gen_kotlin.cpp [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[3,948 / 4,628] Compiling src/idl_gen_kotlin.cpp [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[3,953 / 4,630] Compiling src/google/protobuf/compiler/java/generator.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[3,954 / 4,630] Compiling src/google/protobuf/compiler/java/generator.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[3,963 / 4,636] Compiling src/google/protobuf/compiler/cpp/field_generators/primitive_field.cc [for tool]; 5s processwrapper-sandbox ... (8 actions running)
+[3,969 / 4,638] Compiling src/google/protobuf/compiler/cpp/field_generators/primitive_field.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[3,972 / 4,638] Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[3,982 / 4,656] Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[3,987 / 4,656] Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[3,994 / 4,658] Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 10s processwrapper-sandbox ... (8 actions, 7 running)
+[4,002 / 4,662] Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 12s processwrapper-sandbox ... (8 actions running)
+[4,010 / 4,668] Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 13s processwrapper-sandbox ... (8 actions, 7 running)
+[4,014 / 4,668] Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 14s processwrapper-sandbox ... (8 actions, 7 running)
+[4,023 / 4,680] Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 15s processwrapper-sandbox ... (8 actions, 7 running)
+[4,028 / 4,684] Compiling src/google/protobuf/compiler/cpp/file.cc [for tool]; 16s processwrapper-sandbox ... (8 actions, 7 running)
+[4,040 / 4,693] Compiling src/idl_gen_java.cpp [for tool]; 10s processwrapper-sandbox ... (8 actions running)
+[4,047 / 4,700] Compiling src/idl_gen_java.cpp [for tool]; 11s processwrapper-sandbox ... (9 actions, 8 running)
+[4,050 / 4,700] Compiling src/idl_gen_java.cpp [for tool]; 12s processwrapper-sandbox ... (8 actions, 7 running)
+[4,057 / 4,705] Compiling src/idl_gen_java.cpp [for tool]; 13s processwrapper-sandbox ... (8 actions, 7 running)
+[4,070 / 4,719] Compiling src/idl_gen_java.cpp [for tool]; 15s processwrapper-sandbox ... (9 actions, 8 running)
+[4,077 / 4,723] Compiling src/google/protobuf/compiler/cpp/field_generators/string_view_field.cc [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Compiling src/google/protobuf/compiler/java/full/enum.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc: In member function 'virtual void google::protobuf::compiler::java::EnumNonLiteGenerator::Generate(google::protobuf::io::Printer*)':
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:77:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   77 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:85:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   85 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:125:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<google::protobuf::compiler::java::EnumNonLiteGenerator::Alias>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  125 |   for (int i = 0; i < aliases_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:209:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  209 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc: In member function 'bool google::protobuf::compiler::java::EnumNonLiteGenerator::CanUseEnumValues()':
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:383:32: warning: comparison of integer expressions of different signedness: 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+  383 |   if (canonical_values_.size() != descriptor_->value_count()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO: From Compiling src/google/protobuf/compiler/java/full/message_builder.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message_builder.cc: In member function 'void google::protobuf::compiler::java::MessageBuilderGenerator::GenerateDescriptorMethods(google::protobuf::io::Printer*)':
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message_builder.cc:214:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::FieldDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  214 |     for (int i = 0; i < map_fields.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message_builder.cc:240:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::FieldDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  240 |     for (int i = 0; i < map_fields.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+[4,091 / 4,729] Compiling src/V3Table.cpp; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,098 / 4,734] Compiling src/google/protobuf/compiler/csharp/csharp_enum.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[4,110 / 4,754] Compiling src/google/protobuf/compiler/csharp/csharp_enum.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,112 / 4,754] Compiling src/google/protobuf/compiler/csharp/csharp_enum.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,120 / 4,764] Compiling src/google/protobuf/compiler/java/full/message.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,127 / 4,766] Compiling src/google/protobuf/compiler/java/full/message.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,133 / 4,770] Compiling src/google/protobuf/compiler/java/full/message.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,137 / 4,770] Compiling src/google/protobuf/compiler/java/full/message.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Compiling src/google/protobuf/compiler/java/full/message.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message.cc: In member function 'void google::protobuf::compiler::java::ImmutableMessageGenerator::GenerateDescriptorMethods(google::protobuf::io::Printer*)':
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message.cc:807:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::FieldDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  807 |     for (int i = 0; i < map_fields.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+[4,144 / 4,784] Compiling src/idl_gen_go.cpp [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,150 / 4,786] Compiling src/google/protobuf/compiler/java/full/string_field.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,154 / 4,792] Compiling src/google/protobuf/compiler/java/full/string_field.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[4,160 / 4,792] Compiling src/google/protobuf/compiler/java/full/generator_factory.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,164 / 4,792] Compiling src/google/protobuf/io/printer.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,166 / 4,792] Compiling src/google/protobuf/io/printer.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,170 / 4,794] Compiling src/idl_gen_dart.cpp [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,178 / 4,796] Compiling src/google/protobuf/compiler/java/full/primitive_field.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,182 / 4,799] Compiling src/google/protobuf/compiler/java/full/primitive_field.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,186 / 4,799] Compiling src/google/protobuf/compiler/java/full/primitive_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,191 / 4,809] Compiling src/google/protobuf/compiler/java/lite/message.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,197 / 4,811] Compiling src/google/protobuf/compiler/java/lite/message.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,199 / 4,811] Compiling src/google/protobuf/compiler/java/lite/message.cc [for tool]; 6s processwrapper-sandbox ... (8 actions running)
+[4,204 / 4,827] Compiling src/idl_gen_csharp.cpp [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,213 / 4,831] Compiling src/idl_gen_csharp.cpp [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,213 / 4,831] Compiling src/idl_gen_csharp.cpp [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,215 / 4,831] Compiling src/idl_gen_csharp.cpp [for tool]; 10s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Compiling src/google/protobuf/compiler/java/lite/enum.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/java/lite/enum.cc: In member function 'virtual void google::protobuf::compiler::java::EnumLiteGenerator::Generate(google::protobuf::io::Printer*)':
+external/com_google_protobuf/src/google/protobuf/compiler/java/lite/enum.cc:70:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   70 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/lite/enum.cc:94:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<google::protobuf::compiler::java::EnumLiteGenerator::Alias>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   94 |   for (int i = 0; i < aliases_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/lite/enum.cc:165:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  165 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+[4,223 / 4,851] Compiling src/V3SplitVar.cpp; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,225 / 4,851] Compiling src/google/protobuf/compiler/java/full/service.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,226 / 4,851] Compiling src/google/protobuf/compiler/java/full/service.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,229 / 4,851] Compiling src/google/protobuf/compiler/java/field_common.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,237 / 4,855] Compiling src/google/protobuf/compiler/java/lite/primitive_field.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,246 / 4,859] Compiling src/google/protobuf/compiler/java/lite/primitive_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,247 / 4,859] Compiling src/google/protobuf/compiler/java/lite/primitive_field.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,252 / 4,878] Compiling src/idl_gen_cpp.cpp [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+[4,253 / 4,878] Compiling src/idl_gen_cpp.cpp [for tool]; 10s processwrapper-sandbox ... (8 actions, 7 running)
+[4,258 / 4,882] Compiling src/idl_gen_cpp.cpp [for tool]; 11s processwrapper-sandbox ... (8 actions, 7 running)
+[4,259 / 4,882] Compiling src/idl_gen_cpp.cpp [for tool]; 12s processwrapper-sandbox ... (8 actions, 7 running)
+[4,261 / 4,884] Compiling src/idl_gen_cpp.cpp [for tool]; 14s processwrapper-sandbox ... (9 actions, 8 running)
+[4,264 / 4,884] Compiling src/idl_gen_cpp.cpp [for tool]; 15s processwrapper-sandbox ... (8 actions, 7 running)
+[4,270 / 4,886] Compiling src/google/protobuf/compiler/java/helpers.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,271 / 4,886] Compiling src/google/protobuf/compiler/python/pyi_generator.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,276 / 4,888] Compiling src/google/protobuf/parse_context.cc [for tool]; 3s processwrapper-sandbox ... (9 actions, 8 running)
+[4,278 / 4,888] Compiling src/google/protobuf/compiler/ruby/ruby_generator.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,279 / 4,888] Compiling src/google/protobuf/compiler/java/lite/map_field.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,283 / 4,890] Compiling src/google/protobuf/compiler/java/lite/map_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,285 / 4,890] Compiling src/google/protobuf/compiler/java/doc_comment.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,291 / 4,892] Compiling src/google/protobuf/compiler/rust/generator.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,293 / 4,892] Compiling src/google/protobuf/compiler/objectivec/message.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,301 / 4,896] Compiling src/google/protobuf/compiler/objectivec/message.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,305 / 4,898] Compiling src/google/protobuf/compiler/objectivec/message.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,307 / 4,898] Compiling src/google/protobuf/compiler/objectivec/message.cc [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+[4,308 / 4,898] Compiling src/google/protobuf/compiler/python/generator.cc [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,311 / 4,898] Compiling src/google/protobuf/compiler/python/generator.cc [for tool]; 10s processwrapper-sandbox ... (8 actions, 7 running)
+[4,321 / 4,914] Compiling src/bfbs_gen_nim.cpp [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,329 / 4,918] Compiling src/google/protobuf/compiler/objectivec/map_field.cc [for tool]; 2s processwrapper-sandbox ... (8 actions, 7 running)
+[4,332 / 4,921] Compiling src/google/protobuf/compiler/objectivec/map_field.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[4,337 / 4,925] Compiling src/google/protobuf/compiler/objectivec/map_field.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,340 / 4,925] Compiling src/google/protobuf/compiler/java/lite/enum_field.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,347 / 4,927] Compiling src/google/protobuf/compiler/java/lite/enum_field.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Compiling src/google/protobuf/compiler/rust/relative_path.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/rust/relative_path.cc: In member function 'std::string google::protobuf::compiler::rust::RelativePath::Relative(const google::protobuf::compiler::rust::RelativePath&) const':
+external/com_google_protobuf/src/google/protobuf/compiler/rust/relative_path.cc:65:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::basic_string_view<char> >::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   65 |   for (int i = 0; i < current_segments.size(); ++i) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+[4,352 / 4,928] Compiling src/google/protobuf/compiler/java/lite/enum_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,359 / 4,934] Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+[4,366 / 4,957] Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 10s processwrapper-sandbox ... (8 actions, 7 running)
+[4,367 / 4,957] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,369 / 4,957] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,371 / 4,957] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 8s processwrapper-sandbox ... (8 actions running)
+[4,379 / 4,957] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[4,381 / 4,957] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 11s processwrapper-sandbox ... (8 actions, 7 running)
+[4,385 / 4,957] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 12s processwrapper-sandbox ... (9 actions, 8 running)
+[4,386 / 4,957] Compiling src/V3Sched.cpp; 6s processwrapper-sandbox ... (8 actions running)
+[4,392 / 4,957] Compiling src/google/protobuf/extension_set.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,396 / 4,957] Compiling src/google/protobuf/extension_set.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,399 / 4,957] Compiling src/google/protobuf/extension_set.cc [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+[4,405 / 4,957] Compiling src/google/protobuf/compiler/objectivec/enum.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,406 / 4,957] Compiling src/google/protobuf/compiler/objectivec/enum.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,408 / 4,957] Compiling src/google/protobuf/text_format.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,410 / 4,957] Compiling src/google/protobuf/text_format.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,411 / 4,957] Compiling src/google/protobuf/text_format.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,412 / 4,957] Compiling src/google/protobuf/text_format.cc [for tool]; 9s processwrapper-sandbox ... (8 actions running)
+[4,417 / 4,957] Compiling src/google/protobuf/compiler/rust/accessors/map.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,421 / 4,957] Compiling src/google/protobuf/compiler/rust/accessors/repeated_field.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,421 / 4,957] Compiling src/google/protobuf/compiler/rust/accessors/repeated_field.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,424 / 4,957] Compiling tensorflow/lite/micro/micro_allocation_info.cc; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,425 / 4,957] Compiling tensorflow/lite/micro/micro_allocation_info.cc; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,430 / 4,957] Compiling src/google/protobuf/descriptor.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,431 / 4,957] Compiling src/google/protobuf/descriptor.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,433 / 4,957] Compiling src/google/protobuf/descriptor.cc [for tool]; 9s processwrapper-sandbox ... (8 actions running)
+[4,434 / 4,957] Compiling src/google/protobuf/descriptor.cc [for tool]; 12s processwrapper-sandbox ... (8 actions, 7 running)
+[4,440 / 4,957] Compiling src/google/protobuf/descriptor.cc [for tool]; 13s processwrapper-sandbox ... (8 actions, 7 running)
+[4,442 / 4,957] Compiling src/google/protobuf/descriptor.cc [for tool]; 14s processwrapper-sandbox ... (9 actions, 8 running)
+[4,443 / 4,957] Compiling src/google/protobuf/descriptor.cc [for tool]; 18s processwrapper-sandbox ... (8 actions, 7 running)
+[4,447 / 4,957] Compiling src/google/protobuf/descriptor.cc [for tool]; 19s processwrapper-sandbox ... (8 actions, 7 running)
+[4,447 / 4,957] Compiling src/google/protobuf/descriptor.cc [for tool]; 20s processwrapper-sandbox ... (9 actions, 8 running)
+[4,450 / 4,957] Compiling src/google/protobuf/descriptor.cc [for tool]; 22s processwrapper-sandbox ... (8 actions, 7 running)
+[4,452 / 4,957] Compiling src/google/protobuf/descriptor.cc [for tool]; 23s processwrapper-sandbox ... (9 actions, 8 running)
+[4,453 / 4,957] Compiling src/google/protobuf/descriptor.cc [for tool]; 25s processwrapper-sandbox ... (8 actions, 7 running)
+[4,456 / 4,957] Compiling src/google/protobuf/descriptor.cc [for tool]; 26s processwrapper-sandbox ... (8 actions, 7 running)
+[4,458 / 4,957] Compiling src/google/protobuf/descriptor_database.cc [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,460 / 4,957] Compiling src/V3Assert.cpp [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[4,462 / 4,957] Compiling src/V3Assert.cpp [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,464 / 4,957] Compiling sw/opt/litert-micro/pooling.cc; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,468 / 4,957] Compiling src/V3ParseGrammar.cpp; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,470 / 4,957] Compiling src/V3ParseGrammar.cpp; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,471 / 4,957] Compiling src/V3ParseGrammar.cpp; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[4,473 / 4,957] Compiling src/google/protobuf/generated_message_reflection.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,474 / 4,957] Compiling src/google/protobuf/generated_message_reflection.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[4,477 / 4,957] Compiling src/google/protobuf/generated_message_reflection.cc [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,479 / 4,957] Compiling sw/opt/litert-micro/conv.cc; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,486 / 4,956] Compiling src/V3Param.cpp; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,490 / 4,956] Compiling src/V3Param.cpp; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,496 / 4,956] Compiling src/V3AstNodes.cpp; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,499 / 4,956] Compiling src/V3AstNodes.cpp; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,503 / 4,956] Compiling src/V3AstNodes.cpp; 8s processwrapper-sandbox ... (8 actions running)
+[4,507 / 4,956] Compiling src/V3AstNodes.cpp; 10s processwrapper-sandbox ... (8 actions running)
+[4,510 / 4,956] Compiling src/V3AstNodes.cpp; 11s processwrapper-sandbox ... (8 actions, 7 running)
+[4,516 / 4,956] Compiling src/V3AstNodes.cpp; 12s processwrapper-sandbox ... (8 actions, 7 running)
+[4,517 / 4,956] Compiling src/V3AstNodes.cpp; 14s processwrapper-sandbox ... (9 actions, 8 running)
+[4,518 / 4,956] Compiling src/V3Width.cpp [for tool]; 13s processwrapper-sandbox ... (9 actions, 8 running)
+[4,520 / 4,956] Compiling src/V3Width.cpp [for tool]; 15s processwrapper-sandbox ... (8 actions, 7 running)
+[4,520 / 4,956] Compiling src/V3Width.cpp [for tool]; 16s processwrapper-sandbox ... (9 actions, 8 running)
+[4,522 / 4,956] Compiling src/V3Width.cpp [for tool]; 18s processwrapper-sandbox ... (8 actions, 7 running)
+[4,523 / 4,956] Compiling src/V3Width.cpp [for tool]; 19s processwrapper-sandbox ... (8 actions, 7 running)
+[4,523 / 4,956] Compiling src/V3Width.cpp [for tool]; 20s processwrapper-sandbox ... (9 actions, 8 running)
+[4,526 / 4,956] Compiling src/V3Width.cpp [for tool]; 21s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Building external/com_google_protobuf/java/core/libcore.jar (43 source files, 1 source jar) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[4,528 / 4,956] Compiling src/V3Width.cpp [for tool]; 23s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/reporter/libscala_deps_proto-speed.jar (1 source jar) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[4,533 / 4,956] Compiling src/V3AstNodes.cpp [for tool]; 17s processwrapper-sandbox ... (8 actions, 7 running)
+[4,533 / 4,956] Compiling src/V3AstNodes.cpp [for tool]; 19s processwrapper-sandbox ... (8 actions running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/reporter/libreporter.jar (2 source files) [for tool]:
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-reflect.jar": no such file or directory
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-library.jar": no such file or directory
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[4,541 / 4,956] Compiling src/V3AstNodes.cpp [for tool]; 21s processwrapper-sandbox ... (8 actions running)
+[4,542 / 4,956] Compiling src/V3AstNodes.cpp [for tool]; 23s processwrapper-sandbox ... (8 actions, 7 running)
+[4,548 / 4,956] Compiling src/V3AstNodes.cpp [for tool]; 24s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Building external/io_bazel_rules_scala/src/protobuf/io/bazel/rules_scala/libdiagnostics_proto-speed.jar (1 source jar) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[4,549 / 4,956] Compiling src/V3AstNodes.cpp [for tool]; 25s processwrapper-sandbox ... (8 actions running)
+[4,550 / 4,956] Compiling src/V3AstNodes.cpp [for tool]; 26s processwrapper-sandbox ... (8 actions, 7 running)
+[4,554 / 4,956] Compiling src/V3AstNodes.cpp [for tool]; 27s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/scalac.jar (4 source files) [for tool]:
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-reflect.jar": no such file or directory
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-library.jar": no such file or directory
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/worker/libworker.jar (1 source file) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[4,559 / 4,956] Compiling src/V3AstNodes.cpp [for tool]; 29s processwrapper-sandbox ... (8 actions running)
+INFO: From Building external/bazel_tools/src/main/protobuf/libworker_protocol_proto-speed.jar (1 source jar) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[4,568 / 4,956] Compiling src/V3AstNodes.cpp [for tool]; 30s processwrapper-sandbox ... (8 actions running)
+[4,569 / 4,956] Compiling src/V3AstNodes.cpp [for tool]; 32s processwrapper-sandbox ... (8 actions, 7 running)
+[4,577 / 4,956] Compiling src/V3AstNodes.cpp [for tool]; 33s processwrapper-sandbox ... (8 actions running)
+[4,578 / 4,956] Compiling src/V3AstNodes.cpp [for tool]; 34s processwrapper-sandbox ... (8 actions, 7 running)
+[4,587 / 4,956] Compiling tensorflow/lite/micro/kernels/activations.cc; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,595 / 4,956] Compiling src/V3Options.cpp; 4s processwrapper-sandbox ... (8 actions running)
+[4,596 / 4,956] Compiling src/V3Options.cpp; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,601 / 4,956] Compiling src/V3Options.cpp; 7s processwrapper-sandbox ... (8 actions running)
+[4,605 / 4,956] Compiling src/V3Begin.cpp [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,612 / 4,956] Compiling signal/micro/kernels/filter_bank_log.cc; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,618 / 4,956] Compiling signal/micro/kernels/filter_bank.cc; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,624 / 4,956] Compiling signal/micro/kernels/filter_bank.cc; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,630 / 4,956] Compiling src/V3Undriven.cpp [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,632 / 4,956] Compiling tensorflow/lite/micro/kernels/add.cc; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,632 / 4,956] Compiling tensorflow/lite/micro/kernels/add.cc; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,636 / 4,956] Compiling signal/micro/kernels/fft_auto_scale_common.cc; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,636 / 4,956] Compiling signal/micro/kernels/fft_auto_scale_common.cc; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,637 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[4,637 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,638 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 10s processwrapper-sandbox ... (9 actions, 8 running)
+[4,640 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 11s processwrapper-sandbox ... (8 actions, 7 running)
+[4,641 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 12s processwrapper-sandbox ... (8 actions, 7 running)
+[4,642 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 14s processwrapper-sandbox ... (9 actions, 8 running)
+[4,643 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 15s processwrapper-sandbox ... (8 actions, 7 running)
+[4,643 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 17s processwrapper-sandbox ... (9 actions, 8 running)
+[4,647 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 18s processwrapper-sandbox ... (8 actions, 7 running)
+[4,649 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 20s processwrapper-sandbox ... (8 actions, 7 running)
+[4,649 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 21s processwrapper-sandbox ... (9 actions, 8 running)
+[4,650 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 22s processwrapper-sandbox ... (9 actions, 8 running)
+[4,653 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 23s processwrapper-sandbox ... (8 actions, 7 running)
+[4,654 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 25s processwrapper-sandbox ... (9 actions, 8 running)
+[4,655 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 26s processwrapper-sandbox ... (8 actions, 7 running)
+[4,657 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 28s processwrapper-sandbox ... (8 actions, 7 running)
+[4,658 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 29s processwrapper-sandbox ... (9 actions, 8 running)
+[4,661 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 31s processwrapper-sandbox ... (9 actions, 8 running)
+[4,663 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 32s processwrapper-sandbox ... (8 actions, 7 running)
+[4,664 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 34s processwrapper-sandbox ... (8 actions, 7 running)
+[4,666 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 35s processwrapper-sandbox ... (9 actions, 8 running)
+[4,668 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 36s processwrapper-sandbox ... (9 actions, 8 running)
+[4,669 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 37s processwrapper-sandbox ... (8 actions, 7 running)
+[4,671 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 39s processwrapper-sandbox ... (8 actions, 7 running)
+[4,672 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 40s processwrapper-sandbox ... (9 actions, 8 running)
+[4,674 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 41s processwrapper-sandbox ... (8 actions, 7 running)
+[4,675 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 43s processwrapper-sandbox ... (8 actions, 7 running)
+[4,676 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 44s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]:
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.AluOp. You can use coralnpu.AluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.BruOp. You can use coralnpu.BruOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.MluOp. You can use coralnpu.MluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.LsuOp. You can use coralnpu.LsuOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.CsrOp. You can use coralnpu.CsrOp.safe to cast without this warning.
+[warn] There were 5 warning(s) during hardware elaboration.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.AluOp. You can use coralnpu.AluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.BruOp. You can use coralnpu.BruOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.MluOp. You can use coralnpu.MluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.LsuOp. You can use coralnpu.LsuOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.CsrOp. You can use coralnpu.CsrOp.safe to cast without this warning.
+[warn] There were 5 warning(s) during hardware elaboration.
+target: bazel-out/k8-opt-exec-ST-a828a81199fe/bin/hdl/chisel/src/coralnpu
+[4,680 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_itcm512kb_dtcm512kb_axi_cc_library_emit_verilog [for tool]; 46s processwrapper-sandbox ... (9 actions, 8 running)
+[4,682 / 4,956] Compiling src/V3Clean.cpp [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,685 / 4,956] Compiling tensorflow/lite/micro/kernels/batch_matmul_common.cc; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,686 / 4,956] Compiling tensorflow/lite/micro/kernels/batch_matmul_common.cc; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,688 / 4,956] Compiling tensorflow/lite/micro/kernels/tanh.cc; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,689 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,690 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,691 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+[4,692 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,693 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 11s processwrapper-sandbox ... (9 actions, 8 running)
+[4,694 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 13s processwrapper-sandbox ... (8 actions, 7 running)
+[4,696 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 15s processwrapper-sandbox ... (8 actions, 7 running)
+[4,698 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 16s processwrapper-sandbox ... (9 actions, 8 running)
+[4,699 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 18s processwrapper-sandbox ... (8 actions, 7 running)
+[4,701 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 20s processwrapper-sandbox ... (8 actions, 7 running)
+[4,701 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 21s processwrapper-sandbox ... (9 actions, 8 running)
+[4,704 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 23s processwrapper-sandbox ... (9 actions, 8 running)
+[4,706 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 24s processwrapper-sandbox ... (9 actions, 8 running)
+[4,708 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 26s processwrapper-sandbox ... (8 actions, 7 running)
+[4,709 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 27s processwrapper-sandbox ... (8 actions, 7 running)
+[4,710 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 28s processwrapper-sandbox ... (9 actions, 8 running)
+[4,712 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 29s processwrapper-sandbox ... (8 actions, 7 running)
+[4,714 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 30s processwrapper-sandbox ... (8 actions, 7 running)
+[4,714 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 32s processwrapper-sandbox ... (9 actions, 8 running)
+[4,715 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 33s processwrapper-sandbox ... (8 actions, 7 running)
+[4,718 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 35s processwrapper-sandbox ... (8 actions, 7 running)
+[4,720 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 36s processwrapper-sandbox ... (9 actions, 8 running)
+[4,721 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 37s processwrapper-sandbox ... (9 actions, 8 running)
+[4,723 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 38s processwrapper-sandbox ... (8 actions, 7 running)
+[4,725 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 40s processwrapper-sandbox ... (8 actions, 7 running)
+[4,726 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 41s processwrapper-sandbox ... (9 actions, 8 running)
+[4,727 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 42s processwrapper-sandbox ... (8 actions, 7 running)
+[4,730 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 43s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]:
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.AluOp. You can use coralnpu.AluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.BruOp. You can use coralnpu.BruOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.MluOp. You can use coralnpu.MluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.LsuOp. You can use coralnpu.LsuOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.CsrOp. You can use coralnpu.CsrOp.safe to cast without this warning.
+[warn] There were 5 warning(s) during hardware elaboration.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.AluOp. You can use coralnpu.AluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.BruOp. You can use coralnpu.BruOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.MluOp. You can use coralnpu.MluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.LsuOp. You can use coralnpu.LsuOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.CsrOp. You can use coralnpu.CsrOp.safe to cast without this warning.
+[warn] There were 5 warning(s) during hardware elaboration.
+target: bazel-out/k8-opt-exec-ST-a828a81199fe/bin/hdl/chisel/src/coralnpu
+[4,732 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_highmem_axi_cc_library_emit_verilog [for tool]; 45s processwrapper-sandbox ... (9 actions, 8 running)
+[4,735 / 4,956] Compiling tensorflow/lite/micro/kernels/split.cc; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,737 / 4,956] Compiling tensorflow/lite/micro/kernels/space_to_depth.cc; 4s processwrapper-sandbox ... (9 actions, 8 running)
+[4,738 / 4,956] Compiling tensorflow/lite/micro/kernels/space_to_depth.cc; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,740 / 4,956] Compiling tensorflow/lite/micro/kernels/ceil.cc; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,741 / 4,956] Compiling tensorflow/lite/micro/kernels/ceil.cc; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,743 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[4,744 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[4,744 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog; 10s processwrapper-sandbox ... (9 actions, 8 running)
+[4,747 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog; 12s processwrapper-sandbox ... (9 actions, 8 running)
+[4,748 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog; 14s processwrapper-sandbox ... (8 actions, 7 running)
+[4,750 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog; 15s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog:
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.AluOp. You can use coralnpu.AluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.BruOp. You can use coralnpu.BruOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.MluOp. You can use coralnpu.MluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.LsuOp. You can use coralnpu.LsuOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.CsrOp. You can use coralnpu.CsrOp.safe to cast without this warning.
+[warn] There were 5 warning(s) during hardware elaboration.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.AluOp. You can use coralnpu.AluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.BruOp. You can use coralnpu.BruOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.MluOp. You can use coralnpu.MluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.LsuOp. You can use coralnpu.LsuOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.CsrOp. You can use coralnpu.CsrOp.safe to cast without this warning.
+[warn] There were 5 warning(s) during hardware elaboration.
+target: bazel-out/k8-fastbuild/bin/hdl/chisel/src/coralnpu
+[4,751 / 4,956] Compiling tensorflow/lite/micro/kernels/circular_buffer.cc; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,753 / 4,956] Compiling tensorflow/lite/micro/kernels/softmax.cc; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,754 / 4,956] Compiling src/V3Delayed.cpp [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,754 / 4,956] Compiling src/V3Delayed.cpp [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,758 / 4,956] Compiling tensorflow/lite/micro/kernels/slice.cc; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,758 / 4,956] Compiling tensorflow/lite/micro/kernels/slice.cc; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,759 / 4,956] Compiling tensorflow/lite/micro/kernels/slice.cc; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,760 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,761 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 10s processwrapper-sandbox ... (8 actions, 7 running)
+[4,764 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 12s processwrapper-sandbox ... (9 actions, 8 running)
+[4,765 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 13s processwrapper-sandbox ... (9 actions, 8 running)
+[4,768 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 14s processwrapper-sandbox ... (8 actions, 7 running)
+[4,769 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 16s processwrapper-sandbox ... (8 actions running)
+[4,771 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 17s processwrapper-sandbox ... (9 actions, 7 running)
+[4,773 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 18s processwrapper-sandbox ... (8 actions, 7 running)
+[4,774 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 20s processwrapper-sandbox ... (9 actions, 8 running)
+[4,775 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 22s processwrapper-sandbox ... (9 actions, 8 running)
+[4,778 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 24s processwrapper-sandbox ... (9 actions, 8 running)
+[4,779 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 25s processwrapper-sandbox ... (8 actions, 7 running)
+[4,779 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 27s processwrapper-sandbox ... (9 actions, 8 running)
+[4,780 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 28s processwrapper-sandbox ... (8 actions, 7 running)
+[4,781 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 30s processwrapper-sandbox ... (8 actions, 7 running)
+[4,782 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 31s processwrapper-sandbox ... (9 actions, 8 running)
+[4,783 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 32s processwrapper-sandbox ... (8 actions, 7 running)
+[4,784 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 34s processwrapper-sandbox ... (9 actions, 8 running)
+[4,786 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 35s processwrapper-sandbox ... (8 actions, 7 running)
+[4,787 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 37s processwrapper-sandbox ... (8 actions, 7 running)
+[4,787 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 38s processwrapper-sandbox ... (9 actions, 8 running)
+[4,788 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 39s processwrapper-sandbox ... (9 actions, 8 running)
+[4,790 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 40s processwrapper-sandbox ... (8 actions, 7 running)
+[4,791 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 41s processwrapper-sandbox ... (8 actions, 7 running)
+[4,792 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 42s processwrapper-sandbox ... (8 actions, 7 running)
+[4,793 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 44s processwrapper-sandbox ... (9 actions, 8 running)
+[4,794 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 45s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]:
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.AluOp. You can use coralnpu.AluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.BruOp. You can use coralnpu.BruOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.MluOp. You can use coralnpu.MluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.LsuOp. You can use coralnpu.LsuOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.CsrOp. You can use coralnpu.CsrOp.safe to cast without this warning.
+[warn] There were 5 warning(s) during hardware elaboration.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.AluOp. You can use coralnpu.AluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.BruOp. You can use coralnpu.BruOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.MluOp. You can use coralnpu.MluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.LsuOp. You can use coralnpu.LsuOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.CsrOp. You can use coralnpu.CsrOp.safe to cast without this warning.
+[warn] There were 5 warning(s) during hardware elaboration.
+target: bazel-out/k8-opt-exec-ST-a828a81199fe/bin/hdl/chisel/src/coralnpu
+[4,795 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:core_mini_axi_cc_library_emit_verilog [for tool]; 47s processwrapper-sandbox ... (9 actions, 8 running)
+[4,796 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog [for tool]; 31s processwrapper-sandbox ... (9 actions, 8 running)
+[4,799 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog [for tool]; 32s processwrapper-sandbox ... (8 actions, 7 running)
+[4,800 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog [for tool]; 33s processwrapper-sandbox ... (8 actions, 7 running)
+[4,800 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog [for tool]; 35s processwrapper-sandbox ... (9 actions, 8 running)
+[4,803 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog [for tool]; 37s processwrapper-sandbox ... (8 actions, 7 running)
+[4,805 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog [for tool]; 38s processwrapper-sandbox ... (8 actions, 7 running)
+[4,806 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog [for tool]; 39s processwrapper-sandbox ... (9 actions, 8 running)
+[4,808 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog [for tool]; 41s processwrapper-sandbox ... (8 actions, 7 running)
+[4,809 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog [for tool]; 42s processwrapper-sandbox ... (8 actions, 7 running)
+[4,810 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog [for tool]; 43s processwrapper-sandbox ... (8 actions, 7 running)
+[4,811 / 4,956] Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog [for tool]; 44s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Executing genrule //hdl/chisel/src/coralnpu:rvv_core_mini_axi_cc_library_emit_verilog [for tool]:
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.AluOp. You can use coralnpu.AluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.BruOp. You can use coralnpu.BruOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.MluOp. You can use coralnpu.MluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.LsuOp. You can use coralnpu.LsuOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.CsrOp. You can use coralnpu.CsrOp.safe to cast without this warning.
+[warn] There were 5 warning(s) during hardware elaboration.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.AluOp. You can use coralnpu.AluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.BruOp. You can use coralnpu.BruOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.MluOp. You can use coralnpu.MluOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.LsuOp. You can use coralnpu.LsuOp.safe to cast without this warning.
+[warn] app/hdl/chisel/src/common/Library.scala 243:10: [W001] Casting non-literal UInt to coralnpu.CsrOp. You can use coralnpu.CsrOp.safe to cast without this warning.
+[warn] There were 5 warning(s) during hardware elaboration.
+target: bazel-out/k8-opt-exec-ST-a828a81199fe/bin/hdl/chisel/src/coralnpu
+[4,813 / 4,956] Compiling src/V3Sched.cpp [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,814 / 4,956] Compiling src/V3Sched.cpp [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,817 / 4,956] Compiling src/V3DfgDecomposition.cpp [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,818 / 4,956] Compiling tensorflow/lite/micro/kernels/neg.cc; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,820 / 4,956] Compiling tensorflow/lite/micro/kernels/mul_common.cc; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,822 / 4,956] Compiling tensorflow/lite/micro/kernels/mul.cc; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,825 / 4,956] Compiling src/V3Randomize.cpp [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,825 / 4,956] Compiling src/V3Randomize.cpp [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[4,826 / 4,956] Compiling src/V3Randomize.cpp [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+[4,828 / 4,956] Compiling src/V3Randomize.cpp [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[4,830 / 4,956] Compiling src/V3DfgDfgToAst.cpp [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,833 / 4,956] Compiling tensorflow/lite/micro/kernels/logistic_common.cc; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,834 / 4,956] Compiling src/V3PreProc.cpp [for tool]; 4s processwrapper-sandbox ... (9 actions, 8 running)
+[4,835 / 4,956] Compiling src/V3PreProc.cpp [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,837 / 4,956] Compiling src/V3PreProc.cpp [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,838 / 4,956] Compiling src/V3PreProc.cpp [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,840 / 4,956] Compiling src/V3PreProc.cpp [for tool]; 11s processwrapper-sandbox ... (8 actions, 7 running)
+[4,841 / 4,956] Compiling src/V3PreProc.cpp [for tool]; 12s processwrapper-sandbox ... (9 actions, 8 running)
+[4,844 / 4,956] Compiling tensorflow/lite/micro/kernels/leaky_relu.cc; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,847 / 4,956] Compiling src/V3DfgPasses.cpp [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,849 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,849 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[4,850 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,852 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[4,853 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 11s processwrapper-sandbox ... (9 actions, 8 running)
+[4,855 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 12s processwrapper-sandbox ... (8 actions, 7 running)
+[4,855 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 14s processwrapper-sandbox ... (9 actions, 8 running)
+[4,857 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 15s processwrapper-sandbox ... (9 actions, 8 running)
+[4,860 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 16s processwrapper-sandbox ... (8 actions, 7 running)
+[4,860 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 18s processwrapper-sandbox ... (9 actions, 8 running)
+[4,862 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 19s processwrapper-sandbox ... (8 actions, 7 running)
+[4,862 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 21s processwrapper-sandbox ... (9 actions, 8 running)
+[4,865 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 22s processwrapper-sandbox ... (9 actions, 8 running)
+[4,867 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 23s processwrapper-sandbox ... (8 actions, 7 running)
+[4,867 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 25s processwrapper-sandbox ... (9 actions, 8 running)
+[4,870 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 26s processwrapper-sandbox ... (8 actions, 7 running)
+[4,872 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 28s processwrapper-sandbox ... (8 actions, 7 running)
+[4,873 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 29s processwrapper-sandbox ... (9 actions, 8 running)
+[4,876 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 30s processwrapper-sandbox ... (8 actions, 7 running)
+[4,877 / 4,956] Compiling src/V3ParseGrammar.cpp [for tool]; 32s processwrapper-sandbox ... (9 actions, 8 running)
+[4,880 / 4,956] Compiling tensorflow/lite/micro/kernels/embedding_lookup.cc; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,882 / 4,956] Compiling src/V3Options.cpp [for tool]; 5s processwrapper-sandbox ... (8 actions running)
+[4,883 / 4,956] Compiling src/V3Options.cpp [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,886 / 4,956] Compiling src/V3Options.cpp [for tool]; 9s processwrapper-sandbox ... (8 actions running)
+[4,892 / 4,956] Compiling src/V3Options.cpp [for tool]; 11s processwrapper-sandbox ... (8 actions, 7 running)
+[4,893 / 4,956] Compiling src/V3Options.cpp [for tool]; 12s processwrapper-sandbox ... (8 actions running)
+[4,896 / 4,956] Compiling src/V3EmitCFunc.cpp [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,899 / 4,956] Compiling src/V3EmitCFunc.cpp [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,901 / 4,956] Compiling src/V3LinkDot.cpp [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,901 / 4,956] Compiling src/V3LinkDot.cpp [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[4,903 / 4,956] Compiling src/V3LinkDot.cpp [for tool]; 8s processwrapper-sandbox ... (8 actions running)
+[4,907 / 4,956] Compiling src/V3LinkDot.cpp [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[4,907 / 4,956] Compiling src/V3LinkDot.cpp [for tool]; 11s processwrapper-sandbox ... (9 actions, 8 running)
+[4,911 / 4,956] Compiling src/V3LinkDot.cpp [for tool]; 12s processwrapper-sandbox ... (8 actions, 7 running)
+[4,912 / 4,956] Compiling src/V3LinkDot.cpp [for tool]; 13s processwrapper-sandbox ... (8 actions, 7 running)
+[4,915 / 4,956] Compiling src/V3LinkDot.cpp [for tool]; 14s processwrapper-sandbox ... (8 actions, 7 running)
+[4,917 / 4,956] Compiling src/V3LinkDot.cpp [for tool]; 16s processwrapper-sandbox ... (9 actions, 8 running)
+[4,918 / 4,956] Compiling src/V3LinkDot.cpp [for tool]; 17s processwrapper-sandbox ... (8 actions, 7 running)
+[4,919 / 4,956] Compiling src/V3Gate.cpp [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,921 / 4,956] Compiling src/V3Gate.cpp [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,922 / 4,956] Compiling src/V3Gate.cpp [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+[4,924 / 4,956] Compiling src/V3EmitCImp.cpp [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,926 / 4,956] Compiling src/V3EmitCImp.cpp [for tool]; 10s processwrapper-sandbox ... (9 actions, 8 running)
+[4,927 / 4,956] Compiling src/V3EmitCImp.cpp [for tool]; 12s processwrapper-sandbox ... (9 actions, 8 running)
+[4,930 / 4,956] Compiling src/V3EmitV.cpp [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,932 / 4,956] Compiling src/V3EmitMk.cpp [for tool]; 7s processwrapper-sandbox ... (6 actions running)
+[4,933 / 4,956] Compiling src/V3EmitCSyms.cpp [for tool]; 6s processwrapper-sandbox ... (5 actions running)
+[4,936 / 4,956] Compiling src/V3EmitCSyms.cpp [for tool]; 8s processwrapper-sandbox ... (2 actions running)
+[4,937 / 4,956] Compiling src/V3EmitCModel.cpp [for tool]; 12s processwrapper-sandbox
+[4,947 / 4,956] [Scann] Compiling tests/verilator_sim/coralnpu/core_mini_axi_tb.cc
+[4,947 / 5,182] Compiling tests/verilator_sim/coralnpu/core_mini_axi_tb.cc; 1s processwrapper-sandbox ... (7 actions, 5 running)
+[4,947 / 5,190] Compiling tests/verilator_sim/coralnpu/core_mini_axi_tb.cc; 2s processwrapper-sandbox ... (8 actions, 5 running)
+[4,948 / 5,190] Compiling tests/verilator_sim/coralnpu/core_mini_axi_tb.cc; 4s processwrapper-sandbox ... (9 actions, 6 running)
+[4,948 / 5,190] Compiling tests/verilator_sim/coralnpu/core_mini_axi_tb.cc; 5s processwrapper-sandbox ... (9 actions, 6 running)
+[4,950 / 5,190] 1 / 215 tests; Compiling tests/verilator_sim/coralnpu/core_mini_axi_tb.cc; 6s processwrapper-sandbox ... (8 actions, 5 running)
+[4,950 / 5,190] 1 / 215 tests; Compiling tests/verilator_sim/coralnpu/core_mini_axi_tb.cc; 7s processwrapper-sandbox ... (8 actions, 6 running)
+[4,951 / 5,190] 1 / 215 tests; Compiling tests/verilator_sim/coralnpu/core_mini_axi_tb.cc; 9s processwrapper-sandbox ... (9 actions, 6 running)
+[4,951 / 5,190] 1 / 215 tests; Compiling tests/verilator_sim/coralnpu/core_mini_axi_tb.cc; 11s processwrapper-sandbox ... (9 actions, 6 running)
+[4,956 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 13s processwrapper-sandbox ... (8 actions, 4 running)
+[4,956 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 15s processwrapper-sandbox ... (8 actions, 5 running)
+[4,957 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 16s processwrapper-sandbox ... (9 actions, 4 running)
+[4,957 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 26s processwrapper-sandbox ... (9 actions, 4 running)
+[4,957 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 56s processwrapper-sandbox ... (9 actions, 4 running)
+[4,957 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 111s processwrapper-sandbox ... (9 actions, 5 running)
+[4,957 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 112s processwrapper-sandbox ... (9 actions, 5 running)
+[4,957 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 116s processwrapper-sandbox ... (9 actions, 5 running)
+[4,957 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 121s processwrapper-sandbox ... (9 actions, 6 running)
+[4,957 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 123s processwrapper-sandbox ... (9 actions, 6 running)
+[4,957 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 137s processwrapper-sandbox ... (9 actions, 7 running)
+[4,957 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 139s processwrapper-sandbox ... (9 actions, 7 running)
+[4,957 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 140s processwrapper-sandbox ... (9 actions, 8 running)
+[4,957 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 142s processwrapper-sandbox ... (9 actions, 8 running)
+[4,957 / 5,190] 2 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 143s processwrapper-sandbox ... (9 actions, 8 running)
+[4,962 / 5,190] 7 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 145s processwrapper-sandbox ... (8 actions, 4 running)
+[4,963 / 5,190] 7 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 146s processwrapper-sandbox ... (9 actions, 4 running)
+[4,963 / 5,190] 7 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 149s processwrapper-sandbox ... (9 actions, 5 running)
+[4,963 / 5,190] 7 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 150s processwrapper-sandbox ... (9 actions, 5 running)
+[4,963 / 5,190] 7 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 157s processwrapper-sandbox ... (9 actions, 5 running)
+[4,963 / 5,190] 7 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 158s processwrapper-sandbox ... (9 actions, 6 running)
+[4,963 / 5,190] 7 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 160s processwrapper-sandbox ... (9 actions, 6 running)
+[4,963 / 5,190] 7 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 164s processwrapper-sandbox ... (9 actions, 7 running)
+[4,963 / 5,190] 7 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 166s processwrapper-sandbox ... (9 actions, 7 running)
+[4,963 / 5,190] 7 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 170s processwrapper-sandbox ... (9 actions, 8 running)
+[4,963 / 5,190] 7 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 172s processwrapper-sandbox ... (9 actions, 8 running)
+[4,963 / 5,190] 7 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8; 185s processwrapper-sandbox ... (9 actions, 8 running)
+[4,968 / 5,190] 12 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024; 179s processwrapper-sandbox ... (8 actions, 4 running)
+[4,968 / 5,190] 12 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024; 181s processwrapper-sandbox ... (8 actions, 5 running)
+[4,969 / 5,190] 12 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024; 182s processwrapper-sandbox ... (9 actions, 4 running)
+[4,969 / 5,190] 12 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024; 186s processwrapper-sandbox ... (9 actions, 5 running)
+[4,969 / 5,190] 12 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024; 187s processwrapper-sandbox ... (9 actions, 5 running)
+[4,969 / 5,190] 12 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024; 189s processwrapper-sandbox ... (9 actions, 6 running)
+[4,969 / 5,190] 12 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024; 190s processwrapper-sandbox ... (9 actions, 6 running)
+[4,969 / 5,190] 12 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024; 193s processwrapper-sandbox ... (9 actions, 6 running)
+[4,969 / 5,190] 12 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024; 196s processwrapper-sandbox ... (9 actions, 7 running)
+[4,969 / 5,190] 12 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024; 197s processwrapper-sandbox ... (9 actions, 8 running)
+[4,969 / 5,190] 12 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024; 199s processwrapper-sandbox ... (9 actions, 8 running)
+[4,974 / 5,190] 17 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride2; 193s processwrapper-sandbox ... (8 actions, 4 running)
+[4,974 / 5,190] 17 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride2; 194s processwrapper-sandbox ... (8 actions, 5 running)
+[4,975 / 5,190] 17 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride2; 196s processwrapper-sandbox ... (9 actions, 4 running)
+[4,975 / 5,190] 17 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride2; 197s processwrapper-sandbox ... (9 actions, 5 running)
+[4,975 / 5,190] 17 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride2; 200s processwrapper-sandbox ... (9 actions, 6 running)
+[4,975 / 5,190] 17 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride2; 201s processwrapper-sandbox ... (9 actions, 6 running)
+[4,975 / 5,190] 17 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride2; 204s processwrapper-sandbox ... (9 actions, 7 running)
+[4,975 / 5,190] 17 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride2; 206s processwrapper-sandbox ... (9 actions, 7 running)
+[4,975 / 5,190] 17 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride2; 217s processwrapper-sandbox ... (9 actions, 8 running)
+[4,980 / 5,190] 22 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64; 30s processwrapper-sandbox ... (8 actions, 4 running)
+[4,980 / 5,190] 22 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64; 32s processwrapper-sandbox ... (8 actions, 5 running)
+[4,981 / 5,190] 22 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64; 33s processwrapper-sandbox ... (9 actions, 4 running)
+[4,981 / 5,190] 22 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64; 35s processwrapper-sandbox ... (9 actions, 5 running)
+[4,981 / 5,190] 22 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64; 37s processwrapper-sandbox ... (9 actions, 5 running)
+[4,981 / 5,190] 22 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64; 38s processwrapper-sandbox ... (9 actions, 6 running)
+[4,981 / 5,190] 22 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64; 40s processwrapper-sandbox ... (9 actions, 6 running)
+[4,981 / 5,190] 22 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64; 44s processwrapper-sandbox ... (9 actions, 6 running)
+[4,981 / 5,190] 22 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64; 47s processwrapper-sandbox ... (9 actions, 7 running)
+[4,981 / 5,190] 22 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64; 48s processwrapper-sandbox ... (9 actions, 7 running)
+[4,981 / 5,190] 22 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64; 50s processwrapper-sandbox ... (9 actions, 8 running)
+[4,981 / 5,190] 22 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64; 52s processwrapper-sandbox ... (9 actions, 8 running)
+[4,986 / 5,190] 27 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 25s processwrapper-sandbox ... (8 actions, 5 running)
+[4,987 / 5,190] 28 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 26s processwrapper-sandbox ... (8 actions, 4 running)
+[4,988 / 5,190] 28 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 28s processwrapper-sandbox ... (9 actions, 4 running)
+[4,988 / 5,190] 28 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 30s processwrapper-sandbox ... (9 actions, 5 running)
+[4,988 / 5,190] 28 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 31s processwrapper-sandbox ... (9 actions, 6 running)
+[4,988 / 5,190] 28 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 34s processwrapper-sandbox ... (9 actions, 7 running)
+[4,988 / 5,190] 28 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 35s processwrapper-sandbox ... (9 actions, 7 running)
+[4,988 / 5,190] 28 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 38s processwrapper-sandbox ... (9 actions, 7 running)
+[4,988 / 5,190] 28 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 53s processwrapper-sandbox ... (9 actions, 8 running)
+[4,988 / 5,190] 28 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 54s processwrapper-sandbox ... (9 actions, 8 running)
+[4,988 / 5,190] 28 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 60s processwrapper-sandbox ... (9 actions, 8 running)
+[4,993 / 5,190] 33 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 62s processwrapper-sandbox ... (8 actions, 4 running)
+[4,993 / 5,190] 33 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 64s processwrapper-sandbox ... (8 actions, 5 running)
+[4,994 / 5,190] 33 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 65s processwrapper-sandbox ... (9 actions, 4 running)
+[4,994 / 5,190] 33 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 67s processwrapper-sandbox ... (9 actions, 5 running)
+[4,994 / 5,190] 33 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 68s processwrapper-sandbox ... (9 actions, 5 running)
+[4,994 / 5,190] 33 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 75s processwrapper-sandbox ... (9 actions, 5 running)
+[4,994 / 5,190] 33 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 96s processwrapper-sandbox ... (9 actions, 6 running)
+[4,994 / 5,190] 33 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 97s processwrapper-sandbox ... (9 actions, 6 running)
+[4,994 / 5,190] 33 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 99s processwrapper-sandbox ... (9 actions, 7 running)
+[4,994 / 5,190] 33 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 100s processwrapper-sandbox ... (9 actions, 7 running)
+[4,994 / 5,190] 33 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1; 101s processwrapper-sandbox ... (9 actions, 8 running)
+[4,999 / 5,190] 38 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 96s processwrapper-sandbox ... (8 actions, 4 running)
+[4,999 / 5,190] 38 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 99s processwrapper-sandbox ... (8 actions, 5 running)
+[5,000 / 5,190] 38 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 100s processwrapper-sandbox ... (9 actions, 4 running)
+[5,000 / 5,190] 38 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 104s processwrapper-sandbox ... (9 actions, 5 running)
+[5,000 / 5,190] 38 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 105s processwrapper-sandbox ... (9 actions, 5 running)
+[5,000 / 5,190] 38 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 110s processwrapper-sandbox ... (9 actions, 5 running)
+[5,000 / 5,190] 38 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 140s processwrapper-sandbox ... (9 actions, 5 running)
+[5,000 / 5,190] 38 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 185s processwrapper-sandbox ... (9 actions, 6 running)
+[5,000 / 5,190] 38 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 186s processwrapper-sandbox ... (9 actions, 6 running)
+[5,000 / 5,190] 38 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 196s processwrapper-sandbox ... (9 actions, 7 running)
+[5,000 / 5,190] 38 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 197s processwrapper-sandbox ... (9 actions, 7 running)
+[5,000 / 5,190] 38 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 199s processwrapper-sandbox ... (9 actions, 8 running)
+[5,005 / 5,190] 43 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 200s processwrapper-sandbox ... (8 actions, 4 running)
+[5,005 / 5,190] 43 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 202s processwrapper-sandbox ... (8 actions, 5 running)
+[5,006 / 5,190] 43 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 204s processwrapper-sandbox ... (9 actions, 4 running)
+[5,006 / 5,190] 43 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 214s processwrapper-sandbox ... (9 actions, 4 running)
+[5,006 / 5,190] 43 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 224s processwrapper-sandbox ... (9 actions, 5 running)
+[5,006 / 5,190] 43 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 225s processwrapper-sandbox ... (9 actions, 5 running)
+[5,006 / 5,190] 43 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 228s processwrapper-sandbox ... (9 actions, 6 running)
+[5,006 / 5,190] 43 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 229s processwrapper-sandbox ... (9 actions, 6 running)
+[5,006 / 5,190] 43 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 236s processwrapper-sandbox ... (9 actions, 7 running)
+[5,006 / 5,190] 43 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 237s processwrapper-sandbox ... (9 actions, 7 running)
+[5,006 / 5,190] 43 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 244s processwrapper-sandbox ... (9 actions, 7 running)
+[5,006 / 5,190] 43 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 245s processwrapper-sandbox ... (9 actions, 8 running)
+[5,011 / 5,190] 48 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 246s processwrapper-sandbox ... (8 actions, 4 running)
+[5,011 / 5,190] 48 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 248s processwrapper-sandbox ... (8 actions, 5 running)
+[5,012 / 5,190] 48 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 249s processwrapper-sandbox ... (9 actions, 4 running)
+[5,012 / 5,190] 48 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 251s processwrapper-sandbox ... (9 actions, 5 running)
+[5,012 / 5,190] 48 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 252s processwrapper-sandbox ... (9 actions, 5 running)
+[5,012 / 5,190] 48 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 254s processwrapper-sandbox ... (9 actions, 6 running)
+[5,012 / 5,190] 48 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 258s processwrapper-sandbox ... (9 actions, 7 running)
+[5,012 / 5,190] 48 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 259s processwrapper-sandbox ... (9 actions, 7 running)
+[5,012 / 5,190] 48 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8; 260s processwrapper-sandbox ... (9 actions, 8 running)
+[5,017 / 5,190] 53 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_store32_index32; 26s processwrapper-sandbox ... (8 actions, 4 running)
+[5,018 / 5,190] 54 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index8_seg; 12s processwrapper-sandbox ... (8 actions, 4 running)
+[5,019 / 5,190] 54 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index8_seg; 14s processwrapper-sandbox ... (9 actions, 4 running)
+[5,019 / 5,190] 54 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index8_seg; 16s processwrapper-sandbox ... (9 actions, 5 running)
+[5,019 / 5,190] 54 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index8_seg; 18s processwrapper-sandbox ... (9 actions, 6 running)
+[5,019 / 5,190] 54 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index8_seg; 19s processwrapper-sandbox ... (9 actions, 7 running)
+[5,019 / 5,190] 54 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index8_seg; 22s processwrapper-sandbox ... (9 actions, 8 running)
+[5,019 / 5,190] 54 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index8_seg; 23s processwrapper-sandbox ... (9 actions, 8 running)
+[5,019 / 5,190] 54 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index8_seg; 24s processwrapper-sandbox ... (9 actions, 8 running)
+[5,019 / 5,190] 54 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index8_seg; 35s processwrapper-sandbox ... (9 actions, 8 running)
+[5,024 / 5,190] 59 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test; 25s processwrapper-sandbox ... (8 actions, 4 running)
+[5,025 / 5,190] 59 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test; 27s processwrapper-sandbox ... (9 actions, 4 running)
+[5,025 / 5,190] 59 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test; 36s processwrapper-sandbox ... (9 actions, 4 running)
+[5,025 / 5,190] 59 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test; 38s processwrapper-sandbox ... (9 actions, 5 running)
+[5,025 / 5,190] 59 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test; 40s processwrapper-sandbox ... (9 actions, 5 running)
+[5,025 / 5,190] 59 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test; 47s processwrapper-sandbox ... (9 actions, 6 running)
+[5,025 / 5,190] 59 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test; 48s processwrapper-sandbox ... (9 actions, 6 running)
+[5,025 / 5,190] 59 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test; 50s processwrapper-sandbox ... (9 actions, 7 running)
+[5,025 / 5,190] 59 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test; 52s processwrapper-sandbox ... (9 actions, 7 running)
+[5,025 / 5,190] 59 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test; 55s processwrapper-sandbox ... (9 actions, 8 running)
+[5,025 / 5,190] 59 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test; 57s processwrapper-sandbox ... (9 actions, 8 running)
+[5,025 / 5,190] 59 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test; 63s processwrapper-sandbox ... (9 actions, 8 running)
+[5,030 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 59s processwrapper-sandbox ... (8 actions, 4 running)
+[5,030 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 64s processwrapper-sandbox ... (8 actions, 5 running)
+[5,031 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 65s processwrapper-sandbox ... (9 actions, 4 running)
+[5,031 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 69s processwrapper-sandbox ... (9 actions, 5 running)
+[5,031 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 71s processwrapper-sandbox ... (9 actions, 5 running)
+[5,031 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 76s processwrapper-sandbox ... (9 actions, 5 running)
+[5,031 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 83s processwrapper-sandbox ... (9 actions, 6 running)
+[5,031 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 84s processwrapper-sandbox ... (9 actions, 6 running)
+[5,031 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 106s processwrapper-sandbox ... (9 actions, 6 running)
+[5,031 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 111s processwrapper-sandbox ... (9 actions, 7 running)
+[5,031 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 112s processwrapper-sandbox ... (9 actions, 7 running)
+[5,031 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 114s processwrapper-sandbox ... (9 actions, 8 running)
+[5,031 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 115s processwrapper-sandbox ... (9 actions, 8 running)
+[5,031 / 5,190] 64 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 116s processwrapper-sandbox ... (9 actions, 8 running)
+[5,037 / 5,190] 70 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 118s processwrapper-sandbox ... (8 actions, 4 running)
+[5,037 / 5,190] 70 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 122s processwrapper-sandbox ... (8 actions, 5 running)
+[5,038 / 5,190] 70 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 124s processwrapper-sandbox ... (9 actions, 5 running)
+[5,038 / 5,190] 70 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 131s processwrapper-sandbox ... (9 actions, 6 running)
+[5,038 / 5,190] 70 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 133s processwrapper-sandbox ... (9 actions, 6 running)
+[5,038 / 5,190] 70 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 135s processwrapper-sandbox ... (9 actions, 8 running)
+[5,038 / 5,190] 70 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 136s processwrapper-sandbox ... (9 actions, 8 running)
+[5,038 / 5,190] 70 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test; 138s processwrapper-sandbox ... (9 actions, 8 running)
+[5,043 / 5,190] 75 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 16s processwrapper-sandbox ... (8 actions, 4 running)
+[5,044 / 5,190] 76 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 17s processwrapper-sandbox ... (8 actions, 5 running)
+[5,045 / 5,190] 76 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 19s processwrapper-sandbox ... (9 actions, 4 running)
+[5,045 / 5,190] 76 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 20s processwrapper-sandbox ... (9 actions, 5 running)
+[5,045 / 5,190] 76 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 21s processwrapper-sandbox ... (9 actions, 6 running)
+[5,045 / 5,190] 76 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 22s processwrapper-sandbox ... (9 actions, 7 running)
+[5,045 / 5,190] 76 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 24s processwrapper-sandbox ... (9 actions, 7 running)
+[5,045 / 5,190] 76 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 27s processwrapper-sandbox ... (9 actions, 8 running)
+[5,050 / 5,190] 81 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 29s processwrapper-sandbox ... (8 actions, 4 running)
+[5,050 / 5,190] 81 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 30s processwrapper-sandbox ... (8 actions, 5 running)
+[5,051 / 5,190] 81 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 32s processwrapper-sandbox ... (9 actions, 5 running)
+[5,051 / 5,190] 81 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 34s processwrapper-sandbox ... (9 actions, 6 running)
+[5,051 / 5,190] 81 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 35s processwrapper-sandbox ... (9 actions, 6 running)
+[5,051 / 5,190] 81 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 37s processwrapper-sandbox ... (9 actions, 7 running)
+[5,051 / 5,190] 81 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 39s processwrapper-sandbox ... (9 actions, 7 running)
+[5,055 / 5,190] 85 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 40s processwrapper-sandbox ... (8 actions, 5 running)
+[5,056 / 5,190] 86 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 42s processwrapper-sandbox ... (8 actions, 4 running)
+[5,057 / 5,190] 86 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 44s processwrapper-sandbox ... (9 actions, 4 running)
+[5,057 / 5,190] 86 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 45s processwrapper-sandbox ... (9 actions, 5 running)
+[5,057 / 5,190] 86 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 47s processwrapper-sandbox ... (9 actions, 5 running)
+[5,057 / 5,190] 86 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 53s processwrapper-sandbox ... (9 actions, 5 running)
+[5,057 / 5,190] 86 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 62s processwrapper-sandbox ... (9 actions, 6 running)
+[5,057 / 5,190] 86 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 64s processwrapper-sandbox ... (9 actions, 6 running)
+[5,057 / 5,190] 86 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 71s processwrapper-sandbox ... (9 actions, 7 running)
+[5,057 / 5,190] 86 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 73s processwrapper-sandbox ... (9 actions, 7 running)
+[5,057 / 5,190] 86 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 78s processwrapper-sandbox ... (9 actions, 8 running)
+[5,057 / 5,190] 86 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 80s processwrapper-sandbox ... (9 actions, 8 running)
+[5,057 / 5,190] 86 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 83s processwrapper-sandbox ... (9 actions, 8 running)
+[5,057 / 5,190] 86 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver; 92s processwrapper-sandbox ... (9 actions, 8 running)
+[5,062 / 5,190] 91 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool64stride2; 53s processwrapper-sandbox ... (8 actions, 4 running)
+[5,063 / 5,190] 91 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool64stride2; 54s processwrapper-sandbox ... (9 actions, 4 running)
+[5,063 / 5,190] 91 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool64stride2; 56s processwrapper-sandbox ... (9 actions, 5 running)
+[5,063 / 5,190] 91 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool64stride2; 58s processwrapper-sandbox ... (9 actions, 5 running)
+[5,063 / 5,190] 91 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool64stride2; 62s processwrapper-sandbox ... (9 actions, 6 running)
+[5,063 / 5,190] 91 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool64stride2; 63s processwrapper-sandbox ... (9 actions, 6 running)
+[5,063 / 5,190] 91 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool64stride2; 64s processwrapper-sandbox ... (9 actions, 7 running)
+[5,063 / 5,190] 91 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool64stride2; 66s processwrapper-sandbox ... (9 actions, 8 running)
+[5,068 / 5,190] 96 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2; 46s processwrapper-sandbox ... (8 actions, 4 running)
+[5,068 / 5,190] 96 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2; 47s processwrapper-sandbox ... (8 actions, 5 running)
+[5,070 / 5,190] 96 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2; 49s processwrapper-sandbox ... (8 actions, 4 running)
+[5,070 / 5,190] 96 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2; 52s processwrapper-sandbox ... (8 actions, 5 running)
+[5,070 / 5,190] 96 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2; 54s processwrapper-sandbox ... (8 actions, 5 running)
+[5,070 / 5,190] 96 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2; 58s processwrapper-sandbox ... (8 actions, 5 running)
+[5,070 / 5,190] 96 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2; 79s processwrapper-sandbox ... (8 actions, 6 running)
+[5,070 / 5,190] 96 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2; 80s processwrapper-sandbox ... (8 actions, 6 running)
+[5,070 / 5,190] 96 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2; 82s processwrapper-sandbox ... (8 actions, 7 running)
+[5,070 / 5,190] 96 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2; 84s processwrapper-sandbox ... (8 actions, 7 running)
+[5,070 / 5,190] 96 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2; 85s processwrapper-sandbox ... (8 actions running)
+[5,070 / 5,190] 96 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2; 87s processwrapper-sandbox ... (8 actions running)
+[5,076 / 5,190] 101 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 45s processwrapper-sandbox ... (8 actions, 5 running)
+[5,076 / 5,190] 101 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 47s processwrapper-sandbox ... (8 actions, 5 running)
+[5,076 / 5,190] 101 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 48s processwrapper-sandbox ... (8 actions, 6 running)
+[5,076 / 5,190] 101 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 50s processwrapper-sandbox ... (8 actions, 6 running)
+[5,076 / 5,190] 101 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 51s processwrapper-sandbox ... (8 actions, 7 running)
+[5,076 / 5,190] 101 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 53s processwrapper-sandbox ... (8 actions, 7 running)
+[5,076 / 5,190] 101 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 56s processwrapper-sandbox ... (8 actions, 7 running)
+[5,076 / 5,190] 101 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 86s processwrapper-sandbox ... (8 actions, 7 running)
+[5,076 / 5,190] 101 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 89s processwrapper-sandbox ... (8 actions running)
+[5,076 / 5,190] 101 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 91s processwrapper-sandbox ... (8 actions running)
+[5,076 / 5,190] 101 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 96s processwrapper-sandbox ... (8 actions running)
+[5,082 / 5,191] 106 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 97s processwrapper-sandbox ... (8 actions, 4 running)
+[5,082 / 5,191] 106 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 100s processwrapper-sandbox ... (8 actions, 5 running)
+[5,082 / 5,191] 106 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 101s processwrapper-sandbox ... (8 actions, 5 running)
+[5,082 / 5,191] 106 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 103s processwrapper-sandbox ... (8 actions, 6 running)
+[5,082 / 5,191] 106 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 104s processwrapper-sandbox ... (8 actions, 6 running)
+[5,082 / 5,191] 106 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 107s processwrapper-sandbox ... (8 actions, 6 running)
+[5,082 / 5,191] 106 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 137s processwrapper-sandbox ... (8 actions, 6 running)
+[5,082 / 5,191] 106 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 155s processwrapper-sandbox ... (8 actions, 7 running)
+[5,082 / 5,191] 106 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 157s processwrapper-sandbox ... (8 actions running)
+[5,082 / 5,191] 106 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 159s processwrapper-sandbox ... (8 actions running)
+[5,088 / 5,192] 111 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 160s processwrapper-sandbox ... (8 actions, 4 running)
+[5,088 / 5,192] 111 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 163s processwrapper-sandbox ... (8 actions, 5 running)
+[5,088 / 5,192] 111 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 165s processwrapper-sandbox ... (8 actions, 5 running)
+[5,088 / 5,192] 111 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 167s processwrapper-sandbox ... (8 actions, 6 running)
+[5,088 / 5,192] 111 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 170s processwrapper-sandbox ... (8 actions, 6 running)
+[5,088 / 5,192] 111 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 171s processwrapper-sandbox ... (8 actions, 7 running)
+[5,088 / 5,192] 111 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 173s processwrapper-sandbox ... (8 actions, 7 running)
+[5,088 / 5,192] 111 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 178s processwrapper-sandbox ... (8 actions running)
+[5,088 / 5,192] 111 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 179s processwrapper-sandbox ... (8 actions running)
+[5,088 / 5,192] 111 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 182s processwrapper-sandbox ... (8 actions running)
+[5,093 / 5,192] 116 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 183s processwrapper-sandbox ... (8 actions, 4 running)
+[5,093 / 5,192] 116 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 193s processwrapper-sandbox ... (8 actions, 4 running)
+[5,093 / 5,192] 116 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 195s processwrapper-sandbox ... (8 actions, 5 running)
+[5,093 / 5,192] 116 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 196s processwrapper-sandbox ... (8 actions, 5 running)
+[5,093 / 5,192] 116 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 198s processwrapper-sandbox ... (8 actions, 6 running)
+[5,093 / 5,192] 116 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 199s processwrapper-sandbox ... (8 actions, 6 running)
+[5,093 / 5,192] 116 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 201s processwrapper-sandbox ... (8 actions, 7 running)
+[5,093 / 5,192] 116 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 203s processwrapper-sandbox ... (8 actions, 7 running)
+[5,093 / 5,192] 116 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 205s processwrapper-sandbox ... (8 actions running)
+[5,093 / 5,192] 116 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256; 207s processwrapper-sandbox ... (8 actions running)
+[5,098 / 5,192] 121 / 215 tests; Testing //tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_csr_test; 44s processwrapper-sandbox ... (8 actions, 4 running)
+[5,098 / 5,192] 121 / 215 tests; Testing //tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_csr_test; 46s processwrapper-sandbox ... (8 actions, 5 running)
+[5,098 / 5,192] 121 / 215 tests; Testing //tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_csr_test; 48s processwrapper-sandbox ... (8 actions, 6 running)
+[5,098 / 5,192] 121 / 215 tests; Testing //tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_csr_test; 55s processwrapper-sandbox ... (8 actions, 6 running)
+[5,098 / 5,192] 121 / 215 tests; Testing //tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_csr_test; 57s processwrapper-sandbox ... (8 actions, 7 running)
+[5,098 / 5,192] 121 / 215 tests; Testing //tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_csr_test; 58s processwrapper-sandbox ... (8 actions, 7 running)
+[5,098 / 5,192] 121 / 215 tests; Testing //tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_csr_test; 61s processwrapper-sandbox ... (8 actions running)
+[5,098 / 5,192] 121 / 215 tests; Testing //tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_csr_test; 62s processwrapper-sandbox ... (8 actions running)
+[5,098 / 5,192] 121 / 215 tests; Testing //tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_csr_test; 66s processwrapper-sandbox ... (8 actions running)
+[5,103 / 5,192] 126 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x1; 20s processwrapper-sandbox ... (8 actions, 5 running)
+[5,103 / 5,192] 126 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x1; 22s processwrapper-sandbox ... (8 actions, 6 running)
+[5,103 / 5,192] 126 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x1; 24s processwrapper-sandbox ... (8 actions, 6 running)
+[5,103 / 5,192] 126 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x1; 25s processwrapper-sandbox ... (8 actions running)
+[5,103 / 5,192] 126 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x1; 27s processwrapper-sandbox ... (8 actions running)
+[5,108 / 5,192] 131 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_tests; 9s processwrapper-sandbox ... (8 actions, 4 running)
+[5,108 / 5,192] 131 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_tests; 10s processwrapper-sandbox ... (8 actions, 5 running)
+[5,108 / 5,192] 131 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_tests; 11s processwrapper-sandbox ... (8 actions, 6 running)
+[5,108 / 5,192] 131 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_tests; 13s processwrapper-sandbox ... (8 actions, 6 running)
+[5,108 / 5,192] 131 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_tests; 17s processwrapper-sandbox ... (8 actions, 7 running)
+[5,108 / 5,192] 131 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_tests; 19s processwrapper-sandbox ... (8 actions running)
+[5,108 / 5,192] 131 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_tests; 29s processwrapper-sandbox ... (8 actions running)
+[5,113 / 5,192] 136 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load32_index32_seg; 20s processwrapper-sandbox ... (8 actions, 4 running)
+[5,113 / 5,192] 136 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load32_index32_seg; 30s processwrapper-sandbox ... (8 actions, 4 running)
+[5,113 / 5,192] 136 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load32_index32_seg; 37s processwrapper-sandbox ... (8 actions, 5 running)
+[5,113 / 5,192] 136 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load32_index32_seg; 38s processwrapper-sandbox ... (8 actions, 5 running)
+[5,113 / 5,192] 136 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load32_index32_seg; 39s processwrapper-sandbox ... (8 actions, 6 running)
+[5,113 / 5,192] 136 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load32_index32_seg; 42s processwrapper-sandbox ... (8 actions, 7 running)
+[5,113 / 5,192] 136 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load32_index32_seg; 43s processwrapper-sandbox ... (8 actions, 7 running)
+[5,113 / 5,192] 136 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load32_index32_seg; 45s processwrapper-sandbox ... (8 actions running)
+[5,113 / 5,192] 136 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load32_index32_seg; 46s processwrapper-sandbox ... (8 actions running)
+[5,113 / 5,192] 136 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load32_index32_seg; 51s processwrapper-sandbox ... (8 actions running)
+[5,118 / 5,192] 141 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 51s processwrapper-sandbox ... (8 actions, 4 running)
+[5,118 / 5,192] 141 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 54s processwrapper-sandbox ... (8 actions, 5 running)
+[5,118 / 5,192] 141 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 56s processwrapper-sandbox ... (8 actions, 5 running)
+[5,118 / 5,192] 141 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 61s processwrapper-sandbox ... (8 actions, 5 running)
+[5,118 / 5,192] 141 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 63s processwrapper-sandbox ... (8 actions, 6 running)
+[5,118 / 5,192] 141 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 64s processwrapper-sandbox ... (8 actions, 6 running)
+[5,118 / 5,192] 141 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 84s processwrapper-sandbox ... (8 actions, 7 running)
+[5,118 / 5,192] 141 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 85s processwrapper-sandbox ... (8 actions, 7 running)
+[5,118 / 5,192] 141 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 86s processwrapper-sandbox ... (8 actions running)
+[5,118 / 5,192] 141 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 90s processwrapper-sandbox ... (8 actions running)
+[5,123 / 5,192] 146 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 92s processwrapper-sandbox ... (8 actions, 5 running)
+[5,123 / 5,192] 146 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 93s processwrapper-sandbox ... (8 actions, 5 running)
+[5,123 / 5,192] 146 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 99s processwrapper-sandbox ... (8 actions, 6 running)
+[5,123 / 5,192] 146 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 100s processwrapper-sandbox ... (8 actions, 7 running)
+[5,123 / 5,192] 146 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 102s processwrapper-sandbox ... (8 actions, 7 running)
+[5,123 / 5,192] 146 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 107s processwrapper-sandbox ... (8 actions running)
+[5,123 / 5,192] 146 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 108s processwrapper-sandbox ... (8 actions running)
+[5,123 / 5,192] 146 / 215 tests; Testing //tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx; 113s processwrapper-sandbox ... (8 actions running)
+[5,128 / 5,192] 151 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 23s processwrapper-sandbox ... (8 actions, 4 running)
+[5,128 / 5,192] 151 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 29s processwrapper-sandbox ... (8 actions, 5 running)
+[5,128 / 5,192] 151 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 30s processwrapper-sandbox ... (8 actions, 6 running)
+[5,128 / 5,192] 151 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 34s processwrapper-sandbox ... (8 actions, 6 running)
+[5,128 / 5,192] 151 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 35s processwrapper-sandbox ... (8 actions, 7 running)
+[5,128 / 5,192] 151 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 37s processwrapper-sandbox ... (8 actions running)
+[5,133 / 5,192] 156 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 38s processwrapper-sandbox ... (8 actions, 4 running)
+[5,133 / 5,192] 156 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 42s processwrapper-sandbox ... (8 actions, 5 running)
+[5,133 / 5,192] 156 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 44s processwrapper-sandbox ... (8 actions, 5 running)
+[5,133 / 5,192] 156 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 46s processwrapper-sandbox ... (8 actions, 7 running)
+[5,133 / 5,192] 156 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 47s processwrapper-sandbox ... (8 actions, 7 running)
+[5,133 / 5,192] 156 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 48s processwrapper-sandbox ... (8 actions, 7 running)
+[5,133 / 5,192] 156 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 53s processwrapper-sandbox ... (8 actions running)
+[5,133 / 5,192] 156 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 54s processwrapper-sandbox ... (8 actions running)
+[5,133 / 5,192] 156 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 56s processwrapper-sandbox ... (8 actions running)
+[5,138 / 5,192] 161 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 57s processwrapper-sandbox ... (8 actions, 4 running)
+[5,138 / 5,192] 161 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 62s processwrapper-sandbox ... (8 actions, 5 running)
+[5,138 / 5,192] 161 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 63s processwrapper-sandbox ... (8 actions, 6 running)
+[5,138 / 5,192] 161 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 65s processwrapper-sandbox ... (8 actions, 7 running)
+[5,138 / 5,192] 161 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 66s processwrapper-sandbox ... (8 actions, 7 running)
+[5,138 / 5,192] 161 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 68s processwrapper-sandbox ... (8 actions running)
+[5,138 / 5,192] 161 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 69s processwrapper-sandbox ... (8 actions running)
+[5,143 / 5,192] 166 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 71s processwrapper-sandbox ... (8 actions, 4 running)
+[5,143 / 5,192] 166 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 82s processwrapper-sandbox ... (8 actions, 4 running)
+[5,143 / 5,192] 166 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 85s processwrapper-sandbox ... (8 actions, 5 running)
+[5,143 / 5,192] 166 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 86s processwrapper-sandbox ... (8 actions, 5 running)
+[5,143 / 5,192] 166 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 88s processwrapper-sandbox ... (8 actions, 6 running)
+[5,143 / 5,192] 166 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 89s processwrapper-sandbox ... (8 actions, 6 running)
+[5,143 / 5,192] 166 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 91s processwrapper-sandbox ... (8 actions, 7 running)
+[5,143 / 5,192] 166 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 92s processwrapper-sandbox ... (8 actions running)
+[5,143 / 5,192] 166 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 93s processwrapper-sandbox ... (8 actions running)
+[5,143 / 5,192] 166 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 95s processwrapper-sandbox ... (8 actions running)
+[5,148 / 5,192] 171 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 96s processwrapper-sandbox ... (8 actions, 5 running)
+[5,148 / 5,192] 171 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 97s processwrapper-sandbox ... (8 actions, 6 running)
+[5,148 / 5,192] 171 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 100s processwrapper-sandbox ... (8 actions, 7 running)
+[5,148 / 5,192] 171 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 102s processwrapper-sandbox ... (8 actions running)
+[5,148 / 5,192] 171 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 103s processwrapper-sandbox ... (8 actions running)
+[5,153 / 5,192] 176 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 105s processwrapper-sandbox ... (8 actions, 5 running)
+[5,153 / 5,192] 176 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 106s processwrapper-sandbox ... (8 actions, 5 running)
+[5,153 / 5,192] 176 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 108s processwrapper-sandbox ... (8 actions, 6 running)
+[5,153 / 5,192] 176 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 109s processwrapper-sandbox ... (8 actions, 6 running)
+[5,153 / 5,192] 176 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 111s processwrapper-sandbox ... (8 actions running)
+[5,158 / 5,192] 181 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 112s processwrapper-sandbox ... (8 actions, 4 running)
+[5,158 / 5,192] 181 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 113s processwrapper-sandbox ... (8 actions, 5 running)
+[5,158 / 5,192] 181 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 117s processwrapper-sandbox ... (8 actions, 6 running)
+[5,160 / 5,192] 183 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 118s processwrapper-sandbox ... (8 actions, 6 running)
+[5,160 / 5,192] 183 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 120s processwrapper-sandbox ... (8 actions, 7 running)
+[5,160 / 5,192] 183 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 121s processwrapper-sandbox ... (8 actions, 7 running)
+[5,160 / 5,192] 183 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 124s processwrapper-sandbox ... (8 actions running)
+[5,160 / 5,192] 183 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 125s processwrapper-sandbox ... (8 actions running)
+[5,160 / 5,192] 183 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 128s processwrapper-sandbox ... (8 actions running)
+[5,160 / 5,192] 183 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 133s processwrapper-sandbox ... (8 actions running)
+[5,165 / 5,192] 188 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 134s processwrapper-sandbox ... (8 actions, 4 running)
+[5,165 / 5,192] 188 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 137s processwrapper-sandbox ... (8 actions, 5 running)
+[5,165 / 5,192] 188 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 138s processwrapper-sandbox ... (8 actions, 5 running)
+[5,165 / 5,192] 188 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 142s processwrapper-sandbox ... (8 actions, 6 running)
+[5,165 / 5,192] 188 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 143s processwrapper-sandbox ... (8 actions, 6 running)
+[5,165 / 5,192] 188 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 144s processwrapper-sandbox ... (8 actions, 6 running)
+[5,165 / 5,192] 188 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 146s processwrapper-sandbox ... (8 actions running)
+[5,165 / 5,192] 188 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 174s processwrapper-sandbox ... (8 actions running)
+[5,165 / 5,192] 188 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory; 177s processwrapper-sandbox ... (8 actions running)
+[5,170 / 5,192] 193 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index16_seg; 68s processwrapper-sandbox ... (8 actions, 4 running)
+[5,170 / 5,192] 193 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index16_seg; 78s processwrapper-sandbox ... (8 actions, 4 running)
+[5,170 / 5,192] 193 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index16_seg; 88s processwrapper-sandbox ... (8 actions, 5 running)
+[5,170 / 5,192] 193 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index16_seg; 89s processwrapper-sandbox ... (8 actions, 5 running)
+[5,170 / 5,192] 193 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index16_seg; 96s processwrapper-sandbox ... (8 actions, 6 running)
+[5,170 / 5,192] 193 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index16_seg; 97s processwrapper-sandbox ... (8 actions, 7 running)
+[5,170 / 5,192] 193 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index16_seg; 103s processwrapper-sandbox ... (8 actions running)
+[5,170 / 5,192] 193 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index16_seg; 104s processwrapper-sandbox ... (8 actions running)
+[5,170 / 5,192] 193 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index16_seg; 108s processwrapper-sandbox ... (8 actions running)
+[5,170 / 5,192] 193 / 215 tests; Testing //tests/cocotb:rvv_load_store_test_load8_index16_seg; 114s processwrapper-sandbox ... (8 actions running)
+[5,175 / 5,192] 198 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1; 81s processwrapper-sandbox ... (8 actions, 4 running)
+[5,175 / 5,192] 198 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1; 91s processwrapper-sandbox ... (8 actions, 4 running)
+[5,175 / 5,192] 198 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1; 121s processwrapper-sandbox ... (8 actions, 4 running)
+[5,175 / 5,192] 198 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1; 162s processwrapper-sandbox ... (8 actions, 5 running)
+[5,175 / 5,192] 198 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1; 163s processwrapper-sandbox ... (8 actions, 5 running)
+[5,175 / 5,192] 198 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1; 181s processwrapper-sandbox ... (8 actions, 5 running)
+[5,175 / 5,192] 198 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1; 183s processwrapper-sandbox ... (8 actions, 6 running)
+[5,175 / 5,192] 198 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1; 184s processwrapper-sandbox ... (8 actions, 6 running)
+[5,175 / 5,192] 198 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1; 189s processwrapper-sandbox ... (8 actions, 7 running)
+[5,175 / 5,192] 198 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1; 190s processwrapper-sandbox ... (8 actions, 7 running)
+[5,175 / 5,192] 198 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1; 197s processwrapper-sandbox ... (8 actions running)
+[5,175 / 5,192] 198 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1; 198s processwrapper-sandbox ... (8 actions running)
+[5,175 / 5,192] 198 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1; 204s processwrapper-sandbox ... (8 actions running)
+[5,180 / 5,192] 203 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 205s processwrapper-sandbox ... (8 actions, 4 running)
+[5,180 / 5,192] 203 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 209s processwrapper-sandbox ... (8 actions, 5 running)
+[5,180 / 5,192] 203 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 211s processwrapper-sandbox ... (8 actions, 5 running)
+[5,180 / 5,192] 203 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 212s processwrapper-sandbox ... (8 actions, 6 running)
+[5,180 / 5,192] 203 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 214s processwrapper-sandbox ... (8 actions, 6 running)
+[5,180 / 5,192] 203 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 216s processwrapper-sandbox ... (8 actions, 6 running)
+[5,180 / 5,192] 203 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 226s processwrapper-sandbox ... (8 actions, 7 running)
+[5,180 / 5,192] 203 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 227s processwrapper-sandbox ... (8 actions, 7 running)
+[5,180 / 5,192] 203 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 234s processwrapper-sandbox ... (8 actions running)
+[5,180 / 5,192] 203 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 236s processwrapper-sandbox ... (8 actions running)
+[5,180 / 5,192] 203 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 244s processwrapper-sandbox ... (8 actions running)
+[5,180 / 5,192] 203 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 264s processwrapper-sandbox ... (8 actions running)
+[5,185 / 5,192] 208 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 265s processwrapper-sandbox ... (7 actions, 4 running)
+[5,185 / 5,192] 208 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 271s processwrapper-sandbox ... (7 actions, 5 running)
+[5,185 / 5,192] 208 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 273s processwrapper-sandbox ... (7 actions, 5 running)
+[5,185 / 5,192] 208 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 275s processwrapper-sandbox ... (7 actions, 5 running)
+[5,185 / 5,192] 208 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 277s processwrapper-sandbox ... (7 actions, 6 running)
+[5,185 / 5,192] 208 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 279s processwrapper-sandbox ... (7 actions, 6 running)
+[5,185 / 5,192] 208 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 305s processwrapper-sandbox ... (7 actions, 6 running)
+[5,185 / 5,192] 208 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 359s processwrapper-sandbox ... (7 actions running)
+[5,185 / 5,192] 208 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 361s processwrapper-sandbox ... (7 actions running)
+[5,185 / 5,192] 208 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 365s processwrapper-sandbox ... (7 actions running)
+[5,185 / 5,192] 208 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 374s processwrapper-sandbox ... (7 actions running)
+[5,189 / 5,192] 212 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 376s processwrapper-sandbox ... (3 actions running)
+[5,189 / 5,192] 212 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 385s processwrapper-sandbox ... (3 actions running)
+[5,189 / 5,192] 212 / 215 tests; Testing //tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256; 387s processwrapper-sandbox ... (3 actions running)
+[5,190 / 5,192] 213 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_basic_write_read_memory; 154s processwrapper-sandbox ... (2 actions running)
+[5,190 / 5,192] 213 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_basic_write_read_memory; 164s processwrapper-sandbox ... (2 actions running)
+[5,190 / 5,192] 213 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_basic_write_read_memory; 173s processwrapper-sandbox ... (2 actions running)
+[5,191 / 5,192] 214 / 215 tests; Testing //tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_basic_write_read_memory; 174s processwrapper-sandbox
+INFO: Found 215 test targets...
+INFO: Elapsed time: 2342.920s, Critical Path: 495.84s
+INFO: 2595 processes: 20 internal, 2564 processwrapper-sandbox, 11 worker.
+INFO: Build completed successfully, 2595 total actions
+INFO: 
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_nonexistent_register PASSED in 5.7s
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_registers PASSED in 5.9s
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_breakpoint PASSED in 6.2s
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive   PASSED in 6.0s
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver  PASSED in 45.5s
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_halt_resume PASSED in 6.1s
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_hartsel    PASSED in 6.0s
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_ndmreset   PASSED in 6.2s
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_probe_impl PASSED in 5.8s
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_scalar_registers PASSED in 7.2s
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_single_step PASSED in 6.4s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_backdoor_load_test PASSED in 5.1s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_basic_write_read_memory PASSED in 151.3s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_burst_types_test   PASSED in 110.1s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_coralnpu_isa_test  PASSED in 3.0s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_csr_test           PASSED in 61.3s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_exceptions_test    PASSED in 3.2s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_finish_txn_before_halt_test PASSED in 2.8s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_float_csr_test     PASSED in 3.0s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_frm_test           PASSED in 3.0s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_master_write_alignment PASSED in 3.0s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_rand_instr_test    PASSED in 8.1s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_riscv_dv           PASSED in 7.2s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_riscv_tests        PASSED in 10.5s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_run_wfi_in_all_slots PASSED in 3.1s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_slow_bready        PASSED in 3.0s
+//tests/cocotb:core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test PASSED in 38.0s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_backdoor_load_test PASSED in 5.3s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory PASSED in 149.7s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test PASSED in 112.2s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_coralnpu_isa_test PASSED in 3.1s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_csr_test      PASSED in 59.4s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_exceptions_test PASSED in 3.1s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_finish_txn_before_halt_test PASSED in 2.9s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_float_csr_test PASSED in 2.9s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_frm_test      PASSED in 3.0s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_master_write_alignment PASSED in 2.9s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_rand_instr_test PASSED in 8.4s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_riscv_dv      PASSED in 7.3s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_riscv_tests   PASSED in 10.5s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_run_wfi_in_all_slots PASSED in 2.9s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_slow_bready   PASSED in 3.0s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_core_mini_axi_write_read_memory_stress_test PASSED in 38.6s
+//tests/cocotb:core_mini_axi_sim_cocotb_slow_unreachable_prefetch_fault  PASSED in 3.2s
+//tests/cocotb:core_mini_axi_sim_cocotb_unreachable_prefetch_fault       PASSED in 3.3s
+//tests/cocotb:rvv_arithmetic_cocotb_test_arithmetic_m1_vanilla_ops      PASSED in 5.1s
+//tests/cocotb:rvv_arithmetic_cocotb_test_binary_op_vx                   PASSED in 107.4s
+//tests/cocotb:rvv_arithmetic_cocotb_test_reduction_m1_failure_ops       PASSED in 4.6s
+//tests/cocotb:rvv_arithmetic_cocotb_test_reduction_m1_vanilla_ops       PASSED in 4.4s
+//tests/cocotb:rvv_arithmetic_cocotb_test_vnclip_test                    PASSED in 5.8s
+//tests/cocotb:rvv_arithmetic_cocotb_test_vnclipu_test                   PASSED in 5.7s
+//tests/cocotb:rvv_arithmetic_cocotb_test_vnsra_test                     PASSED in 5.7s
+//tests/cocotb:rvv_arithmetic_cocotb_test_vnsrl_test                     PASSED in 5.8s
+//tests/cocotb:rvv_arithmetic_cocotb_test_widen_math_ops_test_impl       PASSED in 4.8s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_rvv_add                PASSED in 3.0s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_rvv_load               PASSED in 3.0s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vcompress_test         PASSED in 8.8s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vcpop_exception_test   PASSED in 8.7s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vcpop_test             PASSED in 4.0s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vcsr_test              PASSED in 9.1s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vfirst_test            PASSED in 8.7s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vill_test              PASSED in 2.9s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_viota_test             PASSED in 8.3s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vl_test                PASSED in 5.5s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vmsbf_test             PASSED in 8.4s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vmsif_test             PASSED in 8.5s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vmsof_test             PASSED in 8.6s
+//tests/cocotb:rvv_assembly_cocotb_test_core_mini_vstart_store           PASSED in 2.9s
+//tests/cocotb:rvv_assembly_cocotb_test_vsetvl_test                      PASSED in 5.9s
+//tests/cocotb:rvv_assembly_cocotb_test_vslide1down_test                 PASSED in 5.7s
+//tests/cocotb:rvv_assembly_cocotb_test_vslide1up_test                   PASSED in 5.7s
+//tests/cocotb:rvv_assembly_cocotb_test_vslidedown_test                  PASSED in 12.9s
+//tests/cocotb:rvv_assembly_cocotb_test_vslideup_test                    PASSED in 14.5s
+//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_nonexistent_register PASSED in 5.8s
+//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_registers PASSED in 6.2s
+//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_breakpoint PASSED in 6.9s
+//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive PASSED in 5.8s
+//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver PASSED in 71.6s
+//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_halt_resume PASSED in 6.3s
+//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_hartsel PASSED in 5.9s
+//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_ndmreset PASSED in 5.9s
+//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_probe_impl PASSED in 6.0s
+//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_scalar_registers PASSED in 8.8s
+//tests/cocotb:rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_single_step PASSED in 6.5s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_backdoor_load_test PASSED in 5.9s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_basic_write_read_memory PASSED in 175.1s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_burst_types_test PASSED in 129.9s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_coralnpu_isa_test PASSED in 3.1s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_csr_test       PASSED in 101.3s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_exceptions_test PASSED in 3.5s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_finish_txn_before_halt_test PASSED in 2.9s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_float_csr_test PASSED in 2.9s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_frm_test       PASSED in 3.3s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_master_write_alignment PASSED in 3.1s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_rand_instr_test PASSED in 11.8s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_dv       PASSED in 10.5s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_tests    PASSED in 17.8s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_run_wfi_in_all_slots PASSED in 3.0s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_slow_bready    PASSED in 3.1s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test PASSED in 63.7s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_rvv_exceptions_test          PASSED in 3.0s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_backdoor_load_test PASSED in 5.6s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_basic_write_read_memory PASSED in 176.9s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_burst_types_test PASSED in 135.1s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_coralnpu_isa_test PASSED in 3.2s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_csr_test  PASSED in 77.9s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_exceptions_test PASSED in 3.3s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_finish_txn_before_halt_test PASSED in 2.8s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_float_csr_test PASSED in 3.0s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_frm_test  PASSED in 3.2s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_master_write_alignment PASSED in 3.0s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_rand_instr_test PASSED in 11.3s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_riscv_dv  PASSED in 10.2s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_riscv_tests PASSED in 17.5s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_run_wfi_in_all_slots PASSED in 3.0s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_slow_bready PASSED in 3.1s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_write_read_memory_stress_test PASSED in 63.4s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_rvv_exceptions_test     PASSED in 2.9s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_slow_unreachable_prefetch_fault PASSED in 3.6s
+//tests/cocotb:rvv_core_mini_axi_sim_cocotb_unreachable_prefetch_fault   PASSED in 3.5s
+//tests/cocotb:rvv_highmem_tests_core_mini_axi_basic_write_read_memory   PASSED in 22.2s
+//tests/cocotb:rvv_highmem_tests_core_mini_axi_run_wfi_in_all_slots_highmem PASSED in 3.0s
+//tests/cocotb:rvv_highmem_tests_core_mini_rvv_matmul_test               PASSED in 16.2s
+//tests/cocotb:rvv_highmem_tests_slow_core_mini_axi_basic_write_read_memory PASSED in 20.8s
+//tests/cocotb:rvv_highmem_tests_slow_core_mini_axi_run_wfi_in_all_slots_highmem PASSED in 3.1s
+//tests/cocotb:rvv_highmem_tests_slow_core_mini_rvv_matmul_test          PASSED in 16.2s
+//tests/cocotb:rvv_itcm512kb_dtcm512kb_tests_core_mini_axi_basic_write_read_memory PASSED in 19.9s
+//tests/cocotb:rvv_itcm512kb_dtcm512kb_tests_core_mini_axi_run_wfi_in_all_slots_itcm512kb_dtcm512kb PASSED in 3.7s
+//tests/cocotb:rvv_itcm512kb_dtcm512kb_tests_core_mini_rvv_matmul_test   PASSED in 15.8s
+//tests/cocotb:rvv_load_store_test_load16_index16_seg                    PASSED in 62.0s
+//tests/cocotb:rvv_load_store_test_load16_index32_seg                    PASSED in 61.6s
+//tests/cocotb:rvv_load_store_test_load16_index8                         PASSED in 4.9s
+//tests/cocotb:rvv_load_store_test_load16_index8_seg                     PASSED in 10.7s
+//tests/cocotb:rvv_load_store_test_load16_seg_unit                       PASSED in 6.5s
+//tests/cocotb:rvv_load_store_test_load16_segment2_stride6_m1            PASSED in 3.0s
+//tests/cocotb:rvv_load_store_test_load16_stride4_m1                     PASSED in 3.0s
+//tests/cocotb:rvv_load_store_test_load16_stride4_m1_partial             PASSED in 3.0s
+//tests/cocotb:rvv_load_store_test_load16_stride4_mf2                    PASSED in 3.0s
+//tests/cocotb:rvv_load_store_test_load32_index16_seg                    PASSED in 35.9s
+//tests/cocotb:rvv_load_store_test_load32_index32_seg                    PASSED in 37.0s
+//tests/cocotb:rvv_load_store_test_load32_index8                         PASSED in 4.7s
+//tests/cocotb:rvv_load_store_test_load32_index8_seg                     PASSED in 7.7s
+//tests/cocotb:rvv_load_store_test_load32_seg_unit                       PASSED in 5.3s
+//tests/cocotb:rvv_load_store_test_load32_stride8_m1                     PASSED in 3.2s
+//tests/cocotb:rvv_load_store_test_load32_stride8_m1_partial             PASSED in 3.2s
+//tests/cocotb:rvv_load_store_test_load8_index16                         PASSED in 20.3s
+//tests/cocotb:rvv_load_store_test_load8_index16_seg                     PASSED in 88.3s
+//tests/cocotb:rvv_load_store_test_load8_index32                         PASSED in 16.4s
+//tests/cocotb:rvv_load_store_test_load8_index32_seg                     PASSED in 80.5s
+//tests/cocotb:rvv_load_store_test_load8_index8                          PASSED in 5.3s
+//tests/cocotb:rvv_load_store_test_load8_index8_seg                      PASSED in 14.7s
+//tests/cocotb:rvv_load_store_test_load8_seg_unit                        PASSED in 8.1s
+//tests/cocotb:rvv_load_store_test_load8_segment2_stride6_m1             PASSED in 3.2s
+//tests/cocotb:rvv_load_store_test_load8_stride2_m1                      PASSED in 3.0s
+//tests/cocotb:rvv_load_store_test_load8_stride2_m1_partial              PASSED in 3.0s
+//tests/cocotb:rvv_load_store_test_load8_stride2_mf4                     PASSED in 3.0s
+//tests/cocotb:rvv_load_store_test_load_store16_unit_m2                  PASSED in 3.1s
+//tests/cocotb:rvv_load_store_test_load_store32_unit_m2                  PASSED in 3.2s
+//tests/cocotb:rvv_load_store_test_load_store8_test                      PASSED in 3.1s
+//tests/cocotb:rvv_load_store_test_load_store8_unit_m2                   PASSED in 3.2s
+//tests/cocotb:rvv_load_store_test_load_store_bits                       PASSED in 4.1s
+//tests/cocotb:rvv_load_store_test_load_store_whole_register_test        PASSED in 13.0s
+//tests/cocotb:rvv_load_store_test_load_strided_all_vtypes_test          PASSED in 62.5s
+//tests/cocotb:rvv_load_store_test_load_unit_all_vtypes_test             PASSED in 22.3s
+//tests/cocotb:rvv_load_store_test_load_unit_masked                      PASSED in 7.8s
+//tests/cocotb:rvv_load_store_test_store16_index16                       PASSED in 34.8s
+//tests/cocotb:rvv_load_store_test_store16_index32                       PASSED in 28.1s
+//tests/cocotb:rvv_load_store_test_store16_index8                        PASSED in 5.3s
+//tests/cocotb:rvv_load_store_test_store16_seg_unit                      PASSED in 6.4s
+//tests/cocotb:rvv_load_store_test_store32_index16                       PASSED in 26.7s
+//tests/cocotb:rvv_load_store_test_store32_index32                       PASSED in 27.0s
+//tests/cocotb:rvv_load_store_test_store32_index8                        PASSED in 6.0s
+//tests/cocotb:rvv_load_store_test_store32_seg_unit                      PASSED in 5.0s
+//tests/cocotb:rvv_load_store_test_store8_index16                        PASSED in 34.4s
+//tests/cocotb:rvv_load_store_test_store8_index32                        PASSED in 27.7s
+//tests/cocotb:rvv_load_store_test_store8_index8                         PASSED in 5.8s
+//tests/cocotb:rvv_load_store_test_store8_index8_seg                     PASSED in 14.7s
+//tests/cocotb:rvv_load_store_test_store8_seg_unit                       PASSED in 7.3s
+//tests/cocotb:rvv_load_store_test_store_strided_all_vtypes_test         PASSED in 102.8s
+//tests/cocotb:rvv_load_store_test_store_unit_all_vtypes_test            PASSED in 21.8s
+//tests/cocotb:rvv_load_store_test_store_unit_masked                     PASSED in 7.6s
+//tests/cocotb:rvv_ml_ops_cocotb_test_core_mini_rvv_float_matmul_test    PASSED in 30.4s
+//tests/cocotb:rvv_ml_ops_cocotb_test_core_mini_rvv_matmul_test          PASSED in 15.5s
+//tests/cocotb/rvv/rvv_opt:cocotb_rvv_opt_test_rvv_memcpy_test           PASSED in 4.0s
+//tests/cocotb/rvv/rvv_opt:cocotb_rvv_opt_test_rvv_memset_test           PASSED in 9.7s
+//tests/cocotb/tutorial:hello_world_float_core_mini_axi_core_mini_axi_tutorial PASSED in 3.0s
+//tests/cocotb/tutorial:tutorial_core_mini_axi_tutorial                  PASSED in 2.8s
+//tests/cocotb/tutorial/counters:cocotb_counter_test_inst_cycle_counter_test PASSED in 3.0s
+//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x1           PASSED in 27.3s
+//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16          PASSED in 299.4s
+//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x16_h2w8     PASSED in 253.0s
+//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_16x3_s2        PASSED in 78.8s
+//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_18x1           PASSED in 29.7s
+//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_21x48_h8w8     PASSED in 185.6s
+//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_37x1_h2w2      PASSED in 13.4s
+//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_48x48_h2w2     PASSED in 82.6s
+//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_4x1_h2w2       PASSED in 9.1s
+//tests/cocotb/tutorial/tfmicro:cocotb_conv2d_test_conv2d_9x2            PASSED in 34.4s
+//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv16to32stride2 PASSED in 107.9s
+//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride1 PASSED in 96.6s
+//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv32to32stride2 PASSED in 102.1s
+//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride1 PASSED in 183.1s
+//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv64to64stride2 PASSED in 197.0s
+//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv8to8stride1 PASSED in 33.0s
+//tests/cocotb/tutorial/tfmicro:cocotb_depthwise_conv_test_dwconv8to8stride2 PASSED in 35.1s
+//tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_16_16     PASSED in 13.3s
+//tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_256_256   PASSED in 387.5s
+//tests/cocotb/tutorial/tfmicro:cocotb_fully_connected_test_fc_64_64     PASSED in 38.5s
+//tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_1024       PASSED in 196.5s
+//tests/cocotb/tutorial/tfmicro:cocotb_logistic_test_logistic_256        PASSED in 195.2s
+//tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool16stride2     PASSED in 22.4s
+//tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool32stride2     PASSED in 34.9s
+//tests/cocotb/tutorial/tfmicro:cocotb_pooling_test_maxpool64stride2     PASSED in 62.0s
+//tests/verilator_sim:backdoor_load_test                                 PASSED in 0.1s
+//tests/verilator_sim:core_mini_axi_non_incr_tests                       PASSED in 0.1s
+
+Executed 215 out of 215 tests: 215 tests pass.
+There were tests whose specified size is too big. Use the --test_verbose_timeout_warnings command line option to see which ones these are.
+INFO: Build Event Protocol files produced successfully.
+reward: 1.000000  (passed=215, total=215)
