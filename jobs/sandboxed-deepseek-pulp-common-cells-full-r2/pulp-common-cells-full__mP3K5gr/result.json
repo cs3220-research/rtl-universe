@@ -1,0 +1,107 @@
+{
+    "id": "7df39dc6-3642-45e4-84d2-77c97067d469",
+    "task_name": "pulp-common-cells-full",
+    "trial_name": "pulp-common-cells-full__mP3K5gr",
+    "trial_uri": "file:///data/saketh/research/cs3220-research/rtl-universe/jobs/sandboxed-deepseek-pulp-common-cells-full-r2/pulp-common-cells-full__mP3K5gr",
+    "task_id": {
+        "path": "minrepro_task/pulp-common-cells-full"
+    },
+    "source": null,
+    "task_checksum": "ad589254954b632c700c6edb00a1c4f394290187e6abe0b50da91eaeefd8c4c9",
+    "config": {
+        "task": {
+            "path": "minrepro_task/pulp-common-cells-full",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "pulp-common-cells-full__mP3K5gr",
+        "trials_dir": "jobs/sandboxed-deepseek-pulp-common-cells-full-r2",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:OpenCodeSandboxed",
+            "model_name": "openrouter/deepseek/deepseek-v4-pro",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "OPENROUTER_API_KEY": "sk-o****306"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": true,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "499e6575-0614-4116-bf35-c1fba204325e"
+    },
+    "agent_info": {
+        "name": "opencode-sandboxed",
+        "version": "1.14.31",
+        "model_info": {
+            "name": "deepseek/deepseek-v4-pro",
+            "provider": "openrouter"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 7909049,
+        "n_cache_tokens": 7792256,
+        "n_output_tokens": 36341,
+        "cost_usd": 1.5808311800000001,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-01T16:26:56.034945Z",
+    "finished_at": "2026-05-01T18:40:35.806291Z",
+    "environment_setup": {
+        "started_at": "2026-05-01T16:26:56.072786Z",
+        "finished_at": "2026-05-01T16:49:31.303406Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-01T16:49:31.304476Z",
+        "finished_at": "2026-05-01T16:49:38.827236Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-01T16:49:38.830797Z",
+        "finished_at": "2026-05-01T18:40:08.413716Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-01T18:40:08.597497Z",
+        "finished_at": "2026-05-01T18:40:21.765258Z"
+    },
+    "step_results": null
+}
