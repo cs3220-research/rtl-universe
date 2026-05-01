@@ -58,6 +58,17 @@ RUN chmod +x /tmp/install_python_deps.sh && /tmp/install_python_deps.sh
 USER ${_USERNAME}
 WORKDIR ${HOME}
 
+# Pre-install OpenCode dependencies (NVM + Node 22 + opencode-ai).
+# Runs at docker-build time with full network access. The sandboxed Harbor
+# agent adapter skips runtime install and activates DNS sinkhole after.
+RUN bash -c '\
+    set -ex; \
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash; \
+    export NVM_DIR="$HOME/.nvm"; \
+    . "$NVM_DIR/nvm.sh"; \
+    nvm install 22; \
+    npm i -g opencode-ai@latest'
+
 
 # ---------------------------------------------------------------------------
 # Stage: count — run green E2E test, capture count (always 1).
