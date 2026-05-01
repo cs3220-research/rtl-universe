@@ -1,0 +1,107 @@
+{
+    "id": "f1e42374-2e18-4d6c-bf89-014990d0d143",
+    "task_name": "openpiton-e2e",
+    "trial_name": "openpiton-e2e__VUtvbSk",
+    "trial_uri": "file:///data/saketh/research/cs3220-research/rtl-universe/jobs/sandboxed-kimi-openpiton-e2e-r2/openpiton-e2e__VUtvbSk",
+    "task_id": {
+        "path": "minrepro_task/openpiton-e2e"
+    },
+    "source": null,
+    "task_checksum": "dc636a3d4343610769214f64904d742e5b6bb834e716c3dada7fb4e6c492e714",
+    "config": {
+        "task": {
+            "path": "minrepro_task/openpiton-e2e",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "openpiton-e2e__VUtvbSk",
+        "trials_dir": "jobs/sandboxed-kimi-openpiton-e2e-r2",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:OpenCodeSandboxed",
+            "model_name": "openrouter/moonshotai/kimi-k2.6",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "OPENROUTER_API_KEY": "sk-o****306"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": true,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "d3600657-d368-4795-bb55-c7b6f966a22b"
+    },
+    "agent_info": {
+        "name": "opencode-sandboxed",
+        "version": "1.14.31",
+        "model_info": {
+            "name": "moonshotai/kimi-k2.6",
+            "provider": "openrouter"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 934148,
+        "n_cache_tokens": 479424,
+        "n_output_tokens": 2311,
+        "cost_usd": 0.59721964,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-01T16:27:00.946456Z",
+    "finished_at": "2026-05-01T18:01:37.753471Z",
+    "environment_setup": {
+        "started_at": "2026-05-01T16:27:04.763917Z",
+        "finished_at": "2026-05-01T17:33:45.492197Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-01T17:33:45.492332Z",
+        "finished_at": "2026-05-01T17:33:53.108710Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-01T17:33:53.108903Z",
+        "finished_at": "2026-05-01T17:53:31.402360Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-01T17:53:31.557808Z",
+        "finished_at": "2026-05-01T18:00:46.074630Z"
+    },
+    "step_results": null
+}

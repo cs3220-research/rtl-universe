@@ -1,0 +1,39 @@
+{
+    "id": "26197338-67c6-4c23-9db0-390776f1960e",
+    "started_at": "2026-04-30T15:24:21.630609",
+    "updated_at": "2026-04-30T18:04:41.452806",
+    "finished_at": "2026-04-30T18:04:41.452806",
+    "n_total_trials": 1,
+    "stats": {
+        "n_completed_trials": 1,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "opencode__deepseek/deepseek-v4-pro__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.2
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.2": [
+                            "ibex-full__ETB99jV"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": 58720933,
+        "n_cache_tokens": 58592128,
+        "n_output_tokens": 137015,
+        "cost_usd": 9.425180380000002
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "id": "e221264f-ddc9-49d2-92b6-57eb7276c9d1",
+    "started_at": "2026-04-30T15:24:21.607958",
+    "updated_at": "2026-04-30T17:21:09.311955",
+    "finished_at": "2026-04-30T17:21:09.311955",
+    "n_total_trials": 1,
+    "stats": {
+        "n_completed_trials": 1,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "opencode__deepseek/deepseek-v4-pro__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.875
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.875": [
+                            "secworks-aes-full__SbuPezB"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": 31880861,
+        "n_cache_tokens": 31756928,
+        "n_output_tokens": 106252,
+        "cost_usd": 5.571475940000001
+    }
+}
