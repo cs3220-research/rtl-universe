@@ -1,0 +1,37 @@
+{
+    "id": "6b42e694-dbb0-483b-a44d-2d0947de9570",
+    "started_at": "2026-05-03T13:12:23.760440",
+    "updated_at": "2026-05-03T14:12:28.827457",
+    "finished_at": "2026-05-03T14:12:28.827457",
+    "n_total_trials": 1,
+    "stats": {
+        "n_completed_trials": 1,
+        "n_errored_trials": 1,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "claude-code-sandboxed__sonnet__adhoc": {
+                "n_trials": 0,
+                "n_errors": 1,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {},
+                "exception_stats": {
+                    "EnvironmentStartTimeoutError": [
+                        "ibex-e2e__syXw8sZ"
+                    ]
+                }
+            }
+        },
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null
+    }
+}

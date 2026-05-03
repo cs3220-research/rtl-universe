@@ -1,0 +1,100 @@
+Traceback (most recent call last):
+  File "/home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 951, in run
+    await self._setup_environment()
+  File "/home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 313, in _setup_environment
+    await self._start_environment_with_retry()
+  File "/home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 193, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/broyojo/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/broyojo/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 325, in _start_environment_with_retry
+    await asyncio.wait_for(
+  File "/home/broyojo/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 478, in start
+    await self._run_docker_compose_command(["build"])
+  File "/home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 382, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment nvdla-e2e. Command: docker compose --project-name nvdla-e2e__jknaump --project-directory /home/broyojo/code/rtl-universe/minrepro_task/nvdla-e2e/environment -f /home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout: time="2026-05-03T13:52:56-04:00" level=warning msg="Docker Compose requires buildx plugin to be installed"
+ Image nvdla-e2e__jknaump-main Building 
+ Image nvdla-e2e__jknaump-main Building 
+Sending build context to Docker daemon  524.4kBSending build context to Docker daemon  2.098MBSending build context to Docker daemon  2.622MBSending build context to Docker daemon  3.146MBSending build context to Docker daemon  3.671MBSending build context to Docker daemon  4.195MBSending build context to Docker daemon   4.72MBSending build context to Docker daemon  5.244MBSending build context to Docker daemon  5.768MBSending build context to Docker daemon  6.817MBSending build context to Docker daemon  8.915MBSending build context to Docker daemon  9.439MBSending build context to Docker daemon  9.963MBSending build context to Docker daemon  10.49MBSending build context to Docker daemon  11.01MBSending build context to Docker daemon  11.54MBSending build context to Docker daemon  12.06MBSending build context to Docker daemon  12.59MBSending build context to Docker daemon  13.63MBSending build context to Docker daemon  14.68MBSending build context to Docker daemon  15.73MBSending build context to Docker daemon  16.17MB
+Step 1/33 : FROM debian:bookworm AS base
+ ---> 8a8cd02c5912
+Step 2/33 : ENV DEBIAN_FRONTEND=noninteractive
+ ---> Using cache
+ ---> 80e57b8b337a
+Step 3/33 : ENV TZ=UTC
+ ---> Using cache
+ ---> d4f486a8299b
+Step 4/33 : ARG _UID=1000
+ ---> Using cache
+ ---> 72ae284ee91f
+Step 5/33 : ARG _GID=1000
+ ---> Using cache
+ ---> 6379de992321
+Step 6/33 : ARG _USERNAME=builder
+ ---> Using cache
+ ---> bd21d254044d
+Step 7/33 : ENV HOME=/home/${_USERNAME}
+ ---> Using cache
+ ---> 8153821bd95d
+Step 8/33 : RUN set -eux;     ln -snf "/usr/share/zoneinfo/${TZ}" /etc/localtime;     echo "${TZ}" > /etc/timezone;     apt-get update;     apt-get install -y         build-essential         ca-certificates         curl         git         wget         make         perl         clang         python3         python3-pip         autoconf         bison         flex         help2man         libfl2         libfl-dev         libgoogle-perftools-dev         numactl         zlib1g         zlib1g-dev         ccache         mold;     rm -rf /var/lib/apt/lists/*
+ ---> Using cache
+ ---> 98bb8e5f12f9
+Step 9/33 : ENV VERILATOR_TAG=v5.020
+ ---> Using cache
+ ---> 469f950393c2
+Step 10/33 : RUN set -eux;     git clone --depth 1 --branch "${VERILATOR_TAG}"         https://github.com/verilator/verilator.git /tmp/verilator-src;     cd /tmp/verilator-src;     autoconf;     ./configure --prefix=/tools/verilator;     make -j"$(nproc)";     make install;     rm -rf /tmp/verilator-src
+ ---> Using cache
+ ---> 58fe99c05586
+Step 11/33 : ENV PATH="/tools/verilator/bin:${PATH}"
+ ---> Using cache
+ ---> 837032850ee3
+Step 12/33 : RUN set -eux;     addgroup --gid ${_GID} ${_USERNAME};     adduser --home ${HOME} --disabled-password --gecos ""             --uid ${_UID} --gid ${_GID} ${_USERNAME};     chown ${_USERNAME}:${_USERNAME} ${HOME};     mkdir -p ${HOME}/.cache;     chown ${_USERNAME}:${_USERNAME} ${HOME}/.cache;     mkdir -p /logs/verifier;     chown -R ${_UID}:${_GID} /logs
+ ---> Using cache
+ ---> 0d7c861389f5
+Step 13/33 : USER ${_USERNAME}
+ ---> Using cache
+ ---> 2804eabfb068
+Step 14/33 : WORKDIR ${HOME}
+ ---> Using cache
+ ---> 7654711831a1
+Step 15/33 : RUN bash -c '    set -ex;     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash;     export NVM_DIR="$HOME/.nvm";     . "$NVM_DIR/nvm.sh";     nvm install 22;     npm i -g opencode-ai@latest;     npm i -g @openai/codex@latest'
+ ---> Using cache
+ ---> 3db04504e960
+Step 16/33 : FROM base AS count
+ ---> 3db04504e960
+Step 17/33 : USER root
+ ---> Using cache
+ ---> 0ee09b7016e8
+Step 18/33 : RUN mkdir -p /app && chown ${_UID}:${_GID} /app
+ ---> Using cache
+ ---> 5d2aad2895f2
+Step 19/33 : USER ${_USERNAME}
+ ---> Running in 38fdb7ae823a
+ ---> Removed intermediate container 38fdb7ae823a
+ ---> 215bec8c914e
+Step 20/33 : COPY --chown=${_USERNAME}:${_USERNAME} warm_src/ /app/
+unable to convert uid/gid chown string to host mapping: can't find uid for user : no such user: 
+. Stderr: None. 

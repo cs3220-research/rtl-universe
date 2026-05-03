@@ -1,0 +1,67 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.2, pytest-7.4.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+metadata: {'Python': '3.11.2', 'Platform': 'Linux-7.0.2-arch1-1-x86_64-with-glibc2.36', 'Packages': {'pytest': '7.4.1', 'pluggy': '1.6.0'}, 'Plugins': {'md': '0.2.0', 'metadata': '3.1.1', 'timeout': '2.1.0', 'cocotb-test': '0.2.4', 'html': '3.2.0'}}
+rootdir: /app/verification/top
+plugins: md-0.2.0, metadata-3.1.1, timeout-2.1.0, cocotb-test-0.2.4, html-3.2.0
+timeout: 1800.0s
+timeout method: signal
+timeout func_only: False
+collecting ... collected 1 item
+
+test_pyuvm/test_pyuvm.py::TestPyUVM::test_pyuvm[test_irq.test_irq] make: *** No rule to make target 'clean'.  Stop.
+
+----- PyTest -----
+:: py_command >> COVERAGE_TYPE=toggle SIM=verilator CONF_PARAMS='-set build_axi4' make clean all
+
+------------------
+----- Subprocess Summary -----
+p.check_returncode
+FAILED
+
+=================================== FAILURES ===================================
+___________________ TestPyUVM.test_pyuvm[test_irq.test_irq] ____________________
+
+self = <test_pyuvm.test_pyuvm.TestPyUVM object at 0x7fcaa0ad7110>
+UVM_TEST = 'test_irq.test_irq', coverage_opt = 'toggle', sim_opt = 'verilator'
+conf_params = '-set build_axi4'
+
+    @pytest.mark.parametrize("UVM_TEST", ["test_irq.test_irq"])
+    def test_pyuvm(self, UVM_TEST, coverage_opt, sim_opt, conf_params):
+    
+        os.environ["UVM_TEST"] = UVM_TEST
+        py_command = []
+        py_command += [f"COVERAGE_TYPE={coverage_opt}"]
+        py_command += [f"SIM={sim_opt}"]
+        py_command += [f"CONF_PARAMS='{conf_params}'"]
+        py_command += [
+            "make clean all",
+        ]
+        py_command = " ".join(py_command)
+    
+        print(f"\n----- PyTest -----")
+        print(f":: py_command >> {py_command}")
+        p = subprocess.run(py_command, shell=True,
+                           executable="/bin/bash", bufsize=0)
+        print(f"\n------------------")
+    
+        print(f"----- Subprocess Summary -----")
+        print(f"p.check_returncode")
+>       p.check_returncode()
+
+test_pyuvm/test_pyuvm.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = CompletedProcess(args="COVERAGE_TYPE=toggle SIM=verilator CONF_PARAMS='-set build_axi4' make clean all", returncode=2)
+
+    def check_returncode(self):
+        """Raise CalledProcessError if the exit code is non-zero."""
+        if self.returncode:
+>           raise CalledProcessError(self.returncode, self.args, self.stdout,
+                                     self.stderr)
+E           subprocess.CalledProcessError: Command 'COVERAGE_TYPE=toggle SIM=verilator CONF_PARAMS='-set build_axi4' make clean all' returned non-zero exit status 2.
+
+/usr/lib/python3.11/subprocess.py:502: CalledProcessError
+=========================== short test summary info ============================
+FAILED test_pyuvm/test_pyuvm.py::TestPyUVM::test_pyuvm[test_irq.test_irq] - s...
+============================== 1 failed in 0.03s ===============================

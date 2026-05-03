@@ -1,0 +1,283 @@
+Trial nvdla-e2e__sVXY43x failed: Docker compose command failed for environment nvdla-e2e. Command: docker compose --project-name nvdla-e2e__svxy43x --project-directory /home/broyojo/code/rtl-universe/minrepro_task/nvdla-e2e/environment -f /home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /home/broyojo/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout: time="2026-05-03T13:57:11-04:00" level=warning msg="Docker Compose requires buildx plugin to be installed"
+ Image nvdla-e2e__svxy43x-main Building 
+ Image nvdla-e2e__svxy43x-main Building 
+Sending build context to Docker daemon  524.4kBSending build context to Docker daemon  2.098MBSending build context to Docker daemon  2.622MBSending build context to Docker daemon  3.146MBSending build context to Docker daemon  3.671MBSending build context to Docker daemon  4.195MBSending build context to Docker daemon   4.72MBSending build context to Docker daemon  5.244MBSending build context to Docker daemon  5.768MBSending build context to Docker daemon  6.817MBSending build context to Docker daemon  8.915MBSending build context to Docker daemon  9.439MBSending build context to Docker daemon  9.963MBSending build context to Docker daemon  10.49MBSending build context to Docker daemon  11.01MBSending build context to Docker daemon  11.54MBSending build context to Docker daemon  12.06MBSending build context to Docker daemon  12.59MBSending build context to Docker daemon  13.63MBSending build context to Docker daemon  14.68MBSending build context to Docker daemon  15.73MBSending build context to Docker daemon  16.17MB
+Step 1/33 : FROM debian:bookworm AS base
+ ---> 8a8cd02c5912
+Step 2/33 : ENV DEBIAN_FRONTEND=noninteractive
+ ---> Using cache
+ ---> 80e57b8b337a
+Step 3/33 : ENV TZ=UTC
+ ---> Using cache
+ ---> d4f486a8299b
+Step 4/33 : ARG _UID=1000
+ ---> Using cache
+ ---> 72ae284ee91f
+Step 5/33 : ARG _GID=1000
+ ---> Using cache
+ ---> 6379de992321
+Step 6/33 : ARG _USERNAME=builder
+ ---> Using cache
+ ---> bd21d254044d
+Step 7/33 : ENV HOME=/home/${_USERNAME}
+ ---> Using cache
+ ---> 8153821bd95d
+Step 8/33 : RUN set -eux;     ln -snf "/usr/share/zoneinfo/${TZ}" /etc/localtime;     echo "${TZ}" > /etc/timezone;     apt-get update;     apt-get install -y         build-essential         ca-certificates         curl         git         wget         make         perl         clang         python3         python3-pip         autoconf         bison         flex         help2man         libfl2         libfl-dev         libgoogle-perftools-dev         numactl         zlib1g         zlib1g-dev         ccache         mold;     rm -rf /var/lib/apt/lists/*
+ ---> Using cache
+ ---> 98bb8e5f12f9
+Step 9/33 : ENV VERILATOR_TAG=v5.020
+ ---> Using cache
+ ---> 469f950393c2
+Step 10/33 : RUN set -eux;     git clone --depth 1 --branch "${VERILATOR_TAG}"         https://github.com/verilator/verilator.git /tmp/verilator-src;     cd /tmp/verilator-src;     autoconf;     ./configure --prefix=/tools/verilator;     make -j"$(nproc)";     make install;     rm -rf /tmp/verilator-src
+ ---> Using cache
+ ---> 58fe99c05586
+Step 11/33 : ENV PATH="/tools/verilator/bin:${PATH}"
+ ---> Using cache
+ ---> 837032850ee3
+Step 12/33 : RUN set -eux;     addgroup --gid ${_GID} ${_USERNAME};     adduser --home ${HOME} --disabled-password --gecos ""             --uid ${_UID} --gid ${_GID} ${_USERNAME};     chown ${_USERNAME}:${_USERNAME} ${HOME};     mkdir -p ${HOME}/.cache;     chown ${_USERNAME}:${_USERNAME} ${HOME}/.cache;     mkdir -p /logs/verifier;     chown -R ${_UID}:${_GID} /logs
+ ---> Using cache
+ ---> 0d7c861389f5
+Step 13/33 : USER ${_USERNAME}
+ ---> Using cache
+ ---> 2804eabfb068
+Step 14/33 : WORKDIR ${HOME}
+ ---> Using cache
+ ---> 7654711831a1
+Step 15/33 : RUN bash -c '    set -ex;     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash;     export NVM_DIR="$HOME/.nvm";     . "$NVM_DIR/nvm.sh";     nvm install 22;     npm i -g opencode-ai@latest;     npm i -g @openai/codex@latest'
+ ---> Using cache
+ ---> 3db04504e960
+Step 16/33 : FROM base AS count
+ ---> 3db04504e960
+Step 17/33 : USER root
+ ---> Using cache
+ ---> 0ee09b7016e8
+Step 18/33 : RUN mkdir -p /app && chown ${_UID}:${_GID} /app
+ ---> Using cache
+ ---> 5d2aad2895f2
+Step 19/33 : USER ${_USERNAME}
+ ---> Running in bea01fa42d8b
+ ---> Removed intermediate container bea01fa42d8b
+ ---> 1731732f71a1
+Step 20/33 : COPY --chown=builder:builder warm_src/ /app/
+ ---> 9bba045c35e4
+Step 21/33 : COPY --chown=builder:builder count_tests.sh /tmp/count_tests.sh
+ ---> b242c4222ea3
+Step 22/33 : RUN chmod +x /tmp/count_tests.sh && /tmp/count_tests.sh
+ ---> Running in 96c0cd0bc0c8
+[91m+ cd /app
+[0m[91m+ cat
+[0m[91m+ mkdir -p outdir/nv_full
+[0m[91m+ ln -sfn /app/vmod outdir/nv_full/vmod
+[0m[91m+ OUTDIR=/app/outdir/nv_full
+[0m[91m+ mkdir -p /app/outdir/nv_full/verilator
+[0m[91m+ cd /app/verif/verilator
+[0m[91m+ echo '=== Verilator elaboration ==='
+[0m=== Verilator elaboration ===
+[91m+ verilator --cc --exe -f verilator.f nvdla.cpp --Mdir /app/outdir/nv_full/verilator --output-split 5000000 --output-split-cfuncs 5000000
++ tee /tmp/verilator_elab.log
+[0m%Error: ../../outdir/nv_full/vmod/nvdla/top/NV_NVDLA_partition_o.v:1806:1: syntax error, unexpected '#', expecting ')'
+ 1806 | #ifdef NVDLA_BDMA_ENABLE
+      | ^
+        ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:1167:1: ... note: In file included from 'NV_nvdla.v'
+%Error: ../../outdir/nv_full/vmod/nvdla/top/NV_NVDLA_partition_o.v:1926:1: syntax error, unexpected '#', expecting ')'
+ 1926 | #ifdef NVDLA_BDMA_ENABLE
+      | ^
+        ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:1167:1: ... note: In file included from 'NV_nvdla.v'
+%Error: ../../outdir/nv_full/vmod/nvdla/top/NV_NVDLA_partition_o.v:2111:1: syntax error, unexpected '#', expecting ')'
+ 2111 | #ifdef NVDLA_BDMA_ENABLE
+      | ^
+        ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:1167:1: ... note: In file included from 'NV_nvdla.v'
+%Error: Exiting due to 3 error(s)
+=== Compiling VNV_nvdla ===
+[91m+ echo '=== Compiling VNV_nvdla ==='
+[0m[91m+ tee /tmp/verilator_compile.log
+[0m[91m++ nproc
+[0m[91m+ make -j16 -C /app/outdir/nv_full/verilator -f VNV_nvdla.mk CC=gcc CXX=g++ VM_PARALLEL_BUILDS=1
+[0mmake: Entering directory '/app/outdir/nv_full/verilator'
+make: VNV_nvdla.mk: No such file or directory
+make: *** No rule to make target 'VNV_nvdla.mk'.  Stop.
+make: Leaving directory '/app/outdir/nv_full/verilator'
+[91m+ SIMBIN=/app/outdir/nv_full/verilator/VNV_nvdla
++ E2E_TESTS=(sanity3 sanity3_cvsram conv_8x8_fc_int16 googlenet_conv2_3x3_int16 pdp_max_pooling_int16 sdp_relu_int16 cc_alexnet_conv5_relu5_int16_dtest_cvsram)
++ ALL_TESTS=(sanity0 sanity1 sanity1_cvsram sanity2 sanity2_cvsram sanity3 sanity3_cvsram conv_8x8_fc_int16 googlenet_conv2_3x3_int16 pdp_max_pooling_int16 sdp_relu_int16 cc_alexnet_conv5_relu5_int16_dtest_cvsram)
+[0m[91m+ TOTAL=0
++ PASSED=0
+[0m[91m+ for test in "${E2E_TESTS[@]}"
++ TRACE_DIR=/app/verif/traces/traceplayer/sanity3
++ '[' '!' -d /app/verif/traces/traceplayer/sanity3 ']'
+[0m[91m+ TOTAL=1
++ TEST_OUTDIR=/app/outdir/nv_full/verilator/test/sanity3
+[0m[91m+ mkdir -p /app/outdir/nv_full/verilator/test/sanity3
+[0m[91m+ echo '=== Converting trace: sanity3 ==='
+[0m=== Converting trace: sanity3 ===
+[91m+ perl /app/verif/verilator/input_txn_to_verilator.pl /app/verif/traces/traceplayer/sanity3 /app/outdir/nv_full/verilator/test/sanity3/trace.bin
++ tee /tmp/trace_conv_sanity3.log
+[0mconverting /app/verif/traces/traceplayer/sanity3/input.txn to /app/outdir/nv_full/verilator/test/sanity3/trace.bin
+File 0 0x80000000 0x00001000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x80100000 0x00010000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x80400000 0x20
+okay, that's all the bytes I expected -- I'm stopping here
+[91m+ '[' '!' -f /app/outdir/nv_full/verilator/test/sanity3/trace.bin ']'
++ '[' '!' -f /app/outdir/nv_full/verilator/VNV_nvdla ']'
++ echo 'FAIL: simulator binary not built'
++ continue
++ for test in "${E2E_TESTS[@]}"
++ TRACE_DIR=/app/verif/traces/traceplayer/sanity3_cvsram
++ '[' '!' -d /app/verif/traces/traceplayer/sanity3_cvsram ']'
++ TOTAL=2
++ TEST_OUTDIR=/app/outdir/nv_full/verilator/test/sanity3_cvsram
++ mkdir -p /app/outdir/nv_full/verilator/test/sanity3_cvsram
+[0mFAIL: simulator binary not built
+[91m+ echo '=== Converting trace: sanity3_cvsram ==='
+[0m=== Converting trace: sanity3_cvsram ===
+[91m+ perl /app/verif/verilator/input_txn_to_verilator.pl /app/verif/traces/traceplayer/sanity3_cvsram /app/outdir/nv_full/verilator/test/sanity3_cvsram/trace.bin
++ tee /tmp/trace_conv_sanity3_cvsram.log
+[0mconverting /app/verif/traces/traceplayer/sanity3_cvsram/input.txn to /app/outdir/nv_full/verilator/test/sanity3_cvsram/trace.bin
+File 0 0x50000000 0x00001000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x50100000 0x00010000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x50400000 0x20
+okay, that's all the bytes I expected -- I'm stopping here
+[91m+ '[' '!' -f /app/outdir/nv_full/verilator/test/sanity3_cvsram/trace.bin ']'
++ '[' '!' -f /app/outdir/nv_full/verilator/VNV_nvdla ']'
++ echo 'FAIL: simulator binary not built'
++ continue
++ for test in "${E2E_TESTS[@]}"
++ TRACE_DIR=/app/verif/traces/traceplayer/conv_8x8_fc_int16
++ '[' '!' -d /app/verif/traces/traceplayer/conv_8x8_fc_int16 ']'
++ TOTAL=3
++ TEST_OUTDIR=/app/outdir/nv_full/verilator/test/conv_8x8_fc_int16
++ mkdir -p /app/outdir/nv_full/verilator/test/conv_8x8_fc_int16
+[0mFAIL: simulator binary not built
+=== Converting trace: conv_8x8_fc_int16 ===
+[91m+ echo '=== Converting trace: conv_8x8_fc_int16 ==='
+[0m[91m+ perl /app/verif/verilator/input_txn_to_verilator.pl /app/verif/traces/traceplayer/conv_8x8_fc_int16 /app/outdir/nv_full/verilator/test/conv_8x8_fc_int16/trace.bin
+[0m[91m+ tee /tmp/trace_conv_conv_8x8_fc_int16.log
+[0mconverting /app/verif/traces/traceplayer/conv_8x8_fc_int16/input.txn to /app/outdir/nv_full/verilator/test/conv_8x8_fc_int16/trace.bin
+File 0 0x80000000 0x1000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x80100000 0x10000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x80400000 0x20
+okay, that's all the bytes I expected -- I'm stopping here
+[91m+ '[' '!' -f /app/outdir/nv_full/verilator/test/conv_8x8_fc_int16/trace.bin ']'
++ '[' '!' -f /app/outdir/nv_full/verilator/VNV_nvdla ']'
++ echo 'FAIL: simulator binary not built'
++ continue
++ for test in "${E2E_TESTS[@]}"
++ TRACE_DIR=/app/verif/traces/traceplayer/googlenet_conv2_3x3_int16
++ '[' '!' -d /app/verif/traces/traceplayer/googlenet_conv2_3x3_int16 ']'
++ TOTAL=4
++ TEST_OUTDIR=/app/outdir/nv_full/verilator/test/googlenet_conv2_3x3_int16
++ mkdir -p /app/outdir/nv_full/verilator/test/googlenet_conv2_3x3_int16
+[0mFAIL: simulator binary not built
+[91m+ echo '=== Converting trace: googlenet_conv2_3x3_int16 ==='
+[0m=== Converting trace: googlenet_conv2_3x3_int16 ===
+[91m+ perl /app/verif/verilator/input_txn_to_verilator.pl /app/verif/traces/traceplayer/googlenet_conv2_3x3_int16 /app/outdir/nv_full/verilator/test/googlenet_conv2_3x3_int16/trace.bin
+[0m[91m+ tee /tmp/trace_conv_googlenet_conv2_3x3_int16.log
+[0mconverting /app/verif/traces/traceplayer/googlenet_conv2_3x3_int16/input.txn to /app/outdir/nv_full/verilator/test/googlenet_conv2_3x3_int16/trace.bin
+File 0 0x50064080 0xb480
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x5002dfe0 0x36000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x500000e0 0x2da80
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x500000e0 0x2da80
+okay, that's all the bytes I expected -- I'm stopping here
+[91m+ '[' '!' -f /app/outdir/nv_full/verilator/test/googlenet_conv2_3x3_int16/trace.bin ']'
++ '[' '!' -f /app/outdir/nv_full/verilator/VNV_nvdla ']'
++ echo 'FAIL: simulator binary not built'
++ continue
++ for test in "${E2E_TESTS[@]}"
++ TRACE_DIR=/app/verif/traces/traceplayer/pdp_max_pooling_int16
++ '[' '!' -d /app/verif/traces/traceplayer/pdp_max_pooling_int16 ']'
+[0mFAIL: simulator binary not built
+[91m+ TOTAL=5
++ TEST_OUTDIR=/app/outdir/nv_full/verilator/test/pdp_max_pooling_int16
+[0m[91m+ mkdir -p /app/outdir/nv_full/verilator/test/pdp_max_pooling_int16
+[0m[91m+ echo '=== Converting trace: pdp_max_pooling_int16 ==='
+[0m=== Converting trace: pdp_max_pooling_int16 ===
+[91m+ perl /app/verif/verilator/input_txn_to_verilator.pl /app/verif/traces/traceplayer/pdp_max_pooling_int16 /app/outdir/nv_full/verilator/test/pdp_max_pooling_int16/trace.bin
+[0m[91m+ tee /tmp/trace_conv_pdp_max_pooling_int16.log
+[0mconverting /app/verif/traces/traceplayer/pdp_max_pooling_int16/input.txn to /app/outdir/nv_full/verilator/test/pdp_max_pooling_int16/trace.bin
+File 0 0x80000000 0x2000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x80100000 0x1880
+okay, that's all the bytes I expected -- I'm stopping here
+[91m+ '[' '!' -f /app/outdir/nv_full/verilator/test/pdp_max_pooling_int16/trace.bin ']'
++ '[' '!' -f /app/outdir/nv_full/verilator/VNV_nvdla ']'
++ echo 'FAIL: simulator binary not built'
++ continue
++ for test in "${E2E_TESTS[@]}"
++ TRACE_DIR=/app/verif/traces/traceplayer/sdp_relu_int16
++ '[' '!' -d /app/verif/traces/traceplayer/sdp_relu_int16 ']'
+[0mFAIL: simulator binary not built
+[91m+ TOTAL=6
+[0m[91m+ TEST_OUTDIR=/app/outdir/nv_full/verilator/test/sdp_relu_int16
++ mkdir -p /app/outdir/nv_full/verilator/test/sdp_relu_int16
+[0m[91m+ echo '=== Converting trace: sdp_relu_int16 ==='
+[0m=== Converting trace: sdp_relu_int16 ===
+[91m+ perl /app/verif/verilator/input_txn_to_verilator.pl /app/verif/traces/traceplayer/sdp_relu_int16 /app/outdir/nv_full/verilator/test/sdp_relu_int16/trace.bin
+[0m[91m+ tee /tmp/trace_conv_sdp_relu_int16.log
+[0mconverting /app/verif/traces/traceplayer/sdp_relu_int16/input.txn to /app/outdir/nv_full/verilator/test/sdp_relu_int16/trace.bin
+File 0 0x80200000 0x1000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x80800000 0x1000
+okay, that's all the bytes I expected -- I'm stopping here
+[91m+ '[' '!' -f /app/outdir/nv_full/verilator/test/sdp_relu_int16/trace.bin ']'
++ '[' '!' -f /app/outdir/nv_full/verilator/VNV_nvdla ']'
++ echo 'FAIL: simulator binary not built'
++ continue
++ for test in "${E2E_TESTS[@]}"
++ TRACE_DIR=/app/verif/traces/traceplayer/cc_alexnet_conv5_relu5_int16_dtest_cvsram
++ '[' '!' -d /app/verif/traces/traceplayer/cc_alexnet_conv5_relu5_int16_dtest_cvsram ']'
+[0mFAIL: simulator binary not built
+[91m+ TOTAL=7
++ TEST_OUTDIR=/app/outdir/nv_full/verilator/test/cc_alexnet_conv5_relu5_int16_dtest_cvsram
++ mkdir -p /app/outdir/nv_full/verilator/test/cc_alexnet_conv5_relu5_int16_dtest_cvsram
+[0m[91m+ echo '=== Converting trace: cc_alexnet_conv5_relu5_int16_dtest_cvsram ==='
+[0m=== Converting trace: cc_alexnet_conv5_relu5_int16_dtest_cvsram ===
+[91m+ perl /app/verif/verilator/input_txn_to_verilator.pl /app/verif/traces/traceplayer/cc_alexnet_conv5_relu5_int16_dtest_cvsram /app/outdir/nv_full/verilator/test/cc_alexnet_conv5_relu5_int16_dtest_cvsram/trace.bin
++ tee /tmp/trace_conv_cc_alexnet_conv5_relu5_int16_dtest_cvsram.log
+[0mconverting /app/verif/traces/traceplayer/cc_alexnet_conv5_relu5_int16_dtest_cvsram/input.txn to /app/outdir/nv_full/verilator/test/cc_alexnet_conv5_relu5_int16_dtest_cvsram/trace.bin
+File 0 0x50015600 0x1fb00
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x50035400 0x1b0000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x50000020 0x15200
+okay, that's all the bytes I expected -- I'm stopping here
+FAIL: simulator binary not built
+[91m+ '[' '!' -f /app/outdir/nv_full/verilator/test/cc_alexnet_conv5_relu5_int16_dtest_cvsram/trace.bin ']'
++ '[' '!' -f /app/outdir/nv_full/verilator/VNV_nvdla ']'
++ echo 'FAIL: simulator binary not built'
++ continue
++ echo 7
+[0m[91m+ echo 0
+[0m[91m+ printf '%s\n' sanity0 sanity1 sanity1_cvsram sanity2 sanity2_cvsram sanity3 sanity3_cvsram conv_8x8_fc_int16 googlenet_conv2_3x3_int16 pdp_max_pooling_int16 sdp_relu_int16 cc_alexnet_conv5_relu5_int16_dtest_cvsram
+[0m[91m+ printf '%s\n' sanity3 sanity3_cvsram conv_8x8_fc_int16 googlenet_conv2_3x3_int16 pdp_max_pooling_int16 sdp_relu_int16 cc_alexnet_conv5_relu5_int16_dtest_cvsram
+[0m[91m+ echo 'count_tests.sh (e2e) complete: e2e_total=7 e2e_passed=0'
+[0mcount_tests.sh (e2e) complete: e2e_total=7 e2e_passed=0
+ ---> Removed intermediate container 96c0cd0bc0c8
+ ---> 9d0161db4f1f
+Step 23/33 : FROM base AS final
+ ---> 3db04504e960
+Step 24/33 : USER root
+ ---> Using cache
+ ---> 0ee09b7016e8
+Step 25/33 : RUN mkdir -p /app /app/.harbor && chown -R ${_UID}:${_GID} /app
+ ---> Using cache
+ ---> 2cd712f605d5
+Step 26/33 : USER ${_USERNAME}
+ ---> Running in 7977fd2cfcd6
+ ---> Removed intermediate container 7977fd2cfcd6
+ ---> e242f8d4d5a0
+Step 27/33 : COPY --chown=builder:builder skeleton/ /app/
+ ---> a2ef9c3c7d8f
+Step 28/33 : COPY --from=count --chown=${_USERNAME}:${_USERNAME} /tmp/_total       /app/.harbor/total_tests
+unable to convert uid/gid chown string to host mapping: can't find uid for user : no such user: 
+. Stderr: None. 
+Failed to download artifact '/app' (best-effort)
+Not retrying trial because the maximum number of retries has been reached

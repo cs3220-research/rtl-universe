@@ -15,7 +15,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 OUTPUTS_DIR="$(dirname "$SCRIPT_DIR")"
-GREEN_SOURCE="/data/saketh/research/cs3220-research/rtl-universe/repos/openpiton"
+GREEN_SOURCE="${GREEN_SOURCE:-$OUTPUTS_DIR/../repos/openpiton}"
 
 if [ ! -d "$GREEN_SOURCE" ]; then
     echo "error: green source not found at $GREEN_SOURCE" >&2

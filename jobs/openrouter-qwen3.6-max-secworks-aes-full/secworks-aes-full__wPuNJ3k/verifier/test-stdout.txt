@@ -1,0 +1,38 @@
+=== Running FuseSoC target: tb_aes ===
+src/secworks_crypto_aes_1.0.0/src/rtl/aes_encipher_block.v:9:      : It was declared here as a net.
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 1
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'
+  target=tb_aes  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_core ===
+src/secworks_crypto_aes_1.0.0/src/rtl/aes_encipher_block.v:9:      : It was declared here as a net.
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 1
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_core-icarus'
+  target=tb_aes_core  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_key_mem ===
+src/secworks_crypto_aes_1.0.0/src/rtl/aes_encipher_block.v:9:      : It was declared here as a net.
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 1
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_key_mem-icarus'
+  target=tb_aes_key_mem  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_encipher_block ===
+src/secworks_crypto_aes_1.0.0/src/rtl/aes_encipher_block.v:9:      : It was declared here as a net.
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 1
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_encipher_block-icarus'
+  target=tb_aes_encipher_block  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_decipher_block ===
+src/secworks_crypto_aes_1.0.0/src/rtl/aes_encipher_block.v:9:      : It was declared here as a net.
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 1
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_decipher_block-icarus'
+  target=tb_aes_decipher_block  tc=0  passed=0
+
+Total: passed=0 / denominator=40
+reward: 0.000000  (passed=0, total=40)

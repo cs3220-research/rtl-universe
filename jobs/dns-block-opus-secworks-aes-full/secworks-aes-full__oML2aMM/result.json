@@ -1,0 +1,110 @@
+{
+    "id": "e6e06a04-a0cf-4a34-bc29-83ebbf0a4584",
+    "task_name": "secworks-aes-full",
+    "trial_name": "secworks-aes-full__oML2aMM",
+    "trial_uri": "file:///home/broyojo/code/rtl-universe/jobs/dns-block-opus-secworks-aes-full/secworks-aes-full__oML2aMM",
+    "task_id": {
+        "path": "minrepro_task/secworks-aes-full"
+    },
+    "source": null,
+    "task_checksum": "5868481780ae2d47bcbcb81a94c12ff6a9e717da4a6997fd6ade038b91ffa646",
+    "config": {
+        "task": {
+            "path": "minrepro_task/secworks-aes-full",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "secworks-aes-full__oML2aMM",
+        "trials_dir": "jobs/dns-block-opus-secworks-aes-full",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:ClaudeCodeSandboxed",
+            "model_name": "opus",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "CLAUDE_CONFIG_DIR": "/home/builder/.claude",
+                "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "****"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": [
+                "/tmp/harbor-claude-creds:/home/builder/.claude"
+            ],
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "c112c00f-63df-412d-b487-9ef7eb798dd8"
+    },
+    "agent_info": {
+        "name": "claude-code-sandboxed",
+        "version": "2.1.126",
+        "model_info": {
+            "name": "opus",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-03T17:36:10.258447Z",
+    "finished_at": "2026-05-03T17:55:20.586955Z",
+    "environment_setup": {
+        "started_at": "2026-05-03T17:36:10.267342Z",
+        "finished_at": "2026-05-03T17:36:11.859649Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-03T17:36:11.859680Z",
+        "finished_at": "2026-05-03T17:36:42.891823Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-03T17:36:42.891908Z",
+        "finished_at": "2026-05-03T17:55:06.862179Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-03T17:55:06.930777Z",
+        "finished_at": "2026-05-03T17:55:09.908468Z"
+    },
+    "step_results": null
+}

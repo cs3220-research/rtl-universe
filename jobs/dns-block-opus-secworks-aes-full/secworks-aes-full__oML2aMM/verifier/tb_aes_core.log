@@ -1,0 +1,492 @@
+INFO: Preparing secworks:crypto:aes:1.0.0
+INFO: Setting up project
+WARNING: This backend is deprecated and will eventually be removed. Please migrate to the flow API instead.  See https://edalize.readthedocs.io/en/latest/ref/migrations.html#migrating-from-the-tool-api-to-the-flow-api for more details.
+INFO: Building
+INFO: Running
+vvp -n -M. -l icarus.log   secworks_crypto_aes_1.0.0 -fst 
+   -= Testbench for aes core started =-
+     ================================
+
+tb: Dumping all variables to tb_aes_core vcd file.
+FST info: dumpfile tb_aes_core.vcd opened for output.
+State of DUT
+------------
+Inputs and outputs:
+encdec = 0x0, init = 0x0, next = 0x0
+keylen = 0x0, key  = 0x0000000000000000000000000000000000000000000000000000000000000000 
+block  = 0x00000000000000000000000000000000
+
+ready        = 0xx
+result_valid = 0xx, result = 0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Encipher state::
+enc_ctrl = 0xx, round_ctr = 0xx
+
+*** Toggle reset.
+State of DUT
+------------
+Inputs and outputs:
+encdec = 0x0, init = 0x0, next = 0x0
+keylen = 0x0, key  = 0x0000000000000000000000000000000000000000000000000000000000000000 
+block  = 0x00000000000000000000000000000000
+
+ready        = 0x1
+result_valid = 0x0, result = 0x00000000000000000000000000000000
+
+Encipher state::
+enc_ctrl = 0x0, round_ctr = 0x0
+
+ECB 128 bit key tests
+---------------------
+*** TC 1 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x2b7e151628aed2a6abf7158809cf4f3c
+key[01] = 0xa0fafe1788542cb123a339392a6c7605
+key[02] = 0xf2c295f27a96b9435935807a7359f67f
+key[03] = 0x3d80477d4716fe3e1e237e446d7a883b
+key[04] = 0xef44a541a8525b7fb671253bdb0bad00
+key[05] = 0xd4d1c6f87c839d87caf2b8bc11f915bc
+key[06] = 0x6d88a37a110b3efddbf98641ca0093fd
+key[07] = 0x4e54f70e5f5fc9f384a64fb24ea6dc4f
+key[08] = 0xead27321b58dbad2312bf5607f8d292f
+key[09] = 0xac7766f319fadc2128d12941575c006e
+key[10] = 0xd014f9a8c9ee2589e13f0cc8b6630ca6
+key[11] = 0x00000000000000000000000000000000
+key[12] = 0x00000000000000000000000000000000
+key[13] = 0x00000000000000000000000000000000
+key[14] = 0x00000000000000000000000000000000
+
+*** TC 1 successful.
+
+*** TC 2 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x2b7e151628aed2a6abf7158809cf4f3c
+key[01] = 0xa0fafe1788542cb123a339392a6c7605
+key[02] = 0xf2c295f27a96b9435935807a7359f67f
+key[03] = 0x3d80477d4716fe3e1e237e446d7a883b
+key[04] = 0xef44a541a8525b7fb671253bdb0bad00
+key[05] = 0xd4d1c6f87c839d87caf2b8bc11f915bc
+key[06] = 0x6d88a37a110b3efddbf98641ca0093fd
+key[07] = 0x4e54f70e5f5fc9f384a64fb24ea6dc4f
+key[08] = 0xead27321b58dbad2312bf5607f8d292f
+key[09] = 0xac7766f319fadc2128d12941575c006e
+key[10] = 0xd014f9a8c9ee2589e13f0cc8b6630ca6
+key[11] = 0x00000000000000000000000000000000
+key[12] = 0x00000000000000000000000000000000
+key[13] = 0x00000000000000000000000000000000
+key[14] = 0x00000000000000000000000000000000
+
+*** TC 2 successful.
+
+*** TC 3 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x2b7e151628aed2a6abf7158809cf4f3c
+key[01] = 0xa0fafe1788542cb123a339392a6c7605
+key[02] = 0xf2c295f27a96b9435935807a7359f67f
+key[03] = 0x3d80477d4716fe3e1e237e446d7a883b
+key[04] = 0xef44a541a8525b7fb671253bdb0bad00
+key[05] = 0xd4d1c6f87c839d87caf2b8bc11f915bc
+key[06] = 0x6d88a37a110b3efddbf98641ca0093fd
+key[07] = 0x4e54f70e5f5fc9f384a64fb24ea6dc4f
+key[08] = 0xead27321b58dbad2312bf5607f8d292f
+key[09] = 0xac7766f319fadc2128d12941575c006e
+key[10] = 0xd014f9a8c9ee2589e13f0cc8b6630ca6
+key[11] = 0x00000000000000000000000000000000
+key[12] = 0x00000000000000000000000000000000
+key[13] = 0x00000000000000000000000000000000
+key[14] = 0x00000000000000000000000000000000
+
+*** TC 3 successful.
+
+*** TC 4 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x2b7e151628aed2a6abf7158809cf4f3c
+key[01] = 0xa0fafe1788542cb123a339392a6c7605
+key[02] = 0xf2c295f27a96b9435935807a7359f67f
+key[03] = 0x3d80477d4716fe3e1e237e446d7a883b
+key[04] = 0xef44a541a8525b7fb671253bdb0bad00
+key[05] = 0xd4d1c6f87c839d87caf2b8bc11f915bc
+key[06] = 0x6d88a37a110b3efddbf98641ca0093fd
+key[07] = 0x4e54f70e5f5fc9f384a64fb24ea6dc4f
+key[08] = 0xead27321b58dbad2312bf5607f8d292f
+key[09] = 0xac7766f319fadc2128d12941575c006e
+key[10] = 0xd014f9a8c9ee2589e13f0cc8b6630ca6
+key[11] = 0x00000000000000000000000000000000
+key[12] = 0x00000000000000000000000000000000
+key[13] = 0x00000000000000000000000000000000
+key[14] = 0x00000000000000000000000000000000
+
+*** TC 4 successful.
+
+*** TC 5 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x2b7e151628aed2a6abf7158809cf4f3c
+key[01] = 0xa0fafe1788542cb123a339392a6c7605
+key[02] = 0xf2c295f27a96b9435935807a7359f67f
+key[03] = 0x3d80477d4716fe3e1e237e446d7a883b
+key[04] = 0xef44a541a8525b7fb671253bdb0bad00
+key[05] = 0xd4d1c6f87c839d87caf2b8bc11f915bc
+key[06] = 0x6d88a37a110b3efddbf98641ca0093fd
+key[07] = 0x4e54f70e5f5fc9f384a64fb24ea6dc4f
+key[08] = 0xead27321b58dbad2312bf5607f8d292f
+key[09] = 0xac7766f319fadc2128d12941575c006e
+key[10] = 0xd014f9a8c9ee2589e13f0cc8b6630ca6
+key[11] = 0x00000000000000000000000000000000
+key[12] = 0x00000000000000000000000000000000
+key[13] = 0x00000000000000000000000000000000
+key[14] = 0x00000000000000000000000000000000
+
+*** TC 5 successful.
+
+*** TC 6 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x2b7e151628aed2a6abf7158809cf4f3c
+key[01] = 0xa0fafe1788542cb123a339392a6c7605
+key[02] = 0xf2c295f27a96b9435935807a7359f67f
+key[03] = 0x3d80477d4716fe3e1e237e446d7a883b
+key[04] = 0xef44a541a8525b7fb671253bdb0bad00
+key[05] = 0xd4d1c6f87c839d87caf2b8bc11f915bc
+key[06] = 0x6d88a37a110b3efddbf98641ca0093fd
+key[07] = 0x4e54f70e5f5fc9f384a64fb24ea6dc4f
+key[08] = 0xead27321b58dbad2312bf5607f8d292f
+key[09] = 0xac7766f319fadc2128d12941575c006e
+key[10] = 0xd014f9a8c9ee2589e13f0cc8b6630ca6
+key[11] = 0x00000000000000000000000000000000
+key[12] = 0x00000000000000000000000000000000
+key[13] = 0x00000000000000000000000000000000
+key[14] = 0x00000000000000000000000000000000
+
+*** TC 6 successful.
+
+*** TC 7 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x2b7e151628aed2a6abf7158809cf4f3c
+key[01] = 0xa0fafe1788542cb123a339392a6c7605
+key[02] = 0xf2c295f27a96b9435935807a7359f67f
+key[03] = 0x3d80477d4716fe3e1e237e446d7a883b
+key[04] = 0xef44a541a8525b7fb671253bdb0bad00
+key[05] = 0xd4d1c6f87c839d87caf2b8bc11f915bc
+key[06] = 0x6d88a37a110b3efddbf98641ca0093fd
+key[07] = 0x4e54f70e5f5fc9f384a64fb24ea6dc4f
+key[08] = 0xead27321b58dbad2312bf5607f8d292f
+key[09] = 0xac7766f319fadc2128d12941575c006e
+key[10] = 0xd014f9a8c9ee2589e13f0cc8b6630ca6
+key[11] = 0x00000000000000000000000000000000
+key[12] = 0x00000000000000000000000000000000
+key[13] = 0x00000000000000000000000000000000
+key[14] = 0x00000000000000000000000000000000
+
+*** TC 7 successful.
+
+*** TC 8 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x2b7e151628aed2a6abf7158809cf4f3c
+key[01] = 0xa0fafe1788542cb123a339392a6c7605
+key[02] = 0xf2c295f27a96b9435935807a7359f67f
+key[03] = 0x3d80477d4716fe3e1e237e446d7a883b
+key[04] = 0xef44a541a8525b7fb671253bdb0bad00
+key[05] = 0xd4d1c6f87c839d87caf2b8bc11f915bc
+key[06] = 0x6d88a37a110b3efddbf98641ca0093fd
+key[07] = 0x4e54f70e5f5fc9f384a64fb24ea6dc4f
+key[08] = 0xead27321b58dbad2312bf5607f8d292f
+key[09] = 0xac7766f319fadc2128d12941575c006e
+key[10] = 0xd014f9a8c9ee2589e13f0cc8b6630ca6
+key[11] = 0x00000000000000000000000000000000
+key[12] = 0x00000000000000000000000000000000
+key[13] = 0x00000000000000000000000000000000
+key[14] = 0x00000000000000000000000000000000
+
+*** TC 8 successful.
+
+*** TC 9 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x000102030405060708090a0b0c0d0e0f
+key[01] = 0xd6aa74fdd2af72fadaa678f1d6ab76fe
+key[02] = 0xb692cf0b643dbdf1be9bc5006830b3fe
+key[03] = 0xb6ff744ed2c2c9bf6c590cbf0469bf41
+key[04] = 0x47f7f7bc95353e03f96c32bcfd058dfd
+key[05] = 0x3caaa3e8a99f9deb50f3af57adf622aa
+key[06] = 0x5e390f7df7a69296a7553dc10aa31f6b
+key[07] = 0x14f9701ae35fe28c440adf4d4ea9c026
+key[08] = 0x47438735a41c65b9e016baf4aebf7ad2
+key[09] = 0x549932d1f08557681093ed9cbe2c974e
+key[10] = 0x13111d7fe3944a17f307a78b4d2b30c5
+key[11] = 0x00000000000000000000000000000000
+key[12] = 0x00000000000000000000000000000000
+key[13] = 0x00000000000000000000000000000000
+key[14] = 0x00000000000000000000000000000000
+
+*** TC 9 successful.
+
+*** TC 10 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x000102030405060708090a0b0c0d0e0f
+key[01] = 0xd6aa74fdd2af72fadaa678f1d6ab76fe
+key[02] = 0xb692cf0b643dbdf1be9bc5006830b3fe
+key[03] = 0xb6ff744ed2c2c9bf6c590cbf0469bf41
+key[04] = 0x47f7f7bc95353e03f96c32bcfd058dfd
+key[05] = 0x3caaa3e8a99f9deb50f3af57adf622aa
+key[06] = 0x5e390f7df7a69296a7553dc10aa31f6b
+key[07] = 0x14f9701ae35fe28c440adf4d4ea9c026
+key[08] = 0x47438735a41c65b9e016baf4aebf7ad2
+key[09] = 0x549932d1f08557681093ed9cbe2c974e
+key[10] = 0x13111d7fe3944a17f307a78b4d2b30c5
+key[11] = 0x00000000000000000000000000000000
+key[12] = 0x00000000000000000000000000000000
+key[13] = 0x00000000000000000000000000000000
+key[14] = 0x00000000000000000000000000000000
+
+*** TC 10 successful.
+
+
+ECB 256 bit key tests
+---------------------
+*** TC 16 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x603deb1015ca71be2b73aef0857d7781
+key[01] = 0x1f352c073b6108d72d9810a30914dff4
+key[02] = 0x9ba354118e6925afa51a8b5f2067fcde
+key[03] = 0xa8b09c1a93d194cdbe49846eb75d5b9a
+key[04] = 0xd59aecb85bf3c917fee94248de8ebe96
+key[05] = 0xb5a9328a2678a647983122292f6c79b3
+key[06] = 0x812c81addadf48ba24360af2fab8b464
+key[07] = 0x98c5bfc9bebd198e268c3ba709e04214
+key[08] = 0x68007bacb2df331696e939e46c518d80
+key[09] = 0xc814e20476a9fb8a5025c02d59c58239
+key[10] = 0xde1369676ccc5a71fa2563959674ee15
+key[11] = 0x5886ca5d2e2f31d77e0af1fa27cf73c3
+key[12] = 0x749c47ab18501ddae2757e4f7401905a
+key[13] = 0xcafaaae3e4d59b349adf6acebd10190d
+key[14] = 0xfe4890d1e6188d0b046df344706c631e
+
+*** TC 16 successful.
+
+*** TC 17 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x603deb1015ca71be2b73aef0857d7781
+key[01] = 0x1f352c073b6108d72d9810a30914dff4
+key[02] = 0x9ba354118e6925afa51a8b5f2067fcde
+key[03] = 0xa8b09c1a93d194cdbe49846eb75d5b9a
+key[04] = 0xd59aecb85bf3c917fee94248de8ebe96
+key[05] = 0xb5a9328a2678a647983122292f6c79b3
+key[06] = 0x812c81addadf48ba24360af2fab8b464
+key[07] = 0x98c5bfc9bebd198e268c3ba709e04214
+key[08] = 0x68007bacb2df331696e939e46c518d80
+key[09] = 0xc814e20476a9fb8a5025c02d59c58239
+key[10] = 0xde1369676ccc5a71fa2563959674ee15
+key[11] = 0x5886ca5d2e2f31d77e0af1fa27cf73c3
+key[12] = 0x749c47ab18501ddae2757e4f7401905a
+key[13] = 0xcafaaae3e4d59b349adf6acebd10190d
+key[14] = 0xfe4890d1e6188d0b046df344706c631e
+
+*** TC 17 successful.
+
+*** TC 18 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x603deb1015ca71be2b73aef0857d7781
+key[01] = 0x1f352c073b6108d72d9810a30914dff4
+key[02] = 0x9ba354118e6925afa51a8b5f2067fcde
+key[03] = 0xa8b09c1a93d194cdbe49846eb75d5b9a
+key[04] = 0xd59aecb85bf3c917fee94248de8ebe96
+key[05] = 0xb5a9328a2678a647983122292f6c79b3
+key[06] = 0x812c81addadf48ba24360af2fab8b464
+key[07] = 0x98c5bfc9bebd198e268c3ba709e04214
+key[08] = 0x68007bacb2df331696e939e46c518d80
+key[09] = 0xc814e20476a9fb8a5025c02d59c58239
+key[10] = 0xde1369676ccc5a71fa2563959674ee15
+key[11] = 0x5886ca5d2e2f31d77e0af1fa27cf73c3
+key[12] = 0x749c47ab18501ddae2757e4f7401905a
+key[13] = 0xcafaaae3e4d59b349adf6acebd10190d
+key[14] = 0xfe4890d1e6188d0b046df344706c631e
+
+*** TC 18 successful.
+
+*** TC 19 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x603deb1015ca71be2b73aef0857d7781
+key[01] = 0x1f352c073b6108d72d9810a30914dff4
+key[02] = 0x9ba354118e6925afa51a8b5f2067fcde
+key[03] = 0xa8b09c1a93d194cdbe49846eb75d5b9a
+key[04] = 0xd59aecb85bf3c917fee94248de8ebe96
+key[05] = 0xb5a9328a2678a647983122292f6c79b3
+key[06] = 0x812c81addadf48ba24360af2fab8b464
+key[07] = 0x98c5bfc9bebd198e268c3ba709e04214
+key[08] = 0x68007bacb2df331696e939e46c518d80
+key[09] = 0xc814e20476a9fb8a5025c02d59c58239
+key[10] = 0xde1369676ccc5a71fa2563959674ee15
+key[11] = 0x5886ca5d2e2f31d77e0af1fa27cf73c3
+key[12] = 0x749c47ab18501ddae2757e4f7401905a
+key[13] = 0xcafaaae3e4d59b349adf6acebd10190d
+key[14] = 0xfe4890d1e6188d0b046df344706c631e
+
+*** TC 19 successful.
+
+*** TC 20 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x603deb1015ca71be2b73aef0857d7781
+key[01] = 0x1f352c073b6108d72d9810a30914dff4
+key[02] = 0x9ba354118e6925afa51a8b5f2067fcde
+key[03] = 0xa8b09c1a93d194cdbe49846eb75d5b9a
+key[04] = 0xd59aecb85bf3c917fee94248de8ebe96
+key[05] = 0xb5a9328a2678a647983122292f6c79b3
+key[06] = 0x812c81addadf48ba24360af2fab8b464
+key[07] = 0x98c5bfc9bebd198e268c3ba709e04214
+key[08] = 0x68007bacb2df331696e939e46c518d80
+key[09] = 0xc814e20476a9fb8a5025c02d59c58239
+key[10] = 0xde1369676ccc5a71fa2563959674ee15
+key[11] = 0x5886ca5d2e2f31d77e0af1fa27cf73c3
+key[12] = 0x749c47ab18501ddae2757e4f7401905a
+key[13] = 0xcafaaae3e4d59b349adf6acebd10190d
+key[14] = 0xfe4890d1e6188d0b046df344706c631e
+
+*** TC 20 successful.
+
+*** TC 21 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x603deb1015ca71be2b73aef0857d7781
+key[01] = 0x1f352c073b6108d72d9810a30914dff4
+key[02] = 0x9ba354118e6925afa51a8b5f2067fcde
+key[03] = 0xa8b09c1a93d194cdbe49846eb75d5b9a
+key[04] = 0xd59aecb85bf3c917fee94248de8ebe96
+key[05] = 0xb5a9328a2678a647983122292f6c79b3
+key[06] = 0x812c81addadf48ba24360af2fab8b464
+key[07] = 0x98c5bfc9bebd198e268c3ba709e04214
+key[08] = 0x68007bacb2df331696e939e46c518d80
+key[09] = 0xc814e20476a9fb8a5025c02d59c58239
+key[10] = 0xde1369676ccc5a71fa2563959674ee15
+key[11] = 0x5886ca5d2e2f31d77e0af1fa27cf73c3
+key[12] = 0x749c47ab18501ddae2757e4f7401905a
+key[13] = 0xcafaaae3e4d59b349adf6acebd10190d
+key[14] = 0xfe4890d1e6188d0b046df344706c631e
+
+*** TC 21 successful.
+
+*** TC 22 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x603deb1015ca71be2b73aef0857d7781
+key[01] = 0x1f352c073b6108d72d9810a30914dff4
+key[02] = 0x9ba354118e6925afa51a8b5f2067fcde
+key[03] = 0xa8b09c1a93d194cdbe49846eb75d5b9a
+key[04] = 0xd59aecb85bf3c917fee94248de8ebe96
+key[05] = 0xb5a9328a2678a647983122292f6c79b3
+key[06] = 0x812c81addadf48ba24360af2fab8b464
+key[07] = 0x98c5bfc9bebd198e268c3ba709e04214
+key[08] = 0x68007bacb2df331696e939e46c518d80
+key[09] = 0xc814e20476a9fb8a5025c02d59c58239
+key[10] = 0xde1369676ccc5a71fa2563959674ee15
+key[11] = 0x5886ca5d2e2f31d77e0af1fa27cf73c3
+key[12] = 0x749c47ab18501ddae2757e4f7401905a
+key[13] = 0xcafaaae3e4d59b349adf6acebd10190d
+key[14] = 0xfe4890d1e6188d0b046df344706c631e
+
+*** TC 22 successful.
+
+*** TC 23 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x603deb1015ca71be2b73aef0857d7781
+key[01] = 0x1f352c073b6108d72d9810a30914dff4
+key[02] = 0x9ba354118e6925afa51a8b5f2067fcde
+key[03] = 0xa8b09c1a93d194cdbe49846eb75d5b9a
+key[04] = 0xd59aecb85bf3c917fee94248de8ebe96
+key[05] = 0xb5a9328a2678a647983122292f6c79b3
+key[06] = 0x812c81addadf48ba24360af2fab8b464
+key[07] = 0x98c5bfc9bebd198e268c3ba709e04214
+key[08] = 0x68007bacb2df331696e939e46c518d80
+key[09] = 0xc814e20476a9fb8a5025c02d59c58239
+key[10] = 0xde1369676ccc5a71fa2563959674ee15
+key[11] = 0x5886ca5d2e2f31d77e0af1fa27cf73c3
+key[12] = 0x749c47ab18501ddae2757e4f7401905a
+key[13] = 0xcafaaae3e4d59b349adf6acebd10190d
+key[14] = 0xfe4890d1e6188d0b046df344706c631e
+
+*** TC 23 successful.
+
+*** TC 24 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x000102030405060708090a0b0c0d0e0f
+key[01] = 0x101112131415161718191a1b1c1d1e1f
+key[02] = 0xa573c29fa176c498a97fce93a572c09c
+key[03] = 0x1651a8cd0244beda1a5da4c10640bade
+key[04] = 0xae87dff00ff11b68a68ed5fb03fc1567
+key[05] = 0x6de1f1486fa54f9275f8eb5373b8518d
+key[06] = 0xc656827fc9a799176f294cec6cd5598b
+key[07] = 0x3de23a75524775e727bf9eb45407cf39
+key[08] = 0x0bdc905fc27b0948ad5245a4c1871c2f
+key[09] = 0x45f5a66017b2d387300d4d33640a820a
+key[10] = 0x7ccff71cbeb4fe5413e6bbf0d261a7df
+key[11] = 0xf01afafee7a82979d7a5644ab3afe640
+key[12] = 0x2541fe719bf500258813bbd55a721c0a
+key[13] = 0x4e5a6699a9f24fe07e572baacdf8cdea
+key[14] = 0x24fc79ccbf0979e9371ac23c6d68de36
+
+*** TC 24 successful.
+
+*** TC 25 ECB mode test started.
+Key expansion done
+
+State of key memory in DUT:
+key[00] = 0x000102030405060708090a0b0c0d0e0f
+key[01] = 0x101112131415161718191a1b1c1d1e1f
+key[02] = 0xa573c29fa176c498a97fce93a572c09c
+key[03] = 0x1651a8cd0244beda1a5da4c10640bade
+key[04] = 0xae87dff00ff11b68a68ed5fb03fc1567
+key[05] = 0x6de1f1486fa54f9275f8eb5373b8518d
+key[06] = 0xc656827fc9a799176f294cec6cd5598b
+key[07] = 0x3de23a75524775e727bf9eb45407cf39
+key[08] = 0x0bdc905fc27b0948ad5245a4c1871c2f
+key[09] = 0x45f5a66017b2d387300d4d33640a820a
+key[10] = 0x7ccff71cbeb4fe5413e6bbf0d261a7df
+key[11] = 0xf01afafee7a82979d7a5644ab3afe640
+key[12] = 0x2541fe719bf500258813bbd55a721c0a
+key[13] = 0x4e5a6699a9f24fe07e572baacdf8cdea
+key[14] = 0x24fc79ccbf0979e9371ac23c6d68de36
+
+*** TC 25 successful.
+
+*** All 20 test cases completed successfully
+
+   -= Testbench for aes core cmpleted =-
+     =================================
+
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_core-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_core-icarus'
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_core-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_core-icarus'

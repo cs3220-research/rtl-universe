@@ -1,0 +1,110 @@
+{
+    "id": "fb702477-9771-43ae-8209-017274fb9bd5",
+    "task_name": "pulp-common-cells-full",
+    "trial_name": "pulp-common-cells-full__Bp9f92z",
+    "trial_uri": "file:///home/broyojo/code/rtl-universe/jobs/sandboxed-sonnet-pulp-common-cells-full/pulp-common-cells-full__Bp9f92z",
+    "task_id": {
+        "path": "minrepro_task/pulp-common-cells-full"
+    },
+    "source": null,
+    "task_checksum": "e91432ec1648c7b58ce42de3e675501bac8ae5a0a7526922dff5c7bb0a21101b",
+    "config": {
+        "task": {
+            "path": "minrepro_task/pulp-common-cells-full",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "pulp-common-cells-full__Bp9f92z",
+        "trials_dir": "jobs/sandboxed-sonnet-pulp-common-cells-full",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:ClaudeCodeSandboxed",
+            "model_name": "sonnet",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "CLAUDE_CONFIG_DIR": "/home/builder/.claude",
+                "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "****"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": [
+                "/tmp/harbor-claude-creds:/home/builder/.claude"
+            ],
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "204c7d34-b329-4ed2-936d-756e4600d69a"
+    },
+    "agent_info": {
+        "name": "claude-code-sandboxed",
+        "version": "2.1.126",
+        "model_info": {
+            "name": "sonnet",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-03T17:36:50.273113Z",
+    "finished_at": "2026-05-03T18:15:27.370298Z",
+    "environment_setup": {
+        "started_at": "2026-05-03T17:36:50.291683Z",
+        "finished_at": "2026-05-03T17:36:54.044362Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-03T17:36:54.044403Z",
+        "finished_at": "2026-05-03T17:37:15.891747Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-03T17:37:15.891808Z",
+        "finished_at": "2026-05-03T18:15:09.979995Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-03T18:15:10.050809Z",
+        "finished_at": "2026-05-03T18:15:16.537692Z"
+    },
+    "step_results": null
+}

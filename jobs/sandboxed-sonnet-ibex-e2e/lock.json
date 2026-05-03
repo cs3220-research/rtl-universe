@@ -1,0 +1,80 @@
+{
+    "schema_version": 1,
+    "created_at": "2026-05-03T17:12:25.509498Z",
+    "harbor": {
+        "version": "0.6.4",
+        "is_editable": false
+    },
+    "invocation": [
+        "/home/broyojo/.local/bin/harbor",
+        "run",
+        "--path",
+        "minrepro_task/ibex-e2e",
+        "--agent-import-path",
+        "agents.sandboxed:ClaudeCodeSandboxed",
+        "--model",
+        "sonnet",
+        "-n",
+        "1",
+        "-y",
+        "--job-name",
+        "sandboxed-sonnet-ibex-e2e",
+        "--artifact",
+        "/app",
+        "--mounts-json",
+        "[\"/tmp/harbor-claude-creds:/home/builder/.claude\"]",
+        "--ae",
+        "CLAUDE_CONFIG_DIR=/home/builder/.claude",
+        "--ae",
+        "CLAUDE_CODE_MAX_OUTPUT_TOKENS=****"
+    ],
+    "n_concurrent_trials": 1,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "VerifierTimeoutError",
+            "RewardFileEmptyError",
+            "AgentTimeoutError",
+            "VerifierOutputParseError",
+            "RewardFileNotFoundError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "task": {
+                "name": "ibex-e2e",
+                "type": "local",
+                "digest": "sha256:c70240fbdb19ce8273db8705431da7fc891c590c076268e01b2572bc908b4216",
+                "path": "minrepro_task/ibex-e2e"
+            },
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "agents.sandboxed:ClaudeCodeSandboxed",
+                "model_name": "sonnet",
+                "kwargs": {},
+                "env": {
+                    "CLAUDE_CONFIG_DIR": "/home/builder/.claude",
+                    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "****"
+                }
+            },
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "suppress_override_warnings": false,
+                "mounts_json": [
+                    "/tmp/harbor-claude-creds:/home/builder/.claude"
+                ],
+                "env": {},
+                "kwargs": {}
+            },
+            "verifier": {
+                "env": {},
+                "disable": false
+            }
+        }
+    ]
+}

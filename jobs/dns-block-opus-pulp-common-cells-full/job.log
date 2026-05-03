@@ -1,0 +1,11 @@
+Skipping image OS validation for hb__pulp-common-cells-full: docker inspect returned 1
+Running command: if command -v apk &> /dev/null; then  apk add --no-cache curl bash nodejs npm; elif command -v apt-get &> /dev/null; then  apt-get update && apt-get install -y curl; elif command -v yum &> /dev/null; then  yum install -y curl; else  echo "Warning: No known package manager found, assuming curl is available" >&2; fi
+Command outputs captured
+Running command: set -euo pipefail; if command -v apk &> /dev/null; then  npm install -g @anthropic-ai/claude-code; else  curl -fsSL https://claude.ai/install.sh | bash -s --; fi && echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && export PATH="$HOME/.local/bin:$PATH" && claude --version
+Command failed
+Trial pulp-common-cells-full__Yckszbt failed: Command failed (exit 126): set -euo pipefail; if command -v apk &> /dev/null; then  npm install -g @anthropic-ai/claude-code; else  curl -fsSL https://claude.ai/install.sh | bash -s --; fi && echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && export PATH="$HOME/.local/bin:$PATH" && claude --version
+stdout: Setting up Claude Code...
+bash: line 151: /home/builder/.claude/downloads/claude-2.1.126-linux-x64: Text file busy
+
+stderr: None
+Not retrying trial because the maximum number of retries has been reached

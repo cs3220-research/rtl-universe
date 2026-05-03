@@ -1,0 +1,76 @@
+{
+    "schema_version": 1,
+    "created_at": "2026-05-03T16:42:59.654270Z",
+    "harbor": {
+        "version": "0.6.4",
+        "is_editable": false
+    },
+    "invocation": [
+        "/home/broyojo/.local/bin/harbor",
+        "run",
+        "--path",
+        "minrepro_task/openpiton-e2e",
+        "--agent-import-path",
+        "agents.sandboxed:CodexSandboxed",
+        "--model",
+        "gpt-5.5",
+        "--ak",
+        "reasoning_effort=xhigh",
+        "--ae",
+        "CODEX_AUTH_JSON_PATH=/hom****son",
+        "-n",
+        "1",
+        "-y",
+        "--job-name",
+        "codex-gpt55-xhigh-openpiton-e2e",
+        "--artifact",
+        "/app"
+    ],
+    "n_concurrent_trials": 1,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "AgentTimeoutError",
+            "RewardFileNotFoundError",
+            "RewardFileEmptyError",
+            "VerifierTimeoutError",
+            "VerifierOutputParseError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "task": {
+                "name": "openpiton-e2e",
+                "type": "local",
+                "digest": "sha256:b9f54a063e0214bf9fa948992e8eccd5a17134bd5e19c54b14423159ee023dc9",
+                "path": "minrepro_task/openpiton-e2e"
+            },
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "import_path": "agents.sandboxed:CodexSandboxed",
+                "model_name": "gpt-5.5",
+                "kwargs": {
+                    "reasoning_effort": "xhigh"
+                },
+                "env": {
+                    "CODEX_AUTH_JSON_PATH": "/hom****son"
+                }
+            },
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "suppress_override_warnings": false,
+                "env": {},
+                "kwargs": {}
+            },
+            "verifier": {
+                "env": {},
+                "disable": false
+            }
+        }
+    ]
+}

@@ -1,0 +1,107 @@
+{
+    "id": "d458a813-4edc-4faf-839d-2898d10b5cb8",
+    "task_name": "veer-el2-block",
+    "trial_name": "veer-el2-block__TCQmfis",
+    "trial_uri": "file:///home/broyojo/code/rtl-universe/jobs/openrouter-qwen3.6-max-veer-el2-block/veer-el2-block__TCQmfis",
+    "task_id": {
+        "path": "minrepro_task/veer-el2-block"
+    },
+    "source": null,
+    "task_checksum": "4616508ce49f75b37d285e9982d2024721aea43dc49fb87232b5b869fa2ac21f",
+    "config": {
+        "task": {
+            "path": "minrepro_task/veer-el2-block",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "veer-el2-block__TCQmfis",
+        "trials_dir": "jobs/openrouter-qwen3.6-max-veer-el2-block",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:OpenCodeSandboxed",
+            "model_name": "openrouter/qwen/qwen3.6-max-preview",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "c4b4613d-194d-4125-af92-fe634a6e2e06"
+    },
+    "agent_info": {
+        "name": "opencode-sandboxed",
+        "version": "1.14.33",
+        "model_info": {
+            "name": "qwen/qwen3.6-max-preview",
+            "provider": "openrouter"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 171496,
+        "n_cache_tokens": 0,
+        "n_output_tokens": 500,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-03T17:57:48.303274Z",
+    "finished_at": "2026-05-03T18:02:30.934159Z",
+    "environment_setup": {
+        "started_at": "2026-05-03T17:57:48.725247Z",
+        "finished_at": "2026-05-03T17:59:18.626199Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-03T17:59:18.626236Z",
+        "finished_at": "2026-05-03T17:59:22.867230Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-03T17:59:22.867287Z",
+        "finished_at": "2026-05-03T18:02:18.612523Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-03T18:02:18.680524Z",
+        "finished_at": "2026-05-03T18:02:19.049453Z"
+    },
+    "step_results": null
+}

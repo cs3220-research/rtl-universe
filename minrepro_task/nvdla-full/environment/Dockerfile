@@ -16,8 +16,8 @@ FROM debian:bookworm AS base
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
-ARG _UID=1005
-ARG _GID=1005
+ARG _UID=1000
+ARG _GID=1000
 ARG _USERNAME=builder
 ENV HOME=/home/${_USERNAME}
 
@@ -90,7 +90,8 @@ RUN bash -c '\
     export NVM_DIR="$HOME/.nvm"; \
     . "$NVM_DIR/nvm.sh"; \
     nvm install 22; \
-    npm i -g opencode-ai@latest'
+    npm i -g opencode-ai@latest; \
+    npm i -g @openai/codex@latest'
 
 
 # ---------------------------------------------------------------------------
@@ -104,8 +105,8 @@ USER root
 RUN mkdir -p /app && chown ${_UID}:${_GID} /app
 USER ${_USERNAME}
 
-COPY --chown=${_USERNAME}:${_USERNAME} warm_src/ /app/
-COPY --chown=${_USERNAME}:${_USERNAME} count_tests.sh /tmp/count_tests.sh
+COPY --chown=builder:builder warm_src/ /app/
+COPY --chown=builder:builder count_tests.sh /tmp/count_tests.sh
 RUN chmod +x /tmp/count_tests.sh && /tmp/count_tests.sh
 
 
@@ -118,13 +119,14 @@ USER root
 RUN mkdir -p /app /app/.harbor && chown -R ${_UID}:${_GID} /app
 USER ${_USERNAME}
 
-COPY --chown=${_USERNAME}:${_USERNAME} skeleton/ /app/
+COPY --chown=builder:builder skeleton/ /app/
 COPY --from=count --chown=${_USERNAME}:${_USERNAME} /tmp/_total       /app/.harbor/total_tests
 COPY --from=count --chown=${_USERNAME}:${_USERNAME} /tmp/_all_tests   /app/.harbor/all_tests
 COPY --from=count --chown=${_USERNAME}:${_USERNAME} /tmp/_e2e_targets /app/.harbor/e2e_targets
 
 RUN set -eux; \
     cd /app; \
+    git config --global --add safe.directory /app; \
     git init -q; \
     git add -A; \
     git -c user.email=x@x -c user.name=x commit -q -m init

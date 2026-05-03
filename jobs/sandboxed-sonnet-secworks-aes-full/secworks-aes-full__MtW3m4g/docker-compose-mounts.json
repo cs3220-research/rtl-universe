@@ -1,0 +1,9 @@
+{
+  "services": {
+    "main": {
+      "volumes": [
+        "/tmp/harbor-claude-creds-sandboxed-sonnet-secworks-aes-full:/home/builder/.claude"
+      ]
+    }
+  }
+}

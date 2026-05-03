@@ -1,0 +1,109 @@
+{
+    "id": "c7db7c3f-49b9-459d-87f4-de94997ae2a9",
+    "task_name": "openpiton-e2e",
+    "trial_name": "openpiton-e2e__4nZPV9c",
+    "trial_uri": "file:///home/broyojo/code/rtl-universe/jobs/codex-gpt55-xhigh-openpiton-e2e/openpiton-e2e__4nZPV9c",
+    "task_id": {
+        "path": "minrepro_task/openpiton-e2e"
+    },
+    "source": null,
+    "task_checksum": "d5825c2fe2a00bbdea53ae1f761af17d923a72b9791049029c923d452bdfbcf2",
+    "config": {
+        "task": {
+            "path": "minrepro_task/openpiton-e2e",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "openpiton-e2e__4nZPV9c",
+        "trials_dir": "jobs/codex-gpt55-xhigh-openpiton-e2e",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:CodexSandboxed",
+            "model_name": "gpt-5.5",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+                "reasoning_effort": "xhigh"
+            },
+            "env": {
+                "CODEX_AUTH_JSON_PATH": "/hom****son"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "ad2d9c17-3ee1-4a4f-a9e5-a766a54df091"
+    },
+    "agent_info": {
+        "name": "codex-sandboxed",
+        "version": "0.128.0",
+        "model_info": {
+            "name": "gpt-5.5",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 2760023,
+        "n_cache_tokens": 2591360,
+        "n_output_tokens": 23453,
+        "cost_usd": 2.842585,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-03T16:43:01.064555Z",
+    "finished_at": "2026-05-03T17:38:43.443102Z",
+    "environment_setup": {
+        "started_at": "2026-05-03T16:43:07.956439Z",
+        "finished_at": "2026-05-03T17:21:28.954158Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-03T17:21:28.954200Z",
+        "finished_at": "2026-05-03T17:21:32.223538Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-03T17:21:32.223601Z",
+        "finished_at": "2026-05-03T17:33:54.416984Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-03T17:33:54.492390Z",
+        "finished_at": "2026-05-03T17:38:24.731364Z"
+    },
+    "step_results": null
+}

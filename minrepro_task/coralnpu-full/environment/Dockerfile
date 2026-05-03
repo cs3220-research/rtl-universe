@@ -14,8 +14,8 @@ FROM debian:bookworm AS base
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
-ARG _UID=1005
-ARG _GID=1005
+ARG _UID=1000
+ARG _GID=1000
 ARG _USERNAME=builder
 ENV HOME=/home/${_USERNAME}
 
@@ -65,7 +65,8 @@ RUN bash -c '\
     export NVM_DIR="$HOME/.nvm"; \
     . "$NVM_DIR/nvm.sh"; \
     nvm install 22; \
-    npm i -g opencode-ai@latest'
+    npm i -g opencode-ai@latest; \
+    npm i -g @openai/codex@latest'
 
 
 # ---------------------------------------------------------------------------
@@ -76,6 +77,7 @@ FROM base AS warm
 COPY --chown=builder:builder warm_src/ /app/
 RUN set -eux; \
     cd /app; \
+    git config --global --add safe.directory /app; \
     git init -q; \
     git add -A; \
     git -c user.email=x@x -c user.name=x commit -q -m init; \
