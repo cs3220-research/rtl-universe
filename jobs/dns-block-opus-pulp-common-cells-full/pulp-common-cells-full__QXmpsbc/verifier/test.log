@@ -1,0 +1,89 @@
+=== Per-module Verilator lint tests ===
+PASS: lint::binary_to_gray
+PASS: lint::gray_to_binary
+PASS: lint::cc_onehot
+PASS: lint::clk_int_div
+PASS: lint::credit_counter
+PASS: lint::delta_counter
+PASS: lint::edge_propagator_tx
+PASS: lint::exp_backoff
+PASS: lint::fifo_v3
+PASS: lint::heaviside
+PASS: lint::isochronous_4phase_handshake
+PASS: lint::isochronous_spill_register
+PASS: lint::lfsr
+PASS: lint::lfsr_16bit
+PASS: lint::lfsr_8bit
+PASS: lint::lossy_valid_to_stream
+PASS: lint::mv_filter
+PASS: lint::onehot_to_bin
+PASS: lint::plru_tree
+PASS: lint::passthrough_stream_fifo
+PASS: lint::popcount
+PASS: lint::ring_buffer
+PASS: lint::rr_arb_tree
+PASS: lint::rstgen_bypass
+PASS: lint::serial_deglitch
+PASS: lint::shift_reg
+PASS: lint::shift_reg_gated
+PASS: lint::spill_register_flushable
+PASS: lint::stream_demux
+PASS: lint::stream_filter
+PASS: lint::stream_fork
+PASS: lint::stream_join_dynamic
+PASS: lint::stream_mux
+PASS: lint::stream_throttle
+PASS: lint::sub_per_hash
+PASS: lint::sync
+PASS: lint::sync_wedge
+PASS: lint::unread
+PASS: lint::read
+PASS: lint::boxcar
+PASS: lint::cdc_2phase
+PASS: lint::cdc_4phase
+PASS: lint::clk_int_div_static
+PASS: lint::trip_counter
+PASS: lint::addr_decode
+PASS: lint::addr_decode_napot
+PASS: lint::cb_filter
+PASS: lint::cdc_fifo_2phase
+PASS: lint::clk_mux_glitch_free
+PASS: lint::counter
+PASS: lint::ecc_decode
+PASS: lint::ecc_encode
+PASS: lint::edge_detect
+PASS: lint::lzc
+PASS: lint::max_counter
+PASS: lint::rstgen
+PASS: lint::spill_register
+PASS: lint::stream_delay
+PASS: lint::stream_fifo
+PASS: lint::stream_fork_dynamic
+PASS: lint::stream_join
+PASS: lint::cdc_reset_ctrlr
+PASS: lint::cdc_fifo_gray
+PASS: lint::fall_through_register
+PASS: lint::id_queue
+PASS: lint::stream_to_mem
+PASS: lint::stream_arbiter_flushable
+PASS: lint::stream_fifo_optimal_wrap
+PASS: lint::stream_register
+PASS: lint::stream_xbar
+PASS: lint::cdc_fifo_gray_clearable
+PASS: lint::cdc_2phase_clearable
+PASS: lint::stream_arbiter
+PASS: lint::stream_omega_net
+PASS: lint::mem_to_banks
+
+=== ECC Functional Tests ===
+make: Entering directory '/tmp/verilator_ecc_encode_verify'
+make: *** No rule to make target 'test/ecc/ecc.cpp', needed by 'ecc.o'.  Stop.
+make: Leaving directory '/tmp/verilator_ecc_encode_verify'
+FAIL: functional::ecc_encode (binary not built)
+make: Entering directory '/tmp/verilator_ecc_decode_verify'
+make: *** No rule to make target 'test/ecc/ecc.cpp', needed by 'ecc.o'.  Stop.
+make: Leaving directory '/tmp/verilator_ecc_decode_verify'
+FAIL: functional::ecc_decode (binary not built)
+
+=== Summary ===
+passed=75 total=70

@@ -1,12 +1,12 @@
 {
     "schema_version": 1,
-    "created_at": "2026-05-03T17:36:06.534022Z",
+    "created_at": "2026-05-04T13:45:12.600406Z",
     "harbor": {
         "version": "0.6.4",
         "is_editable": false
     },
     "invocation": [
-        "/home/broyojo/.local/bin/harbor",
+        "/nethome/dandrews47/.local/bin/harbor",
         "run",
         "--path",
         "minrepro_task/pulp-common-cells-full",
@@ -24,7 +24,7 @@
         "--agent-timeout-multiplier",
         "0.42",
         "--mounts-json",
-        "[\"/tmp/harbor-claude-creds:/home/builder/.claude\"]",
+        "[\"/tmp/harbor-claude-creds-dns-block-opus-pulp-common-cells-full:/home/builder/.claude\"]",
         "--ae",
         "CLAUDE_CONFIG_DIR=/home/builder/.claude",
         "--ae",
@@ -34,11 +34,11 @@
     "retry": {
         "max_retries": 0,
         "exclude_exceptions": [
-            "AgentTimeoutError",
-            "VerifierOutputParseError",
-            "RewardFileNotFoundError",
             "RewardFileEmptyError",
-            "VerifierTimeoutError"
+            "VerifierTimeoutError",
+            "VerifierOutputParseError",
+            "AgentTimeoutError",
+            "RewardFileNotFoundError"
         ],
         "wait_multiplier": 1.0,
         "min_wait_sec": 1.0,
@@ -49,7 +49,7 @@
             "task": {
                 "name": "pulp-common-cells-full",
                 "type": "local",
-                "digest": "sha256:3db13998e71c1b8bb55a1e47a7f71c99f3f489f7fa9ab55259d68e4d3080dbf3",
+                "digest": "sha256:e2b12358b45dbb7d5fb0e3421b001fd107667501898999627810011bf461ba1b",
                 "path": "minrepro_task/pulp-common-cells-full"
             },
             "timeout_multiplier": 1.0,
@@ -69,7 +69,7 @@
                 "delete": true,
                 "suppress_override_warnings": false,
                 "mounts_json": [
-                    "/tmp/harbor-claude-creds:/home/builder/.claude"
+                    "/tmp/harbor-claude-creds-dns-block-opus-pulp-common-cells-full:/home/builder/.claude"
                 ],
                 "env": {},
                 "kwargs": {}

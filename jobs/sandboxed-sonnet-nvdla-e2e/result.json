@@ -1,8 +1,8 @@
 {
-    "id": "830f82c3-7f6f-462a-a929-1516f9474fdf",
-    "started_at": "2026-05-03T13:54:46.838257",
-    "updated_at": "2026-05-03T13:55:10.648529",
-    "finished_at": "2026-05-03T13:55:10.648529",
+    "id": "dbe2bd82-ab0f-4aab-aebe-4b0eb20e18ab",
+    "started_at": "2026-05-05T13:18:54.541113",
+    "updated_at": "2026-05-05T23:24:30.108098",
+    "finished_at": "2026-05-05T23:24:30.108098",
     "n_total_trials": 1,
     "stats": {
         "n_completed_trials": 1,
@@ -13,18 +13,24 @@
         "n_retries": 0,
         "evals": {
             "claude-code-sandboxed__sonnet__adhoc": {
-                "n_trials": 0,
+                "n_trials": 1,
                 "n_errors": 1,
                 "metrics": [
                     {
-                        "mean": 0.0
+                        "mean": 0.857143
                     }
                 ],
                 "pass_at_k": {},
-                "reward_stats": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.857143": [
+                            "nvdla-e2e__ZjsyfXX"
+                        ]
+                    }
+                },
                 "exception_stats": {
-                    "RuntimeError": [
-                        "nvdla-e2e__chhttFP"
+                    "AgentTimeoutError": [
+                        "nvdla-e2e__ZjsyfXX"
                     ]
                 }
             }

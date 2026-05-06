@@ -14,10 +14,10 @@
         "max_retries": 0,
         "include_exceptions": null,
         "exclude_exceptions": [
+            "VerifierOutputParseError",
             "AgentTimeoutError",
             "VerifierTimeoutError",
             "RewardFileNotFoundError",
-            "VerifierOutputParseError",
             "RewardFileEmptyError"
         ],
         "wait_multiplier": 1.0,
@@ -57,7 +57,7 @@
                 "reasoning_effort": "xhigh"
             },
             "env": {
-                "CODEX_AUTH_JSON_PATH": "/hom****son"
+                "CODEX_AUTH_JSON_PATH": "/net****son"
             }
         }
     ],

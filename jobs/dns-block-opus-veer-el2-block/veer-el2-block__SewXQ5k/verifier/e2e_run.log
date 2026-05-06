@@ -1,0 +1,98 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.2, pytest-7.4.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+metadata: {'Python': '3.11.2', 'Platform': 'Linux-6.8.0-100-generic-x86_64-with-glibc2.36', 'Packages': {'pytest': '7.4.1', 'pluggy': '1.6.0'}, 'Plugins': {'metadata': '3.1.1', 'md': '0.2.0', 'timeout': '2.1.0', 'html': '3.2.0', 'cocotb-test': '0.2.4'}}
+rootdir: /app/verification/top
+plugins: metadata-3.1.1, md-0.2.0, timeout-2.1.0, html-3.2.0, cocotb-test-0.2.4
+timeout: 1800.0s
+timeout method: signal
+timeout func_only: False
+collecting ... collected 1 item
+
+test_pyuvm/test_pyuvm.py::TestPyUVM::test_pyuvm[test_irq.test_irq] Makefile:100: warning: overriding recipe for target 'sim-build-toggle/Vtop.mk'
+/usr/local/lib/python3.11/dist-packages/cocotb/share/makefiles/simulators/Makefile.verilator:57: warning: ignoring old recipe for target 'sim-build-toggle/Vtop.mk'
+rm -f -r sim-build-toggle
+rm -f dump.vcd
+rm -f dump.fst
+rm -f results.xml
+make -f Makefile results.xml
+make[1]: Entering directory '/app/verification/top/test_pyuvm'
+Makefile:100: warning: overriding recipe for target 'sim-build-toggle/Vtop.mk'
+/usr/local/lib/python3.11/dist-packages/cocotb/share/makefiles/simulators/Makefile.verilator:57: warning: ignoring old recipe for target 'sim-build-toggle/Vtop.mk'
+mkdir -p sim-build-toggle
+verilator -cc --exe -Mdir sim-build-toggle -DCOCOTB_SIM=1 --top-module veer_wrapper --coverage-max-width 20000 --timing -Wall -Wno-fatal --vpi --public-flat-rw --prefix Vtop -o Vtop -LDFLAGS "-Wl,-rpath,/usr/local/lib/python3.11/dist-packages/cocotb/libs -L/usr/local/lib/python3.11/dist-packages/cocotb/libs -lcocotbvpi_verilator" --trace --trace-structs --coverage-toggle -I/app/verification/top/test_pyuvm/snapshots/default -Wno-DECLFILENAME --timescale 1ns/1ps /app/verification/top/test_pyuvm/snapshots/default/common_defines.vh /app/design/include/el2_def.sv /app/verification/top/test_pyuvm/snapshots/default/el2_pdef.vh -f /app/testbench/flist /usr/local/lib/python3.11/dist-packages/cocotb/share/lib/verilator/verilator.cpp
+make -C sim-build-toggle -j$((`nproc`-1)) -f Vtop.mk
+make[2]: Entering directory '/app/verification/top/test_pyuvm/sim-build-toggle'
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o verilator.o /usr/local/lib/python3.11/dist-packages/cocotb/share/lib/verilator/verilator.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o verilated.o /usr/share/verilator/include/verilated.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o verilated_dpi.o /usr/share/verilator/include/verilated_dpi.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o verilated_vpi.o /usr/share/verilator/include/verilated_vpi.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o verilated_cov.o /usr/share/verilator/include/verilated_cov.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o verilated_vcd_c.o /usr/share/verilator/include/verilated_vcd_c.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o verilated_threads.o /usr/share/verilator/include/verilated_threads.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o Vtop.o Vtop.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o Vtop___024root__DepSet_h84412442__0.o Vtop___024root__DepSet_h84412442__0.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o Vtop___024root__DepSet_h84412442__1.o Vtop___024root__DepSet_h84412442__1.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o Vtop___024root__DepSet_h84412442__2.o Vtop___024root__DepSet_h84412442__2.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o Vtop___024root__DepSet_heccd7ead__0.o Vtop___024root__DepSet_heccd7ead__0.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o Vtop_el2_mem_if__DepSet_he6bb7df3__0.o Vtop_el2_mem_if__DepSet_he6bb7df3__0.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o Vtop_el2_mem_if__DepSet_h49f7451e__0.o Vtop_el2_mem_if__DepSet_h49f7451e__0.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o Vtop__Dpi.o Vtop__Dpi.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -Os -c -o Vtop__Trace__0.o Vtop__Trace__0.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow        -c -o Vtop___024root__Slow.o Vtop___024root__Slow.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow        -c -o Vtop___024root__DepSet_h84412442__0__Slow.o Vtop___024root__DepSet_h84412442__0__Slow.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow        -c -o Vtop___024root__DepSet_heccd7ead__0__Slow.o Vtop___024root__DepSet_heccd7ead__0__Slow.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow        -c -o Vtop___024unit__Slow.o Vtop___024unit__Slow.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow        -c -o Vtop___024unit__DepSet_hff17caec__0__Slow.o Vtop___024unit__DepSet_hff17caec__0__Slow.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow        -c -o Vtop_el2_mem_if__Slow.o Vtop_el2_mem_if__Slow.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow        -c -o Vtop_el2_mem_if__DepSet_he6bb7df3__0__Slow.o Vtop_el2_mem_if__DepSet_he6bb7df3__0__Slow.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow        -c -o Vtop_el2_mem_if__DepSet_h49f7451e__0__Slow.o Vtop_el2_mem_if__DepSet_h49f7451e__0__Slow.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow        -c -o Vtop__Syms.o Vtop__Syms.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow        -c -o Vtop__Trace__0__Slow.o Vtop__Trace__0__Slow.cpp
+echo "" > Vtop__ALL.verilator_deplist.tmp
+Archive ar -rcs Vtop__ALL.a Vtop.o Vtop___024root__DepSet_h84412442__0.o Vtop___024root__DepSet_h84412442__1.o Vtop___024root__DepSet_h84412442__2.o Vtop___024root__DepSet_heccd7ead__0.o Vtop_el2_mem_if__DepSet_he6bb7df3__0.o Vtop_el2_mem_if__DepSet_h49f7451e__0.o Vtop__Dpi.o Vtop__Trace__0.o Vtop___024root__Slow.o Vtop___024root__DepSet_h84412442__0__Slow.o Vtop___024root__DepSet_heccd7ead__0__Slow.o Vtop___024unit__Slow.o Vtop___024unit__DepSet_hff17caec__0__Slow.o Vtop_el2_mem_if__Slow.o Vtop_el2_mem_if__DepSet_he6bb7df3__0__Slow.o Vtop_el2_mem_if__DepSet_h49f7451e__0__Slow.o Vtop__Syms.o Vtop__Trace__0__Slow.o
+g++    verilator.o verilated.o verilated_dpi.o verilated_vpi.o verilated_cov.o verilated_vcd_c.o verilated_threads.o Vtop__ALL.a   -Wl,-rpath,/usr/local/lib/python3.11/dist-packages/cocotb/libs -L/usr/local/lib/python3.11/dist-packages/cocotb/libs -lcocotbvpi_verilator  -pthread -lpthread -latomic   -o Vtop
+rm Vtop__ALL.verilator_deplist.tmp
+make[2]: Leaving directory '/app/verification/top/test_pyuvm/sim-build-toggle'
+rm -f results.xml
+MODULE=test_irq.test_irq TESTCASE= TOPLEVEL=veer_wrapper TOPLEVEL_LANG=verilog \
+         sim-build-toggle/Vtop 
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:76   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 5.006 2023-01-22
+     0.00ns INFO     cocotb                             Running tests with cocotb v1.8.0 from /usr/local/lib/python3.11/dist-packages/cocotb
+     0.00ns INFO     cocotb                             Seeding Python random module with 1777930385
+     0.00ns INFO     cocotb.regression                  Found test test_irq.test_irq.BaseTest
+     0.00ns INFO     cocotb.regression                  running BaseTest (1/1)
+    30.00ns DEBUG    ..st_pyuvm/test_irq/irq_uvm.py(61) [uvm_test_top.env.agent.int_monitor]: MONITORED (0, 0, 0, 0)
+    40.00ns DEBUG    ..st_pyuvm/test_irq/irq_uvm.py(61) [uvm_test_top.env.agent.int_monitor]: MONITORED (1, 1, 1, 0)
+    50.00ns DEBUG    ..st_pyuvm/test_irq/irq_uvm.py(61) [uvm_test_top.env.agent.int_monitor]: MONITORED (1, 1, 0, 1)
+    60.00ns DEBUG    ..st_pyuvm/test_irq/irq_uvm.py(61) [uvm_test_top.env.agent.int_monitor]: MONITORED (1, 0, 0, 0)
+    70.00ns DEBUG    ..st_pyuvm/test_irq/irq_uvm.py(61) [uvm_test_top.env.agent.int_monitor]: MONITORED (1, 1, 0, 1)
+    80.00ns DEBUG    ..st_pyuvm/test_irq/irq_uvm.py(61) [uvm_test_top.env.agent.int_monitor]: MONITORED (1, 1, 0, 0)
+    90.00ns DEBUG    ..st_pyuvm/test_irq/irq_uvm.py(61) [uvm_test_top.env.agent.int_monitor]: MONITORED (1, 1, 0, 1)
+   100.00ns DEBUG    ..st_pyuvm/test_irq/irq_uvm.py(61) [uvm_test_top.env.agent.int_monitor]: MONITORED (0, 1, 1, 1)
+   110.00ns DEBUG    ..st_pyuvm/test_irq/irq_uvm.py(61) [uvm_test_top.env.agent.int_monitor]: MONITORED (1, 1, 1, 1)
+   120.00ns DEBUG    ..st_pyuvm/test_irq/irq_uvm.py(61) [uvm_test_top.env.agent.int_monitor]: MONITORED (0, 0, 0, 0)
+   120.00ns INFO     cocotb.regression                  BaseTest passed
+   120.00ns INFO     cocotb.regression                  **************************************************************************************
+                                                        ** TEST                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **************************************************************************************
+                                                        ** test_irq.test_irq.BaseTest     PASS         120.00           0.02       6077.21  **
+                                                        **************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                120.00           0.24        503.66  **
+                                                        **************************************************************************************
+                                                        
+- :0: Verilog $finish
+make[1]: Leaving directory '/app/verification/top/test_pyuvm'
+
+----- PyTest -----
+:: py_command >> COVERAGE_TYPE=toggle SIM=verilator CONF_PARAMS='-set build_axi4' make clean all
+
+------------------
+----- Subprocess Summary -----
+p.check_returncode
+------------------------------
+PASSED
+
+============================== 1 passed in 15.53s ==============================

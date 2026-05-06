@@ -1,17 +1,36 @@
 {
-    "id": "70799c2c-f63f-4da9-8468-14232573671b",
-    "started_at": "2026-05-03T13:55:22.446997",
-    "updated_at": "2026-05-03T18:17:02.442150Z",
-    "finished_at": null,
+    "id": "62eb6fdc-8e16-4190-bed9-6619a28add50",
+    "started_at": "2026-05-03T14:53:45.656732",
+    "updated_at": "2026-05-03T15:52:32.552975",
+    "finished_at": "2026-05-03T15:52:32.552975",
     "n_total_trials": 1,
     "stats": {
-        "n_completed_trials": 0,
+        "n_completed_trials": 1,
         "n_errored_trials": 0,
-        "n_running_trials": 1,
+        "n_running_trials": 0,
         "n_pending_trials": 0,
-        "n_cancelled_trials": 1,
+        "n_cancelled_trials": 0,
         "n_retries": 0,
-        "evals": {},
+        "evals": {
+            "claude-code-sandboxed__sonnet__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 1.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "secworks-aes-full__t3MbK3i"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
         "n_input_tokens": null,
         "n_cache_tokens": null,
         "n_output_tokens": null,

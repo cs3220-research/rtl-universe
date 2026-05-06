@@ -1,0 +1,21 @@
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o /app/examples/sw/simple_system/common/simple_system_common.o /app/examples/sw/simple_system/common/simple_system_common.c
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o hello_test.o hello_test.c
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o /app/examples/sw/simple_system/common/crt0.o /app/examples/sw/simple_system/common/crt0.S
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -T /app/examples/sw/simple_system/common/link.ld /app/examples/sw/simple_system/common/simple_system_common.o hello_test.o  /app/examples/sw/simple_system/common/crt0.o -o hello_test.elf 
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/common/crt0.o: in function `default_exc_handler':
+/app/examples/sw/simple_system/common/crt0.S:10: undefined reference to `simple_exc_handler'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/common/crt0.o: in function `timer_handler':
+/app/examples/sw/simple_system/common/crt0.S:13: undefined reference to `simple_timer_handler'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: hello_test.o: in function `main':
+/app/examples/sw/simple_system/hello_test/hello_test.c:9: undefined reference to `pcount_reset'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/hello_test/hello_test.c:12: undefined reference to `puts'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/hello_test/hello_test.c:13: undefined reference to `puthex'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/hello_test/hello_test.c:14: undefined reference to `putchar'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/hello_test/hello_test.c:15: undefined reference to `puthex'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/hello_test/hello_test.c:16: undefined reference to `putchar'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/hello_test/hello_test.c:22: undefined reference to `timer_enable'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/hello_test/hello_test.c:24: undefined reference to `get_elapsed_time'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/hello_test/hello_test.c:27: undefined reference to `get_elapsed_time'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/hello_test/hello_test.c:34: undefined reference to `puts'
+collect2: error: ld returned 1 exit status
+make: *** [/app/examples/sw/simple_system/hello_test/../common/common.mk:46: hello_test.elf] Error 1

@@ -1,0 +1,107 @@
+{
+    "id": "354c31c0-696c-46ba-96a4-4582545a4862",
+    "task_name": "openpiton-full",
+    "trial_name": "openpiton-full__pma6N4m",
+    "trial_uri": "file:///localscratch/dandrews47/rtl-universe/jobs/openrouter-qwen3.6-27b-openpiton-full/openpiton-full__pma6N4m",
+    "task_id": {
+        "path": "minrepro_task/openpiton-full"
+    },
+    "source": null,
+    "task_checksum": "ffd0e4f3e286ad5a8ad60f18c323cb9d9237c98225142d9205a276e9fce0b9bd",
+    "config": {
+        "task": {
+            "path": "minrepro_task/openpiton-full",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "openpiton-full__pma6N4m",
+        "trials_dir": "jobs/openrouter-qwen3.6-27b-openpiton-full",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:OpenCodeSandboxed",
+            "model_name": "openrouter/qwen/qwen3.6-27b",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "2ccf1a77-9cbb-4ca6-9d2d-2395e8e59766"
+    },
+    "agent_info": {
+        "name": "opencode-sandboxed",
+        "version": "1.14.33",
+        "model_info": {
+            "name": "qwen/qwen3.6-27b",
+            "provider": "openrouter"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 94534,
+        "n_cache_tokens": 0,
+        "n_output_tokens": 1586,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-04T00:17:15.685218Z",
+    "finished_at": "2026-05-04T01:53:21.637349Z",
+    "environment_setup": {
+        "started_at": "2026-05-04T00:17:21.878028Z",
+        "finished_at": "2026-05-04T01:50:12.088531Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-04T01:50:12.088683Z",
+        "finished_at": "2026-05-04T01:50:21.398424Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-04T01:50:21.398637Z",
+        "finished_at": "2026-05-04T01:52:20.083088Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-04T01:52:20.274874Z",
+        "finished_at": "2026-05-04T01:52:20.895701Z"
+    },
+    "step_results": null
+}

@@ -1,12 +1,12 @@
 {
     "schema_version": 1,
-    "created_at": "2026-05-03T17:36:35.361304Z",
+    "created_at": "2026-05-05T06:29:21.074233Z",
     "harbor": {
         "version": "0.6.4",
         "is_editable": false
     },
     "invocation": [
-        "/home/broyojo/.local/bin/harbor",
+        "/nethome/dandrews47/.local/bin/harbor",
         "run",
         "--path",
         "minrepro_task/openpiton-full",
@@ -24,7 +24,7 @@
         "--agent-timeout-multiplier",
         "0.42",
         "--mounts-json",
-        "[\"/tmp/harbor-claude-creds:/home/builder/.claude\"]",
+        "[\"/tmp/harbor-claude-creds-dns-block-opus-openpiton-full:/home/builder/.claude\"]",
         "--ae",
         "CLAUDE_CONFIG_DIR=/home/builder/.claude",
         "--ae",
@@ -34,8 +34,8 @@
     "retry": {
         "max_retries": 0,
         "exclude_exceptions": [
-            "RewardFileEmptyError",
             "VerifierTimeoutError",
+            "RewardFileEmptyError",
             "VerifierOutputParseError",
             "RewardFileNotFoundError",
             "AgentTimeoutError"
@@ -49,7 +49,7 @@
             "task": {
                 "name": "openpiton-full",
                 "type": "local",
-                "digest": "sha256:db89689a9b39bfbfea056abd5e14ba3b445bcf9124e5d8e2a33fc334a5f7d025",
+                "digest": "sha256:c78756a74b736df65f0ba7cca0d817831fa5b3b382c3aa654f2329b1f11b7716",
                 "path": "minrepro_task/openpiton-full"
             },
             "timeout_multiplier": 1.0,
@@ -69,7 +69,7 @@
                 "delete": true,
                 "suppress_override_warnings": false,
                 "mounts_json": [
-                    "/tmp/harbor-claude-creds:/home/builder/.claude"
+                    "/tmp/harbor-claude-creds-dns-block-opus-openpiton-full:/home/builder/.claude"
                 ],
                 "env": {},
                 "kwargs": {}

@@ -1,37 +1,39 @@
 {
-    "id": "aa27da18-37c0-4814-92e5-892df8802e44",
-    "started_at": "2026-05-03T13:38:54.699159",
-    "updated_at": "2026-05-03T18:17:02.511519Z",
-    "finished_at": null,
+    "id": "8bcf7bb8-fdd7-4a50-8750-1e523d0d3e40",
+    "started_at": "2026-05-03T18:31:18.397631",
+    "updated_at": "2026-05-03T19:00:55.111151",
+    "finished_at": "2026-05-03T19:00:55.111151",
     "n_total_trials": 1,
     "stats": {
         "n_completed_trials": 1,
-        "n_errored_trials": 1,
+        "n_errored_trials": 0,
         "n_running_trials": 0,
         "n_pending_trials": 0,
-        "n_cancelled_trials": 1,
+        "n_cancelled_trials": 0,
         "n_retries": 0,
         "evals": {
             "opencode-sandboxed__google/gemini-3.1-pro-preview__adhoc": {
-                "n_trials": 0,
-                "n_errors": 1,
+                "n_trials": 1,
+                "n_errors": 0,
                 "metrics": [
                     {
-                        "mean": 0.0
+                        "mean": 1.0
                     }
                 ],
                 "pass_at_k": {},
-                "reward_stats": {},
-                "exception_stats": {
-                    "CancelledError": [
-                        "ibex-full__Gy7Vfko"
-                    ]
-                }
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "ibex-full__9MavbXv"
+                        ]
+                    }
+                },
+                "exception_stats": {}
             }
         },
-        "n_input_tokens": null,
-        "n_cache_tokens": null,
-        "n_output_tokens": null,
-        "cost_usd": null
+        "n_input_tokens": 8918688,
+        "n_cache_tokens": 8097442,
+        "n_output_tokens": 18601,
+        "cost_usd": 2.1877240000000002
     }
 }

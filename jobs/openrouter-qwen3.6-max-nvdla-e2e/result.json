@@ -1,8 +1,8 @@
 {
-    "id": "3fba5755-80db-4c46-a926-b8ae2918f01c",
-    "started_at": "2026-05-03T13:52:54.663730",
-    "updated_at": "2026-05-03T13:53:02.874122",
-    "finished_at": "2026-05-03T13:53:02.874122",
+    "id": "ef7f4a77-6644-43b2-9878-1dfd50dcc80c",
+    "started_at": "2026-05-03T18:39:58.432188",
+    "updated_at": "2026-05-03T21:40:04.855035",
+    "finished_at": "2026-05-03T21:40:04.855035",
     "n_total_trials": 1,
     "stats": {
         "n_completed_trials": 1,
@@ -23,8 +23,8 @@
                 "pass_at_k": {},
                 "reward_stats": {},
                 "exception_stats": {
-                    "RuntimeError": [
-                        "nvdla-e2e__jKNAumP"
+                    "EnvironmentStartTimeoutError": [
+                        "nvdla-e2e__VpvuyJ2"
                     ]
                 }
             }

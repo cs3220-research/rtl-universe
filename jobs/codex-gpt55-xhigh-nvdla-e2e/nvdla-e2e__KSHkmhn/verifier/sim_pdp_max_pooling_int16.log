@@ -1,0 +1,30 @@
+converting /app/verif/traces/traceplayer/pdp_max_pooling_int16/input.txn to /app/outdir/nv_full/verilator/test/pdp_max_pooling_int16/trace.bin
+File 0 0x80000000 0x2000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x80100000 0x1880
+okay, that's all the bytes I expected -- I'm stopping here
+(230) ERROR: timed out reading response
+(254) ERROR: timed out reading response
+(278) ERROR: timed out reading response
+(308) ERROR: timed out reading response
+(338) ERROR: timed out reading response
+(368) ERROR: timed out reading response
+(402) ERROR: timed out reading response
+(426) ERROR: timed out reading response
+(450) ERROR: timed out reading response
+(482) ERROR: timed out reading response
+(506) ERROR: timed out reading response
+(536) ERROR: timed out reading response
+(572) ERROR: timed out reading response
+(606) ERROR: timed out reading response
+(636) ERROR: timed out reading response
+(660) ERROR: timed out reading response
+(690) ERROR: timed out reading response
+(728) ERROR: timed out reading response
+(752) ERROR: timed out reading response
+(776) ERROR: timed out reading response
+(806) ERROR: timed out reading response
+(830) ERROR: timed out reading response
+(854) ERROR: timed out reading response
+done at 3490 ticks
+*** FAIL: test failed due to CSB read mismatch

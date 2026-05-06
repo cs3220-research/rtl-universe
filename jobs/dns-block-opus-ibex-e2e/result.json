@@ -1,32 +1,34 @@
 {
-    "id": "3cb57727-9ff0-4540-9888-0e4bfb568a88",
-    "started_at": "2026-05-03T13:12:25.779661",
-    "updated_at": "2026-05-03T17:35:37.763039Z",
-    "finished_at": null,
+    "id": "99289dab-3d5e-489c-a953-2cd7b072b7dc",
+    "started_at": "2026-05-04T09:30:38.548414",
+    "updated_at": "2026-05-04T09:45:07.136834",
+    "finished_at": "2026-05-04T09:45:07.136834",
     "n_total_trials": 1,
     "stats": {
         "n_completed_trials": 1,
-        "n_errored_trials": 1,
+        "n_errored_trials": 0,
         "n_running_trials": 0,
         "n_pending_trials": 0,
-        "n_cancelled_trials": 1,
+        "n_cancelled_trials": 0,
         "n_retries": 0,
         "evals": {
             "claude-code-sandboxed__opus__adhoc": {
-                "n_trials": 0,
-                "n_errors": 1,
+                "n_trials": 1,
+                "n_errors": 0,
                 "metrics": [
                     {
-                        "mean": 0.0
+                        "mean": 1.0
                     }
                 ],
                 "pass_at_k": {},
-                "reward_stats": {},
-                "exception_stats": {
-                    "CancelledError": [
-                        "ibex-e2e__9mMsC7p"
-                    ]
-                }
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "ibex-e2e__Muxe625"
+                        ]
+                    }
+                },
+                "exception_stats": {}
             }
         },
         "n_input_tokens": null,

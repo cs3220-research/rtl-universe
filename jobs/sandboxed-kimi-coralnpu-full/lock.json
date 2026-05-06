@@ -1,0 +1,75 @@
+{
+    "schema_version": 1,
+    "created_at": "2026-05-05T00:26:42.954200Z",
+    "harbor": {
+        "version": "0.6.4",
+        "is_editable": false
+    },
+    "invocation": [
+        "/nethome/dandrews47/.local/bin/harbor",
+        "run",
+        "--path",
+        "minrepro_task/coralnpu-full",
+        "--agent-import-path",
+        "agents.sandboxed:OpenCodeSandboxed",
+        "--model",
+        "openrouter/moonshotai/kimi-k2.6",
+        "-n",
+        "1",
+        "-y",
+        "--job-name",
+        "sandboxed-kimi-coralnpu-full",
+        "--artifact",
+        "/app",
+        "--agent-timeout-multiplier",
+        "0.42",
+        "--ae",
+        "OPENROUTER_API_KEY=${OPENROUTER_API_KEY}"
+    ],
+    "n_concurrent_trials": 1,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "RewardFileNotFoundError",
+            "VerifierOutputParseError",
+            "RewardFileEmptyError",
+            "AgentTimeoutError",
+            "VerifierTimeoutError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "task": {
+                "name": "coralnpu-full",
+                "type": "local",
+                "digest": "sha256:851ddd7194ec4718b8b44b9f2f051293aea29f2968146745d89bc112dfd77b34",
+                "path": "minrepro_task/coralnpu-full"
+            },
+            "timeout_multiplier": 1.0,
+            "agent_timeout_multiplier": 0.42,
+            "agent": {
+                "import_path": "agents.sandboxed:OpenCodeSandboxed",
+                "model_name": "openrouter/moonshotai/kimi-k2.6",
+                "kwargs": {},
+                "env": {
+                    "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
+                }
+            },
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "suppress_override_warnings": false,
+                "env": {},
+                "kwargs": {}
+            },
+            "verifier": {
+                "env": {},
+                "disable": false
+            }
+        }
+    ]
+}

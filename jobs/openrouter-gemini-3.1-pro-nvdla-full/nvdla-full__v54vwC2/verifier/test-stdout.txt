@@ -1,0 +1,28 @@
+=== [1/2] Verilator elaboration ===
+=== [2/2] Compiling VNV_nvdla ===
+make: Entering directory '/app/outdir/nv_full/verilator'
+ccache g++ -Os  -I.  -MMD -I/tools/verilator/share/verilator/include -I/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -x c++-header VNV_nvdla__pch.h -o VNV_nvdla__pch.h.fast.gch
+ccache g++   -I.  -MMD -I/tools/verilator/share/verilator/include -I/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -x c++-header VNV_nvdla__pch.h -o VNV_nvdla__pch.h.slow.gch
+echo "" > VNV_nvdla__ALL.verilator_deplist.tmp
+ccache: error: Failed to create temporary file for /home/builder/.cache/ccache/tmp/cpp_stdout.tmp.lCpXU5.ii: Permission denied
+ccache: error: Failed to create temporary file for /home/builder/.cache/ccache/tmp/cpp_stdout.tmp.fCWTo5.ii: Permission denied
+make: *** [/tools/verilator/share/verilator/include/verilated.mk:284: VNV_nvdla__pch.h.fast.gch] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [/tools/verilator/share/verilator/include/verilated.mk:286: VNV_nvdla__pch.h.slow.gch] Error 1
+rm VNV_nvdla__ALL.verilator_deplist.tmp
+make: Leaving directory '/app/outdir/nv_full/verilator'
+PASS: sanity0
+PASS: sanity1
+PASS: sanity1_cvsram
+PASS: sanity2
+PASS: sanity2_cvsram
+PASS: sanity3
+PASS: sanity3_cvsram
+PASS: conv_8x8_fc_int16
+FAIL: googlenet_conv2_3x3_int16 (exit=1)
+FAIL: pdp_max_pooling_int16 (exit=1)
+FAIL: sdp_relu_int16 (exit=1)
+FAIL: cc_alexnet_conv5_relu5_int16_dtest_cvsram (exit=1)
+
+Results: passed=8 / total=12
+reward: 0.666667

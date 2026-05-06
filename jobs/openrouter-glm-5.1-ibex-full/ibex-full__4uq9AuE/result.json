@@ -1,0 +1,107 @@
+{
+    "id": "b99e8697-193e-49dd-ab2f-75507e9fac93",
+    "task_name": "ibex-full",
+    "trial_name": "ibex-full__4uq9AuE",
+    "trial_uri": "file:///localscratch/dandrews47/rtl-universe/jobs/openrouter-glm-5.1-ibex-full/ibex-full__4uq9AuE",
+    "task_id": {
+        "path": "minrepro_task/ibex-full"
+    },
+    "source": null,
+    "task_checksum": "b71a0a4502247bb49638850fca6d20e637665a1d913f3fdf34d6dd9b679b327d",
+    "config": {
+        "task": {
+            "path": "minrepro_task/ibex-full",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "ibex-full__4uq9AuE",
+        "trials_dir": "jobs/openrouter-glm-5.1-ibex-full",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:OpenCodeSandboxed",
+            "model_name": "openrouter/z-ai/glm-5.1",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "5b674e58-f0dc-454a-bc95-0ec2fd9f0bde"
+    },
+    "agent_info": {
+        "name": "opencode-sandboxed",
+        "version": "1.14.33",
+        "model_info": {
+            "name": "z-ai/glm-5.1",
+            "provider": "openrouter"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 9911256,
+        "n_cache_tokens": 9407552,
+        "n_output_tokens": 46756,
+        "cost_usd": 3.8812939200000005,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-03T23:01:20.797776Z",
+    "finished_at": "2026-05-04T00:23:38.832169Z",
+    "environment_setup": {
+        "started_at": "2026-05-03T23:01:21.573702Z",
+        "finished_at": "2026-05-03T23:09:45.576567Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-03T23:09:45.576716Z",
+        "finished_at": "2026-05-03T23:09:55.358036Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-03T23:09:55.358187Z",
+        "finished_at": "2026-05-04T00:22:49.074040Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-04T00:22:49.287179Z",
+        "finished_at": "2026-05-04T00:23:20.674682Z"
+    },
+    "step_results": null
+}

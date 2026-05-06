@@ -1,0 +1,15 @@
+converting /app/verif/traces/traceplayer/sanity0/input.txn to /app/outdir/nv_full/verilator/test/sanity0/trace.bin
+CMD: read_reg ffff100b ffffffe0 00000000
+CMD: write_reg ffff100b f0a5a500
+CMD: read_reg ffff100b ffffffe0 f0a5a500
+CMD: done
+reset...
+letting buffers clear after reset...
+running trace...
+(8272) read from nvdla: addr ffff100b
+(8274) read response from nvdla: 00000000
+(8276) write to nvdla: addr ffff100b, data f0a5a500
+(8278) read from nvdla: addr ffff100b
+(8280) read response from nvdla: f0a5a500
+done at 8682 ticks
+*** PASS

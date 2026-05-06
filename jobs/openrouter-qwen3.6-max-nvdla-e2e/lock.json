@@ -1,12 +1,12 @@
 {
     "schema_version": 1,
-    "created_at": "2026-05-03T17:52:55.038090Z",
+    "created_at": "2026-05-03T22:39:58.984652Z",
     "harbor": {
         "version": "0.6.4",
         "is_editable": false
     },
     "invocation": [
-        "/home/broyojo/.local/bin/harbor",
+        "/nethome/dandrews47/.local/bin/harbor",
         "run",
         "--path",
         "minrepro_task/nvdla-e2e",
@@ -30,10 +30,10 @@
     "retry": {
         "max_retries": 0,
         "exclude_exceptions": [
-            "RewardFileNotFoundError",
             "RewardFileEmptyError",
             "AgentTimeoutError",
             "VerifierTimeoutError",
+            "RewardFileNotFoundError",
             "VerifierOutputParseError"
         ],
         "wait_multiplier": 1.0,
@@ -45,7 +45,7 @@
             "task": {
                 "name": "nvdla-e2e",
                 "type": "local",
-                "digest": "sha256:3a675de1abe6eb3cccad185f98e5cb7f6ce5ad383c4d2f0b47ae2a6d5aed4f0d",
+                "digest": "sha256:63ab46bfa6013ca01345f4ef23b368da1c6840115674698d3042fe2705c48918",
                 "path": "minrepro_task/nvdla-e2e"
             },
             "timeout_multiplier": 1.0,

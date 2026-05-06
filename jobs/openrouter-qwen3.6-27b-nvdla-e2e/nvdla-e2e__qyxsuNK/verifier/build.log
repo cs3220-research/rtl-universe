@@ -1,0 +1,44 @@
+=== [1/2] Verilator elaboration ===
+%Error: ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:389:12: syntax error, unexpected integer, expecting "'"
+  389 |     signed integer acc;
+      |            ^~~~~~~
+%Error: ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:396:23: syntax error, unexpected IDENTIFIER, expecting "'{"
+  396 |     reg signed [63:0] input_data [0:8191];
+      |                       ^~~~~~~~~~
+%Error: ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:397:23: syntax error, unexpected IDENTIFIER, expecting "'{"
+  397 |     reg signed [63:0] weight_data [0:4095];
+      |                       ^~~~~~~~~~~
+%Error: ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:421:62: syntax error, unexpected if, expecting ';'
+  421 |         out_h = (h - kh + csc_conv_h + 1) / (csc_conv_h + 1) if this math
+      |                                                              ^~
+%Error: ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:450:44: syntax error, unexpected integer, expecting "'"
+  450 |                                     signed integer data_val;
+      |                                            ^~~~~~~
+%Error: ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:452:60: syntax error, unexpected IDENTIFIER, expecting "'"
+  452 |                                         data_val = (signed input_data[val_idx / 2]) >>> (16 * (val_idx % 2));
+      |                                                            ^~~~~~~~~~
+%Error: ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:454:60: syntax error, unexpected IDENTIFIER, expecting "'"
+  454 |                                         data_val = (signed input_data[val_idx]);
+      |                                                            ^~~~~~~~~~
+%Error: ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:457:44: syntax error, unexpected integer, expecting "'"
+  457 |                                     signed integer wt_val;
+      |                                            ^~~~~~~
+%Error: ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:460:58: syntax error, unexpected IDENTIFIER, expecting "'"
+  460 |                                         wt_val = (signed weight_data[wt_offset / 2]) >>> (16 * (wt_offset % 2));
+      |                                                          ^~~~~~~~~~~
+%Error: ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:462:58: syntax error, unexpected IDENTIFIER, expecting "'"
+  462 |                                         wt_val = (signed weight_data[wt_offset]);
+      |                                                          ^~~~~~~~~~~
+%Error: ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:478:28: syntax error, unexpected '[', expecting "'"
+  478 |                     signed [31:0] out_val;
+      |                            ^
+%Error: ../../outdir/nv_full/vmod/vlibs/../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:532:21: syntax error, unexpected IDENTIFIER, expecting "'{"
+  532 |             integer i;
+      |                     ^
+%Error: Exiting due to 12 error(s)
+=== [2/2] Compiling VNV_nvdla ===
+make: Entering directory '/app/outdir/nv_full/verilator'
+make: VNV_nvdla.mk: No such file or directory
+make: *** No rule to make target 'VNV_nvdla.mk'.  Stop.
+make: Leaving directory '/app/outdir/nv_full/verilator'
+ERROR: VNV_nvdla binary not built

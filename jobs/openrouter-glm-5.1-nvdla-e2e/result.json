@@ -1,37 +1,39 @@
 {
-    "id": "b8c36fab-aef4-48c8-b4a7-32c7725233b9",
-    "started_at": "2026-05-03T13:53:35.540820",
-    "updated_at": "2026-05-03T13:54:01.679559",
-    "finished_at": "2026-05-03T13:54:01.679559",
+    "id": "d7b5421c-ca24-4e7a-8ed4-f7eb1cb1d202",
+    "started_at": "2026-05-04T20:26:40.032749",
+    "updated_at": "2026-05-04T20:40:36.128862",
+    "finished_at": "2026-05-04T20:40:36.128862",
     "n_total_trials": 1,
     "stats": {
         "n_completed_trials": 1,
-        "n_errored_trials": 1,
+        "n_errored_trials": 0,
         "n_running_trials": 0,
         "n_pending_trials": 0,
         "n_cancelled_trials": 0,
         "n_retries": 0,
         "evals": {
             "opencode-sandboxed__z-ai/glm-5.1__adhoc": {
-                "n_trials": 0,
-                "n_errors": 1,
+                "n_trials": 1,
+                "n_errors": 0,
                 "metrics": [
                     {
                         "mean": 0.0
                     }
                 ],
                 "pass_at_k": {},
-                "reward_stats": {},
-                "exception_stats": {
-                    "RuntimeError": [
-                        "nvdla-e2e__LPVkoZr"
-                    ]
-                }
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "nvdla-e2e__zKWJquD"
+                        ]
+                    }
+                },
+                "exception_stats": {}
             }
         },
-        "n_input_tokens": null,
-        "n_cache_tokens": null,
-        "n_output_tokens": null,
-        "cost_usd": null
+        "n_input_tokens": 736373,
+        "n_cache_tokens": 607104,
+        "n_output_tokens": 3750,
+        "cost_usd": 0.39325164
     }
 }

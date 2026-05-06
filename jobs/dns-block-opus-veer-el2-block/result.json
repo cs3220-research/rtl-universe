@@ -1,32 +1,34 @@
 {
-    "id": "485b70ca-328b-466a-b56d-7e70113d5235",
-    "started_at": "2026-05-03T13:36:10.608999",
-    "updated_at": "2026-05-03T13:40:15.173465",
-    "finished_at": "2026-05-03T13:40:15.173465",
+    "id": "9e751bed-366c-4ede-b457-8d4e0ddd7aad",
+    "started_at": "2026-05-04T17:15:47.488008",
+    "updated_at": "2026-05-04T17:33:24.195242",
+    "finished_at": "2026-05-04T17:33:24.195242",
     "n_total_trials": 1,
     "stats": {
         "n_completed_trials": 1,
-        "n_errored_trials": 1,
+        "n_errored_trials": 0,
         "n_running_trials": 0,
         "n_pending_trials": 0,
         "n_cancelled_trials": 0,
         "n_retries": 0,
         "evals": {
             "claude-code-sandboxed__opus__adhoc": {
-                "n_trials": 0,
-                "n_errors": 1,
+                "n_trials": 1,
+                "n_errors": 0,
                 "metrics": [
                     {
-                        "mean": 0.0
+                        "mean": 1.0
                     }
                 ],
                 "pass_at_k": {},
-                "reward_stats": {},
-                "exception_stats": {
-                    "RuntimeError": [
-                        "veer-el2-block__7WcR6JD"
-                    ]
-                }
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "veer-el2-block__SewXQ5k"
+                        ]
+                    }
+                },
+                "exception_stats": {}
             }
         },
         "n_input_tokens": null,

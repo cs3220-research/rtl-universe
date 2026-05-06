@@ -1,0 +1,244 @@
+converting /app/verif/traces/traceplayer/sanity2/input.txn to /app/outdir/nv_full/verilator/test/sanity2/trace.bin
+File 0 0x80000000 0x1000
+okay, that's all the bytes I expected -- I'm stopping here
+CMD: load_mem 00001000 bytes to 80000000
+CMD: write_reg ffff100b 00000800
+CMD: read_reg ffff100b ffffffe0 00000800
+CMD: write_reg ffff1008 00000100
+CMD: read_reg ffff1008 ffffffe0 00000100
+CMD: write_reg ffff100a 00000800
+CMD: read_reg ffff100a ffffffe0 00000800
+CMD: write_reg ffff1007 00000100
+CMD: read_reg ffff1007 ffffffe0 00000100
+CMD: write_reg ffff1009 00000000
+CMD: read_reg ffff1009 00ffffff 00000000
+CMD: write_reg ffff1006 00000007
+CMD: read_reg ffff1006 00ffffff 00000007
+CMD: write_reg ffff1004 00000007
+CMD: read_reg ffff1004 00001fff 00000007
+CMD: write_reg ffff1005 00000003
+CMD: read_reg ffff1005 00000003 00000003
+CMD: write_reg ffff1001 00000000
+CMD: read_reg ffff1001 000000ff 00000000
+CMD: write_reg ffff1000 80000000
+CMD: read_reg ffff1000 ffffffe0 80000000
+CMD: write_reg ffff1003 00000000
+CMD: read_reg ffff1003 000000ff 00000000
+CMD: write_reg ffff1002 81000000
+CMD: read_reg ffff1002 ffffffe0 81000000
+CMD: write_reg ffff100c 00000001
+CMD: read_reg ffff100c 00000001 00000001
+CMD: write_reg ffff100d 00000001
+CMD: read_reg ffff100d 00000001 00000001
+CMD: wait
+CMD: done
+reset...
+letting buffers clear after reset...
+running trace...
+AXI: loading memory at 0x80000000
+(8274) write to nvdla: addr ffff100b, data 00000800
+(8276) read from nvdla: addr ffff100b
+(8312) read response from nvdla: 00000800
+(8314) write to nvdla: addr ffff1008, data 00000100
+(8316) read from nvdla: addr ffff1008
+(8352) read response from nvdla: 00000100
+(8354) write to nvdla: addr ffff100a, data 00000800
+(8356) read from nvdla: addr ffff100a
+(8392) read response from nvdla: 00000800
+(8394) write to nvdla: addr ffff1007, data 00000100
+(8396) read from nvdla: addr ffff1007
+(8432) read response from nvdla: 00000100
+(8434) write to nvdla: addr ffff1009, data 00000000
+(8436) read from nvdla: addr ffff1009
+(8472) read response from nvdla: 00000000
+(8474) write to nvdla: addr ffff1006, data 00000007
+(8476) read from nvdla: addr ffff1006
+(8512) read response from nvdla: 00000007
+(8514) write to nvdla: addr ffff1004, data 00000007
+(8516) read from nvdla: addr ffff1004
+(8552) read response from nvdla: 00000007
+(8554) write to nvdla: addr ffff1005, data 00000003
+(8556) read from nvdla: addr ffff1005
+(8592) read response from nvdla: 00000003
+(8594) write to nvdla: addr ffff1001, data 00000000
+(8596) read from nvdla: addr ffff1001
+(8632) read response from nvdla: 00000000
+(8634) write to nvdla: addr ffff1000, data 80000000
+(8636) read from nvdla: addr ffff1000
+(8672) read response from nvdla: 80000000
+(8674) write to nvdla: addr ffff1003, data 00000000
+(8676) read from nvdla: addr ffff1003
+(8712) read response from nvdla: 00000000
+(8714) write to nvdla: addr ffff1002, data 81000000
+(8716) read from nvdla: addr ffff1002
+(8752) read response from nvdla: 81000000
+(8754) write to nvdla: addr ffff100c, data 00000001
+(8756) read from nvdla: addr ffff100c
+(8792) read response from nvdla: 00000001
+(8794) write to nvdla: addr ffff100d, data 00000001
+(8796) read from nvdla: addr ffff100d
+(8832) read response from nvdla: 00000001
+(8834) waiting for interrupt...
+(8834) DBB: read request from dla, addr 80000000 burst 0 id 0
+(8838) DBB: read request from dla, addr 80000040 burst 0 id 0
+(8842) DBB: read request from dla, addr 80000080 burst 0 id 0
+(8846) DBB: read request from dla, addr 800000c0 burst 0 id 0
+(8850) DBB: read request from dla, addr 80000100 burst 0 id 0
+(8854) DBB: read request from dla, addr 80000140 burst 0 id 0
+(8858) DBB: read request from dla, addr 80000180 burst 0 id 0
+(8862) DBB: read request from dla, addr 800001c0 burst 0 id 0
+(8866) DBB: read request from dla, addr 80000200 burst 0 id 0
+(8870) DBB: read request from dla, addr 80000240 burst 0 id 0
+(8874) DBB: read request from dla, addr 80000280 burst 0 id 0
+(8878) DBB: read request from dla, addr 800002c0 burst 0 id 0
+(8882) DBB: read request from dla, addr 80000300 burst 0 id 0
+(8886) DBB: read request from dla, addr 80000340 burst 0 id 0
+(8890) DBB: read request from dla, addr 80000380 burst 0 id 0
+(8894) DBB: read request from dla, addr 800003c0 burst 0 id 0
+(8898) DBB: read request from dla, addr 80000400 burst 0 id 0
+(8898) DBB: read push: id 0, da cdd2e4ce c49d819d 1a93d056 e55c4859
+(8902) DBB: read request from dla, addr 80000440 burst 0 id 0
+(8902) DBB: read push: id 0, da 2e34366b 56a52a44 906b71f2 9b2b7649
+(8906) DBB: read request from dla, addr 80000480 burst 0 id 0
+(8906) DBB: read push: id 0, da ff6dbfb4 a9c2114f 2c677728 fe3a1f32
+(8910) DBB: read request from dla, addr 800004c0 burst 0 id 0
+(8910) DBB: read push: id 0, da 20b9983e 3e39db0a 9c7fc948 75c129cf
+(8914) DBB: read request from dla, addr 80000500 burst 0 id 0
+(8914) DBB: read push: id 0, da 7b0ba575 87171201 fbf3017a c2c1f70f
+(8918) DBB: read request from dla, addr 80000540 burst 0 id 0
+(8918) DBB: read push: id 0, da 3507c50f 255aa04e ac6f8dff 0d9a52a5
+(8922) DBB: read request from dla, addr 80000580 burst 0 id 0
+(8922) DBB: read push: id 0, da 54014275 bf918cf8 4a24f086 e21ce356
+(8926) DBB: read request from dla, addr 800005c0 burst 0 id 0
+(8926) DBB: read push: id 0, da 0e5e4dc1 7234b002 d3e6c39e 480c3861
+(8930) DBB: read request from dla, addr 80000600 burst 0 id 0
+(8930) DBB: read push: id 0, da 5a2e8ac7 6741375d 7a3b4391 718a1828
+(8934) DBB: read request from dla, addr 80000640 burst 0 id 0
+(8934) DBB: read push: id 0, da 206c932a eae9146d cb0bf2a5 fc512b0c
+(8938) DBB: read request from dla, addr 80000680 burst 0 id 0
+(8938) DBB: read push: id 0, da f94f4dfc fe0db47d c6d18bc1 ec0fd4e1
+(8942) DBB: read request from dla, addr 800006c0 burst 0 id 0
+(8942) DBB: read push: id 0, da 2e28a066 16d38961 f7e11efa 23085a71
+(8944) DBB: write request from dla, addr 81000000 id 0
+(8944) DBB: write data from dla (cdd2e4ce c49d819d...)
+(8944) DBB: write, last tick
+(8946) DBB: write data from dla (2e34366b 56a52a44...)
+(8946) DBB: read request from dla, addr 80000700 burst 0 id 0
+(8946) DBB: read push: id 0, da dfc43b36 e7ac4221 c1d583e7 80cfc70a
+(8948) DBB: write request from dla, addr 81000040 id 0
+(8948) DBB: write, last tick
+(8950) DBB: write data from dla (ff6dbfb4 a9c2114f...)
+(8950) DBB: read request from dla, addr 80000740 burst 0 id 0
+(8950) DBB: read push: id 0, da c7cdf7c5 500f2685 7e67e963 1ee19194
+(8952) DBB: write request from dla, addr 81000080 id 0
+(8952) DBB: write, last tick
+(8954) DBB: write data from dla (20b9983e 3e39db0a...)
+(8954) DBB: read request from dla, addr 80000780 burst 0 id 0
+(8954) DBB: read push: id 0, da 6fa45686 46e5ba97 9f759e9d 43a741ca
+(8956) DBB: write request from dla, addr 810000c0 id 0
+(8956) DBB: write, last tick
+(8958) DBB: read request from dla, addr 800007c0 burst 0 id 0
+(8958) DBB: read push: id 0, da b7f6ea2d ac40c14f a20a447b 5759d4b1
+(8960) DBB: write request from dla, addr 81000100 id 0
+(8960) DBB: write data from dla (7b0ba575 87171201...)
+(8960) DBB: write, last tick
+(8962) DBB: write data from dla (3507c50f 255aa04e...)
+(8962) DBB: read push: id 0, da 733423cf 7eb87a8c 6e6aa984 3e26ae8a
+(8964) DBB: write request from dla, addr 81000140 id 0
+(8964) DBB: write, last tick
+(8966) DBB: write data from dla (54014275 bf918cf8...)
+(8966) DBB: read push: id 0, da a94ad083 a063d74b 176ba183 16aa954c
+(8968) DBB: write request from dla, addr 81000180 id 0
+(8968) DBB: write, last tick
+(8970) DBB: write data from dla (0e5e4dc1 7234b002...)
+(8970) DBB: read push: id 0, da 0f37a775 f7dd3b7a e1cab03e d7a526a1
+(8972) DBB: write request from dla, addr 810001c0 id 0
+(8972) DBB: write, last tick
+(8974) DBB: read push: id 0, da 1ae54735 cbf9c9d4 3452cdfe d850c03c
+(8976) DBB: write request from dla, addr 81000200 id 0
+(8976) DBB: write data from dla (5a2e8ac7 6741375d...)
+(8976) DBB: write, last tick
+(8978) DBB: write data from dla (206c932a eae9146d...)
+(8978) DBB: read push: id 0, da 0d5ab0a4 9910b575 f84ff935 14750637
+(8980) DBB: write request from dla, addr 81000240 id 0
+(8980) DBB: write, last tick
+(8982) DBB: write data from dla (f94f4dfc fe0db47d...)
+(8982) DBB: read push: id 0, da 17316ad4 114fe904 3adefee1 05508ad5
+(8984) DBB: write request from dla, addr 81000280 id 0
+(8984) DBB: write, last tick
+(8986) DBB: write data from dla (2e28a066 16d38961...)
+(8986) DBB: read push: id 0, da 531aa698 67a679b4 750ddbc2 196b30be
+(8988) DBB: write request from dla, addr 810002c0 id 0
+(8988) DBB: write, last tick
+(8990) DBB: read push: id 0, da 52b2709d 68bfa333 8456851a e41d52aa
+(8992) DBB: write request from dla, addr 81000300 id 0
+(8992) DBB: write data from dla (dfc43b36 e7ac4221...)
+(8992) DBB: write, last tick
+(8994) DBB: write data from dla (c7cdf7c5 500f2685...)
+(8994) DBB: read push: id 0, da 1837283e f4365d24 16565c9d 0098aabf
+(8996) DBB: write request from dla, addr 81000340 id 0
+(8996) DBB: write, last tick
+(8998) DBB: write data from dla (6fa45686 46e5ba97...)
+(8998) DBB: read push: id 0, da 2e7e8f26 1950df3d acb53742 a79e0d7e
+(9000) DBB: write request from dla, addr 81000380 id 0
+(9000) DBB: write, last tick
+(9002) DBB: write data from dla (b7f6ea2d ac40c14f...)
+(9002) DBB: read push: id 0, da 8d445c9f 73c01db0 fc0b535a 6a3069c5
+(9004) DBB: write request from dla, addr 810003c0 id 0
+(9004) DBB: write, last tick
+(9006) DBB: read push: id 0, da 9f5230fe 5d170688 a817b1c8 36ca3783
+(9008) DBB: write request from dla, addr 81000400 id 0
+(9008) DBB: write data from dla (733423cf 7eb87a8c...)
+(9008) DBB: write, last tick
+(9010) DBB: write data from dla (a94ad083 a063d74b...)
+(9010) DBB: read push: id 0, da 46126df0 0544493d d6df8e11 97449832
+(9012) DBB: write request from dla, addr 81000440 id 0
+(9012) DBB: write, last tick
+(9014) DBB: write data from dla (0f37a775 f7dd3b7a...)
+(9014) DBB: read push: id 0, da 1db19677 e621518f 248e3be7 3ba2789a
+(9016) DBB: write request from dla, addr 81000480 id 0
+(9016) DBB: write, last tick
+(9018) DBB: write data from dla (1ae54735 cbf9c9d4...)
+(9018) DBB: read push: id 0, da f7cf7432 ea1a2294 410b9a92 18b374de
+(9020) DBB: write request from dla, addr 810004c0 id 0
+(9020) DBB: write, last tick
+(9022) DBB: read push: id 0, da ab4c1239 483b6ffc 2560f3ef cf8cdb81
+(9024) DBB: write request from dla, addr 81000500 id 0
+(9024) DBB: write data from dla (0d5ab0a4 9910b575...)
+(9024) DBB: write, last tick
+(9026) DBB: write data from dla (17316ad4 114fe904...)
+(9028) DBB: write request from dla, addr 81000540 id 0
+(9028) DBB: write, last tick
+(9030) DBB: write data from dla (531aa698 67a679b4...)
+(9032) DBB: write request from dla, addr 81000580 id 0
+(9032) DBB: write, last tick
+(9034) DBB: write data from dla (52b2709d 68bfa333...)
+(9036) DBB: write request from dla, addr 810005c0 id 0
+(9036) DBB: write, last tick
+(9040) DBB: write request from dla, addr 81000600 id 0
+(9040) DBB: write data from dla (1837283e f4365d24...)
+(9040) DBB: write, last tick
+(9042) DBB: write data from dla (2e7e8f26 1950df3d...)
+(9044) DBB: write request from dla, addr 81000640 id 0
+(9044) DBB: write, last tick
+(9046) DBB: write data from dla (8d445c9f 73c01db0...)
+(9048) DBB: write request from dla, addr 81000680 id 0
+(9048) DBB: write, last tick
+(9050) DBB: write data from dla (9f5230fe 5d170688...)
+(9052) DBB: write request from dla, addr 810006c0 id 0
+(9052) DBB: write, last tick
+(9056) DBB: write request from dla, addr 81000700 id 0
+(9056) DBB: write data from dla (46126df0 0544493d...)
+(9056) DBB: write, last tick
+(9058) DBB: write data from dla (1db19677 e621518f...)
+(9060) DBB: write request from dla, addr 81000740 id 0
+(9060) DBB: write, last tick
+(9062) DBB: write data from dla (f7cf7432 ea1a2294...)
+(9064) DBB: write request from dla, addr 81000780 id 0
+(9064) DBB: write, last tick
+(9066) DBB: write data from dla (ab4c1239 483b6ffc...)
+(9068) DBB: write request from dla, addr 810007c0 id 0
+(9068) DBB: write, last tick
+(9090) interrupt!
+done at 9236 ticks
+*** PASS

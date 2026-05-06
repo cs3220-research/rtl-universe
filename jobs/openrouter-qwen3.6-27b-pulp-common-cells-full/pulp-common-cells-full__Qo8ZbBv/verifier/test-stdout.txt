@@ -1,0 +1,326 @@
+=== Per-module Verilator lint tests ===
+FAIL: lint::binary_to_gray
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::gray_to_binary
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::cc_onehot
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::clk_int_div
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::credit_counter
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::delta_counter
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::edge_propagator_tx
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::exp_backoff
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::fifo_v3
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::heaviside
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::isochronous_4phase_handshake
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::isochronous_spill_register
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::lfsr
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::lfsr_16bit
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::lfsr_8bit
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::lossy_valid_to_stream
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::mv_filter
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::onehot_to_bin
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::plru_tree
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::passthrough_stream_fifo
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::popcount
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::ring_buffer
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::rr_arb_tree
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::rstgen_bypass
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::serial_deglitch
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::shift_reg
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::shift_reg_gated
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::spill_register_flushable
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_demux
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_filter
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_fork
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_join_dynamic
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_mux
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_throttle
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::sub_per_hash
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::sync
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::sync_wedge
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::unread
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::read
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::boxcar
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::cdc_2phase
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::cdc_4phase
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::clk_int_div_static
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::trip_counter
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::addr_decode
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::addr_decode_napot
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::cb_filter
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::cdc_fifo_2phase
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::clk_mux_glitch_free
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::counter
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::ecc_decode
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::ecc_encode
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::edge_detect
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::lzc
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::max_counter
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::rstgen
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::spill_register
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_delay
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_fifo
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_fork_dynamic
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_join
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::cdc_reset_ctrlr
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::cdc_fifo_gray
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::fall_through_register
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::id_queue
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_to_mem
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_arbiter_flushable
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_fifo_optimal_wrap
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_register
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_xbar
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::cdc_fifo_gray_clearable
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::cdc_2phase_clearable
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_arbiter
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::stream_omega_net
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+FAIL: lint::mem_to_banks
+%Error: /app/src/cdc_reset_ctrlr_pkg.sv:20:23: Number is missing value digits: 4'c
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+
+=== ECC Functional Tests ===
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+   25 |     endgenerate
+      |     ^~~~~~~~~~~
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+   33 |     while (2**p < p + data_width + 1) p++;
+      |     ^~~~~
+%Error: Cannot continue
+make: Entering directory '/tmp/verilator_ecc_encode_verify'
+make: Vecc_encode.mk: No such file or directory
+make: *** No rule to make target 'Vecc_encode.mk'.  Stop.
+make: Leaving directory '/tmp/verilator_ecc_encode_verify'
+FAIL: functional::ecc_encode (binary not built)
+%Error: Specified --top-module 'ecc_decode' was not found in design.
+%Error: Exiting due to 1 error(s)
+make: Entering directory '/tmp/verilator_ecc_decode_verify'
+make: Vecc_decode.mk: No such file or directory
+make: *** No rule to make target 'Vecc_decode.mk'.  Stop.
+make: Leaving directory '/tmp/verilator_ecc_decode_verify'
+FAIL: functional::ecc_decode (binary not built)
+
+=== Summary ===
+passed=0 total=70
+reward: 0.000000  (passed=0, total=70)

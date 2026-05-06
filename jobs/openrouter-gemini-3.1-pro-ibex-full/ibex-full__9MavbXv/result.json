@@ -1,0 +1,107 @@
+{
+    "id": "602d925b-abbc-4f18-9c78-1d9a70dd4622",
+    "task_name": "ibex-full",
+    "trial_name": "ibex-full__9MavbXv",
+    "trial_uri": "file:///localscratch/dandrews47/rtl-universe/jobs/openrouter-gemini-3.1-pro-ibex-full/ibex-full__9MavbXv",
+    "task_id": {
+        "path": "minrepro_task/ibex-full"
+    },
+    "source": null,
+    "task_checksum": "b71a0a4502247bb49638850fca6d20e637665a1d913f3fdf34d6dd9b679b327d",
+    "config": {
+        "task": {
+            "path": "minrepro_task/ibex-full",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "ibex-full__9MavbXv",
+        "trials_dir": "jobs/openrouter-gemini-3.1-pro-ibex-full",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:OpenCodeSandboxed",
+            "model_name": "openrouter/google/gemini-3.1-pro-preview",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "8bcf7bb8-fdd7-4a50-8750-1e523d0d3e40"
+    },
+    "agent_info": {
+        "name": "opencode-sandboxed",
+        "version": "1.14.33",
+        "model_info": {
+            "name": "google/gemini-3.1-pro-preview",
+            "provider": "openrouter"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 8918688,
+        "n_cache_tokens": 8097442,
+        "n_output_tokens": 18601,
+        "cost_usd": 2.1877240000000002,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-03T22:31:24.736543Z",
+    "finished_at": "2026-05-03T23:00:55.101688Z",
+    "environment_setup": {
+        "started_at": "2026-05-03T22:31:25.437268Z",
+        "finished_at": "2026-05-03T22:38:40.309256Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-03T22:38:40.309390Z",
+        "finished_at": "2026-05-03T22:38:49.340915Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-03T22:38:49.341238Z",
+        "finished_at": "2026-05-03T22:59:48.722716Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-03T22:59:48.927187Z",
+        "finished_at": "2026-05-03T23:00:37.083740Z"
+    },
+    "step_results": null
+}

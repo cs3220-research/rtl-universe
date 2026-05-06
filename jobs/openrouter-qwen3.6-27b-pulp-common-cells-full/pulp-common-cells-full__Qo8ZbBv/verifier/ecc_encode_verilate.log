@@ -1,0 +1,7 @@
+%Error: /app/src/ecc_encode.sv:25:5: syntax error, unexpected endgenerate
+   25 |     endgenerate
+      |     ^~~~~~~~~~~
+%Error: /app/src/ecc_encode.sv:33:5: syntax error, unexpected while
+   33 |     while (2**p < p + data_width + 1) p++;
+      |     ^~~~~
+%Error: Cannot continue

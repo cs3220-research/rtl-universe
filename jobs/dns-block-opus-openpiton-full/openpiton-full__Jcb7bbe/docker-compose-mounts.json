@@ -1,9 +1,0 @@
-{
-  "services": {
-    "main": {
-      "volumes": [
-        "/tmp/harbor-claude-creds:/home/builder/.claude"
-      ]
-    }
-  }
-}

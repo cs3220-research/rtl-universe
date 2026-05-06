@@ -12,3 +12,6 @@ repos/
 
 .env
 
+# Per-project Claude Code data (scheduled tasks, locks, sessions) — not source
+.claude/
+

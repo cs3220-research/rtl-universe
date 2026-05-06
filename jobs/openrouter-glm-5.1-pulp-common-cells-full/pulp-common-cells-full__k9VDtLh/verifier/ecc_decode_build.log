@@ -1,0 +1,3 @@
+make: Entering directory '/tmp/verilator_ecc_decode_verify'
+make: *** No rule to make target 'test/ecc/ecc.cpp', needed by 'ecc.o'.  Stop.
+make: Leaving directory '/tmp/verilator_ecc_decode_verify'

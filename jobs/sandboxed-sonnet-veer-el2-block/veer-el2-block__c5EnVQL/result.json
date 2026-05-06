@@ -1,0 +1,110 @@
+{
+    "id": "410a2ac6-cc9e-4d40-836b-cf2ed50c0de0",
+    "task_name": "veer-el2-block",
+    "trial_name": "veer-el2-block__c5EnVQL",
+    "trial_uri": "file:///localscratch/dandrews47/rtl-universe/jobs/sandboxed-sonnet-veer-el2-block/veer-el2-block__c5EnVQL",
+    "task_id": {
+        "path": "minrepro_task/veer-el2-block"
+    },
+    "source": null,
+    "task_checksum": "89787bdfcf16d6455e06d644d9a9fa3bcebf5fd752f9957fac8557104fe20053",
+    "config": {
+        "task": {
+            "path": "minrepro_task/veer-el2-block",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "veer-el2-block__c5EnVQL",
+        "trials_dir": "jobs/sandboxed-sonnet-veer-el2-block",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:ClaudeCodeSandboxed",
+            "model_name": "sonnet",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "CLAUDE_CONFIG_DIR": "/home/builder/.claude",
+                "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "****"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": [
+                "/tmp/harbor-claude-creds-sandboxed-sonnet-veer-el2-block:/home/builder/.claude"
+            ],
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "76dbbbd7-97dc-4677-8e50-a60faacb50b2"
+    },
+    "agent_info": {
+        "name": "claude-code-sandboxed",
+        "version": "2.1.126",
+        "model_info": {
+            "name": "sonnet",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-04T21:33:44.972287Z",
+    "finished_at": "2026-05-04T22:40:01.722159Z",
+    "environment_setup": {
+        "started_at": "2026-05-04T21:33:45.505246Z",
+        "finished_at": "2026-05-04T21:33:51.263387Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-04T21:33:51.263447Z",
+        "finished_at": "2026-05-04T21:34:06.817679Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-04T21:34:06.817838Z",
+        "finished_at": "2026-05-04T22:39:40.586827Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-04T22:39:40.768455Z",
+        "finished_at": "2026-05-04T22:39:41.542599Z"
+    },
+    "step_results": null
+}

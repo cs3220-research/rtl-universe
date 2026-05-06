@@ -1,0 +1,9 @@
+{
+  "services": {
+    "main": {
+      "volumes": [
+        "/tmp/harbor-claude-creds-sandboxed-sonnet-ibex-e2e:/home/builder/.claude"
+      ]
+    }
+  }
+}

@@ -20,8 +20,8 @@ FROM debian:bookworm AS base
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
-ARG _UID=1000
-ARG _GID=1000
+ARG _UID=3298962
+ARG _GID=2626
 ARG _USERNAME=builder
 ENV HOME=/home/${_USERNAME}
 

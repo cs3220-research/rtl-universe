@@ -1,0 +1,110 @@
+converting /app/verif/traces/traceplayer/googlenet_conv2_3x3_int16/input.txn to /app/outdir/nv_full/verilator/test/googlenet_conv2_3x3_int16/trace.bin
+File 0 0x50064080 0xb480
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x5002dfe0 0x36000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x500000e0 0x2da80
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x500000e0 0x2da80
+okay, that's all the bytes I expected -- I'm stopping here
+(236) ERROR: timed out reading response
+(280) ERROR: timed out reading response
+(304) ERROR: timed out reading response
+(334) ERROR: timed out reading response
+(358) ERROR: timed out reading response
+(382) ERROR: timed out reading response
+(406) ERROR: timed out reading response
+(430) ERROR: timed out reading response
+(454) ERROR: timed out reading response
+(478) ERROR: timed out reading response
+(508) ERROR: timed out reading response
+(532) ERROR: timed out reading response
+(556) ERROR: timed out reading response
+(580) ERROR: timed out reading response
+(604) ERROR: timed out reading response
+(628) ERROR: timed out reading response
+(652) ERROR: timed out reading response
+(676) ERROR: timed out reading response
+(700) ERROR: timed out reading response
+(754) ERROR: timed out reading response
+(784) ERROR: timed out reading response
+(814) ERROR: timed out reading response
+(838) ERROR: timed out reading response
+(862) ERROR: timed out reading response
+(914) ERROR: timed out reading response
+(938) ERROR: timed out reading response
+(962) ERROR: timed out reading response
+(986) ERROR: timed out reading response
+(1010) ERROR: timed out reading response
+(1044) ERROR: timed out reading response
+(1068) ERROR: timed out reading response
+(1092) ERROR: timed out reading response
+(1116) ERROR: timed out reading response
+(1146) ERROR: timed out reading response
+(1206) ERROR: timed out reading response
+(1236) ERROR: timed out reading response
+(1260) ERROR: timed out reading response
+(1284) ERROR: timed out reading response
+(1308) ERROR: timed out reading response
+(1338) ERROR: timed out reading response
+(1374) ERROR: timed out reading response
+(1404) ERROR: timed out reading response
+(1440) ERROR: timed out reading response
+(1470) ERROR: timed out reading response
+(1494) ERROR: timed out reading response
+(1518) ERROR: timed out reading response
+(1542) ERROR: timed out reading response
+(1574) ERROR: timed out reading response
+(1598) ERROR: timed out reading response
+(1622) ERROR: timed out reading response
+(1646) ERROR: timed out reading response
+(1670) ERROR: timed out reading response
+(1706) ERROR: timed out reading response
+(1730) ERROR: timed out reading response
+(1754) ERROR: timed out reading response
+(1788) ERROR: timed out reading response
+(1812) ERROR: timed out reading response
+(1836) ERROR: timed out reading response
+(1860) ERROR: timed out reading response
+(1884) ERROR: timed out reading response
+(1908) ERROR: timed out reading response
+(1944) ERROR: timed out reading response
+(1968) ERROR: timed out reading response
+(1992) ERROR: timed out reading response
+(2016) ERROR: timed out reading response
+(2040) ERROR: timed out reading response
+(2064) ERROR: timed out reading response
+(2088) ERROR: timed out reading response
+(2112) ERROR: timed out reading response
+(2136) ERROR: timed out reading response
+(2160) ERROR: timed out reading response
+(2184) ERROR: timed out reading response
+(2208) ERROR: timed out reading response
+(2232) ERROR: timed out reading response
+(2256) ERROR: timed out reading response
+(2302) ERROR: timed out reading response
+(2326) ERROR: timed out reading response
+(2350) ERROR: timed out reading response
+(2380) ERROR: timed out reading response
+(2404) ERROR: timed out reading response
+(2428) ERROR: timed out reading response
+(2452) ERROR: timed out reading response
+(2482) ERROR: timed out reading response
+(2506) ERROR: timed out reading response
+(2530) ERROR: timed out reading response
+(2560) ERROR: timed out reading response
+(2584) ERROR: timed out reading response
+(2644) ERROR: timed out reading response
+(2668) ERROR: timed out reading response
+(2692) ERROR: timed out reading response
+(2716) ERROR: timed out reading response
+(2740) ERROR: timed out reading response
+(2764) ERROR: timed out reading response
+(2788) ERROR: timed out reading response
+(2812) ERROR: timed out reading response
+(2874) ERROR: timed out reading response
+(2898) ERROR: timed out reading response
+(2922) ERROR: timed out reading response
+(2946) ERROR: timed out reading response
+(2976) ERROR: timed out reading response
+(3000) ERROR: timed out 

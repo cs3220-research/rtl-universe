@@ -1,0 +1,8 @@
+Simulation of Ibex
+==================
+
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 19480
+DEBUG: ibex_simple_system initial block executed
+
+Simulation running, end by pressing CTRL-c.

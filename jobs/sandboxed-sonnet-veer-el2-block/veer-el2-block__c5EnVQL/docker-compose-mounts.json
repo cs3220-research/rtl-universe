@@ -1,0 +1,9 @@
+{
+  "services": {
+    "main": {
+      "volumes": [
+        "/tmp/harbor-claude-creds-sandboxed-sonnet-veer-el2-block:/home/builder/.claude"
+      ]
+    }
+  }
+}

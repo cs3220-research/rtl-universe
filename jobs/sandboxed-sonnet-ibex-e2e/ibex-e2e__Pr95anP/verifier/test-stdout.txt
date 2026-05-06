@@ -1,0 +1,1334 @@
+=== Building simple-system simulator ===
+WARNING: Not adding library . (/app). Library ibex already registered for this location
+INFO: Preparing lowrisc:dv:dv_fcov_macros:0
+INFO: Preparing lowrisc:dv:secded_enc:0
+INFO: Preparing lowrisc:dv_verilator:ibex_pcounts:0
+INFO: Preparing lowrisc:dv_verilator:simutil_verilator:0
+INFO: Preparing lowrisc:ibex:ibex_pkg:0.1
+INFO: Preparing lowrisc:prim_generic:ram_1p_pkg:0
+INFO: Preparing lowrisc:prim_generic:ram_2p_pkg:0
+INFO: Preparing lowrisc:prim_generic:rom_pkg:0
+INFO: Preparing lowrisc:prim:util_get_scramble_params:0
+INFO: Preparing lowrisc:prim:util_memload:0
+INFO: Preparing lowrisc:tool:check_tool_requirements:0.1
+INFO: Preparing lowrisc:dv_verilator:memutil_dpi:0
+INFO: Preparing lowrisc:lint:common:0.1
+INFO: Preparing lowrisc:dv_verilator:memutil_verilator:0
+INFO: Preparing lowrisc:prim:assert:0.1
+INFO: Preparing lowrisc:prim:cipher_pkg:0.1
+INFO: Preparing lowrisc:prim_generic:and2:0
+INFO: Preparing lowrisc:prim_generic:buf:0
+INFO: Preparing lowrisc:prim_generic:clock_buf:0
+INFO: Preparing lowrisc:prim_generic:clock_gating:0
+INFO: Preparing lowrisc:prim_generic:flop:0
+INFO: Preparing lowrisc:prim_generic:flop_no_rst:0
+INFO: Preparing lowrisc:prim_generic:prim_pkg:0
+INFO: Preparing lowrisc:prim_generic:usb_diff_rx:0
+INFO: Preparing lowrisc:prim_generic:xnor2:0
+INFO: Preparing lowrisc:prim_generic:xor2:0
+INFO: Preparing lowrisc:prim:pad_wrapper_pkg:0
+INFO: Preparing lowrisc:prim:secded:0.1
+INFO: Preparing lowrisc:ibex:ibex_icache:0.1
+INFO: Preparing lowrisc:ibex:ibex_tracer:0.1
+INFO: Preparing lowrisc:prim:cdc_rand_delay:0
+INFO: Preparing lowrisc:prim:cipher:0
+INFO: Preparing lowrisc:prim:count:0
+INFO: Preparing lowrisc:prim_generic:clock_mux2:0
+INFO: Preparing lowrisc:prim_generic:pad_attr:0
+INFO: Preparing lowrisc:prim_generic:pad_wrapper:0
+INFO: Preparing lowrisc:prim_generic:ram_1p:0
+INFO: Preparing lowrisc:prim_generic:ram_1r1w:0
+INFO: Preparing lowrisc:prim_generic:ram_2p:0
+INFO: Preparing lowrisc:prim_generic:rom:0
+INFO: Preparing lowrisc:prim:lfsr:0.1
+INFO: Preparing lowrisc:prim:mubi_pkg:0.1
+INFO: Preparing lowrisc:prim:sec_anchor:0.1
+INFO: Preparing lowrisc:prim:util:0.1
+INFO: Preparing lowrisc:ibex:sim_shared:0
+INFO: Preparing lowrisc:prim_generic:clock_inv:0
+INFO: Preparing lowrisc:prim_generic:flop_2sync:0
+INFO: Preparing lowrisc:prim_generic:flop_en:0
+INFO: Preparing lowrisc:prim:mubi:0.1
+INFO: Preparing lowrisc:prim:onehot:0
+INFO: Preparing lowrisc:prim:onehot_check:0
+INFO: Preparing lowrisc:prim:ram_1p_adv:0.1
+INFO: Preparing lowrisc:ibex:ibex_core:0.1
+INFO: Preparing lowrisc:prim_generic:clock_div:0
+INFO: Preparing lowrisc:prim_generic:rst_sync:0
+INFO: Preparing lowrisc:prim:ram_1p_scr:0.1
+INFO: Preparing lowrisc:ibex:ibex_top:0.1
+INFO: Preparing lowrisc:prim_generic:all:0.1
+INFO: Preparing lowrisc:ibex:ibex_top_tracing:0.1
+INFO: Preparing lowrisc:ibex:ibex_simple_system_core:0
+INFO: Preparing lowrisc:ibex:ibex_simple_system:0
+INFO: Setting up project
+WARNING: This backend is deprecated and will eventually be removed. Please migrate to the flow API instead.  See https://edalize.readthedocs.io/en/latest/ref/migrations.html#migrating-from-the-tool-api-to-the-flow-api for more details.
+INFO: Running pre_build script check_tool_requirements
+INFO: Tool verilator present: Sufficiently recent version (found 4.210; needed 4.210)
+INFO: Tool edalize present: Sufficiently recent version (found 0.6.8; needed 0.2.0)
+INFO: Building simulation model
+INFO: verilator -f lowrisc_ibex_ibex_simple_system_0.vc -DDISABLE_PRIM_CDC_RAND_DELAY --trace --trace-fst --trace-structs --trace-params --trace-max-array 1024 -CFLAGS "-std=c++17 -Wall -DVM_TRACE_FMT_FST -DTOPLEVEL_NAME=ibex_simple_system -g" -LDFLAGS "-pthread -lutil -lelf" -Wall --unroll-count 72
+
+ERROR: %Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_valid'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+                     ... For warning description see https://verilator.org/warn/PINMISSING?v=4.210
+                     ... Use "/* verilator lint_off PINMISSING */" and lint_on around source to disable this message.
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_order'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_insn'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_trap'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_halt'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_intr'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_mode'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ixl'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_rs1_addr'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_rs2_addr'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_rs3_addr'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_rs1_rdata'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_rs2_rdata'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_rs3_rdata'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_rd_addr'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_rd_wdata'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_pc_rdata'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_pc_wdata'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_mem_addr'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_mem_rmask'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_mem_wmask'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_mem_rdata'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_mem_wdata'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_pre_mip'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_post_mip'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_nmi'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_nmi_int'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_debug_req'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_debug_mode'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_rf_wr_suppress'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_mcycle'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_mhpmcounters'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_mhpmcountersh'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_ic_scr_key_valid'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_irq_valid'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_expanded_insn_valid'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_expanded_insn'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-PINMISSING: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:219:5: Cell has missing pin: 'rvfi_ext_expanded_insn_last'
+  219 |   ) u_ibex_core (
+      |     ^~~~~~~~~~~
+%Warning-WIDTH: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_register_file_ff.sv:18:35: Operator VAR 'WordZeroVal' expects 32 bits on the Initial value, but Initial value's CONST '39'h0' generates 39 bits.
+                                                                                : ... In instance ibex_simple_system.u_top.u_ibex_top.gen_regfile_ff.register_file_i
+   18 |   parameter logic [DataWidth-1:0] WordZeroVal = '0
+      |                                   ^~~~~~~~~~~
+%Warning-WIDTH: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv:235:72: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'pending_cnt_q' generates 2 bits.
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i.gen_prefetch_buffer.prefetch_buffer_i
+  235 |         if (req_i && (fifo_busy != {NUM_REQS{1'b1}}) && (pending_cnt_q < NUM_REQS)) begin
+      |                                                                        ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:614:38: Selection index out of range: 3 outside 2:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  614 |     if (NUM_COUNTERS > 3) counter_inc[3]  = iside_wait_i & ~mcountinhibit_q[3];
+      |                                      ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:615:38: Selection index out of range: 4 outside 2:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  615 |     if (NUM_COUNTERS > 4) counter_inc[4]  = ~instr_ret_i & ~mcountinhibit_q[4];
+      |                                      ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:616:38: Selection index out of range: 5 outside 2:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  616 |     if (NUM_COUNTERS > 5) counter_inc[5]  = jump_i       & ~mcountinhibit_q[5];
+      |                                      ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:617:38: Selection index out of range: 6 outside 2:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  617 |     if (NUM_COUNTERS > 6) counter_inc[6]  = branch_i     & ~mcountinhibit_q[6];
+      |                                      ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:618:38: Selection index out of range: 7 outside 2:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  618 |     if (NUM_COUNTERS > 7) counter_inc[7]  = branch_taken_i & ~mcountinhibit_q[7];
+      |                                      ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:618:38: Selection index out of range: 3 outside 2:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  618 |     if (NUM_COUNTERS > 7) counter_inc[7]  = branch_taken_i & ~mcountinhibit_q[7];
+      |                                      ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:619:38: Selection index out of range: 8 outside 2:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  619 |     if (NUM_COUNTERS > 8) counter_inc[8]  = instr_ret_compressed_i & ~mcountinhibit_q[8];
+      |                                      ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:620:38: Selection index out of range: 9 outside 2:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  620 |     if (NUM_COUNTERS > 9) counter_inc[9]  = dside_wait_i & ~mcountinhibit_q[9];
+      |                                      ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:621:39: Selection index out of range: 10 outside 2:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  621 |     if (NUM_COUNTERS > 10) counter_inc[10] = mem_load_i  & ~mcountinhibit_q[10];
+      |                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:622:39: Selection index out of range: 11 outside 2:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  622 |     if (NUM_COUNTERS > 11) counter_inc[11] = mem_store_i & ~mcountinhibit_q[11];
+      |                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:622:39: Selection index out of range: 3 outside 2:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  622 |     if (NUM_COUNTERS > 11) counter_inc[11] = mem_store_i & ~mcountinhibit_q[11];
+      |                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:623:39: Selection index out of range: 12 outside 2:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  623 |     if (NUM_COUNTERS > 12) counter_inc[12] = mul_wait_i  & ~mcountinhibit_q[12];
+      |                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:624:39: Selection index out of range: 13 outside 2:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  624 |     if (NUM_COUNTERS > 13) counter_inc[13] = div_wait_i  & ~mcountinhibit_q[13];
+      |                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:772:65: Selection index out of range: 4 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  772 |           if (PMPNumRegions > 4) csr_rdata_int[7:0]   = {pmp_cfg[4].lock, 2'b0, pmp_cfg[4].mode, pmp_cfg[4].exec, pmp_cfg[4].write, pmp_cfg[4].read};
+      |                                                                 ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:772:88: Selection index out of range: 4 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  772 |           if (PMPNumRegions > 4) csr_rdata_int[7:0]   = {pmp_cfg[4].lock, 2'b0, pmp_cfg[4].mode, pmp_cfg[4].exec, pmp_cfg[4].write, pmp_cfg[4].read};
+      |                                                                                        ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:772:105: Selection index out of range: 4 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  772 |           if (PMPNumRegions > 4) csr_rdata_int[7:0]   = {pmp_cfg[4].lock, 2'b0, pmp_cfg[4].mode, pmp_cfg[4].exec, pmp_cfg[4].write, pmp_cfg[4].read};
+      |                                                                                                         ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:772:122: Selection index out of range: 4 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  772 |           if (PMPNumRegions > 4) csr_rdata_int[7:0]   = {pmp_cfg[4].lock, 2'b0, pmp_cfg[4].mode, pmp_cfg[4].exec, pmp_cfg[4].write, pmp_cfg[4].read};
+      |                                                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:772:140: Selection index out of range: 4 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  772 |           if (PMPNumRegions > 4) csr_rdata_int[7:0]   = {pmp_cfg[4].lock, 2'b0, pmp_cfg[4].mode, pmp_cfg[4].exec, pmp_cfg[4].write, pmp_cfg[4].read};
+      |                                                                                                                                            ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:773:65: Selection index out of range: 5 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  773 |           if (PMPNumRegions > 5) csr_rdata_int[15:8]  = {pmp_cfg[5].lock, 2'b0, pmp_cfg[5].mode, pmp_cfg[5].exec, pmp_cfg[5].write, pmp_cfg[5].read};
+      |                                                                 ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:773:88: Selection index out of range: 5 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  773 |           if (PMPNumRegions > 5) csr_rdata_int[15:8]  = {pmp_cfg[5].lock, 2'b0, pmp_cfg[5].mode, pmp_cfg[5].exec, pmp_cfg[5].write, pmp_cfg[5].read};
+      |                                                                                        ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:773:105: Selection index out of range: 5 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  773 |           if (PMPNumRegions > 5) csr_rdata_int[15:8]  = {pmp_cfg[5].lock, 2'b0, pmp_cfg[5].mode, pmp_cfg[5].exec, pmp_cfg[5].write, pmp_cfg[5].read};
+      |                                                                                                         ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:773:122: Selection index out of range: 5 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  773 |           if (PMPNumRegions > 5) csr_rdata_int[15:8]  = {pmp_cfg[5].lock, 2'b0, pmp_cfg[5].mode, pmp_cfg[5].exec, pmp_cfg[5].write, pmp_cfg[5].read};
+      |                                                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:773:140: Selection index out of range: 5 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  773 |           if (PMPNumRegions > 5) csr_rdata_int[15:8]  = {pmp_cfg[5].lock, 2'b0, pmp_cfg[5].mode, pmp_cfg[5].exec, pmp_cfg[5].write, pmp_cfg[5].read};
+      |                                                                                                                                            ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:774:65: Selection index out of range: 6 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  774 |           if (PMPNumRegions > 6) csr_rdata_int[23:16] = {pmp_cfg[6].lock, 2'b0, pmp_cfg[6].mode, pmp_cfg[6].exec, pmp_cfg[6].write, pmp_cfg[6].read};
+      |                                                                 ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:774:88: Selection index out of range: 6 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  774 |           if (PMPNumRegions > 6) csr_rdata_int[23:16] = {pmp_cfg[6].lock, 2'b0, pmp_cfg[6].mode, pmp_cfg[6].exec, pmp_cfg[6].write, pmp_cfg[6].read};
+      |                                                                                        ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:774:105: Selection index out of range: 6 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  774 |           if (PMPNumRegions > 6) csr_rdata_int[23:16] = {pmp_cfg[6].lock, 2'b0, pmp_cfg[6].mode, pmp_cfg[6].exec, pmp_cfg[6].write, pmp_cfg[6].read};
+      |                                                                                                         ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:774:122: Selection index out of range: 6 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  774 |           if (PMPNumRegions > 6) csr_rdata_int[23:16] = {pmp_cfg[6].lock, 2'b0, pmp_cfg[6].mode, pmp_cfg[6].exec, pmp_cfg[6].write, pmp_cfg[6].read};
+      |                                                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:774:140: Selection index out of range: 6 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  774 |           if (PMPNumRegions > 6) csr_rdata_int[23:16] = {pmp_cfg[6].lock, 2'b0, pmp_cfg[6].mode, pmp_cfg[6].exec, pmp_cfg[6].write, pmp_cfg[6].read};
+      |                                                                                                                                            ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:775:65: Selection index out of range: 7 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  775 |           if (PMPNumRegions > 7) csr_rdata_int[31:24] = {pmp_cfg[7].lock, 2'b0, pmp_cfg[7].mode, pmp_cfg[7].exec, pmp_cfg[7].write, pmp_cfg[7].read};
+      |                                                                 ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:775:88: Selection index out of range: 7 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  775 |           if (PMPNumRegions > 7) csr_rdata_int[31:24] = {pmp_cfg[7].lock, 2'b0, pmp_cfg[7].mode, pmp_cfg[7].exec, pmp_cfg[7].write, pmp_cfg[7].read};
+      |                                                                                        ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:775:105: Selection index out of range: 7 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  775 |           if (PMPNumRegions > 7) csr_rdata_int[31:24] = {pmp_cfg[7].lock, 2'b0, pmp_cfg[7].mode, pmp_cfg[7].exec, pmp_cfg[7].write, pmp_cfg[7].read};
+      |                                                                                                         ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:775:122: Selection index out of range: 7 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  775 |           if (PMPNumRegions > 7) csr_rdata_int[31:24] = {pmp_cfg[7].lock, 2'b0, pmp_cfg[7].mode, pmp_cfg[7].exec, pmp_cfg[7].write, pmp_cfg[7].read};
+      |                                                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:775:140: Selection index out of range: 7 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  775 |           if (PMPNumRegions > 7) csr_rdata_int[31:24] = {pmp_cfg[7].lock, 2'b0, pmp_cfg[7].mode, pmp_cfg[7].exec, pmp_cfg[7].write, pmp_cfg[7].read};
+      |                                                                                                                                            ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:782:66: Selection index out of range: 8 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  782 |           if (PMPNumRegions > 8)  csr_rdata_int[7:0]   = {pmp_cfg[8].lock,  2'b0, pmp_cfg[8].mode,  pmp_cfg[8].exec,  pmp_cfg[8].write,  pmp_cfg[8].read};
+      |                                                                  ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:782:90: Selection index out of range: 8 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  782 |           if (PMPNumRegions > 8)  csr_rdata_int[7:0]   = {pmp_cfg[8].lock,  2'b0, pmp_cfg[8].mode,  pmp_cfg[8].exec,  pmp_cfg[8].write,  pmp_cfg[8].read};
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:782:108: Selection index out of range: 8 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  782 |           if (PMPNumRegions > 8)  csr_rdata_int[7:0]   = {pmp_cfg[8].lock,  2'b0, pmp_cfg[8].mode,  pmp_cfg[8].exec,  pmp_cfg[8].write,  pmp_cfg[8].read};
+      |                                                                                                            ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:782:126: Selection index out of range: 8 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  782 |           if (PMPNumRegions > 8)  csr_rdata_int[7:0]   = {pmp_cfg[8].lock,  2'b0, pmp_cfg[8].mode,  pmp_cfg[8].exec,  pmp_cfg[8].write,  pmp_cfg[8].read};
+      |                                                                                                                              ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:782:145: Selection index out of range: 8 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  782 |           if (PMPNumRegions > 8)  csr_rdata_int[7:0]   = {pmp_cfg[8].lock,  2'b0, pmp_cfg[8].mode,  pmp_cfg[8].exec,  pmp_cfg[8].write,  pmp_cfg[8].read};
+      |                                                                                                                                                 ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:783:66: Selection index out of range: 9 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  783 |           if (PMPNumRegions > 9)  csr_rdata_int[15:8]  = {pmp_cfg[9].lock,  2'b0, pmp_cfg[9].mode,  pmp_cfg[9].exec,  pmp_cfg[9].write,  pmp_cfg[9].read};
+      |                                                                  ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:783:90: Selection index out of range: 9 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  783 |           if (PMPNumRegions > 9)  csr_rdata_int[15:8]  = {pmp_cfg[9].lock,  2'b0, pmp_cfg[9].mode,  pmp_cfg[9].exec,  pmp_cfg[9].write,  pmp_cfg[9].read};
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:783:108: Selection index out of range: 9 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  783 |           if (PMPNumRegions > 9)  csr_rdata_int[15:8]  = {pmp_cfg[9].lock,  2'b0, pmp_cfg[9].mode,  pmp_cfg[9].exec,  pmp_cfg[9].write,  pmp_cfg[9].read};
+      |                                                                                                            ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:783:126: Selection index out of range: 9 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  783 |           if (PMPNumRegions > 9)  csr_rdata_int[15:8]  = {pmp_cfg[9].lock,  2'b0, pmp_cfg[9].mode,  pmp_cfg[9].exec,  pmp_cfg[9].write,  pmp_cfg[9].read};
+      |                                                                                                                              ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:783:145: Selection index out of range: 9 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  783 |           if (PMPNumRegions > 9)  csr_rdata_int[15:8]  = {pmp_cfg[9].lock,  2'b0, pmp_cfg[9].mode,  pmp_cfg[9].exec,  pmp_cfg[9].write,  pmp_cfg[9].read};
+      |                                                                                                                                                 ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:784:66: Selection index out of range: 10 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  784 |           if (PMPNumRegions > 10) csr_rdata_int[23:16] = {pmp_cfg[10].lock, 2'b0, pmp_cfg[10].mode, pmp_cfg[10].exec, pmp_cfg[10].write, pmp_cfg[10].read};
+      |                                                                  ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:784:90: Selection index out of range: 10 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  784 |           if (PMPNumRegions > 10) csr_rdata_int[23:16] = {pmp_cfg[10].lock, 2'b0, pmp_cfg[10].mode, pmp_cfg[10].exec, pmp_cfg[10].write, pmp_cfg[10].read};
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:784:108: Selection index out of range: 10 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  784 |           if (PMPNumRegions > 10) csr_rdata_int[23:16] = {pmp_cfg[10].lock, 2'b0, pmp_cfg[10].mode, pmp_cfg[10].exec, pmp_cfg[10].write, pmp_cfg[10].read};
+      |                                                                                                            ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:784:126: Selection index out of range: 10 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  784 |           if (PMPNumRegions > 10) csr_rdata_int[23:16] = {pmp_cfg[10].lock, 2'b0, pmp_cfg[10].mode, pmp_cfg[10].exec, pmp_cfg[10].write, pmp_cfg[10].read};
+      |                                                                                                                              ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:784:145: Selection index out of range: 10 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  784 |           if (PMPNumRegions > 10) csr_rdata_int[23:16] = {pmp_cfg[10].lock, 2'b0, pmp_cfg[10].mode, pmp_cfg[10].exec, pmp_cfg[10].write, pmp_cfg[10].read};
+      |                                                                                                                                                 ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:785:66: Selection index out of range: 11 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  785 |           if (PMPNumRegions > 11) csr_rdata_int[31:24] = {pmp_cfg[11].lock, 2'b0, pmp_cfg[11].mode, pmp_cfg[11].exec, pmp_cfg[11].write, pmp_cfg[11].read};
+      |                                                                  ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:785:90: Selection index out of range: 11 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  785 |           if (PMPNumRegions > 11) csr_rdata_int[31:24] = {pmp_cfg[11].lock, 2'b0, pmp_cfg[11].mode, pmp_cfg[11].exec, pmp_cfg[11].write, pmp_cfg[11].read};
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:785:108: Selection index out of range: 11 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  785 |           if (PMPNumRegions > 11) csr_rdata_int[31:24] = {pmp_cfg[11].lock, 2'b0, pmp_cfg[11].mode, pmp_cfg[11].exec, pmp_cfg[11].write, pmp_cfg[11].read};
+      |                                                                                                            ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:785:126: Selection index out of range: 11 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  785 |           if (PMPNumRegions > 11) csr_rdata_int[31:24] = {pmp_cfg[11].lock, 2'b0, pmp_cfg[11].mode, pmp_cfg[11].exec, pmp_cfg[11].write, pmp_cfg[11].read};
+      |                                                                                                                              ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:785:145: Selection index out of range: 11 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  785 |           if (PMPNumRegions > 11) csr_rdata_int[31:24] = {pmp_cfg[11].lock, 2'b0, pmp_cfg[11].mode, pmp_cfg[11].exec, pmp_cfg[11].write, pmp_cfg[11].read};
+      |                                                                                                                                                 ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:792:66: Selection index out of range: 12 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  792 |           if (PMPNumRegions > 12) csr_rdata_int[7:0]   = {pmp_cfg[12].lock, 2'b0, pmp_cfg[12].mode, pmp_cfg[12].exec, pmp_cfg[12].write, pmp_cfg[12].read};
+      |                                                                  ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:792:90: Selection index out of range: 12 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  792 |           if (PMPNumRegions > 12) csr_rdata_int[7:0]   = {pmp_cfg[12].lock, 2'b0, pmp_cfg[12].mode, pmp_cfg[12].exec, pmp_cfg[12].write, pmp_cfg[12].read};
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:792:108: Selection index out of range: 12 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  792 |           if (PMPNumRegions > 12) csr_rdata_int[7:0]   = {pmp_cfg[12].lock, 2'b0, pmp_cfg[12].mode, pmp_cfg[12].exec, pmp_cfg[12].write, pmp_cfg[12].read};
+      |                                                                                                            ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:792:126: Selection index out of range: 12 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  792 |           if (PMPNumRegions > 12) csr_rdata_int[7:0]   = {pmp_cfg[12].lock, 2'b0, pmp_cfg[12].mode, pmp_cfg[12].exec, pmp_cfg[12].write, pmp_cfg[12].read};
+      |                                                                                                                              ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:792:145: Selection index out of range: 12 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  792 |           if (PMPNumRegions > 12) csr_rdata_int[7:0]   = {pmp_cfg[12].lock, 2'b0, pmp_cfg[12].mode, pmp_cfg[12].exec, pmp_cfg[12].write, pmp_cfg[12].read};
+      |                                                                                                                                                 ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:793:66: Selection index out of range: 13 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  793 |           if (PMPNumRegions > 13) csr_rdata_int[15:8]  = {pmp_cfg[13].lock, 2'b0, pmp_cfg[13].mode, pmp_cfg[13].exec, pmp_cfg[13].write, pmp_cfg[13].read};
+      |                                                                  ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:793:90: Selection index out of range: 13 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  793 |           if (PMPNumRegions > 13) csr_rdata_int[15:8]  = {pmp_cfg[13].lock, 2'b0, pmp_cfg[13].mode, pmp_cfg[13].exec, pmp_cfg[13].write, pmp_cfg[13].read};
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:793:108: Selection index out of range: 13 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  793 |           if (PMPNumRegions > 13) csr_rdata_int[15:8]  = {pmp_cfg[13].lock, 2'b0, pmp_cfg[13].mode, pmp_cfg[13].exec, pmp_cfg[13].write, pmp_cfg[13].read};
+      |                                                                                                            ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:793:126: Selection index out of range: 13 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  793 |           if (PMPNumRegions > 13) csr_rdata_int[15:8]  = {pmp_cfg[13].lock, 2'b0, pmp_cfg[13].mode, pmp_cfg[13].exec, pmp_cfg[13].write, pmp_cfg[13].read};
+      |                                                                                                                              ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:793:145: Selection index out of range: 13 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  793 |           if (PMPNumRegions > 13) csr_rdata_int[15:8]  = {pmp_cfg[13].lock, 2'b0, pmp_cfg[13].mode, pmp_cfg[13].exec, pmp_cfg[13].write, pmp_cfg[13].read};
+      |                                                                                                                                                 ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:794:66: Selection index out of range: 14 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  794 |           if (PMPNumRegions > 14) csr_rdata_int[23:16] = {pmp_cfg[14].lock, 2'b0, pmp_cfg[14].mode, pmp_cfg[14].exec, pmp_cfg[14].write, pmp_cfg[14].read};
+      |                                                                  ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:794:90: Selection index out of range: 14 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  794 |           if (PMPNumRegions > 14) csr_rdata_int[23:16] = {pmp_cfg[14].lock, 2'b0, pmp_cfg[14].mode, pmp_cfg[14].exec, pmp_cfg[14].write, pmp_cfg[14].read};
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:794:108: Selection index out of range: 14 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  794 |           if (PMPNumRegions > 14) csr_rdata_int[23:16] = {pmp_cfg[14].lock, 2'b0, pmp_cfg[14].mode, pmp_cfg[14].exec, pmp_cfg[14].write, pmp_cfg[14].read};
+      |                                                                                                            ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:794:126: Selection index out of range: 14 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  794 |           if (PMPNumRegions > 14) csr_rdata_int[23:16] = {pmp_cfg[14].lock, 2'b0, pmp_cfg[14].mode, pmp_cfg[14].exec, pmp_cfg[14].write, pmp_cfg[14].read};
+      |                                                                                                                              ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:794:145: Selection index out of range: 14 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  794 |           if (PMPNumRegions > 14) csr_rdata_int[23:16] = {pmp_cfg[14].lock, 2'b0, pmp_cfg[14].mode, pmp_cfg[14].exec, pmp_cfg[14].write, pmp_cfg[14].read};
+      |                                                                                                                                                 ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:795:66: Selection index out of range: 15 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  795 |           if (PMPNumRegions > 15) csr_rdata_int[31:24] = {pmp_cfg[15].lock, 2'b0, pmp_cfg[15].mode, pmp_cfg[15].exec, pmp_cfg[15].write, pmp_cfg[15].read};
+      |                                                                  ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:795:90: Selection index out of range: 15 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  795 |           if (PMPNumRegions > 15) csr_rdata_int[31:24] = {pmp_cfg[15].lock, 2'b0, pmp_cfg[15].mode, pmp_cfg[15].exec, pmp_cfg[15].write, pmp_cfg[15].read};
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:795:108: Selection index out of range: 15 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  795 |           if (PMPNumRegions > 15) csr_rdata_int[31:24] = {pmp_cfg[15].lock, 2'b0, pmp_cfg[15].mode, pmp_cfg[15].exec, pmp_cfg[15].write, pmp_cfg[15].read};
+      |                                                                                                            ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:795:126: Selection index out of range: 15 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  795 |           if (PMPNumRegions > 15) csr_rdata_int[31:24] = {pmp_cfg[15].lock, 2'b0, pmp_cfg[15].mode, pmp_cfg[15].exec, pmp_cfg[15].write, pmp_cfg[15].read};
+      |                                                                                                                              ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:795:145: Selection index out of range: 15 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  795 |           if (PMPNumRegions > 15) csr_rdata_int[31:24] = {pmp_cfg[15].lock, 2'b0, pmp_cfg[15].mode, pmp_cfg[15].exec, pmp_cfg[15].write, pmp_cfg[15].read};
+      |                                                                                                                                                 ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:806:80: Selection index out of range: 4 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  806 |       CSR_PMPADDR4:  csr_rdata_int = PMPEnable && PMPNumRegions > 4  ? pmp_addr[4] [PMP_ADDR_MSB:2]  : '0;
+      |                                                                                ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:807:80: Selection index out of range: 5 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  807 |       CSR_PMPADDR5:  csr_rdata_int = PMPEnable && PMPNumRegions > 5  ? pmp_addr[5] [PMP_ADDR_MSB:2]  : '0;
+      |                                                                                ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:808:80: Selection index out of range: 6 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  808 |       CSR_PMPADDR6:  csr_rdata_int = PMPEnable && PMPNumRegions > 6  ? pmp_addr[6] [PMP_ADDR_MSB:2]  : '0;
+      |                                                                                ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:809:80: Selection index out of range: 7 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  809 |       CSR_PMPADDR7:  csr_rdata_int = PMPEnable && PMPNumRegions > 7  ? pmp_addr[7] [PMP_ADDR_MSB:2]  : '0;
+      |                                                                                ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:810:80: Selection index out of range: 8 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  810 |       CSR_PMPADDR8:  csr_rdata_int = PMPEnable && PMPNumRegions > 8  ? pmp_addr[8] [PMP_ADDR_MSB:2]  : '0;
+      |                                                                                ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:811:80: Selection index out of range: 9 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  811 |       CSR_PMPADDR9:  csr_rdata_int = PMPEnable && PMPNumRegions > 9  ? pmp_addr[9] [PMP_ADDR_MSB:2]  : '0;
+      |                                                                                ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:812:80: Selection index out of range: 10 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  812 |       CSR_PMPADDR10: csr_rdata_int = PMPEnable && PMPNumRegions > 10 ? pmp_addr[10][PMP_ADDR_MSB:2]  : '0;
+      |                                                                                ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:813:80: Selection index out of range: 11 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  813 |       CSR_PMPADDR11: csr_rdata_int = PMPEnable && PMPNumRegions > 11 ? pmp_addr[11][PMP_ADDR_MSB:2]  : '0;
+      |                                                                                ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:814:80: Selection index out of range: 12 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  814 |       CSR_PMPADDR12: csr_rdata_int = PMPEnable && PMPNumRegions > 12 ? pmp_addr[12][PMP_ADDR_MSB:2]  : '0;
+      |                                                                                ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:815:80: Selection index out of range: 13 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  815 |       CSR_PMPADDR13: csr_rdata_int = PMPEnable && PMPNumRegions > 13 ? pmp_addr[13][PMP_ADDR_MSB:2]  : '0;
+      |                                                                                ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:816:80: Selection index out of range: 14 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  816 |       CSR_PMPADDR14: csr_rdata_int = PMPEnable && PMPNumRegions > 14 ? pmp_addr[14][PMP_ADDR_MSB:2]  : '0;
+      |                                                                                ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:817:80: Selection index out of range: 15 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  817 |       CSR_PMPADDR15: csr_rdata_int = PMPEnable && PMPNumRegions > 15 ? pmp_addr[15][PMP_ADDR_MSB:2]  : '0;
+      |                                                                                ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:842:77: Selection index out of range: 13 outside 12:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  842 |       CSR_MHPMCOUNTER13: csr_rdata_int = (MHPMCounterNum > 10) ? mhpmcounter[13][31:0] : '0;
+      |                                                                             ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:872:103: Selection index out of range: 13 outside 12:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  872 |       CSR_MHPMCOUNTER13H: csr_rdata_int = (MHPMCounterNum > 10 && MHPMCounterWidth > 32) ? mhpmcounter[13][63:32] : '0;
+      |                                                                                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:992:72: Selection index out of range: 4:4 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  992 |             if (PMPNumRegions > 4 && !pmp_cfg[4].lock) begin pmp_cfg_we[4]  = 1'b1; end
+      |                                                                        ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:992:46: Selection index out of range: 4 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  992 |             if (PMPNumRegions > 4 && !pmp_cfg[4].lock) begin pmp_cfg_we[4]  = 1'b1; end
+      |                                              ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:993:72: Selection index out of range: 5:5 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  993 |             if (PMPNumRegions > 5 && !pmp_cfg[5].lock) begin pmp_cfg_we[5]  = 1'b1; end
+      |                                                                        ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:993:46: Selection index out of range: 5 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  993 |             if (PMPNumRegions > 5 && !pmp_cfg[5].lock) begin pmp_cfg_we[5]  = 1'b1; end
+      |                                              ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:994:72: Selection index out of range: 6:6 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  994 |             if (PMPNumRegions > 6 && !pmp_cfg[6].lock) begin pmp_cfg_we[6]  = 1'b1; end
+      |                                                                        ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:994:46: Selection index out of range: 6 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  994 |             if (PMPNumRegions > 6 && !pmp_cfg[6].lock) begin pmp_cfg_we[6]  = 1'b1; end
+      |                                              ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:995:72: Selection index out of range: 7:7 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  995 |             if (PMPNumRegions > 7 && !pmp_cfg[7].lock) begin pmp_cfg_we[7]  = 1'b1; end
+      |                                                                        ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:995:46: Selection index out of range: 7 outside 3:0
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  995 |             if (PMPNumRegions > 7 && !pmp_cfg[7].lock) begin pmp_cfg_we[7]  = 1'b1; end
+      |                                              ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1000:74: Selection index out of range: 8:8 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1000 |             if (PMPNumRegions > 8  && !pmp_cfg[8].lock)  begin pmp_cfg_we[8]  = 1'b1; end
+      |                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1000:47: Selection index out of range: 8 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1000 |             if (PMPNumRegions > 8  && !pmp_cfg[8].lock)  begin pmp_cfg_we[8]  = 1'b1; end
+      |                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1001:74: Selection index out of range: 9:9 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1001 |             if (PMPNumRegions > 9  && !pmp_cfg[9].lock)  begin pmp_cfg_we[9]  = 1'b1; end
+      |                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1001:47: Selection index out of range: 9 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1001 |             if (PMPNumRegions > 9  && !pmp_cfg[9].lock)  begin pmp_cfg_we[9]  = 1'b1; end
+      |                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1002:74: Selection index out of range: 10:10 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1002 |             if (PMPNumRegions > 10 && !pmp_cfg[10].lock) begin pmp_cfg_we[10] = 1'b1; end
+      |                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1002:47: Selection index out of range: 10 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1002 |             if (PMPNumRegions > 10 && !pmp_cfg[10].lock) begin pmp_cfg_we[10] = 1'b1; end
+      |                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1003:74: Selection index out of range: 11:11 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1003 |             if (PMPNumRegions > 11 && !pmp_cfg[11].lock) begin pmp_cfg_we[11] = 1'b1; end
+      |                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1003:47: Selection index out of range: 11 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1003 |             if (PMPNumRegions > 11 && !pmp_cfg[11].lock) begin pmp_cfg_we[11] = 1'b1; end
+      |                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1008:74: Selection index out of range: 12:12 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1008 |             if (PMPNumRegions > 12 && !pmp_cfg[12].lock) begin pmp_cfg_we[12] = 1'b1; end
+      |                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1008:47: Selection index out of range: 12 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1008 |             if (PMPNumRegions > 12 && !pmp_cfg[12].lock) begin pmp_cfg_we[12] = 1'b1; end
+      |                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1009:74: Selection index out of range: 13:13 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1009 |             if (PMPNumRegions > 13 && !pmp_cfg[13].lock) begin pmp_cfg_we[13] = 1'b1; end
+      |                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1009:47: Selection index out of range: 13 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1009 |             if (PMPNumRegions > 13 && !pmp_cfg[13].lock) begin pmp_cfg_we[13] = 1'b1; end
+      |                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1010:74: Selection index out of range: 14:14 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1010 |             if (PMPNumRegions > 14 && !pmp_cfg[14].lock) begin pmp_cfg_we[14] = 1'b1; end
+      |                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1010:47: Selection index out of range: 14 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1010 |             if (PMPNumRegions > 14 && !pmp_cfg[14].lock) begin pmp_cfg_we[14] = 1'b1; end
+      |                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1011:74: Selection index out of range: 15:15 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1011 |             if (PMPNumRegions > 15 && !pmp_cfg[15].lock) begin pmp_cfg_we[15] = 1'b1; end
+      |                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1011:47: Selection index out of range: 15 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1011 |             if (PMPNumRegions > 15 && !pmp_cfg[15].lock) begin pmp_cfg_we[15] = 1'b1; end
+      |                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1019:93: Selection index out of range: 4:4 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1019 |         CSR_PMPADDR4:  if (PMPEnable && PMPNumRegions > 4  && !pmp_cfg[4].lock)  pmp_addr_we[4]  = 1'b1;
+      |                                                                                             ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1019:71: Selection index out of range: 4 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1019 |         CSR_PMPADDR4:  if (PMPEnable && PMPNumRegions > 4  && !pmp_cfg[4].lock)  pmp_addr_we[4]  = 1'b1;
+      |                                                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1020:93: Selection index out of range: 5:5 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1020 |         CSR_PMPADDR5:  if (PMPEnable && PMPNumRegions > 5  && !pmp_cfg[5].lock)  pmp_addr_we[5]  = 1'b1;
+      |                                                                                             ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1020:71: Selection index out of range: 5 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1020 |         CSR_PMPADDR5:  if (PMPEnable && PMPNumRegions > 5  && !pmp_cfg[5].lock)  pmp_addr_we[5]  = 1'b1;
+      |                                                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1021:93: Selection index out of range: 6:6 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1021 |         CSR_PMPADDR6:  if (PMPEnable && PMPNumRegions > 6  && !pmp_cfg[6].lock)  pmp_addr_we[6]  = 1'b1;
+      |                                                                                             ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1021:71: Selection index out of range: 6 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1021 |         CSR_PMPADDR6:  if (PMPEnable && PMPNumRegions > 6  && !pmp_cfg[6].lock)  pmp_addr_we[6]  = 1'b1;
+      |                                                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1022:93: Selection index out of range: 7:7 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1022 |         CSR_PMPADDR7:  if (PMPEnable && PMPNumRegions > 7  && !pmp_cfg[7].lock)  pmp_addr_we[7]  = 1'b1;
+      |                                                                                             ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1022:71: Selection index out of range: 7 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1022 |         CSR_PMPADDR7:  if (PMPEnable && PMPNumRegions > 7  && !pmp_cfg[7].lock)  pmp_addr_we[7]  = 1'b1;
+      |                                                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1023:93: Selection index out of range: 8:8 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1023 |         CSR_PMPADDR8:  if (PMPEnable && PMPNumRegions > 8  && !pmp_cfg[8].lock)  pmp_addr_we[8]  = 1'b1;
+      |                                                                                             ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1023:71: Selection index out of range: 8 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1023 |         CSR_PMPADDR8:  if (PMPEnable && PMPNumRegions > 8  && !pmp_cfg[8].lock)  pmp_addr_we[8]  = 1'b1;
+      |                                                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1024:93: Selection index out of range: 9:9 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1024 |         CSR_PMPADDR9:  if (PMPEnable && PMPNumRegions > 9  && !pmp_cfg[9].lock)  pmp_addr_we[9]  = 1'b1;
+      |                                                                                             ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1024:71: Selection index out of range: 9 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1024 |         CSR_PMPADDR9:  if (PMPEnable && PMPNumRegions > 9  && !pmp_cfg[9].lock)  pmp_addr_we[9]  = 1'b1;
+      |                                                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1025:93: Selection index out of range: 10:10 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1025 |         CSR_PMPADDR10: if (PMPEnable && PMPNumRegions > 10 && !pmp_cfg[10].lock) pmp_addr_we[10] = 1'b1;
+      |                                                                                             ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1025:71: Selection index out of range: 10 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1025 |         CSR_PMPADDR10: if (PMPEnable && PMPNumRegions > 10 && !pmp_cfg[10].lock) pmp_addr_we[10] = 1'b1;
+      |                                                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1026:93: Selection index out of range: 11:11 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1026 |         CSR_PMPADDR11: if (PMPEnable && PMPNumRegions > 11 && !pmp_cfg[11].lock) pmp_addr_we[11] = 1'b1;
+      |                                                                                             ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1026:71: Selection index out of range: 11 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1026 |         CSR_PMPADDR11: if (PMPEnable && PMPNumRegions > 11 && !pmp_cfg[11].lock) pmp_addr_we[11] = 1'b1;
+      |                                                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1027:93: Selection index out of range: 12:12 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1027 |         CSR_PMPADDR12: if (PMPEnable && PMPNumRegions > 12 && !pmp_cfg[12].lock) pmp_addr_we[12] = 1'b1;
+      |                                                                                             ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1027:71: Selection index out of range: 12 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1027 |         CSR_PMPADDR12: if (PMPEnable && PMPNumRegions > 12 && !pmp_cfg[12].lock) pmp_addr_we[12] = 1'b1;
+      |                                                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1028:93: Selection index out of range: 13:13 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1028 |         CSR_PMPADDR13: if (PMPEnable && PMPNumRegions > 13 && !pmp_cfg[13].lock) pmp_addr_we[13] = 1'b1;
+      |                                                                                             ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1028:71: Selection index out of range: 13 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1028 |         CSR_PMPADDR13: if (PMPEnable && PMPNumRegions > 13 && !pmp_cfg[13].lock) pmp_addr_we[13] = 1'b1;
+      |                                                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1029:93: Selection index out of range: 14:14 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1029 |         CSR_PMPADDR14: if (PMPEnable && PMPNumRegions > 14 && !pmp_cfg[14].lock) pmp_addr_we[14] = 1'b1;
+      |                                                                                             ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1029:71: Selection index out of range: 14 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1029 |         CSR_PMPADDR14: if (PMPEnable && PMPNumRegions > 14 && !pmp_cfg[14].lock) pmp_addr_we[14] = 1'b1;
+      |                                                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1030:93: Selection index out of range: 15:15 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1030 |         CSR_PMPADDR15: if (PMPEnable && PMPNumRegions > 15 && !pmp_cfg[15].lock) pmp_addr_we[15] = 1'b1;
+      |                                                                                             ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1030:71: Selection index out of range: 15 outside 3:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1030 |         CSR_PMPADDR15: if (PMPEnable && PMPNumRegions > 15 && !pmp_cfg[15].lock) pmp_addr_we[15] = 1'b1;
+      |                                                                       ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1039:63: Selection index out of range: 3:3 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1039 |         CSR_MHPMCOUNTER3:  if (MHPMCounterNum > 0)  counter_we[3]  = 1'b1;
+      |                                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1040:63: Selection index out of range: 4:4 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1040 |         CSR_MHPMCOUNTER4:  if (MHPMCounterNum > 1)  counter_we[4]  = 1'b1;
+      |                                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1041:63: Selection index out of range: 5:5 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1041 |         CSR_MHPMCOUNTER5:  if (MHPMCounterNum > 2)  counter_we[5]  = 1'b1;
+      |                                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1042:63: Selection index out of range: 6:6 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1042 |         CSR_MHPMCOUNTER6:  if (MHPMCounterNum > 3)  counter_we[6]  = 1'b1;
+      |                                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1043:63: Selection index out of range: 7:7 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1043 |         CSR_MHPMCOUNTER7:  if (MHPMCounterNum > 4)  counter_we[7]  = 1'b1;
+      |                                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1043:63: Selection index out of range: 3:3 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1043 |         CSR_MHPMCOUNTER7:  if (MHPMCounterNum > 4)  counter_we[7]  = 1'b1;
+      |                                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1044:63: Selection index out of range: 8:8 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1044 |         CSR_MHPMCOUNTER8:  if (MHPMCounterNum > 5)  counter_we[8]  = 1'b1;
+      |                                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1045:63: Selection index out of range: 9:9 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1045 |         CSR_MHPMCOUNTER9:  if (MHPMCounterNum > 6)  counter_we[9]  = 1'b1;
+      |                                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1046:63: Selection index out of range: 10:10 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1046 |         CSR_MHPMCOUNTER10: if (MHPMCounterNum > 7)  counter_we[10] = 1'b1;
+      |                                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1047:63: Selection index out of range: 11:11 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1047 |         CSR_MHPMCOUNTER11: if (MHPMCounterNum > 8)  counter_we[11] = 1'b1;
+      |                                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1047:63: Selection index out of range: 3:3 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1047 |         CSR_MHPMCOUNTER11: if (MHPMCounterNum > 8)  counter_we[11] = 1'b1;
+      |                                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1048:63: Selection index out of range: 12:12 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1048 |         CSR_MHPMCOUNTER12: if (MHPMCounterNum > 9)  counter_we[12] = 1'b1;
+      |                                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1049:63: Selection index out of range: 13:13 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1049 |         CSR_MHPMCOUNTER13: if (MHPMCounterNum > 10) counter_we[13] = 1'b1;
+      |                                                               ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1051:90: Selection index out of range: 3:3 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1051 |         CSR_MHPMCOUNTER3H:  if (MHPMCounterNum > 0  && MHPMCounterWidth > 32) counterh_we[3]  = 1'b1;
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1052:90: Selection index out of range: 4:4 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1052 |         CSR_MHPMCOUNTER4H:  if (MHPMCounterNum > 1  && MHPMCounterWidth > 32) counterh_we[4]  = 1'b1;
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1053:90: Selection index out of range: 5:5 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1053 |         CSR_MHPMCOUNTER5H:  if (MHPMCounterNum > 2  && MHPMCounterWidth > 32) counterh_we[5]  = 1'b1;
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1054:90: Selection index out of range: 6:6 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1054 |         CSR_MHPMCOUNTER6H:  if (MHPMCounterNum > 3  && MHPMCounterWidth > 32) counterh_we[6]  = 1'b1;
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1055:90: Selection index out of range: 7:7 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1055 |         CSR_MHPMCOUNTER7H:  if (MHPMCounterNum > 4  && MHPMCounterWidth > 32) counterh_we[7]  = 1'b1;
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1055:90: Selection index out of range: 3:3 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1055 |         CSR_MHPMCOUNTER7H:  if (MHPMCounterNum > 4  && MHPMCounterWidth > 32) counterh_we[7]  = 1'b1;
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1056:90: Selection index out of range: 8:8 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1056 |         CSR_MHPMCOUNTER8H:  if (MHPMCounterNum > 5  && MHPMCounterWidth > 32) counterh_we[8]  = 1'b1;
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1057:90: Selection index out of range: 9:9 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1057 |         CSR_MHPMCOUNTER9H:  if (MHPMCounterNum > 6  && MHPMCounterWidth > 32) counterh_we[9]  = 1'b1;
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1058:90: Selection index out of range: 10:10 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1058 |         CSR_MHPMCOUNTER10H: if (MHPMCounterNum > 7  && MHPMCounterWidth > 32) counterh_we[10] = 1'b1;
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1059:90: Selection index out of range: 11:11 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1059 |         CSR_MHPMCOUNTER11H: if (MHPMCounterNum > 8  && MHPMCounterWidth > 32) counterh_we[11] = 1'b1;
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1059:90: Selection index out of range: 3:3 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1059 |         CSR_MHPMCOUNTER11H: if (MHPMCounterNum > 8  && MHPMCounterWidth > 32) counterh_we[11] = 1'b1;
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1060:90: Selection index out of range: 12:12 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1060 |         CSR_MHPMCOUNTER12H: if (MHPMCounterNum > 9  && MHPMCounterWidth > 32) counterh_we[12] = 1'b1;
+      |                                                                                          ^
+%Warning-SELRANGE: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:1061:90: Selection index out of range: 13:13 outside 2:0
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+ 1061 |         CSR_MHPMCOUNTER13H: if (MHPMCounterNum > 10 && MHPMCounterWidth > 32) counterh_we[13] = 1'b1;
+      |                                                                                          ^
+%Warning-UNUSED: src/lowrisc_ibex_ibex_simple_system_core_0/rtl/ibex_simple_system.sv:35:26: Parameter is not used: 'ICacheScramble'
+                                                                                           : ... In instance ibex_simple_system
+   35 |   parameter bit          ICacheScramble    = 1'b0,
+      |                          ^~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_simple_system_core_0/rtl/ibex_simple_system.sv:38:26: Parameter is not used: 'BranchTargetALU'
+                                                                                           : ... In instance ibex_simple_system
+   38 |   parameter bit          BranchTargetALU   = 1'b1,
+      |                          ^~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_simple_system_core_0/rtl/ibex_simple_system.sv:39:26: Parameter is not used: 'SecureIbex'
+                                                                                           : ... In instance ibex_simple_system
+   39 |   parameter bit          SecureIbex        = 1'b0,
+      |                          ^~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:118:16: Signal is not driven: 'rvfi_valid'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  118 |   logic        rvfi_valid;
+      |                ^~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:119:16: Signal is not driven: 'rvfi_order'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  119 |   logic [63:0] rvfi_order;
+      |                ^~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:120:16: Signal is not driven: 'rvfi_insn'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  120 |   logic [31:0] rvfi_insn;
+      |                ^~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:121:16: Signal is not driven: 'rvfi_trap'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  121 |   logic        rvfi_trap;
+      |                ^~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:122:16: Signal is not driven: 'rvfi_halt'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  122 |   logic        rvfi_halt;
+      |                ^~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:123:16: Signal is not driven: 'rvfi_intr'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  123 |   logic        rvfi_intr;
+      |                ^~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:124:16: Signal is not driven: 'rvfi_mode'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  124 |   logic [ 1:0] rvfi_mode;
+      |                ^~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:125:16: Signal is not driven: 'rvfi_ixl'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  125 |   logic [ 1:0] rvfi_ixl;
+      |                ^~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:126:16: Signal is not driven: 'rvfi_rs1_addr'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  126 |   logic [ 4:0] rvfi_rs1_addr;
+      |                ^~~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:127:16: Signal is not driven: 'rvfi_rs2_addr'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  127 |   logic [ 4:0] rvfi_rs2_addr;
+      |                ^~~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:128:16: Signal is not driven: 'rvfi_rs3_addr'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  128 |   logic [ 4:0] rvfi_rs3_addr;
+      |                ^~~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:129:16: Signal is not driven: 'rvfi_rs1_rdata'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  129 |   logic [31:0] rvfi_rs1_rdata;
+      |                ^~~~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:130:16: Signal is not driven: 'rvfi_rs2_rdata'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  130 |   logic [31:0] rvfi_rs2_rdata;
+      |                ^~~~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:131:16: Signal is not driven: 'rvfi_rs3_rdata'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  131 |   logic [31:0] rvfi_rs3_rdata;
+      |                ^~~~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:132:16: Signal is not driven: 'rvfi_rd_addr'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  132 |   logic [ 4:0] rvfi_rd_addr;
+      |                ^~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:133:16: Signal is not driven: 'rvfi_rd_wdata'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  133 |   logic [31:0] rvfi_rd_wdata;
+      |                ^~~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:134:16: Signal is not driven: 'rvfi_pc_rdata'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  134 |   logic [31:0] rvfi_pc_rdata;
+      |                ^~~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:135:16: Signal is not driven: 'rvfi_pc_wdata'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  135 |   logic [31:0] rvfi_pc_wdata;
+      |                ^~~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:136:16: Signal is not driven: 'rvfi_mem_addr'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  136 |   logic [31:0] rvfi_mem_addr;
+      |                ^~~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:137:16: Signal is not driven: 'rvfi_mem_rmask'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  137 |   logic [ 3:0] rvfi_mem_rmask;
+      |                ^~~~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:138:16: Signal is not driven: 'rvfi_mem_wmask'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  138 |   logic [ 3:0] rvfi_mem_wmask;
+      |                ^~~~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:139:16: Signal is not driven: 'rvfi_mem_rdata'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  139 |   logic [31:0] rvfi_mem_rdata;
+      |                ^~~~~~~~~~~~~~
+%Warning-UNDRIVEN: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:140:16: Signal is not driven: 'rvfi_mem_wdata'
+                                                                                       : ... In instance ibex_simple_system.u_top
+  140 |   logic [31:0] rvfi_mem_wdata;
+      |                ^~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:141:16: Signal is not driven, nor used: 'rvfi_ext_pre_mip'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  141 |   logic [31:0] rvfi_ext_pre_mip;
+      |                ^~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:142:16: Signal is not driven, nor used: 'rvfi_ext_post_mip'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  142 |   logic [31:0] rvfi_ext_post_mip;
+      |                ^~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:143:16: Signal is not driven, nor used: 'rvfi_ext_nmi'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  143 |   logic        rvfi_ext_nmi;
+      |                ^~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:144:16: Signal is not driven, nor used: 'rvfi_ext_nmi_int'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  144 |   logic        rvfi_ext_nmi_int;
+      |                ^~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:145:16: Signal is not driven, nor used: 'rvfi_ext_debug_req'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  145 |   logic        rvfi_ext_debug_req;
+      |                ^~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:146:16: Signal is not driven, nor used: 'rvfi_ext_debug_mode'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  146 |   logic        rvfi_ext_debug_mode;
+      |                ^~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:147:16: Signal is not driven, nor used: 'rvfi_ext_rf_wr_suppress'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  147 |   logic        rvfi_ext_rf_wr_suppress;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:148:16: Signal is not driven, nor used: 'rvfi_ext_mcycle'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  148 |   logic [63:0] rvfi_ext_mcycle;
+      |                ^~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:149:16: Signal is not driven, nor used: 'rvfi_ext_mhpmcounters'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  149 |   logic [31:0] rvfi_ext_mhpmcounters [10];
+      |                ^~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:150:16: Signal is not driven, nor used: 'rvfi_ext_mhpmcountersh'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  150 |   logic [31:0] rvfi_ext_mhpmcountersh [10];
+      |                ^~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:151:16: Signal is not driven, nor used: 'rvfi_ext_ic_scr_key_valid'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  151 |   logic        rvfi_ext_ic_scr_key_valid;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:152:16: Signal is not driven, nor used: 'rvfi_ext_irq_valid'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  152 |   logic        rvfi_ext_irq_valid;
+      |                ^~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:153:16: Signal is not driven, nor used: 'rvfi_ext_expanded_insn_valid'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  153 |   logic        rvfi_ext_expanded_insn_valid;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:154:16: Signal is not driven, nor used: 'rvfi_ext_expanded_insn'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  154 |   logic [15:0] rvfi_ext_expanded_insn;
+      |                ^~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_tracing_0.1/rtl/ibex_top_tracing.sv:155:16: Signal is not driven, nor used: 'rvfi_ext_expanded_insn_last'
+                                                                                     : ... In instance ibex_simple_system.u_top
+  155 |   logic        rvfi_ext_expanded_insn_last;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_tracer_0.1/rtl/ibex_tracer.sv:18:33: Parameter is not used: 'RegFile'
+                                                                          : ... In instance ibex_simple_system.u_top.u_ibex_tracer
+   18 |   parameter ibex_pkg::regfile_e RegFile = ibex_pkg::RegFileFF
+      |                                 ^~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:41:26: Parameter is not used: 'MemDataWidth'
+                                                                    : ... In instance ibex_simple_system.u_top.u_ibex_top
+   41 |   parameter int unsigned MemDataWidth       = MemECC ? 32 + 7 : 32,
+      |                          ^~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:49:17: Parameter is not used: 'ICacheScramble'
+                                                                    : ... In instance ibex_simple_system.u_top.u_ibex_top
+   49 |   parameter bit ICacheScramble              = 1'b0
+      |                 ^~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:163:32: Signal is not used: 'lockstep_alert_minor'
+                                                                     : ... In instance ibex_simple_system.u_top.u_ibex_top
+  163 |   logic                        lockstep_alert_minor;
+      |                                ^~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:164:32: Signal is not used: 'lockstep_alert_major_internal'
+                                                                     : ... In instance ibex_simple_system.u_top.u_ibex_top
+  164 |   logic                        lockstep_alert_major_internal;
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_top.sv:165:32: Signal is not used: 'lockstep_alert_major_bus'
+                                                                     : ... In instance ibex_simple_system.u_top.u_ibex_top
+  165 |   logic                        lockstep_alert_major_bus;
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_register_file_ff.sv:24:32: Signal is not used: 'dummy_instr_id_i'
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.gen_regfile_ff.register_file_i
+   24 |   input  logic                 dummy_instr_id_i,
+      |                                ^~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_register_file_ff.sv:25:32: Signal is not used: 'dummy_instr_wb_i'
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.gen_regfile_ff.register_file_i
+   25 |   input  logic                 dummy_instr_wb_i,
+      |                                ^~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_top_0.1/rtl/ibex_register_file_ff.sv:52:25: Bits of signal are not used: 'we_a_dec'[0]
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.gen_regfile_ff.register_file_i
+   52 |   logic [NUM_WORDS-1:0] we_a_dec;
+      |                         ^~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:15:30: Parameter is not used: 'DbgHwBreakNum'
+                                                                              : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+   15 |   parameter int unsigned     DbgHwBreakNum     = 1,
+      |                              ^~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:23:30: Parameter is not used: 'PMPGranularity'
+                                                                              : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+   23 |   parameter int unsigned     PMPGranularity    = 0,
+      |                              ^~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:25:30: Parameter is not used: 'PMPRstCfg'
+                                                                              : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+   25 |   parameter pmp_cfg_t        PMPRstCfg[PMP_MAX_REGIONS]       = PmpCfgRst,
+      |                              ^~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:44:25: Bits of signal are not used: 'boot_addr_i'[1:0]
+                                                                              : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+   44 |   input  logic [31:0]   boot_addr_i,
+      |                         ^~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:59:25: Signal is not used: 'nmi_mode_i'
+                                                                              : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+   59 |   input  logic          nmi_mode_i,
+      |                         ^~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:83:25: Bits of signal are not used: 'pc_if_i'[0]
+                                                                              : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+   83 |   input  logic [31:0]   pc_if_i,
+      |                         ^~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:84:25: Bits of signal are not used: 'pc_id_i'[0]
+                                                                              : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+   84 |   input  logic [31:0]   pc_id_i,
+      |                         ^~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:85:25: Bits of signal are not used: 'pc_wb_i'[0]
+                                                                              : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+   85 |   input  logic [31:0]   pc_wb_i,
+      |                         ^~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:96:25: Signal is not used: 'csr_save_if_i'
+                                                                              : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+   96 |   input  logic          csr_save_if_i,
+      |                         ^~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:111:25: Signal is not used: 'instr_ret_spec_i'
+                                                                               : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  111 |   input  logic          instr_ret_spec_i,
+      |                         ^~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:112:25: Signal is not used: 'instr_ret_compressed_spec_i'
+                                                                               : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  112 |   input  logic          instr_ret_compressed_spec_i,
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:127:27: Parameter is not used: 'NUM_HPM_COUNTERS'
+                                                                               : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  127 |   localparam int unsigned NUM_HPM_COUNTERS   = MHPMCounterNum;
+      |                           ^~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:129:27: Parameter is not used: 'MHPMCounterIdxBase'
+                                                                               : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  129 |   localparam int unsigned MHPMCounterIdxBase = 3;
+      |                           ^~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:392:29: Signal is not used: 'pmp_cfg_we'
+                                                                               : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  392 |   logic [PMPNumRegions-1:0] pmp_cfg_we;
+      |                             ^~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:393:29: Signal is not used: 'pmp_addr_we'
+                                                                               : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  393 |   logic [PMPNumRegions-1:0] pmp_addr_we;
+      |                             ^~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:394:25: Signal is not used: 'pmp_cfg_wdata'
+                                                                               : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  394 |   pmp_cfg_t             pmp_cfg_wdata  [PMPNumRegions];
+      |                         ^~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:395:25: Signal is not used: 'pmp_mseccfg_d'
+                                                                               : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  395 |   pmp_mseccfg_t         pmp_mseccfg_d;
+      |                         ^~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:537:38: Bits of signal are not used: 'counterh_we'[1]
+                                                                               : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  537 |   logic [NUM_COUNTERS-1:0]           counterh_we;
+      |                                      ^~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:538:38: Bits of signal are not used: 'counter_we'[1]
+                                                                               : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  538 |   logic [NUM_COUNTERS-1:0]           counter_we;
+      |                                      ^~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:661:16: Signal is not used: 'tselect_en'
+                                                                               : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  661 |   logic        tselect_en, tdata1_en, tdata2_en;
+      |                ^~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:661:28: Signal is not used: 'tdata1_en'
+                                                                               : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  661 |   logic        tselect_en, tdata1_en, tdata2_en;
+      |                            ^~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv:661:39: Signal is not used: 'tdata2_en'
+                                                                               : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.cs_registers_i
+  661 |   logic        tselect_en, tdata1_en, tdata2_en;
+      |                                       ^~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_ex_block.sv:113:18: Bits of signal are not used: 'bt_result_ext'[33:32]
+                                                                           : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.ex_block_i
+  113 |     logic [33:0] bt_result_ext;
+      |                  ^~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:30:26: Parameter is not used: 'DataIndTiming'
+                                                                          : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i
+   30 |   parameter bit          DataIndTiming     = 1'b0,
+      |                          ^~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:111:25: Signal is not used: 'priv_mode_i'
+                                                                           : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i
+  111 |   input  priv_lvl_e     priv_mode_i,
+      |                         ^~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:112:25: Signal is not used: 'csr_mstatus_tw_i'
+                                                                           : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i
+  112 |   input  logic          csr_mstatus_tw_i,
+      |                         ^~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:114:25: Signal is not used: 'data_ind_timing_i'
+                                                                           : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i
+  114 |   input  logic          data_ind_timing_i,
+      |                         ^~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:123:25: Signal is not used: 'lsu_addr_incr_req_i'
+                                                                           : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i
+  123 |   input  logic          lsu_addr_incr_req_i,
+      |                         ^~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:134:25: Signal is not used: 'irq_pending_i'
+                                                                           : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i
+  134 |   input  logic          irq_pending_i,
+      |                         ^~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:176:25: Signal is not used: 'outstanding_store_wb_i'
+                                                                           : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i
+  176 |   input  logic          outstanding_store_wb_i,
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:205:16: Signal is not used: 'alu_multicycle_dec'
+                                                                           : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i
+  205 |   logic        alu_multicycle_dec;
+      |                ^~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv:36:27: Bits of signal are not used: 'boot_addr_i'[7:0]
+                                                                          : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i
+   36 |   input  logic [31:0]     boot_addr_i,
+      |                           ^~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv:88:27: Signal is not used: 'exc_cause'
+                                                                          : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i
+   88 |   input  exc_cause_t      exc_cause,
+      |                           ^~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv:118:16: Signal is not driven, nor used: 'pc_if_d'
+                                                                           : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i
+  118 |   logic [31:0] pc_if_d;           
+      |                ^~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv:119:16: Signal is not driven, nor used: 'pc_if_q'
+                                                                           : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i
+  119 |   logic [31:0] pc_if_q;           
+      |                ^~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv:120:16: Signal is not driven, nor used: 'pc_if_we'
+                                                                           : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i
+  120 |   logic        pc_if_we;
+      |                ^~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv:140:16: Signal is not driven, nor used: 'instr_get_expanded'
+                                                                           : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i
+  140 |   logic        instr_get_expanded;
+      |                ^~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv:175:25: Bits of signal are not used: 'wdata'[7:0]
+                                                                                  : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.load_store_unit_i
+  175 |     input  logic [31:0] wdata,
+      |                         ^~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv:226:9: Signal is not used: 'addr_misaligned'
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.load_store_unit_i
+  226 |   logic addr_misaligned;
+      |         ^~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_wb_stage.sv:20:17: Parameter is not used: 'DummyInstructions'
+                                                                          : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.wb_stage_i
+   20 |   parameter bit DummyInstructions = 1'b0
+      |                 ^~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_wb_stage.sv:22:32: Signal is not used: 'clk_i'
+                                                                          : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.wb_stage_i
+   22 |   input  logic                 clk_i,
+      |                                ^~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_wb_stage.sv:23:32: Signal is not used: 'rst_ni'
+                                                                          : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.wb_stage_i
+   23 |   input  logic                 rst_ni,
+      |                                ^~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_wb_stage.sv:25:32: Signal is not used: 'instr_type_wb_i'
+                                                                          : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.wb_stage_i
+   25 |   input  wb_instr_type_e       instr_type_wb_i,
+      |                                ^~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_wb_stage.sv:44:32: Signal is not used: 'dummy_instr_id_i'
+                                                                          : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.wb_stage_i
+   44 |   input  logic                 dummy_instr_id_i,
+      |                                ^~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_wb_stage.sv:57:32: Signal is not used: 'lsu_resp_valid_i'
+                                                                          : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.wb_stage_i
+   57 |   input  logic                 lsu_resp_valid_i,
+      |                                ^~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_wb_stage.sv:58:32: Signal is not used: 'lsu_resp_err_i'
+                                                                          : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.wb_stage_i
+   58 |   input  logic                 lsu_resp_err_i,
+      |                                ^~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv:64:16: Bits of signal are not used: 'cl_imm_word'[31:12]
+                                                                                    : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i.compressed_decoder_i
+   64 |   logic [31:0] cl_imm_word;
+      |                ^~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv:69:16: Bits of signal are not used: 'css_lw_imm'[31:12]
+                                                                                    : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i.compressed_decoder_i
+   69 |   logic [31:0] css_lw_imm;
+      |                ^~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv:74:16: Bits of signal are not used: 'css_sw_imm'[31:12]
+                                                                                    : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i.compressed_decoder_i
+   74 |   logic [31:0] css_sw_imm;
+      |                ^~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv:78:16: Bits of signal are not used: 'ci_addi_imm'[31:12]
+                                                                                    : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i.compressed_decoder_i
+   78 |   logic [31:0] ci_addi_imm;
+      |                ^~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv:98:16: Bits of signal are not used: 'cb_branch_imm'[31:13,0]
+                                                                                    : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i.compressed_decoder_i
+   98 |   logic [31:0] cb_branch_imm;
+      |                ^~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv:104:16: Bits of signal are not used: 'cj_imm'[31:21,0]
+                                                                                     : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i.compressed_decoder_i
+  104 |   logic [31:0] cj_imm;
+      |                ^~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_controller.sv:16:17: Parameter is not used: 'MemECC'
+                                                                            : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i.controller_i
+   16 |   parameter bit MemECC          = 1'b0
+      |                 ^~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_controller.sv:60:25: Signal is not used: 'branch_set_spec_i'
+                                                                            : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i.controller_i
+   60 |   input  logic          branch_set_spec_i,
+      |                         ^~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_decoder.sv:16:26: Parameter is not used: 'BranchTargetALU'
+                                                                         : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i.decoder_i
+   16 |   parameter bit          BranchTargetALU = 1'b0
+      |                          ^~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_decoder.sv:22:32: Signal is not used: 'instr_valid_i'
+                                                                         : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i.decoder_i
+   22 |   input  logic                 instr_valid_i,
+      |                                ^~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_decoder.sv:80:32: Signal is not used: 'instr_rdata_alu_i'
+                                                                         : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i.decoder_i
+   80 |   input  logic [31:0]          instr_rdata_alu_i,
+      |                                ^~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_decoder.sv:95:27: Signal is not used: 'instr_rs2'
+                                                                         : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i.decoder_i
+   95 |   logic [4:0]  instr_rs1, instr_rs2, instr_rd;
+      |                           ^~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv:25:23: Bits of signal are not used: 'addr_i'[0]
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i.gen_prefetch_buffer.prefetch_buffer_i
+   25 |   input  logic [31:0] addr_i,
+      |                       ^~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv:65:31: Signal is not driven, nor used: 'rdata_outstanding_q'
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i.gen_prefetch_buffer.prefetch_buffer_i
+   65 |   logic [NUM_REQS-1:0]        rdata_outstanding_q;
+      |                               ^~~~~~~~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv:66:31: Signal is not driven, nor used: 'stored_addr_q'
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i.gen_prefetch_buffer.prefetch_buffer_i
+   66 |   logic [NUM_REQS-1:0] [31:0] stored_addr_q;
+      |                               ^~~~~~~~~~~~~
+%Warning-UNUSED: src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv:67:31: Signal is not driven, nor used: 'stored_addr_en'
+                                                                                 : ... In instance ibex_simple_system.u_top.u_ibex_top.u_ibex_core.if_stage_i.gen_prefetch_buffer.prefetch_buffer_i
+   67 |   logic [NUM_REQS-1:0]        stored_addr_en;
+      |                               ^~~~~~~~~~~~~~
+%Warning-UNOPTFLAT: src/lowrisc_ibex_ibex_simple_system_core_0/rtl/ibex_simple_system.sv:108:16: Signal unoptimizable: Feedback to clock or circular logic: 'ibex_simple_system.instr_req'
+                                                                                               : ... In instance ibex_simple_system
+  108 |   logic        instr_req;
+      |                ^~~~~~~~~
+                    src/lowrisc_ibex_ibex_simple_system_core_0/rtl/ibex_simple_system.sv:108:16:      Example path: ibex_simple_system.instr_req
+                    src/lowrisc_ibex_ibex_simple_system_core_0/rtl/ibex_simple_system.sv:130:33:      Example path: ASSIGNW
+                    src/lowrisc_ibex_ibex_simple_system_core_0/rtl/ibex_simple_system.sv:77:16:      Example path: ibex_simple_system.host_req
+                    src/lowrisc_ibex_ibex_simple_system_core_0/rtl/ibex_simple_system.sv:162:6:      Example path: ASSIGNW
+                    src/lowrisc_ibex_sim_shared_0/rtl/bus.sv:27:35:      Example path: ibex_simple_system.__Vcellinp__u_bus__host_req_i
+                    src/lowrisc_ibex_sim_shared_0/rtl/bus.sv:65:3:      Example path: ALWAYS
+                    src/lowrisc_ibex_sim_shared_0/rtl/bus.sv:61:30:      Example path: ibex_simple_system.u_bus.host_sel_req
+                    src/lowrisc_ibex_sim_shared_0/rtl/bus.sv:121:3:      Example path: ALWAYS
+                    src/lowrisc_ibex_sim_shared_0/rtl/bus.sv:28:35:      Example path: ibex_simple_system.__Vcellout__u_bus__host_gnt_o
+                    src/lowrisc_ibex_ibex_simple_system_core_0/rtl/ibex_simple_system.sv:163:6:      Example path: ASSIGNW
+                    src/lowrisc_ibex_ibex_simple_system_core_0/rtl/ibex_simple_system.sv:78:16:      Example path: ibex_simple_system.host_gnt
+                    src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv:358:3:      Example path: ALWAYS
+                    src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:311:16:      Example path: ibex_simple_system.u_top.u_ibex_top.u_ibex_core.lsu_req_done
+                    src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:518:19:      Example path: ASSIGNW
+                    src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:254:16:      Example path: ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i.stall_id
+                    src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:554:26:      Example path: ASSIGNW
+                    src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:270:16:      Example path: ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i.instr_executing
+                    src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:485:26:      Example path: ASSIGNW
+                    src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv:264:16:      Example path: ibex_simple_system.u_top.u_ibex_top.u_ibex_core.id_stage_i.jump_set
+                    src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_controller.sv:263:3:      Example path: ALWAYS
+                    src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:219:16:      Example path: ibex_simple_system.u_top.u_ibex_top.u_ibex_core.pc_set
+                    src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv:200:3:      Example path: ALWAYS
+                    src/lowrisc_ibex_ibex_simple_system_core_0/rtl/ibex_simple_system.sv:108:16:      Example path: ibex_simple_system.instr_req
+%Error: Exiting due to 314 warning(s)
+make: *** [Makefile:15: Vibex_simple_system.mk] Error 1
+
+ERROR: Failed to build lowrisc:ibex:ibex_simple_system:0 : '['make']' exited with an error: 2
+Entering directory '/app/build/lowrisc_ibex_ibex_simple_system_0/sim-verilator'
+=== [1/4] SW test: hello_test ===
+make: Nothing to be done for 'all'.
+hello_test: SKIP (simulator binary missing — RTL compile failed)
+=== [2/4] SW test: dit_test ===
+make: Nothing to be done for 'all'.
+dit_test: SKIP (simulator binary missing — RTL compile failed)
+=== [3/4] SW test: dummy_instr_test ===
+make: Nothing to be done for 'all'.
+dummy_instr_test: SKIP (simulator binary missing — RTL compile failed)
+=== [4/4] SW test: pmp_smoke_test ===
+make: Nothing to be done for 'all'.
+pmp_smoke_test: SKIP (simulator binary missing — RTL compile failed)
+
+Total: passed=0 / total=4
+reward: 0.000000  (passed=0, total=4)

@@ -22,11 +22,19 @@ LOG_DIR = Path("/tmp/codex-runs")
 LOG_DIR.mkdir(exist_ok=True)
 CLAUDE_CREDS_DIR = Path("/tmp/harbor-claude-creds")
 
-# Concurrency
-MAX_TOTAL = 6      # max harbor processes at once
-MAX_HEAVY = 1      # at most one HEAVY task running
-# Agent timeout multiplier (task.toml sets 86400s = 24h; 0.42 → ~10h)
+# Concurrency (128-CPU, 1TB-RAM lab server; aggressive for 24h target)
+MAX_TOTAL = 16     # max harbor processes at once
+MAX_HEAVY = 8      # at most N HEAVY tasks (coralnpu/nvdla-full) running
+MAX_CLAUDE = 4     # ClaudeCode (Opus + Sonnet combined) — 2 accounts × 2 each
+MAX_CODEX = 5      # Codex (GPT-5.5)
+# OpenCode (everything else) is implicitly unlimited up to MAX_TOTAL.
+# Agent timeout: 10h cap (task.toml is 24h). Most will finish much sooner.
 AGENT_TIMEOUT_MULTIPLIER = "0.42"
+# Watchdog: heartbeat every iteration so we know the launcher is alive
+TICK_SEC = 20
+# Track when this launcher started so stale exception.txt files (from prior
+# machines or git-clone-rewritten mtimes) don't trigger backoff forever.
+LAUNCHER_START_TS = time.time() if 'time' in dir() else __import__('time').time()
 
 # Task weights (for resource scheduling)
 HEAVY = {"coralnpu-e2e", "coralnpu-full", "nvdla-full"}
@@ -51,23 +59,35 @@ def env_or_die(name):
 MODELS = [
     # Codex (uses ChatGPT subscription via auth.json)
     ("gpt55", "agents.sandboxed:CodexSandboxed", "gpt-5.5",
-     [("CODEX_AUTH_JSON_PATH", "/home/broyojo/.codex/auth.json")],
+     [("CODEX_AUTH_JSON_PATH", "/nethome/dandrews47/.codex/auth.json")],
      None,
      [("reasoning_effort", "xhigh")]),  # --ak items
     # Claude Code
     ("opus", "agents.sandboxed:ClaudeCodeSandboxed", "opus",
      [("CLAUDE_CONFIG_DIR", "/home/builder/.claude"),
       ("CLAUDE_CODE_MAX_OUTPUT_TOKENS", "128000")],
-     [str(CLAUDE_CREDS_DIR) + ":/home/builder/.claude"],
+     # Mount ONLY the credentials FILE, not the whole .claude DIR.
+     # Mounting the dir caused Claude Code (and its sub-tools like make/Verilator)
+     # to write multi-hundred-GB session/build dumps to /tmp on the host,
+     # filling the / partition and crashing the shared lab server.
+     # By mounting just the file, the rest of ~/.claude is the container's
+     # ephemeral overlay layer and gets garbage-collected on container exit.
+     [str(CLAUDE_CREDS_DIR) + "/.credentials.json:/home/builder/.claude/.credentials.json"],
      []),
     ("sonnet", "agents.sandboxed:ClaudeCodeSandboxed", "sonnet",
      [("CLAUDE_CONFIG_DIR", "/home/builder/.claude"),
       ("CLAUDE_CODE_MAX_OUTPUT_TOKENS", "128000")],
-     [str(CLAUDE_CREDS_DIR) + ":/home/builder/.claude"],
+     # Mount ONLY the credentials FILE, not the whole .claude DIR.
+     # Mounting the dir caused Claude Code (and its sub-tools like make/Verilator)
+     # to write multi-hundred-GB session/build dumps to /tmp on the host,
+     # filling the / partition and crashing the shared lab server.
+     # By mounting just the file, the rest of ~/.claude is the container's
+     # ephemeral overlay layer and gets garbage-collected on container exit.
+     [str(CLAUDE_CREDS_DIR) + "/.credentials.json:/home/builder/.claude/.credentials.json"],
      []),
-    # OpenCode via OpenRouter
-    ("gemini-3.1-pro", "agents.sandboxed:OpenCodeSandboxed", "openrouter/google/gemini-3.1-pro-preview", "OPENROUTER", None, []),
-    ("qwen3.6-max",     "agents.sandboxed:OpenCodeSandboxed", "openrouter/qwen/qwen3.6-max-preview",     "OPENROUTER", None, []),
+    # OpenCode via OpenRouter — cheap models re-enabled (gemini/qwen-max stay paused — too expensive)
+    # ("gemini-3.1-pro", "agents.sandboxed:OpenCodeSandboxed", "openrouter/google/gemini-3.1-pro-preview", "OPENROUTER", None, []),
+    # ("qwen3.6-max",     "agents.sandboxed:OpenCodeSandboxed", "openrouter/qwen/qwen3.6-max-preview",     "OPENROUTER", None, []),
     ("glm-5.1",         "agents.sandboxed:OpenCodeSandboxed", "openrouter/z-ai/glm-5.1",                 "OPENROUTER", None, []),
     ("qwen3.6-27b",     "agents.sandboxed:OpenCodeSandboxed", "openrouter/qwen/qwen3.6-27b",             "OPENROUTER", None, []),
     ("deepseek",        "agents.sandboxed:OpenCodeSandboxed", "openrouter/deepseek/deepseek-v4-pro",     "OPENROUTER", None, []),
@@ -92,8 +112,27 @@ def log(msg):
     print(f"[{dt.datetime.now().strftime('%H:%M:%S')}] {msg}", flush=True)
 
 def is_done(job_dir, task):
+    """A trial is DONE if it has a reward AND the agent actually did work.
+
+    False-positive guard: a job that died at agent setup (e.g. auth failure,
+    docker compose kill) still has a reward.txt written by the verifier
+    running on the bare skeleton, which makes it look "covered". Skip such
+    runs — they should be re-queued.
+
+    Heuristic: real agent runs leave an agent log >50KB. Setup-failure runs
+    leave logs <10KB (just the instruction text echoed via tee).
+    """
     for trial in glob.glob(str(job_dir / f"{task}__*")):
-        if os.path.isfile(os.path.join(trial, "verifier", "reward.txt")):
+        rwd = os.path.join(trial, "verifier", "reward.txt")
+        if not os.path.isfile(rwd):
+            continue
+        # Check agent log size
+        agent_dir = os.path.join(trial, "agent")
+        log_files = glob.glob(os.path.join(agent_dir, "*.txt"))
+        max_log_size = max((os.path.getsize(f) for f in log_files), default=0)
+        # Also accept it as done if exception.txt is absent (verifier ran cleanly)
+        has_exception = os.path.isfile(os.path.join(trial, "exception.txt"))
+        if max_log_size >= 50_000 or not has_exception:
             return True
     rj = job_dir / "result.json"
     if rj.is_file():
@@ -101,7 +140,14 @@ def is_done(job_dir, task):
             d = json.load(open(rj))
             for ev in d.get("stats",{}).get("evals",{}).values():
                 if ev.get("reward_stats",{}).get("reward"):
-                    return True
+                    # Same guard as above
+                    for trial in glob.glob(str(job_dir / f"{task}__*")):
+                        agent_dir = os.path.join(trial, "agent")
+                        log_files = glob.glob(os.path.join(agent_dir, "*.txt"))
+                        max_log_size = max((os.path.getsize(f) for f in log_files), default=0)
+                        has_exception = os.path.isfile(os.path.join(trial, "exception.txt"))
+                        if max_log_size >= 50_000 or not has_exception:
+                            return True
         except Exception:
             pass
     return False
@@ -127,18 +173,21 @@ def _matching_job_dirs(model_label, task):
     return out
 
 def recently_failed(model_label, task, max_age_sec=1800):
-    """Has this (model, task) failed in the last N seconds?
+    """Has this (model, task) failed in the last N seconds *of this launcher's lifetime*?
 
-    Avoids the launcher re-launching a job that fails fast in setup
-    (e.g., a Dockerfile bug) every 30s, eating slots and money.
+    Only counts failures with mtime > LAUNCHER_START_TS so old exception.txt
+    files (from prior machines / git clone rewriting mtimes) don't permanently
+    starve a cell.
     """
     import time as _t
     now = _t.time()
     for jd in _matching_job_dirs(model_label, task):
         for trial in jd.glob(f"{task}__*"):
             exc = trial / "exception.txt"
-            if exc.exists() and (now - exc.stat().st_mtime) < max_age_sec:
-                return True
+            if not exc.exists(): continue
+            mtime = exc.stat().st_mtime
+            if mtime < LAUNCHER_START_TS: continue
+            if (now - mtime) < max_age_sec: return True
     return False
 
 def covered(model_label, task):
@@ -180,16 +229,25 @@ def heavy_in_flight():
                 break
     return n
 
-def task_in_flight(task):
-    """Is a job for this exact task currently running?
+def task_in_flight_count(task):
+    """How many jobs of this task are currently running?
 
-    docker classic builder serializes builds, so kicking off >1 of the
-    same Dockerfile just queues them and wastes a worker slot.
+    On modern docker (29+ with BuildKit default), parallel builds of the
+    same Dockerfile share cache properly — no need to serialize.
     """
-    for line in harbor_processes():
-        if f"minrepro_task/{task} " in line + " ":
-            return True
-    return False
+    return sum(1 for line in harbor_processes() if f"minrepro_task/{task} " in line + " ")
+
+# Per-Dockerfile concurrency cap (1 = old strict dedup, higher = parallel)
+MAX_PER_TASK = 3
+
+def task_in_flight(task):
+    """Backward-compat: True iff at MAX_PER_TASK or more jobs of this task."""
+    return task_in_flight_count(task) >= MAX_PER_TASK
+
+def agent_class_in_flight(agent_class_substr):
+    """Count harbor procs whose --agent-import-path contains the given substring.
+    e.g. 'ClaudeCodeSandboxed' or 'CodexSandboxed'."""
+    return sum(1 for line in harbor_processes() if agent_class_substr in line)
 
 def make_jobname(model_label, task):
     # Codex uses unique prefix "codex-gpt55-xhigh-"; others use "openrouter-<label>-" or
@@ -210,23 +268,85 @@ def setup_claude_creds():
     os.chmod(dest, 0o600)
     return True
 
-def per_job_claude_creds_dir(job: str) -> Path:
-    """Make a per-job claude creds dir. Required because Claude Code's installer
-    writes its binary to ~/.claude/downloads/, and multiple parallel installs
-    sharing the same bind-mount collide with `Text file busy`.
+CLAUDE_ACCOUNT_SOURCES = [
+    Path.home() / ".claude" / ".credentials.json",          # account 1: David's primary Max
+    Path("/tmp/harbor-claude-creds-account2/.credentials.json"),  # account 2: second Max key
+]
+
+def _claude_account_for_job(job: str) -> Path:
+    """Pick which source creds file to use. Balance load across in-flight jobs.
+
+    Counts how many currently-running Claude jobs are using each account, picks
+    the one with fewer. Falls back to job-name hash for tie-break.
     """
-    src = CLAUDE_CREDS_DIR / ".credentials.json"
+    import hashlib, glob
+    sources = [p for p in CLAUDE_ACCOUNT_SOURCES if p.exists()]
+    if not sources:
+        return CLAUDE_CREDS_DIR / ".credentials.json"
+    if len(sources) == 1:
+        return sources[0]
+
+    # Count in-flight per account. Account2 has a stable hardcoded token, so we
+    # detect it by hash-equality. Account1 (David's) rotates, so any per-job
+    # creds file that does NOT match the account2 hash is treated as account1.
+    import hashlib as h
+    acct2_hash = None
+    acct2_path = Path("/tmp/harbor-claude-creds-account2/.credentials.json")
+    if acct2_path.exists():
+        try:
+            acct2_hash = h.md5(acct2_path.read_bytes()).hexdigest()
+        except Exception:
+            pass
+    counts = {p: 0 for p in sources}
+    acct1_src = next((p for p in sources if "account2" not in str(p)), sources[0])
+    acct2_src = next((p for p in sources if "account2" in str(p)), None)
+    for cred_path in glob.glob("/tmp/harbor-claude-creds-*/.credentials.json"):
+        if "account2" in cred_path:  # skip the source itself
+            continue
+        try:
+            cur = h.md5(open(cred_path,'rb').read()).hexdigest()
+            if acct2_hash and cur == acct2_hash and acct2_src:
+                counts[acct2_src] += 1
+            else:
+                counts[acct1_src] += 1
+        except Exception:
+            pass
+    # Pick the source with fewest in-flight (ties: job-hash for stability)
+    min_count = min(counts.values())
+    candidates = [p for p, c in counts.items() if c == min_count]
+    idx = int(hashlib.md5(job.encode()).hexdigest(), 16) % len(candidates)
+    return candidates[idx]
+
+def per_job_claude_creds_dir(job: str) -> Path:
+    """Make a per-job claude creds dir from a LIVE source credentials file.
+
+    Multi-account: round-robin between primary (~/.claude) and account2
+    (/tmp/harbor-claude-creds-account2) so we can run more concurrent
+    Claude Code jobs without sharing one account's rate limit.
+    """
+    host_creds = _claude_account_for_job(job)
+    if not host_creds.exists():
+        host_creds = CLAUDE_CREDS_DIR / ".credentials.json"
     dst_dir = Path(f"/tmp/harbor-claude-creds-{job}")
     dst_dir.mkdir(exist_ok=True)
     os.chmod(dst_dir, 0o700)
     dst_file = dst_dir / ".credentials.json"
-    dst_file.write_bytes(src.read_bytes())
+    dst_file.write_bytes(host_creds.read_bytes())
     os.chmod(dst_file, 0o600)
     return dst_dir
+
+_RECENTLY_LAUNCHED = {}  # job_name -> launch_timestamp; survives within a launcher process
 
 def launch(model_entry, task):
     label, agent_class, model_name, ae_or_kind, mounts, ak_items = model_entry
     job = make_jobname(label, task)
+    # Race-guard: if we just launched this job in the last 2 minutes,
+    # the harbor process may not be visible to ps yet. Skip.
+    import time as _t
+    if job in _RECENTLY_LAUNCHED and _t.time() - _RECENTLY_LAUNCHED[job] < 120:
+        log(f"  skip {job} — launched {_t.time() - _RECENTLY_LAUNCHED[job]:.0f}s ago, race-guard")
+        return
+    _RECENTLY_LAUNCHED[job] = _t.time()
     job_dir = JOBS / job
     if job_dir.exists():
         # Stale — wipe so harbor doesn't refuse the lock
@@ -271,6 +391,68 @@ def regenerate_report():
     except Exception as e:
         log(f"report regen failed: {e}")
 
+# ----- stuck-job killer ----------------------------------------------------
+# A harbor process is "stuck" if its job dir's agent log hasn't been written
+# to in 30+ minutes AND it's >30min old (give time for build phase). Killing
+# frees the slot so the launcher can re-launch the same cell.
+STUCK_LOG_AGE_SEC = 30 * 60   # log untouched 30+ min
+STUCK_MIN_PROC_AGE_SEC = 30 * 60  # process must be >30min old to be considered
+
+def _harbor_proc_info():
+    """Return list of (pid, etime_sec, jobname) for current harbor processes."""
+    try:
+        out = subprocess.check_output(["ps", "-eo", "pid,etimes,args"], text=True)
+    except Exception:
+        return []
+    procs = []
+    for line in out.splitlines()[1:]:
+        if "harbor run" not in line or "minrepro_task" not in line:
+            continue
+        parts = line.split(None, 2)
+        if len(parts) < 3:
+            continue
+        try:
+            pid = int(parts[0]); etime = int(parts[1])
+        except ValueError:
+            continue
+        args = parts[2]
+        # extract job-name
+        import re
+        m = re.search(r"--job-name (\S+)", args)
+        if m:
+            procs.append((pid, etime, m.group(1)))
+    return procs
+
+def kill_stuck_jobs():
+    """Find harbor processes whose agent log is stale, SIGKILL them."""
+    import time as _t
+    now = _t.time()
+    killed = []
+    for pid, etime, jobname in _harbor_proc_info():
+        if etime < STUCK_MIN_PROC_AGE_SEC:
+            continue
+        # Find the trial dir for this job
+        jd = JOBS / jobname
+        if not jd.exists():
+            continue
+        # Find newest agent log (use _path to avoid shadowing log())
+        latest_log_age = None
+        for log_path in glob.glob(str(jd / "*__*" / "agent" / "*.txt")):
+            age = now - os.path.getmtime(log_path)
+            if latest_log_age is None or age < latest_log_age:
+                latest_log_age = age
+        # Skip if no agent log yet (still in build phase)
+        if latest_log_age is None:
+            continue
+        if latest_log_age > STUCK_LOG_AGE_SEC:
+            log(f"  STUCK: {jobname} (pid={pid}, etime={etime/60:.0f}m, log age {latest_log_age/60:.0f}m) — SIGKILL")
+            try:
+                os.kill(pid, 9)
+                killed.append(jobname)
+            except ProcessLookupError:
+                pass
+    return killed
+
 def build_queue():
     """Yield (model_entry, task) tuples that need to run.
 
@@ -291,59 +473,90 @@ def build_queue():
             items.append((model_entry, task))
     return items
 
-def main():
-    if not setup_claude_creds():
-        log("(continuing without Claude creds — Opus/Sonnet runs will skip)")
-    last_report = 0
-    while True:
-        if STOP_FILE.exists():
-            log("STOP file present — exiting")
-            return
-        if PAUSE_FILE.exists():
-            log("paused")
-            time.sleep(30)
+def _tick_once(state):
+    """One pass of the launcher loop. Returns False to stop."""
+    if STOP_FILE.exists():
+        log("STOP file present — exiting")
+        return False
+    if PAUSE_FILE.exists():
+        log(f"paused (pool={len(harbor_processes())})")
+        return True
+    # Periodic stuck-job sweep (every ~5 ticks = 100s)
+    state["sweeps"] = state.get("sweeps", 0) + 1
+    if state["sweeps"] % 5 == 0:
+        kill_stuck_jobs()
+    procs = harbor_processes()
+    nrun = len(procs)
+    nheavy = heavy_in_flight()
+    slots = MAX_TOTAL - nrun
+    queue = build_queue()
+    # Heartbeat every tick so we know we're alive
+    nclaude_now = agent_class_in_flight("ClaudeCodeSandboxed")
+    ncodex_now = agent_class_in_flight("CodexSandboxed")
+    log(f"tick: pool={nrun}/{MAX_TOTAL} heavy={nheavy}/{MAX_HEAVY} claude={nclaude_now}/{MAX_CLAUDE} codex={ncodex_now}/{MAX_CODEX} queue={len(queue)} slots={slots}")
+    if slots <= 0:
+        return True
+    if not queue:
+        log("queue empty — all matrix cells covered or in flight")
+        regenerate_report()
+        if not harbor_processes():
+            log("no jobs left — exiting")
+            return False
+        return True
+    launched = 0
+    # Track per-task launches THIS tick so we don't overshoot MAX_PER_TASK
+    local_task_count = {}
+    nclaude = agent_class_in_flight("ClaudeCodeSandboxed")
+    ncodex = agent_class_in_flight("CodexSandboxed")
+    for model_entry, task in queue:
+        if launched >= slots:
+            break
+        if task in HEAVY and nheavy >= MAX_HEAVY:
             continue
-        procs = harbor_processes()
-        nrun = len(procs)
-        nheavy = heavy_in_flight()
-        slots = MAX_TOTAL - nrun
-        if slots <= 0:
-            time.sleep(30)
+        running_now = task_in_flight_count(task) + local_task_count.get(task, 0)
+        if running_now >= MAX_PER_TASK:
             continue
-        queue = build_queue()
-        if not queue:
-            log("queue empty — all matrix cells covered or in flight")
-            regenerate_report()
-            time.sleep(60)
-            # If no harbor procs left either, exit
-            if not harbor_processes():
-                log("no jobs left — exiting")
-                return
+        agent_class = model_entry[1]
+        # Per-agent caps (Anthropic / OpenAI subscription rate limits)
+        if "ClaudeCodeSandboxed" in agent_class and nclaude >= MAX_CLAUDE:
             continue
-        launched = 0
-        # Track which task images we kicked off this tick so we don't double up
-        local_tasks_taken = set()
-        for model_entry, task in queue:
-            if launched >= slots:
-                break
-            if task in HEAVY and nheavy >= MAX_HEAVY:
-                continue
-            # Avoid concurrent builds of the same Dockerfile (classic builder serializes)
-            if task in local_tasks_taken or task_in_flight(task):
-                continue
-            # Skip if we lack credentials for this agent
-            if "ClaudeCode" in model_entry[1] and not (CLAUDE_CREDS_DIR/".credentials.json").exists():
-                continue
+        if "CodexSandboxed" in agent_class and ncodex >= MAX_CODEX:
+            continue
+        if "ClaudeCode" in agent_class and not (CLAUDE_CREDS_DIR/".credentials.json").exists():
+            continue
+        try:
             launch(model_entry, task)
             launched += 1
-            local_tasks_taken.add(task)
+            local_task_count[task] = local_task_count.get(task, 0) + 1
             if task in HEAVY:
                 nheavy += 1
-            time.sleep(2)  # spread launches a bit
-        if time.time() - last_report > 60:
-            regenerate_report()
-            last_report = time.time()
-        time.sleep(30)
+            if "ClaudeCodeSandboxed" in agent_class: nclaude += 1
+            if "CodexSandboxed" in agent_class: ncodex += 1
+            time.sleep(2)
+        except Exception as e:
+            log(f"  launch failed for {model_entry[0]}/{task}: {e}")
+    state["launched_total"] = state.get("launched_total", 0) + launched
+    if time.time() - state.get("last_report", 0) > 60:
+        regenerate_report()
+        state["last_report"] = time.time()
+    return True
+
+def main():
+    setup_claude_creds()
+    state = {"last_report": 0, "launched_total": 0, "tick_count": 0, "crash_count": 0}
+    log(f"=== launcher start: PID={os.getpid()} MAX_TOTAL={MAX_TOTAL} MAX_HEAVY={MAX_HEAVY} TIMEOUT={AGENT_TIMEOUT_MULTIPLIER} ===")
+    while True:
+        state["tick_count"] += 1
+        try:
+            cont = _tick_once(state)
+            if not cont:
+                return
+        except Exception as e:
+            state["crash_count"] += 1
+            import traceback
+            log(f"!! tick exception #{state['crash_count']}: {e}\n{traceback.format_exc()}")
+            # Don't die — sleep and retry
+        time.sleep(TICK_SEC)
 
 if __name__ == "__main__":
     main()

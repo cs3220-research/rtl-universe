@@ -1,0 +1,9 @@
+{
+  "services": {
+    "main": {
+      "volumes": [
+        "/tmp/harbor-claude-creds-dns-block-opus-veer-el2-block:/home/builder/.claude"
+      ]
+    }
+  }
+}

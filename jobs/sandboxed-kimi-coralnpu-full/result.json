@@ -1,0 +1,39 @@
+{
+    "id": "4e899b3b-4674-45f7-8274-2eb828063ca3",
+    "started_at": "2026-05-04T20:26:42.599837",
+    "updated_at": "2026-05-04T22:43:46.440243",
+    "finished_at": "2026-05-04T22:43:46.440243",
+    "n_total_trials": 1,
+    "stats": {
+        "n_completed_trials": 1,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "opencode-sandboxed__moonshotai/kimi-k2.6__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.023026
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.023026": [
+                            "coralnpu-full__poX274U"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": 15213463,
+        "n_cache_tokens": 12214400,
+        "n_output_tokens": 53702,
+        "cost_usd": 5.456105850000002
+    }
+}

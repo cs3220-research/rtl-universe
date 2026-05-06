@@ -1,0 +1,26 @@
+=== [1/2] Verilator elaboration ===
+=== [2/2] Compiling VNV_nvdla ===
+make: Entering directory '/app/outdir/nv_full/verilator'
+ccache g++  -I.  -MMD -I/tools/verilator/share/verilator/include -I/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -Os -c -o nvdla.o nvdla.cpp
+ccache g++ -Os  -I.  -MMD -I/tools/verilator/share/verilator/include -I/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o verilated.o /tools/verilator/share/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/tools/verilator/share/verilator/include -I/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o verilated_threads.o /tools/verilator/share/verilator/include/verilated_threads.cpp
+ccache g++ -Os  -I.  -MMD -I/tools/verilator/share/verilator/include -I/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -x c++-header VNV_nvdla__pch.h -o VNV_nvdla__pch.h.fast.gch
+ccache: error: Failed to create temporary file for /home/builder/.cache/ccache/tmp/cpp_stdout.tmp.P8Rpqw.ii: Permission denied
+ccache: error: Failed to create temporary file for /home/builder/.cache/ccache/tmp/cpp_stdout.tmp.zW9Xc2.ii: Permission denied
+make: *** [VNV_nvdla.mk:61: nvdla.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [/tools/verilator/share/verilator/include/verilated.mk:278: verilated.o] Error 1
+ccache: error: Failed to create temporary file for /home/builder/.cache/ccache/tmp/cpp_stdout.tmp.osKfu6.ii: Permission denied
+make: *** [/tools/verilator/share/verilator/include/verilated.mk:284: VNV_nvdla__pch.h.fast.gch] Error 1
+ccache: error: Failed to create temporary file for /home/builder/.cache/ccache/tmp/cpp_stdout.tmp.e2Qjfh.ii: Permission denied
+make: *** [/tools/verilator/share/verilator/include/verilated.mk:278: verilated_threads.o] Error 1
+make: Leaving directory '/app/outdir/nv_full/verilator'
+FAIL: sanity3 (exit=124)
+FAIL: sanity3_cvsram (exit=124)
+FAIL: conv_8x8_fc_int16 (exit=124)
+FAIL: googlenet_conv2_3x3_int16 (exit=124)
+FAIL: pdp_max_pooling_int16 (exit=2)
+FAIL: sdp_relu_int16 (exit=124)
+FAIL: cc_alexnet_conv5_relu5_int16_dtest_cvsram (exit=124)
+
+E2E results: passed=0 / total=7

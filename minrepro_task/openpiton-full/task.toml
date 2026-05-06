@@ -2,11 +2,11 @@ version = "1.0"
 
 [verifier]
 # 18 Icarus Verilog tests; each sim takes <30s. 3x buffer for agent iteration.
-timeout_sec = 10800.0
+timeout_sec = 86400.0
 
 [agent]
 # 24 h — adequate for a multi-module Verilog restoration task.
-timeout_sec = 10800.0
+timeout_sec = 86400.0
 
 [environment]
 # No warm cache needed — Icarus recompiles per-run. Build is fast (<5 min total).

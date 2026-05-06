@@ -1,0 +1,696 @@
+converting /app/verif/traces/traceplayer/sanity3_cvsram/input.txn to /app/outdir/nv_full/verilator/test/sanity3_cvsram/trace.bin
+File 0 0x50000000 0x00001000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x50100000 0x00010000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x50400000 0x20
+okay, that's all the bytes I expected -- I'm stopping here
+CMD: load_mem 00001000 bytes to 50000000
+CMD: load_mem 00010000 bytes to 50100000
+CMD: write_reg ffff1401 00000000
+CMD: read_reg ffff1401 ffffffff 00000000
+CMD: write_reg ffff1402 0003000f
+CMD: read_reg ffff1402 ffffffff 0003000f
+CMD: write_reg ffff1405 11001100
+CMD: read_reg ffff1405 ffffffff 11001100
+CMD: write_reg ffff1406 00000000
+CMD: read_reg ffff1406 ffffffff 00000000
+CMD: write_reg ffff1407 00070007
+CMD: read_reg ffff1407 ffffffff 00070007
+CMD: write_reg ffff1408 0000001f
+CMD: read_reg ffff1408 ffffffff 0000001f
+CMD: write_reg ffff140a 00000000
+CMD: read_reg ffff140a ffffffff 00000000
+CMD: write_reg ffff140b 00000000
+CMD: read_reg ffff140b ffffffff 00000000
+CMD: write_reg ffff140c 00000000
+CMD: read_reg ffff140c ffffffff 00000000
+CMD: write_reg ffff140d 50000000
+CMD: read_reg ffff140d ffffffff 50000000
+CMD: write_reg ffff140e 00000000
+CMD: read_reg ffff140e ffffffff 00000000
+CMD: write_reg ffff140f 00000000
+CMD: read_reg ffff140f ffffffff 00000000
+CMD: write_reg ffff1410 00000100
+CMD: read_reg ffff1410 ffffffff 00000100
+CMD: write_reg ffff1412 00000800
+CMD: read_reg ffff1412 ffffffff 00000800
+CMD: write_reg ffff1413 00010001
+CMD: read_reg ffff1413 ffffffff 00010001
+CMD: write_reg ffff1416 00000000
+CMD: read_reg ffff1416 ffffffff 00000000
+CMD: write_reg ffff1417 00000000
+CMD: read_reg ffff1417 ffffffff 00000000
+CMD: write_reg ffff1418 00000003
+CMD: read_reg ffff1418 ffffffff 00000003
+CMD: write_reg ffff1419 00000000
+CMD: read_reg ffff1419 ffffffff 00000000
+CMD: write_reg ffff141a 00000000
+CMD: read_reg ffff141a ffffffff 00000000
+CMD: write_reg ffff141b 00000fff
+CMD: read_reg ffff141b ffffffff 00000fff
+CMD: write_reg ffff141c 0000000f
+CMD: read_reg ffff141c ffffffff 0000000f
+CMD: write_reg ffff141d 00000000
+CMD: read_reg ffff141d ffffffff 00000000
+CMD: write_reg ffff141e 00000000
+CMD: read_reg ffff141e ffffffff 00000000
+CMD: write_reg ffff141f 50100000
+CMD: read_reg ffff141f ffffffff 50100000
+CMD: write_reg ffff1420 00010000
+CMD: read_reg ffff1420 ffffffff 00010000
+CMD: write_reg ffff1421 00000000
+CMD: read_reg ffff1421 ffffffff 00000000
+CMD: write_reg ffff1422 00000000
+CMD: read_reg ffff1422 ffffffff 00000000
+CMD: write_reg ffff1425 00000000
+CMD: read_reg ffff1425 ffffffff 00000000
+CMD: write_reg ffff1426 00000000
+CMD: read_reg ffff1426 ffffffff 00000000
+CMD: write_reg ffff1427 00000000
+CMD: read_reg ffff1427 ffffffff 00000000
+CMD: write_reg ffff1428 00000000
+CMD: read_reg ffff1428 ffffffff 00000000
+CMD: write_reg ffff1429 00000000
+CMD: read_reg ffff1429 ffffffff 00000000
+CMD: write_reg ffff142a 00000000
+CMD: read_reg ffff142a ffffffff 00000000
+CMD: write_reg ffff142b 00000000
+CMD: read_reg ffff142b ffffffff 00000000
+CMD: write_reg ffff142c 00000000
+CMD: read_reg ffff142c ffffffff 00000000
+CMD: write_reg ffff142d 00000000
+CMD: read_reg ffff142d ffffffff 00000000
+CMD: write_reg ffff142f 00020001
+CMD: read_reg ffff142f ffffffff 00020001
+CMD: write_reg ffff143a 00000000
+CMD: read_reg ffff143a ffffffff 00000000
+CMD: write_reg ffff1801 00000000
+CMD: read_reg ffff1801 ffffffff 00000000
+CMD: write_reg ffff1803 11001100
+CMD: read_reg ffff1803 ffffffff 11001100
+CMD: write_reg ffff1804 00000000
+CMD: read_reg ffff1804 ffffffff 00000000
+CMD: write_reg ffff1805 00070007
+CMD: read_reg ffff1805 ffffffff 00070007
+CMD: write_reg ffff1806 0000001f
+CMD: read_reg ffff1806 ffffffff 0000001f
+CMD: write_reg ffff1807 00000000
+CMD: read_reg ffff1807 ffffffff 00000000
+CMD: write_reg ffff1809 00000003
+CMD: read_reg ffff1809 ffffffff 00000003
+CMD: write_reg ffff180a 00000000
+CMD: read_reg ffff180a ffffffff 00000000
+CMD: write_reg ffff180b 00070007
+CMD: read_reg ffff180b ffffffff 00070007
+CMD: write_reg ffff180c 000f001f
+CMD: read_reg ffff180c ffffffff 000f001f
+CMD: write_reg ffff180d 00010000
+CMD: read_reg ffff180d ffffffff 00010000
+CMD: write_reg ffff180e 00000000
+CMD: read_reg ffff180e ffffffff 00000000
+CMD: write_reg ffff180f 00000000
+CMD: read_reg ffff180f ffffffff 00000000
+CMD: write_reg ffff1810 0000000f
+CMD: read_reg ffff1810 ffffffff 0000000f
+CMD: write_reg ffff1811 00000000
+CMD: read_reg ffff1811 ffffffff 00000000
+CMD: write_reg ffff1813 00000000
+CMD: read_reg ffff1813 ffffffff 00000000
+CMD: write_reg ffff1814 00000000
+CMD: read_reg ffff1814 ffffffff 00000000
+CMD: write_reg ffff1815 00000000
+CMD: read_reg ffff1815 ffffffff 00000000
+CMD: write_reg ffff1816 00000000
+CMD: read_reg ffff1816 ffffffff 00000000
+CMD: write_reg ffff1817 00020001
+CMD: read_reg ffff1817 ffffffff 00020001
+CMD: write_reg ffff1819 00000000
+CMD: read_reg ffff1819 ffffffff 00000000
+CMD: write_reg ffff1c01 00000000
+CMD: read_reg ffff1c01 ffffffff 00000000
+CMD: write_reg ffff1c03 00001000
+CMD: read_reg ffff1c03 ffffffff 00001000
+CMD: write_reg ffff2001 00000000
+CMD: read_reg ffff2001 ffffffff 00000000
+CMD: write_reg ffff2003 00001000
+CMD: read_reg ffff2003 ffffffff 00001000
+CMD: write_reg ffff2401 00000000
+CMD: read_reg ffff2401 ffffffff 00000000
+CMD: write_reg ffff2403 00001000
+CMD: read_reg ffff2403 ffffffff 00001000
+CMD: write_reg ffff2404 00000000
+CMD: read_reg ffff2404 ffffffff 00000000
+CMD: write_reg ffff2405 0000000f
+CMD: read_reg ffff2405 ffffffff 0000000f
+CMD: write_reg ffff2406 50400000
+CMD: read_reg ffff2406 ffffffff 50400000
+CMD: write_reg ffff2407 00000000
+CMD: read_reg ffff2407 ffffffff 00000000
+CMD: write_reg ffff2408 00000020
+CMD: read_reg ffff2408 ffffffff 00000020
+CMD: write_reg ffff2409 00000020
+CMD: read_reg ffff2409 ffffffff 00000020
+CMD: write_reg ffff240a 00010001
+CMD: read_reg ffff240a ffffffff 00010001
+CMD: write_reg ffff240b 00000000
+CMD: read_reg ffff240b ffffffff 00000000
+CMD: write_reg ffff240d 00000000
+CMD: read_reg ffff240d ffffffff 00000000
+CMD: write_reg ffff2810 0000001b
+CMD: read_reg ffff2810 ffffffff 0000001b
+CMD: write_reg ffff2816 0000001b
+CMD: read_reg ffff2816 ffffffff 0000001b
+CMD: write_reg ffff280a 0000001b
+CMD: read_reg ffff280a ffffffff 0000001b
+CMD: write_reg ffff2c01 00000000
+CMD: read_reg ffff2c01 ffffffff 00000000
+CMD: write_reg ffff2c02 00000000
+CMD: read_reg ffff2c02 ffffffff 00000000
+CMD: write_reg ffff2c03 00000000
+CMD: read_reg ffff2c03 ffffffff 00000000
+CMD: write_reg ffff2c04 00000000
+CMD: read_reg ffff2c04 ffffffff 00000000
+CMD: write_reg ffff2c0f 00000000
+CMD: read_reg ffff2c0f ffffffff 00000000
+CMD: write_reg ffff2c10 00000000
+CMD: read_reg ffff2c10 ffffffff 00000000
+CMD: write_reg ffff2c11 0000000f
+CMD: read_reg ffff2c11 ffffffff 0000000f
+CMD: write_reg ffff2c12 50400000
+CMD: read_reg ffff2c12 ffffffff 50400000
+CMD: write_reg ffff2c13 00000000
+CMD: read_reg ffff2c13 ffffffff 00000000
+CMD: write_reg ffff2c14 00000020
+CMD: read_reg ffff2c14 ffffffff 00000020
+CMD: write_reg ffff2c15 00000020
+CMD: read_reg ffff2c15 ffffffff 00000020
+CMD: write_reg ffff2c16 0000001a
+CMD: read_reg ffff2c16 ffffffff 0000001a
+CMD: write_reg ffff2c17 00000002
+CMD: read_reg ffff2c17 00003f01 00000000
+CMD: write_reg ffff2c18 00000000
+CMD: read_reg ffff2c18 ffffffff 00000000
+CMD: write_reg ffff2c19 00000000
+CMD: read_reg ffff2c19 ffffffff 00000000
+CMD: write_reg ffff2c1a 00000001
+CMD: read_reg ffff2c1a ffffffff 00000001
+CMD: write_reg ffff2c2c 00000001
+CMD: read_reg ffff2c2c ffffffff 00000001
+CMD: write_reg ffff2c1b 00000001
+CMD: read_reg ffff2c1b ffffffff 00000001
+CMD: write_reg ffff2c20 00000001
+CMD: read_reg ffff2c20 ffffffff 00000001
+CMD: write_reg ffff2c2d 00000000
+CMD: read_reg ffff2c2d ffffffff 00000000
+CMD: write_reg ffff2c2e 00000000
+CMD: read_reg ffff2c2e ffffffff 00000000
+CMD: write_reg ffff2c2f 00000005
+CMD: read_reg ffff2c2f ffffffff 00000005
+CMD: write_reg ffff2c30 00000000
+CMD: read_reg ffff2c30 ffffffff 00000000
+CMD: write_reg ffff2c31 00000001
+CMD: read_reg ffff2c31 ffffffff 00000001
+CMD: write_reg ffff2c32 00000000
+CMD: read_reg ffff2c32 ffffffff 00000000
+CMD: write_reg ffff2c0e 00000001
+CMD: read_reg ffff2c0e ffffffff 00000001
+CMD: write_reg ffff2802 00000000
+CMD: read_reg ffff2802 ffffffff 00000000
+CMD: write_reg ffff2402 00000001
+CMD: read_reg ffff2402 ffffffff 00000001
+CMD: write_reg ffff1c02 00000001
+CMD: read_reg ffff1c02 ffffffff 00000001
+CMD: write_reg ffff2002 00000001
+CMD: read_reg ffff2002 ffffffff 00000001
+CMD: write_reg ffff1802 00000001
+CMD: read_reg ffff1802 ffffffff 00000001
+CMD: write_reg ffff1404 00000001
+CMD: read_reg ffff1404 ffffffff 00000001
+CMD: wait
+CMD: write_reg ffff0003 ffffffff
+CMD: read_reg ffff0003 ffffffff 00000000
+CMD: wait
+CMD: write_reg ffff0003 ffffffff
+CMD: read_reg ffff0003 ffffffff 00000000
+CMD: wait
+CMD: write_reg ffff0003 ffffffff
+CMD: read_reg ffff0003 ffffffff 00000000
+CMD: wait
+CMD: write_reg ffff0003 ffffffff
+CMD: read_reg ffff0003 ffffffff 00000000
+CMD: dump_mem 00000020 bytes from 50400000 -> golden_output_memory.dat
+CMD: done
+reset...
+letting buffers clear after reset...
+running trace...
+AXI: loading memory at 0x50000000
+(8272) CVSRAM: write request from dla, addr 50400000 id 0
+AXI: loading memory at 0x50100000
+(8276) write to nvdla: addr ffff1401, data 00000000
+(8278) read from nvdla: addr ffff1401
+(8278) CVSRAM: write request from dla, addr 50400000 id 0
+(8278) CVSRAM: write data from dla (00000000 00000000...)
+(8278) CVSRAM: write, last tick
+(8280) read response from nvdla: 00000000
+(8282) write to nvdla: addr ffff1402, data 0003000f
+(8284) read from nvdla: addr ffff1402
+(8284) CVSRAM: write request from dla, addr 50400000 id 0
+(8284) CVSRAM: write data from dla (00000000 00000000...)
+(8284) CVSRAM: write, last tick
+(8286) read response from nvdla: 0003000f
+(8288) write to nvdla: addr ffff1405, data 11001100
+(8290) read from nvdla: addr ffff1405
+(8290) CVSRAM: write request from dla, addr 50400000 id 0
+(8290) CVSRAM: write data from dla (00000000 00000000...)
+(8290) CVSRAM: write, last tick
+(8292) read response from nvdla: 11001100
+(8294) write to nvdla: addr ffff1406, data 00000000
+(8296) read from nvdla: addr ffff1406
+(8296) CVSRAM: write request from dla, addr 50400000 id 0
+(8296) CVSRAM: write data from dla (00000000 00000000...)
+(8296) CVSRAM: write, last tick
+(8298) read response from nvdla: 00000000
+(8300) write to nvdla: addr ffff1407, data 00070007
+(8302) read from nvdla: addr ffff1407
+(8302) CVSRAM: write request from dla, addr 50400000 id 0
+(8302) CVSRAM: write data from dla (00000000 00000000...)
+(8302) CVSRAM: write, last tick
+(8304) read response from nvdla: 00070007
+(8306) write to nvdla: addr ffff1408, data 0000001f
+(8308) read from nvdla: addr ffff1408
+(8308) CVSRAM: write request from dla, addr 50400000 id 0
+(8308) CVSRAM: write data from dla (00000000 00ff0000...)
+(8308) CVSRAM: write, last tick
+(8310) read response from nvdla: 0000001f
+(8312) write to nvdla: addr ffff140a, data 00000000
+(8314) read from nvdla: addr ffff140a
+(8314) CVSRAM: write request from dla, addr 50400000 id 0
+(8314) CVSRAM: write data from dla (00000000 7f000000...)
+(8314) CVSRAM: write, last tick
+(8316) read response from nvdla: 00000000
+(8318) write to nvdla: addr ffff140b, data 00000000
+(8320) read from nvdla: addr ffff140b
+(8320) CVSRAM: write request from dla, addr 50400000 id 0
+(8320) CVSRAM: write data from dla (00000000 00000000...)
+(8320) CVSRAM: write, last tick
+(8322) read response from nvdla: 00000000
+(8324) write to nvdla: addr ffff140c, data 00000000
+(8326) read from nvdla: addr ffff140c
+(8326) CVSRAM: write request from dla, addr 50400000 id 0
+(8326) CVSRAM: write data from dla (00000000 00000000...)
+(8326) CVSRAM: write, last tick
+(8328) read response from nvdla: 00000000
+(8330) write to nvdla: addr ffff140d, data 50000000
+(8332) read from nvdla: addr ffff140d
+(8332) CVSRAM: write request from dla, addr 50400000 id 0
+(8332) CVSRAM: write data from dla (00000000 00000000...)
+(8332) CVSRAM: write, last tick
+(8334) read response from nvdla: 50000000
+(8336) write to nvdla: addr ffff140e, data 00000000
+(8338) read from nvdla: addr ffff140e
+(8338) CVSRAM: write request from dla, addr 50400000 id 0
+(8338) CVSRAM: write data from dla (00000000 00000000...)
+(8338) CVSRAM: write, last tick
+(8340) read response from nvdla: 00000000
+(8342) write to nvdla: addr ffff140f, data 00000000
+(8344) read from nvdla: addr ffff140f
+(8344) CVSRAM: write request from dla, addr 50400000 id 0
+(8344) CVSRAM: write data from dla (00000000 00000000...)
+(8344) CVSRAM: write, last tick
+(8346) read response from nvdla: 00000000
+(8348) write to nvdla: addr ffff1410, data 00000100
+(8350) read from nvdla: addr ffff1410
+(8350) CVSRAM: write request from dla, addr 50400000 id 0
+(8350) CVSRAM: write data from dla (00000000 00000000...)
+(8350) CVSRAM: write, last tick
+(8352) read response from nvdla: 00000100
+(8354) write to nvdla: addr ffff1412, data 00000800
+(8356) read from nvdla: addr ffff1412
+(8356) CVSRAM: write request from dla, addr 50400000 id 0
+(8356) CVSRAM: write data from dla (00000000 00000000...)
+(8356) CVSRAM: write, last tick
+(8358) read response from nvdla: 00000800
+(8360) write to nvdla: addr ffff1413, data 00010001
+(8362) read from nvdla: addr ffff1413
+(8362) CVSRAM: write request from dla, addr 50400000 id 0
+(8362) CVSRAM: write data from dla (00000000 00000000...)
+(8362) CVSRAM: write, last tick
+(8364) read response from nvdla: 00010001
+(8366) write to nvdla: addr ffff1416, data 00000000
+(8368) read from nvdla: addr ffff1416
+(8368) CVSRAM: write request from dla, addr 50400000 id 0
+(8368) CVSRAM: write data from dla (00000000 00000000...)
+(8368) CVSRAM: write, last tick
+(8370) read response from nvdla: 00000000
+(8372) write to nvdla: addr ffff1417, data 00000000
+(8374) read from nvdla: addr ffff1417
+(8374) CVSRAM: write request from dla, addr 50400000 id 0
+(8374) CVSRAM: write data from dla (00000000 00000000...)
+(8374) CVSRAM: write, last tick
+(8376) read response from nvdla: 00000000
+(8378) write to nvdla: addr ffff1418, data 00000003
+(8380) read from nvdla: addr ffff1418
+(8380) CVSRAM: write request from dla, addr 50400000 id 0
+(8380) CVSRAM: write data from dla (00000000 00000000...)
+(8380) CVSRAM: write, last tick
+(8382) read response from nvdla: 00000003
+(8384) write to nvdla: addr ffff1419, data 00000000
+(8386) read from nvdla: addr ffff1419
+(8386) CVSRAM: write request from dla, addr 50400000 id 0
+(8386) CVSRAM: write data from dla (00000000 00000000...)
+(8386) CVSRAM: write, last tick
+(8388) read response from nvdla: 00000000
+(8390) write to nvdla: addr ffff141a, data 00000000
+(8392) read from nvdla: addr ffff141a
+(8392) CVSRAM: write request from dla, addr 50400000 id 0
+(8392) CVSRAM: write data from dla (00000000 00000000...)
+(8392) CVSRAM: write, last tick
+(8394) read response from nvdla: 00000000
+(8396) write to nvdla: addr ffff141b, data 00000fff
+(8398) read from nvdla: addr ffff141b
+(8398) CVSRAM: write request from dla, addr 50400000 id 0
+(8398) CVSRAM: write data from dla (00000000 00000000...)
+(8398) CVSRAM: write, last tick
+(8400) read response from nvdla: 00000fff
+(8402) write to nvdla: addr ffff141c, data 0000000f
+(8404) read from nvdla: addr ffff141c
+(8404) CVSRAM: write request from dla, addr 50400000 id 0
+(8404) CVSRAM: write data from dla (00000000 00000000...)
+(8404) CVSRAM: write, last tick
+(8406) read response from nvdla: 0000000f
+(8408) write to nvdla: addr ffff141d, data 00000000
+(8410) read from nvdla: addr ffff141d
+(8410) CVSRAM: write request from dla, addr 50400000 id 0
+(8410) CVSRAM: write data from dla (00000000 00000000...)
+(8410) CVSRAM: write, last tick
+(8412) read response from nvdla: 00000000
+(8414) write to nvdla: addr ffff141e, data 00000000
+(8416) read from nvdla: addr ffff141e
+(8416) CVSRAM: write request from dla, addr 50400000 id 0
+(8416) CVSRAM: write data from dla (00000000 00000000...)
+(8416) CVSRAM: write, last tick
+(8418) read response from nvdla: 00000000
+(8420) write to nvdla: addr ffff141f, data 50100000
+(8422) read from nvdla: addr ffff141f
+(8422) CVSRAM: write request from dla, addr 50400000 id 0
+(8422) CVSRAM: write data from dla (00000000 00000000...)
+(8422) CVSRAM: write, last tick
+(8424) read response from nvdla: 50100000
+(8426) write to nvdla: addr ffff1420, data 00010000
+(8428) read from nvdla: addr ffff1420
+(8428) CVSRAM: write request from dla, addr 50400000 id 0
+(8428) CVSRAM: write data from dla (00000000 00000000...)
+(8428) CVSRAM: write, last tick
+(8430) read response from nvdla: 00010000
+(8432) write to nvdla: addr ffff1421, data 00000000
+(8434) read from nvdla: addr ffff1421
+(8434) CVSRAM: write request from dla, addr 50400000 id 0
+(8434) CVSRAM: write data from dla (00000000 00000000...)
+(8434) CVSRAM: write, last tick
+(8436) read response from nvdla: 00000000
+(8438) write to nvdla: addr ffff1422, data 00000000
+(8440) read from nvdla: addr ffff1422
+(8440) CVSRAM: write request from dla, addr 50400000 id 0
+(8440) CVSRAM: write data from dla (00000000 00000000...)
+(8440) CVSRAM: write, last tick
+(8442) read response from nvdla: 00000000
+(8444) write to nvdla: addr ffff1425, data 00000000
+(8446) read from nvdla: addr ffff1425
+(8446) CVSRAM: write request from dla, addr 50400000 id 0
+(8446) CVSRAM: write data from dla (00000000 00000000...)
+(8446) CVSRAM: write, last tick
+(8448) read response from nvdla: 00000000
+(8450) write to nvdla: addr ffff1426, data 00000000
+(8452) read from nvdla: addr ffff1426
+(8452) CVSRAM: write request from dla, addr 50400000 id 0
+(8452) CVSRAM: write data from dla (00000000 00000000...)
+(8452) CVSRAM: write, last tick
+(8454) read response from nvdla: 00000000
+(8456) write to nvdla: addr ffff1427, data 00000000
+(8458) read from nvdla: addr ffff1427
+(8458) CVSRAM: write request from dla, addr 50400000 id 0
+(8458) CVSRAM: write data from dla (00000000 00000000...)
+(8458) CVSRAM: write, last tick
+(8460) read response from nvdla: 00000000
+(8462) write to nvdla: addr ffff1428, data 00000000
+(8464) read from nvdla: addr ffff1428
+(8466) read response from nvdla: 00000000
+(8468) write to nvdla: addr ffff1429, data 00000000
+(8470) read from nvdla: addr ffff1429
+(8472) read response from nvdla: 00000000
+(8474) write to nvdla: addr ffff142a, data 00000000
+(8476) read from nvdla: addr ffff142a
+(8478) read response from nvdla: 00000000
+(8480) write to nvdla: addr ffff142b, data 00000000
+(8482) read from nvdla: addr ffff142b
+(8484) read response from nvdla: 00000000
+(8486) write to nvdla: addr ffff142c, data 00000000
+(8488) read from nvdla: addr ffff142c
+(8490) read response from nvdla: 00000000
+(8492) write to nvdla: addr ffff142d, data 00000000
+(8494) read from nvdla: addr ffff142d
+(8496) read response from nvdla: 00000000
+(8498) write to nvdla: addr ffff142f, data 00020001
+(8500) read from nvdla: addr ffff142f
+(8502) read response from nvdla: 00020001
+(8504) write to nvdla: addr ffff143a, data 00000000
+(8506) read from nvdla: addr ffff143a
+(8508) read response from nvdla: 00000000
+(8510) write to nvdla: addr ffff1801, data 00000000
+(8512) read from nvdla: addr ffff1801
+(8514) read response from nvdla: 00000000
+(8516) write to nvdla: addr ffff1803, data 11001100
+(8518) read from nvdla: addr ffff1803
+(8520) read response from nvdla: 11001100
+(8522) write to nvdla: addr ffff1804, data 00000000
+(8524) read from nvdla: addr ffff1804
+(8526) read response from nvdla: 00000000
+(8528) write to nvdla: addr ffff1805, data 00070007
+(8530) read from nvdla: addr ffff1805
+(8532) read response from nvdla: 00070007
+(8534) write to nvdla: addr ffff1806, data 0000001f
+(8536) read from nvdla: addr ffff1806
+(8538) read response from nvdla: 0000001f
+(8540) write to nvdla: addr ffff1807, data 00000000
+(8542) read from nvdla: addr ffff1807
+(8544) read response from nvdla: 00000000
+(8546) write to nvdla: addr ffff1809, data 00000003
+(8548) read from nvdla: addr ffff1809
+(8550) read response from nvdla: 00000003
+(8552) write to nvdla: addr ffff180a, data 00000000
+(8554) read from nvdla: addr ffff180a
+(8556) read response from nvdla: 00000000
+(8558) write to nvdla: addr ffff180b, data 00070007
+(8560) read from nvdla: addr ffff180b
+(8562) read response from nvdla: 00070007
+(8564) write to nvdla: addr ffff180c, data 000f001f
+(8566) read from nvdla: addr ffff180c
+(8568) read response from nvdla: 000f001f
+(8570) write to nvdla: addr ffff180d, data 00010000
+(8572) read from nvdla: addr ffff180d
+(8574) read response from nvdla: 00010000
+(8576) write to nvdla: addr ffff180e, data 00000000
+(8578) read from nvdla: addr ffff180e
+(8580) read response from nvdla: 00000000
+(8582) write to nvdla: addr ffff180f, data 00000000
+(8584) read from nvdla: addr ffff180f
+(8586) read response from nvdla: 00000000
+(8588) write to nvdla: addr ffff1810, data 0000000f
+(8590) read from nvdla: addr ffff1810
+(8592) read response from nvdla: 0000000f
+(8594) write to nvdla: addr ffff1811, data 00000000
+(8596) read from nvdla: addr ffff1811
+(8598) read response from nvdla: 00000000
+(8600) write to nvdla: addr ffff1813, data 00000000
+(8602) read from nvdla: addr ffff1813
+(8604) read response from nvdla: 00000000
+(8606) write to nvdla: addr ffff1814, data 00000000
+(8608) read from nvdla: addr ffff1814
+(8610) read response from nvdla: 00000000
+(8612) write to nvdla: addr ffff1815, data 00000000
+(8614) read from nvdla: addr ffff1815
+(8616) read response from nvdla: 00000000
+(8618) write to nvdla: addr ffff1816, data 00000000
+(8620) read from nvdla: addr ffff1816
+(8622) read response from nvdla: 00000000
+(8624) write to nvdla: addr ffff1817, data 00020001
+(8626) read from nvdla: addr ffff1817
+(8628) read response from nvdla: 00020001
+(8630) write to nvdla: addr ffff1819, data 00000000
+(8632) read from nvdla: addr ffff1819
+(8634) read response from nvdla: 00000000
+(8636) write to nvdla: addr ffff1c01, data 00000000
+(8638) read from nvdla: addr ffff1c01
+(8640) read response from nvdla: 00000000
+(8642) write to nvdla: addr ffff1c03, data 00001000
+(8644) read from nvdla: addr ffff1c03
+(8646) read response from nvdla: 00001000
+(8648) write to nvdla: addr ffff2001, data 00000000
+(8650) read from nvdla: addr ffff2001
+(8652) read response from nvdla: 00000000
+(8654) write to nvdla: addr ffff2003, data 00001000
+(8656) read from nvdla: addr ffff2003
+(8658) read response from nvdla: 00001000
+(8660) write to nvdla: addr ffff2401, data 00000000
+(8662) read from nvdla: addr ffff2401
+(8664) read response from nvdla: 00000000
+(8666) write to nvdla: addr ffff2403, data 00001000
+(8668) read from nvdla: addr ffff2403
+(8670) read response from nvdla: 00001000
+(8672) write to nvdla: addr ffff2404, data 00000000
+(8674) read from nvdla: addr ffff2404
+(8676) read response from nvdla: 00000000
+(8678) write to nvdla: addr ffff2405, data 0000000f
+(8680) read from nvdla: addr ffff2405
+(8682) read response from nvdla: 0000000f
+(8684) write to nvdla: addr ffff2406, data 50400000
+(8686) read from nvdla: addr ffff2406
+(8688) read response from nvdla: 50400000
+(8690) write to nvdla: addr ffff2407, data 00000000
+(8692) read from nvdla: addr ffff2407
+(8694) read response from nvdla: 00000000
+(8696) write to nvdla: addr ffff2408, data 00000020
+(8698) read from nvdla: addr ffff2408
+(8700) read response from nvdla: 00000020
+(8702) write to nvdla: addr ffff2409, data 00000020
+(8704) read from nvdla: addr ffff2409
+(8706) read response from nvdla: 00000020
+(8708) write to nvdla: addr ffff240a, data 00010001
+(8710) read from nvdla: addr ffff240a
+(8712) read response from nvdla: 00010001
+(8714) write to nvdla: addr ffff240b, data 00000000
+(8716) read from nvdla: addr ffff240b
+(8718) read response from nvdla: 00000000
+(8720) write to nvdla: addr ffff240d, data 00000000
+(8722) read from nvdla: addr ffff240d
+(8724) read response from nvdla: 00000000
+(8726) write to nvdla: addr ffff2810, data 0000001b
+(8728) read from nvdla: addr ffff2810
+(8730) read response from nvdla: 0000001b
+(8732) write to nvdla: addr ffff2816, data 0000001b
+(8734) read from nvdla: addr ffff2816
+(8736) read response from nvdla: 0000001b
+(8738) write to nvdla: addr ffff280a, data 0000001b
+(8740) read from nvdla: addr ffff280a
+(8742) read response from nvdla: 0000001b
+(8744) write to nvdla: addr ffff2c01, data 00000000
+(8746) read from nvdla: addr ffff2c01
+(8748) read response from nvdla: 00000000
+(8750) write to nvdla: addr ffff2c02, data 00000000
+(8752) read from nvdla: addr ffff2c02
+(8754) read response from nvdla: 00000000
+(8756) write to nvdla: addr ffff2c03, data 00000000
+(8758) read from nvdla: addr ffff2c03
+(8760) read response from nvdla: 00000000
+(8762) write to nvdla: addr ffff2c04, data 00000000
+(8764) read from nvdla: addr ffff2c04
+(8766) read response from nvdla: 00000000
+(8768) write to nvdla: addr ffff2c0f, data 00000000
+(8770) read from nvdla: addr ffff2c0f
+(8772) read response from nvdla: 00000000
+(8774) write to nvdla: addr ffff2c10, data 00000000
+(8776) read from nvdla: addr ffff2c10
+(8778) read response from nvdla: 00000000
+(8780) write to nvdla: addr ffff2c11, data 0000000f
+(8782) read from nvdla: addr ffff2c11
+(8784) read response from nvdla: 0000000f
+(8786) write to nvdla: addr ffff2c12, data 50400000
+(8788) read from nvdla: addr ffff2c12
+(8790) read response from nvdla: 50400000
+(8792) write to nvdla: addr ffff2c13, data 00000000
+(8794) read from nvdla: addr ffff2c13
+(8796) read response from nvdla: 00000000
+(8798) write to nvdla: addr ffff2c14, data 00000020
+(8800) read from nvdla: addr ffff2c14
+(8802) read response from nvdla: 00000020
+(8804) write to nvdla: addr ffff2c15, data 00000020
+(8806) read from nvdla: addr ffff2c15
+(8808) read response from nvdla: 00000020
+(8810) write to nvdla: addr ffff2c16, data 0000001a
+(8812) read from nvdla: addr ffff2c16
+(8814) read response from nvdla: 0000001a
+(8816) write to nvdla: addr ffff2c17, data 00000002
+(8818) read from nvdla: addr ffff2c17
+(8820) read response from nvdla: 00000002
+(8822) write to nvdla: addr ffff2c18, data 00000000
+(8824) read from nvdla: addr ffff2c18
+(8826) read response from nvdla: 00000000
+(8828) write to nvdla: addr ffff2c19, data 00000000
+(8830) read from nvdla: addr ffff2c19
+(8832) read response from nvdla: 00000000
+(8834) write to nvdla: addr ffff2c1a, data 00000001
+(8836) read from nvdla: addr ffff2c1a
+(8838) read response from nvdla: 00000001
+(8840) write to nvdla: addr ffff2c2c, data 00000001
+(8842) read from nvdla: addr ffff2c2c
+(8844) read response from nvdla: 00000001
+(8846) write to nvdla: addr ffff2c1b, data 00000001
+(8848) read from nvdla: addr ffff2c1b
+(8850) read response from nvdla: 00000001
+(8852) write to nvdla: addr ffff2c20, data 00000001
+(8854) read from nvdla: addr ffff2c20
+(8856) read response from nvdla: 00000001
+(8858) write to nvdla: addr ffff2c2d, data 00000000
+(8860) read from nvdla: addr ffff2c2d
+(8862) read response from nvdla: 00000000
+(8864) write to nvdla: addr ffff2c2e, data 00000000
+(8866) read from nvdla: addr ffff2c2e
+(8868) read response from nvdla: 00000000
+(8870) write to nvdla: addr ffff2c2f, data 00000005
+(8872) read from nvdla: addr ffff2c2f
+(8874) read response from nvdla: 00000005
+(8876) write to nvdla: addr ffff2c30, data 00000000
+(8878) read from nvdla: addr ffff2c30
+(8880) read response from nvdla: 00000000
+(8882) write to nvdla: addr ffff2c31, data 00000001
+(8884) read from nvdla: addr ffff2c31
+(8886) read response from nvdla: 00000001
+(8888) write to nvdla: addr ffff2c32, data 00000000
+(8890) read from nvdla: addr ffff2c32
+(8892) read response from nvdla: 00000000
+(8894) write to nvdla: addr ffff2c0e, data 00000001
+(8896) read from nvdla: addr ffff2c0e
+(8898) read response from nvdla: 00000001
+(8900) write to nvdla: addr ffff2802, data 00000000
+(8902) read from nvdla: addr ffff2802
+(8904) read response from nvdla: 00000000
+(8906) write to nvdla: addr ffff2402, data 00000001
+(8908) read from nvdla: addr ffff2402
+(8910) read response from nvdla: 00000001
+(8912) write to nvdla: addr ffff1c02, data 00000001
+(8914) read from nvdla: addr ffff1c02
+(8916) read response from nvdla: 00000001
+(8918) write to nvdla: addr ffff2002, data 00000001
+(8920) read from nvdla: addr ffff2002
+(8922) read response from nvdla: 00000001
+(8924) write to nvdla: addr ffff1802, data 00000001
+(8926) read from nvdla: addr ffff1802
+(8928) read response from nvdla: 00000001
+(8930) write to nvdla: addr ffff1404, data 00000001
+(8932) read from nvdla: addr ffff1404
+(8934) read response from nvdla: 00000001
+(8936) waiting for interrupt...
+(9038) interrupt!
+(9040) write to nvdla: addr ffff0003, data ffffffff
+(9042) read from nvdla: addr ffff0003
+(9044) read response from nvdla: 00000000
+(9046) waiting for interrupt...
+(9148) interrupt!
+(9150) write to nvdla: addr ffff0003, data ffffffff
+(9152) read from nvdla: addr ffff0003
+(9154) read response from nvdla: 00000000
+(9156) waiting for interrupt...
+(9258) interrupt!
+(9260) write to nvdla: addr ffff0003, data ffffffff
+(9262) read from nvdla: addr ffff0003
+(9264) read response from nvdla: 00000000
+(9266) waiting for interrupt...
+(9368) interrupt!
+(9370) write to nvdla: addr ffff0003, data ffffffff
+(9372) read from nvdla: addr ffff0003
+(9374) read response from nvdla: 00000000
+AXI: dumping memory to golden_output_memory.dat
+AXI: memory dump matched reference
+done at 9778 ticks
+*** PASS

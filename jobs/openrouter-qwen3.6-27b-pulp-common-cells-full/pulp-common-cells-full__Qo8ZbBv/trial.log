@@ -1,0 +1,217 @@
+Skipping image OS validation for hb__pulp-common-cells-full: docker inspect returned 1
+Running command: apt-get update && apt-get install -y curl
+Command outputs captured
+Running command: export NVM_DIR="$HOME/.nvm" && . "$NVM_DIR/nvm.sh" && opencode --version
+Command outputs captured
+Running command: printf "0.0.0.0 github.com\n0.0.0.0 raw.githubusercontent.com\n0.0.0.0 api.github.com\n0.0.0.0 objects.githubusercontent.com\n0.0.0.0 codeload.github.com\n0.0.0.0 gist.github.com\n0.0.0.0 gitlab.com\n0.0.0.0 bitbucket.org\n0.0.0.0 codeberg.org\n0.0.0.0 sr.ht\n0.0.0.0 huggingface.co\n0.0.0.0 hf.co\n0.0.0.0 sourceforge.net\n" >> /etc/hosts
+Command outputs captured
+Running command: mkdir -p ~/.config/opencode && echo '{
+  "provider": {
+    "openrouter": {
+      "models": {
+        "qwen/qwen3.6-27b": {}
+      }
+    }
+  }
+}' > ~/.config/opencode/opencode.json
+Command outputs captured
+Running command: . ~/.nvm/nvm.sh; opencode --model=openrouter/qwen/qwen3.6-27b run --format=json --thinking --dangerously-skip-permissions -- '# PULP common_cells — Restore the RTL Library
+
+You are in `/app`, a **Bender + Verilator** repository for the
+**PULP common_cells** library — a comprehensive collection of reusable
+SystemVerilog components used across all PULP Platform hardware projects.
+
+## Repository Structure
+
+```
+Bender.yml            — Dependency manager manifest (common_verification, tech_cells_generic)
+common_cells.core     — FuseSoC core descriptor
+include/
+  common_cells/
+    registers.svh     — FF macro library (KEPT — do not modify)
+    assertions.svh    — Assertion macros (KEPT — do not modify)
+src/                  — RTL implementation files (STRIPPED — see below)
+  binary_to_gray.sv
+  cb_filter.sv
+  cdc_2phase.sv
+  cdc_2phase_clearable.sv
+  cdc_4phase.sv
+  cdc_fifo_2phase.sv
+  cdc_fifo_gray.sv
+  cdc_fifo_gray_clearable.sv
+  cdc_reset_ctrlr.sv
+  clk_int_div.sv
+  clk_int_div_static.sv
+  clk_mux_glitch_free.sv
+  counter.sv
+  credit_counter.sv
+  delta_counter.sv
+  ecc_decode.sv
+  ecc_encode.sv
+  edge_detect.sv
+  fall_through_register.sv
+  fifo_v3.sv
+  gray_to_binary.sv
+  id_queue.sv
+  lfsr.sv / lfsr_8bit.sv / lfsr_16bit.sv
+  lzc.sv
+  mem_to_banks.sv
+  mem_to_banks_detailed.sv
+  passthrough_stream_fifo.sv
+  plru_tree.sv
+  popcount.sv
+  rr_arb_tree.sv
+  spill_register.sv / spill_register_flushable.sv
+  stream_arbiter.sv / stream_arbiter_flushable.sv
+  stream_delay.sv / stream_demux.sv / stream_fifo.sv
+  stream_fork.sv / stream_fork_dynamic.sv
+  stream_join.sv / stream_join_dynamic.sv
+  stream_mux.sv / stream_omega_net.sv
+  stream_register.sv / stream_throttle.sv
+  stream_to_mem.sv / stream_xbar.sv
+  sync.sv / sync_wedge.sv
+  ... (all src/*.sv files)
+test/                 — Testbenches (KEPT — do not modify)
+  ecc/
+    ecc.cpp           — Reference ECC C implementation
+    ecc_encode.cpp    — Verilator C++ harness for ecc_encode
+    ecc_decode.cpp    — Verilator C++ harness for ecc_decode
+    ecc.h             — Header
+  *_tb.sv             — SystemVerilog testbenches
+README.md             — Module descriptions and usage (KEPT)
+.bender/              — Bender dependency cache (pre-populated, do not remove)
+```
+
+## What Has Been Stripped
+
+All **RTL implementation files** under `src/` have been emptied (zero bytes).
+The include headers, testbenches, build configuration files, and Bender
+dependency cache are all intact.
+
+**Stripped** (you must implement these — all files under `src/`):
+- ~80 SystemVerilog module and package files
+- Categories: FIFOs, arbiters, CDC primitives, ECC codecs, counters,
+  stream infrastructure, address decoders, shift registers, LFSRs, ...
+
+**Kept** (do not modify):
+- `include/common_cells/*.svh` — register and assertion macros
+- `test/` — all testbenches and C++ harnesses
+- `Bender.yml`, `common_cells.core`, `Makefile`
+- `README.md`, `CHANGELOG.md`, `LICENSE`
+- `.bender/` — pre-populated Bender dependency cache
+
+
+## Important: Partial Credit and Persistence
+
+You are scored **proportionally** — every single test you get to pass earns
+credit. You do NOT need to complete the entire project. Even restoring a
+handful of modules that pass their unit tests is valuable progress.
+
+**Do not give up or stop early because the task looks large.** Work
+incrementally: pick a module, read its test spec, implement it, verify it
+passes, then move to the next one. You have up to 24 hours. Use all of it.
+The best strategy is to start with the simplest, most self-contained modules
+and work outward toward integration.
+
+## Scoring
+
+Reward is **proportional**: `passed_tests / total_tests`.
+
+Two types of tests are scored:
+
+### 1. Per-module Verilator lint checks (~65 tests)
+
+For each RTL module, the verifier runs:
+```bash
+verilator --lint-only -sv -Iinclude <all_src_files> --top-module <module_name> -Wno-fatal
+```
+A test **passes** if Verilator produces no structural errors (missing module
+references, syntax errors, type mismatches). Warnings are not failures.
+
+Each module is a separate test, so implementing any module correctly earns
+partial credit for that test.
+
+### 2. ECC functional tests (2 tests)
+
+For `ecc_encode` and `ecc_decode`, a Verilator C++ harness verifies that the
+module produces the correct SECDED-encoded (or decoded) output for 100,000
+random 64-bit words. The test passes only if the binary exits with code 0.
+
+### Total baseline: ~67 tests
+
+## Environment
+
+- **Verilator 5.020** is pre-installed.
+- **Bender** is pre-installed at `/usr/local/bin/bender`.
+- **Bender dependency cache** is pre-populated at `.bender/` — run
+  `bender checkout` to make the dependency sources available in
+  `.bender/git/checkouts/`.
+- `/app` is a git repository — commit freely.
+
+## Useful Commands
+
+```bash
+# Fetch Bender dependencies (already cached in .bender/, just links them)
+bender checkout
+
+# Check all source files compile together (fast sanity check)
+verilator --lint-only -sv -Iinclude \
+  $(bender script flist 2>/dev/null | grep "\.sv$") \
+  -Wno-fatal 2>&1 | grep "^%Error:" | head -20
+
+# Lint a specific module (e.g., fifo_v3)
+verilator --lint-only -sv -Iinclude src/cf_math_pkg.sv src/fifo_v3.sv \
+  --top-module fifo_v3 -Wno-fatal
+
+# Run ECC encode functional test
+verilator --cc -sv -Iinclude \
+  src/ecc_pkg.sv src/ecc_encode.sv \
+  test/ecc/ecc.cpp test/ecc/ecc_encode.cpp \
+  --top-module ecc_encode --trace --exe -Mdir /tmp/ecc_enc
+make -C /tmp/ecc_enc -f Vecc_encode.mk
+/tmp/ecc_enc/Vecc_encode
+
+# Run ECC decode functional test
+verilator --cc -sv -Iinclude \
+  src/ecc_pkg.sv src/ecc_decode.sv \
+  test/ecc/ecc.cpp test/ecc/ecc_decode.cpp \
+  --top-module ecc_decode --trace --exe -Mdir /tmp/ecc_dec
+make -C /tmp/ecc_dec -f Vecc_decode.mk
+/tmp/ecc_dec/Vecc_decode
+
+# See what tech_cells_generic provides (clock primitives: tc_clk_mux2, tc_clk_xor2)
+ls .bender/git/checkouts/tech_cells_generic-*/src/rtl/
+
+# View README for module descriptions
+cat README.md
+```
+
+## Module Dependencies (selected)
+
+The source file ordering in `Bender.yml` reflects compilation order. Key points:
+- Packages (`*_pkg.sv`) must precede modules that import them
+- `stream_intf.sv` defines `STREAM_DV` — needed by stream testbenches
+- `lzc.sv` is required by `rr_arb_tree.sv`
+- `rr_arb_tree.sv` is required by `stream_arbiter*.sv`, `stream_xbar.sv`
+- `fifo_v3.sv` is required by `stream_fifo.sv`
+- `spill_register.sv` is required by `stream_arbiter.sv`
+- `clk_int_div.sv` requires `tc_clk_mux2`, `tc_clk_xor2` from `tech_cells_generic`
+- `rstgen_bypass.sv` requires `tc_clk_mux2` from `tech_cells_generic`
+- `sync_wedge.sv` requires `pulp_clock_gating` from `tech_cells_generic`
+
+## Implementation Guidance
+
+All modules are standard PULP Platform SystemVerilog:
+- Use the `\`FF`, `\`FFAR`, `\`FFLARN` macros from `include/common_cells/registers.svh`
+  for flip-flops (consistent with PULP coding style)
+- Optionally use `\`ASSERT_*` macros from `include/common_cells/assertions.svh`
+- Parameters are typically `int unsigned`, outputs are combinational or registered
+- Ready/valid handshake (AXI stream style) is used throughout stream modules
+
+Start with simpler modules (popcount, lzc, binary_to_gray, gray_to_binary, fifo_v3)
+and work toward more complex ones (stream_xbar, stream_omega_net, cdc_fifo_gray).
+
+Refer to `README.md` for descriptions of each module'"'"'s function and interface.
+' 2>&1 </dev/null | stdbuf -oL tee /logs/agent/opencode.txt
+Command outputs captured
+Wrote opencode trajectory to jobs/openrouter-qwen3.6-27b-pulp-common-cells-full/pulp-common-cells-full__Qo8ZbBv/agent/trajectory.json

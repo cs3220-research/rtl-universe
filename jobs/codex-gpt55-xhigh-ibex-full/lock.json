@@ -1,0 +1,79 @@
+{
+    "schema_version": 1,
+    "created_at": "2026-05-04T13:03:55.491465Z",
+    "harbor": {
+        "version": "0.6.4",
+        "is_editable": false
+    },
+    "invocation": [
+        "/nethome/dandrews47/.local/bin/harbor",
+        "run",
+        "--path",
+        "minrepro_task/ibex-full",
+        "--agent-import-path",
+        "agents.sandboxed:CodexSandboxed",
+        "--model",
+        "gpt-5.5",
+        "-n",
+        "1",
+        "-y",
+        "--job-name",
+        "codex-gpt55-xhigh-ibex-full",
+        "--artifact",
+        "/app",
+        "--agent-timeout-multiplier",
+        "0.42",
+        "--ae",
+        "CODEX_AUTH_JSON_PATH=/net****son",
+        "--ak",
+        "reasoning_effort=xhigh"
+    ],
+    "n_concurrent_trials": 1,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "VerifierOutputParseError",
+            "AgentTimeoutError",
+            "RewardFileEmptyError",
+            "RewardFileNotFoundError",
+            "VerifierTimeoutError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "task": {
+                "name": "ibex-full",
+                "type": "local",
+                "digest": "sha256:9584a60e2fe7cb555640e161256813f32c054afeabeb0f202e8ba4500e048d4e",
+                "path": "minrepro_task/ibex-full"
+            },
+            "timeout_multiplier": 1.0,
+            "agent_timeout_multiplier": 0.42,
+            "agent": {
+                "import_path": "agents.sandboxed:CodexSandboxed",
+                "model_name": "gpt-5.5",
+                "kwargs": {
+                    "reasoning_effort": "xhigh"
+                },
+                "env": {
+                    "CODEX_AUTH_JSON_PATH": "/net****son"
+                }
+            },
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "suppress_override_warnings": false,
+                "env": {},
+                "kwargs": {}
+            },
+            "verifier": {
+                "env": {},
+                "disable": false
+            }
+        }
+    ]
+}

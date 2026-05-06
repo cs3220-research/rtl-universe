@@ -1,0 +1,39 @@
+{
+    "id": "802b8a39-d9cb-47e2-80fa-1e76597c32f7",
+    "started_at": "2026-05-05T00:47:16.696613",
+    "updated_at": "2026-05-05T01:30:52.175001",
+    "finished_at": "2026-05-05T01:30:52.175001",
+    "n_total_trials": 1,
+    "stats": {
+        "n_completed_trials": 1,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "codex-sandboxed__gpt-5.5__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 1.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "nvdla-full__KK4mWsg"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": 9520563,
+        "n_cache_tokens": 9209856,
+        "n_output_tokens": 23549,
+        "cost_usd": 6.864933000000001
+    }
+}

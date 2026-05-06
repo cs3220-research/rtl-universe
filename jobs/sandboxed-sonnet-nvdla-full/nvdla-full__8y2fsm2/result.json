@@ -1,0 +1,98 @@
+{
+    "id": "7d638121-1a04-4266-9f2f-e3cb7f55797c",
+    "task_name": "nvdla-full",
+    "trial_name": "nvdla-full__8y2fsm2",
+    "trial_uri": "file:///localscratch/dandrews47/rtl-universe/jobs/sandboxed-sonnet-nvdla-full/nvdla-full__8y2fsm2",
+    "task_id": {
+        "path": "minrepro_task/nvdla-full"
+    },
+    "source": null,
+    "task_checksum": "59f2738e8260d222d0f9f60a59b7aabafd366f4cabbce1f6014dd7b19322f950",
+    "config": {
+        "task": {
+            "path": "minrepro_task/nvdla-full",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "nvdla-full__8y2fsm2",
+        "trials_dir": "jobs/sandboxed-sonnet-nvdla-full",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:ClaudeCodeSandboxed",
+            "model_name": "sonnet",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "CLAUDE_CONFIG_DIR": "/home/builder/.claude",
+                "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "****"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": [
+                "/tmp/harbor-claude-creds-sandboxed-sonnet-nvdla-full/.credentials.json:/home/builder/.claude/.credentials.json"
+            ],
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "8fcc850a-fbce-4a78-8712-91778ab21e69"
+    },
+    "agent_info": {
+        "name": "claude-code-sandboxed",
+        "version": "unknown",
+        "model_info": {
+            "name": "sonnet",
+            "provider": null
+        }
+    },
+    "agent_result": null,
+    "verifier_result": null,
+    "exception_info": {
+        "exception_type": "NonZeroAgentExitCodeError",
+        "exception_message": "Command failed (exit 1): set -euo pipefail; if command -v apk &> /dev/null; then  npm install -g @anthropic-ai/claude-code; else  curl -fsSL https://claude.ai/install.sh | bash -s --; fi && echo 'export PATH=\"$HOME/.local/bin:$PATH\"' >> ~/.bashrc && export PATH=\"$HOME/.local/bin:$PATH\" && claude --version\nstdout: mkdir: cannot create directory '/home/builder/.claude/downloads': Permission denied\n\nstderr: None",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/nethome/dandrews47/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py\", line 954, in run\n    await self._setup_agent()\n  File \"/nethome/dandrews47/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py\", line 351, in _setup_agent\n    await asyncio.wait_for(\n  File \"/nethome/dandrews47/.local/share/uv/python/cpython-3.12.7-linux-x86_64-gnu/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/nethome/dandrews47/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/base.py\", line 392, in setup\n    await self.install(environment)\n  File \"/localscratch/dandrews47/rtl-universe/agents/sandboxed.py\", line 94, in install\n    await super().install(environment)\n  File \"/nethome/dandrews47/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/claude_code.py\", line 146, in install\n    await self.exec_as_agent(\n  File \"/nethome/dandrews47/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/base.py\", line 366, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n  File \"/nethome/dandrews47/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/base.py\", line 329, in _exec\n    raise NonZeroAgentExitCodeError(\nharbor.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): set -euo pipefail; if command -v apk &> /dev/null; then  npm install -g @anthropic-ai/claude-code; else  curl -fsSL https://claude.ai/install.sh | bash -s --; fi && echo 'export PATH=\"$HOME/.local/bin:$PATH\"' >> ~/.bashrc && export PATH=\"$HOME/.local/bin:$PATH\" && claude --version\nstdout: mkdir: cannot create directory '/home/builder/.claude/downloads': Permission denied\n\nstderr: None\n",
+        "occurred_at": "2026-05-06T12:53:22.639660"
+    },
+    "started_at": "2026-05-06T16:53:15.011989Z",
+    "finished_at": "2026-05-06T16:53:34.977894Z",
+    "environment_setup": {
+        "started_at": "2026-05-06T16:53:15.167113Z",
+        "finished_at": "2026-05-06T16:53:19.271995Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-06T16:53:19.272106Z",
+        "finished_at": "2026-05-06T16:53:22.480355Z"
+    },
+    "agent_execution": null,
+    "verifier": null,
+    "step_results": null
+}

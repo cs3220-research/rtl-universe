@@ -29,8 +29,12 @@ MODEL_FROM_JOB = [
     ("openrouter-qwen3.6-max-",  "QwenMax"),
     ("openrouter-qwen3.6-27b-",  "Qwen27B"),
     ("openrouter-glm-5.1-",      "GLM5.1"),
+    ("openrouter-deepseek-",     "DeepSeek"),
+    ("openrouter-kimi-",         "Kimi"),
     ("dns-block-opus-",          "Opus4.7"),
     ("dns-block-kimi-",          "Kimi"),
+    ("sandboxed-sonnet-",        "Sonnet4.6"),
+    ("sandboxed-opus-",          "Opus4.7"),
     ("sandboxed-deepseek-",      "DeepSeek"),
     ("sandboxed-kimi-",          "Kimi"),
     ("netiso-",                  None),  # all failed - skip

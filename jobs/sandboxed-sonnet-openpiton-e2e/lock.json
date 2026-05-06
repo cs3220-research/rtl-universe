@@ -1,0 +1,83 @@
+{
+    "schema_version": 1,
+    "created_at": "2026-05-05T07:50:28.720090Z",
+    "harbor": {
+        "version": "0.6.4",
+        "is_editable": false
+    },
+    "invocation": [
+        "/nethome/dandrews47/.local/bin/harbor",
+        "run",
+        "--path",
+        "minrepro_task/openpiton-e2e",
+        "--agent-import-path",
+        "agents.sandboxed:ClaudeCodeSandboxed",
+        "--model",
+        "sonnet",
+        "-n",
+        "1",
+        "-y",
+        "--job-name",
+        "sandboxed-sonnet-openpiton-e2e",
+        "--artifact",
+        "/app",
+        "--agent-timeout-multiplier",
+        "0.42",
+        "--mounts-json",
+        "[\"/tmp/harbor-claude-creds-sandboxed-sonnet-openpiton-e2e:/home/builder/.claude\"]",
+        "--ae",
+        "CLAUDE_CONFIG_DIR=/home/builder/.claude",
+        "--ae",
+        "CLAUDE_CODE_MAX_OUTPUT_TOKENS=****"
+    ],
+    "n_concurrent_trials": 1,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "RewardFileEmptyError",
+            "VerifierOutputParseError",
+            "VerifierTimeoutError",
+            "RewardFileNotFoundError",
+            "AgentTimeoutError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "task": {
+                "name": "openpiton-e2e",
+                "type": "local",
+                "digest": "sha256:1f04b222ac3bd2e7ef6d414cd3da19459b52ec2cde8446cbbdac3c5aedf64ec4",
+                "path": "minrepro_task/openpiton-e2e"
+            },
+            "timeout_multiplier": 1.0,
+            "agent_timeout_multiplier": 0.42,
+            "agent": {
+                "import_path": "agents.sandboxed:ClaudeCodeSandboxed",
+                "model_name": "sonnet",
+                "kwargs": {},
+                "env": {
+                    "CLAUDE_CONFIG_DIR": "/home/builder/.claude",
+                    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "****"
+                }
+            },
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "suppress_override_warnings": false,
+                "mounts_json": [
+                    "/tmp/harbor-claude-creds-sandboxed-sonnet-openpiton-e2e:/home/builder/.claude"
+                ],
+                "env": {},
+                "kwargs": {}
+            },
+            "verifier": {
+                "env": {},
+                "disable": false
+            }
+        }
+    ]
+}

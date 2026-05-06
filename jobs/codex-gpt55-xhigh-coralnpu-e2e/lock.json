@@ -1,0 +1,79 @@
+{
+    "schema_version": 1,
+    "created_at": "2026-05-04T13:03:57.709586Z",
+    "harbor": {
+        "version": "0.6.4",
+        "is_editable": false
+    },
+    "invocation": [
+        "/nethome/dandrews47/.local/bin/harbor",
+        "run",
+        "--path",
+        "minrepro_task/coralnpu-e2e",
+        "--agent-import-path",
+        "agents.sandboxed:CodexSandboxed",
+        "--model",
+        "gpt-5.5",
+        "-n",
+        "1",
+        "-y",
+        "--job-name",
+        "codex-gpt55-xhigh-coralnpu-e2e",
+        "--artifact",
+        "/app",
+        "--agent-timeout-multiplier",
+        "0.42",
+        "--ae",
+        "CODEX_AUTH_JSON_PATH=/net****son",
+        "--ak",
+        "reasoning_effort=xhigh"
+    ],
+    "n_concurrent_trials": 1,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "VerifierTimeoutError",
+            "VerifierOutputParseError",
+            "RewardFileEmptyError",
+            "AgentTimeoutError",
+            "RewardFileNotFoundError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "task": {
+                "name": "coralnpu-e2e",
+                "type": "local",
+                "digest": "sha256:510c0593dacf60adb98f8a7e0fe25d41b2e51eb8844adc9109ab2e809d1334b9",
+                "path": "minrepro_task/coralnpu-e2e"
+            },
+            "timeout_multiplier": 1.0,
+            "agent_timeout_multiplier": 0.42,
+            "agent": {
+                "import_path": "agents.sandboxed:CodexSandboxed",
+                "model_name": "gpt-5.5",
+                "kwargs": {
+                    "reasoning_effort": "xhigh"
+                },
+                "env": {
+                    "CODEX_AUTH_JSON_PATH": "/net****son"
+                }
+            },
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "suppress_override_warnings": false,
+                "env": {},
+                "kwargs": {}
+            },
+            "verifier": {
+                "env": {},
+                "disable": false
+            }
+        }
+    ]
+}

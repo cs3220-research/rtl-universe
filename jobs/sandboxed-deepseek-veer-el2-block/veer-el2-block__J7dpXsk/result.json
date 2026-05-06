@@ -1,0 +1,107 @@
+{
+    "id": "2e611c9a-c7da-47f1-99c0-7e26faf156ae",
+    "task_name": "veer-el2-block",
+    "trial_name": "veer-el2-block__J7dpXsk",
+    "trial_uri": "file:///localscratch/dandrews47/rtl-universe/jobs/sandboxed-deepseek-veer-el2-block/veer-el2-block__J7dpXsk",
+    "task_id": {
+        "path": "minrepro_task/veer-el2-block"
+    },
+    "source": null,
+    "task_checksum": "89787bdfcf16d6455e06d644d9a9fa3bcebf5fd752f9957fac8557104fe20053",
+    "config": {
+        "task": {
+            "path": "minrepro_task/veer-el2-block",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "veer-el2-block__J7dpXsk",
+        "trials_dir": "jobs/sandboxed-deepseek-veer-el2-block",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:OpenCodeSandboxed",
+            "model_name": "openrouter/deepseek/deepseek-v4-pro",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "d2ec8c73-4207-417c-b2af-59123e3c1218"
+    },
+    "agent_info": {
+        "name": "opencode-sandboxed",
+        "version": "1.14.33",
+        "model_info": {
+            "name": "deepseek/deepseek-v4-pro",
+            "provider": "openrouter"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 2471077,
+        "n_cache_tokens": 2370304,
+        "n_output_tokens": 27942,
+        "cost_usd": 0.63404266,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-04T00:20:37.066975Z",
+    "finished_at": "2026-05-04T01:54:01.279648Z",
+    "environment_setup": {
+        "started_at": "2026-05-04T00:20:37.647797Z",
+        "finished_at": "2026-05-04T00:25:28.203336Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-04T00:25:28.203418Z",
+        "finished_at": "2026-05-04T00:25:36.898531Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-04T00:25:36.898698Z",
+        "finished_at": "2026-05-04T01:53:40.397123Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-04T01:53:40.594409Z",
+        "finished_at": "2026-05-04T01:53:41.381548Z"
+    },
+    "step_results": null
+}

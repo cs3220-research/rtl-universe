@@ -1,8 +1,0 @@
-[
-  {
-    "source": "/app",
-    "destination": "artifacts/app",
-    "type": "file",
-    "status": "failed"
-  }
-]

@@ -1,0 +1,7 @@
+converting /app/verif/traces/traceplayer/sanity3_cvsram/input.txn to /app/outdir/nv_full/verilator/test/sanity3_cvsram/trace.bin
+File 0 0x50000000 0x00001000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x50100000 0x00010000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x50400000 0x20
+okay, that's all the bytes I expected -- I'm stopping here

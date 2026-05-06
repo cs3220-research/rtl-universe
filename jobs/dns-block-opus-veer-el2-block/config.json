@@ -14,10 +14,10 @@
         "max_retries": 0,
         "include_exceptions": null,
         "exclude_exceptions": [
-            "VerifierTimeoutError",
-            "AgentTimeoutError",
-            "VerifierOutputParseError",
             "RewardFileEmptyError",
+            "AgentTimeoutError",
+            "VerifierTimeoutError",
+            "VerifierOutputParseError",
             "RewardFileNotFoundError"
         ],
         "wait_multiplier": 1.0,
@@ -35,7 +35,7 @@
         "override_gpus": null,
         "suppress_override_warnings": false,
         "mounts_json": [
-            "/tmp/harbor-claude-creds:/home/builder/.claude"
+            "/tmp/harbor-claude-creds-dns-block-opus-veer-el2-block:/home/builder/.claude"
         ],
         "env": {},
         "kwargs": {}

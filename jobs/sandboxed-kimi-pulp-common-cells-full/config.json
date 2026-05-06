@@ -3,22 +3,22 @@
     "jobs_dir": "jobs",
     "n_attempts": 1,
     "timeout_multiplier": 1.0,
-    "agent_timeout_multiplier": null,
+    "agent_timeout_multiplier": 0.42,
     "verifier_timeout_multiplier": null,
     "agent_setup_timeout_multiplier": null,
     "environment_build_timeout_multiplier": null,
     "debug": false,
-    "n_concurrent_trials": 4,
+    "n_concurrent_trials": 1,
     "quiet": false,
     "retry": {
         "max_retries": 0,
         "include_exceptions": null,
         "exclude_exceptions": [
-            "VerifierOutputParseError",
+            "RewardFileNotFoundError",
             "AgentTimeoutError",
-            "RewardFileEmptyError",
             "VerifierTimeoutError",
-            "RewardFileNotFoundError"
+            "RewardFileEmptyError",
+            "VerifierOutputParseError"
         ],
         "wait_multiplier": 1.0,
         "min_wait_sec": 1.0,
@@ -55,7 +55,7 @@
             "max_timeout_sec": null,
             "kwargs": {},
             "env": {
-                "OPENROUTER_API_KEY": "sk-o****306"
+                "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
             }
         }
     ],

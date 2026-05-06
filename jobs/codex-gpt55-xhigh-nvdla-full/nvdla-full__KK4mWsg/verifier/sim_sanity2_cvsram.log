@@ -1,0 +1,196 @@
+converting /app/verif/traces/traceplayer/sanity2_cvsram/input.txn to /app/outdir/nv_full/verilator/test/sanity2_cvsram/trace.bin
+File 0 0x50000000 0x1000
+okay, that's all the bytes I expected -- I'm stopping here
+CMD: load_mem 00001000 bytes to 50000000
+CMD: write_reg ffff100b 00000800
+CMD: read_reg ffff100b ffffffe0 00000800
+CMD: write_reg ffff1008 00000100
+CMD: read_reg ffff1008 ffffffe0 00000100
+CMD: write_reg ffff100a 00000800
+CMD: read_reg ffff100a ffffffe0 00000800
+CMD: write_reg ffff1007 00000100
+CMD: read_reg ffff1007 ffffffe0 00000100
+CMD: write_reg ffff1009 00000000
+CMD: read_reg ffff1009 00ffffff 00000000
+CMD: write_reg ffff1006 00000007
+CMD: read_reg ffff1006 00ffffff 00000007
+CMD: write_reg ffff1004 00000007
+CMD: read_reg ffff1004 00001fff 00000007
+CMD: write_reg ffff1005 00000000
+CMD: read_reg ffff1005 00000003 00000000
+CMD: write_reg ffff1001 00000000
+CMD: read_reg ffff1001 000000ff 00000000
+CMD: write_reg ffff1000 50000000
+CMD: read_reg ffff1000 ffffffe0 50000000
+CMD: write_reg ffff1003 00000000
+CMD: read_reg ffff1003 000000ff 00000000
+CMD: write_reg ffff1002 51000000
+CMD: read_reg ffff1002 ffffffe0 51000000
+CMD: write_reg ffff100c 00000001
+CMD: read_reg ffff100c 00000001 00000001
+CMD: write_reg ffff100d 00000001
+CMD: read_reg ffff100d 00000001 00000001
+CMD: wait
+CMD: done
+reset...
+letting buffers clear after reset...
+running trace...
+AXI: loading memory at 0x50000000
+(8274) write to nvdla: addr ffff100b, data 00000800
+(8276) read from nvdla: addr ffff100b
+(8312) read response from nvdla: 00000800
+(8314) write to nvdla: addr ffff1008, data 00000100
+(8316) read from nvdla: addr ffff1008
+(8352) read response from nvdla: 00000100
+(8354) write to nvdla: addr ffff100a, data 00000800
+(8356) read from nvdla: addr ffff100a
+(8392) read response from nvdla: 00000800
+(8394) write to nvdla: addr ffff1007, data 00000100
+(8396) read from nvdla: addr ffff1007
+(8432) read response from nvdla: 00000100
+(8434) write to nvdla: addr ffff1009, data 00000000
+(8436) read from nvdla: addr ffff1009
+(8472) read response from nvdla: 00000000
+(8474) write to nvdla: addr ffff1006, data 00000007
+(8476) read from nvdla: addr ffff1006
+(8512) read response from nvdla: 00000007
+(8514) write to nvdla: addr ffff1004, data 00000007
+(8516) read from nvdla: addr ffff1004
+(8552) read response from nvdla: 00000007
+(8554) write to nvdla: addr ffff1005, data 00000000
+(8556) read from nvdla: addr ffff1005
+(8592) read response from nvdla: 00000000
+(8594) write to nvdla: addr ffff1001, data 00000000
+(8596) read from nvdla: addr ffff1001
+(8632) read response from nvdla: 00000000
+(8634) write to nvdla: addr ffff1000, data 50000000
+(8636) read from nvdla: addr ffff1000
+(8672) read response from nvdla: 50000000
+(8674) write to nvdla: addr ffff1003, data 00000000
+(8676) read from nvdla: addr ffff1003
+(8712) read response from nvdla: 00000000
+(8714) write to nvdla: addr ffff1002, data 51000000
+(8716) read from nvdla: addr ffff1002
+(8752) read response from nvdla: 51000000
+(8754) write to nvdla: addr ffff100c, data 00000001
+(8756) read from nvdla: addr ffff100c
+(8792) read response from nvdla: 00000001
+(8794) write to nvdla: addr ffff100d, data 00000001
+(8796) read from nvdla: addr ffff100d
+(8832) read response from nvdla: 00000001
+(8834) waiting for interrupt...
+(8834) CVSRAM: read request from dla, addr 50000000 burst 3 id 0
+(8838) CVSRAM: read request from dla, addr 50000100 burst 3 id 0
+(8842) CVSRAM: read request from dla, addr 50000200 burst 3 id 0
+(8846) CVSRAM: read request from dla, addr 50000300 burst 3 id 0
+(8850) CVSRAM: read request from dla, addr 50000400 burst 3 id 0
+(8854) CVSRAM: read request from dla, addr 50000500 burst 3 id 0
+(8858) CVSRAM: read request from dla, addr 50000600 burst 3 id 0
+(8862) CVSRAM: read request from dla, addr 50000700 burst 3 id 0
+(8898) CVSRAM: read push: id 0, da cdd2e4ce c49d819d 1a93d056 e55c4859
+(8900) CVSRAM: read push: id 0, da 2e34366b 56a52a44 906b71f2 9b2b7649
+(8902) CVSRAM: read push: id 0, da ff6dbfb4 a9c2114f 2c677728 fe3a1f32
+(8904) CVSRAM: read push: id 0, da 20b9983e 3e39db0a 9c7fc948 75c129cf
+(8906) CVSRAM: read push: id 0, da 7b0ba575 87171201 fbf3017a c2c1f70f
+(8908) CVSRAM: read push: id 0, da 3507c50f 255aa04e ac6f8dff 0d9a52a5
+(8910) CVSRAM: read push: id 0, da 54014275 bf918cf8 4a24f086 e21ce356
+(8912) CVSRAM: read push: id 0, da 0e5e4dc1 7234b002 d3e6c39e 480c3861
+(8914) CVSRAM: read push: id 0, da 5a2e8ac7 6741375d 7a3b4391 718a1828
+(8916) CVSRAM: read push: id 0, da 206c932a eae9146d cb0bf2a5 fc512b0c
+(8918) CVSRAM: read push: id 0, da f94f4dfc fe0db47d c6d18bc1 ec0fd4e1
+(8920) CVSRAM: read push: id 0, da 2e28a066 16d38961 f7e11efa 23085a71
+(8922) CVSRAM: read push: id 0, da dfc43b36 e7ac4221 c1d583e7 80cfc70a
+(8924) CVSRAM: read push: id 0, da c7cdf7c5 500f2685 7e67e963 1ee19194
+(8926) CVSRAM: read push: id 0, da 6fa45686 46e5ba97 9f759e9d 43a741ca
+(8928) CVSRAM: read push: id 0, da b7f6ea2d ac40c14f a20a447b 5759d4b1
+(8930) CVSRAM: read push: id 0, da 733423cf 7eb87a8c 6e6aa984 3e26ae8a
+(8932) CVSRAM: read push: id 0, da a94ad083 a063d74b 176ba183 16aa954c
+(8934) CVSRAM: read push: id 0, da 0f37a775 f7dd3b7a e1cab03e d7a526a1
+(8936) CVSRAM: read push: id 0, da 1ae54735 cbf9c9d4 3452cdfe d850c03c
+(8938) CVSRAM: write request from dla, addr 51000000 id 0
+(8938) CVSRAM: write data from dla (cdd2e4ce c49d819d...)
+(8938) CVSRAM: write, ticks remaining
+(8938) CVSRAM: read push: id 0, da 0d5ab0a4 9910b575 f84ff935 14750637
+(8940) CVSRAM: write data from dla (2e34366b 56a52a44...)
+(8940) CVSRAM: write, ticks remaining
+(8940) CVSRAM: read push: id 0, da 17316ad4 114fe904 3adefee1 05508ad5
+(8942) CVSRAM: write data from dla (ff6dbfb4 a9c2114f...)
+(8942) CVSRAM: write, ticks remaining
+(8942) CVSRAM: read push: id 0, da 531aa698 67a679b4 750ddbc2 196b30be
+(8944) CVSRAM: write data from dla (20b9983e 3e39db0a...)
+(8944) CVSRAM: write, last tick
+(8944) CVSRAM: read push: id 0, da 52b2709d 68bfa333 8456851a e41d52aa
+(8946) CVSRAM: read push: id 0, da 1837283e f4365d24 16565c9d 0098aabf
+(8948) CVSRAM: read push: id 0, da 2e7e8f26 1950df3d acb53742 a79e0d7e
+(8950) CVSRAM: write request from dla, addr 51000100 id 0
+(8950) CVSRAM: write data from dla (7b0ba575 87171201...)
+(8950) CVSRAM: write, ticks remaining
+(8950) CVSRAM: read push: id 0, da 8d445c9f 73c01db0 fc0b535a 6a3069c5
+(8952) CVSRAM: write data from dla (3507c50f 255aa04e...)
+(8952) CVSRAM: write, ticks remaining
+(8952) CVSRAM: read push: id 0, da 9f5230fe 5d170688 a817b1c8 36ca3783
+(8954) CVSRAM: write data from dla (54014275 bf918cf8...)
+(8954) CVSRAM: write, ticks remaining
+(8954) CVSRAM: read push: id 0, da 46126df0 0544493d d6df8e11 97449832
+(8956) CVSRAM: write data from dla (0e5e4dc1 7234b002...)
+(8956) CVSRAM: write, last tick
+(8956) CVSRAM: read push: id 0, da 1db19677 e621518f 248e3be7 3ba2789a
+(8958) CVSRAM: read push: id 0, da f7cf7432 ea1a2294 410b9a92 18b374de
+(8960) CVSRAM: read push: id 0, da ab4c1239 483b6ffc 2560f3ef cf8cdb81
+(8962) CVSRAM: write request from dla, addr 51000200 id 0
+(8962) CVSRAM: write data from dla (5a2e8ac7 6741375d...)
+(8962) CVSRAM: write, ticks remaining
+(8964) CVSRAM: write data from dla (206c932a eae9146d...)
+(8964) CVSRAM: write, ticks remaining
+(8966) CVSRAM: write data from dla (f94f4dfc fe0db47d...)
+(8966) CVSRAM: write, ticks remaining
+(8968) CVSRAM: write data from dla (2e28a066 16d38961...)
+(8968) CVSRAM: write, last tick
+(8974) CVSRAM: write request from dla, addr 51000300 id 0
+(8974) CVSRAM: write data from dla (dfc43b36 e7ac4221...)
+(8974) CVSRAM: write, ticks remaining
+(8976) CVSRAM: write data from dla (c7cdf7c5 500f2685...)
+(8976) CVSRAM: write, ticks remaining
+(8978) CVSRAM: write data from dla (6fa45686 46e5ba97...)
+(8978) CVSRAM: write, ticks remaining
+(8980) CVSRAM: write data from dla (b7f6ea2d ac40c14f...)
+(8980) CVSRAM: write, last tick
+(8986) CVSRAM: write request from dla, addr 51000400 id 0
+(8986) CVSRAM: write data from dla (733423cf 7eb87a8c...)
+(8986) CVSRAM: write, ticks remaining
+(8988) CVSRAM: write data from dla (a94ad083 a063d74b...)
+(8988) CVSRAM: write, ticks remaining
+(8990) CVSRAM: write data from dla (0f37a775 f7dd3b7a...)
+(8990) CVSRAM: write, ticks remaining
+(8992) CVSRAM: write data from dla (1ae54735 cbf9c9d4...)
+(8992) CVSRAM: write, last tick
+(8998) CVSRAM: write request from dla, addr 51000500 id 0
+(8998) CVSRAM: write data from dla (0d5ab0a4 9910b575...)
+(8998) CVSRAM: write, ticks remaining
+(9000) CVSRAM: write data from dla (17316ad4 114fe904...)
+(9000) CVSRAM: write, ticks remaining
+(9002) CVSRAM: write data from dla (531aa698 67a679b4...)
+(9002) CVSRAM: write, ticks remaining
+(9004) CVSRAM: write data from dla (52b2709d 68bfa333...)
+(9004) CVSRAM: write, last tick
+(9010) CVSRAM: write request from dla, addr 51000600 id 0
+(9010) CVSRAM: write data from dla (1837283e f4365d24...)
+(9010) CVSRAM: write, ticks remaining
+(9012) CVSRAM: write data from dla (2e7e8f26 1950df3d...)
+(9012) CVSRAM: write, ticks remaining
+(9014) CVSRAM: write data from dla (8d445c9f 73c01db0...)
+(9014) CVSRAM: write, ticks remaining
+(9016) CVSRAM: write data from dla (9f5230fe 5d170688...)
+(9016) CVSRAM: write, last tick
+(9022) CVSRAM: write request from dla, addr 51000700 id 0
+(9022) CVSRAM: write data from dla (46126df0 0544493d...)
+(9022) CVSRAM: write, ticks remaining
+(9024) CVSRAM: write data from dla (1db19677 e621518f...)
+(9024) CVSRAM: write, ticks remaining
+(9026) CVSRAM: write data from dla (f7cf7432 ea1a2294...)
+(9026) CVSRAM: write, ticks remaining
+(9028) CVSRAM: write data from dla (ab4c1239 483b6ffc...)
+(9028) CVSRAM: write, last tick
+(9050) interrupt!
+done at 9236 ticks
+*** PASS

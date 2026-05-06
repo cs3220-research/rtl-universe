@@ -1,0 +1,12 @@
+=== Running FuseSoC target: tb_aes ===
+  target=tb_aes  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_core ===
+  target=tb_aes_core  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_key_mem ===
+  target=tb_aes_key_mem  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_encipher_block ===
+  target=tb_aes_encipher_block  tc=0  passed=0
+=== Running FuseSoC target: tb_aes_decipher_block ===
+  target=tb_aes_decipher_block  tc=0  passed=0
+
+Total: passed=0 / denominator=40

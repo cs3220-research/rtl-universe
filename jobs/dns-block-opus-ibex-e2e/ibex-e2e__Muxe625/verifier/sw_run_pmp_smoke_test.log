@@ -1,0 +1,23 @@
+Simulation of Ibex
+==================
+
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 1152
+
+Simulation running, end by pressing CTRL-c.
+TOP.ibex_simple_system.u_top.u_ibex_tracer.unnamedblk2.unnamedblk3: Writing execution trace to trace_core_00000000.log
+                 179: Illegal instruction (hart 0) at PC 0x001003d6: 0x3b069073
+Terminating simulation by software request.
+- src/lowrisc_ibex_sim_shared_0/rtl/sim/simulator_ctrl.sv:93: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  1015
+Wallclock time:   0.004 s
+Simulation speed: 253750 cycles/s (253.75 kHz)
+
+Performance Counters
+====================
+Cycles:               1011
+Instructions Retired: 588

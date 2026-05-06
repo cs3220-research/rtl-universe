@@ -14,10 +14,10 @@
         "max_retries": 0,
         "include_exceptions": null,
         "exclude_exceptions": [
-            "AgentTimeoutError",
-            "RewardFileEmptyError",
             "VerifierOutputParseError",
+            "RewardFileEmptyError",
             "RewardFileNotFoundError",
+            "AgentTimeoutError",
             "VerifierTimeoutError"
         ],
         "wait_multiplier": 1.0,

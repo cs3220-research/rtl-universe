@@ -1,0 +1,9 @@
+{
+  "services": {
+    "main": {
+      "volumes": [
+        "/tmp/harbor-claude-creds-sandboxed-sonnet-nvdla-full/.credentials.json:/home/builder/.claude/.credentials.json"
+      ]
+    }
+  }
+}

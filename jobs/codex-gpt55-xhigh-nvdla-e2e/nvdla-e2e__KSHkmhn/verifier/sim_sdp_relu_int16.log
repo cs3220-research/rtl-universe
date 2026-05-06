@@ -1,0 +1,5 @@
+converting /app/verif/traces/traceplayer/sdp_relu_int16/input.txn to /app/outdir/nv_full/verilator/test/sdp_relu_int16/trace.bin
+File 0 0x80200000 0x1000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x80800000 0x1000
+okay, that's all the bytes I expected -- I'm stopping here

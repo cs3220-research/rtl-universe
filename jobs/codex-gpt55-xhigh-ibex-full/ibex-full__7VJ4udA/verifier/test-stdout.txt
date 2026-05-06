@@ -1,0 +1,252 @@
+=== [1/5] CS Registers testbench ===
+WARNING: Not adding library . (/app). Library ibex already registered for this location
+WARNING: Non-deterministic selection of virtual core lowrisc:prim:buf:0 selected lowrisc:prim_generic:buf:0
+WARNING: Non-deterministic selection of virtual core lowrisc:prim:flop:0 selected lowrisc:prim_generic:flop:0
+WARNING: Non-deterministic selection of virtual core lowrisc:prim:clock_gating:0 selected lowrisc:prim_xilinx:clock_gating:0
+INFO: Preparing lowrisc:dv:dv_fcov_macros:0
+INFO: Preparing lowrisc:dv_verilator:simutil_verilator:0
+INFO: Preparing lowrisc:ibex:ibex_pkg:0.1
+INFO: Preparing lowrisc:tool:check_tool_requirements:0.1
+INFO: Preparing lowrisc:lint:common:0.1
+INFO: Preparing lowrisc:prim:assert:0.1
+INFO: Preparing lowrisc:prim:cipher_pkg:0.1
+INFO: Preparing lowrisc:prim_generic:buf:0
+INFO: Preparing lowrisc:prim_generic:flop:0
+INFO: Preparing lowrisc:prim:secded:0.1
+INFO: Preparing lowrisc:prim_xilinx:clock_gating:0
+INFO: Preparing lowrisc:ibex:ibex_icache:0.1
+INFO: Preparing lowrisc:prim:lfsr:0.1
+INFO: Preparing lowrisc:prim:mubi_pkg:0.1
+INFO: Preparing lowrisc:prim:mubi:0.1
+INFO: Preparing lowrisc:ibex:ibex_core:0.1
+INFO: Preparing lowrisc:ibex:tb_cs_registers:0
+INFO: Setting up project
+WARNING: This backend is deprecated and will eventually be removed. Please migrate to the flow API instead.  See https://edalize.readthedocs.io/en/latest/ref/migrations.html#migrating-from-the-tool-api-to-the-flow-api for more details.
+INFO: Running pre_build script check_tool_requirements
+INFO: Tool verilator present: Sufficiently recent version (found 4.210; needed 4.210)
+INFO: Tool edalize present: Sufficiently recent version (found 0.6.8; needed 0.2.0)
+INFO: Running pre_build script build_so
+make: Entering directory '/app/build/lowrisc_ibex_tb_cs_registers_0/sim-verilator/src/lowrisc_ibex_tb_cs_registers_0'
+Generating dependencies for model/register_model.cc...
+Compiling model/register_model.cc...
+Generating dependencies for model/base_register.cc...
+Compiling model/base_register.cc...
+Generating dependencies for env/env_dpi.cc...
+Compiling env/env_dpi.cc...
+Generating dependencies for env/simctrl.cc...
+Compiling env/simctrl.cc...
+Generating dependencies for env/register_environment.cc...
+Compiling env/register_environment.cc...
+Generating dependencies for reg_driver/register_transaction.cc...
+Compiling reg_driver/register_transaction.cc...
+Generating dependencies for reg_driver/register_driver.cc...
+Compiling reg_driver/register_driver.cc...
+Generating dependencies for reg_driver/reg_dpi.cc...
+Compiling reg_driver/reg_dpi.cc...
+Generating dependencies for rst_driver/rst_dpi.cc...
+Compiling rst_driver/rst_dpi.cc...
+Generating dependencies for rst_driver/reset_driver.cc...
+Compiling rst_driver/reset_driver.cc...
+Linking build/bin/reg_dpi.so...
+Build done
+make: Leaving directory '/app/build/lowrisc_ibex_tb_cs_registers_0/sim-verilator/src/lowrisc_ibex_tb_cs_registers_0'
+INFO: Building simulation model
+INFO: Running
+INFO: Running simulation
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 2541
+
+Simulation running, end by pressing CTRL-c.
+- src/lowrisc_ibex_tb_cs_registers_0/tb/tb_cs_registers.sv:111: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+[Reg driver] drove: 10001 register transactions
+
+//-------------//
+// TEST PASSED //
+//-------------//
+
+Simulation statistics
+=====================
+Executed cycles:  104887
+Wallclock time:   0.204 s
+Simulation speed: 514152 cycles/s (514.152 kHz)
+Entering directory '/app/build/lowrisc_ibex_tb_cs_registers_0/sim-verilator'
+Leaving directory '/app/build/lowrisc_ibex_tb_cs_registers_0/sim-verilator'
+Entering directory '/app/build/lowrisc_ibex_tb_cs_registers_0/sim-verilator'
+Leaving directory '/app/build/lowrisc_ibex_tb_cs_registers_0/sim-verilator'
+tb_cs_registers: PASSED
+=== Building simple-system simulator ===
+WARNING: Not adding library . (/app). Library ibex already registered for this location
+INFO: Preparing lowrisc:dv:dv_fcov_macros:0
+INFO: Preparing lowrisc:dv:secded_enc:0
+INFO: Preparing lowrisc:dv_verilator:ibex_pcounts:0
+INFO: Preparing lowrisc:dv_verilator:simutil_verilator:0
+INFO: Preparing lowrisc:ibex:ibex_pkg:0.1
+INFO: Preparing lowrisc:prim_generic:ram_1p_pkg:0
+INFO: Preparing lowrisc:prim_generic:ram_2p_pkg:0
+INFO: Preparing lowrisc:prim_generic:rom_pkg:0
+INFO: Preparing lowrisc:prim:util_get_scramble_params:0
+INFO: Preparing lowrisc:prim:util_memload:0
+INFO: Preparing lowrisc:tool:check_tool_requirements:0.1
+INFO: Preparing lowrisc:dv_verilator:memutil_dpi:0
+INFO: Preparing lowrisc:lint:common:0.1
+INFO: Preparing lowrisc:dv_verilator:memutil_verilator:0
+INFO: Preparing lowrisc:prim:assert:0.1
+INFO: Preparing lowrisc:prim:cipher_pkg:0.1
+INFO: Preparing lowrisc:prim_generic:and2:0
+INFO: Preparing lowrisc:prim_generic:buf:0
+INFO: Preparing lowrisc:prim_generic:clock_buf:0
+INFO: Preparing lowrisc:prim_generic:clock_gating:0
+INFO: Preparing lowrisc:prim_generic:flop:0
+INFO: Preparing lowrisc:prim_generic:flop_no_rst:0
+INFO: Preparing lowrisc:prim_generic:prim_pkg:0
+INFO: Preparing lowrisc:prim_generic:usb_diff_rx:0
+INFO: Preparing lowrisc:prim_generic:xnor2:0
+INFO: Preparing lowrisc:prim_generic:xor2:0
+INFO: Preparing lowrisc:prim:pad_wrapper_pkg:0
+INFO: Preparing lowrisc:prim:secded:0.1
+INFO: Preparing lowrisc:ibex:ibex_icache:0.1
+INFO: Preparing lowrisc:ibex:ibex_tracer:0.1
+INFO: Preparing lowrisc:prim:cdc_rand_delay:0
+INFO: Preparing lowrisc:prim:cipher:0
+INFO: Preparing lowrisc:prim:count:0
+INFO: Preparing lowrisc:prim_generic:clock_mux2:0
+INFO: Preparing lowrisc:prim_generic:pad_attr:0
+INFO: Preparing lowrisc:prim_generic:pad_wrapper:0
+INFO: Preparing lowrisc:prim_generic:ram_1p:0
+INFO: Preparing lowrisc:prim_generic:ram_1r1w:0
+INFO: Preparing lowrisc:prim_generic:ram_2p:0
+INFO: Preparing lowrisc:prim_generic:rom:0
+INFO: Preparing lowrisc:prim:lfsr:0.1
+INFO: Preparing lowrisc:prim:mubi_pkg:0.1
+INFO: Preparing lowrisc:prim:sec_anchor:0.1
+INFO: Preparing lowrisc:prim:util:0.1
+INFO: Preparing lowrisc:ibex:sim_shared:0
+INFO: Preparing lowrisc:prim_generic:clock_inv:0
+INFO: Preparing lowrisc:prim_generic:flop_2sync:0
+INFO: Preparing lowrisc:prim_generic:flop_en:0
+INFO: Preparing lowrisc:prim:mubi:0.1
+INFO: Preparing lowrisc:prim:onehot:0
+INFO: Preparing lowrisc:prim:onehot_check:0
+INFO: Preparing lowrisc:prim:ram_1p_adv:0.1
+INFO: Preparing lowrisc:ibex:ibex_core:0.1
+INFO: Preparing lowrisc:prim_generic:clock_div:0
+INFO: Preparing lowrisc:prim_generic:rst_sync:0
+INFO: Preparing lowrisc:prim:ram_1p_scr:0.1
+INFO: Preparing lowrisc:ibex:ibex_top:0.1
+INFO: Preparing lowrisc:prim_generic:all:0.1
+INFO: Preparing lowrisc:ibex:ibex_top_tracing:0.1
+INFO: Preparing lowrisc:ibex:ibex_simple_system_core:0
+INFO: Preparing lowrisc:ibex:ibex_simple_system:0
+INFO: Setting up project
+WARNING: This backend is deprecated and will eventually be removed. Please migrate to the flow API instead.  See https://edalize.readthedocs.io/en/latest/ref/migrations.html#migrating-from-the-tool-api-to-the-flow-api for more details.
+INFO: Running pre_build script check_tool_requirements
+INFO: Tool verilator present: Sufficiently recent version (found 4.210; needed 4.210)
+INFO: Tool edalize present: Sufficiently recent version (found 0.6.8; needed 0.2.0)
+INFO: Building simulation model
+Entering directory '/app/build/lowrisc_ibex_ibex_simple_system_0/sim-verilator'
+Leaving directory '/app/build/lowrisc_ibex_ibex_simple_system_0/sim-verilator'
+=== [2/5] SW test: hello_test ===
+make: Nothing to be done for 'all'.
+Simulation of Ibex
+==================
+
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 2680
+
+Simulation running, end by pressing CTRL-c.
+TOP.ibex_simple_system.u_top.u_ibex_tracer.unnamedblk2.unnamedblk3: Writing execution trace to trace_core_00000000.log
+Terminating simulation by software request.
+- src/lowrisc_ibex_sim_shared_0/rtl/sim/simulator_ctrl.sv:93: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  13268
+Wallclock time:   0.015 s
+Simulation speed: 884533 cycles/s (884.533 kHz)
+
+Performance Counters
+====================
+Cycles:               477
+Instructions Retired: 261
+hello_test: PASSED
+=== [3/5] SW test: dit_test ===
+make: Nothing to be done for 'all'.
+Simulation of Ibex
+==================
+
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 2691
+
+Simulation running, end by pressing CTRL-c.
+TOP.ibex_simple_system.u_top.u_ibex_tracer.unnamedblk2.unnamedblk3: Writing execution trace to trace_core_00000000.log
+Terminating simulation by software request.
+- src/lowrisc_ibex_sim_shared_0/rtl/sim/simulator_ctrl.sv:93: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  77894
+Wallclock time:   0.25 s
+Simulation speed: 311576 cycles/s (311.576 kHz)
+
+Performance Counters
+====================
+Cycles:               77890
+Instructions Retired: 50613
+dit_test: PASSED
+=== [4/5] SW test: dummy_instr_test ===
+make: Nothing to be done for 'all'.
+Simulation of Ibex
+==================
+
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 2702
+
+Simulation running, end by pressing CTRL-c.
+TOP.ibex_simple_system.u_top.u_ibex_tracer.unnamedblk2.unnamedblk3: Writing execution trace to trace_core_00000000.log
+Terminating simulation by software request.
+- src/lowrisc_ibex_sim_shared_0/rtl/sim/simulator_ctrl.sv:93: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  72881
+Wallclock time:   0.213 s
+Simulation speed: 342164 cycles/s (342.164 kHz)
+
+Performance Counters
+====================
+Cycles:               72877
+Instructions Retired: 23141
+dummy_instr_test: PASSED
+=== [5/5] SW test: pmp_smoke_test ===
+make: Nothing to be done for 'all'.
+Simulation of Ibex
+==================
+
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 2713
+
+Simulation running, end by pressing CTRL-c.
+TOP.ibex_simple_system.u_top.u_ibex_tracer.unnamedblk2.unnamedblk3: Writing execution trace to trace_core_00000000.log
+                 179: Illegal instruction (hart 0) at PC 0x001003d6: 0x3b069073
+Terminating simulation by software request.
+- src/lowrisc_ibex_sim_shared_0/rtl/sim/simulator_ctrl.sv:93: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  1015
+Wallclock time:   0.004 s
+Simulation speed: 253750 cycles/s (253.75 kHz)
+
+Performance Counters
+====================
+Cycles:               1011
+Instructions Retired: 588
+pmp_smoke_test: PASSED
+
+Total: passed=5 / total=5
+reward: 1.000000  (passed=5, total=5)

@@ -3,7 +3,7 @@
     "jobs_dir": "jobs",
     "n_attempts": 1,
     "timeout_multiplier": 1.0,
-    "agent_timeout_multiplier": null,
+    "agent_timeout_multiplier": 0.42,
     "verifier_timeout_multiplier": null,
     "agent_setup_timeout_multiplier": null,
     "environment_build_timeout_multiplier": null,
@@ -14,11 +14,11 @@
         "max_retries": 0,
         "include_exceptions": null,
         "exclude_exceptions": [
-            "RewardFileNotFoundError",
             "VerifierOutputParseError",
-            "RewardFileEmptyError",
+            "AgentTimeoutError",
             "VerifierTimeoutError",
-            "AgentTimeoutError"
+            "RewardFileEmptyError",
+            "RewardFileNotFoundError"
         ],
         "wait_multiplier": 1.0,
         "min_wait_sec": 1.0,
@@ -35,7 +35,7 @@
         "override_gpus": null,
         "suppress_override_warnings": false,
         "mounts_json": [
-            "/tmp/harbor-claude-creds:/home/builder/.claude"
+            "/tmp/harbor-claude-creds-dns-block-opus-ibex-e2e:/home/builder/.claude"
         ],
         "env": {},
         "kwargs": {}

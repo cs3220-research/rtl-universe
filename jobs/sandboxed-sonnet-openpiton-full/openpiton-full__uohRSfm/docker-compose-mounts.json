@@ -1,0 +1,9 @@
+{
+  "services": {
+    "main": {
+      "volumes": [
+        "/tmp/harbor-claude-creds-sandboxed-sonnet-openpiton-full:/home/builder/.claude"
+      ]
+    }
+  }
+}

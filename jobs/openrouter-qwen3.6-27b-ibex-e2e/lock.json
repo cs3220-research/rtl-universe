@@ -1,12 +1,12 @@
 {
     "schema_version": 1,
-    "created_at": "2026-05-03T18:12:58.036905Z",
+    "created_at": "2026-05-03T23:12:38.764461Z",
     "harbor": {
         "version": "0.6.4",
         "is_editable": false
     },
     "invocation": [
-        "/home/broyojo/.local/bin/harbor",
+        "/nethome/dandrews47/.local/bin/harbor",
         "run",
         "--path",
         "minrepro_task/ibex-e2e",
@@ -30,11 +30,11 @@
     "retry": {
         "max_retries": 0,
         "exclude_exceptions": [
-            "AgentTimeoutError",
-            "RewardFileNotFoundError",
+            "VerifierOutputParseError",
             "VerifierTimeoutError",
             "RewardFileEmptyError",
-            "VerifierOutputParseError"
+            "AgentTimeoutError",
+            "RewardFileNotFoundError"
         ],
         "wait_multiplier": 1.0,
         "min_wait_sec": 1.0,
@@ -45,7 +45,7 @@
             "task": {
                 "name": "ibex-e2e",
                 "type": "local",
-                "digest": "sha256:7a14ad5e1d1cb65ed6b3e347e8786f08e27548187942a47aea92c5d4b3ed8769",
+                "digest": "sha256:75d1a0b13b7d9a5d29876443f0b6169947cbfcfbe196c1ff8ef3d770b80aa2b0",
                 "path": "minrepro_task/ibex-e2e"
             },
             "timeout_multiplier": 1.0,
