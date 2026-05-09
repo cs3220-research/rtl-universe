@@ -254,8 +254,9 @@ full pipeline.
 \draw[arr] (env) -- (verwrap);
 \draw[arr] (verwrap) -- (task);
 
-% Phase 2 (bottom row): evaluation
-\node[box, below=18mm of repo] (queue) {Launcher\\queue};
+% Phase 2 (bottom row): evaluation. We need a wide gap so the dashed
+% hand-off arrow can route through it without grazing any boxes.
+\node[box, below=30mm of repo] (queue) {Launcher\\queue};
 \node[box, right=of queue] (build) {Build\\image};
 \node[box, right=of build] (sandbox) {Sandbox\\(DNS sinkhole)};
 \node[ag, right=of sandbox] (agent) {Agent\\(writes RTL)};
@@ -268,12 +269,19 @@ full pipeline.
 \draw[arr] (agent) -- (verifier);
 \draw[arr] (verifier) -- (result);
 
-% Hand-off arrow from Phase 1 to Phase 2
-\draw[arr, dashed] (task.south) |- (queue.north);
+% Hand-off arrow from Phase 1 to Phase 2. We compute the midpoint between
+% task.south and queue.north and route the horizontal leg through it, so
+% the arrow stays well clear of every bottom-row box.
+\path (task.south) -- (queue.north) coordinate[midway] (handoffmid);
+\draw[arr, dashed]
+  (task.south)
+    -- (task.south |- handoffmid)
+    -- (queue.north |- handoffmid)
+    -- (queue.north);
 
-% Phase labels on the left
-\node[phaselbl] at ([xshift=-3mm]repo.west) {Generation};
-\node[phaselbl] at ([xshift=-3mm]queue.west) {Evaluation};
+% Phase labels on the left, centered vertically on each row
+\node[phaselbl] at ([xshift=-4mm]repo.west) {Generation};
+\node[phaselbl] at ([xshift=-4mm]queue.west) {Evaluation};
 \end{tikzpicture}%
 }
 \caption{The \textsc{RTL-Universe} pipeline. The top row is the offline task-generation
