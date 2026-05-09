@@ -48,11 +48,11 @@ commits, weekly reports, and run results in the project's \texttt{other\_repos/}
 The high-level question we set out on was the following. Can current LLM agents do real
 hardware-engineering work, and how do we measure it? The literature on hardware LLMs in
 early 2026 was almost entirely module-level Verilog
-generation~\citep{liu2023verilogeval, lu2024rtllm, thakur2023verigen}, with leading models
-reporting 90 percent or higher pass rates on benchmarks that ask for ``a 4-bit counter from
-a description''. That left two open questions. How would those agents fare on the rest of a
-real chip-design workflow (build systems, integration, testbenches, physical design), and is
-there a benchmark that we trust to grade them on it?
+generation~\citep{liu2023verilogeval, lu2024rtllm, thakur2024verigen, liu2024rtlcoder},
+with leading models reporting 90 percent or higher pass rates on benchmarks that ask for
+``a 4-bit counter from a description''. That left two open questions. How would those
+agents fare on the rest of a real chip-design workflow (build systems, integration,
+testbenches, physical design), and is there a benchmark that we trust to grade them on it?
 
 Over two and a half months we built five repositories, in roughly chronological order:
 \textsc{SWE-Universe-Verilog}, \textsc{RTLBench}, \textsc{CVDP-Harbor},
@@ -106,7 +106,8 @@ projects. The first thing we tried was the same recipe but for HDL. The
 \textsc{SWE-Universe-Verilog} pipeline crawls GitHub for repositories whose primary language
 is Verilog or SystemVerilog, or that match HDL topics (\texttt{verilog}, \texttt{fpga},
 \texttt{rtl}, \texttt{hdl}, \texttt{asic}). It collects all merged pull requests, then
-applies a multi-stage filter inspired by the SWE-Universe approach~\citep{sweuniverse}.
+applies a multi-stage filter inspired by the SWE-Universe data-curation
+methodology~\citep{chen2026sweuniverse}.
 
 \paragraph{Pipeline yield.}
 \begin{center}

@@ -60,14 +60,20 @@ findings, and concrete recommendations for future hardware agent benchmarks.
 \section{Introduction}
 
 LLM coding agents have improved quickly on general-purpose software-engineering benchmarks.
+HumanEval~\citep{chen2021humaneval} and MBPP~\citep{austin2021mbpp} have been saturated for
+some time. Project-level evaluations have followed a clear progression.
 SWE-bench~\citep{jimenez2024swebench} reported around 2 percent pass rate at launch, and
-current top agents pass close to 70 percent. Hardware description languages have followed a
-similar curve at the module level. VerilogEval~\citep{liu2023verilogeval},
-RTLLM~\citep{lu2024rtllm}, and the recent CVDP suite~\citep{nvidia2024cvdp} all report 90
-percent or higher pass rates for current frontier models. Where SWE-bench was succeeded by
-SWE-bench Verified~\citep{openai2024swebenchverified} and then by
-ProgramBench~\citep{openai2024programbench} as agents saturated the simpler regime, no
-equivalent harder benchmark exists for HDL. We propose one.
+current top agents pass close to 70 percent on its successor SWE-bench
+Verified~\citep{openai2024swebenchverified}. Training-data scaling
+(\citealp{yang2025swesmith}; \citealp{chen2026sweuniverse}) and contamination-controlled
+evaluation~\citep{jain2024livecodebench} extend the surface, and
+ProgramBench~\citep{yang2026programbench} pushes evaluation toward whole-program
+restoration. Hardware description languages have followed a similar curve at the module
+level. VerilogEval~\citep{liu2023verilogeval}, RTLLM~\citep{lu2024rtllm},
+VeriGen~\citep{thakur2024verigen}, RTLCoder~\citep{liu2024rtlcoder},
+OpenLLM-RTL~\citep{liu2025openllmrtl}, and the recent CVDP suite~\citep{nvidia2024cvdp} all
+report 90 percent or higher pass rates for current frontier models. No equivalent harder
+benchmark exists at the project scale for HDL. We propose one.
 
 The premise of \textsc{RTL-Universe} is that real hardware engineering takes place at the
 project scale. An engineer joining an open-source RISC-V core or deep-learning accelerator
@@ -129,19 +135,38 @@ hardware tasks.
 
 \paragraph{Module-level HDL benchmarks.}
 VerilogEval~\citep{liu2023verilogeval} (156 problems), RTLLM~\citep{lu2024rtllm} (50
-problems), and VeriGen~\citep{thakur2023verigen} grade single-module Verilog generation from
-natural-language descriptions. Test suites are 1 to 10 lines and the design is self-contained.
-CVDP~\citep{nvidia2024cvdp} (783 problems) extends this with non-agentic and agentic variants
-but stays at the module scale. None of these benchmarks asks the agent to operate on an
-existing build system or write code that is then linked into a larger project.
+problems), and VeriGen~\citep{thakur2024verigen} grade single-module Verilog generation from
+natural-language descriptions. Test suites are 1 to 10 lines and the design is
+self-contained. RTLCoder~\citep{liu2024rtlcoder}, OpenLLM-RTL~\citep{liu2025openllmrtl}, and
+BetterV~\citep{pei2024betterv} extend the data and supervision side of this regime, and
+ResBench~\citep{guo2025resbench} adds resource-awareness as a metric. CVDP
+\citep{nvidia2024cvdp} (783 problems) extends single-module Verilog with non-agentic and
+agentic variants but stays at the module scale. None of these benchmarks asks the agent to
+operate on an existing build system or write code that is then linked into a larger
+project.
+
+\paragraph{Agentic and conversational HDL design.}
+Chip-Chat~\citep{blocklove2023chipchat} and ChipGPT~\citep{chang2023chipgpt} explore
+LLM-driven chip design through dialogue. AutoChip~\citep{thakur2024autochip},
+VerilogCoder~\citep{ho2024verilogcoder}, MAGE~\citep{zhao2024mage},
+AutoVCoder~\citep{gao2024autovcoder}, and CodeV~\citep{zhao2024codev} build agentic loops
+around Verilog generation. ChipNeMo~\citep{liu2023chipnemo} domain-adapts an LLM to chip
+design, and GPT4AIGChip~\citep{fu2023gpt4aigchip} targets AI-accelerator design automation.
+All of these still operate at single-module or single-design scope. \textsc{RTL-Universe}
+moves the evaluation surface to the full upstream project.
 
 \paragraph{Agentic SWE benchmarks.}
 SWE-bench~\citep{jimenez2024swebench} runs agents against real Python GitHub issues.
 SWE-agent~\citep{yang2024sweagent} introduced the agent-computer interface that became
-standard. The benchmark progression from SWE-bench to SWE-bench
-Verified~\citep{openai2024swebenchverified} to ProgramBench~\citep{openai2024programbench}
-consistently increases task realism and removes paths that score without writing the code.
-\textsc{RTL-Universe} is an HDL-side analogue at the project-scale step.
+standard. SWE-bench Verified~\citep{openai2024swebenchverified} re-curates the suite for evaluation
+reliability. SWE-smith~\citep{yang2025swesmith} and SWE-Universe~\citep{chen2026sweuniverse}
+extend the training-data side. ProgramBench~\citep{yang2026programbench} pushes evaluation
+to whole-program restoration, the closest existing analogue to our setting.
+AgentBench~\citep{liu2024agentbench} and MLE-bench~\citep{chan2024mlebench} broaden the
+agentic-evaluation surface to general and ML-engineering tasks.
+CodePlan~\citep{bairi2024codeplan} and MetaGPT~\citep{hong2024metagpt} explore
+repository-level coordination. \textsc{RTL-Universe} is an HDL-side analogue of these
+project-scale efforts.
 
 \paragraph{End-to-end hardware-design benchmarks.}
 The authors' prior efforts include Spec2GDSBench~\citep{spec2gdsbench-w1, spec2gdsbench-w2,
@@ -156,10 +181,13 @@ real engineering surface area. \textsc{RTL-Universe} is the first design we have
 the test infrastructure is entirely upstream.
 
 \paragraph{Sandboxing and contamination.}
-Test-set contamination~\citep{golchin2024timetravel} and agent-side network access are the
-two ways an HDL benchmark can be silently passed without writing the code.
-Section~\ref{sec:audit} documents both, and we believe future agent benchmarks should treat
-both with equal care.
+Test-set contamination~\citep{golchin2024timetravel} is a recognised concern for code
+generation benchmarks. LiveCodeBench~\citep{jain2024livecodebench} explicitly tracks
+contamination dates. Agent-side network access is a complementary leak channel: an agent
+with browsing or vendor-side fetch tools can score without writing the code at all
+\citep{anthropic2024computeruse}. Section~\ref{sec:audit} documents both leak channels in
+the \textsc{RTL-Universe} run. We believe future agent benchmarks should treat both with
+equal care.
 
 \section{Benchmark Design and Task-Generation Pipeline}
 \label{sec:bench}
@@ -507,7 +535,7 @@ released on the \texttt{codex-experiments-202605} branch of
 \url{github.com/cs3220-research/rtl-universe}; total wall-clock for the run reported here
 was approximately 4 days on a 128-CPU 1\,TB-RAM lab server.
 
-\bibliography{refs}
+{\small \bibliography{refs}}
 
 \appendix
 \section{Bypass methods, summary}

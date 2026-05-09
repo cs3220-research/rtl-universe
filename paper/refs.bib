@@ -1,107 +1,322 @@
-@inproceedings{jimenez2024swebench,
-  title={{SWE-bench}: Can Language Models Resolve Real-World {GitHub} Issues?},
-  author={Jimenez, Carlos E. and Yang, John and Wettig, Alexander and
-          Yao, Shunyu and Pei, Kexin and Press, Ofir and Narasimhan, Karthik},
-  booktitle={International Conference on Learning Representations (ICLR)},
-  year={2024},
-}
+% All arXiv citations below were verified against arxiv.org abs pages on 2026-05-08.
+% Title, authors, and date were checked. Where the paper has a published venue we cite
+% it; otherwise we keep arXiv as the venue.
 
-@misc{openai2024swebenchverified,
-  title={Introducing {SWE-bench Verified}},
-  author={{OpenAI}},
-  howpublished={\url{https://openai.com/index/introducing-swe-bench-verified/}},
-  year={2024},
+% --- Agentic and project-scale software-engineering benchmarks ---
+
+@inproceedings{jimenez2024swebench,
+  title  = {{SWE-bench}: Can Language Models Resolve Real-World {GitHub} Issues?},
+  author = {Jimenez, Carlos E. and Yang, John and Wettig, Alexander and Yao, Shunyu
+            and Pei, Kexin and Press, Ofir and Narasimhan, Karthik},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year   = {2024},
+  eprint = {2310.06770},
+  archivePrefix = {arXiv},
 }
 
 @inproceedings{yang2024sweagent,
-  title={{SWE-agent}: Agent-Computer Interfaces Enable Automated Software Engineering},
-  author={Yang, John and Jimenez, Carlos E. and Wettig, Alexander and
-          Lieret, Kilian and Yao, Shunyu and Narasimhan, Karthik and Press, Ofir},
-  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
-  year={2024},
+  title  = {{SWE-agent}: Agent-Computer Interfaces Enable Automated Software Engineering},
+  author = {Yang, John and Jimenez, Carlos E. and Wettig, Alexander and Lieret, Kilian
+            and Yao, Shunyu and Narasimhan, Karthik and Press, Ofir},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year   = {2024},
+  eprint = {2405.15793},
+  archivePrefix = {arXiv},
 }
 
-@article{liu2023verilogeval,
-  title={{VerilogEval}: Evaluating Large Language Models for {Verilog} Code Generation},
-  author={Liu, Mingjie and Pinckney, Nathaniel and Khailany, Brucek and Ren, Haoxing},
-  journal={arXiv preprint arXiv:2309.07544},
-  year={2023},
+@misc{yang2025swesmith,
+  title  = {{SWE-smith}: Scaling Data for Software Engineering Agents},
+  author = {Yang, John and Lieret, Kilian and Jimenez, Carlos E. and Wettig, Alexander
+            and Khandpur, Kabir and Zhang, Yanzhe and Yao, Shunyu and Narasimhan, Karthik
+            and Press, Ofir},
+  year   = {2025},
+  eprint = {2504.21798},
+  archivePrefix = {arXiv},
 }
 
-@article{lu2024rtllm,
-  title={{RTLLM}: An Open-Source Benchmark for Design {RTL} Generation with Large Language Models},
-  author={Lu, Yao and Liu, Shang and Zhang, Qijun and Xie, Zhiyao},
-  journal={IEEE Asia and South Pacific Design Automation Conference (ASP-DAC)},
-  year={2024},
+@misc{yang2026programbench,
+  title  = {{ProgramBench}: Can Language Models Rebuild Programs From Scratch?},
+  author = {Yang, John and Lieret, Kilian and Ma, Jeffrey and Thakkar, Parth
+            and Pedchenko, Dmitrii and Sootla, Sten and McMilin, Emily and Yin, Pengcheng
+            and Hou, Rui and Synnaeve, Gabriel and Yang, Diyi and Press, Ofir},
+  year   = {2026},
+  eprint = {2605.03546},
+  archivePrefix = {arXiv},
 }
 
-@article{thakur2023verigen,
-  title={{VeriGen}: A Large Language Model for {Verilog} Code Generation},
-  author={Thakur, Shailja and Ahmad, Baleegh and Pearce, Hammond and
-          Tan, Benjamin and Dolan-Gavitt, Brendan and Karri, Ramesh and Garg, Siddharth},
-  journal={ACM Transactions on Design Automation of Electronic Systems (TODAES)},
-  volume={29},
-  number={3},
-  year={2023},
+@misc{chen2026sweuniverse,
+  title  = {{SWE-Universe}: Scale Real-World Verifiable Environments to Millions},
+  author = {Chen, Mouxiang and Zhang, Lei and Feng, Yunlong and Wang, Xuwu
+            and Zhao, Wenting and Cao, Ruisheng and Yang, Jiaxi and Chen, Jiawei
+            and Li, Mingze and Ma, Zeyao and Ge, Hao and Zhang, Zongmeng and Cui, Zeyu
+            and Liu, Dayiheng and Zhou, Jingren and Sun, Jianling and Lin, Junyang
+            and Hui, Binyuan},
+  year   = {2026},
+  eprint = {2602.02361},
+  archivePrefix = {arXiv},
 }
 
-@article{ho2024rtlcoder,
-  title={{RTLCoder}: Outperforming {GPT-3.5} in Design {RTL} Generation with Our Open-Source Dataset and Lightweight Solution},
-  author={Liu, Shang and Fang, Wenji and Lu, Yao and Zhang, Qijun and Zhang, Hongce and Xie, Zhiyao},
-  journal={arXiv preprint arXiv:2312.08617},
-  year={2023},
+@misc{openai2024swebenchverified,
+  title  = {Introducing {SWE-bench Verified}},
+  author = {{OpenAI}},
+  year   = {2024},
+  howpublished = {\url{https://openai.com/index/introducing-swe-bench-verified/}},
 }
 
-@inproceedings{blocklove2024chip,
-  title={Chip-Chat: Challenges and Opportunities in Conversational Hardware Design},
-  author={Blocklove, Jason and Garg, Siddharth and Karri, Ramesh and Pearce, Hammond},
-  booktitle={ACM/IEEE Workshop on Machine Learning for {CAD} (MLCAD)},
-  year={2024},
+@article{liu2024agentbench,
+  title  = {{AgentBench}: Evaluating {LLMs} as Agents},
+  author = {Liu, Xiao and Yu, Hao and Zhang, Hanchen and Xu, Yifan and Lei, Xuanyu
+            and Lai, Hanyu and Gu, Yu and Ding, Hangliang and Men, Kaiwen
+            and Yang, Kejuan and Zhang, Shudan and Deng, Xiang and Zeng, Aohan
+            and Du, Zhengxiao and Zhang, Chenhui and Shen, Sheng and Zhang, Tianjun
+            and Su, Yu and Sun, Huan and Huang, Minlie and Dong, Yuxiao and Tang, Jie},
+  journal = {International Conference on Learning Representations (ICLR)},
+  year   = {2024},
+  eprint = {2308.03688},
+  archivePrefix = {arXiv},
 }
 
-@misc{liu2024chipnemo,
-  title={{ChipNeMo}: Domain-Adapted {LLMs} for Chip Design},
-  author={Liu, Mingjie and Ene, Teodor-Dumitru and Kirby, Robert and Cheng, Chris and
-          Pinckney, Nathaniel and Liang, Rongjian and Alben, Jonah and Anand, Himyanshu and
-          Banerjee, Sanmitra and Bayraktaroglu, Ismet and others},
-  howpublished={\url{https://arxiv.org/abs/2311.00176}},
-  year={2024},
+@misc{chan2024mlebench,
+  title  = {{MLE-bench}: Evaluating Machine Learning Agents on Machine Learning Engineering},
+  author = {Chan, Jun Shern and Chowdhury, Neil and Jaffe, Oliver and Aung, James
+            and Sherburn, Dane and Mays, Evan and Starace, Giulio and Liu, Kevin
+            and Maksin, Leon and Patwardhan, Tejal and Madry, Aleksander and Weng, Lilian},
+  year   = {2024},
+  eprint = {2410.07095},
+  archivePrefix = {arXiv},
 }
 
-@misc{golchin2024timetravel,
-  title={Time Travel in {LLMs}: Tracing Data Contamination in Large Language Models},
-  author={Golchin, Shahriar and Surdeanu, Mihai},
-  howpublished={\url{https://arxiv.org/abs/2308.08493}},
-  year={2024},
+@inproceedings{bairi2024codeplan,
+  title  = {{CodePlan}: Repository-level Coding using {LLMs} and Planning},
+  author = {Bairi, Ramakrishna and Sonwane, Atharv and Kanade, Aditya and {C}, Vageesh D
+            and Iyer, Arun and Parthasarathy, Suresh and Rajamani, Sriram K.
+            and Ashok, B. and Shet, Shashank},
+  booktitle = {ACM Conference on Object-Oriented Programming Systems, Languages,
+               and Applications (OOPSLA)},
+  year   = {2024},
+  eprint = {2309.12499},
+  archivePrefix = {arXiv},
 }
 
-@misc{anthropicComputerUse2024,
-  title={Developing a Computer Use Model},
-  author={{Anthropic}},
-  howpublished={\url{https://www.anthropic.com/news/developing-computer-use}},
-  year={2024},
+@misc{hong2024metagpt,
+  title  = {{MetaGPT}: Meta Programming for a Multi-Agent Collaborative Framework},
+  author = {Hong, Sirui and Zhuge, Mingchen and Chen, Jiaqi and Zheng, Xiawu
+            and Cheng, Yuheng and Zhang, Ceyao and Wang, Jinlin and Wang, Zili
+            and Yau, Steven Ka Shing and Lin, Zijuan and Zhou, Liyang and Ran, Chenyu
+            and Xiao, Lingfeng and Wu, Chenglin and Schmidhuber, J{\"u}rgen},
+  year   = {2024},
+  eprint = {2308.00352},
+  archivePrefix = {arXiv},
 }
 
-@misc{openaiAgents2024,
-  title={Introducing the {Agents SDK}},
-  author={{OpenAI}},
-  howpublished={\url{https://openai.com/index/new-tools-for-building-agents/}},
-  year={2024},
+% --- Foundational code-generation benchmarks ---
+
+@misc{chen2021humaneval,
+  title  = {Evaluating Large Language Models Trained on Code},
+  author = {Chen, Mark and Tworek, Jerry and Jun, Heewoo and Yuan, Qiming
+            and Pinto, Henrique Ponde de Oliveira and Kaplan, Jared and others},
+  year   = {2021},
+  eprint = {2107.03374},
+  archivePrefix = {arXiv},
 }
+
+@misc{austin2021mbpp,
+  title  = {Program Synthesis with Large Language Models},
+  author = {Austin, Jacob and Odena, Augustus and Nye, Maxwell and Bosma, Maarten
+            and Michalewski, Henryk and Dohan, David and Jiang, Ellen and Cai, Carrie
+            and Terry, Michael and Le, Quoc and Sutton, Charles},
+  year   = {2021},
+  eprint = {2108.07732},
+  archivePrefix = {arXiv},
+}
+
+@misc{jain2024livecodebench,
+  title  = {{LiveCodeBench}: Holistic and Contamination Free Evaluation of Large Language Models for Code},
+  author = {Jain, Naman and Han, King and Gu, Alex and Li, Wen-Ding and Yan, Fanjia
+            and Zhang, Tianjun and Wang, Sida and Solar-Lezama, Armando
+            and Sen, Koushik and Stoica, Ion},
+  year   = {2024},
+  eprint = {2403.07974},
+  archivePrefix = {arXiv},
+}
+
+% --- Single-module HDL benchmarks ---
+
+@inproceedings{liu2023verilogeval,
+  title  = {{VerilogEval}: Evaluating Large Language Models for {Verilog} Code Generation},
+  author = {Liu, Mingjie and Pinckney, Nathaniel and Khailany, Brucek and Ren, Haoxing},
+  booktitle = {IEEE/ACM International Conference on Computer-Aided Design (ICCAD)},
+  year   = {2023},
+  eprint = {2309.07544},
+  archivePrefix = {arXiv},
+}
+
+@inproceedings{lu2024rtllm,
+  title  = {{RTLLM}: An Open-Source Benchmark for Design {RTL} Generation with Large Language Model},
+  author = {Lu, Yao and Liu, Shang and Zhang, Qijun and Xie, Zhiyao},
+  booktitle = {IEEE Asia and South Pacific Design Automation Conference (ASP-DAC)},
+  year   = {2024},
+  eprint = {2308.05345},
+  archivePrefix = {arXiv},
+}
+
+@article{thakur2024verigen,
+  title  = {Benchmarking Large Language Models for Automated {Verilog} {RTL} Code Generation},
+  author = {Thakur, Shailja and Ahmad, Baleegh and Fan, Zhenxing and Pearce, Hammond
+            and Tan, Benjamin and Karri, Ramesh and Dolan-Gavitt, Brendan and Garg, Siddharth},
+  journal = {ACM Transactions on Design Automation of Electronic Systems (TODAES)},
+  volume = {29},
+  number = {3},
+  year   = {2024},
+  eprint = {2212.11140},
+  archivePrefix = {arXiv},
+}
+
+@inproceedings{liu2024rtlcoder,
+  title  = {{RTLCoder}: Outperforming {GPT-3.5} in Design {RTL} Generation with Our Open-Source Dataset and Lightweight Solution},
+  author = {Liu, Shang and Fang, Wenji and Lu, Yao and Zhang, Qijun and Zhang, Hongce and Xie, Zhiyao},
+  booktitle = {IEEE LLM Aided Design (LAD) Workshop},
+  year   = {2024},
+  eprint = {2312.08617},
+  archivePrefix = {arXiv},
+}
+
+@misc{liu2025openllmrtl,
+  title  = {{OpenLLM-RTL}: Open Dataset and Benchmark for {LLM}-Aided Design {RTL} Generation},
+  author = {Liu, Shang and Lu, Yao and Fang, Wenji and Li, Mengming and Xie, Zhiyao},
+  year   = {2025},
+  eprint = {2503.15112},
+  archivePrefix = {arXiv},
+}
+
+@misc{guo2025resbench,
+  title  = {{ResBench}: Benchmarking {LLM}-Generated {FPGA} Designs with Resource Awareness},
+  author = {Guo, Ce and Zhao, Tong},
+  year   = {2025},
+  eprint = {2503.08823},
+  archivePrefix = {arXiv},
+}
+
+@misc{pei2024betterv,
+  title  = {{BetterV}: Controlled {Verilog} Generation with Discriminative Guidance},
+  author = {Pei, Zehua and Zhen, Hui-Ling and Yuan, Mingxuan and Huang, Yu and Yu, Bei},
+  year   = {2024},
+  eprint = {2402.03375},
+  archivePrefix = {arXiv},
+}
+
+% --- Agentic and conversational HDL design ---
+
+@inproceedings{blocklove2023chipchat,
+  title  = {{Chip-Chat}: Challenges and Opportunities in Conversational Hardware Design},
+  author = {Blocklove, Jason and Garg, Siddharth and Karri, Ramesh and Pearce, Hammond},
+  booktitle = {ACM/IEEE Workshop on Machine Learning for {CAD} (MLCAD)},
+  year   = {2023},
+  eprint = {2305.13243},
+  archivePrefix = {arXiv},
+}
+
+@inproceedings{thakur2024autochip,
+  title  = {{AutoChip}: Automating {HDL} Generation Using {LLM} Feedback},
+  author = {Thakur, Shailja and Blocklove, Jason and Pearce, Hammond and Tan, Benjamin
+            and Garg, Siddharth and Karri, Ramesh},
+  booktitle = {ACM/IEEE Workshop on Machine Learning for {CAD} (MLCAD)},
+  year   = {2024},
+  eprint = {2311.04887},
+  archivePrefix = {arXiv},
+}
+
+@misc{chang2023chipgpt,
+  title  = {{ChipGPT}: How far are we from natural language hardware design?},
+  author = {Chang, Kaiyan and Wang, Ying and Ren, Haimeng and Wang, Mengdi
+            and Liang, Shengwen and Han, Yinhe and Li, Huawei and Li, Xiaowei},
+  year   = {2023},
+  eprint = {2305.14019},
+  archivePrefix = {arXiv},
+}
+
+@misc{liu2023chipnemo,
+  title  = {{ChipNeMo}: Domain-Adapted {LLMs} for Chip Design},
+  author = {Liu, Mingjie and Ene, Teodor-Dumitru and Kirby, Robert and Cheng, Chris
+            and Pinckney, Nathaniel and Liang, Rongjian and Alben, Jonah
+            and Anand, Himyanshu and Banerjee, Sanmitra and Bayraktaroglu, Ismet and others},
+  year   = {2023},
+  eprint = {2311.00176},
+  archivePrefix = {arXiv},
+}
+
+@misc{ho2024verilogcoder,
+  title  = {{VerilogCoder}: Autonomous {Verilog} Coding Agents with Graph-based Planning and Abstract Syntax Tree-based Waveform Tracing Tool},
+  author = {Ho, Chia-Tung and Ren, Haoxing and Khailany, Brucek},
+  year   = {2024},
+  eprint = {2408.08927},
+  archivePrefix = {arXiv},
+}
+
+@misc{zhao2024codev,
+  title  = {{CodeV}: Empowering {LLMs} with {HDL} Generation through Multi-Level Summarization},
+  author = {Zhao, Yang and Huang, Di and Li, Chongxiao and Jin, Pengwei and Song, Muxin
+            and Xu, Yinan and Zhang, Ziyuan and Wang, Lanshun and Liang, Kaiyuan
+            and Zhang, Ting and Fu, Qi and Hao, Yifan and Du, Zidong
+            and Guo, Qi and Hu, Xing and Sun, Ninghui and Chen, Yunji},
+  year   = {2024},
+  eprint = {2407.10424},
+  archivePrefix = {arXiv},
+}
+
+@misc{zhao2024mage,
+  title  = {{MAGE}: A Multi-Agent Engine for Automated {RTL} Code Generation},
+  author = {Zhao, Yujie and Zhang, Hejia and Huang, Hanxian and Yu, Zhongming and Zhao, Jishen},
+  year   = {2024},
+  eprint = {2412.07822},
+  archivePrefix = {arXiv},
+}
+
+@misc{gao2024autovcoder,
+  title  = {{AutoVCoder}: A Systematic Framework for Automated {Verilog} Code Generation using {LLMs}},
+  author = {Gao, Mingzhe and Zhao, Jieru and Lin, Zhe and Ding, Wenchao and Hou, Xiaofeng
+            and Feng, Yu and Xue, Chengzhong and Li, Minyi},
+  year   = {2024},
+  eprint = {2407.18333},
+  archivePrefix = {arXiv},
+}
+
+@misc{fu2023gpt4aigchip,
+  title  = {{GPT4AIGChip}: Towards Next-Generation {AI} Accelerator Design Automation via Large Language Models},
+  author = {Fu, Yonggan and Zhang, Yongan and Yu, Zhongzhi and Li, Sixu and Ye, Zhifan
+            and Li, Chaojian and Wan, Cheng and Lin, Yingyan},
+  year   = {2023},
+  eprint = {2309.10730},
+  archivePrefix = {arXiv},
+}
+
+% --- NVIDIA CVDP ---
 
 @misc{nvidia2024cvdp,
-  title={{CVDP}: A Comprehensive Verilog Design Problems Benchmark},
-  author={{NVIDIA Research}},
-  howpublished={\url{https://github.com/NVlabs/CVDP-benchmark}},
-  year={2024},
+  title  = {{CVDP}: Comprehensive {Verilog} Design Problems benchmark},
+  author = {{NVIDIA Research}},
+  howpublished = {\url{https://github.com/NVlabs/CVDP-benchmark}},
+  year   = {2024},
 }
 
-@misc{openai2024programbench,
-  title={Introducing {ProgramBench}: harder coding agent evaluations},
-  author={{OpenAI}},
-  howpublished={Technical report (programbench)},
-  year={2024},
+% --- Contamination and sandboxing ---
+
+@misc{golchin2024timetravel,
+  title  = {Time Travel in {LLMs}: Tracing Data Contamination in Large Language Models},
+  author = {Golchin, Shahriar and Surdeanu, Mihai},
+  year   = {2024},
+  eprint = {2308.08493},
+  archivePrefix = {arXiv},
 }
+
+@misc{anthropic2024computeruse,
+  title  = {Developing a Computer Use Model},
+  author = {{Anthropic}},
+  howpublished = {\url{https://www.anthropic.com/news/developing-computer-use}},
+  year   = {2024},
+}
+
+% --- Authors' prior work (internal weekly reports for the spec-to-GDS benchmark) ---
 
 @techreport{spec2gdsbench-w1,
   author = {David Andrews and Saketh Reddy},
@@ -125,11 +340,4 @@
   institution = {Internal weekly research report},
   year = {2026},
   month = apr,
-}
-
-@misc{sweuniverse,
-  title = {{SWE-Universe}: A Multi-Stage Filtering Methodology for Software-Engineering Benchmarks},
-  author = {Anthropic},
-  howpublished = {arXiv:2602.02361},
-  year = {2026},
 }
