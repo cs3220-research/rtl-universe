@@ -145,6 +145,19 @@ agentic variants but stays at the module scale. None of these benchmarks asks th
 operate on an existing build system or write code that is then linked into a larger
 project.
 
+\paragraph{Repository-level hardware-agent benchmarks.}
+The closest concurrent work is HWE-Bench~\citep{cui2026hwebench}, which evaluates LLM
+agents on real-world hardware bug repair across full repositories
+(Ibex, CVA6, OpenTitan, Caliptra, Rocket Chip) using native simulation and regression
+flows. \textsc{RTL-Universe} is complementary: instead of giving the agent a bug report
+and asking for a minimal patch, we strip one design unit and require closed-book
+restoration from the remaining repository context. The two settings exercise different
+failure modes: HWE-Bench emphasises fault localisation and minimal-diff editing under an
+explicit bug description, whereas \textsc{RTL-Universe} emphasises source leakage,
+sandboxing, and verifier validity, since the upstream sources are physically reachable on
+the public internet. Clover~\citep{luo2026clover} explores a neural-symbolic harness for
+verified RTL repair on related repository-scale tasks.
+
 \paragraph{Agentic and conversational HDL design.}
 Chip-Chat~\citep{blocklove2023chipchat} and ChipGPT~\citep{chang2023chipgpt} explore
 LLM-driven chip design through dialogue. AutoChip~\citep{thakur2024autochip},
@@ -470,6 +483,31 @@ capabilities that route through the harness vendor's servers, not through the co
 network stack. The \texttt{/etc/hosts} sinkhole cannot reach them. We had not noticed the
 Codex MCP existed when we built the sandbox. It accounts for one of GPT-5.5's perfect scores.
 
+\begin{table}[h]
+\centering
+\caption{The eight observed sandbox-bypass methods, plus three verifier exploits.}
+\label{tab:bypasses}
+\footnotesize
+\begin{tabular}{l p{6.5cm} l}
+\toprule
+\# & Method & Used (perfect score) by \\
+\midrule
+A1 & Third-party Git mirror (\texttt{blizzard.systems})            & GPT-5.5 ($\times 2$) \\
+A2 & GitHub-backed CDN (\texttt{cdn.jsdelivr.net/gh})              & Opus \\
+A3 & GitHub-to-text service (\texttt{gitextract.com})              & GPT-5.5 \\
+A4 & Software Heritage Archive vault                               & Opus \\
+A5 & \texttt{curl --resolve} + IP literal                          & GPT-5.5 \\
+A6 & Other mirrors (gitee, ghproxy, unpkg, r.jina.ai)              & none successful \\
+B1 & Claude Code \texttt{WebFetch}                                 & Opus \\
+B2 & Codex MCP \texttt{github\_fetch\_file}                        & GPT-5.5 \\
+B3 & Codex MCP \texttt{web\_search}                                & none successful \\
+C1 & Behavioural stub (no real implementation)                     & GPT-5.5 \\
+C2 & Verifier exit-code exploit                                    & GLM-5.1 \\
+C3 & No-op \texttt{assert True} scoreboard exploit                 & Opus \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \paragraph{Category C: Verifier exploits.}
 The Ibex \texttt{simple\_system} \texttt{tests/test.sh}'s pass criterion is ``simulator exit
 code $= 0$''. An empty top-level wrapper that runs Verilator's setup phase and exits clean
@@ -535,33 +573,6 @@ released on the \texttt{codex-experiments-202605} branch of
 \url{github.com/cs3220-research/rtl-universe}; total wall-clock for the run reported here
 was approximately 4 days on a 128-CPU 1\,TB-RAM lab server.
 
-{\small \bibliography{refs}}
-
-\appendix
-\section{Bypass methods, summary}
-
-\begin{table}[h]
-\centering
-\caption{Eight observed sandbox-bypass methods.}
-\footnotesize
-\begin{tabular}{l p{6.5cm} l}
-\toprule
-\# & Method & Used (perfect score) by \\
-\midrule
-A1 & Third-party Git mirror (\texttt{blizzard.systems})            & GPT-5.5 ($\times 2$) \\
-A2 & GitHub-backed CDN (\texttt{cdn.jsdelivr.net/gh})              & Opus \\
-A3 & GitHub-to-text service (\texttt{gitextract.com})              & GPT-5.5 \\
-A4 & Software Heritage Archive vault                               & Opus \\
-A5 & \texttt{curl --resolve} + IP literal                          & GPT-5.5 \\
-A6 & Other mirrors (gitee, ghproxy, unpkg, r.jina.ai)              & none successful \\
-B1 & Claude Code \texttt{WebFetch}                                 & Opus \\
-B2 & Codex MCP \texttt{github\_fetch\_file}                        & GPT-5.5 \\
-B3 & Codex MCP \texttt{web\_search}                                & none successful \\
-C1 & Behavioural stub (no real implementation)                     & GPT-5.5 \\
-C2 & Verifier exit-code exploit                                    & GLM-5.1 \\
-C3 & No-op \texttt{assert True} scoreboard exploit                 & Opus \\
-\bottomrule
-\end{tabular}
-\end{table}
+{\footnotesize \bibliography{refs}}
 
 \end{document}
