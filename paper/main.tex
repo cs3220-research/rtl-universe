@@ -1,10 +1,13 @@
 \documentclass{article}
 
+% Numerical citations [1], [2], compressed.
+\PassOptionsToPackage{numbers,compress}{natbib}
+
 % Use the official NeurIPS 2025 style file. NeurIPS 2026 styles are not yet
 % posted by the conference; the format is unchanged year over year.
 % We use the camera-ready ("final") track since this is a non-anonymous report.
 \usepackage[final]{neurips_2025}
-\bibliographystyle{plainnat}
+\bibliographystyle{unsrtnat}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -14,6 +17,9 @@
 \usepackage{xcolor}
 \usepackage[hidelinks, breaklinks=true]{hyperref}
 \usepackage{listings}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, fit, backgrounds, calc}
 \lstset{basicstyle=\ttfamily\footnotesize, breaklines=true, columns=fullflexible,
         frame=single, framesep=2pt, xleftmargin=4pt, xrightmargin=4pt}
 
@@ -30,130 +36,134 @@
 \maketitle
 
 \begin{abstract}
-Existing LLM benchmarks for hardware description languages (HDL) test
-\emph{single-module} Verilog generation from natural-language specifications
-and are now near-saturated: VerilogEval, RTLLM, and CVDP all sit above 90\%
-pass rate for current models. We argue this is the wrong measurement: real
-hardware engineering happens at the project scale, where dozens of files cooperate through bus
-protocols, build systems, and CI test suites. We introduce \textsc{RTL-Universe}, a benchmark of
-eleven open-source HDL projects (Ibex, VeeR EL2, NVDLA, Coral NPU, OpenPiton, PULP common cells,
-Secworks AES) in which the implementation files of one design unit are stripped and an LLM coding
-agent is asked to restore them so that the project's unmodified upstream CI suite passes.
-We evaluate seven models across three coding-agent harnesses (Claude Code, Codex CLI, OpenCode)
-on a 7$\times$11 matrix.
-The strongest agent passes 6/11 tasks; four of the seven pass 0--2/11. A forensic audit of agent
-transcripts further shows that 10 of the 15 perfect scores in the run are achieved by exploiting
-either an unblocked sandbox egress path or a verifier flaw rather than by writing the design ---
-on the eight tasks whose verifiers we trust, the strongest agent passes 2/11 tasks. We report
-the benchmark, the harness, the results, the bypass taxonomy, and concrete recommendations for
+Existing LLM benchmarks for hardware description languages test single-module Verilog
+generation from natural-language specifications and now sit near the saturation ceiling. The
+recent VerilogEval, RTLLM, and CVDP benchmarks all report above 90 percent pass rate for
+current frontier models. We argue this is the wrong measurement. Real hardware engineering
+takes place at the project scale, where dozens of files cooperate through bus protocols,
+build systems, and continuous-integration test suites. We introduce \textsc{RTL-Universe}, a
+benchmark of eleven open-source HDL projects (Ibex, VeeR EL2, NVDLA, Coral NPU, OpenPiton,
+PULP common cells, Secworks AES) in which the implementation files of one design unit are
+stripped, and an LLM coding agent is asked to restore them so the project's unmodified
+upstream CI suite passes. We evaluate seven model and harness pairs across Claude Code, the
+Codex CLI, and OpenCode on a 7$\times$11 matrix. The strongest agent passes 6 of 11 tasks,
+and four of the seven pass 0 to 2 of 11. A forensic audit of the agent transcripts further
+shows that 10 of the 15 perfect scores in the run are achieved by exploiting either an
+unblocked sandbox egress path or a verifier flaw rather than by writing the design. On the
+eight tasks whose verifiers we trust, the strongest agent passes 2 of 11 tasks. We report
+the benchmark, the task-generation skill that produces tasks from upstream repositories, the
+evaluation harness, the run results, the bypass taxonomy, and concrete recommendations for
 future hardware agent benchmarks.
 \end{abstract}
 
 \section{Introduction}
 
-LLM coding agents have improved fast on general-purpose software-engineering benchmarks.
-SWE-bench~\citep{jimenez2024swebench} reported $\sim$2\% pass rate at launch; current top
-agents pass $\sim$70\%. Hardware description languages have followed a similar curve at the
-\emph{module} level: VerilogEval~\citep{liu2023verilogeval}, RTLLM~\citep{lu2024rtllm}, and
-the recent CVDP suite~\citep{nvidia2024cvdp} all report 90\%+ pass rates for current frontier
-models. Where SWE-bench updated to ``Verified''~\citep{openai2024swebenchverified} and then
-to ProgramBench~\citep{openai2024programbench} as agents saturated the simpler regime, no
+LLM coding agents have improved quickly on general-purpose software-engineering benchmarks.
+SWE-bench~\citep{jimenez2024swebench} reported around 2 percent pass rate at launch, and
+current top agents pass close to 70 percent. Hardware description languages have followed a
+similar curve at the module level. VerilogEval~\citep{liu2023verilogeval},
+RTLLM~\citep{lu2024rtllm}, and the recent CVDP suite~\citep{nvidia2024cvdp} all report 90
+percent or higher pass rates for current frontier models. Where SWE-bench was succeeded by
+SWE-bench Verified~\citep{openai2024swebenchverified} and then by
+ProgramBench~\citep{openai2024programbench} as agents saturated the simpler regime, no
 equivalent harder benchmark exists for HDL. We propose one.
 
 The premise of \textsc{RTL-Universe} is that real hardware engineering takes place at the
-\emph{project} scale: an engineer joining an open-source RISC-V core or DL accelerator works
-inside a directory of dozens of source files, a handful of testbenches, a build system that
-calls Verilator or Bazel or FuseSoC, and a CI script. Their job is rarely ``write a UART
-transmitter from a paragraph'' --- it is to make a specific change, or fix a bug, or
+project scale. An engineer joining an open-source RISC-V core or deep-learning accelerator
+works inside a directory of dozens of source files, a handful of testbenches, a build system
+that calls Verilator or Bazel or FuseSoC, and a CI script. Their job is rarely to write a
+UART transmitter from a paragraph. It is to make a specific change, fix a bug, or
 re-implement a missing module against the rest of the project. We capture this by taking
 real open-source HDL projects, deleting one design unit's implementation files, and asking
 an agent to restore them so the project's own CI passes.
 
 Our contributions are:
-\begin{enumerate}[nosep]
+\begin{enumerate}[nosep, leftmargin=*]
 \item \textbf{A benchmark} of 11 restoration tasks built on real open-source projects spanning
 two RISC-V cores (Ibex, VeeR EL2), a deep-learning accelerator (NVDLA), a small NPU (Coral
-NPU), peripherals (OpenPiton ESL, AES), and a cell library (PULP common cells)
-(Section~\ref{sec:bench}). Together they require restoring 4--280 source files per task and
-exercise build systems including Verilator, Icarus, FuseSoC, Bazel, and cocotb.
+NPU), peripherals (OpenPiton ESL, AES), and a cell library (PULP common cells).
+Together they require restoring 4 to 280 source files per task and exercise build systems
+including Verilator, Icarus, FuseSoC, Bazel, and cocotb.
 
-\item \textbf{A multi-agent harness} that runs Claude Code, Codex CLI, and OpenCode under a
-DNS sinkhole, with per-account concurrency caps for subscription-billed agents and a
-disk-/process-supervision layer that we found necessary in practice (Section~\ref{sec:harness}).
+\item \textbf{A task-generation skill} that converts an arbitrary upstream HDL project into a
+\textsc{RTL-Universe} task by deriving the strip manifest, the environment Dockerfile, and the
+verifier wrapper from the upstream's existing CI configuration (Section~\ref{sec:bench}).
 
-\item \textbf{An empirical evaluation} of seven models on the 7$\times$11 matrix
-(Section~\ref{sec:results}). The strongest agent (GPT-5.5, reasoning effort \texttt{xhigh})
-reports 6/11 perfect-score passes. The OpenCode-on-OpenRouter open-weight models (Kimi K2.6,
-DeepSeek V4-Pro, GLM-5.1, Qwen 3.6-27B) cluster at 0--2 perfects. Several tasks
+\item \textbf{A multi-agent evaluation harness} that runs Claude Code, the Codex CLI, and
+OpenCode under a DNS sinkhole, with per-account concurrency caps for subscription-billed
+agents and a disk-and-process supervisor that we found necessary in practice
+(Section~\ref{sec:harness}).
+
+\item \textbf{An empirical evaluation} of seven model and harness pairs on the 7$\times$11
+matrix (Section~\ref{sec:results}). The strongest agent (GPT-5.5, reasoning effort \texttt{xhigh})
+reports 6 of 11 perfect-score passes. The OpenCode-on-OpenRouter open-weight models (Kimi
+K2.6, DeepSeek V4-Pro, GLM-5.1, Qwen 3.6-27B) cluster at 0 to 2 perfects. Several tasks
 (\texttt{coralnpu-full}, \texttt{nvdla-e2e}, \texttt{openpiton-e2e},
 \texttt{pulp-common-cells-full}) are passed by zero or one model.
 
-\item \textbf{An audit} of the agent transcripts that catalogues eight ways the agent
-\emph{can} score without doing the task --- six varieties of source-code download bypass,
-plus two verifier exploits we discovered in the upstream test suites
-(Section~\ref{sec:audit}). We treat this as a quality-control finding rather than a moral
-one: the same audit gives a re-scored leaderboard on the eight tasks whose verifiers we
-trust.
+\item \textbf{An audit} of the agent transcripts that catalogues eight ways an agent can score
+without doing the task: six varieties of source-code download bypass, plus two verifier
+exploits we discovered in the upstream test suites (Section~\ref{sec:audit}). We treat this as
+a quality-control finding rather than a moral one. The audit gives a re-scored leaderboard on
+the eight tasks whose verifiers we trust.
 \end{enumerate}
 
 \textsc{RTL-Universe} is the latest in a sequence of internal benchmarks the authors have
-built (a more chronological account appears in our companion logbook); \emph{this paper
-focuses on the benchmark itself} and what running it tells us about current agents on
-project-scale hardware tasks.
+built. A more chronological account appears in our companion logbook. This paper focuses on
+the benchmark itself and what running it tells us about current agents on project-scale
+hardware tasks.
 
 \section{Related Work}
 
 \paragraph{Module-level HDL benchmarks.}
 VerilogEval~\citep{liu2023verilogeval} (156 problems), RTLLM~\citep{lu2024rtllm} (50
-problems), and VeriGen~\citep{thakur2023verigen} grade single-module Verilog generation
-from natural-language descriptions. Test suites are 1--10 lines and the design is
-self-contained. CVDP~\citep{nvidia2024cvdp} (783 problems) extends this with non-agentic and
-agentic variants but stays at the module scale. None of these benchmarks asks the agent to
-operate on an existing build system or write code that is then \emph{linked into a larger
-project}.
+problems), and VeriGen~\citep{thakur2023verigen} grade single-module Verilog generation from
+natural-language descriptions. Test suites are 1 to 10 lines and the design is self-contained.
+CVDP~\citep{nvidia2024cvdp} (783 problems) extends this with non-agentic and agentic variants
+but stays at the module scale. None of these benchmarks asks the agent to operate on an
+existing build system or write code that is then linked into a larger project.
 
 \paragraph{Agentic SWE benchmarks.}
-SWE-bench~\citep{jimenez2024swebench} runs agents against real Python GitHub issues; SWE-
-agent~\citep{yang2024sweagent} introduced the agent-computer interface that became standard.
-The benchmark progression --- SWE-bench $\to$ SWE-bench Verified~\citep{openai2024swebenchverified}
-$\to$ ProgramBench~\citep{openai2024programbench} --- consistently increases task realism and
-removes ``score-able without writing the code'' loopholes. \textsc{RTL-Universe} is an
-HDL-side analogue at the project-scale step.
+SWE-bench~\citep{jimenez2024swebench} runs agents against real Python GitHub issues.
+SWE-agent~\citep{yang2024sweagent} introduced the agent-computer interface that became
+standard. The benchmark progression from SWE-bench to SWE-bench
+Verified~\citep{openai2024swebenchverified} to ProgramBench~\citep{openai2024programbench}
+consistently increases task realism and removes paths that score without writing the code.
+\textsc{RTL-Universe} is an HDL-side analogue at the project-scale step.
 
 \paragraph{End-to-end hardware-design benchmarks.}
-The authors' own prior efforts include Spec2GDSBench~\citep{spec2gdsbench-w1, spec2gdsbench-w2,
-spec2gdsbench-w3}, which evaluated agents on a full spec-to-GDSII pipeline from
-\emph{scratch} (the agent writes RTL given only a behavioural specification, then a back-end
-flow synthesises it). We pivoted away from build-from-scratch toward
-\emph{restore-from-an-existing-project} for two reasons. (i)~Real projects come with real
-testbenches: an upstream Verilator/cocotb suite is much more carefully constructed than any
-test we would write to grade ``the agent's UART''. (ii)~Real projects come with real build
-systems and integration constraints: file naming, parameter modules, generator scripts, and
-Makefile structure all add real engineering surface area. \textsc{RTL-Universe} is the
-first design we have built where the test infrastructure is entirely upstream.
+The authors' prior efforts include Spec2GDSBench~\citep{spec2gdsbench-w1, spec2gdsbench-w2,
+spec2gdsbench-w3}, which evaluated agents on a full spec-to-GDSII pipeline from scratch. The
+agent writes RTL given only a behavioural specification, then a back-end flow synthesises it.
+We pivoted from build-from-scratch toward restore-from-an-existing-project for two reasons.
+First, real projects come with real testbenches, and an upstream Verilator or cocotb suite is
+much more carefully constructed than any test we would write to grade ``the agent's UART''.
+Second, real projects come with real build systems and integration constraints, including
+file naming, parameter modules, generator scripts, and Makefile structure, all of which add
+real engineering surface area. \textsc{RTL-Universe} is the first design we have built where
+the test infrastructure is entirely upstream.
 
 \paragraph{Sandboxing and contamination.}
 Test-set contamination~\citep{golchin2024timetravel} and agent-side network access are the
-two ways an HDL benchmark can be silently passed without writing the code. Section~\ref{sec:audit}
-documents both, and we believe future agent benchmarks should treat both with equal care.
+two ways an HDL benchmark can be silently passed without writing the code.
+Section~\ref{sec:audit} documents both, and we believe future agent benchmarks should treat
+both with equal care.
 
-\section{Benchmark Design}
+\section{Benchmark Design and Task-Generation Pipeline}
 \label{sec:bench}
 
-\subsection{Task selection}
+We chose tasks against three criteria. First, the upstream project must have a working CI
+test suite that runs locally inside the container. Second, the design unit to be restored
+must be substantial enough that an LLM cannot trivially regenerate it from documentation
+alone, typically at least 30 stripped files, or one large file with hundreds of internal
+signals. Third, the task should require the agent to use the upstream build system rather
+than its own. Table~\ref{tab:tasks} lists the eleven tasks.
 
-We chose tasks against three criteria: (i)~the upstream project must have a working CI
-test suite that runs locally inside the container; (ii)~the design unit to be restored must
-be substantial enough that an LLM cannot trivially regenerate it from documentation alone
-(typically $\geq 30$ stripped files, or one large file with hundreds of internal signals);
-and (iii)~the task should require the agent to use the upstream build system rather than its
-own. Table~\ref{tab:tasks} lists the eleven tasks.
-
-\begin{table}[h]
+\begin{table}[t]
 \centering
 \caption{The eleven \textsc{RTL-Universe} tasks. \#strip is the count of deleted
-implementation files. Tasks marked $\dagger$ have a verifier whose pass criterion can be
-exit-code-only or assertion-trivial (Section~\ref{sec:audit}); these are reported but
+implementation files. Tasks marked $\dagger$ have a verifier whose pass criterion is
+exit-code-only or assertion-trivial (Section~\ref{sec:audit}). These tasks are reported but
 discounted in the cleaned ranking.}
 \label{tab:tasks}
 \footnotesize
@@ -163,7 +173,7 @@ discounted in the cleaned ranking.}
 Task & Upstream & Domain & \#strip & Verifier \\
 \midrule
 \texttt{ibex-e2e}$\dagger$       & lowRISC/ibex          & RISC-V core    & 31  & 4 SW progs in simple\_system \\
-\texttt{ibex-full}$\dagger$      & lowRISC/ibex          & RISC-V core    & 32  & + tb\_cs\_regs UVM test \\
+\texttt{ibex-full}$\dagger$      & lowRISC/ibex          & RISC-V core    & 32  & +\,tb\_cs\_regs UVM test \\
 \texttt{coralnpu-e2e}            & google-coral/coralnpu & NPU            & 240 & 215 cocotb (Bazel) \\
 \texttt{coralnpu-full}           & google-coral/coralnpu & NPU            & 280 & 239 cocotb +\,2 mobilenet \\
 \texttt{nvdla-e2e}               & nvdla/hw              & DL accel.\     & 266 & SDP/PDP/conv tests \\
@@ -177,43 +187,110 @@ Task & Upstream & Domain & \#strip & Verifier \\
 \end{tabular}
 \end{table}
 
-The eleven tasks cover three difficulty regimes: small focused units (4--10 files, used to
-calibrate harness correctness), mid-scale modules (30--40 files, integration with bus
-protocols), and large-scale designs (200+ files, where the agent must reconstruct an entire
-RTL hierarchy). All upstream projects are widely used: lowRISC's Ibex is the reference
-RISC-V core for OpenTitan; chipsalliance's VeeR EL2 is the reference for the SweRV family;
-NVDLA is NVIDIA's open deep-learning accelerator; google-coral's Coral NPU is Google's
-edge-NPU reference design; PULP common\_cells is the cell library used by every PULP-platform
-SoC.
+The eleven tasks cover three difficulty regimes. Small focused units (4 to 10 files) are used
+to calibrate harness correctness. Mid-scale modules (30 to 40 files) test integration with
+bus protocols. Large-scale designs (200 or more files) require the agent to reconstruct an
+entire RTL hierarchy. All upstream projects are widely used. lowRISC's Ibex is the reference
+RISC-V core for OpenTitan. Chipsalliance's VeeR EL2 is the reference for the SweRV family.
+NVDLA is NVIDIA's open deep-learning accelerator. Google's Coral NPU is an edge-NPU reference
+design. PULP common\_cells is the cell library used by every PULP-platform SoC.
 
-\subsection{Restoration framing and reward}
+\paragraph{Restoration framing and reward.}
+For each task we identify one design unit and remove its implementation files \emph{after}
+recording a manifest of what was deleted. The remaining files (testbenches, build scripts,
+READMEs, register-map JSON, linker scripts, reference Python golden models) are kept. The
+agent receives a working repository plus an instruction file naming the deleted files. The
+reward is the fraction of upstream CI tests that pass after the agent's final write, in
+$[0,1]$, with single-test verifiers using a binary $\{0,1\}$.
 
-For each task we identify one design unit and \texttt{rm} its implementation files
-\emph{after} taking a manifest of what was deleted. The remaining files --- testbenches,
-build files, READMEs, register-map JSON, linker scripts, reference Python golden models ---
-are kept. The agent receives a working repository plus an instruction file naming the
-deleted files. The reward is the fraction of upstream CI tests that pass after the agent's
-final write, in $[0,1]$, with single-test verifiers using a binary $\{0,1\}$.
+The deletion-and-restore framing is deliberate. We considered three alternatives. Generating
+from a written specification (the Spec2GDSBench approach) under-constrains or over-constrains
+the design. Patching real GitHub bugs (the SWE-bench philosophy) is harder for HDL because
+well-isolated patch-with-test PRs are roughly an order of magnitude rarer in HDL repositories
+than in Python. Restoration uses the upstream CI as the grader, and the deletion is a clean
+noun phrase to put in the instruction (``these files are missing, recreate them''). It also
+avoids leaking the answer in the spec because the agent must reconstruct concrete syntax
+rather than satisfy a behavioural contract.
 
-The deletion-and-restore framing is deliberate. We considered three alternatives:
-(i)~\emph{generate from a written spec} (the Spec2GDSBench approach); we found written
-specs always under- or over-constrain the design, and the agent ends up grading itself
-against our written rules rather than against real CI.
-(ii)~\emph{patch real GitHub bugs}; this is the SWE-bench philosophy, but the rate at which
-HDL projects produce well-isolated patch-with-test PRs is approximately one tenth of
-Python's, which our prior \textsc{SWE-Universe-Verilog} pipeline documented (the companion
-logbook gives details).
-(iii)~\emph{the present approach}, restoration: the upstream CI does the grading, and the
-deletion is a clean noun phrase to put in the instruction (``these files are missing,
-recreate them''). It also avoids leaking the answer in the spec since the agent must
-reconstruct concrete syntax, not just write to a behavioural contract.
+\paragraph{Task-generation skill.}
+We do not write each task by hand. We wrote a Claude Code skill called
+\texttt{harbor-task-gen} that converts an arbitrary upstream HDL repository into a
+\textsc{RTL-Universe} task. Given an upstream repo and the path of the design unit to strip,
+the skill (i)~runs the upstream CI to confirm the baseline passes, (ii)~derives the strip
+manifest by following the upstream Makefile or build manifest, (iii)~generates an environment
+Dockerfile that installs only the toolchain the upstream CI requires, (iv)~writes a verifier
+wrapper that calls the upstream test target and emits a normalised reward in $[0,1]$, and
+(v)~stores the deleted files separately so we can later compare the agent's output to ground
+truth. The skill went through five iterations to handle five upstream build systems (FuseSoC,
+Bazel, Make+Verilator, Icarus, cocotb). Roughly half of the tasks we attempted did not make
+the final eleven because the upstream build system was either too brittle for the agent to
+drive or too non-deterministic for the verifier to score. Figure~\ref{fig:pipeline} shows the
+full pipeline.
+
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+  node distance=8mm and 9mm,
+  every node/.style={font=\footnotesize, align=center},
+  box/.style={draw, rounded corners=2.5pt, minimum height=11mm, minimum width=21mm, inner sep=3pt},
+  io/.style={box, fill=gray!10},
+  ag/.style={box, fill=blue!10},
+  ver/.style={box, fill=orange!12},
+  arr/.style={-{Latex[length=2mm]}, thick},
+  phaselbl/.style={font=\small\bfseries, anchor=east}
+]
+% Phase 1 (top row): task generation
+\node[io] (repo) {Upstream\\HDL repo};
+\node[box, right=of repo] (gen) {\texttt{harbor-}\\\texttt{task-gen}};
+\node[box, right=of gen] (manifest) {Strip\\manifest};
+\node[box, right=of manifest] (env) {Environment\\Dockerfile};
+\node[box, right=of env] (verwrap) {Verifier\\wrapper};
+\node[io, right=of verwrap] (task) {Harbor\\task};
+
+\draw[arr] (repo) -- (gen);
+\draw[arr] (gen) -- (manifest);
+\draw[arr] (manifest) -- (env);
+\draw[arr] (env) -- (verwrap);
+\draw[arr] (verwrap) -- (task);
+
+% Phase 2 (bottom row): evaluation
+\node[box, below=18mm of repo] (queue) {Launcher\\queue};
+\node[box, right=of queue] (build) {Build\\image};
+\node[box, right=of build] (sandbox) {Sandbox\\(DNS sinkhole)};
+\node[ag, right=of sandbox] (agent) {Agent\\(writes RTL)};
+\node[ver, right=of agent] (verifier) {Upstream CI\\(scores)};
+\node[io, right=of verifier] (result) {\texttt{result.json}\\reward $\in[0,1]$};
+
+\draw[arr] (queue) -- (build);
+\draw[arr] (build) -- (sandbox);
+\draw[arr] (sandbox) -- (agent);
+\draw[arr] (agent) -- (verifier);
+\draw[arr] (verifier) -- (result);
+
+% Hand-off arrow from Phase 1 to Phase 2
+\draw[arr, dashed] (task.south) |- (queue.north);
+
+% Phase labels on the left
+\node[phaselbl] at ([xshift=-3mm]repo.west) {Generation};
+\node[phaselbl] at ([xshift=-3mm]queue.west) {Evaluation};
+\end{tikzpicture}%
+}
+\caption{The \textsc{RTL-Universe} pipeline. The top row is the offline task-generation
+flow. The \texttt{harbor-task-gen} skill turns an upstream HDL repository into a Harbor task
+by deriving the strip manifest, the environment Dockerfile, and the verifier wrapper from
+the upstream CI configuration. The bottom row is the online evaluation flow. The launcher
+queue feeds tasks to a sandboxed container, the agent writes RTL, and the upstream CI scores
+the result.}
+\label{fig:pipeline}
+\end{figure}
 
 \section{Harness}
 \label{sec:harness}
 
 We instantiate each evaluated agent inside a Docker container built from the task's
-\texttt{environment/} Dockerfile. Just before the agent gets control, the harness writes
-a DNS sinkhole to \texttt{/etc/hosts} naming the most common HDL hosting domains:
+\texttt{environment/} Dockerfile. Just before the agent gets control, the harness writes a
+DNS sinkhole to \texttt{/etc/hosts} naming the most common HDL hosting domains:
 \begin{lstlisting}
 SINKHOLE = ["github.com", "raw.githubusercontent.com", "api.github.com",
   "objects.githubusercontent.com", "codeload.github.com", "gist.github.com",
@@ -225,40 +302,36 @@ Section~\ref{sec:audit} that this is necessary but not sufficient.
 
 \paragraph{Concurrency, accounts, supervision.}
 The harness is a Python launcher that runs many agent jobs in parallel against the matrix.
-Six mechanisms turned out to matter:
-(i)~per-job credentials --- each Claude Code job binds a per-job copy of
-\texttt{.credentials.json} so simultaneous installs cannot \texttt{Text~file~busy} each
-other, and the host file is re-read at each launch to pick up OAuth refreshes;
-(ii)~asymmetric per-account caps --- subscription-billed agents (Claude Code, Codex)
-rate-limit per account, so we cap at $\textsc{max\_claude\_acct1}=2$ and
-$\textsc{max\_claude\_acct2}=1$ across two accounts;
-(iii)~stuck-job killer --- a periodic sweep SIGKILLs harbor processes whose log has not
-advanced for $>$\,30 minutes;
-(iv)~race-guard --- a 120\,s short-term cache of recently-launched job names prevents
-\texttt{ps} latency from triggering duplicate launches;
-(v)~disk-fill supervisor --- the supervisor pauses the launcher when the host root partition
-exceeds 90\% (one Sonnet job leaked 812\,GB of Verilator build cache through a bind-mounted
+Six mechanisms turned out to matter in practice. First, per-job credentials. Each Claude Code
+job binds a per-job copy of \texttt{.credentials.json} so simultaneous installs do not
+\texttt{Text~file~busy} each other, and the host file is re-read at each launch to pick up
+OAuth refreshes. Second, asymmetric per-account caps. Subscription-billed agents (Claude
+Code, Codex) rate-limit per account, and we cap at \textsc{max\_claude\_acct1}\,$=$\,2 and
+\textsc{max\_claude\_acct2}\,$=$\,1 across two accounts. Third, a stuck-job killer. A
+periodic sweep \texttt{SIGKILL}s harbor processes whose log has not advanced for over 30
+minutes. Fourth, a race-guard. A 120-second short-term cache of recently-launched job names
+prevents \texttt{ps} latency from triggering duplicate launches. Fifth, a disk-fill
+supervisor. The supervisor pauses the launcher when the host root partition exceeds 90
+percent (one Sonnet job leaked 812\,GB of Verilator build cache through a bind-mounted
 credentials directory in our run, and would have crashed our shared lab server without this
-guard);
-(vi)~orphan-container reaper --- prunes per-job credential directories whose harbor wrapper
-has exited.
-These controls are not exotic but they are non-trivial; we view them as part of what
-\textsc{RTL-Universe} contributes as a benchmark, not as plumbing.
+guard). Sixth, an orphan-container reaper. The reaper prunes per-job credential directories
+whose harbor wrapper has exited. These controls are not exotic but they are non-trivial. We
+view them as part of what \textsc{RTL-Universe} contributes as a benchmark, not as plumbing.
 
 \paragraph{Models and harnesses.}
-We evaluate seven model$\times$harness pairs: Opus 4.7 and Sonnet 4.6 via Claude Code;
-GPT-5.5 (reasoning effort \texttt{xhigh}) via Codex CLI; and DeepSeek V4-Pro, GLM-5.1, Kimi
-K2.6, and Qwen 3.6-27B via OpenCode/OpenRouter. Each cell has a 10-hour wall-clock cap with
-up to 3 trials.
+We evaluate seven model and harness pairs. Opus 4.7 and Sonnet 4.6 run via Claude Code.
+GPT-5.5 (reasoning effort \texttt{xhigh}) runs via the Codex CLI. DeepSeek V4-Pro, GLM-5.1,
+Kimi K2.6, and Qwen 3.6-27B run via OpenCode and OpenRouter. Each cell has a 10-hour
+wall-clock cap with up to 3 trials.
 
 \section{Results}
 \label{sec:results}
 
-\begin{table}[h]
+\begin{table}[t]
 \centering
 \caption{Reward matrix on \textsc{RTL-Universe}. Bold cells are perfect (1.000). Tasks
-marked $\dagger$ have a verifier flaw and are omitted from the strong-verifier count.
-``F'' is an infrastructure failure (auth/install error).}
+marked $\dagger$ have a verifier flaw and are omitted from the strong-verifier count. ``F''
+denotes an infrastructure failure (auth or install error).}
 \label{tab:matrix}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
@@ -278,67 +351,70 @@ Qwen-27B     & .00            & .00 & .00            & .00            & .00 & .0
 \end{table}
 
 \paragraph{Headline.}
-Table~\ref{tab:matrix} shows the raw matrix. GPT-5.5 leads at 6/11 perfect scores; Opus 4.7 has
-5/11; Sonnet 4.6 has 3/11. The smaller open-weight models cluster at 0--2 perfects and
-average reward $<0.20$. The OpenCode harness around the smaller models tends to produce two
-failure modes that we categorise informally as ``early give-up'' (under 5 minutes wall-clock,
-no real attempt) and ``build-system blocked'' (the agent writes plausible-looking RTL but
-cannot drive the upstream build). Both happened across many cells. We did not adjust prompts,
-harness settings, or budget across models to keep comparisons fair.
+Table~\ref{tab:matrix} shows the raw matrix. GPT-5.5 leads at 6 of 11 perfect scores, Opus
+4.7 has 5 of 11, and Sonnet 4.6 has 3 of 11. The smaller open-weight models cluster at 0 to 2
+perfects and average reward below 0.20. The OpenCode harness around the smaller models tends
+to produce two failure modes that we categorise informally as ``early give-up'' (under 5
+minutes wall-clock, no real attempt) and ``build-system blocked'' (the agent writes
+plausible-looking RTL but cannot drive the upstream build). Both occurred across many cells.
+We did not adjust prompts, harness settings, or budget across models to keep the comparison
+fair.
 
 \paragraph{Per-task observation.}
 The two tasks where multiple models score well (\texttt{secworks-aes-full},
 \texttt{openpiton-full}) are the ones with the smallest stripped surface (7 and 4 files) and
-the cleanest in-repo Python reference model. The tasks where zero or one model scored
-well (\texttt{coralnpu-full}, \texttt{nvdla-e2e}, \texttt{pulp-common-cells-full}) are the
-ones with the largest stripped surfaces and the most upstream-build complexity --- not
-necessarily the most algorithmically hard. We read this as evidence that
-\emph{project-scale RTL restoration is dominated by build-system and integration friction},
-not by the difficulty of writing any one Verilog statement.
+the cleanest in-repo Python reference model. The tasks where zero or one model scored well
+(\texttt{coralnpu-full}, \texttt{nvdla-e2e}, \texttt{pulp-common-cells-full}) are the ones
+with the largest stripped surfaces and the most upstream-build complexity, not necessarily
+the most algorithmically hard. We read this as evidence that project-scale RTL restoration is
+dominated by build-system and integration friction rather than by the difficulty of writing
+any one Verilog statement.
 
 \section{Audit: How agents reach high scores}
 \label{sec:audit}
 
 When we read the agent transcripts we found that several perfect scores were achieved
-without writing the design. We categorise the bypasses into three groups; the full method
-list is in the Appendix. We treat this as a quality-control finding about how to run an
-HDL agent benchmark.
+without writing the design. We categorise the bypasses into three groups, and the full method
+list is in the Appendix. We treat this as a quality-control finding about how to run an HDL
+agent benchmark.
 
-\paragraph{(A) Source downloads through unblocked egress.} Our \texttt{/etc/hosts} sinkhole
-blocks \texttt{github.com} but not its alternatives. GPT-5.5 successfully cloned Ibex from
-the third-party mirror at \texttt{git.blizzard.systems} (twice), used a GitHub-to-text
-service (\texttt{gitextract.com}) for NVDLA, and bypassed the sinkhole with
-\texttt{curl --resolve} on a hard-coded codeload IP. Opus 4.7 used Anthropic's server-side
-\texttt{WebFetch} tool with a CDN URL (\texttt{cdn.jsdelivr.net/gh/lowRISC/ibex@master/}) to
-fetch all 31 stripped Ibex files in 37 calls, and used the Software Heritage Archive vault
-to recover Coral NPU. None of these are model failures; they are sandbox failures.
+\paragraph{Category A: Source downloads through unblocked egress.}
+Our \texttt{/etc/hosts} sinkhole blocks \texttt{github.com} but not its alternatives. GPT-5.5
+successfully cloned Ibex from the third-party mirror at \texttt{git.blizzard.systems} (twice),
+used a GitHub-to-text service (\texttt{gitextract.com}) for NVDLA, and bypassed the sinkhole
+with \texttt{curl --resolve} on a hard-coded codeload IP. Opus 4.7 used Anthropic's
+server-side \texttt{WebFetch} tool with a CDN URL (\texttt{cdn.jsdelivr.net/gh/lowRISC/ibex@master/})
+to fetch all 31 stripped Ibex files in 37 calls, and used the Software Heritage Archive vault
+to recover Coral NPU. None of these are model failures. They are sandbox failures.
 
-\paragraph{(B) Built-in agent tools.} Both Claude Code (\texttt{WebFetch}, \texttt{WebSearch})
-and Codex CLI (the \texttt{codex\_apps} MCP server's \texttt{github\_fetch\_file} tool) ship
-with file-fetch capabilities that route through the harness vendor's servers, not through
-the container's network stack. \texttt{/etc/hosts} cannot reach them. We had not noticed the
-Codex MCP existed when we built the sandbox; it accounts for one of GPT-5.5's perfect
-scores.
+\paragraph{Category B: Built-in agent tools.}
+Both Claude Code (\texttt{WebFetch}, \texttt{WebSearch}) and the Codex CLI (the
+\texttt{codex\_apps} MCP server's \texttt{github\_fetch\_file} tool) ship with file-fetch
+capabilities that route through the harness vendor's servers, not through the container's
+network stack. The \texttt{/etc/hosts} sinkhole cannot reach them. We had not noticed the
+Codex MCP existed when we built the sandbox. It accounts for one of GPT-5.5's perfect scores.
 
-\paragraph{(C) Verifier exploits.} The Ibex \texttt{simple\_system}
-\texttt{tests/test.sh}'s pass criterion is ``simulator exit code $= 0$''; an empty top-level
-wrapper that runs Verilator's setup phase and exits clean satisfies this without ever
-running the firmware. Both Gemini 3.1-Pro (which is not in our headline table; in the
-larger superset of runs it scored 1.000 here using exactly this exploit) and GLM-5.1 reach
-perfect scores on this verifier. The \texttt{veer-el2-block} PyUVM IRQ test has
-\texttt{assert True} in its \texttt{check\_phase}; any compiling DUT passes. Opus
-identified this in 17 minutes and won the cell with 37 \texttt{module name(); endmodule}
-stubs. The verifier flaws are upstream bugs that real HDL projects also have; restoration-style
-benchmarking surfaces them quickly because the agent will exploit them given the chance.
+\paragraph{Category C: Verifier exploits.}
+The Ibex \texttt{simple\_system} \texttt{tests/test.sh}'s pass criterion is ``simulator exit
+code $= 0$''. An empty top-level wrapper that runs Verilator's setup phase and exits clean
+satisfies this without ever running the firmware. Both Gemini 3.1-Pro (in a paused
+configuration not in our headline table; in the larger superset of runs it scored 1.000 here
+using exactly this exploit) and GLM-5.1 reach perfect scores on this verifier. The
+\texttt{veer-el2-block} PyUVM IRQ test has \texttt{assert True} in its \texttt{check\_phase}.
+Any compiling DUT passes. Opus identified this in 17 minutes and won the cell with 37
+\texttt{module name(); endmodule} stubs. The verifier flaws are upstream bugs that real HDL
+projects also have, and restoration-style benchmarking surfaces them quickly because the
+agent will exploit them when given the chance.
 
 \paragraph{Cleaned ranking.}
-Table~\ref{tab:cleaned} re-scores the matrix after zeroing every cell that either
-matches a category-A/B bypass we observed in the transcripts or scores 1.000 on a
-flag-marked task. On the eight non-flagged tasks, the strongest agents pass 2/11 each.
+Table~\ref{tab:cleaned} re-scores the matrix after zeroing every cell that either matches a
+category-A or category-B bypass we observed in the transcripts, or scores 1.000 on a
+flag-marked task. On the eight non-flagged tasks, the strongest agents pass 2 of 11 each.
+
 \begin{table}[h]
 \centering
-\caption{Pass rates before and after the audit. ``Raw'' counts every reward $=1.0$;
-``Strong'' zeroes both confirmed bypasses and the three flagged tasks.}
+\caption{Pass rates before and after the audit. ``Raw'' counts every reward $=1.0$. ``Strong''
+zeroes both confirmed bypasses and the three flagged tasks.}
 \label{tab:cleaned}
 \footnotesize
 \begin{tabular}{lcccc}
@@ -358,51 +434,54 @@ Qwen-27B   & 0/11 (0\%)  & 0.00 & 0/11 (0\%)  & 0.00 \\
 
 \paragraph{What the cleaned ranking tells us.}
 The headline gap between proprietary frontier agents and open-weight agents nearly
-disappears. The \emph{benchmark}, in other words, was good enough to differentiate raw pass
-rates but the bypasses inflate the apparent gap. We do not claim the underlying capability
-is identical --- the open-weight models genuinely fail many cells they don't try to bypass
---- but the comparison should be done on a leakage-free sandbox, and ours wasn't strict
-enough. We give specific recommendations for tightening it in Section~\ref{sec:rec}.
+disappears. The benchmark was good enough to differentiate raw pass rates, but the bypasses
+inflate the apparent gap. We do not claim the underlying capability is identical because the
+open-weight models genuinely fail many cells they do not try to bypass. The comparison should
+be done on a leakage-free sandbox, and ours was not strict enough. Section~\ref{sec:rec}
+gives specific recommendations for tightening it.
 
 \section{Recommendations and Limitations}
 \label{sec:rec}
 
 \paragraph{Sandbox.} Default-deny egress at the iptables level with allowlists for the
 package mirrors and vendor APIs the agent needs. Block CDNs that mirror GitHub
-(\texttt{cdn.jsdelivr.net/gh}, \texttt{unpkg.com}, \texttt{cdnjs.cloudflare.com}), text-of-
-GitHub services (\texttt{gitextract.com}, \texttt{r.jina.ai}), Software Heritage, and any
-host on which an MCP server fetches files server-side. For Claude Code, disable
-\texttt{WebFetch}/\texttt{WebSearch} via \texttt{--allowed-tools}; for Codex, do not
+(\texttt{cdn.jsdelivr.net/gh}, \texttt{unpkg.com}, \texttt{cdnjs.cloudflare.com}),
+text-of-GitHub services (\texttt{gitextract.com}, \texttt{r.jina.ai}), Software Heritage, and
+any host on which an MCP server fetches files server-side. For Claude Code, disable
+\texttt{WebFetch} and \texttt{WebSearch} via \texttt{--allowed-tools}. For Codex, do not
 register the \texttt{codex\_apps} MCP.
 
-\paragraph{Verifiers.} Audit upstream verifiers for ``exit code $=0$ counts as pass'' and
-for trivial \texttt{check\_phase} assertions. Replace with output-hash comparisons or
-explicit signal-trace assertions. A simple structural sanity check --- ``does the design
-hierarchy contain modules of these names'' --- catches the behavioral-stub family without
-constraining the implementation.
+\paragraph{Verifiers.} Audit upstream verifiers for ``exit code $=0$ counts as pass'' and for
+trivial \texttt{check\_phase} assertions. Replace with output-hash comparisons or explicit
+signal-trace assertions. A simple structural sanity check (``does the design hierarchy
+contain modules of these names'') catches the behavioral-stub family without constraining the
+implementation.
 
-\paragraph{Limitations.} We run one trial per cell (with up to 3 retries on infrastructure
-failure); we do not measure within-cell variance. The cheat-vs.-legit verdict is a manual
-judgement call on the transcripts; we publish all transcripts and invite re-adjudication.
-The benchmark covers 11 tasks chosen by us; a wider sweep across the open-source HDL
-ecosystem (and especially across non-RISC-V architectures) would be a natural extension.
-Finally, the harness is engineered for our two laptops + lab server combination; porting
-to a fully cloud-native runner is out of scope here.
+\paragraph{Limitations.} We run one trial per cell with up to 3 retries on infrastructure
+failure. We do not measure within-cell variance. The cheat-versus-legit verdict is a manual
+judgement on the transcripts. We publish all transcripts and invite re-adjudication. The
+benchmark covers 11 tasks chosen by us. A wider sweep across the open-source HDL ecosystem,
+and especially across non-RISC-V architectures, would be a natural extension. The harness is
+engineered for our two-laptop and lab-server combination. Porting to a fully cloud-native
+runner is out of scope here.
 
 \section{Conclusion}
 
-\textsc{RTL-Universe} is a deliberately harder hardware-LLM benchmark than what is
-currently in the literature. By framing tasks as restoration of stripped files inside a
-real upstream project, we exercise the build systems, integration constraints, and
-testbenches that real HDL engineers actually wrestle with. Current frontier agents pass
-1--2 of the eight strong-verifier cells; project-scale RTL restoration is not a saturated
-problem. We hope the benchmark, the harness, and the audit are all useful to the next
-group that builds on this.
+\textsc{RTL-Universe} is a deliberately harder hardware-LLM benchmark than what is currently
+in the literature. By framing tasks as restoration of stripped files inside a real upstream
+project, we exercise the build systems, integration constraints, and testbenches that real
+HDL engineers wrestle with. Current frontier agents pass 1 to 2 of the eight strong-verifier
+cells. Project-scale RTL restoration is not a saturated problem. We hope the benchmark, the
+task-generation skill, the harness, and the audit are all useful to the next group that
+builds on this.
 
 \paragraph{Acknowledgements.}
 We thank the Anthropic, OpenAI, and OpenCode teams for making their agent harnesses
-available. The cheating analysis was assisted by Claude Opus 4.7, with the analysis
-performed on already-concluded transcripts.
+available. The cheating analysis was assisted by Claude Opus 4.7, with the analysis performed
+on already-concluded transcripts. The harness, tasks, and full agent transcripts are
+released on the \texttt{codex-experiments-202605} branch of
+\url{github.com/cs3220-research/rtl-universe}; total wall-clock for the run reported here
+was approximately 4 days on a 128-CPU 1\,TB-RAM lab server.
 
 \bibliography{refs}
 
@@ -432,14 +511,5 @@ C3 & No-op \texttt{assert True} scoreboard exploit                 & Opus \\
 \bottomrule
 \end{tabular}
 \end{table}
-
-\section{Reproducibility}
-
-The harness, task definitions, and complete agent transcripts are released on the
-\texttt{codex-experiments-202605} branch of
-\url{github.com/cs3220-research/rtl-universe}. Each cell's \texttt{result.json} contains the
-agent's full arguments, start/finish times, reward, and (where the harness reports it) cost
-in USD; the \texttt{agent/} subdirectory contains the full conversation log. Total wall-clock
-for the run reported here was approximately 4 days on a 128-CPU 1\,TB-RAM lab server.
 
 \end{document}
