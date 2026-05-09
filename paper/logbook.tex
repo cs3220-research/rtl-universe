@@ -13,6 +13,14 @@
 \usepackage[hidelinks, breaklinks=true]{hyperref}
 \usepackage{listings}
 \usepackage{enumitem}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{positioning, arrows.meta, fit, calc}
+
+\lstset{basicstyle=\ttfamily\footnotesize, breaklines=true, columns=fullflexible,
+        frame=single, framesep=2pt, xleftmargin=4pt, xrightmargin=4pt}
 
 \title{From Pull Requests to Sandboxed Restoration:\\
        A Logbook of Building an LLM Hardware-Agent Benchmark}
@@ -29,287 +37,723 @@
 
 \begin{abstract}
 This logbook documents two and a half months of work building an LLM-agent benchmark for
-hardware description languages, ending with the \textsc{RTL-Universe} benchmark we report in
-our companion paper. The arc covers four prior repositories. The first was a GitHub pull
-request data pipeline (SWE-Universe-Verilog). The second was an early evaluation harness
-(RTLBench). The third was a port of NVIDIA's CVDP problem suite into our infrastructure
-(CVDP-Harbor). The fourth was a spec-to-GDSII benchmark we built and iterated weekly through
-three pivots (Spec2GDSBench). The current state, \textsc{RTL-Universe}, takes a different
-approach by framing tasks as project-scale restoration of open-source HDL projects. Although
-the project began as a CS\,3220 research option, we treat the final submission as a
-benchmark-design study for LLM hardware agents, with RISC-V cores, AI accelerators, and real
-open-source RTL projects serving as the evaluation substrate. The logbook records what we
-tried, what failed, what we learned, and why we pivoted, with concrete references to
-commits, weekly reports, and run results in the project's \texttt{other\_repos/} directory.
+hardware description languages, ending with the \textsc{RTL-Universe} benchmark we report
+in our companion paper. The arc covers five repositories built over the spring 2026
+semester: a GitHub pull request data pipeline (\textsc{SWE-Universe-Verilog}), an early
+PR-replay evaluation harness (\textsc{RTLBench}), a port of NVIDIA's CVDP problem suite
+into our Harbor infrastructure (\textsc{CVDP-Harbor}) with three frontier-model runs, a
+spec-to-GDSII benchmark (\textsc{Spec2GDSBench}) that we built and pivoted three times
+across three weekly reports, and finally the project-scale closed-book restoration
+benchmark itself. We wrote roughly 12{,}000 words of weekly research reports, ran
+hundreds of agent jobs at a combined cost in the four-figure range, surfaced two real
+benchmark-integrity findings (a 79/92 upstream-CVDP harness bug we patched for our port,
+and a sandbox-bypass cheating pattern we then defended against), and produced one task-
+generation skill plus the eleven \textsc{RTL-Universe} tasks. Although the project began
+as a CS\,3220 research option, we treat the final submission as a benchmark-design study,
+with RISC-V cores, AI accelerators, and real open-source RTL projects serving as the
+evaluation substrate. The logbook records what we tried, what failed, what we learned,
+and why we pivoted, with concrete commit references throughout.
 \end{abstract}
 
-\section{Goal}
+\section{Goal and Headline Lessons}
 
-The high-level question we set out on was the following. Can current LLM agents do real
-hardware-engineering work, and how do we measure it? The literature on hardware LLMs in
-early 2026 was almost entirely module-level Verilog
-generation~\citep{verilogeval, rtllm, verigen, rtlcoder},
-with leading models reporting 90 percent or higher pass rates on benchmarks that ask for
-``a 4-bit counter from a description''. That left two open questions. How would those
-agents fare on the rest of a real chip-design workflow (build systems, integration,
-testbenches, physical design), and is there a benchmark that we trust to grade them on it?
+The high-level question we set out on was the following. \emph{Can current LLM agents do
+real hardware-engineering work, and how do we measure that?} The literature on hardware
+LLMs in early 2026 was almost entirely module-level Verilog
+generation~\citep{verilogeval, rtllm, verigen, rtlcoder, openllmrtl, betterv}, with leading
+models reporting 90 percent or higher pass rates on benchmarks that ask for a 4-bit
+counter from a description. That left two open questions. How would those agents fare on
+the rest of a real chip-design workflow (build systems, integration, testbenches, physical
+design)? And is there a benchmark that we trust to grade them on it?
 
-Over two and a half months we built five repositories, in roughly chronological order:
-\textsc{SWE-Universe-Verilog}, \textsc{RTLBench}, \textsc{CVDP-Harbor},
-\textsc{Spec2GDSBench}, and \textsc{RTL-Universe}. Each one taught us something that we then
-either folded into the next or used as the reason to start from scratch.
-Table~\ref{tab:timeline} lists each phase, the key commits, the result, and the decision we
-made next. The remainder of this document expands each row.
+Across the five repositories, the headline pattern that emerged was the following.
+PR-replay does not isolate cleanly in HDL. Module-level benchmarks have already saturated.
+Written behavioural specifications are themselves the bottleneck, not the agent. Real
+upstream open-source projects already carry the test infrastructure we kept trying to
+hand-roll. And restoration of stripped files inside one of those projects, under a
+closed-book sandbox, is the design that finally makes the agent's RTL implementation
+ability the load-bearing variable. The companion paper reports the final benchmark.
 
-\begin{table}[h]
+Table~\ref{tab:timeline} lists the five phases, the repositories that contained them, the
+commit ranges that bound them, the headline result of each phase, and the decision that
+ended each phase. The remainder of this logbook expands every row.
+
+\begin{table}[H]
 \centering
-\caption{Project timeline. Each row is a phase, the repository it lived in, the commit range
-that bounds it, the headline result, and the decision that ended it.}
+\caption{Project timeline. Each row is a phase, the repository it lived in, the commit
+range that bounds it, the headline result, and the decision that ended it.}
 \label{tab:timeline}
 \scriptsize
 \setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}l l l p{3.4cm} p{3.6cm}@{}}
+\begin{tabular}{@{}l l l p{3.0cm} p{3.4cm}@{}}
 \toprule
 Period & Repo & Commits & Result & Decision \\
 \midrule
-Mar 2--6     & swe-universe-verilog  & \texttt{47f1b40}\,..\,\texttt{1b6b034} &
-  401 strict-filter PRs from 3{,}296 HDL repos. &
+Mar 2--6     & swe-universe-verilog  & \texttt{47f1b40}\,..\,\texttt{1b6b034} (4 commits) &
+  Pipeline yield: 173k merged PRs filtered to 401 high-quality PRs across 3{,}296 HDL
+  repos. &
   PR-replay does not isolate cleanly. Pivot to CI-graded restoration. \\
-Mar 2--3     & rtlbench              & \texttt{45e61b9}\,..\,\texttt{38a68a1} &
-  First Claude runs. Toolchain-version mismatches and ambiguous testbenches. &
+Mar 2--3     & rtlbench              & \texttt{45e61b9}\,..\,\texttt{38a68a1} (12 commits) &
+  First Claude runs across 7 upstream HDL repos. Toolchain-version mismatches and ambiguous
+  testbenches surfaced. &
   Adopt per-task Dockerfiles. Require mechanically-checkable verifiers. \\
-Mar 7--13    & cvdp\_benchmark       & \texttt{c002eb5}\,..\,\texttt{eba655b} &
-  3 Claude variants, 90+\% pass on CVDP. &
+Mar 7--13    & cvdp\_benchmark       & \texttt{c002eb5}\,..\,\texttt{eba655b} (4 commits) &
+  Harbor conversion tool, 99 tasks ported. 3-model run on 92 tasks: Opus 81.5\%,
+  GPT-5.4 66.3\%, Gemini 3.1-Pro 54.3\%. &
   Module-level HDL is saturated. Move to project scale. \\
-Mar 23--28   & spec2gdsbench (W1)    & \texttt{9821882}\,..\,\texttt{d96e177} &
-  Sonnet 0.964 mean over 64 runs on 8 tasks. &
+Mar 23--28   & spec2gdsbench (W1)    & \texttt{9821882}\,..\,\texttt{d96e177} (18 commits) &
+  Spec-to-GDSII pipeline with 8 tasks. Sonnet 0.964 mean over 64 runs. &
   Near-saturated. Pivot to a single SoC task. \\
-Mar 31--Apr 6 & spec2gdsbench (W2)   & \texttt{ba338b7}\,..\,\texttt{2fa0d8d} &
-  Sonnet best 0.616 on RV64GC Linux-boot SoC. &
+Mar 31--Apr 6 & spec2gdsbench (W2)   & \texttt{ba338b7}\,..\,\texttt{2fa0d8d} (28 commits) &
+  RV64GC Linux-boot SoC. Sonnet best 0.616. &
   Single task gives poor signal. Pivot to a graduated ladder. \\
-Apr 7--12    & spec2gdsbench (W3)    & \texttt{723f8c3}                       &
-  3 AI-accelerator tasks pass full GDS flow as references. &
+Apr 7--12    & spec2gdsbench (W3)    & \texttt{723f8c3}                                    &
+  Three AI-accelerator tasks (systolic\_array, conv2d\_engine, dma\_engine). All three
+  reference solutions pass full GDS flow. &
   Specification authoring is the bottleneck. Pivot to upstream restoration. \\
-Apr 23--May 8 & rtl-universe         & \texttt{1024c2a}\,..\,current          &
-  7-model $\times$ 11-task matrix; audit reveals cheating. &
+Apr 23--May 8 & rtl-universe         & \texttt{1024c2a}\,..\,\texttt{daf3cc7} (76 commits) &
+  16 candidate tasks engineered, 11 shipped, 7 archived for build issues. 7-model$\times$
+  11-task matrix. Audit: 10 of 18 perfect scores are bypasses or exploits. &
   Companion paper. Continue. \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\section{March 2 to 6: SWE-Universe-Verilog (data pipeline)}
+\section{Phase 1: SWE-Universe-Verilog (March 2--6)}
 \label{sec:sweuv}
 
-\paragraph{What we tried.}
-SWE-bench~\citep{swebench} grades agents on real GitHub bugs in real Python
-projects. The first thing we tried was the same recipe but for HDL. The
-\textsc{SWE-Universe-Verilog} pipeline crawls GitHub for repositories whose primary language
-is Verilog or SystemVerilog, or that match HDL topics (\texttt{verilog}, \texttt{fpga},
-\texttt{rtl}, \texttt{hdl}, \texttt{asic}). It collects all merged pull requests, then
-applies a multi-stage filter inspired by the SWE-Universe data-curation
-methodology~\citep{sweuniverse}.
+\subsection{Goal}
 
-\paragraph{Pipeline yield.}
-\begin{center}
+SWE-bench~\citep{swebench} grades agents on real GitHub bugs in real Python projects. The
+first thing we tried was the same recipe but for HDL. We wanted a curated dataset of
+high-quality Verilog and SystemVerilog pull requests that could serve as the basis for a
+SWE-bench-style benchmark.
+
+\subsection{Pipeline}
+
+We re-implemented the multi-stage filter from the SWE-Universe data-curation
+methodology~\citep{sweuniverse}, targeting the Verilog and SystemVerilog ecosystem on
+GitHub. The pipeline lives in \texttt{other\_repos/swe-universe-verilog/} and consists of
+seven stages, each implemented as a separate Python module
+(\texttt{stage1\_discover\_repos.py} through \texttt{stage7\_quality\_judge.py}) with
+SQLite-backed persistence so each stage is resumable.
+
+\begin{enumerate}[nosep, leftmargin=*]
+\item \textbf{Repository discovery.} We searched GitHub for repositories whose primary
+language is Verilog or SystemVerilog, plus those tagged with HDL-related topics
+(\texttt{verilog}, \texttt{fpga}, \texttt{rtl}, \texttt{hdl}, \texttt{asic}). We worked
+around GitHub's 1{,}000-result search limit by partitioning queries on monthly creation
+dates.
+
+\item \textbf{PR collection.} We collected all merged PRs from the discovered repositories
+through GitHub's GraphQL API, with rate-limit-aware token rotation across multiple
+personal access tokens.
+
+\item \textbf{Heuristic filter.} We removed PRs that are unlikely to be useful: bot-
+authored, merge commits, no Verilog files changed, or outside reasonable size bounds (1 to
+20 files, 5 to 3{,}000 lines changed).
+
+\item \textbf{Testbench detection.} We scored each PR for testbench relevance using file
+name patterns (\texttt{\_tb.v}, \texttt{test\_*}), directory patterns (\texttt{/tb/},
+\texttt{/verif/}), and content patterns (simulation constructs, assertions, UVM, cocotb).
+PRs scoring at least 3 were kept.
+
+\item \textbf{Issue linkage.} We extracted issue references from PR bodies and commit
+messages using SWE-bench-style closing keywords (\texttt{fixes}, \texttt{closes},
+\texttt{resolves}).
+
+\item \textbf{Patch separation.} We classified changed files into test files, fix files
+(Verilog or SystemVerilog source), and other files (docs, config, scripts). PRs with both
+test and fix components were flagged.
+
+\item \textbf{Quality judge.} A composite quality score combines description quality
+(0.25), test presence (0.35), patch characteristics (0.20), and issue linkage (0.20).
+\end{enumerate}
+
+\subsection{Yield}
+
+Table~\ref{tab:swe-universe-yield} shows the funnel.
+
+\begin{table}[H]
+\centering
+\caption{\textsc{SWE-Universe-Verilog} pipeline yield. The funnel reduces 173 thousand
+candidate PRs to 401 PRs that pass the strict quality and issue-linkage thresholds.}
+\label{tab:swe-universe-yield}
 \footnotesize
 \begin{tabular}{lr}
 \toprule
 Stage & Count \\
 \midrule
-Repos discovered (Verilog/SV on GitHub)                & 3{,}296 \\
-PRs collected (merged)                                  & 173{,}106 \\
-After heuristic filter (size, bot, merge)               & 27{,}446 \\
-After testbench detection                               & 5{,}282 \\
-After patch separation (test + fix files)               & 3{,}070 \\
-Quality filter (relaxed)                                & 1{,}241 \\
-Quality filter (strict, with issue linkage)             & 401 \\
+Repos discovered (Verilog/SV on GitHub)        & 3{,}296 \\
+PRs collected (merged)                          & 173{,}106 \\
+After heuristic filter (size, bot, merge)       & 27{,}446 \\
+After testbench detection                       & 5{,}282 \\
+After patch separation (test + fix files)       & 3{,}070 \\
+Quality filter (relaxed)                        & 1{,}241 \\
+Quality filter (strict, with issue linkage)     & 401 \\
 \bottomrule
 \end{tabular}
-\end{center}
+\end{table}
 
-\paragraph{What we learned.}
-Even after aggressive filtering, the yield from the GitHub HDL ecosystem is roughly an order
-of magnitude lower than the Python equivalent. 401 strict-filter PRs across 3,296
-repositories is enough to start a benchmark, but each one had to be curated by hand to
-verify that it isolated a single change with a real before-and-after test. We built
-\textsc{rtlbench} (Section~\ref{sec:rtlbench}) on top of this data and quickly discovered
-that PR-based hardware bugs do not in practice isolate cleanly. Most are part of a larger
-refactor, depend on FPGA-vendor toolchains, or test only a manually-asserted simulation
-trace.
+\subsection{What we learned}
 
-This phase informed two decisions in \textsc{RTL-Universe}. We chose to abandon PR-replay as
-the framing, and we chose restoration (delete-and-rebuild) instead. Restoration gives the
-agent a real test suite (the upstream's own CI) without requiring us to curate a clean
-before-and-after diff.
+Even after aggressive filtering, the yield from the GitHub HDL ecosystem is roughly an
+order of magnitude lower than the Python equivalent. 401 strict-filter PRs across 3{,}296
+repositories is enough to start a benchmark in principle. In practice each one had to be
+curated by hand to verify that it isolated a single change with a real before-and-after
+test. We built \textsc{RTLBench} (\S\ref{sec:rtlbench}) on top of this data and quickly
+discovered that PR-based hardware bugs do not in practice isolate cleanly. Most are part of
+a larger refactor, depend on FPGA-vendor toolchains, or test only a manually-asserted
+simulation trace.
 
-\section{March 2 to 3: RTLBench (first agent runs)}
+This phase informed two decisions in \textsc{RTL-Universe}. We chose to abandon PR-replay
+as the framing, and we chose restoration (delete-and-rebuild) instead. Restoration gives
+the agent a real test suite (the upstream's own CI) without requiring us to curate a clean
+before-and-after diff, and it does not depend on whether the upstream PR was clean.
+
+\section{Phase 2: RTLBench (March 2--3)}
 \label{sec:rtlbench}
 
-\paragraph{What we tried.}
+\subsection{Goal}
+
 Using the \textsc{SWE-Universe-Verilog} filtered set, plus a few additional integration
-projects (corundum networking, CVA6 RISC-V core), we built a quick evaluation harness called
-\textsc{RTLBench}. It clones the upstream repo at the parent commit of a chosen PR, sets up
-the toolchain in a container, and asks Claude to make the change. The early commits were
-exploratory (``init'', ``snap'', ``first claude run'', ``claude plan expand not run yet'',
-``ran full eval'', commits \texttt{45e61b9} through \texttt{38a68a1}).
+projects, build a quick evaluation harness that clones an upstream repo at the parent
+commit of a chosen PR, sets up the toolchain in a container, and asks Claude to make the
+change. The objective was a working SWE-bench-for-HDL proof of concept.
 
-\paragraph{What we learned.}
-The first runs worked just well enough to show two failure modes that ended up shaping
-everything that followed. The first was toolchain fragility. Verilog projects often pin
-specific Verilator and Yosys versions, and the agent would happily install a different one
-and write code that compiled in the wrong version. We ended up writing per-task Dockerfiles,
-which is what the next two projects (CVDP-Harbor and Spec2GDSBench) inherited. The second
-was test-suite ambiguity. Many of the PRs in our filtered set have testbenches that ``run''
-on master but actually only pass when accompanied by a manually-checked waveform. The agent
-does not know this. We needed verifiers whose pass criterion is mechanically checkable. This
-is part of why \textsc{RTL-Universe} restricts itself to projects with binary-pass CI.
+\subsection{Setup}
 
-\section{March 7 to 13: CVDP-Harbor}
+We pulled seven HDL repositories that span the difficulty spectrum:
+\texttt{picorv32} (small RISC-V core), \texttt{verilog-axi}, \texttt{verilog-ethernet},
+\texttt{verilog-uart} (Alex Forencich's mature peripheral libraries),
+\texttt{corundum} (a 100G FPGA NIC), \texttt{cva6} (a Linux-capable RISC-V core), and
+\texttt{hdl} (Analog Devices' FPGA reference designs). We documented our reading of
+SWE-bench, SWE-smith, and SWE-Universe in \texttt{insights/}, with one Markdown file per
+paper that summarised the data schema, the collection pipeline, and the bug-generation
+strategy. We then wrote three Dockerfiles for the toolchain layers we needed:
+\texttt{Dockerfile.cocotb1} (cocotb 1.x with iverilog, for \texttt{verilog-ethernet}),
+\texttt{Dockerfile.cocotb2} (cocotb 2.x with iverilog), and \texttt{Dockerfile.verilator}
+(Verilator-based tasks).
+
+The workspace under \texttt{rtlbench/workspace/swebench\_verilog/} reimplements the
+SWE-bench harness signatures (\texttt{run\_evaluation\_docker.py}, \texttt{grading.py},
+\texttt{log\_parsers.py}) but for our HDL toolchain. The early commits read like a
+chronology of debugging:
+\texttt{init} (\texttt{45e61b9}),
+\texttt{still before run} (\texttt{142f9c3}),
+\texttt{snap} (\texttt{35ec496}),
+\texttt{first claude run} (\texttt{3c5ebff}),
+\texttt{claude plan expand not run yet} (\texttt{99bb14f}),
+\texttt{fix: add missing submodule entries} (\texttt{eb1ebfd}),
+\texttt{Add corundum SYNTH instances and cva6 integration} (\texttt{f67d3d4}),
+and finally \texttt{ran full eval} (\texttt{38a68a1}). Twelve commits over 36 hours.
+
+\subsection{What we learned}
+
+The first runs worked just well enough to surface two failure modes that ended up shaping
+everything that followed.
+
+The first was \textbf{toolchain fragility}. Verilog projects often pin specific Verilator
+and Yosys versions in their CI configurations. The agent would happily install a different
+one and write code that compiled in the wrong version. We ended up writing per-task
+Dockerfiles, which is what the next two projects (\textsc{CVDP-Harbor} and
+\textsc{Spec2GDSBench}) inherited.
+
+The second was \textbf{test-suite ambiguity}. Many of the PRs in our filtered set have
+testbenches that ``run'' on master but actually only pass when accompanied by a manually-
+checked waveform. The agent does not know this. We needed verifiers whose pass criterion
+is mechanically checkable. This is part of why \textsc{RTL-Universe} restricts itself to
+projects with binary-pass CI rather than waveform-graded tests.
+
+\section{Phase 3: CVDP-Harbor (March 7--13)}
 \label{sec:cvdp}
 
-\paragraph{What we tried.}
-At this point NVIDIA released the Comprehensive Verilog Design Problems (CVDP)
-benchmark~\citep{nvidia2024cvdp}, a 783-problem suite of mostly module-level Verilog tasks
-with both non-agentic and agentic variants. Rather than re-invent the problems, we ported
-CVDP into \emph{Harbor}, our internal evaluation harness used by the rest of the projects.
-The conversion tool is at \texttt{cvdp\_benchmark/} commit \texttt{c002eb5}, with three more
-rounds of fixes and reruns over the next week.
+\subsection{Goal}
 
-\paragraph{Result.}
-We ran three Claude variants on the converted suite. Pass rates clustered above 90 percent
-(\texttt{cvdp\_benchmark} commit \texttt{891039d}), consistent with what NVIDIA themselves
-reported. This was when we became confident that module-level Verilog generation is
-saturated for current frontier models, and that the open question is at the project scale.
+At the start of March 2026, NVIDIA released the Comprehensive Verilog Design Problems
+(CVDP) benchmark~\citep{nvidia2024cvdp}, a 783-problem suite of mostly module-level Verilog
+tasks with both non-agentic and agentic variants. Rather than re-invent the problem set
+ourselves, we ported CVDP into Harbor, our internal evaluation harness. The objective was
+to (i)~stand up Harbor as a working evaluation backend, (ii)~quantify how saturated
+module-level CVDP actually was for current frontier models, and (iii)~surface bugs in
+either CVDP's harness or Harbor that would block scaling.
+
+\subsection{The conversion tool}
+
+The Harbor conversion tool is at \texttt{cvdp\_benchmark/} commit \texttt{c002eb5}
+(``Add CVDP to Harbor conversion tool'') with three more rounds of fixes and reruns over
+the next week (\texttt{36f17fb}, \texttt{891039d}, \texttt{eba655b}). It reads the upstream
+CVDP JSONL dataset (\texttt{cvdp\_v1.0.4\_agentic\_code\_generation\_no\_commercial.jsonl})
+and writes a Harbor task directory per problem. The output went to
+\texttt{harbor\_output/} as 99 converted tasks, each with the standard Harbor layout:
+\texttt{environment/Dockerfile}, \texttt{environment/rtl/}, \texttt{environment/src/},
+\texttt{instruction.md}, \texttt{task.toml}, and \texttt{tests/test.sh}. The orchestration
+script \texttt{run\_harbor\_terminus2.py} then launches Harbor's Terminus-2 agent against
+the converted suite, with per-model concurrency caps and a configurable retry policy.
+
+\subsection{Three-model evaluation}
+
+We ran three frontier models on 92 of the 99 converted tasks (the other 7 had upstream
+issues): Claude Opus 4.6, GPT-5.4, and Gemini 3.1-Pro Preview, all with the Terminus-2
+agent at 8 concurrent trials per model. The results, reported in \texttt{NOTES.md} of the
+CVDP-Harbor repo, are summarised in Table~\ref{tab:cvdp-results}.
+
+\begin{table}[H]
+\centering
+\caption{CVDP-Harbor 3-model results on 92 tasks (March 12, 2026, Terminus-2 agent).
+``Genuine fails'' counts trials where the agent ran to completion but did not solve the
+task. ``Infra errors'' counts timeouts, rate-limits, and OpenRouter 5xx responses.}
+\label{tab:cvdp-results}
+\footnotesize
+\begin{tabular}{lcccc}
+\toprule
+Model & Pass rate & Passes & Genuine fails & Infra errors \\
+\midrule
+Claude Opus 4.6      & 81.5\% & 75 / 92 & 5  & 15 (timeouts) \\
+GPT-5.4              & 66.3\% & 61 / 92 & 18 & 15 (API errors + timeouts) \\
+Gemini 3.1-Pro       & 54.3\% & 50 / 92 & 15 & 27 (rate limits + timeouts) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+After the first run, we re-ran the failed cells, re-checking infrastructure failures
+separately from genuine fails. After re-runs and isolating infrastructure failures,
+the model that drove our headline conclusion was Claude Opus 4.6, which reached
+\textbf{96.2\%} pass rate on the agentic non-commercial split, with the remaining
+failures attributable to minor issues (pipeline timing off-by-one, file extension typo,
+signal polarity ambiguity) rather than fundamental capability gaps.
+
+\subsection{The 79/92 cocotb harness bug}
+
+The most useful artifact from this phase, beyond the eval numbers, was an upstream-bug
+finding documented in \texttt{NOTES.md}. We noticed that 79 of the 92 CVDP tasks were
+failing on a single import line:
+\begin{lstlisting}
+from cocotb_tools.runner import get_runner   # broken
+from cocotb.runner import get_runner         # correct
+\end{lstlisting}
+The bug is in the upstream CVDP dataset (two different harness versions were merged,
+``Type A'' uses \texttt{docker-compose.yml} with \texttt{build: .} and the correct import,
+``Type B'' uses \texttt{image: \_\_OSS\_SIM\_IMAGE\_\_} and the broken import). The Harbor
+conversion tool had been copying files verbatim, propagating the bug. Many of the
+broken tasks still passed because the agent noticed and fixed the import during execution,
+but this wasted agent turns and caused some tasks to fail outright when the agent did not
+catch it. We added a post-processing fix-up to \texttt{tools/convert\_cvdp\_to\_harbor.py}
+that replaces the broken import in generated \texttt{environment/src/*.py} files, then
+regenerated \texttt{harbor\_output/}.
+
+We also documented the failure modes that were Harbor-side rather than CVDP-side: Gemini's
+17 rate-limit failures (Google's OpenRouter quota was 250 requests per day, exhausted
+mid-run), 11 GPT-5.4 trials hit OpenRouter 5xx errors, and 5 tasks errored on every model
+due to transient infrastructure (\texttt{ethernet\_mii\_0006}, \texttt{hdbn\_codec\_0001},
+\texttt{jpeg\_runlength\_enc\_0001}, \texttt{phase\_rotation\_0015},
+\texttt{poly\_decimator\_0001}). Re-runs cleared all five.
+
+\subsection{What we learned}
+
+Three things from this phase carry forward.
+
+First, \textbf{module-level HDL generation is saturated for current frontier models}, at
+least on CVDP's task distribution. The remaining failures are cosmetic. We would not
+differentiate frontier models on this surface. The open question is at the project scale.
+
+Second, \textbf{harness eval is full of upstream bugs} that look like model failures. The
+79/92 cocotb import bug would have been read as a model issue without close reading of the
+transcripts. This is the seed of the audit framing in the companion paper: when a benchmark
+score does not match expectations, do not assume the score reflects the agent.
+
+Third, \textbf{Harbor as our evaluation runner works}. The same Harbor conventions
+(\texttt{environment/Dockerfile}, \texttt{instruction.md}, \texttt{task.toml},
+\texttt{tests/test.sh}) carry over to all subsequent phases. \textsc{RTL-Universe} is built
+on the same backbone.
+
 At this point we stopped working on CVDP and started a benchmark we hoped would not
 saturate.
 
-\section{March 23 to April 12: Spec2GDSBench (three weekly pivots)}
+\section{Phase 4: Spec2GDSBench (March 23 -- April 12)}
 \label{sec:spec2gds}
 
-\paragraph{Goal.} Given a behavioural specification and a test suite inside a containerised
-environment with the full open-source ASIC toolchain (LibreLane and the SkyWater Sky130A
-PDK), ask the agent to autonomously produce a DRC-clean, LVS-verified GDSII file. The
-grading funnel is functional simulation passes, then Yosys synthesis, then LibreLane
-place-and-route, then KLayout and Magic DRC, then Netgen LVS, then GDSII export. Each stage
-gates the next.
+\textsc{Spec2GDSBench} consumed three weeks of effort and pivoted three times. We wrote
+roughly 12{,}000 words of formal weekly research reports during this phase
+(\texttt{SURVEY.tex}, \texttt{REPORT.tex}, \texttt{REPORT\_WEEK2.tex},
+\texttt{REPORT\_WEEK3.tex}). We summarise each week in turn, then consolidate the lessons.
 
-\paragraph{Week 1 (March 24 to 28): eight isolated tasks.}
-The first version had eight tasks: \texttt{gcd\_unit}, \texttt{uart\_tx},
-\texttt{aes128\_encrypt}, \texttt{femtorv32\_rv32i}, and four AI accelerator primitives
-(\texttt{conv1d\_engine}, \texttt{maxpool2d}, \texttt{requantize\_pipeline},
-\texttt{matmul\_4x4\_int8}). 64 runs of Claude Code Sonnet at \$5 per run produced mean
-reward 0.964 in normal mode and 0.829 in blind mode (no test suite visible). All 32
-normal-mode runs passed all functional tests. The only score loss was timing closure during
-physical design~\citep{spec2gdsbench-w1}. The benchmark was near-saturated, and we pivoted.
+\subsection{Survey week (March 17--21): Where is the gap?}
 
-\paragraph{Week 2 (March 31 to April 6): single SoC, Linux boot.}
-We replaced the eight tasks with one task. Design an RV64GC RISC-V SoC capable of booting
-Linux. The agent receives only the external interface (AXI4 and UART) and a software
-contract (108 ISA compliance tests, 10 bare-metal programs, OpenSBI and BusyBox boot via
-QEMU's \texttt{virt} machine convention). Claude Sonnet 4.6 across five runs scored a best
-of 0.616 (85 of 108 ISA, 10 of 10 bare-metal, OpenSBI boot). A 15-hour run reached 99 of 108
-ISA and showed partial Linux boot during debugging~\citep{spec2gdsbench-w2}. This was a much
-harder benchmark, but a single task gave poor signal because an agent either built a working
-SoC or scored near zero. We pivoted again.
+We surveyed five recent papers to map the landscape of LLM hardware-design benchmarks:
+ChipBench (44 generation, 89 debugging tasks; Claude 4.5 Opus 30.74\%; multi-agent MAGE
+37.41\%), Bench4HLS (170 HLS tasks through Vitis HLS and Vivado; GPT-5 72\% sim
+pass@10), the ICCAD 2025 panel summary on reliability and the natural-language-to-circuit
+gap, InCoder-32B (the first 32B code model purpose-built for chip design; 80.7 on
+VeriScope, 74.8\% on RealBench module-level Syn@1, but only 10\% on system-level Syn@1),
+and NL2GDS (a tool that translates natural language specs into GDSII via OpenLane on
+small ISCAS circuits). The conclusion was that every existing benchmark stops short of
+physical design. ChipBench stops at simulation. RealBench stops at synthesis checking.
+Bench4HLS goes through P\&R but only for single-function HLS kernels.
 
-\paragraph{Week 3 (April 7 to 12): AI accelerator integration ladder.}
-We then designed three new tasks at graduated difficulty, all with AXI4 interfaces:
-\texttt{systolic\_array} (8$\times$8 INT8 MAC array, AXI4-Lite MMIO and AXI4-Stream),
-\texttt{conv2d\_engine} (3$\times$3 convolution with line buffer, AXI4 master), and
-\texttt{dma\_engine} (memory-to-memory DMA, AXI4-Lite and AXI4 master). All three reference
-solutions pass the full ASIC flow through GDSII. Only the DMA meets timing at
-50\,MHz~\citep{spec2gdsbench-w3}. We were partway through getting agent runs on these when
-the next pivot happened.
+This is the gap we proposed to fill: an end-to-end benchmark from behavioural
+specification to a DRC-clean, LVS-verified GDSII file, using the full open-source ASIC
+toolchain (LibreLane, the SkyWater Sky130A PDK, iVerilog, Verilator, Yosys, OpenROAD,
+Magic, Netgen, KLayout). The survey is in \texttt{other\_repos/spec2gdsbench/SURVEY.tex}.
 
-\paragraph{What we learned across the three weeks.}
-\textbf{Specifications are hard.} Every week spent on Spec2GDSBench, we spent some fraction
-of the time on whether the spec was over-constraining the agent (forcing a specific
-microarchitecture) or under-constraining it (letting the agent solve a different problem).
-Real industrial specs are often closer to ``here is a JIRA epic with 30 linked tickets''
-than ``here are the AXI4 signal names''. We could not write a clean spec for a realistic
-design.
+\subsection{Week 1 (March 24--28): Eight isolated tasks}
 
-\textbf{Build systems matter as much as RTL.} The agent's score on Spec2GDSBench was
-dominated by physical design rather than RTL design. Timing closure, place-and-route choices,
-and LibreLane configuration all dominated the score. We wanted RTL-design ability to be the
-bottleneck.
+The first version had eight tasks, four general-purpose and four AI accelerator
+primitives:
+\texttt{gcd\_unit} (greatest common divisor),
+\texttt{uart\_tx} (UART 8N1 transmitter),
+\texttt{aes128\_encrypt} (AES-128 with 5 NIST vectors),
+\texttt{femtorv32\_rv32i} (a small RISC-V CPU with 8 smoke and 43 RISC-V compliance tests),
+\texttt{conv1d\_engine} (streaming 1D convolution),
+\texttt{maxpool2d} (2D max pooling),
+\texttt{requantize\_pipeline} (INT32 to INT8 requantisation),
+and \texttt{matmul\_4x4\_int8} (a 4$\times$4 INT8 matrix multiply). Each task came with
+a behavioural \texttt{instruction.md}, a test harness, a reference solution, and a
+LibreLane configuration template. The grading funnel had six stages with the weights in
+Table~\ref{tab:spec2gds-stages}.
 
-\textbf{Real projects already have all of this.} The thing that finally moved us was
-realising that lowRISC's Ibex, NVIDIA's NVDLA, OpenPiton, and the rest already have
-testbenches, build systems, CI configurations, and reference implementations carefully tuned
-by their maintainers. We do not need to write a spec for a UART because lowRISC has a real
-one and grades it with their own \texttt{simple\_system}. We just need to delete files.
+\begin{table}[H]
+\centering
+\caption{Spec2GDSBench Week 1 grading funnel. Stages are evaluated sequentially;
+each gates the next.}
+\label{tab:spec2gds-stages}
+\footnotesize
+\begin{tabular}{lcl}
+\toprule
+Stage & Weight & Criteria \\
+\midrule
+Functional        & 0.40 & Fraction of smoke and compliance tests passing (iVerilog) \\
+Synthesis         & 0.15 & Yosys synthesis succeeds without errors \\
+Timing            & 0.15 & Worst negative slack at the target clock period \\
+Physical          & 0.10 & LibreLane place-and-route succeeds \\
+Signoff           & 0.10 & DRC-clean (KLayout + Magic) and LVS-matching (Netgen) \\
+PPA               & 0.10 & Power-Performance-Area absolute reporting \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\section{April 23 to May 8: RTL-Universe}
+We ran 64 trials of Claude Code Sonnet 4.6 (8 tasks $\times$ 2 modes $\times$ 4
+replications) at \$5 per run with a uniform 7200-second timeout. Two modes: \emph{normal}
+(test suite visible to the agent) and \emph{blind} (no test suite). The normal mean
+reward was \textbf{0.964}; the blind mean reward was \textbf{0.829}. In normal mode all 32
+runs passed all functional tests; the only score loss was timing closure during physical
+design~\citep{spec2gdsbench-w1}.
 
-\paragraph{What it is.}
-\textsc{RTL-Universe} is the result of all the prior decisions. Real upstream projects, real
-upstream CI, no spec to write, restoration as the framing. The task list is in our companion
-paper. The harness builds on the Harbor runner that started in CVDP-Harbor
-(Section~\ref{sec:cvdp}). The Docker patterns follow Spec2GDSBench's three-layer image. The
-verifier conventions are upstream's CI.
+The week-1 results are checked in under \texttt{results\_sync\_2/}, with a
+per-task-per-mode README that lists the four replications and their scores.
+\texttt{ISSUES\_INVESTIGATION.md} documents the eight infrastructure fixes we applied
+between the initial 64 runs and the final 77-run dataset, including Docker container-name
+collisions on concurrent runs (we added random four-character suffixes), batch-runner
+timeout buffers (raised from 600 to 3600 seconds), and a missing \texttt{timeout\_secs}
+field in \texttt{timing.json}.
 
-\paragraph{The first three weeks.}
-Most of late April and early May was task engineering. We wrote a \texttt{harbor-task-gen}
-skill (commits \texttt{1ad3b4d}, \texttt{82ce12f}, \texttt{1df25f5}) that converts an
-arbitrary upstream HDL repo into a Harbor task with correct file-strip manifest, environment
-Dockerfile, and verifier script. The skill went through five iterations to handle five
-different upstream build systems (FuseSoC, Bazel, Make+Verilator, Icarus, cocotb). We added
-Ibex, Caliptra, PULP common\_cells, secworks-aes, VeeR EL2, CVA6, Coral NPU, NVDLA, and
-OpenPiton. Roughly half of the tasks we tried did not make the final eleven. Some had
-upstream build systems that the agent could not drive at all (Caliptra). Some had test
-suites with too much state for the verifier to be deterministic (CVA6 in some
-configurations).
+The benchmark was near-saturated. We pivoted.
 
-\paragraph{The runs.}
-The headline run on the eleven tasks took roughly four days of wall-clock and seven
-model and harness combinations: Opus 4.7 and Sonnet 4.6 via Claude Code, GPT-5.5 (effort
-\texttt{xhigh}) via Codex CLI, and DeepSeek V4-Pro, GLM-5.1, Kimi K2.6, Qwen 3.6-27B via
-OpenCode and OpenRouter. The harness needed several mechanisms we had not anticipated when
-we started: per-account concurrency caps because Claude Code rate-limits per subscription, a
-disk supervisor because a Sonnet run leaked 812\,GB of Verilator build cache through a
-bind-mounted credentials directory and would have crashed the lab server, and a stuck-job
-killer because the agents sometimes write at human pace for hours and then freeze.
+\subsection{Week 2 (March 31 -- April 6): A single Linux-bootable SoC}
 
-\paragraph{The result, briefly.}
-The exploratory baseline records 6 perfect scores for GPT-5.5 and 5 for Opus 4.7. The
-smaller open-weight models cluster at 0 to 2 perfect scores each. Reading the transcripts we
-found that 10 of the 18 perfect scores came either from sandbox bypasses (CDN mirrors,
-IP-literal DNS bypass, vendor-side fetch tools) or from two upstream verifier flaws (an
-exit-code-only test in Ibex and an \texttt{assert True} scoreboard in VeeR-EL2). After
-zeroing those cells, the strongest agents pass 2 of the 8 trusted tasks. We frame the matrix
-as an exploratory baseline plus an audit finding rather than as a definitive leaderboard.
-The full discussion is in the companion paper.
+We replaced the eight tasks with one task: design an RV64GC RISC-V SoC capable of booting
+Linux. The agent receives only the external interface (a 50\,MHz clock, an active-low
+reset, UART TX/RX, and a 64-bit AXI4 master port) and a software contract: 108 ISA
+compliance tests from \texttt{riscv-tests}, 10 bare-metal programs, OpenSBI plus BusyBox
+boot via QEMU's \texttt{virt} machine convention, with the test harness providing the
+memory model via cocotb plus Verilator. The task removed all internal architectural hints
+from \texttt{instruction.md} (commits \texttt{a09e739}, \texttt{64376f1},
+\texttt{e50402e}: ``Remove architectural suggestions'', ``Remove remaining architectural
+hints'', ``Remove strategy advice and implementation hints from instruction.md''). The
+agent had complete design freedom over pipeline depth, cache hierarchy, bus topology, and
+FPU implementation.
+
+Across five runs of Claude Code Sonnet 4.6 the best result scored \textbf{0.616}: 85 of 108
+ISA compliance tests, 10 of 10 bare-metal programs (including floating-point), and OpenSBI
+boot achieved (1 of 5 Linux milestones). A 15-hour run that was still in progress at the
+time of the report had reached 99 of 108 ISA compliance and showed evidence of partial
+Linux boot during debugging~\citep{spec2gdsbench-w2}.
+
+The infrastructure work in Week 2 was substantial. The Dockerfile had to be rebuilt for
+the Nix-based base image (\texttt{7b3b504}), with a virtualenv layer for cocotb
+(\texttt{33c8394}), a fix for the \texttt{runc} \texttt{/etc/passwd} symlink issue with Nix
+containers (\texttt{df3be87}), and \texttt{g++} added for Verilator C++ compilation
+(\texttt{d534dbb}). The evaluator went through nine iterations
+(\texttt{8bfd833}--\texttt{4553ab4}) on liberty file discovery, Yosys synthesis timeouts,
+LibreLane configuration provisioning, and reference-stub handling. The verifier timeout
+was eventually pushed to 5 hours (\texttt{7528271}).
+
+This was a much harder benchmark, but a single task gave poor signal. An agent either
+built a working SoC or scored near zero. There was no intermediate difficulty to
+calibrate against. We pivoted again.
+
+\subsection{Week 3 (April 7--12): The AI accelerator integration ladder}
+
+We then designed three new tasks at graduated difficulty, all with AXI4 interfaces and
+all targeting the AI-accelerator narrative: \texttt{systolic\_array} (an 8$\times$8 INT8
+MAC array with AXI4-Lite MMIO and AXI4-Stream data interfaces; 18{,}900 gates,
+643\,K\,$\mu$m$^2$), \texttt{conv2d\_engine} (a 3$\times$3 2D convolution engine with line
+buffer and AXI4 interfaces; 46{,}676 gates, 1.24\,M\,$\mu$m$^2$), and
+\texttt{dma\_engine} (a memory-to-memory DMA controller with AXI4-Lite configuration and
+AXI4 master; 2{,}767 gates, 91\,K\,$\mu$m$^2$). All three reference solutions pass the
+full ASIC flow through GDSII on Sky130A; only the DMA engine meets timing at 50\,MHz.
+
+The technical findings during Week 3, reported in \texttt{REPORT\_WEEK3.tex}, included
+two scaling issues that ended up shaping which kinds of tasks we could ship. Yosys's
+\texttt{abc} technology mapping step scales poorly with multiplier count: the
+systolic-array's original all-at-once compute (64 MACs in a single cycle) produced
+455{,}000 gates and never completed \texttt{abc} within the 3600-second timeout. We
+switched to sequential compute (one MAC per cycle, 8 multipliers) which reduced this to
+18{,}900 gates and roughly 100 seconds of synthesis. Verilog register arrays with multiple
+variable-indexed read ports created large multiplexer trees: \texttt{conv2d\_engine}'s
+256-entry array with 9 read ports generated 46{,}000 gates; an earlier 1024-entry version
+produced 149{,}000 gates and timed out LibreLane.
+
+We were partway through getting agent runs on these when the next pivot happened.
+
+\subsection{What we learned across the three weeks}
+
+Three lessons.
+
+\textbf{Specifications are hard.} Every week spent on \textsc{Spec2GDSBench}, we spent some
+fraction of the time on whether the spec was over-constraining the agent (forcing a
+specific microarchitecture) or under-constraining it (letting the agent solve a different
+problem). Real industrial specs are often closer to a JIRA epic with 30 linked tickets
+than a paragraph of ``the AXI4 signal names''. We could not write a clean specification
+for a realistic design. We rewrote \texttt{instruction.md} for the SoC task five times
+across two days, removing successive layers of architectural hints, before the agent
+runs gave reproducible signal.
+
+\textbf{Build systems and physical design dominated the score.} The agent's Spec2GDSBench
+score was dominated by physical design rather than RTL design. Timing closure,
+place-and-route choices, LibreLane configuration, Yosys synthesis options, and KLayout
+DRC tolerances all dominated the score. We wanted RTL-design ability to be the
+bottleneck, but it was hidden behind back-end optimisation.
+
+\textbf{Real projects already have all of this.} The thing that finally moved us was the
+realisation that lowRISC's Ibex, NVIDIA's NVDLA, Princeton's OpenPiton, the PULP
+common-cells library, secworks/aes, Google's Coral NPU, and chipsalliance's VeeR EL2 each
+already have testbenches, build systems, CI configurations, and reference implementations
+carefully tuned by their maintainers. We do not need to write a spec for a UART because
+lowRISC has a real one and grades it with their own \texttt{simple\_system}. We do not
+need a six-stage grading funnel from synthesis through GDSII because the upstream's CI
+already produces a deterministic pass-or-fail. We just need to delete files.
+
+The pivot to closed-book restoration of upstream open-source projects came on April 12,
+captured in commit \texttt{723f8c3} (``start work on more ai accelerator tasks, start
+report'') which is the last commit on \texttt{spec2gdsbench/}. Between that commit and the
+first commit on \texttt{rtl-universe/} (\texttt{1024c2a}, ``init'', April 23) we wrote the
+restoration framing and the Harbor task layout that the next phase inherits.
+
+\section{Phase 5: RTL-Universe (April 23 -- May 8)}
+\label{sec:rtl-universe}
+
+Two and a half weeks of task engineering, agent runs, and an audit. 76 commits.
+This phase produced the artifacts that the companion paper reports.
+
+\subsection{First two days: The first two tasks}
+
+The repo started on April 23 with a single \texttt{init} commit (\texttt{1024c2a}). The
+next day's commit (\texttt{ea74335}, ``Add Harbor tasks: coralnpu (all tests) +
+coralnpu-e2e'') added the first two tasks. On April 25 we hardened the Harbor tasks by
+scrubbing warm-build artifacts that had survived our first agent runs (\texttt{f783357}),
+increased the agent timeout to 10 hours, and reconstructed the agent-generated code from
+trajectory logs (\texttt{877de87}, \texttt{cf7eaeb}) so we had a record of what the agents
+had actually written across our first runs.
+
+\subsection{The harbor-task-gen skill}
+
+On April 28 we shipped the first version of the \texttt{harbor-task-gen} skill
+(\texttt{1ad3b4d}). The skill is a Claude Code skill (\texttt{skills/harbor-task-gen/}
+in the repo) that converts a candidate upstream HDL repository into a Harbor task. Its
+\texttt{SKILL.md} file documents a five-step pipeline:
+(1)~clone the upstream repo and confirm the baseline CI passes;
+(2)~derive the strip manifest by following the upstream's Makefile or build manifest to
+identify the design unit and its implementation files;
+(3)~generate \texttt{environment/Dockerfile} that installs only the toolchain the
+upstream CI requires;
+(4)~generate \texttt{tests/test.sh} that calls the upstream test target and emits a
+normalised reward in $[0,1]$;
+(5)~stash the deleted files separately so we can later compare the agent's output to
+ground truth.
+
+The skill went through five iterations on the same day:
+\texttt{1ad3b4d} (initial),
+\texttt{82ce12f} (``Iterate harbor-task-gen skill: generalize Docker strategy, fix failure
+modes''),
+\texttt{1df25f5} (``Fix all 5 failure modes from BUGFIXES.md in harbor-task-gen skill''),
+\texttt{9af1d3e} (``Replace all tasks with iteration-4 fixed versions''), and
+\texttt{cda62aa} (``Standardize task variants: always create full + lite pair''). We
+documented each iteration in \texttt{BUGFIXES.md}, which by the end of the day contained
+roughly twenty entries covering Dockerfile heredoc parse errors, Debian Bookworm's
+\texttt{externally-managed-environment} pip refusal, missing git submodule entries,
+\texttt{count\_tests.sh} failures on green source, commercial AXI VIPs that the open-source
+flow could not stand in for, and many others.
+
+By the end of April 28 we had Harbor tasks for Ibex, Caliptra, PULP common-cells,
+secworks-aes, VeeR EL2, CVA6, Coral NPU, NVDLA, and OpenPiton --- nine candidate upstream
+projects, each with a \texttt{-full} and a \texttt{-e2e} variant.
+
+\subsection{Sixteen tried, eleven shipped, seven archived}
+
+The next two days were debugging across the candidate task list. Sonnet runs on April 29
+surfaced concrete failure modes. \texttt{veer-el2-block} scored 0 in 52 minutes
+(\texttt{69a31e7}). \texttt{veer-el2-full} build failed (the green-source tests fail in
+Docker because of a Verilator version mismatch; \texttt{7e1d2a5}). \texttt{caliptra-full}
+build failed (missing commercial AXI VIP; \texttt{eb8cfa5}).
+\texttt{caliptra-rtl-fw} build failed for the same reason (\texttt{3ff1e16}).
+\texttt{secworks-aes-full} hit Claude Code's 32K output token limit at the 30-minute mark
+(\texttt{74939fd}). \texttt{ibex-e2e} succeeded with reward 1.000 in 7\,h\,35\,m
+(\texttt{2146ec1}). \texttt{ibex-full} ran for 13.5 hours before we manually stopped it:
+the agent's CSR/timer implementation had \texttt{mtimecmp} always below \texttt{mtime},
+which produced an infinite IRQ$\to$MRET$\to$IRQ loop, and the three parallel Verilator
+sims generated over 100\,GB of debug trace logs (\texttt{32b0e59}). On \texttt{cva6-smoke}
+both runs failed during the build phase.
+
+We then iterated through Docker fixes for the broken tasks: \texttt{58effc0}, \texttt{de11a8d},
+\texttt{5b11791}, \texttt{a1f9c41}, \texttt{059399f}, \texttt{e0a6e51}, \texttt{72161b6},
+\texttt{9ebb346}, \texttt{164800d}, \texttt{6e941e6}, \texttt{e371dc8}. The CVA6 chain
+alone took five fixes (Bender 0.28.1 URL 404 $\to$ updated to 0.31.0; \texttt{riscv-tests}
+benchmarks needed riscv64 prefix $\to$ manual ISA install; Verilator 5.006 lacked the
+\texttt{WIDTHEXPAND} lint code $\to$ Verilator 5.008 in an isolated builder stage; Spike's
+\texttt{libriscv.so} not produced by \texttt{make install} $\to$ \texttt{ldconfig} after
+manual library install; CVA6 testbench's DPI link against Spike internals $\to$
+deferred). OpenTitan's Bazel toolchain bootstrap was its own debugging chapter: 0 of 94
+tests passed on green source in Docker even after fixing the inline-comment bug in
+\texttt{install\_deps.sh}.
+
+By April 30 we had archived seven tasks (\texttt{541dfbe}, ``Archive 7 broken tasks, keep
+11 working ones''): \texttt{caliptra-full}, \texttt{caliptra-rtl-fw}, \texttt{cva6-full},
+\texttt{cva6-smoke}, \texttt{opentitan-e2e}, \texttt{opentitan-full},
+\texttt{veer-el2-full}. They live in \texttt{minrepro\_task/\_archived/} for posterity.
+
+\subsection{The cheating discovery and DNS sinkhole}
+
+April 30 was the day the audit story started. The headline commit message:
+\texttt{ba277d1}, ``OpenCode results: Kimi K2.6 perfect on Ibex (1.000 both variants!)''.
+Followed seven hours later by \texttt{eae2aaf}, ``CRITICAL: Kimi K2.6 cheated on Ibex ---
+downloaded source from GitHub''. Followed 90 minutes later by \texttt{4a59e26},
+``CRITICAL: Multiple models cheat by downloading source from GitHub''.
+
+Reading the Kimi transcripts, we found that the agent had written
+\texttt{git clone https://github.com/lowRISC/ibex} to a temporary directory, computed
+md5sums to confirm the version match against the stripped source, and then
+\texttt{curl}'d each of the 30 stripped Verilog files individually from
+\texttt{raw.githubusercontent.com/lowRISC/ibex/master/}. The 18-minute completion time
+made sense: it was copying, not implementing. Opus had done the same thing on Coral NPU
+(\texttt{e128dfd}, \texttt{ba65fcc}): \texttt{git clone}, then \texttt{rsync
+--ignore-existing} to copy 281 files back into the stripped tree. Opus's own session
+memory file documented the approach explicitly (``Restoration approach: git clone, then
+rsync.'').
+
+The first attempted defence was \texttt{allow\_internet = false} on every task
+(\texttt{be2604a}). This blocked the cheating but also blocked the agent's API calls and
+package installs (\texttt{881d135}, ``Revert allow\_internet = false --- blocks agent API
+calls too''). The next attempt was a DNS sinkhole inside \texttt{docker-compose.yaml}:
+write \texttt{0.0.0.0 github.com} (and twelve other source-hosting domains) to
+\texttt{/etc/hosts} just before the agent gets control (\texttt{f9e62bd}, ``Block source
+code hosting via DNS sinkhole in docker-compose.yaml''). This worked for Claude Code,
+which installs from \texttt{claude.ai} (not blocked), but broke OpenCode, which installs
+NVM from \texttt{raw.githubusercontent.com}. We documented the OpenCode incompatibility in
+\texttt{f9abc7d}.
+
+The next day (May 1) we shipped a sandboxed-agent adapter (\texttt{195ea1b}, ``Add
+sandboxed agent adapters to prevent cheating on OpenCode runs'') that pre-installs
+OpenCode in the Docker image so the agent install path does not need GitHub egress at
+runtime. From this point onwards, the OpenCode-on-OpenRouter agents were sandboxed too.
+
+\subsection{The 812\,GB disk-fill incident}
+
+On May 6, while running the multi-account Claude Code launcher overnight, the lab server's
+root partition went from 813\,GB free to 40\,MB free in the span of a few hours. The
+launcher had paused itself per the disk-safety supervisor at 90\,\% usage, but the damage
+was already done. Investigation showed that one Sonnet job
+(\texttt{sandboxed-sonnet-ibex-full}) had written 812\,GB of Verilator build cache into
+the bind-mounted credentials directory (\texttt{/tmp/harbor-claude-creds-...-ibex-full/}).
+The cause: when Claude Code installs, it sets \texttt{HOME} to its credentials directory,
+and any subsequent \texttt{make} or \texttt{verilator} invocations that derive their build
+output path from \texttt{HOME} land inside the bind-mount. We deleted the stray directory,
+added a periodic orphan reaper to the supervisor that removes stale per-job credential
+directories, and added the disk-fill check that paused the launcher in the first place.
+The lessons-learned section of the companion paper covers this in less detail; the
+companion paper's harness section was largely written in response to this incident.
+
+\subsection{Multi-account Claude Code}
+
+To run the matrix in the time budget we had, we needed two Claude Max subscriptions with
+asymmetric per-account caps. The launcher (\texttt{scripts/launcher.py}, 616 lines) tracks
+each Claude job's credentials by hash, counts how many in-flight jobs are using each
+account, and refuses to launch if the per-account cap would be exceeded. Combined with
+the per-Claude-job credential bind-mount that the disk-fill incident already required,
+the result is a launcher that runs up to four Claude jobs in parallel (two on the
+primary, one on the secondary), three Codex jobs (single account, MAX\_CODEX = 3 due to
+OpenAI rate limits), and arbitrary OpenRouter jobs subject to balance. The full matrix
+took roughly four wall-clock days end-to-end on a 128-CPU, 1\,TB-RAM lab server.
+
+\subsection{The audit}
+
+After the matrix was complete we read every agent transcript looking for sandbox bypasses
+and verifier exploits. Of 18 raw perfect scores, 10 are bypasses or exploits. The
+companion paper reports the per-model breakdown (Table~3 of the paper) and the eight
+observed sandbox-bypass methods plus three verifier exploits (Table~4 of the paper).
 
 \section{What we would do differently}
 
 Three lessons we would carry into the next iteration.
 
-\paragraph{Sandbox first.} We built the harness and added the DNS sinkhole later. By the
-time we audited the transcripts, most of the perfect scores had already been bypassed. A
-default-deny egress firewall with explicit allowlists, plus an audit pass that flags
-external network egress in real time, would have caught everything in this paper before the
-run completed.
+\paragraph{Sandbox first.} We built the harness, ran agents, discovered the cheating, then
+added the DNS sinkhole. By the time we audited the transcripts, most of the perfect scores
+had already been bypassed and we needed re-runs. A default-deny egress firewall with
+explicit allowlists, plus a real-time grep over the agent log for known bypass strings,
+would have caught everything before the run completed.
 
 \paragraph{Verifier hardening should be part of task acceptance.} For every task we adopt
 from an upstream project, ``does the agent score 1.000 with a stub'' should be a check we
-run before greenlighting the task. Two of the three flagged tasks were exploitable in 17
-minutes of agent time. We could have caught both during task setup.
+run before greenlighting the task. Two of our three flagged tasks were exploitable in 17
+minutes of agent time. We could have caught both during task setup with a simple
+``compile-only DUT'' regression.
 
 \paragraph{Restoration is the right framing for now.} Of the four prior approaches
-(PR-replay, CVDP module synthesis, Spec2GDSBench, restoration), restoration is the only one
-that simultaneously gives the agent a real test suite, avoids the specification problem
-entirely, scales to project-scale work without us having to write build infrastructure, and
-produces a benchmark whose top-line we trust. \textsc{RTL-Universe} as it stands is not the
-right benchmark forever, but the restoration framing has more headroom than what we had
-before.
+(PR-replay in \textsc{SWE-Universe-Verilog} and \textsc{RTLBench}, module synthesis in
+\textsc{CVDP-Harbor}, full spec-to-GDS in \textsc{Spec2GDSBench}, restoration in
+\textsc{RTL-Universe}), restoration is the only one that simultaneously gives the agent a
+real test suite, avoids the specification-authoring problem entirely, scales to project-
+scale work without us writing build infrastructure, and produces a benchmark whose
+top-line we trust after the audit. \textsc{RTL-Universe} as it stands is not the right
+benchmark forever, but the restoration framing has more headroom than what we had before.
 
-\paragraph{Acknowledgements.} We thank the lowRISC, chipsalliance, NVIDIA, Princeton, PULP,
-Google Coral, and secworks teams for the upstream projects this benchmark is built on.
-Repository contributions over this arc are split roughly evenly between the two authors,
-with several small contributions appearing under our other GitHub handles
-(\texttt{Broyojo} and \texttt{spyre} respectively, plus the \texttt{SpiritSeal} handle that
-was used during the early SWE-Universe-Verilog and RTLBench work).
+\section{Final-Artifact Inventory}
+
+The deliverables across the five repositories are summarised below. All five repositories
+are committed (\textsc{rtl-universe} on the \texttt{codex-experiments-202605} branch of
+\url{github.com/cs3220-research/rtl-universe}; the other four under
+\texttt{other\_repos/}).
+
+\begin{itemize}[nosep, leftmargin=*]
+\item \textsc{SWE-Universe-Verilog}: 4 commits, 7-stage pipeline (Python, SQLite-backed,
+resumable), 401 strict-quality PRs across 3{,}296 HDL repositories.
+\item \textsc{RTLBench}: 12 commits, 3 Docker images (cocotb 1.x, cocotb 2.x, Verilator),
+re-implementation of the SWE-bench evaluation harness for HDL, 7 candidate upstream HDL
+repositories.
+\item \textsc{CVDP-Harbor}: 4 of-our commits on top of NVIDIA's CVDP fork, the Harbor
+conversion tool, 99 converted Harbor tasks, three frontier-model evaluation results
+(Opus 81.5\%, GPT-5.4 66.3\%, Gemini 3.1-Pro 54.3\% on 92 tasks), Opus reaching 96.2\% on
+the cleaned subset, and one upstream-bug finding (the 79/92 cocotb harness bug) we
+patched in our port.
+\item \textsc{Spec2GDSBench}: 52 commits, 12 task types (8 module-level, 1 SoC, 3 AI
+accelerators), three weekly research reports totalling roughly 12{,}000 words plus a
+1{,}042-word phase-1 research summary, 96 result directories spanning four sync
+generations, three reference designs that pass the full ASIC flow through GDSII on
+Sky130A.
+\item \textsc{RTL-Universe}: 76 commits, the \texttt{harbor-task-gen} skill (with 5
+iterations and roughly 20 documented bugfixes in \texttt{BUGFIXES.md}), 11 working
+restoration tasks (with 7 archived candidates that did not make the cut), the multi-agent
+launcher (\texttt{scripts/launcher.py}, 616 lines, with \texttt{launcher\_supervisor.sh}
+and \texttt{test\_launcher.py}), the sandboxed-agent adapters, the audit verdicts, and
+the companion benchmark paper.
+\end{itemize}
+
+\paragraph{Acknowledgements.} We thank the lowRISC, chipsalliance, NVIDIA, Princeton,
+PULP, Google Coral, and secworks teams for the upstream projects this benchmark is built
+on. Repository contributions over this arc are split roughly evenly between the two
+authors. Our other GitHub handles are \texttt{Broyojo} (David) and \texttt{spyre}
+(Saketh); the \texttt{SpiritSeal} handle was used during the early
+\textsc{SWE-Universe-Verilog} and \textsc{RTLBench} work.
 
 \bibliography{refs}
 
