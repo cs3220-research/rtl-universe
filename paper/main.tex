@@ -20,7 +20,9 @@
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{float}
-\usetikzlibrary{positioning, arrows.meta, fit, backgrounds, calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{positioning, arrows.meta, fit, backgrounds, calc, patterns}
 \lstset{basicstyle=\ttfamily\footnotesize, breaklines=true, columns=fullflexible,
         frame=single, framesep=2pt, xleftmargin=4pt, xrightmargin=4pt}
 
@@ -436,8 +438,47 @@ categorise informally as ``early give-up'' (under 5 minutes wall-clock, no real 
 ``build-system blocked'' (the agent writes plausible-looking RTL but cannot drive the
 upstream build). Both occurred across many cells. We did not adjust prompts, harness
 settings, or budget across models, so as to keep the comparison consistent. We report the
-raw numbers as an exploratory baseline. Section~\ref{sec:audit} re-scores the matrix after
-the closed-book threat model is enforced.
+raw numbers as an exploratory baseline. Figure~\ref{fig:headline} previews the result of
+the audit in Section~\ref{sec:audit}. The raw bar height is the perfect-score count, but
+only the dark bottom segment (the ``trusted'' subset, i.e., perfect on a non-flagged task
+without a confirmed bypass or exploit) reflects implementation correctness. The hatched and
+light-shaded segments above it correspond to verifier exploits and to source-download or
+behavioural-stub bypasses. GPT-5.5's tall bar collapses to one trusted pass; Opus 4.7,
+Sonnet 4.6, and Kimi K2.6 each hold two.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.95\linewidth, height=4.2cm,
+  ybar stacked, bar width=14pt,
+  ymin=0, ymax=7, ytick={0,1,2,3,4,5,6},
+  ylabel={Perfect scores}, ylabel near ticks,
+  symbolic x coords={GPT-5.5, Opus 4.7, Sonnet 4.6, Kimi K2.6, DeepSeek, GLM-5.1, Qwen-27B},
+  xtick=data, x tick label style={font=\small},
+  legend style={at={(0.5,1.04)}, anchor=south, legend columns=3, font=\footnotesize, draw=none, /tikz/every even column/.append style={column sep=8pt}},
+  enlarge x limits=0.08, axis line style={draw=black},
+  tick style={black},
+]
+% Order: x-axis, value
+\addplot+[draw=black, fill=black!75]
+  coordinates {(GPT-5.5, 1) (Opus 4.7, 2) (Sonnet 4.6, 2) (Kimi K2.6, 2) (DeepSeek, 1) (GLM-5.1, 0) (Qwen-27B, 0)};
+\addplot+[draw=black, pattern=north east lines]
+  coordinates {(GPT-5.5, 0) (Opus 4.7, 1) (Sonnet 4.6, 1) (Kimi K2.6, 0) (DeepSeek, 0) (GLM-5.1, 1) (Qwen-27B, 0)};
+\addplot+[draw=black, fill=black!20]
+  coordinates {(GPT-5.5, 5) (Opus 4.7, 2) (Sonnet 4.6, 0) (Kimi K2.6, 0) (DeepSeek, 0) (GLM-5.1, 0) (Qwen-27B, 0)};
+\legend{Trusted (legit), Verifier exploit, Bypass / stub}
+\end{axis}
+\end{tikzpicture}
+\caption{Per-model decomposition of the 18 perfect scores in the raw matrix. Each bar is a
+model. Bar segments stack from bottom to top: \textbf{trusted} perfect scores
+(implementation-correct; eight in total across the seven models), \textbf{verifier
+exploits} on flagged tasks (three in total), and \textbf{bypass/stub} cases where the
+upstream sources were retrieved or a behavioural stub satisfied the testbench (seven in
+total). Only the dark segment counts as evidence of project-scale RTL implementation
+ability under the closed-book threat model.}
+\label{fig:headline}
+\end{figure}
 
 \paragraph{Per-task observation.}
 The two tasks where multiple models score well (\texttt{secworks-aes-full},
