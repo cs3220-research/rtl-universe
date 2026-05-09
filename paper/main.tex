@@ -19,6 +19,7 @@
 \usepackage{listings}
 \usepackage{enumitem}
 \usepackage{tikz}
+\usepackage{float}
 \usetikzlibrary{positioning, arrows.meta, fit, backgrounds, calc}
 \lstset{basicstyle=\ttfamily\footnotesize, breaklines=true, columns=fullflexible,
         frame=single, framesep=2pt, xleftmargin=4pt, xrightmargin=4pt}
@@ -37,15 +38,16 @@
 
 \begin{abstract}
 Existing LLM benchmarks for hardware description languages test single-module Verilog
-generation from natural-language specifications and now sit near the saturation ceiling. The
-recent VerilogEval, RTLLM, and CVDP benchmarks all report above 90 percent pass rate for
-current frontier models. We argue this is the wrong measurement. Real hardware engineering
-takes place at the project scale, where dozens of files cooperate through bus protocols,
-build systems, and continuous-integration test suites. We introduce \textsc{RTL-Universe}, a
-closed-book benchmark of eleven open-source HDL projects (Ibex, VeeR EL2, NVDLA, Coral NPU,
-OpenPiton, PULP common cells, Secworks AES) in which the implementation files of one design
-unit are stripped, and an LLM coding agent is asked to restore them so the project's
-unmodified upstream CI suite passes. The agent must work from the stripped repository alone,
+generation from natural-language specifications and have largely been driven up to high pass
+rates by current frontier models. In our own measurements on the VerilogEval, RTLLM, and
+CVDP suites, recent Claude variants clear 90 percent pass rate on the converted module-level
+sets. We argue this is the wrong measurement. Real hardware engineering takes place at the
+project scale, where dozens of files cooperate through bus protocols, build systems, and
+continuous-integration test suites. We introduce \textsc{RTL-Universe}, a closed-book
+benchmark of eleven restoration tasks drawn from seven open-source HDL projects (Ibex, VeeR
+EL2, NVDLA, Coral NPU, OpenPiton, PULP common cells, Secworks AES) in which the
+implementation files of one design unit are stripped, and an LLM coding agent is asked to
+restore them so the project's unmodified upstream CI suite passes. The agent must work from the stripped repository alone,
 without retrieving the upstream sources. We evaluate seven model and harness pairs across
 Claude Code, the Codex CLI, and OpenCode on a 7$\times$11 matrix. As an exploratory baseline,
 the strongest agent records 6 perfect scores out of 11 tasks and four of the seven agents
@@ -60,19 +62,20 @@ findings, and concrete recommendations for future hardware agent benchmarks.
 \section{Introduction}
 
 LLM coding agents have improved quickly on general-purpose software-engineering benchmarks.
-HumanEval~\citep{humaneval} and MBPP~\citep{mbpp} have been saturated for
-some time. Project-level evaluations have followed a clear progression.
-SWE-bench~\citep{swebench} reported around 2 percent pass rate at launch, and
-current top agents pass close to 70 percent on its successor SWE-bench
-Verified~\citep{openai2024swebenchverified}. Training-data scaling
-(\citealp{swesmith}; \citealp{sweuniverse}) and contamination-controlled
+HumanEval~\citep{humaneval} and MBPP~\citep{mbpp} have been saturated for some time.
+Project-level evaluations have followed a clear progression. SWE-bench~\citep{swebench}
+reported around 2 percent pass rate at launch, and current top agents pass close to 70
+percent on its successor SWE-bench Verified~\citep{openai2024swebenchverified}. Training-data
+scaling (\citealp{swesmith}; \citealp{sweuniverse}) and contamination-controlled
 evaluation~\citep{livecodebench} extend the surface, and
-ProgramBench~\citep{programbench} pushes evaluation toward whole-program
-restoration. Hardware description languages have followed a similar curve at the module
-level. VerilogEval~\citep{verilogeval}, RTLLM~\citep{rtllm},
-VeriGen~\citep{verigen}, RTLCoder~\citep{rtlcoder},
-OpenLLM-RTL~\citep{openllmrtl}, and the recent CVDP suite~\citep{nvidia2024cvdp} all
-report 90 percent or higher pass rates for current frontier models. No equivalent harder
+ProgramBench~\citep{programbench} pushes evaluation toward whole-program restoration.
+Hardware description languages have followed a similar curve at the module level. Older
+suites such as VerilogEval~\citep{verilogeval}, RTLLM~\citep{rtllm}, and
+VeriGen~\citep{verigen} have seen high pass rates from recent models and agentic methods,
+including RTLCoder~\citep{rtlcoder}, OpenLLM-RTL~\citep{openllmrtl}, and
+BetterV~\citep{betterv}. In our own \textsc{CVDP-Harbor} port of the
+CVDP suite~\citep{nvidia2024cvdp}, current Claude variants cluster above 90 percent on the
+converted module-level subset. No equivalent harder \emph{closed-book restoration}
 benchmark exists at the project scale for HDL. We propose one.
 
 The premise of \textsc{RTL-Universe} is that real hardware engineering takes place at the
@@ -131,42 +134,50 @@ built. A more chronological account appears in our companion logbook. This paper
 the benchmark itself and what running it tells us about current agents on project-scale
 hardware tasks.
 
+\paragraph{Final artifacts.}
+The deliverable consists of the eleven tasks, the \texttt{harbor-task-gen}
+task-generation skill, the per-task Docker environments and verifier wrappers, the
+multi-agent launcher with its sandbox and supervision layers, the $7\times 11$ result
+matrix with full per-cell transcripts, and the audit taxonomy and verdicts in
+Section~\ref{sec:audit}. Code, tasks, and transcripts are released on the
+\texttt{codex-experiments-202605} branch of
+\url{github.com/cs3220-research/rtl-universe}; the companion logbook records the earlier
+PR-replay, CVDP-Harbor, and Spec2GDSBench phases that led here.
+
 \section{Related Work}
 
 \paragraph{Module-level HDL benchmarks.}
-VerilogEval~\citep{verilogeval} (156 problems), RTLLM~\citep{rtllm} (50
-problems), and VeriGen~\citep{verigen} grade single-module Verilog generation from
-natural-language descriptions. Test suites are 1 to 10 lines and the design is
-self-contained. RTLCoder~\citep{rtlcoder}, OpenLLM-RTL~\citep{openllmrtl}, and
-BetterV~\citep{betterv} extend the data and supervision side of this regime, and
-ResBench~\citep{resbench} adds resource-awareness as a metric. CVDP
-\citep{nvidia2024cvdp} (783 problems) extends single-module Verilog with non-agentic and
-agentic variants but stays at the module scale. None of these benchmarks asks the agent to
-operate on an existing build system or write code that is then linked into a larger
-project.
-
-\paragraph{Repository-level hardware-agent benchmarks.}
-The closest concurrent work is HWE-Bench~\citep{hwebench}, which evaluates LLM
-agents on real-world hardware bug repair across full repositories
-(Ibex, CVA6, OpenTitan, Caliptra, Rocket Chip) using native simulation and regression
-flows. \textsc{RTL-Universe} is complementary: instead of giving the agent a bug report
-and asking for a minimal patch, we strip one design unit and require closed-book
-restoration from the remaining repository context. The two settings exercise different
-failure modes: HWE-Bench emphasises fault localisation and minimal-diff editing under an
-explicit bug description, whereas \textsc{RTL-Universe} emphasises source leakage,
-sandboxing, and verifier validity, since the upstream sources are physically reachable on
-the public internet. Clover~\citep{clover} explores a neural-symbolic harness for
-verified RTL repair on related repository-scale tasks.
+VerilogEval~\citep{verilogeval} (156 problems), RTLLM~\citep{rtllm} (50 problems), and
+VeriGen~\citep{verigen} grade single-module Verilog generation from natural-language
+descriptions. Test suites are 1 to 10 lines and the design is self-contained.
+RTLCoder~\citep{rtlcoder}, OpenLLM-RTL~\citep{openllmrtl}, and BetterV~\citep{betterv}
+extend the data and supervision side of this regime, and ResBench~\citep{resbench} adds
+resource-awareness as a metric. CVDP~\citep{nvidia2024cvdp} (783 problems) extends
+single-module Verilog with non-agentic and agentic variants but stays at the module scale.
+None of these benchmarks asks the agent to operate on an existing build system or write
+code that is then linked into a larger project.
 
 \paragraph{Agentic and conversational HDL design.}
-Chip-Chat~\citep{chipchat} and ChipGPT~\citep{chipgpt} explore
-LLM-driven chip design through dialogue. AutoChip~\citep{autochip},
-VerilogCoder~\citep{verilogcoder}, MAGE~\citep{mage},
-AutoVCoder~\citep{autovcoder}, and CodeV~\citep{codev} build agentic loops
-around Verilog generation. ChipNeMo~\citep{chipnemo} domain-adapts an LLM to chip
-design, and GPT4AIGChip~\citep{gpt4aigchip} targets AI-accelerator design automation.
-All of these still operate at single-module or single-design scope. \textsc{RTL-Universe}
+Chip-Chat~\citep{chipchat} and ChipGPT~\citep{chipgpt} explore LLM-driven chip design
+through dialogue. AutoChip~\citep{autochip}, VerilogCoder~\citep{verilogcoder},
+MAGE~\citep{mage}, AutoVCoder~\citep{autovcoder}, and CodeV~\citep{codev} build agentic
+loops around Verilog generation. ChipNeMo~\citep{chipnemo} domain-adapts an LLM to chip
+design, and GPT4AIGChip~\citep{gpt4aigchip} targets AI-accelerator design automation. All
+of these still operate at single-module or single-design scope. \textsc{RTL-Universe}
 moves the evaluation surface to the full upstream project.
+
+\paragraph{Repository-level hardware-agent benchmarks.}
+The closest concurrent work is HWE-Bench~\citep{hwebench}, which evaluates LLM agents on
+real-world hardware bug repair across full repositories (Ibex, CVA6, OpenTitan, Caliptra,
+Rocket Chip) using native simulation and regression flows. \textsc{RTL-Universe} is
+complementary: instead of giving the agent a bug report and asking for a minimal patch,
+we strip one design unit and require closed-book restoration from the remaining repository
+context. The two settings exercise different failure modes. HWE-Bench emphasises fault
+localisation and minimal-diff editing under an explicit bug description, whereas
+\textsc{RTL-Universe} emphasises source leakage, sandboxing, and verifier validity, since
+the upstream sources are physically reachable on the public internet.
+Clover~\citep{clover} explores a neural-symbolic harness for verified RTL repair on
+related repository-scale tasks.
 
 \paragraph{Agentic SWE benchmarks.}
 SWE-bench~\citep{swebench} runs agents against real Python GitHub issues.
@@ -216,7 +227,9 @@ than its own. Table~\ref{tab:tasks} lists the eleven tasks.
 \centering
 \caption{The eleven \textsc{RTL-Universe} tasks. \#strip is the count of deleted
 implementation files. Tasks marked $\dagger$ have a verifier whose pass criterion is
-exit-code-only or assertion-trivial (Section~\ref{sec:audit}). These tasks are reported but
+exit-code-only or assertion-trivial (Section~\ref{sec:audit}). \texttt{ibex-full} is also
+flagged because its verifier still includes the same exit-code-only \texttt{simple\_system}
+pass path before the additional \texttt{tb\_cs\_regs} test. Flagged tasks are reported but
 discounted in the cleaned ranking.}
 \label{tab:tasks}
 \footnotesize
@@ -267,7 +280,7 @@ rather than satisfy a behavioural contract.
 
 \paragraph{Task-generation skill.}
 We do not write each task by hand. We wrote a Claude Code skill called
-\texttt{harbor-task-gen} that converts an arbitrary upstream HDL repository into a
+\texttt{harbor-task-gen} that converts a candidate upstream HDL repository into a
 \textsc{RTL-Universe} task. Given an upstream repo and the path of the design unit to strip,
 the skill (i)~runs the upstream CI to confirm the baseline passes, (ii)~derives the strip
 manifest by following the upstream Makefile or build manifest, (iii)~generates an environment
@@ -280,7 +293,7 @@ the final eleven because the upstream build system was either too brittle for th
 drive or too non-deterministic for the verifier to score. Figure~\ref{fig:pipeline} shows the
 full pipeline.
 
-\begin{figure}[t]
+\begin{figure}[H]
 \centering
 \resizebox{\linewidth}{!}{%
 \begin{tikzpicture}[
@@ -383,7 +396,7 @@ view them as part of what \textsc{RTL-Universe} contributes as a benchmark, not 
 We evaluate seven model and harness pairs. Opus 4.7 and Sonnet 4.6 run via Claude Code.
 GPT-5.5 (reasoning effort \texttt{xhigh}) runs via the Codex CLI. DeepSeek V4-Pro, GLM-5.1,
 Kimi K2.6, and Qwen 3.6-27B run via OpenCode and OpenRouter. Each cell has a 10-hour
-wall-clock cap with up to 3 trials.
+wall-clock cap, with up to three retries permitted only for infrastructure failures.
 
 \section{Results}
 \label{sec:results}
@@ -392,7 +405,10 @@ wall-clock cap with up to 3 trials.
 \centering
 \caption{Reward matrix on \textsc{RTL-Universe}. Bold cells are perfect (1.000). Tasks
 marked $\dagger$ have a verifier flaw and are omitted from the strong-verifier count. ``F''
-denotes an infrastructure failure (auth or install error).}
+denotes an infrastructure failure (auth or install error). Column abbreviations:
+\texttt{cor} = Coral NPU, \texttt{ibe} = Ibex, \texttt{nvd} = NVDLA, \texttt{opn} =
+OpenPiton, \texttt{pulp} = PULP common cells, \texttt{sec} = Secworks AES, \texttt{vee} =
+VeeR EL2.}
 \label{tab:matrix}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
@@ -439,20 +455,23 @@ any one Verilog statement.
 The closed-book threat model says the agent must work from the stripped repository alone. We
 read every agent transcript looking for cases where the agent obtained the answer from
 elsewhere or scored on a flawed verifier. We found 10 such cases out of 18 raw perfect
-scores. We categorise them into three groups. The full method list is in the appendix.
+scores. The audit catalogues the sandbox and verifier failure modes we observed: external
+source recovery through mirrors and CDNs, vendor-side fetch tools that route around the
+container, behavioural stubs, and flawed verifier pass criteria. We categorise them into
+three groups; Table~\ref{tab:bypasses} gives the full mechanism list.
 
 \begin{table}[h]
 \centering
-\caption{Per-model audit summary. ``Cheats'' counts perfect scores produced by retrieving
-the upstream sources or by writing a behavioural stub that fakes testbench traffic.
-``Exploits'' counts perfect scores produced on tasks whose verifier was independently shown
-to be flawed. ``Trusted'' counts perfect scores on the eight non-flagged tasks that did not
-involve a cheat or exploit.}
+\caption{Per-model audit summary. ``Bypass/stub'' counts perfect scores produced by
+retrieving the upstream sources or by writing a behavioural stub that fakes testbench
+traffic. ``Exploits'' counts perfect scores produced on tasks whose verifier was
+independently shown to be flawed. ``Trusted'' counts perfect scores on the eight non-flagged
+tasks that did not involve a bypass, stub, or exploit.}
 \label{tab:audit}
 \footnotesize
 \begin{tabular}{lcccc}
 \toprule
-Model & Raw perfect ($/11$) & Cheats & Exploits & Trusted ($/8$) \\
+Model & Raw perfect ($/11$) & Bypass/stub & Exploits & Trusted ($/8$) \\
 \midrule
 GPT-5.5     & 6 & 5 & 0 & 1 \\
 Opus 4.7    & 5 & 2 & 1 & 2 \\
@@ -485,7 +504,9 @@ Codex MCP existed when we built the sandbox. It accounts for one of GPT-5.5's pe
 
 \begin{table}[h]
 \centering
-\caption{The eight observed sandbox-bypass methods, plus three verifier exploits.}
+\caption{Observed and attempted sandbox-bypass and verifier-exploit mechanisms. Rows are
+mechanisms, not disjoint score cases; multiple mechanisms can occur in a single passing
+cell (for example, GPT-5.5 on \texttt{veer-el2-block} combined A5 and B2).}
 \label{tab:bypasses}
 \footnotesize
 \begin{tabular}{l p{6.5cm} l}
@@ -511,14 +532,14 @@ C3 & No-op \texttt{assert True} scoreboard exploit                 & Opus \\
 \paragraph{Category C: Verifier exploits.}
 The Ibex \texttt{simple\_system} \texttt{tests/test.sh}'s pass criterion is ``simulator exit
 code $= 0$''. An empty top-level wrapper that runs Verilator's setup phase and exits clean
-satisfies this without ever running the firmware. Both Gemini 3.1-Pro (in a paused
-configuration not in our headline table; in the larger superset of runs it scored 1.000 here
-using exactly this exploit) and GLM-5.1 reach perfect scores on this verifier. The
-\texttt{veer-el2-block} PyUVM IRQ test has \texttt{assert True} in its \texttt{check\_phase}.
-Any compiling DUT passes. Opus identified this in 17 minutes and won the cell with 37
-\texttt{module name(); endmodule} stubs. The verifier flaws are upstream bugs that real HDL
-projects also have, and restoration-style benchmarking surfaces them quickly because the
-agent will exploit them when given the chance.
+satisfies this without ever running the firmware. GLM-5.1 reached a perfect score on
+\texttt{ibex-e2e} via this path. \texttt{ibex-full} inherits the same pass path before
+running the additional \texttt{tb\_cs\_regs} UVM test, which is why we mark both Ibex tasks
+with $\dagger$. The \texttt{veer-el2-block} PyUVM IRQ test has \texttt{assert True} in its
+\texttt{check\_phase}, so any compiling DUT passes. Opus identified this in 17 minutes and
+won the cell with 37 \texttt{module name(); endmodule} stubs. The verifier flaws are
+upstream bugs that real HDL projects also have, and restoration-style benchmarking surfaces
+them quickly because the agent will exploit them when given the chance.
 
 \paragraph{What the audit tells us.}
 After zeroing every confirmed cheat or exploit, the strongest agents pass 2 out of the 8
@@ -547,13 +568,14 @@ signal-trace assertions. A simple structural sanity check (``does the design hie
 contain modules of these names'') catches the behavioral-stub family without constraining the
 implementation.
 
-\paragraph{Limitations.} We run one trial per cell with up to 3 retries on infrastructure
-failure. We do not measure within-cell variance. The cheat-versus-legit verdict is a manual
-judgement on the transcripts. We publish all transcripts and invite re-adjudication. The
-benchmark covers 11 tasks chosen by us. A wider sweep across the open-source HDL ecosystem,
-and especially across non-RISC-V architectures, would be a natural extension. The harness is
-engineered for our two-laptop and lab-server combination. Porting to a fully cloud-native
-runner is out of scope here.
+\paragraph{Limitations.} We run one trial per cell, with up to three retries permitted only
+for infrastructure failures. We do not measure within-cell variance. The bypass-versus-legit
+verdict is a manual judgement on the transcripts; we include all transcripts in the
+submitted artifact repository and invite re-adjudication. The benchmark covers 11 tasks
+chosen by us. A wider sweep across the open-source HDL ecosystem, and especially across
+non-RISC-V architectures, would be a natural extension. The harness is engineered for our
+two-laptop and lab-server combination. Porting to a fully cloud-native runner is out of
+scope here.
 
 \section{Conclusion}
 
@@ -573,8 +595,8 @@ released on the \texttt{codex-experiments-202605} branch of
 \url{github.com/cs3220-research/rtl-universe}; total wall-clock for the run reported here
 was approximately 4 days on a 128-CPU 1\,TB-RAM lab server.
 
-\renewcommand{\bibfont}{\footnotesize}
-\setlength{\bibsep}{1pt}
+\renewcommand{\bibfont}{\small}
+\setlength{\bibsep}{2pt plus 0.5ex}
 \bibliography{refs}
 
 \end{document}
