@@ -33,12 +33,14 @@ hardware description languages, ending with the \textsc{RTL-Universe} benchmark 
 our companion paper. The arc covers four prior repositories. The first was a GitHub pull
 request data pipeline (SWE-Universe-Verilog). The second was an early evaluation harness
 (RTLBench). The third was a port of NVIDIA's CVDP problem suite into our infrastructure
-(CVDP-Harbor). The fourth was a spec-to-GDSII benchmark we built and iterated weekly
-through three pivots (Spec2GDSBench). The current state, \textsc{RTL-Universe}, takes a
-different approach by framing tasks as project-scale restoration of open-source HDL
-projects. We write the logbook as a class progress report, recording what we tried, what
-worked, and where we pivoted, with concrete references to commits, weekly reports, and run
-results in the project's \texttt{other\_repos/} directory.
+(CVDP-Harbor). The fourth was a spec-to-GDSII benchmark we built and iterated weekly through
+three pivots (Spec2GDSBench). The current state, \textsc{RTL-Universe}, takes a different
+approach by framing tasks as project-scale restoration of open-source HDL projects. Although
+the project began as a CS\,3220 research option, we treat the final submission as a
+benchmark-design study for LLM hardware agents, with RISC-V cores, AI accelerators, and real
+open-source RTL projects serving as the evaluation substrate. The logbook records what we
+tried, what failed, what we learned, and why we pivoted, with concrete references to
+commits, weekly reports, and run results in the project's \texttt{other\_repos/} directory.
 \end{abstract}
 
 \section{Goal}
@@ -55,8 +57,45 @@ there a benchmark that we trust to grade them on it?
 Over two and a half months we built five repositories, in roughly chronological order:
 \textsc{SWE-Universe-Verilog}, \textsc{RTLBench}, \textsc{CVDP-Harbor},
 \textsc{Spec2GDSBench}, and \textsc{RTL-Universe}. Each one taught us something that we then
-either folded into the next or used as the reason to start from scratch. The rest of this
-document is that arc.
+either folded into the next or used as the reason to start from scratch.
+Table~\ref{tab:timeline} lists each phase, the key commits, the result, and the decision we
+made next. The remainder of this document expands each row.
+
+\begin{table}[h]
+\centering
+\caption{Project timeline. Each row is a phase, the repository it lived in, the commit range
+that bounds it, the headline result, and the decision that ended it.}
+\label{tab:timeline}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l l l p{3.4cm} p{3.6cm}@{}}
+\toprule
+Period & Repo & Commits & Result & Decision \\
+\midrule
+Mar 2--6     & swe-universe-verilog  & \texttt{47f1b40}\,..\,\texttt{1b6b034} &
+  401 strict-filter PRs from 3{,}296 HDL repos. &
+  PR-replay does not isolate cleanly. Pivot to CI-graded restoration. \\
+Mar 2--3     & rtlbench              & \texttt{45e61b9}\,..\,\texttt{38a68a1} &
+  First Claude runs. Toolchain-version mismatches and ambiguous testbenches. &
+  Adopt per-task Dockerfiles. Require mechanically-checkable verifiers. \\
+Mar 7--13    & cvdp\_benchmark       & \texttt{c002eb5}\,..\,\texttt{eba655b} &
+  3 Claude variants, 90+\% pass on CVDP. &
+  Module-level HDL is saturated. Move to project scale. \\
+Mar 23--28   & spec2gdsbench (W1)    & \texttt{9821882}\,..\,\texttt{d96e177} &
+  Sonnet 0.964 mean over 64 runs on 8 tasks. &
+  Near-saturated. Pivot to a single SoC task. \\
+Mar 31--Apr 6 & spec2gdsbench (W2)   & \texttt{ba338b7}\,..\,\texttt{2fa0d8d} &
+  Sonnet best 0.616 on RV64GC Linux-boot SoC. &
+  Single task gives poor signal. Pivot to a graduated ladder. \\
+Apr 7--12    & spec2gdsbench (W3)    & \texttt{723f8c3}                       &
+  3 AI-accelerator tasks pass full GDS flow as references. &
+  Specification authoring is the bottleneck. Pivot to upstream restoration. \\
+Apr 23--May 8 & rtl-universe         & \texttt{1024c2a}\,..\,current          &
+  7-model $\times$ 11-task matrix; audit reveals cheating. &
+  Companion paper. Continue. \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{March 2 to 6: SWE-Universe-Verilog (data pipeline)}
 \label{sec:sweuv}
@@ -232,13 +271,14 @@ bind-mounted credentials directory and would have crashed the lab server, and a 
 killer because the agents sometimes write at human pace for hours and then freeze.
 
 \paragraph{The result, briefly.}
-The headline numbers are 6 of 11 perfect for GPT-5.5 and 5 of 11 for Opus 4.7. The smaller
-open-weight models cluster at 0 to 2 perfects each. Reading the transcripts we found that
-most of the perfect scores came either from sandbox bypasses (CDN mirrors, IP-literal DNS
-bypass, vendor-side fetch tools) or from two upstream verifier flaws (an exit-code-only test
-in Ibex and an \texttt{assert True} scoreboard in VeeR-EL2). The strong-verifier pass rate
-is much lower: 1 to 2 of 11 for the best agents, 0 of 11 for the weakest. The full
-discussion is in the companion paper.
+The exploratory baseline records 6 perfect scores for GPT-5.5 and 5 for Opus 4.7. The
+smaller open-weight models cluster at 0 to 2 perfect scores each. Reading the transcripts we
+found that 10 of the 18 perfect scores came either from sandbox bypasses (CDN mirrors,
+IP-literal DNS bypass, vendor-side fetch tools) or from two upstream verifier flaws (an
+exit-code-only test in Ibex and an \texttt{assert True} scoreboard in VeeR-EL2). After
+zeroing those cells, the strongest agents pass 2 of the 8 trusted tasks. We frame the matrix
+as an exploratory baseline plus an audit finding rather than as a definitive leaderboard.
+The full discussion is in the companion paper.
 
 \section{What we would do differently}
 

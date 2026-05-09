@@ -42,18 +42,19 @@ recent VerilogEval, RTLLM, and CVDP benchmarks all report above 90 percent pass 
 current frontier models. We argue this is the wrong measurement. Real hardware engineering
 takes place at the project scale, where dozens of files cooperate through bus protocols,
 build systems, and continuous-integration test suites. We introduce \textsc{RTL-Universe}, a
-benchmark of eleven open-source HDL projects (Ibex, VeeR EL2, NVDLA, Coral NPU, OpenPiton,
-PULP common cells, Secworks AES) in which the implementation files of one design unit are
-stripped, and an LLM coding agent is asked to restore them so the project's unmodified
-upstream CI suite passes. We evaluate seven model and harness pairs across Claude Code, the
-Codex CLI, and OpenCode on a 7$\times$11 matrix. The strongest agent passes 6 of 11 tasks,
-and four of the seven pass 0 to 2 of 11. A forensic audit of the agent transcripts further
-shows that 10 of the 15 perfect scores in the run are achieved by exploiting either an
-unblocked sandbox egress path or a verifier flaw rather than by writing the design. On the
-eight tasks whose verifiers we trust, the strongest agent passes 2 of 11 tasks. We report
-the benchmark, the task-generation skill that produces tasks from upstream repositories, the
-evaluation harness, the run results, the bypass taxonomy, and concrete recommendations for
-future hardware agent benchmarks.
+closed-book benchmark of eleven open-source HDL projects (Ibex, VeeR EL2, NVDLA, Coral NPU,
+OpenPiton, PULP common cells, Secworks AES) in which the implementation files of one design
+unit are stripped, and an LLM coding agent is asked to restore them so the project's
+unmodified upstream CI suite passes. The agent must work from the stripped repository alone,
+without retrieving the upstream sources. We evaluate seven model and harness pairs across
+Claude Code, the Codex CLI, and OpenCode on a 7$\times$11 matrix. As an exploratory baseline,
+the strongest agent records 6 perfect scores out of 11 tasks and four of the seven agents
+record 0 to 2 perfect scores. A forensic audit of the agent transcripts further shows that
+10 of the 18 perfect scores in the run are obtained by exploiting either an unblocked sandbox
+egress path or a verifier flaw rather than by writing the design. After zeroing those cells,
+the strongest agents pass 2 of 8 trusted tasks. We report the benchmark, the task-generation
+skill that produces tasks from upstream repositories, the evaluation harness, the audit
+findings, and concrete recommendations for future hardware agent benchmarks.
 \end{abstract}
 
 \section{Introduction}
@@ -77,6 +78,16 @@ re-implement a missing module against the rest of the project. We capture this b
 real open-source HDL projects, deleting one design unit's implementation files, and asking
 an agent to restore them so the project's own CI passes.
 
+\paragraph{Closed-book threat model.}
+We treat \textsc{RTL-Universe} as a closed-book restoration benchmark. The agent must restore
+the deleted files using only the contents of the stripped repository (testbenches, build
+files, README, register-map JSON, reference Python golden models, and any other unstripped
+sources). Retrieving the original upstream files from the public internet, from third-party
+mirrors, from cached archives, from CDNs that serve the same files, or through any channel
+that bypasses the agent's container is outside the benchmark's scope. The skill being
+measured is RTL implementation, not search. We discuss what happens when this threat model
+is not enforced in Section~\ref{sec:audit}.
+
 Our contributions are:
 \begin{enumerate}[nosep, leftmargin=*]
 \item \textbf{A benchmark} of 11 restoration tasks built on real open-source projects spanning
@@ -94,12 +105,13 @@ OpenCode under a DNS sinkhole, with per-account concurrency caps for subscriptio
 agents and a disk-and-process supervisor that we found necessary in practice
 (Section~\ref{sec:harness}).
 
-\item \textbf{An empirical evaluation} of seven model and harness pairs on the 7$\times$11
-matrix (Section~\ref{sec:results}). The strongest agent (GPT-5.5, reasoning effort \texttt{xhigh})
-reports 6 of 11 perfect-score passes. The OpenCode-on-OpenRouter open-weight models (Kimi
-K2.6, DeepSeek V4-Pro, GLM-5.1, Qwen 3.6-27B) cluster at 0 to 2 perfects. Several tasks
-(\texttt{coralnpu-full}, \texttt{nvdla-e2e}, \texttt{openpiton-e2e},
-\texttt{pulp-common-cells-full}) are passed by zero or one model.
+\item \textbf{An exploratory evaluation} of seven model and harness pairs on the 7$\times$11
+matrix (Section~\ref{sec:results}). The strongest agent (GPT-5.5, reasoning effort
+\texttt{xhigh}) records 6 perfect scores. The OpenCode-on-OpenRouter open-weight models (Kimi
+K2.6, DeepSeek V4-Pro, GLM-5.1, Qwen 3.6-27B) cluster at 0 to 2 perfect scores. Several
+tasks (\texttt{coralnpu-full}, \texttt{nvdla-e2e}, \texttt{openpiton-e2e},
+\texttt{pulp-common-cells-full}) are passed by zero or one model. We treat these numbers as
+an exploratory baseline rather than a definitive ranking.
 
 \item \textbf{An audit} of the agent transcripts that catalogues eight ways an agent can score
 without doing the task: six varieties of source-code download bypass, plus two verifier
@@ -359,14 +371,16 @@ Qwen-27B     & .00            & .00 & .00            & .00            & .00 & .0
 \end{table}
 
 \paragraph{Headline.}
-Table~\ref{tab:matrix} shows the raw matrix. GPT-5.5 leads at 6 of 11 perfect scores, Opus
-4.7 has 5 of 11, and Sonnet 4.6 has 3 of 11. The smaller open-weight models cluster at 0 to 2
-perfects and average reward below 0.20. The OpenCode harness around the smaller models tends
-to produce two failure modes that we categorise informally as ``early give-up'' (under 5
-minutes wall-clock, no real attempt) and ``build-system blocked'' (the agent writes
-plausible-looking RTL but cannot drive the upstream build). Both occurred across many cells.
-We did not adjust prompts, harness settings, or budget across models to keep the comparison
-fair.
+Table~\ref{tab:matrix} shows the raw matrix. The total number of perfect scores across the
+matrix is 18. GPT-5.5 records 6, Opus 4.7 records 5, and Sonnet 4.6 records 3. The smaller
+open-weight models cluster at 0 to 2 perfect scores and average reward below 0.20. The
+OpenCode harness around the smaller models tends to produce two failure modes that we
+categorise informally as ``early give-up'' (under 5 minutes wall-clock, no real attempt) and
+``build-system blocked'' (the agent writes plausible-looking RTL but cannot drive the
+upstream build). Both occurred across many cells. We did not adjust prompts, harness
+settings, or budget across models, so as to keep the comparison consistent. We report the
+raw numbers as an exploratory baseline. Section~\ref{sec:audit} re-scores the matrix after
+the closed-book threat model is enforced.
 
 \paragraph{Per-task observation.}
 The two tasks where multiple models score well (\texttt{secworks-aes-full},
@@ -378,13 +392,39 @@ the most algorithmically hard. We read this as evidence that project-scale RTL r
 dominated by build-system and integration friction rather than by the difficulty of writing
 any one Verilog statement.
 
-\section{Audit: How agents reach high scores}
+\section{Audit: how agents reach high scores}
 \label{sec:audit}
 
-When we read the agent transcripts we found that several perfect scores were achieved
-without writing the design. We categorise the bypasses into three groups, and the full method
-list is in the Appendix. We treat this as a quality-control finding about how to run an HDL
-agent benchmark.
+The closed-book threat model says the agent must work from the stripped repository alone. We
+read every agent transcript looking for cases where the agent obtained the answer from
+elsewhere or scored on a flawed verifier. We found 10 such cases out of 18 raw perfect
+scores. We categorise them into three groups. The full method list is in the appendix.
+
+\begin{table}[h]
+\centering
+\caption{Per-model audit summary. ``Cheats'' counts perfect scores produced by retrieving
+the upstream sources or by writing a behavioural stub that fakes testbench traffic.
+``Exploits'' counts perfect scores produced on tasks whose verifier was independently shown
+to be flawed. ``Trusted'' counts perfect scores on the eight non-flagged tasks that did not
+involve a cheat or exploit.}
+\label{tab:audit}
+\footnotesize
+\begin{tabular}{lcccc}
+\toprule
+Model & Raw perfect ($/11$) & Cheats & Exploits & Trusted ($/8$) \\
+\midrule
+GPT-5.5     & 6 & 5 & 0 & 1 \\
+Opus 4.7    & 5 & 2 & 1 & 2 \\
+Sonnet 4.6  & 3 & 0 & 1 & 2 \\
+Kimi K2.6   & 2 & 0 & 0 & 2 \\
+DeepSeek    & 1 & 0 & 0 & 1 \\
+GLM-5.1     & 1 & 0 & 1 & 0 \\
+Qwen-27B    & 0 & 0 & 0 & 0 \\
+\midrule
+\textbf{Total} & \textbf{18} & \textbf{7} & \textbf{3} & \textbf{8} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \paragraph{Category A: Source downloads through unblocked egress.}
 Our \texttt{/etc/hosts} sinkhole blocks \texttt{github.com} but not its alternatives. GPT-5.5
@@ -414,39 +454,15 @@ Any compiling DUT passes. Opus identified this in 17 minutes and won the cell wi
 projects also have, and restoration-style benchmarking surfaces them quickly because the
 agent will exploit them when given the chance.
 
-\paragraph{Cleaned ranking.}
-Table~\ref{tab:cleaned} re-scores the matrix after zeroing every cell that either matches a
-category-A or category-B bypass we observed in the transcripts, or scores 1.000 on a
-flag-marked task. On the eight non-flagged tasks, the strongest agents pass 2 of 11 each.
-
-\begin{table}[h]
-\centering
-\caption{Pass rates before and after the audit. ``Raw'' counts every reward $=1.0$. ``Strong''
-zeroes both confirmed bypasses and the three flagged tasks.}
-\label{tab:cleaned}
-\footnotesize
-\begin{tabular}{lcccc}
-\toprule
-Model & Raw pass & Raw avg & Strong pass & Strong avg \\
-\midrule
-GPT-5.5    & 6/11 (55\%) & 0.58 & 1/11 (9\%) & 0.13 \\
-Opus 4.7   & 5/11 (45\%) & 0.52 & 2/11 (18\%) & 0.25 \\
-Sonnet 4.6 & 3/11 (27\%) & 0.37 & 2/11 (18\%) & 0.28 \\
-Kimi K2.6  & 2/11 (18\%) & 0.19 & 2/11 (18\%) & 0.19 \\
-DeepSeek   & 1/11 (9\%)  & 0.11 & 1/11 (9\%)  & 0.11 \\
-GLM-5.1    & 1/11 (9\%)  & 0.09 & 0/11 (0\%)  & 0.00 \\
-Qwen-27B   & 0/11 (0\%)  & 0.00 & 0/11 (0\%)  & 0.00 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\paragraph{What the cleaned ranking tells us.}
-The headline gap between proprietary frontier agents and open-weight agents nearly
-disappears. The benchmark was good enough to differentiate raw pass rates, but the bypasses
-inflate the apparent gap. We do not claim the underlying capability is identical because the
-open-weight models genuinely fail many cells they do not try to bypass. The comparison should
-be done on a leakage-free sandbox, and ours was not strict enough. Section~\ref{sec:rec}
-gives specific recommendations for tightening it.
+\paragraph{What the audit tells us.}
+After zeroing every confirmed cheat or exploit, the strongest agents pass 2 out of the 8
+trusted (non-flagged) tasks. The headline gap between proprietary frontier agents and
+open-weight agents nearly disappears. The benchmark was discriminating raw pass rates, but
+the bypasses were inflating the apparent gap. We do not claim the underlying capability is
+identical: the open-weight models genuinely fail many cells they did not try to bypass.
+What we do claim is that any comparison among current LLM hardware agents needs to be done
+on a leakage-free sandbox and on verifiers whose pass criterion is implementation-correctness.
+Ours did not yet meet either bar. Section~\ref{sec:rec} gives specific recommendations.
 
 \section{Recommendations and Limitations}
 \label{sec:rec}
