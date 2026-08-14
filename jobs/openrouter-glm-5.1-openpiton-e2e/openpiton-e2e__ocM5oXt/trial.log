@@ -1,0 +1,118 @@
+Skipping image OS validation for hb__openpiton-e2e: docker inspect returned 1
+Running command: apt-get update && apt-get install -y curl
+Command outputs captured
+Running command: export NVM_DIR="$HOME/.nvm" && . "$NVM_DIR/nvm.sh" && opencode --version
+Command outputs captured
+Running command: printf "0.0.0.0 github.com\n0.0.0.0 raw.githubusercontent.com\n0.0.0.0 api.github.com\n0.0.0.0 objects.githubusercontent.com\n0.0.0.0 codeload.github.com\n0.0.0.0 gist.github.com\n0.0.0.0 gitlab.com\n0.0.0.0 bitbucket.org\n0.0.0.0 codeberg.org\n0.0.0.0 sr.ht\n0.0.0.0 huggingface.co\n0.0.0.0 hf.co\n0.0.0.0 sourceforge.net\n" >> /etc/hosts
+Command outputs captured
+Running command: mkdir -p ~/.config/opencode && echo '{
+  "provider": {
+    "openrouter": {
+      "models": {
+        "z-ai/glm-5.1": {}
+      }
+    }
+  }
+}' > ~/.config/opencode/opencode.json
+Command outputs captured
+Running command: . ~/.nvm/nvm.sh; opencode --model=openrouter/z-ai/glm-5.1 run --format=json --thinking --dangerously-skip-permissions -- '# Princeton OpenPiton — Restore the RTL Modules (E2E Mode)
+
+You are in `/app`, which contains a subset of the **Princeton OpenPiton**
+manycore processor project. OpenPiton is an open-source, scalable manycore
+research processor designed at Princeton University.
+
+The **test infrastructure is intact**, but the Verilog implementation files
+have been removed. This **E2E variant** scores only the integration-level tests:
+the LFSR (pseudo-random generator) and UART serializer modules.
+
+## What Has Been Stripped
+
+Exactly four Verilog implementation files have been **truncated to empty**:
+
+| File | Module |
+|------|--------|
+| `piton/design/chip/tile/sparc/ifu/rtl/sparc_ifu_esl_counter.v` | `sparc_ifu_esl_counter` |
+| `piton/design/chip/tile/sparc/ifu/rtl/sparc_ifu_esl_lfsr.v` | `sparc_ifu_esl_lfsr` |
+| `piton/design/chip/tile/sparc/ifu/rtl/sparc_ifu_esl_shiftreg.v` | `sparc_ifu_esl_shiftreg` |
+| `piton/design/common/uart_pkttrace_dump/rtl/uart_serializer.v` | `uart_serializer` |
+
+## Scoring (E2E Mode)
+
+Only 6 tests are scored in this variant:
+
+| Module | Tests | Max contribution |
+|--------|-------|-----------------|
+| sparc_ifu_esl_lfsr | 5 | 0.833 |
+| uart_serializer | 1 | 0.167 |
+
+**Total: 6 tests.** The counter and shiftreg tests are NOT scored in this mode.
+
+## Important: Partial Credit and Persistence
+
+You are scored **proportionally** — every test you pass earns credit.
+Restoring just the LFSR (5 tests) earns 5/6 = 0.833.
+
+**Do not give up.** The LFSR is a well-known circuit: a 16-bit feedback shift
+register with polynomial x^16 + x^14 + x^13 + x^11 + 1. Start there.
+
+## How to Run Tests
+
+### Run E2E tests only (the scored subset):
+
+```bash
+bash /tests/test.sh
+```
+
+### Run all 18 tests across all modules (broader validation):
+
+```bash
+bash /tests/test.sh   # (same script — scores only e2e in this variant)
+```
+
+### Run the LFSR testbench manually:
+
+```bash
+PITON=/app/piton
+INFR=$PITON/verif/env/test_infrstrct
+
+iverilog -g2001 \
+  -I "$INFR" \
+  $PITON/design/chip/tile/sparc/ifu/rtl/sparc_ifu_esl_lfsr.v \
+  $INFR/test_source.v $INFR/test_sink.v $INFR/test_infrstrct_fifo.v \
+  $PITON/verif/env/ifu_esl_lfsr/ifu_esl_lfsr_top.v \
+  -o /tmp/lfsr_sim.vvp
+
+vvp /tmp/lfsr_sim.vvp \
+  +test_cases_path=$PITON/verif/env/ifu_esl_lfsr/test_cases/ \
+  +test_case=test_state0
+```
+
+### LFSR test cases (5): `test_exhaust`, `test_ldstep`, `test_pause`, `test_seed`, `test_state0`
+### UART test case (1): `test`
+
+## Module Specifications
+
+### sparc_ifu_esl_lfsr
+
+- 16-bit LFSR, polynomial: x^16 + x^14 + x^13 + x^11 + 1
+- Ports: `clk`, `rst_n`, `lfsr_seed[15:0]`, `lfsr_ld`, `lfsr_step`
+- Outputs: `lfsr_state_f[15:0]`, `lfsr_out_f` (bit stream from MSB)
+- On `~rst_n`: state resets to 0
+- On `lfsr_ld`: state loads from `lfsr_seed`
+- On `lfsr_step`: state shifts with XOR feedback
+
+### uart_serializer
+
+See `piton/verif/env/uart_serializer/uart_serializer_top.v` for the port list.
+Serializes parallel data packets into a byte-by-byte UART stream.
+
+## Key Documentation
+
+- `piton/design/chip/tile/sparc/ifu/rtl/ifu_esl_lfsr.core` — exact file name
+  and module name for the LFSR
+- `piton/verif/env/ifu_esl_lfsr/ifu_esl_lfsr_top.v` — full testbench showing
+  LFSR DUT instantiation and expected I/O
+- `piton/verif/env/test_infrstrct/test_infrstrct.v` — test macro definitions
+- `README.md` — OpenPiton overview
+' 2>&1 </dev/null | stdbuf -oL tee /logs/agent/opencode.txt
+Command outputs captured

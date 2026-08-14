@@ -1,0 +1,13 @@
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o dummy_instr_test.o dummy_instr_test.c
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -MMD -c -I/app/examples/sw/simple_system/common -o busy_work.o busy_work.S
+riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostdlib -nostartfiles -ffreestanding  -T /app/examples/sw/simple_system/common/link.ld /app/examples/sw/simple_system/common/simple_system_common.o dummy_instr_test.o busy_work.o /app/examples/sw/simple_system/common/crt0.o -o dummy_instr_test.elf 
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/common/crt0.o: in function `default_exc_handler':
+/app/examples/sw/simple_system/common/crt0.S:10: undefined reference to `simple_exc_handler'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/common/crt0.o: in function `timer_handler':
+/app/examples/sw/simple_system/common/crt0.S:13: undefined reference to `simple_timer_handler'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: dummy_instr_test.o: in function `main':
+/app/examples/sw/simple_system/dummy_instr_test/dummy_instr_test.c:90: undefined reference to `puts'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/dummy_instr_test/dummy_instr_test.c:98: undefined reference to `puthex'
+/tools/riscv/lib/gcc/riscv32-unknown-elf/10.2.0/../../../../riscv32-unknown-elf/bin/ld: /app/examples/sw/simple_system/dummy_instr_test/dummy_instr_test.c:98: undefined reference to `puts'
+collect2: error: ld returned 1 exit status
+make: *** [/app/examples/sw/simple_system/dummy_instr_test/../common/common.mk:46: dummy_instr_test.elf] Error 1

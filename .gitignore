@@ -12,3 +12,16 @@ repos/
 
 .env
 
+# Per-project Claude Code data (scheduled tasks, locks, sessions) — not source
+.claude/
+
+# LaTeX build artifacts (keep main.pdf + main.tex + refs.bib + neurips_*.sty)
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/page_*.png
+paper/Styles/
+

@@ -1,0 +1,25 @@
+=== Running FuseSoC target: tb_aes ===
+
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'
+  target=tb_aes  tc=20  passed=20
+=== Running FuseSoC target: tb_aes_core ===
+
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_core-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_core-icarus'
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_core-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_core-icarus'
+  target=tb_aes_core  tc=20  passed=20
+=== Running FuseSoC target: tb_aes_key_mem ===
+State of DUT
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_key_mem-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_key_mem-icarus'
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_key_mem-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes_key_mem-icarus'
+  target=tb_aes_key_mem  tc=09  passed=09
+/tests/test.sh: line 62: 09: value too great for base (error token is "09")
+
+Total: passed=40 / denominator=40
+reward: 1.000000  (passed=40, total=40)

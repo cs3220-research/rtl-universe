@@ -1,0 +1,4 @@
+make: Entering directory '/tmp/verilator_ecc_decode_verify'
+make: Vecc_decode.mk: No such file or directory
+make: *** No rule to make target 'Vecc_decode.mk'.  Stop.
+make: Leaving directory '/tmp/verilator_ecc_decode_verify'

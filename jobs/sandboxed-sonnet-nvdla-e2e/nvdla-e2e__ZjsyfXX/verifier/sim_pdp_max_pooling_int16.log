@@ -1,0 +1,527 @@
+converting /app/verif/traces/traceplayer/pdp_max_pooling_int16/input.txn to /app/outdir/nv_full/verilator/test/pdp_max_pooling_int16/trace.bin
+File 0 0x80000000 0x2000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x80100000 0x1880
+okay, that's all the bytes I expected -- I'm stopping here
+CMD: write_reg ffff3406 00000006
+CMD: read_reg ffff3406 00001fff 00000006
+CMD: write_reg ffff340c 00701c07
+CMD: read_reg ffff340c 3fffffff 00701c07
+CMD: write_reg ffff341b 00000800
+CMD: read_reg ffff341b ffffffe0 00000800
+CMD: write_reg ffff300a 00000800
+CMD: read_reg ffff300a ffffffe0 00000800
+CMD: write_reg ffff341a 00000100
+CMD: read_reg ffff341a ffffffe0 00000100
+CMD: write_reg ffff3009 00000100
+CMD: read_reg ffff3009 ffffffe0 00000100
+CMD: write_reg ffff3407 00000006
+CMD: read_reg ffff3407 00001fff 00000006
+CMD: write_reg ffff300d 00000000
+CMD: read_reg ffff300d 000000ff 00000000
+CMD: write_reg ffff340d 00000101
+CMD: read_reg ffff340d 00ff0f0f 00000101
+CMD: write_reg ffff300e 00000001
+CMD: read_reg ffff300e 000000ff 00000001
+CMD: write_reg ffff3408 0000003f
+CMD: read_reg ffff3408 00001fff 0000003f
+CMD: write_reg ffff341e 000000e0
+CMD: read_reg ffff341e ffffffe0 000000e0
+CMD: write_reg ffff3421 00000101
+CMD: read_reg ffff3421 00000003 00000001
+CMD: write_reg ffff300c 00000101
+CMD: read_reg ffff300c 00000003 00000001
+CMD: write_reg ffff3410 00000000
+CMD: read_reg ffff3410 00007777 00000000
+CMD: write_reg ffff3404 00000007
+CMD: read_reg ffff3404 00001fff 00000007
+CMD: write_reg ffff3004 00000007
+CMD: read_reg ffff3004 00001fff 00000007
+CMD: write_reg ffff340b 00701c07
+CMD: read_reg ffff340b 3fffffff 00701c07
+CMD: write_reg ffff3010 00701c07
+CMD: read_reg ffff3010 3fffffff 00701c07
+CMD: write_reg ffff3403 00000007
+CMD: read_reg ffff3403 00001fff 00000007
+CMD: write_reg ffff3003 00000007
+CMD: read_reg ffff3003 00001fff 00000007
+CMD: write_reg ffff3409 00000011
+CMD: read_reg ffff3409 0000ff13 00000011
+CMD: write_reg ffff3006 00000001
+CMD: read_reg ffff3006 00000001 00000001
+CMD: write_reg ffff341f 00000620
+CMD: read_reg ffff341f ffffffe0 00000620
+CMD: write_reg ffff3420 00000001
+CMD: read_reg ffff3420 00000001 00000001
+CMD: write_reg ffff300b 00000001
+CMD: read_reg ffff300b 00000001 00000001
+CMD: write_reg ffff3405 0000003f
+CMD: read_reg ffff3405 00001fff 0000003f
+CMD: write_reg ffff3005 0000003f
+CMD: read_reg ffff3005 00001fff 0000003f
+CMD: load_mem 00002000 bytes to 80000000
+CMD: write_reg ffff3007 80000000
+CMD: read_reg ffff3007 ffffffe0 80000000
+CMD: write_reg ffff3008 00000000
+CMD: read_reg ffff3008 ffffffff 00000000
+CMD: write_reg ffff3418 80000000
+CMD: read_reg ffff3418 ffffffe0 80000000
+CMD: write_reg ffff3419 00000000
+CMD: read_reg ffff3419 ffffffff 00000000
+CMD: write_reg ffff341c 80100000
+CMD: read_reg ffff341c ffffffe0 80100000
+CMD: write_reg ffff341d 00000000
+CMD: read_reg ffff341d ffffffff 00000000
+CMD: write_reg ffff3002 00000001
+CMD: read_reg ffff3002 00000001 00000001
+CMD: write_reg ffff3402 00000001
+CMD: read_reg ffff3402 00000001 00000001
+CMD: wait
+CMD: write_reg ffff0003 ffffffff
+CMD: dump_mem 00001880 bytes from 80100000 -> output_feature_map.dat
+CMD: done
+reset...
+letting buffers clear after reset...
+running trace...
+(8272) write to nvdla: addr ffff3406, data 00000006
+(8274) read from nvdla: addr ffff3406
+(8276) read response from nvdla: 00000006
+(8278) write to nvdla: addr ffff340c, data 00701c07
+(8280) read from nvdla: addr ffff340c
+(8282) read response from nvdla: 00701c07
+(8284) write to nvdla: addr ffff341b, data 00000800
+(8286) read from nvdla: addr ffff341b
+(8288) read response from nvdla: 00000800
+(8290) write to nvdla: addr ffff300a, data 00000800
+(8292) read from nvdla: addr ffff300a
+(8294) read response from nvdla: 00000800
+(8296) write to nvdla: addr ffff341a, data 00000100
+(8298) read from nvdla: addr ffff341a
+(8300) read response from nvdla: 00000100
+(8302) write to nvdla: addr ffff3009, data 00000100
+(8304) read from nvdla: addr ffff3009
+(8306) read response from nvdla: 00000100
+(8308) write to nvdla: addr ffff3407, data 00000006
+(8310) read from nvdla: addr ffff3407
+(8312) read response from nvdla: 00000006
+(8314) write to nvdla: addr ffff300d, data 00000000
+(8316) read from nvdla: addr ffff300d
+(8318) read response from nvdla: 00000000
+(8320) write to nvdla: addr ffff340d, data 00000101
+(8322) read from nvdla: addr ffff340d
+(8324) read response from nvdla: 00000101
+(8326) write to nvdla: addr ffff300e, data 00000001
+(8328) read from nvdla: addr ffff300e
+(8330) read response from nvdla: 00000001
+(8332) write to nvdla: addr ffff3408, data 0000003f
+(8334) read from nvdla: addr ffff3408
+(8336) read response from nvdla: 0000003f
+(8338) write to nvdla: addr ffff341e, data 000000e0
+(8340) read from nvdla: addr ffff341e
+(8342) read response from nvdla: 000000e0
+(8344) write to nvdla: addr ffff3421, data 00000101
+(8346) read from nvdla: addr ffff3421
+(8348) read response from nvdla: 00000101
+(8350) write to nvdla: addr ffff300c, data 00000101
+(8352) read from nvdla: addr ffff300c
+(8354) read response from nvdla: 00000101
+(8356) write to nvdla: addr ffff3410, data 00000000
+(8358) read from nvdla: addr ffff3410
+(8360) read response from nvdla: 00000000
+(8362) write to nvdla: addr ffff3404, data 00000007
+(8364) read from nvdla: addr ffff3404
+(8366) read response from nvdla: 00000007
+(8368) write to nvdla: addr ffff3004, data 00000007
+(8370) read from nvdla: addr ffff3004
+(8372) read response from nvdla: 00000007
+(8374) write to nvdla: addr ffff340b, data 00701c07
+(8376) read from nvdla: addr ffff340b
+(8378) read response from nvdla: 00701c07
+(8380) write to nvdla: addr ffff3010, data 00701c07
+(8382) read from nvdla: addr ffff3010
+(8384) read response from nvdla: 00701c07
+(8386) write to nvdla: addr ffff3403, data 00000007
+(8388) read from nvdla: addr ffff3403
+(8390) read response from nvdla: 00000007
+(8392) write to nvdla: addr ffff3003, data 00000007
+(8394) read from nvdla: addr ffff3003
+(8396) read response from nvdla: 00000007
+(8398) write to nvdla: addr ffff3409, data 00000011
+(8400) read from nvdla: addr ffff3409
+(8402) read response from nvdla: 00000011
+(8404) write to nvdla: addr ffff3006, data 00000001
+(8406) read from nvdla: addr ffff3006
+(8408) read response from nvdla: 00000001
+(8410) write to nvdla: addr ffff341f, data 00000620
+(8412) read from nvdla: addr ffff341f
+(8414) read response from nvdla: 00000620
+(8416) write to nvdla: addr ffff3420, data 00000001
+(8418) read from nvdla: addr ffff3420
+(8420) read response from nvdla: 00000001
+(8422) write to nvdla: addr ffff300b, data 00000001
+(8424) read from nvdla: addr ffff300b
+(8426) read response from nvdla: 00000001
+(8428) write to nvdla: addr ffff3405, data 0000003f
+(8430) read from nvdla: addr ffff3405
+(8432) read response from nvdla: 0000003f
+(8434) write to nvdla: addr ffff3005, data 0000003f
+(8436) read from nvdla: addr ffff3005
+(8438) read response from nvdla: 0000003f
+AXI: loading memory at 0x80000000
+(8442) write to nvdla: addr ffff3007, data 80000000
+(8444) read from nvdla: addr ffff3007
+(8446) read response from nvdla: 80000000
+(8448) write to nvdla: addr ffff3008, data 00000000
+(8450) read from nvdla: addr ffff3008
+(8452) read response from nvdla: 00000000
+(8454) write to nvdla: addr ffff3418, data 80000000
+(8456) read from nvdla: addr ffff3418
+(8458) read response from nvdla: 80000000
+(8460) write to nvdla: addr ffff3419, data 00000000
+(8462) read from nvdla: addr ffff3419
+(8464) read response from nvdla: 00000000
+(8466) write to nvdla: addr ffff341c, data 80100000
+(8468) read from nvdla: addr ffff341c
+(8470) read response from nvdla: 80100000
+(8472) write to nvdla: addr ffff341d, data 00000000
+(8474) read from nvdla: addr ffff341d
+(8476) read response from nvdla: 00000000
+(8478) write to nvdla: addr ffff3002, data 00000001
+(8480) read from nvdla: addr ffff3002
+(8482) read response from nvdla: 00000001
+(8484) write to nvdla: addr ffff3402, data 00000001
+(8486) read from nvdla: addr ffff3402
+(8488) read response from nvdla: 00000001
+(8488) DBB: read request from dla, addr 80000000 burst 127 id 0
+(8490) waiting for interrupt...
+(8552) DBB: read push: id 0, da 21002000 23002200 25002400 27002600
+(8554) DBB: read push: id 0, da 21202020 23202220 25202420 27202620
+(8556) DBB: read push: id 0, da 21402040 23402240 25402440 27402640
+(8558) DBB: read push: id 0, da 21602060 23602260 25602460 27602660
+(8560) DBB: read push: id 0, da 21012001 23012201 25012401 27012601
+(8562) DBB: read push: id 0, da 21212021 23212221 25212421 27212621
+(8564) DBB: read push: id 0, da 21412041 23412241 25412441 27412641
+(8566) DBB: read push: id 0, da 21612061 23612261 25612461 27612661
+(8568) DBB: read push: id 0, da 21022002 23022202 25022402 27022602
+(8570) DBB: read push: id 0, da 21222022 23222222 25222422 27222622
+(8572) DBB: read push: id 0, da 21422042 23422242 25422442 27422642
+(8574) DBB: read push: id 0, da 21622062 23622262 25622462 27622662
+(8576) DBB: read push: id 0, da 21032003 23032203 25032403 27032603
+(8578) DBB: read push: id 0, da 21232023 23232223 25232423 27232623
+(8580) DBB: read push: id 0, da 21432043 23432243 25432443 27432643
+(8582) DBB: read push: id 0, da 21632063 23632263 25632463 27632663
+(8584) DBB: read push: id 0, da 21042004 23042204 25042404 27042604
+(8586) DBB: read push: id 0, da 21242024 23242224 25242424 27242624
+(8588) DBB: read push: id 0, da 21442044 23442244 25442444 27442644
+(8590) DBB: read push: id 0, da 21642064 23642264 25642464 27642664
+(8592) DBB: read push: id 0, da 21052005 23052205 25052405 27052605
+(8594) DBB: read push: id 0, da 21252025 23252225 25252425 27252625
+(8596) DBB: read push: id 0, da 21452045 23452245 25452445 27452645
+(8598) DBB: read push: id 0, da 21652065 23652265 25652465 27652665
+(8600) DBB: read push: id 0, da 21062006 23062206 25062406 27062606
+(8602) DBB: read push: id 0, da 21262026 23262226 25262426 27262626
+(8604) DBB: read push: id 0, da 21462046 23462246 25462446 27462646
+(8606) DBB: read push: id 0, da 21662066 23662266 25662466 27662666
+(8608) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8610) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8612) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8614) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8616) DBB: read push: id 0, da 31003000 33003200 35003400 37003600
+(8618) DBB: read push: id 0, da 31203020 33203220 35203420 37203620
+(8620) DBB: read push: id 0, da 31403040 33403240 35403440 37403640
+(8622) DBB: read push: id 0, da 31603060 33603260 35603460 37603660
+(8624) DBB: read push: id 0, da 31013001 33013201 35013401 37013601
+(8626) DBB: read push: id 0, da 31213021 33213221 35213421 37213621
+(8628) DBB: read push: id 0, da 31413041 33413241 35413441 37413641
+(8630) DBB: read push: id 0, da 31613061 33613261 35613461 37613661
+(8632) DBB: read push: id 0, da 31023002 33023202 35023402 37023602
+(8634) DBB: read push: id 0, da 31223022 33223222 35223422 37223622
+(8636) DBB: read push: id 0, da 31423042 33423242 35423442 37423642
+(8638) DBB: read push: id 0, da 31623062 33623262 35623462 37623662
+(8640) DBB: read push: id 0, da 31033003 33033203 35033403 37033603
+(8642) DBB: read push: id 0, da 31233023 33233223 35233423 37233623
+(8644) DBB: read push: id 0, da 31433043 33433243 35433443 37433643
+(8646) DBB: read push: id 0, da 31633063 33633263 35633463 37633663
+(8648) DBB: read push: id 0, da 31043004 33043204 35043404 37043604
+(8650) DBB: read push: id 0, da 31243024 33243224 35243424 37243624
+(8652) DBB: read push: id 0, da 31443044 33443244 35443444 37443644
+(8654) DBB: read push: id 0, da 31643064 33643264 35643464 37643664
+(8656) DBB: read push: id 0, da 31053005 33053205 35053405 37053605
+(8658) DBB: read push: id 0, da 31253025 33253225 35253425 37253625
+(8660) DBB: read push: id 0, da 31453045 33453245 35453445 37453645
+(8662) DBB: read push: id 0, da 31653065 33653265 35653465 37653665
+(8664) DBB: read push: id 0, da 31063006 33063206 35063406 37063606
+(8666) DBB: read push: id 0, da 31263026 33263226 35263426 37263626
+(8668) DBB: read push: id 0, da 31463046 33463246 35463446 37463646
+(8670) DBB: read push: id 0, da 31663066 33663266 35663466 37663666
+(8672) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8674) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8676) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8678) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8680) DBB: read push: id 0, da 21002000 23002200 25002400 27002600
+(8682) DBB: read push: id 0, da 21202020 23202220 25202420 27202620
+(8684) DBB: read push: id 0, da 21402040 23402240 25402440 27402640
+(8686) DBB: read push: id 0, da 21602060 23602260 25602460 27602660
+(8688) DBB: read push: id 0, da 21012001 23012201 25012401 27012601
+(8690) DBB: read push: id 0, da 21212021 23212221 25212421 27212621
+(8692) DBB: read push: id 0, da 21412041 23412241 25412441 27412641
+(8694) DBB: read push: id 0, da 21612061 23612261 25612461 27612661
+(8696) DBB: read push: id 0, da 21022002 23022202 25022402 27022602
+(8698) DBB: read push: id 0, da 21222022 23222222 25222422 27222622
+(8700) DBB: read push: id 0, da 21422042 23422242 25422442 27422642
+(8702) DBB: read push: id 0, da 21622062 23622262 25622462 27622662
+(8704) DBB: read push: id 0, da 21032003 23032203 25032403 27032603
+(8706) DBB: read push: id 0, da 21232023 23232223 25232423 27232623
+(8708) DBB: read push: id 0, da 21432043 23432243 25432443 27432643
+(8710) DBB: read push: id 0, da 21632063 23632263 25632463 27632663
+(8712) DBB: read push: id 0, da 21042004 23042204 25042404 27042604
+(8714) DBB: read push: id 0, da 21242024 23242224 25242424 27242624
+(8716) DBB: read push: id 0, da 21442044 23442244 25442444 27442644
+(8718) DBB: read push: id 0, da 21642064 23642264 25642464 27642664
+(8720) DBB: read push: id 0, da 21052005 23052205 25052405 27052605
+(8722) DBB: read push: id 0, da 21252025 23252225 25252425 27252625
+(8724) DBB: read push: id 0, da 21452045 23452245 25452445 27452645
+(8726) DBB: read push: id 0, da 21652065 23652265 25652465 27652665
+(8728) DBB: read push: id 0, da 21062006 23062206 25062406 27062606
+(8730) DBB: read push: id 0, da 21262026 23262226 25262426 27262626
+(8732) DBB: read push: id 0, da 21462046 23462246 25462446 27462646
+(8734) DBB: read push: id 0, da 21662066 23662266 25662466 27662666
+(8736) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8738) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8740) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8742) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8744) DBB: read push: id 0, da 31003000 33003200 35003400 37003600
+(8746) DBB: read push: id 0, da 31203020 33203220 35203420 37203620
+(8748) DBB: read push: id 0, da 31403040 33403240 35403440 37403640
+(8750) DBB: read push: id 0, da 31603060 33603260 35603460 37603660
+(8752) DBB: read push: id 0, da 31013001 33013201 35013401 37013601
+(8754) DBB: read push: id 0, da 31213021 33213221 35213421 37213621
+(8756) DBB: read push: id 0, da 31413041 33413241 35413441 37413641
+(8758) DBB: read push: id 0, da 31613061 33613261 35613461 37613661
+(8760) DBB: read push: id 0, da 31023002 33023202 35023402 37023602
+(8762) DBB: read push: id 0, da 31223022 33223222 35223422 37223622
+(8764) DBB: read push: id 0, da 31423042 33423242 35423442 37423642
+(8766) DBB: read push: id 0, da 31623062 33623262 35623462 37623662
+(8768) DBB: read push: id 0, da 31033003 33033203 35033403 37033603
+(8770) DBB: read push: id 0, da 31233023 33233223 35233423 37233623
+(8772) DBB: read push: id 0, da 31433043 33433243 35433443 37433643
+(8774) DBB: read push: id 0, da 31633063 33633263 35633463 37633663
+(8776) DBB: read push: id 0, da 31043004 33043204 35043404 37043604
+(8778) DBB: read push: id 0, da 31243024 33243224 35243424 37243624
+(8780) DBB: read push: id 0, da 31443044 33443244 35443444 37443644
+(8782) DBB: read push: id 0, da 31643064 33643264 35643464 37643664
+(8784) DBB: read push: id 0, da 31053005 33053205 35053405 37053605
+(8786) DBB: read push: id 0, da 31253025 33253225 35253425 37253625
+(8788) DBB: read push: id 0, da 31453045 33453245 35453445 37453645
+(8790) DBB: read push: id 0, da 31653065 33653265 35653465 37653665
+(8792) DBB: read push: id 0, da 31063006 33063206 35063406 37063606
+(8794) DBB: read push: id 0, da 31263026 33263226 35263426 37263626
+(8796) DBB: read push: id 0, da 31463046 33463246 35463446 37463646
+(8798) DBB: read push: id 0, da 31663066 33663266 35663466 37663666
+(8800) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8802) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8804) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8806) DBB: read push: id 0, da 00000000 00000000 00000000 00000000
+(8812) DBB: write request from dla, addr 80100000 id 0
+(8814) DBB: write data from dla (21112011 23112211...)
+(8814) DBB: write, ticks remaining
+(8816) DBB: write data from dla (21312031 23312231...)
+(8816) DBB: write, ticks remaining
+(8818) DBB: write data from dla (21512051 23512251...)
+(8818) DBB: write, ticks remaining
+(8820) DBB: write data from dla (21612061 23612261...)
+(8820) DBB: write, ticks remaining
+(8822) DBB: write data from dla (21222022 23222222...)
+(8822) DBB: write, ticks remaining
+(8824) DBB: write data from dla (21422042 23422242...)
+(8824) DBB: write, ticks remaining
+(8826) DBB: write data from dla (21622062 23622262...)
+(8826) DBB: write, ticks remaining
+(8828) DBB: write data from dla (21132013 23132213...)
+(8828) DBB: write, ticks remaining
+(8830) DBB: write data from dla (21332033 23332233...)
+(8830) DBB: write, ticks remaining
+(8832) DBB: write data from dla (21532053 23532253...)
+(8832) DBB: write, ticks remaining
+(8834) DBB: write data from dla (21632063 23632263...)
+(8834) DBB: write, ticks remaining
+(8836) DBB: write data from dla (21242024 23242224...)
+(8836) DBB: write, ticks remaining
+(8838) DBB: write data from dla (21442044 23442244...)
+(8838) DBB: write, ticks remaining
+(8840) DBB: write data from dla (21642064 23642264...)
+(8840) DBB: write, ticks remaining
+(8842) DBB: write data from dla (21152015 23152215...)
+(8842) DBB: write, ticks remaining
+(8844) DBB: write data from dla (21352035 23352235...)
+(8844) DBB: write, ticks remaining
+(8846) DBB: write data from dla (21552055 23552255...)
+(8846) DBB: write, ticks remaining
+(8848) DBB: write data from dla (21652065 23652265...)
+(8848) DBB: write, ticks remaining
+(8850) DBB: write data from dla (21262026 23262226...)
+(8850) DBB: write, ticks remaining
+(8852) DBB: write data from dla (21462046 23462246...)
+(8852) DBB: write, ticks remaining
+(8854) DBB: write data from dla (21662066 23662266...)
+(8854) DBB: write, ticks remaining
+(8856) DBB: write data from dla (21162016 23162216...)
+(8856) DBB: write, ticks remaining
+(8858) DBB: write data from dla (21362036 23362236...)
+(8858) DBB: write, ticks remaining
+(8860) DBB: write data from dla (21562056 23562256...)
+(8860) DBB: write, ticks remaining
+(8862) DBB: write data from dla (21662066 23662266...)
+(8862) DBB: write, ticks remaining
+(8864) DBB: write data from dla (31213021 33213221...)
+(8864) DBB: write, ticks remaining
+(8866) DBB: write data from dla (31413041 33413241...)
+(8866) DBB: write, ticks remaining
+(8868) DBB: write data from dla (31613061 33613261...)
+(8868) DBB: write, ticks remaining
+(8870) DBB: write data from dla (31123012 33123212...)
+(8870) DBB: write, ticks remaining
+(8872) DBB: write data from dla (31323032 33323232...)
+(8872) DBB: write, ticks remaining
+(8874) DBB: write data from dla (31523052 33523252...)
+(8874) DBB: write, ticks remaining
+(8876) DBB: write data from dla (31623062 33623262...)
+(8876) DBB: write, ticks remaining
+(8878) DBB: write data from dla (31233023 33233223...)
+(8878) DBB: write, ticks remaining
+(8880) DBB: write data from dla (31433043 33433243...)
+(8880) DBB: write, ticks remaining
+(8882) DBB: write data from dla (31633063 33633263...)
+(8882) DBB: write, ticks remaining
+(8884) DBB: write data from dla (31143014 33143214...)
+(8884) DBB: write, ticks remaining
+(8886) DBB: write data from dla (31343034 33343234...)
+(8886) DBB: write, ticks remaining
+(8888) DBB: write data from dla (31543054 33543254...)
+(8888) DBB: write, ticks remaining
+(8890) DBB: write data from dla (31643064 33643264...)
+(8890) DBB: write, ticks remaining
+(8892) DBB: write data from dla (31253025 33253225...)
+(8892) DBB: write, ticks remaining
+(8894) DBB: write data from dla (31453045 33453245...)
+(8894) DBB: write, ticks remaining
+(8896) DBB: write data from dla (31653065 33653265...)
+(8896) DBB: write, ticks remaining
+(8898) DBB: write data from dla (31163016 33163216...)
+(8898) DBB: write, ticks remaining
+(8900) DBB: write data from dla (31363036 33363236...)
+(8900) DBB: write, ticks remaining
+(8902) DBB: write data from dla (31563056 33563256...)
+(8902) DBB: write, ticks remaining
+(8904) DBB: write data from dla (31663066 33663266...)
+(8904) DBB: write, ticks remaining
+(8906) DBB: write data from dla (31263026 33263226...)
+(8906) DBB: write, ticks remaining
+(8908) DBB: write data from dla (31463046 33463246...)
+(8908) DBB: write, ticks remaining
+(8910) DBB: write data from dla (31663066 33663266...)
+(8910) DBB: write, ticks remaining
+(8912) DBB: write data from dla (21112011 23112211...)
+(8912) DBB: write, ticks remaining
+(8914) DBB: write data from dla (21312031 23312231...)
+(8914) DBB: write, ticks remaining
+(8916) DBB: write data from dla (21512051 23512251...)
+(8916) DBB: write, ticks remaining
+(8918) DBB: write data from dla (21612061 23612261...)
+(8918) DBB: write, ticks remaining
+(8920) DBB: write data from dla (21222022 23222222...)
+(8920) DBB: write, ticks remaining
+(8922) DBB: write data from dla (21422042 23422242...)
+(8922) DBB: write, ticks remaining
+(8924) DBB: write data from dla (21622062 23622262...)
+(8924) DBB: write, ticks remaining
+(8926) DBB: write data from dla (21132013 23132213...)
+(8926) DBB: write, ticks remaining
+(8928) DBB: write data from dla (21332033 23332233...)
+(8928) DBB: write, ticks remaining
+(8930) DBB: write data from dla (21532053 23532253...)
+(8930) DBB: write, ticks remaining
+(8932) DBB: write data from dla (21632063 23632263...)
+(8932) DBB: write, ticks remaining
+(8934) DBB: write data from dla (21242024 23242224...)
+(8934) DBB: write, ticks remaining
+(8936) DBB: write data from dla (21442044 23442244...)
+(8936) DBB: write, ticks remaining
+(8938) DBB: write data from dla (21642064 23642264...)
+(8938) DBB: write, ticks remaining
+(8940) DBB: write data from dla (21152015 23152215...)
+(8940) DBB: write, ticks remaining
+(8942) DBB: write data from dla (21352035 23352235...)
+(8942) DBB: write, ticks remaining
+(8944) DBB: write data from dla (21552055 23552255...)
+(8944) DBB: write, ticks remaining
+(8946) DBB: write data from dla (21652065 23652265...)
+(8946) DBB: write, ticks remaining
+(8948) DBB: write data from dla (21262026 23262226...)
+(8948) DBB: write, ticks remaining
+(8950) DBB: write data from dla (21462046 23462246...)
+(8950) DBB: write, ticks remaining
+(8952) DBB: write data from dla (21662066 23662266...)
+(8952) DBB: write, ticks remaining
+(8954) DBB: write data from dla (21162016 23162216...)
+(8954) DBB: write, ticks remaining
+(8956) DBB: write data from dla (21362036 23362236...)
+(8956) DBB: write, ticks remaining
+(8958) DBB: write data from dla (21562056 23562256...)
+(8958) DBB: write, ticks remaining
+(8960) DBB: write data from dla (21662066 23662266...)
+(8960) DBB: write, ticks remaining
+(8962) DBB: write data from dla (31213021 33213221...)
+(8962) DBB: write, ticks remaining
+(8964) DBB: write data from dla (31413041 33413241...)
+(8964) DBB: write, ticks remaining
+(8966) DBB: write data from dla (31613061 33613261...)
+(8966) DBB: write, ticks remaining
+(8968) DBB: write data from dla (31123012 33123212...)
+(8968) DBB: write, ticks remaining
+(8970) DBB: write data from dla (31323032 33323232...)
+(8970) DBB: write, ticks remaining
+(8972) DBB: write data from dla (31523052 33523252...)
+(8972) DBB: write, ticks remaining
+(8974) DBB: write data from dla (31623062 33623262...)
+(8974) DBB: write, ticks remaining
+(8976) DBB: write data from dla (31233023 33233223...)
+(8976) DBB: write, ticks remaining
+(8978) DBB: write data from dla (31433043 33433243...)
+(8978) DBB: write, ticks remaining
+(8980) DBB: write data from dla (31633063 33633263...)
+(8980) DBB: write, ticks remaining
+(8982) DBB: write data from dla (31143014 33143214...)
+(8982) DBB: write, ticks remaining
+(8984) DBB: write data from dla (31343034 33343234...)
+(8984) DBB: write, ticks remaining
+(8986) DBB: write data from dla (31543054 33543254...)
+(8986) DBB: write, ticks remaining
+(8988) DBB: write data from dla (31643064 33643264...)
+(8988) DBB: write, ticks remaining
+(8990) DBB: write data from dla (31253025 33253225...)
+(8990) DBB: write, ticks remaining
+(8992) DBB: write data from dla (31453045 33453245...)
+(8992) DBB: write, ticks remaining
+(8994) DBB: write data from dla (31653065 33653265...)
+(8994) DBB: write, ticks remaining
+(8996) DBB: write data from dla (31163016 33163216...)
+(8996) DBB: write, ticks remaining
+(8998) DBB: write data from dla (31363036 33363236...)
+(8998) DBB: write, ticks remaining
+(9000) DBB: write data from dla (31563056 33563256...)
+(9000) DBB: write, ticks remaining
+(9002) DBB: write data from dla (31663066 33663266...)
+(9002) DBB: write, ticks remaining
+(9004) DBB: write data from dla (31263026 33263226...)
+(9004) DBB: write, ticks remaining
+(9006) DBB: write data from dla (31463046 33463246...)
+(9006) DBB: write, ticks remaining
+(9008) DBB: write data from dla (31663066 33663266...)
+(9008) DBB: write, last tick
+(9010) interrupt!
+(9012) write to nvdla: addr ffff0003, data ffffffff
+AXI: dumping memory to output_feature_map.dat
+AXI: memory dump matched reference
+done at 9416 ticks
+*** PASS

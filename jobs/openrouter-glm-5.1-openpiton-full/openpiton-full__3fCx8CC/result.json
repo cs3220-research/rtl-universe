@@ -1,0 +1,107 @@
+{
+    "id": "b9599ff0-3608-4b9c-a011-3f2b02a6d7f5",
+    "task_name": "openpiton-full",
+    "trial_name": "openpiton-full__3fCx8CC",
+    "trial_uri": "file:///localscratch/dandrews47/rtl-universe/jobs/openrouter-glm-5.1-openpiton-full/openpiton-full__3fCx8CC",
+    "task_id": {
+        "path": "minrepro_task/openpiton-full"
+    },
+    "source": null,
+    "task_checksum": "ffd0e4f3e286ad5a8ad60f18c323cb9d9237c98225142d9205a276e9fce0b9bd",
+    "config": {
+        "task": {
+            "path": "minrepro_task/openpiton-full",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "openpiton-full__3fCx8CC",
+        "trials_dir": "jobs/openrouter-glm-5.1-openpiton-full",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:OpenCodeSandboxed",
+            "model_name": "openrouter/z-ai/glm-5.1",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "a19bedaa-b6d4-48a2-84a2-eb38adfef795"
+    },
+    "agent_info": {
+        "name": "opencode-sandboxed",
+        "version": "1.14.33",
+        "model_info": {
+            "name": "z-ai/glm-5.1",
+            "provider": "openrouter"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 210925,
+        "n_cache_tokens": 81024,
+        "n_output_tokens": 735,
+        "cost_usd": 0.20919324,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-04T00:10:03.779376Z",
+    "finished_at": "2026-05-04T01:06:17.844924Z",
+    "environment_setup": {
+        "started_at": "2026-05-04T00:10:10.288625Z",
+        "finished_at": "2026-05-04T01:03:10.177098Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-04T01:03:10.177231Z",
+        "finished_at": "2026-05-04T01:03:21.409731Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-04T01:03:21.409928Z",
+        "finished_at": "2026-05-04T01:05:08.524437Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-04T01:05:08.746579Z",
+        "finished_at": "2026-05-04T01:05:09.459747Z"
+    },
+    "step_results": null
+}

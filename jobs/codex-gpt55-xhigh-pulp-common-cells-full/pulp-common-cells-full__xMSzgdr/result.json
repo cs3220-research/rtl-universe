@@ -1,0 +1,109 @@
+{
+    "id": "2bb2e991-3db9-480e-9d32-37a1f521da37",
+    "task_name": "pulp-common-cells-full",
+    "trial_name": "pulp-common-cells-full__xMSzgdr",
+    "trial_uri": "file:///home/broyojo/code/rtl-universe/jobs/codex-gpt55-xhigh-pulp-common-cells-full/pulp-common-cells-full__xMSzgdr",
+    "task_id": {
+        "path": "minrepro_task/pulp-common-cells-full"
+    },
+    "source": null,
+    "task_checksum": "e91432ec1648c7b58ce42de3e675501bac8ae5a0a7526922dff5c7bb0a21101b",
+    "config": {
+        "task": {
+            "path": "minrepro_task/pulp-common-cells-full",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "pulp-common-cells-full__xMSzgdr",
+        "trials_dir": "jobs/codex-gpt55-xhigh-pulp-common-cells-full",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:CodexSandboxed",
+            "model_name": "gpt-5.5",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+                "reasoning_effort": "xhigh"
+            },
+            "env": {
+                "CODEX_AUTH_JSON_PATH": "/hom****son"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "dbe4bd8f-6bdb-4226-be3d-509d27006d0e"
+    },
+    "agent_info": {
+        "name": "codex-sandboxed",
+        "version": "0.128.0",
+        "model_info": {
+            "name": "gpt-5.5",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 7593570,
+        "n_cache_tokens": 7361408,
+        "n_output_tokens": 24581,
+        "cost_usd": 5.578944,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-03T16:42:43.960861Z",
+    "finished_at": "2026-05-03T17:06:31.431776Z",
+    "environment_setup": {
+        "started_at": "2026-05-03T16:42:43.975864Z",
+        "finished_at": "2026-05-03T16:52:59.419370Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-03T16:52:59.419595Z",
+        "finished_at": "2026-05-03T16:53:02.676185Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-03T16:53:02.677865Z",
+        "finished_at": "2026-05-03T17:06:11.760158Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-03T17:06:11.847401Z",
+        "finished_at": "2026-05-03T17:06:20.693067Z"
+    },
+    "step_results": null
+}

@@ -1,0 +1,94 @@
+=== Per-module Verilator lint tests ===
+PASS: lint::binary_to_gray
+PASS: lint::gray_to_binary
+PASS: lint::cc_onehot
+PASS: lint::clk_int_div
+PASS: lint::credit_counter
+PASS: lint::delta_counter
+PASS: lint::edge_propagator_tx
+PASS: lint::exp_backoff
+PASS: lint::fifo_v3
+PASS: lint::heaviside
+PASS: lint::isochronous_4phase_handshake
+PASS: lint::isochronous_spill_register
+PASS: lint::lfsr
+PASS: lint::lfsr_16bit
+PASS: lint::lfsr_8bit
+PASS: lint::lossy_valid_to_stream
+PASS: lint::mv_filter
+PASS: lint::onehot_to_bin
+PASS: lint::plru_tree
+PASS: lint::passthrough_stream_fifo
+PASS: lint::popcount
+PASS: lint::ring_buffer
+PASS: lint::rr_arb_tree
+PASS: lint::rstgen_bypass
+PASS: lint::serial_deglitch
+PASS: lint::shift_reg
+PASS: lint::shift_reg_gated
+PASS: lint::spill_register_flushable
+PASS: lint::stream_demux
+PASS: lint::stream_filter
+PASS: lint::stream_fork
+PASS: lint::stream_join_dynamic
+PASS: lint::stream_mux
+PASS: lint::stream_throttle
+PASS: lint::sub_per_hash
+PASS: lint::sync
+PASS: lint::sync_wedge
+PASS: lint::unread
+PASS: lint::read
+PASS: lint::boxcar
+PASS: lint::cdc_2phase
+PASS: lint::cdc_4phase
+PASS: lint::clk_int_div_static
+PASS: lint::trip_counter
+FAIL: lint::addr_decode
+%Error: Verilator internal fault, sorry. Suggest trying --debug --gdbbt
+%Error: Command Failed ulimit -s unlimited 2>/dev/null; exec /usr/bin/verilator_bin --lint-only -sv -I/app/include .bender/git/checkouts/tech_cells_generic-f2b3120183f41af5/src/rtl/tc_clk.sv .bender/git/checkouts/tech_cells_generic-f2b3120183f41af5/src/deprecated/pulp_clk_cells.sv /app/src/cb_filter_pkg.sv /app/src/cdc_reset_ctrlr_pkg.sv /app/src/cf_math_pkg.sv /app/src/ecc_pkg.sv /app/src/stream_intf.sv /app/src/binary_to_gray.sv /app/src/cc_onehot.sv /app/src/clk_int_div.sv /app/src/credit_counter.sv /app/src/delta_counter.sv /app/src/edge_propagator_tx.sv /app/src/exp_backoff.sv /app/src/fifo_v3.sv /app/src/gray_to_binary.sv /app/src/heaviside.sv /app/src/isochronous_4phase_handshake.sv /app/src/isochronous_spill_register.sv /app/src/lfsr.sv /app/src/lfsr_16bit.sv /app/src/lfsr_8bit.sv /app/src/lossy_valid_to_stream.sv /app/src/mv_filter.sv /app/src/onehot_to_bin.sv /app/src/plru_tree.sv /app/src/passthrough_stream_fifo.sv /app/src/popcount.sv /app/src/ring_buffer.sv /app/src/rr_arb_tree.sv /app/src/rstgen_bypass.sv /app/src/serial_deglitch.sv /app/src/shift_reg.sv /app/src/shift_reg_gated.sv /app/src/spill_register_flushable.sv /app/src/stream_demux.sv /app/src/stream_filter.sv /app/src/stream_fork.sv /app/src/stream_join_dynamic.sv /app/src/stream_mux.sv /app/src/stream_throttle.sv /app/src/sub_per_hash.sv /app/src/sync.sv /app/src/sync_wedge.sv /app/src/unread.sv /app/src/read.sv /app/src/addr_decode_dync.sv /app/src/boxcar.sv /app/src/cdc_2phase.sv /app/src/cdc_4phase.sv /app/src/clk_int_div_static.sv /app/src/trip_counter.sv /app/src/addr_decode.sv /app/src/addr_decode_napot.sv /app/src/multiaddr_decode.sv /app/src/cb_filter.sv /app/src/cdc_fifo_2phase.sv /app/src/clk_mux_glitch_free.sv /app/src/counter.sv /app/src/ecc_decode.sv /app/src/ecc_encode.sv /app/src/edge_detect.sv /app/src/lzc.sv /app/src/max_counter.sv /app/src/rstgen.sv /app/src/spill_register.sv /app/src/stream_delay.sv /app/src/stream_fifo.sv /app/src/stream_fork_dynamic.sv /app/src/stream_join.sv /app/src/cdc_reset_ctrlr.sv /app/src/cdc_fifo_gray.sv /app/src/fall_through_register.sv /app/src/id_queue.sv /app/src/stream_to_mem.sv /app/src/stream_arbiter_flushable.sv /app/src/stream_fifo_optimal_wrap.sv /app/src/stream_register.sv /app/src/stream_xbar.sv /app/src/cdc_fifo_gray_clearable.sv /app/src/cdc_2phase_clearable.sv /app/src/mem_to_banks_detailed.sv /app/src/stream_arbiter.sv /app/src/stream_omega_net.sv /app/src/mem_to_banks.sv --top-module addr_decode -Wno-fatal --unroll-count 2048
+FAIL: lint::addr_decode_napot
+%Error: Verilator internal fault, sorry. Suggest trying --debug --gdbbt
+%Error: Command Failed ulimit -s unlimited 2>/dev/null; exec /usr/bin/verilator_bin --lint-only -sv -I/app/include .bender/git/checkouts/tech_cells_generic-f2b3120183f41af5/src/rtl/tc_clk.sv .bender/git/checkouts/tech_cells_generic-f2b3120183f41af5/src/deprecated/pulp_clk_cells.sv /app/src/cb_filter_pkg.sv /app/src/cdc_reset_ctrlr_pkg.sv /app/src/cf_math_pkg.sv /app/src/ecc_pkg.sv /app/src/stream_intf.sv /app/src/binary_to_gray.sv /app/src/cc_onehot.sv /app/src/clk_int_div.sv /app/src/credit_counter.sv /app/src/delta_counter.sv /app/src/edge_propagator_tx.sv /app/src/exp_backoff.sv /app/src/fifo_v3.sv /app/src/gray_to_binary.sv /app/src/heaviside.sv /app/src/isochronous_4phase_handshake.sv /app/src/isochronous_spill_register.sv /app/src/lfsr.sv /app/src/lfsr_16bit.sv /app/src/lfsr_8bit.sv /app/src/lossy_valid_to_stream.sv /app/src/mv_filter.sv /app/src/onehot_to_bin.sv /app/src/plru_tree.sv /app/src/passthrough_stream_fifo.sv /app/src/popcount.sv /app/src/ring_buffer.sv /app/src/rr_arb_tree.sv /app/src/rstgen_bypass.sv /app/src/serial_deglitch.sv /app/src/shift_reg.sv /app/src/shift_reg_gated.sv /app/src/spill_register_flushable.sv /app/src/stream_demux.sv /app/src/stream_filter.sv /app/src/stream_fork.sv /app/src/stream_join_dynamic.sv /app/src/stream_mux.sv /app/src/stream_throttle.sv /app/src/sub_per_hash.sv /app/src/sync.sv /app/src/sync_wedge.sv /app/src/unread.sv /app/src/read.sv /app/src/addr_decode_dync.sv /app/src/boxcar.sv /app/src/cdc_2phase.sv /app/src/cdc_4phase.sv /app/src/clk_int_div_static.sv /app/src/trip_counter.sv /app/src/addr_decode.sv /app/src/addr_decode_napot.sv /app/src/multiaddr_decode.sv /app/src/cb_filter.sv /app/src/cdc_fifo_2phase.sv /app/src/clk_mux_glitch_free.sv /app/src/counter.sv /app/src/ecc_decode.sv /app/src/ecc_encode.sv /app/src/edge_detect.sv /app/src/lzc.sv /app/src/max_counter.sv /app/src/rstgen.sv /app/src/spill_register.sv /app/src/stream_delay.sv /app/src/stream_fifo.sv /app/src/stream_fork_dynamic.sv /app/src/stream_join.sv /app/src/cdc_reset_ctrlr.sv /app/src/cdc_fifo_gray.sv /app/src/fall_through_register.sv /app/src/id_queue.sv /app/src/stream_to_mem.sv /app/src/stream_arbiter_flushable.sv /app/src/stream_fifo_optimal_wrap.sv /app/src/stream_register.sv /app/src/stream_xbar.sv /app/src/cdc_fifo_gray_clearable.sv /app/src/cdc_2phase_clearable.sv /app/src/mem_to_banks_detailed.sv /app/src/stream_arbiter.sv /app/src/stream_omega_net.sv /app/src/mem_to_banks.sv --top-module addr_decode_napot -Wno-fatal --unroll-count 2048
+PASS: lint::cb_filter
+PASS: lint::cdc_fifo_2phase
+PASS: lint::clk_mux_glitch_free
+PASS: lint::counter
+PASS: lint::ecc_decode
+PASS: lint::ecc_encode
+PASS: lint::edge_detect
+PASS: lint::lzc
+PASS: lint::max_counter
+PASS: lint::rstgen
+PASS: lint::spill_register
+PASS: lint::stream_delay
+PASS: lint::stream_fifo
+PASS: lint::stream_fork_dynamic
+PASS: lint::stream_join
+PASS: lint::cdc_reset_ctrlr
+PASS: lint::cdc_fifo_gray
+PASS: lint::fall_through_register
+PASS: lint::id_queue
+PASS: lint::stream_to_mem
+PASS: lint::stream_arbiter_flushable
+PASS: lint::stream_fifo_optimal_wrap
+PASS: lint::stream_register
+PASS: lint::stream_xbar
+PASS: lint::cdc_fifo_gray_clearable
+PASS: lint::cdc_2phase_clearable
+PASS: lint::stream_arbiter
+PASS: lint::stream_omega_net
+PASS: lint::mem_to_banks
+
+=== ECC Functional Tests ===
+make: Entering directory '/tmp/verilator_ecc_encode_verify'
+make: *** No rule to make target 'test/ecc/ecc.cpp', needed by 'ecc.o'.  Stop.
+make: Leaving directory '/tmp/verilator_ecc_encode_verify'
+FAIL: functional::ecc_encode (binary not built)
+make: Entering directory '/tmp/verilator_ecc_decode_verify'
+make: *** No rule to make target 'test/ecc/ecc.cpp', needed by 'ecc.o'.  Stop.
+make: Leaving directory '/tmp/verilator_ecc_decode_verify'
+FAIL: functional::ecc_decode (binary not built)
+
+=== Summary ===
+passed=73 total=70
+reward: 0.000000  (passed=0, total=70)

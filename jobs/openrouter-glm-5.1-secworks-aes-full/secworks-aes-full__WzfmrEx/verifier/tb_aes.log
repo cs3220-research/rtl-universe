@@ -1,0 +1,15 @@
+INFO: Preparing secworks:crypto:aes:1.0.0
+INFO: Setting up project
+WARNING: This backend is deprecated and will eventually be removed. Please migrate to the flow API instead.  See https://edalize.readthedocs.io/en/latest/ref/migrations.html#migrating-from-the-tool-api-to-the-flow-api for more details.
+INFO: Building
+INFO: iverilog -stb_aes -c secworks_crypto_aes_1.0.0.scr -o secworks_crypto_aes_1.0.0 
+
+ERROR: src/secworks_crypto_aes_1.0.0/src/tb/tb_aes.v:116: error: Unknown module type: aes
+2 error(s) during elaboration.
+*** These modules were missing:
+        aes referenced 1 times.
+***
+make: *** [Makefile:9: secworks_crypto_aes_1.0.0] Error 2
+
+ERROR: Failed to build secworks:crypto:aes:1.0.0 : '['make']' exited with an error: 2
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'

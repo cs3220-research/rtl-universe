@@ -1,0 +1,110 @@
+{
+    "id": "a79c2b6b-1e20-4774-8b5c-a132062498c9",
+    "task_name": "nvdla-e2e",
+    "trial_name": "nvdla-e2e__CueutAG",
+    "trial_uri": "file:///localscratch/dandrews47/rtl-universe/jobs/dns-block-opus-nvdla-e2e/nvdla-e2e__CueutAG",
+    "task_id": {
+        "path": "minrepro_task/nvdla-e2e"
+    },
+    "source": null,
+    "task_checksum": "63c95545328581b3df96397d473da7e04bd3b3f0afa40f9ea3911dc49168f0ae",
+    "config": {
+        "task": {
+            "path": "minrepro_task/nvdla-e2e",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "nvdla-e2e__CueutAG",
+        "trials_dir": "jobs/dns-block-opus-nvdla-e2e",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:ClaudeCodeSandboxed",
+            "model_name": "opus",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "CLAUDE_CONFIG_DIR": "/home/builder/.claude",
+                "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "****"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": [
+                "/tmp/harbor-claude-creds-dns-block-opus-nvdla-e2e:/home/builder/.claude"
+            ],
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "19673f58-62fb-4ff1-b872-f2a9e1a8a763"
+    },
+    "agent_info": {
+        "name": "claude-code-sandboxed",
+        "version": "2.1.126",
+        "model_info": {
+            "name": "opus",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-04T22:40:17.212003Z",
+    "finished_at": "2026-05-04T22:43:00.409314Z",
+    "environment_setup": {
+        "started_at": "2026-05-04T22:40:17.403001Z",
+        "finished_at": "2026-05-04T22:40:23.530630Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-04T22:40:23.530848Z",
+        "finished_at": "2026-05-04T22:40:42.933291Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-04T22:40:42.933528Z",
+        "finished_at": "2026-05-04T22:42:46.707591Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-04T22:42:46.920018Z",
+        "finished_at": "2026-05-04T22:42:47.756463Z"
+    },
+    "step_results": null
+}

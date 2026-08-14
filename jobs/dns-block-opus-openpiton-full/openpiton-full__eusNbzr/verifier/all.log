@@ -1,0 +1,24 @@
+=== ifu_esl_counter ===
+[PASS] counter_test_clear
+[PASS] counter_test_clear_set
+[PASS] counter_test_pause
+[PASS] counter_test_set
+[PASS] counter_test_step
+[PASS] counter_test_step_clear
+[PASS] counter_test_step_clear_set
+[PASS] counter_test_step_set
+=== ifu_esl_lfsr ===
+[PASS] lfsr_test_exhaust
+[PASS] lfsr_test_ldstep
+[PASS] lfsr_test_pause
+[PASS] lfsr_test_seed
+[PASS] lfsr_test_state0
+=== ifu_esl_shiftreg ===
+[PASS] shiftreg_test_pause
+[PASS] shiftreg_test_set
+[PASS] shiftreg_test_set_shift
+[PASS] shiftreg_test_shift
+=== uart_serializer ===
+[PASS] uart_test
+
+Total: passed=18 / total=18

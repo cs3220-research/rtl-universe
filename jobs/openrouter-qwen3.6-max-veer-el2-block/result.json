@@ -1,0 +1,39 @@
+{
+    "id": "c4b4613d-194d-4125-af92-fe634a6e2e06",
+    "started_at": "2026-05-03T13:57:45.012315",
+    "updated_at": "2026-05-03T14:02:30.936095",
+    "finished_at": "2026-05-03T14:02:30.936095",
+    "n_total_trials": 1,
+    "stats": {
+        "n_completed_trials": 1,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "opencode-sandboxed__qwen/qwen3.6-max-preview__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "veer-el2-block__TCQmfis"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": 171496,
+        "n_cache_tokens": 0,
+        "n_output_tokens": 500,
+        "cost_usd": null
+    }
+}

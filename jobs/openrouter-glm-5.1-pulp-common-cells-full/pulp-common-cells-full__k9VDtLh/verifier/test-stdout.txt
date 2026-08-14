@@ -1,0 +1,315 @@
+=== Per-module Verilator lint tests ===
+FAIL: lint::binary_to_gray
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::gray_to_binary
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::cc_onehot
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::clk_int_div
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::credit_counter
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::delta_counter
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::edge_propagator_tx
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::exp_backoff
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::fifo_v3
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::heaviside
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::isochronous_4phase_handshake
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::isochronous_spill_register
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::lfsr
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::lfsr_16bit
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::lfsr_8bit
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::lossy_valid_to_stream
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::mv_filter
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::onehot_to_bin
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::plru_tree
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::passthrough_stream_fifo
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::popcount
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::ring_buffer
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::rr_arb_tree
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::rstgen_bypass
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::serial_deglitch
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::shift_reg
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::shift_reg_gated
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::spill_register_flushable
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_demux
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_filter
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_fork
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_join_dynamic
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_mux
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_throttle
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::sub_per_hash
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::sync
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::sync_wedge
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::unread
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::read
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::boxcar
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::cdc_2phase
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::cdc_4phase
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::clk_int_div_static
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::trip_counter
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::addr_decode
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::addr_decode_napot
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::cb_filter
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::cdc_fifo_2phase
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::clk_mux_glitch_free
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::counter
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::ecc_decode
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::ecc_encode
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::edge_detect
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::lzc
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::max_counter
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::rstgen
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::spill_register
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_delay
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_fifo
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_fork_dynamic
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_join
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::cdc_reset_ctrlr
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::cdc_fifo_gray
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::fall_through_register
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::id_queue
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_to_mem
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_arbiter_flushable
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_fifo_optimal_wrap
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_register
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_xbar
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::cdc_fifo_gray_clearable
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::cdc_2phase_clearable
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_arbiter
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::stream_omega_net
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+FAIL: lint::mem_to_banks
+%Error: /app/src/clk_int_div.sv:52:5: Define or directive not defined: '`FF'
+%Error: /app/src/clk_int_div.sv:52:8: syntax error, unexpected '('
+%Error: /app/src/clk_int_div.sv:53:5: Define or directive not defined: '`FF'
+
+=== ECC Functional Tests ===
+make: Entering directory '/tmp/verilator_ecc_encode_verify'
+make: *** No rule to make target 'test/ecc/ecc.cpp', needed by 'ecc.o'.  Stop.
+make: Leaving directory '/tmp/verilator_ecc_encode_verify'
+FAIL: functional::ecc_encode (binary not built)
+make: Entering directory '/tmp/verilator_ecc_decode_verify'
+make: *** No rule to make target 'test/ecc/ecc.cpp', needed by 'ecc.o'.  Stop.
+make: Leaving directory '/tmp/verilator_ecc_decode_verify'
+FAIL: functional::ecc_decode (binary not built)
+
+=== Summary ===
+passed=0 total=70
+reward: 0.000000  (passed=0, total=70)

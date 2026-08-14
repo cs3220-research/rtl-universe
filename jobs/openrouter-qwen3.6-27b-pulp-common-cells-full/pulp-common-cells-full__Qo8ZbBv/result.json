@@ -1,0 +1,107 @@
+{
+    "id": "43994e59-fa2e-439d-9bc8-0e9be0182f50",
+    "task_name": "pulp-common-cells-full",
+    "trial_name": "pulp-common-cells-full__Qo8ZbBv",
+    "trial_uri": "file:///localscratch/dandrews47/rtl-universe/jobs/openrouter-qwen3.6-27b-pulp-common-cells-full/pulp-common-cells-full__Qo8ZbBv",
+    "task_id": {
+        "path": "minrepro_task/pulp-common-cells-full"
+    },
+    "source": null,
+    "task_checksum": "f2c391878d0e184646af9db3190e7e0fd284fd2ca3d972f6e0e3b3e9d042c9e6",
+    "config": {
+        "task": {
+            "path": "minrepro_task/pulp-common-cells-full",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "pulp-common-cells-full__Qo8ZbBv",
+        "trials_dir": "jobs/openrouter-qwen3.6-27b-pulp-common-cells-full",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:OpenCodeSandboxed",
+            "model_name": "openrouter/qwen/qwen3.6-27b",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "11b5c207-993b-4f35-80dc-ce6c8009dba2"
+    },
+    "agent_info": {
+        "name": "opencode-sandboxed",
+        "version": "1.14.33",
+        "model_info": {
+            "name": "qwen/qwen3.6-27b",
+            "provider": "openrouter"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 861961,
+        "n_cache_tokens": 0,
+        "n_output_tokens": 7469,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-05T01:23:12.153683Z",
+    "finished_at": "2026-05-05T01:29:05.277912Z",
+    "environment_setup": {
+        "started_at": "2026-05-05T01:23:12.186931Z",
+        "finished_at": "2026-05-05T01:23:17.481799Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-05T01:23:17.481877Z",
+        "finished_at": "2026-05-05T01:23:23.610527Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-05T01:23:23.610625Z",
+        "finished_at": "2026-05-05T01:28:46.052980Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-05T01:28:46.243219Z",
+        "finished_at": "2026-05-05T01:28:53.545869Z"
+    },
+    "step_results": null
+}

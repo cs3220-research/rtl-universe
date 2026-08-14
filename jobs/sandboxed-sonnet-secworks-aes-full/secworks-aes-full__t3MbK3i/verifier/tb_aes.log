@@ -1,0 +1,263 @@
+INFO: Preparing secworks:crypto:aes:1.0.0
+INFO: Setting up project
+WARNING: This backend is deprecated and will eventually be removed. Please migrate to the flow API instead.  See https://edalize.readthedocs.io/en/latest/ref/migrations.html#migrating-from-the-tool-api-to-the-flow-api for more details.
+INFO: Building
+INFO: Running
+vvp -n -M. -l icarus.log   secworks_crypto_aes_1.0.0 -fst 
+   -= Testbench for AES started =-
+    ==============================
+
+Dumping all variables to tb_aes vcd file.
+FST info: dumpfile tb_aes.vcd opened for output.
+cycle: 0x0000000000000000
+State of DUT
+------------
+ctrl_reg:   init   = 0xx, next   = 0xx
+config_reg: encdec = 0xx, length = 0xx 
+
+block: 0xxxxxxxxx, 0xxxxxxxxx, 0xxxxxxxxx, 0xxxxxxxxx
+
+*** Toggle reset.
+
+cycle: 0x0000000000000001
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x0 
+
+block: 0x00000000, 0x00000000, 0x00000000, 0x00000000
+
+ECB 128 bit key tests
+---------------------
+*** TC 1 ECB mode test started.
+cycle: 0x0000000000000081
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x0 
+
+block: 0x6bc1bee2, 0x2e409f96, 0xe93d7e11, 0x7393172a
+
+*** TC 1 successful.
+
+*** TC 2 ECB mode test started.
+cycle: 0x000000000000016d
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x0 
+
+block: 0xae2d8a57, 0x1e03ac9c, 0x9eb76fac, 0x45af8e51
+
+*** TC 2 successful.
+
+*** TC 3 ECB mode test started.
+cycle: 0x0000000000000259
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x0 
+
+block: 0x30c81c46, 0xa35ce411, 0xe5fbc119, 0x1a0a52ef
+
+*** TC 3 successful.
+
+*** TC 4 ECB mode test started.
+cycle: 0x0000000000000345
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x0 
+
+block: 0xf69f2445, 0xdf4f9b17, 0xad2b417b, 0xe66c3710
+
+*** TC 4 successful.
+
+*** TC 5 ECB mode test started.
+cycle: 0x0000000000000431
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x0 
+
+block: 0x3ad77bb4, 0x0d7a3660, 0xa89ecaf3, 0x2466ef97
+
+*** TC 5 successful.
+
+*** TC 6 ECB mode test started.
+cycle: 0x000000000000051d
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x0 
+
+block: 0xf5d3d585, 0x03b9699d, 0xe785895a, 0x96fdbaaf
+
+*** TC 6 successful.
+
+*** TC 7 ECB mode test started.
+cycle: 0x0000000000000609
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x0 
+
+block: 0x43b1cd7f, 0x598ece23, 0x881b00e3, 0xed030688
+
+*** TC 7 successful.
+
+*** TC 8 ECB mode test started.
+cycle: 0x00000000000006f5
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x0 
+
+block: 0x7b0c785e, 0x27e8ad3f, 0x82232071, 0x04725dd4
+
+*** TC 8 successful.
+
+*** TC 9 ECB mode test started.
+cycle: 0x00000000000007e1
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x0 
+
+block: 0x00112233, 0x44556677, 0x8899aabb, 0xccddeeff
+
+*** TC 9 successful.
+
+*** TC 10 ECB mode test started.
+cycle: 0x00000000000008cd
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x0 
+
+block: 0x69c4e0d8, 0x6a7b0430, 0xd8cdb780, 0x70b4c55a
+
+*** TC 10 successful.
+
+
+ECB 256 bit key tests
+---------------------
+*** TC 16 ECB mode test started.
+cycle: 0x00000000000009b9
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x1 
+
+block: 0x6bc1bee2, 0x2e409f96, 0xe93d7e11, 0x7393172a
+
+*** TC 16 successful.
+
+*** TC 17 ECB mode test started.
+cycle: 0x0000000000000aa5
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x1 
+
+block: 0xae2d8a57, 0x1e03ac9c, 0x9eb76fac, 0x45af8e51
+
+*** TC 17 successful.
+
+*** TC 18 ECB mode test started.
+cycle: 0x0000000000000b91
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x1 
+
+block: 0x30c81c46, 0xa35ce411, 0xe5fbc119, 0x1a0a52ef
+
+*** TC 18 successful.
+
+*** TC 19 ECB mode test started.
+cycle: 0x0000000000000c7d
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x1 
+
+block: 0xf69f2445, 0xdf4f9b17, 0xad2b417b, 0xe66c3710
+
+*** TC 19 successful.
+
+*** TC 20 ECB mode test started.
+cycle: 0x0000000000000d69
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x1 
+
+block: 0xf3eed1bd, 0xb5d2a03c, 0x064b5a7e, 0x3db181f8
+
+*** TC 20 successful.
+
+*** TC 21 ECB mode test started.
+cycle: 0x0000000000000e55
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x1 
+
+block: 0x591ccb10, 0xd410ed26, 0xdc5ba74a, 0x31362870
+
+*** TC 21 successful.
+
+*** TC 22 ECB mode test started.
+cycle: 0x0000000000000f41
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x1 
+
+block: 0xb6ed21b9, 0x9ca6f4f9, 0xf153e7b1, 0xbeafed1d
+
+*** TC 22 successful.
+
+*** TC 23 ECB mode test started.
+cycle: 0x000000000000102d
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x1 
+
+block: 0x23304b7a, 0x39f9f3ff, 0x067d8d8f, 0x9e24ecc7
+
+*** TC 23 successful.
+
+*** TC 24 ECB mode test started.
+cycle: 0x0000000000001119
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x1 
+
+block: 0x00112233, 0x44556677, 0x8899aabb, 0xccddeeff
+
+*** TC 24 successful.
+
+*** TC 25 ECB mode test started.
+cycle: 0x0000000000001205
+State of DUT
+------------
+ctrl_reg:   init   = 0x0, next   = 0x0
+config_reg: encdec = 0x0, length = 0x1 
+
+block: 0x8ea2b7ca, 0x516745bf, 0xeafc4990, 0x4b496089
+
+*** TC 25 successful.
+
+*** All 20 test cases completed successfully
+
+   -= Testbench for AES completed =-
+    ===============================
+
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'
+Entering directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'
+Leaving directory '/app/build/secworks_crypto_aes_1.0.0/tb_aes-icarus'

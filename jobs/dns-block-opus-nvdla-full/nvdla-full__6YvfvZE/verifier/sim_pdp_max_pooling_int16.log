@@ -1,0 +1,201 @@
+converting /app/verif/traces/traceplayer/pdp_max_pooling_int16/input.txn to /app/outdir/nv_full/verilator/test/pdp_max_pooling_int16/trace.bin
+File 0 0x80000000 0x2000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x80100000 0x1880
+okay, that's all the bytes I expected -- I'm stopping here
+CMD: write_reg ffff3406 00000006
+CMD: read_reg ffff3406 00001fff 00000006
+CMD: write_reg ffff340c 00701c07
+CMD: read_reg ffff340c 3fffffff 00701c07
+CMD: write_reg ffff341b 00000800
+CMD: read_reg ffff341b ffffffe0 00000800
+CMD: write_reg ffff300a 00000800
+CMD: read_reg ffff300a ffffffe0 00000800
+CMD: write_reg ffff341a 00000100
+CMD: read_reg ffff341a ffffffe0 00000100
+CMD: write_reg ffff3009 00000100
+CMD: read_reg ffff3009 ffffffe0 00000100
+CMD: write_reg ffff3407 00000006
+CMD: read_reg ffff3407 00001fff 00000006
+CMD: write_reg ffff300d 00000000
+CMD: read_reg ffff300d 000000ff 00000000
+CMD: write_reg ffff340d 00000101
+CMD: read_reg ffff340d 00ff0f0f 00000101
+CMD: write_reg ffff300e 00000001
+CMD: read_reg ffff300e 000000ff 00000001
+CMD: write_reg ffff3408 0000003f
+CMD: read_reg ffff3408 00001fff 0000003f
+CMD: write_reg ffff341e 000000e0
+CMD: read_reg ffff341e ffffffe0 000000e0
+CMD: write_reg ffff3421 00000101
+CMD: read_reg ffff3421 00000003 00000001
+CMD: write_reg ffff300c 00000101
+CMD: read_reg ffff300c 00000003 00000001
+CMD: write_reg ffff3410 00000000
+CMD: read_reg ffff3410 00007777 00000000
+CMD: write_reg ffff3404 00000007
+CMD: read_reg ffff3404 00001fff 00000007
+CMD: write_reg ffff3004 00000007
+CMD: read_reg ffff3004 00001fff 00000007
+CMD: write_reg ffff340b 00701c07
+CMD: read_reg ffff340b 3fffffff 00701c07
+CMD: write_reg ffff3010 00701c07
+CMD: read_reg ffff3010 3fffffff 00701c07
+CMD: write_reg ffff3403 00000007
+CMD: read_reg ffff3403 00001fff 00000007
+CMD: write_reg ffff3003 00000007
+CMD: read_reg ffff3003 00001fff 00000007
+CMD: write_reg ffff3409 00000011
+CMD: read_reg ffff3409 0000ff13 00000011
+CMD: write_reg ffff3006 00000001
+CMD: read_reg ffff3006 00000001 00000001
+CMD: write_reg ffff341f 00000620
+CMD: read_reg ffff341f ffffffe0 00000620
+CMD: write_reg ffff3420 00000001
+CMD: read_reg ffff3420 00000001 00000001
+CMD: write_reg ffff300b 00000001
+CMD: read_reg ffff300b 00000001 00000001
+CMD: write_reg ffff3405 0000003f
+CMD: read_reg ffff3405 00001fff 0000003f
+CMD: write_reg ffff3005 0000003f
+CMD: read_reg ffff3005 00001fff 0000003f
+CMD: load_mem 00002000 bytes to 80000000
+CMD: write_reg ffff3007 80000000
+CMD: read_reg ffff3007 ffffffe0 80000000
+CMD: write_reg ffff3008 00000000
+CMD: read_reg ffff3008 ffffffff 00000000
+CMD: write_reg ffff3418 80000000
+CMD: read_reg ffff3418 ffffffe0 80000000
+CMD: write_reg ffff3419 00000000
+CMD: read_reg ffff3419 ffffffff 00000000
+CMD: write_reg ffff341c 80100000
+CMD: read_reg ffff341c ffffffe0 80100000
+CMD: write_reg ffff341d 00000000
+CMD: read_reg ffff341d ffffffff 00000000
+CMD: write_reg ffff3002 00000001
+CMD: read_reg ffff3002 00000001 00000001
+CMD: write_reg ffff3402 00000001
+CMD: read_reg ffff3402 00000001 00000001
+CMD: wait
+CMD: write_reg ffff0003 ffffffff
+CMD: dump_mem 00001880 bytes from 80100000 -> output_feature_map.dat
+CMD: done
+reset...
+letting buffers clear after reset...
+running trace...
+(8272) write to nvdla: addr ffff3406, data 00000006
+(8274) read from nvdla: addr ffff3406
+(8276) read response from nvdla: 00000006
+(8278) write to nvdla: addr ffff340c, data 00701c07
+(8280) read from nvdla: addr ffff340c
+(8282) read response from nvdla: 00701c07
+(8284) write to nvdla: addr ffff341b, data 00000800
+(8286) read from nvdla: addr ffff341b
+(8288) read response from nvdla: 00000800
+(8290) write to nvdla: addr ffff300a, data 00000800
+(8292) read from nvdla: addr ffff300a
+(8294) read response from nvdla: 00000800
+(8296) write to nvdla: addr ffff341a, data 00000100
+(8298) read from nvdla: addr ffff341a
+(8300) read response from nvdla: 00000100
+(8302) write to nvdla: addr ffff3009, data 00000100
+(8304) read from nvdla: addr ffff3009
+(8306) read response from nvdla: 00000100
+(8308) write to nvdla: addr ffff3407, data 00000006
+(8310) read from nvdla: addr ffff3407
+(8312) read response from nvdla: 00000006
+(8314) write to nvdla: addr ffff300d, data 00000000
+(8316) read from nvdla: addr ffff300d
+(8318) read response from nvdla: 00000000
+(8320) write to nvdla: addr ffff340d, data 00000101
+(8322) read from nvdla: addr ffff340d
+(8324) read response from nvdla: 00000101
+(8326) write to nvdla: addr ffff300e, data 00000001
+(8328) read from nvdla: addr ffff300e
+(8330) read response from nvdla: 00000001
+(8332) write to nvdla: addr ffff3408, data 0000003f
+(8334) read from nvdla: addr ffff3408
+(8336) read response from nvdla: 0000003f
+(8338) write to nvdla: addr ffff341e, data 000000e0
+(8340) read from nvdla: addr ffff341e
+(8342) read response from nvdla: 000000e0
+(8344) write to nvdla: addr ffff3421, data 00000101
+(8346) read from nvdla: addr ffff3421
+(8348) read response from nvdla: 00000101
+(8350) write to nvdla: addr ffff300c, data 00000101
+(8352) read from nvdla: addr ffff300c
+(8354) read response from nvdla: 00000101
+(8356) write to nvdla: addr ffff3410, data 00000000
+(8358) read from nvdla: addr ffff3410
+(8360) read response from nvdla: 00000000
+(8362) write to nvdla: addr ffff3404, data 00000007
+(8364) read from nvdla: addr ffff3404
+(8366) read response from nvdla: 00000007
+(8368) write to nvdla: addr ffff3004, data 00000007
+(8370) read from nvdla: addr ffff3004
+(8372) read response from nvdla: 00000007
+(8374) write to nvdla: addr ffff340b, data 00701c07
+(8376) read from nvdla: addr ffff340b
+(8378) read response from nvdla: 00701c07
+(8380) write to nvdla: addr ffff3010, data 00701c07
+(8382) read from nvdla: addr ffff3010
+(8384) read response from nvdla: 00701c07
+(8386) write to nvdla: addr ffff3403, data 00000007
+(8388) read from nvdla: addr ffff3403
+(8390) read response from nvdla: 00000007
+(8392) write to nvdla: addr ffff3003, data 00000007
+(8394) read from nvdla: addr ffff3003
+(8396) read response from nvdla: 00000007
+(8398) write to nvdla: addr ffff3409, data 00000011
+(8400) read from nvdla: addr ffff3409
+(8402) read response from nvdla: 00000011
+(8404) write to nvdla: addr ffff3006, data 00000001
+(8406) read from nvdla: addr ffff3006
+(8408) read response from nvdla: 00000001
+(8410) write to nvdla: addr ffff341f, data 00000620
+(8412) read from nvdla: addr ffff341f
+(8414) read response from nvdla: 00000620
+(8416) write to nvdla: addr ffff3420, data 00000001
+(8418) read from nvdla: addr ffff3420
+(8420) read response from nvdla: 00000001
+(8422) write to nvdla: addr ffff300b, data 00000001
+(8424) read from nvdla: addr ffff300b
+(8426) read response from nvdla: 00000001
+(8428) write to nvdla: addr ffff3405, data 0000003f
+(8430) read from nvdla: addr ffff3405
+(8432) read response from nvdla: 0000003f
+(8434) write to nvdla: addr ffff3005, data 0000003f
+(8436) read from nvdla: addr ffff3005
+(8438) read response from nvdla: 0000003f
+AXI: loading memory at 0x80000000
+(8442) write to nvdla: addr ffff3007, data 80000000
+(8444) read from nvdla: addr ffff3007
+(8446) read response from nvdla: 80000000
+(8448) write to nvdla: addr ffff3008, data 00000000
+(8450) read from nvdla: addr ffff3008
+(8452) read response from nvdla: 00000000
+(8454) write to nvdla: addr ffff3418, data 80000000
+(8456) read from nvdla: addr ffff3418
+(8458) read response from nvdla: 80000000
+(8460) write to nvdla: addr ffff3419, data 00000000
+(8462) read from nvdla: addr ffff3419
+(8464) read response from nvdla: 00000000
+(8466) write to nvdla: addr ffff341c, data 80100000
+(8468) read from nvdla: addr ffff341c
+(8470) read response from nvdla: 80100000
+(8472) write to nvdla: addr ffff341d, data 00000000
+(8474) read from nvdla: addr ffff341d
+(8476) read response from nvdla: 00000000
+(8478) write to nvdla: addr ffff3002, data 00000001
+(8480) read from nvdla: addr ffff3002
+(8482) read response from nvdla: 00000001
+(8484) write to nvdla: addr ffff3402, data 00000001
+(8486) read from nvdla: addr ffff3402
+(8488) read response from nvdla: 00000001
+(8490) waiting for interrupt...
+(8490) interrupt!
+(8492) write to nvdla: addr ffff0003, data ffffffff
+AXI: dumping memory to output_feature_map.dat
+AXI: FAIL: mismatch at memory address 80100000 (exp 0x11, got 0x00), and maybe others too
+done at 8896 ticks
+*** FAIL: test failed due to output mismatch

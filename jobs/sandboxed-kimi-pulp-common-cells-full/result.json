@@ -1,37 +1,39 @@
 {
-    "id": "70cbf906-3504-4e17-8e07-ef97470b9dc5",
-    "started_at": "2026-05-01T12:24:31.788808",
-    "updated_at": "2026-05-01T12:25:14.856270",
-    "finished_at": "2026-05-01T12:25:14.856270",
+    "id": "52d4f6e9-42f5-4f07-8168-858fffc4deac",
+    "started_at": "2026-05-04T20:27:15.936422",
+    "updated_at": "2026-05-04T21:11:29.252675",
+    "finished_at": "2026-05-04T21:11:29.252675",
     "n_total_trials": 1,
     "stats": {
         "n_completed_trials": 1,
-        "n_errored_trials": 1,
+        "n_errored_trials": 0,
         "n_running_trials": 0,
         "n_pending_trials": 0,
         "n_cancelled_trials": 0,
         "n_retries": 0,
         "evals": {
             "opencode-sandboxed__moonshotai/kimi-k2.6__adhoc": {
-                "n_trials": 0,
-                "n_errors": 1,
+                "n_trials": 1,
+                "n_errors": 0,
                 "metrics": [
                     {
                         "mean": 0.0
                     }
                 ],
                 "pass_at_k": {},
-                "reward_stats": {},
-                "exception_stats": {
-                    "RuntimeError": [
-                        "pulp-common-cells-full__ajNiaYr"
-                    ]
-                }
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "pulp-common-cells-full__MpteGcj"
+                        ]
+                    }
+                },
+                "exception_stats": {}
             }
         },
-        "n_input_tokens": null,
-        "n_cache_tokens": null,
-        "n_output_tokens": null,
-        "cost_usd": null
+        "n_input_tokens": 13370091,
+        "n_cache_tokens": 13087744,
+        "n_output_tokens": 69359,
+        "cost_usd": 2.7038606899999986
     }
 }

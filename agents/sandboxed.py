@@ -13,6 +13,7 @@ Usage:
 
 from harbor.agents.installed.opencode import OpenCode
 from harbor.agents.installed.claude_code import ClaudeCode
+from harbor.agents.installed.codex import Codex
 from harbor.environments.base import BaseEnvironment
 
 # Domains to sinkhole — covers all major source hosting platforms.
@@ -91,6 +92,41 @@ class ClaudeCodeSandboxed(ClaudeCode):
     async def install(self, environment: BaseEnvironment) -> None:
         # Normal Claude Code install (downloads from claude.ai, not GitHub)
         await super().install(environment)
+
+        # Activate DNS sinkhole AFTER setup, BEFORE agent runs
+        await _activate_sinkhole(self, environment)
+
+
+class CodexSandboxed(Codex):
+    """Codex adapter with DNS sinkhole and pre-installed dependencies.
+
+    Expects NVM, Node 22, and @openai/codex to already be installed in the
+    Docker image (done at build time). Skips the upstream install step
+    that curls NVM from raw.githubusercontent.com, then activates the DNS
+    sinkhole before the agent runs.
+    """
+
+    @staticmethod
+    def name() -> str:
+        return "codex-sandboxed"
+
+    async def install(self, environment: BaseEnvironment) -> None:
+        # Install curl + ripgrep (same as upstream root install)
+        await self.exec_as_root(
+            environment,
+            command="apt-get update && apt-get install -y curl ripgrep",
+            env={"DEBIAN_FRONTEND": "noninteractive"},
+        )
+
+        # Verify pre-installed codex is available (skip NVM download)
+        await self.exec_as_agent(
+            environment,
+            command=(
+                'export NVM_DIR="$HOME/.nvm" && '
+                '. "$NVM_DIR/nvm.sh" && '
+                "codex --version"
+            ),
+        )
 
         # Activate DNS sinkhole AFTER setup, BEFORE agent runs
         await _activate_sinkhole(self, environment)

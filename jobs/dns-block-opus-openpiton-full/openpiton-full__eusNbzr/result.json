@@ -1,0 +1,110 @@
+{
+    "id": "1ffcd114-9c94-4c26-b560-57a30d3b5c1c",
+    "task_name": "openpiton-full",
+    "trial_name": "openpiton-full__eusNbzr",
+    "trial_uri": "file:///localscratch/dandrews47/rtl-universe/jobs/dns-block-opus-openpiton-full/openpiton-full__eusNbzr",
+    "task_id": {
+        "path": "minrepro_task/openpiton-full"
+    },
+    "source": null,
+    "task_checksum": "ffd0e4f3e286ad5a8ad60f18c323cb9d9237c98225142d9205a276e9fce0b9bd",
+    "config": {
+        "task": {
+            "path": "minrepro_task/openpiton-full",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "openpiton-full__eusNbzr",
+        "trials_dir": "jobs/dns-block-opus-openpiton-full",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:ClaudeCodeSandboxed",
+            "model_name": "opus",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "CLAUDE_CONFIG_DIR": "/home/builder/.claude",
+                "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "****"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": [
+                "/tmp/harbor-claude-creds-dns-block-opus-openpiton-full:/home/builder/.claude"
+            ],
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "dd22ea5f-86f6-40ec-b259-dc4cb0a9a4b7"
+    },
+    "agent_info": {
+        "name": "claude-code-sandboxed",
+        "version": "2.1.128",
+        "model_info": {
+            "name": "opus",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-05T06:29:24.225591Z",
+    "finished_at": "2026-05-05T07:49:44.258843Z",
+    "environment_setup": {
+        "started_at": "2026-05-05T06:29:29.327591Z",
+        "finished_at": "2026-05-05T06:29:38.650844Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-05T06:29:38.650914Z",
+        "finished_at": "2026-05-05T06:29:53.357857Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-05T06:29:53.358042Z",
+        "finished_at": "2026-05-05T07:47:14.945364Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-05T07:47:15.105204Z",
+        "finished_at": "2026-05-05T07:48:46.359708Z"
+    },
+    "step_results": null
+}

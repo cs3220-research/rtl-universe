@@ -1,0 +1,110 @@
+{
+  "schema_version": "ATIF-v1.6",
+  "session_id": "ses_210034650ffe1O98PQKbYfVEBp",
+  "agent": {
+    "name": "opencode",
+    "version": "1.14.33",
+    "model_name": "openrouter/google/gemini-3.1-pro-preview"
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "timestamp": "2026-05-03T22:36:57.365000+00:00",
+      "source": "agent",
+      "model_name": "openrouter/google/gemini-3.1-pro-preview",
+      "message": "(tool use)",
+      "tool_calls": [
+        {
+          "tool_call_id": "tool_bash_JVejVuinuKGjoiXWHbti",
+          "function_name": "bash",
+          "arguments": {
+            "command": "ls -la design"
+          }
+        }
+      ],
+      "metrics": {
+        "prompt_tokens": 13186,
+        "completion_tokens": 17,
+        "cost_usd": 0.02774,
+        "extra": {
+          "reasoning_tokens": 97
+        }
+      }
+    },
+    {
+      "step_id": 2,
+      "timestamp": "2026-05-03T22:36:59.871000+00:00",
+      "source": "agent",
+      "model_name": "openrouter/google/gemini-3.1-pro-preview",
+      "message": "(tool use)",
+      "tool_calls": [
+        {
+          "tool_call_id": "tool_bash_TNd9jd4r22PJvPIllArx",
+          "function_name": "bash",
+          "arguments": {
+            "description": "List the contents of the design directory",
+            "command": "ls -la design"
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "tool_bash_TNd9jd4r22PJvPIllArx",
+            "content": "total 60\ndrwxr-xr-x 10 builder builder 4096 May  3 18:47 .\ndrwxr-xr-x  1 builder builder 4096 May  3 22:36 ..\ndrwxr-xr-x  2 builder builder 4096 May  3 18:47 dbg\ndrwxr-xr-x  2 builder builder 4096 May  3 18:47 dec\ndrwxr-xr-x  2 builder builder 4096 May  3 18:47 dmi\n-rw-r--r--  1 builder builder    0 May  3 18:49 el2_dma_ctrl.sv\n-rw-r--r--  1 builder builder    0 May  3 18:49 el2_mem.sv\n-rw-r--r--  1 builder builder    0 May  3 18:49 el2_pic_ctrl.sv\n-rw-r--r--  1 builder builder    0 May  3 18:49 el2_pmp.sv\n-rw-r--r--  1 builder builder    0 May  3 18:49 el2_veer.sv\n-rw-r--r--  1 builder builder    0 May  3 18:49 el2_veer_lockstep.sv\n-rw-r--r--  1 builder builder    0 May  3 18:49 el2_veer_wrapper.sv\ndrwxr-xr-x  2 builder builder 4096 May  3 18:47 exu\n-rw-r--r--  1 builder builder 1742 May  3 18:47 flist\n-rw-r--r--  1 builder builder 2353 May  3 18:47 flist.formal\n-rw-r--r--  1 builder builder 1842 May  3 18:47 flist.lint\n-rw-r--r--  1 builder builder 2271 May  3 18:47 flist.questa\ndrwxr-xr-x  2 builder builder 4096 May  3 18:47 ifu\ndrwxr-xr-x  2 builder builder 4096 May  3 18:47 include\ndrwxr-xr-x  2 builder builder 4096 May  3 18:47 lib\ndrwxr-xr-x  2 builder builder 4096 May  3 18:47 lsu\n"
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 13347,
+        "completion_tokens": 29,
+        "cached_tokens": 12148,
+        "cost_usd": 0.00283,
+        "extra": {
+          "reasoning_tokens": 7
+        }
+      }
+    },
+    {
+      "step_id": 3,
+      "timestamp": "2026-05-03T22:37:03.090000+00:00",
+      "source": "agent",
+      "model_name": "openrouter/google/gemini-3.1-pro-preview",
+      "message": "(tool use)",
+      "tool_calls": [
+        {
+          "tool_call_id": "tool_bash_I20GYI6FEgsUF5nLkpoN",
+          "function_name": "bash",
+          "arguments": {
+            "command": "git status",
+            "description": "Check git status"
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "tool_bash_I20GYI6FEgsUF5nLkpoN",
+            "content": "On branch master\nUntracked files:\n  (use \"git add <file>...\" to include in what will be committed)\n\t.harbor/\n\nnothing added to commit but untracked files present (use \"git add\" to track)\n"
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 13996,
+        "completion_tokens": 23,
+        "cached_tokens": 12146,
+        "cost_usd": 0.0043,
+        "extra": {
+          "reasoning_tokens": 27
+        }
+      }
+    }
+  ],
+  "final_metrics": {
+    "total_prompt_tokens": 40529,
+    "total_completion_tokens": 69,
+    "total_cached_tokens": 24294,
+    "total_cost_usd": 0.03487,
+    "total_steps": 3
+  }
+}

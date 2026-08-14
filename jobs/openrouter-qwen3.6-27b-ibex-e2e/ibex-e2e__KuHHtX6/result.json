@@ -1,0 +1,107 @@
+{
+    "id": "e7249920-fae0-4f1a-aa4b-dd7e82b724d6",
+    "task_name": "ibex-e2e",
+    "trial_name": "ibex-e2e__KuHHtX6",
+    "trial_uri": "file:///localscratch/dandrews47/rtl-universe/jobs/openrouter-qwen3.6-27b-ibex-e2e/ibex-e2e__KuHHtX6",
+    "task_id": {
+        "path": "minrepro_task/ibex-e2e"
+    },
+    "source": null,
+    "task_checksum": "ef670176013147610fbaed2586f12c649f9d616baa4b3aa8c03fd0f5c246d438",
+    "config": {
+        "task": {
+            "path": "minrepro_task/ibex-e2e",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "ibex-e2e__KuHHtX6",
+        "trials_dir": "jobs/openrouter-qwen3.6-27b-ibex-e2e",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:OpenCodeSandboxed",
+            "model_name": "openrouter/qwen/qwen3.6-27b",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "98193642-5db0-4f5b-867b-19337dbcaa92"
+    },
+    "agent_info": {
+        "name": "opencode-sandboxed",
+        "version": "1.14.33",
+        "model_info": {
+            "name": "qwen/qwen3.6-27b",
+            "provider": "openrouter"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 417534,
+        "n_cache_tokens": 0,
+        "n_output_tokens": 1863,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-03T23:12:42.575675Z",
+    "finished_at": "2026-05-03T23:27:42.722908Z",
+    "environment_setup": {
+        "started_at": "2026-05-03T23:12:43.168274Z",
+        "finished_at": "2026-05-03T23:18:23.314422Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-03T23:18:23.314500Z",
+        "finished_at": "2026-05-03T23:18:31.861903Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-03T23:18:31.862067Z",
+        "finished_at": "2026-05-03T23:26:55.807042Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-03T23:26:55.998898Z",
+        "finished_at": "2026-05-03T23:26:59.926616Z"
+    },
+    "step_results": null
+}

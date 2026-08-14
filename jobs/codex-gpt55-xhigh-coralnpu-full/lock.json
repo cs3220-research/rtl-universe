@@ -1,0 +1,79 @@
+{
+    "schema_version": 1,
+    "created_at": "2026-05-04T13:56:08.901810Z",
+    "harbor": {
+        "version": "0.6.4",
+        "is_editable": false
+    },
+    "invocation": [
+        "/nethome/dandrews47/.local/bin/harbor",
+        "run",
+        "--path",
+        "minrepro_task/coralnpu-full",
+        "--agent-import-path",
+        "agents.sandboxed:CodexSandboxed",
+        "--model",
+        "gpt-5.5",
+        "-n",
+        "1",
+        "-y",
+        "--job-name",
+        "codex-gpt55-xhigh-coralnpu-full",
+        "--artifact",
+        "/app",
+        "--agent-timeout-multiplier",
+        "0.42",
+        "--ae",
+        "CODEX_AUTH_JSON_PATH=/net****son",
+        "--ak",
+        "reasoning_effort=xhigh"
+    ],
+    "n_concurrent_trials": 1,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "AgentTimeoutError",
+            "RewardFileNotFoundError",
+            "VerifierTimeoutError",
+            "RewardFileEmptyError",
+            "VerifierOutputParseError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "task": {
+                "name": "coralnpu-full",
+                "type": "local",
+                "digest": "sha256:851ddd7194ec4718b8b44b9f2f051293aea29f2968146745d89bc112dfd77b34",
+                "path": "minrepro_task/coralnpu-full"
+            },
+            "timeout_multiplier": 1.0,
+            "agent_timeout_multiplier": 0.42,
+            "agent": {
+                "import_path": "agents.sandboxed:CodexSandboxed",
+                "model_name": "gpt-5.5",
+                "kwargs": {
+                    "reasoning_effort": "xhigh"
+                },
+                "env": {
+                    "CODEX_AUTH_JSON_PATH": "/net****son"
+                }
+            },
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "suppress_override_warnings": false,
+                "env": {},
+                "kwargs": {}
+            },
+            "verifier": {
+                "env": {},
+                "disable": false
+            }
+        }
+    ]
+}

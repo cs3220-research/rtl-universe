@@ -1,0 +1,9 @@
+=== [1/2] Verilator elaboration ===
+%Error: Specified --top-module 'NV_nvdla' was not found in design.
+%Error: Exiting due to 1 error(s)
+=== [2/2] Compiling VNV_nvdla ===
+make: Entering directory '/app/outdir/nv_full/verilator'
+make: VNV_nvdla.mk: No such file or directory
+make: *** No rule to make target 'VNV_nvdla.mk'.  Stop.
+make: Leaving directory '/app/outdir/nv_full/verilator'
+ERROR: VNV_nvdla binary not built — all tests fail

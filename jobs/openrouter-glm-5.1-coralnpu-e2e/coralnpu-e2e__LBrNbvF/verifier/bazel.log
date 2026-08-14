@@ -1,0 +1,180 @@
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+WARNING: Build option --java_runtime_version has changed, discarding analysis cache (this can be expensive, see https://bazel.build/advanced/performance/iteration-speed).
+Analyzing: 215 targets (6 packages loaded, 0 targets configured)
+Analyzing: 215 targets (6 packages loaded, 0 targets configured)
+
+Analyzing: 215 targets (76 packages loaded, 6371 targets configured)
+
+Analyzing: 215 targets (136 packages loaded, 14485 targets configured)
+
+Analyzing: 215 targets (164 packages loaded, 23375 targets configured)
+[1 / 1] no actions running
+INFO: Analyzed 215 targets (164 packages loaded, 23516 targets configured).
+[69 / 669] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_assembly_cocotb_test_core_mini_viota_test_cocotb_runner.sh.runfiles; 0s local ... (7 actions, 6 running)
+[88 / 687] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_assembly_cocotb_test_core_mini_viota_test_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[113 / 707] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_load_store_test_load8_index16_seg_cocotb_runner.sh.runfiles; 1s local ... (8 actions running)
+[131 / 730] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_arithmetic_cocotb_test_widen_math_ops_test_impl_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[149 / 742] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_load_store_test_load16_index8_cocotb_runner.sh.runfiles; 1s local ... (8 actions running)
+[170 / 759] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_halt_resume_cocotb_runner.sh.runfiles; 2s local ... (8 actions running)
+[202 / 783] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive_cocotb_runner.sh.runfiles; 0s local ... (8 actions running)
+[227 / 801] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive_cocotb_runner.sh.runfiles; 2s local ... (8 actions, 7 running)
+[234 / 807] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_backdoor_load_test_cocotb_runner.sh.runfiles; 2s local ... (8 actions running)
+[260 / 1,249] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_arithmetic_cocotb_test_reduction_m1_failure_ops_cocotb_runner.sh.runfiles; 3s local ... (8 actions, 7 running)
+[274 / 1,261] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_assembly_cocotb_test_vslidedown_test_cocotb_runner.sh.runfiles; 3s local ... (8 actions, 7 running)
+[309 / 2,296] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_nonexistent_register_cocotb_runner.sh.runfiles; 4s local ... (8 actions running)
+[503 / 3,615] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_scalar_registers_cocotb_runner.sh.runfiles; 3s local ... (8 actions, 7 running)
+[525 / 3,698] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver_cocotb_runner.sh.runfiles; 2s local ... (8 actions running)
+[545 / 3,730] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_single_step_cocotb_runner.sh.runfiles; 2s local ... (8 actions running)
+[559 / 3,751] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_highmem_tests_core_mini_axi_run_wfi_in_all_slots_highmem_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[579 / 3,813] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[593 / 3,918] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_finish_txn_before_halt_test_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[613 / 3,966] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/tutorial/tfmicro/cocotb_conv2d_test_conv2d_37x1_h2w2_cocotb_runner.sh.runfiles; 1s local ... (8 actions running)
+[632 / 3,981] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_sim_cocotb_core_mini_axi_run_wfi_in_all_slots_cocotb_runner.sh.runfiles; 0s local ... (8 actions running)
+[651 / 3,998] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_sim_cocotb_unreachable_prefetch_fault_cocotb_runner.sh.runfiles; 1s local ... (8 actions running)
+[662 / 4,006] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/tutorial/tfmicro/cocotb_conv2d_test_conv2d_16x3_s2_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[697 / 4,026] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_sim_cocotb_slow_core_mini_axi_rand_instr_test_cocotb_runner.sh.runfiles; 1s local ... (8 actions running)
+[706 / 4,034] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_arithmetic_cocotb_test_vnsra_test_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[840 / 4,645] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_hartsel_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[859 / 4,661] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_hartsel_cocotb_runner.sh.runfiles; 2s local ... (6 actions running)
+[885 / 4,689] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/tutorial/tfmicro/cocotb_logistic_test_logistic_1024_cocotb_runner.sh.runfiles; 1s local ... (8 actions running)
+[908 / 4,705] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_nonexistent_register_cocotb_runner.sh.runfiles; 1s local ... (8 actions running)
+[927 / 4,720] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_breakpoint_cocotb_runner.sh.runfiles; 2s local ... (8 actions, 7 running)
+[977 / 4,738] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver_cocotb_runner.sh.runfiles; 2s local ... (8 actions, 7 running)
+[1,631 / 4,750] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_halt_resume_cocotb_runner.sh.runfiles; 2s local ... (8 actions, 7 running)
+[1,836 / 4,762] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_ndmreset_cocotb_runner.sh.runfiles; 2s local ... (8 actions, 7 running)
+[1,864 / 4,785] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_load_store_test_load32_index8_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[1,884 / 4,798] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_probe_impl_cocotb_runner.sh.runfiles; 2s local ... (8 actions running)
+[1,982 / 4,822] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_scalar_registers_cocotb_runner.sh.runfiles; 0s local ... (8 actions running)
+[1,997 / 4,834] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_scalar_registers_cocotb_runner.sh.runfiles; 2s local ... (8 actions running)
+[2,007 / 4,842] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_registers_cocotb_runner.sh.runfiles; 2s local ... (8 actions, 7 running)
+[2,026 / 4,855] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_ndmreset_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[2,399 / 4,869] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[2,423 / 4,888] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive_cocotb_runner.sh.runfiles; 2s local ... (8 actions running)
+[2,452 / 4,915] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_load_store_test_load_store8_test_cocotb_runner.sh.runfiles; 1s local ... (7 actions running)
+[2,563 / 4,933] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_sim_cocotb_core_mini_axi_exceptions_test_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[2,655 / 4,956] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_dv_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[2,658 / 4,956] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/tutorial/tutorial_core_mini_axi_tutorial_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[3,408 / 4,956] Compiling tests/cocotb/tutorial/program.cc; 1s processwrapper-sandbox ... (8 actions running)
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:267:15: scala @//hdl/chisel/src/coralnpu:RstSync [for tool] failed: missing input file '//hdl/chisel/src/coralnpu:RstSync.scala'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:267:15: scala @//hdl/chisel/src/coralnpu:RstSync [for tool] failed: 1 input file(s) do not exist
+[3,703 / 4,956] Compiling tests/cocotb/tutorial/program.cc; 2s processwrapper-sandbox ... (8 actions running)
+ERROR: /app/hdl/chisel/src/common/BUILD:22:15: scala @//hdl/chisel/src/common:library [for tool] failed: missing input file '//hdl/chisel/src/common:Library.scala'
+ERROR: /app/hdl/chisel/src/common/BUILD:22:15: scala @//hdl/chisel/src/common:library [for tool] failed: 1 input file(s) do not exist
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:374:15: scala @//hdl/chisel/src/coralnpu:coralnpu_params [for tool] failed: missing input file '//hdl/chisel/src/coralnpu:MemorySize.scala'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:374:15: scala @//hdl/chisel/src/coralnpu:coralnpu_params [for tool] failed: missing input file '//hdl/chisel/src/coralnpu:Parameters.scala'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:374:15: scala @//hdl/chisel/src/coralnpu:coralnpu_params [for tool] failed: 2 input file(s) do not exist
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:245:15: scala @//hdl/chisel/src/coralnpu:clock_gate [for tool] failed: missing input file '//hdl/chisel/src/coralnpu:ClockGate.scala'
+ERROR: /app/hdl/chisel/src/common/BUILD:82:15: scala @//hdl/chisel/src/common:scatter_gather [for tool] failed: missing input file '//hdl/chisel/src/common:ScatterGather.scala'
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:245:15: scala @//hdl/chisel/src/coralnpu:clock_gate [for tool] failed: 1 input file(s) do not exist
+ERROR: /app/hdl/chisel/src/common/BUILD:82:15: scala @//hdl/chisel/src/common:scatter_gather [for tool] failed: 1 input file(s) do not exist
+ERROR: /app/hdl/chisel/src/common/BUILD:61:15: scala @//hdl/chisel/src/common:aligner [for tool] failed: missing input file '//hdl/chisel/src/common:Aligner.scala'
+ERROR: /app/hdl/chisel/src/common/BUILD:61:15: scala @//hdl/chisel/src/common:aligner [for tool] failed: 1 input file(s) do not exist
+[4,323 / 4,956] Compiling tests/cocotb/tutorial/program.cc; 3s processwrapper-sandbox ... (9 actions, 8 running)
+[4,325 / 4,956] Compiling tests/cocotb/noop.cc; 5s processwrapper-sandbox ... (7 actions, 6 running)
+[4,368 / 4,956] 2 / 215 tests, 2 failed; Compiling tests/cocotb/rvv/arithmetics/template_redmax_uint32_m1.cc; 0s processwrapper-sandbox ... (8 actions, 7 running)
+[4,389 / 4,956] 3 / 215 tests, 3 failed; Compiling tests/cocotb/rvv/arithmetics/template_redmin_uint8_m1.cc; 0s processwrapper-sandbox ... (9 actions, 8 running)
+[4,409 / 4,956] 3 / 215 tests, 3 failed; Compiling tests/cocotb/rvv/arithmetics/template_redsum_int16_m1.cc; 0s processwrapper-sandbox ... (9 actions, 8 running)
+ERROR: /app/examples/BUILD.bazel:19:19: Compiling examples/hello_world_add_floats.cc failed: missing input file '//examples:hello_world_add_floats.cc'
+ERROR: /app/examples/BUILD.bazel:19:19: Compiling examples/hello_world_add_floats.cc failed: 1 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: 4 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: missing input file '//sw/opt/litert-micro:pooling.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: 3 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/counters/BUILD:27:19: Compiling tests/cocotb/tutorial/counters/inst_cycle_counter_example.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/counters/BUILD:27:19: Compiling tests/cocotb/tutorial/counters/inst_cycle_counter_example.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/counters/BUILD:27:19: Compiling tests/cocotb/tutorial/counters/inst_cycle_counter_example.cc failed: 2 input file(s) do not exist
+[4,436 / 4,956] 7 / 215 tests, 7 failed; Compiling tests/cocotb/rvv/arithmetics/template_mul_uint16_m1.cc; 0s processwrapper-sandbox ... (9 actions, 8 running)
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: 6 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: 9 input file(s) do not exist
+[4,467 / 4,956] 7 / 215 tests, 7 failed; Compiling tests/cocotb/rvv/arithmetics/template_sub_int8_m1.cc; 0s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: missing input file '//sw/opt/litert-micro:logistic.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: 3 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: 4 input file(s) do not exist
+[4,698 / 4,956] 22 / 215 tests, 22 failed; Compiling tests/cocotb/exceptions/instr_align_0.cc; 0s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memset_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memset_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memset_test.cc failed: 2 input file(s) do not exist
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memcpy_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memcpy_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memcpy_test.cc failed: 2 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: 5 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: 5 input file(s) do not exist
+[4,749 / 4,956] 49 / 215 tests, 49 failed; Compiling tests/cocotb/vector_store_fault.cc; 0s processwrapper-sandbox ... (8 actions, 7 running)
+[4,780 / 4,956] 122 / 215 tests, 122 failed; Compiling tests/cocotb/rvv/vcsr_test.cc; 0s processwrapper-sandbox ... (9 actions, 8 running)
+[4,799 / 4,956] 128 / 215 tests, 128 failed; Compiling tests/cocotb/rvv/arithmetics/rvv_vx_arithmetics.cc; 0s processwrapper-sandbox ... (8 actions, 7 running)
+[4,816 / 4,956] 128 / 215 tests, 128 failed; Compiling tests/cocotb/rvv/arithmetics/rvv_vx_arithmetics.cc; 0s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: 9 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: 5 input file(s) do not exist
+[4,840 / 4,956] 135 / 215 tests, 135 failed; Compiling tests/cocotb/rvv/load_store/load_store_whole_register.cc; 0s processwrapper-sandbox ... (8 actions, 7 running)
+[4,862 / 4,956] 135 / 215 tests, 135 failed; Compiling tests/cocotb/rvv/load_store/load8_index16_seg.cc; 0s processwrapper-sandbox ... (8 actions, 7 running)
+[4,886 / 4,956] 135 / 215 tests, 135 failed; Compiling tests/cocotb/rvv/load_store/load_store32_unit_m2.cc; 0s processwrapper-sandbox ... (8 actions, 7 running)
+[4,908 / 4,956] 135 / 215 tests, 135 failed; Compiling tests/cocotb/rvv/vsetvl_test.cc; 0s processwrapper-sandbox ... (8 actions, 7 running)
+[4,926 / 4,956] 135 / 215 tests, 135 failed; Compiling tests/cocotb/rvv/load_store/store8_index8_seg.cc; 0s processwrapper-sandbox ... (8 actions, 7 running)
+[4,951 / 4,956] 154 / 215 tests, 154 failed; Linking tests/cocotb/rvv/load_store/store8_seg_unit.elf; 0s processwrapper-sandbox ... (2 actions, 1 running)
+INFO: Found 215 test targets...
+Use --verbose_failures to see the command lines of failed build steps.
+INFO: Elapsed time: 76.773s, Critical Path: 7.58s
+INFO: 1549 processes: 1153 internal, 395 processwrapper-sandbox, 1 worker.
+ERROR: Build did NOT complete successfully
+FAILED: 
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_nonexistent_register FAILED TO BUILD
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_registers FAILED TO BUILD
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_breakpoint FAILED TO BUILD
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive FAILED TO BUILD
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver FAILED TO BUILD
+(Skipping other failed to build tests)
+
+Executed 0 out of 215 tests: 215 fail to build.
+INFO: Build Event Protocol files produced successfully.

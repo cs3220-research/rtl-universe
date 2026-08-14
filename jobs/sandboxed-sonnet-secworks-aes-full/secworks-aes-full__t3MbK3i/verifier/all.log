@@ -1,0 +1,8 @@
+=== Running FuseSoC target: tb_aes ===
+  target=tb_aes  tc=20  passed=20
+=== Running FuseSoC target: tb_aes_core ===
+  target=tb_aes_core  tc=20  passed=20
+=== Running FuseSoC target: tb_aes_key_mem ===
+  target=tb_aes_key_mem  tc=09  passed=09
+
+Total: passed=40 / denominator=40

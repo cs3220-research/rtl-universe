@@ -1,0 +1,22 @@
+=== ifu_esl_counter ===
+[COMPILE FAIL] ifu_esl_counter — skipping 8 test cases
+/app/piton/verif/env/ifu_esl_counter/ifu_esl_counter_top.v:161: error: A hierarchical reference (`helper.src.BIT_WIDTH') is not allowed in a constant expression.
+/app/piton/verif/env/ifu_esl_counter/ifu_esl_counter_top.v:163: error: A hierarchical reference (`helper.sink.BIT_WIDTH') is not allowed in a constant expression.
+2 error(s) during elaboration.
+=== ifu_esl_lfsr ===
+[COMPILE FAIL] ifu_esl_lfsr — skipping 5 test cases
+/app/piton/verif/env/ifu_esl_lfsr/ifu_esl_lfsr_top.v:154: error: A hierarchical reference (`helper.src.BIT_WIDTH') is not allowed in a constant expression.
+/app/piton/verif/env/ifu_esl_lfsr/ifu_esl_lfsr_top.v:156: error: A hierarchical reference (`helper.sink.BIT_WIDTH') is not allowed in a constant expression.
+2 error(s) during elaboration.
+=== ifu_esl_shiftreg ===
+[COMPILE FAIL] ifu_esl_shiftreg — skipping 4 test cases
+/app/piton/verif/env/ifu_esl_shiftreg/ifu_esl_shiftreg_top.v:164: error: A hierarchical reference (`helper.src.BIT_WIDTH') is not allowed in a constant expression.
+/app/piton/verif/env/ifu_esl_shiftreg/ifu_esl_shiftreg_top.v:166: error: A hierarchical reference (`helper.sink.BIT_WIDTH') is not allowed in a constant expression.
+2 error(s) during elaboration.
+=== uart_serializer ===
+[COMPILE FAIL] uart_serializer — skipping 1 test case
+/app/piton/verif/env/uart_serializer/uart_serializer_top.v:169: error: A hierarchical reference (`helper.src.BIT_WIDTH') is not allowed in a constant expression.
+/app/piton/verif/env/uart_serializer/uart_serializer_top.v:171: error: A hierarchical reference (`helper.sink.BIT_WIDTH') is not allowed in a constant expression.
+2 error(s) during elaboration.
+
+Total: passed=0 / total=18

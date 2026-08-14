@@ -1,0 +1,9 @@
+{
+  "services": {
+    "main": {
+      "volumes": [
+        "/tmp/harbor-claude-creds-dns-block-opus-coralnpu-full:/home/builder/.claude"
+      ]
+    }
+  }
+}

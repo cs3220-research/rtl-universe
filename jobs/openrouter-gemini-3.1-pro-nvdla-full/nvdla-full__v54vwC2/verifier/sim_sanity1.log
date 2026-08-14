@@ -1,0 +1,84 @@
+converting /app/verif/traces/traceplayer/sanity1/input.txn to /app/outdir/nv_full/verilator/test/sanity1/trace.bin
+File 0 0x80000000 0x1000
+okay, that's all the bytes I expected -- I'm stopping here
+CMD: load_mem 00001000 bytes to 80000000
+CMD: write_reg ffff100b 00000800
+CMD: read_reg ffff100b ffffffe0 00000800
+CMD: write_reg ffff1008 00000100
+CMD: read_reg ffff1008 ffffffe0 00000100
+CMD: write_reg ffff100a 00000800
+CMD: read_reg ffff100a ffffffe0 00000800
+CMD: write_reg ffff1007 00000100
+CMD: read_reg ffff1007 ffffffe0 00000100
+CMD: write_reg ffff1009 00000000
+CMD: read_reg ffff1009 00ffffff 00000000
+CMD: write_reg ffff1006 00000007
+CMD: read_reg ffff1006 00ffffff 00000007
+CMD: write_reg ffff1004 00000007
+CMD: read_reg ffff1004 00001fff 00000007
+CMD: write_reg ffff1005 00000003
+CMD: read_reg ffff1005 00000003 00000003
+CMD: write_reg ffff1001 00000000
+CMD: read_reg ffff1001 000000ff 00000000
+CMD: write_reg ffff1000 80000000
+CMD: read_reg ffff1000 ffffffe0 80000000
+CMD: write_reg ffff1003 00000000
+CMD: read_reg ffff1003 000000ff 00000000
+CMD: write_reg ffff1002 81000000
+CMD: read_reg ffff1002 ffffffe0 81000000
+CMD: write_reg ffff100c 00000001
+CMD: read_reg ffff100c 00000001 00000001
+CMD: write_reg ffff100d 00000001
+CMD: read_reg ffff100d 00000001 00000001
+CMD: read_reg ffff0003 00000040 00000040
+CMD: done
+reset...
+letting buffers clear after reset...
+running trace...
+AXI: loading memory at 0x80000000
+(8274) write to nvdla: addr ffff100b, data 00000800
+(8276) read from nvdla: addr ffff100b
+(8278) read response from nvdla: 00000800
+(8280) write to nvdla: addr ffff1008, data 00000100
+(8282) read from nvdla: addr ffff1008
+(8284) read response from nvdla: 00000100
+(8286) write to nvdla: addr ffff100a, data 00000800
+(8288) read from nvdla: addr ffff100a
+(8290) read response from nvdla: 00000800
+(8292) write to nvdla: addr ffff1007, data 00000100
+(8294) read from nvdla: addr ffff1007
+(8296) read response from nvdla: 00000100
+(8298) write to nvdla: addr ffff1009, data 00000000
+(8300) read from nvdla: addr ffff1009
+(8302) read response from nvdla: 00000000
+(8304) write to nvdla: addr ffff1006, data 00000007
+(8306) read from nvdla: addr ffff1006
+(8308) read response from nvdla: 00000007
+(8310) write to nvdla: addr ffff1004, data 00000007
+(8312) read from nvdla: addr ffff1004
+(8314) read response from nvdla: 00000007
+(8316) write to nvdla: addr ffff1005, data 00000003
+(8318) read from nvdla: addr ffff1005
+(8320) read response from nvdla: 00000003
+(8322) write to nvdla: addr ffff1001, data 00000000
+(8324) read from nvdla: addr ffff1001
+(8326) read response from nvdla: 00000000
+(8328) write to nvdla: addr ffff1000, data 80000000
+(8330) read from nvdla: addr ffff1000
+(8332) read response from nvdla: 80000000
+(8334) write to nvdla: addr ffff1003, data 00000000
+(8336) read from nvdla: addr ffff1003
+(8338) read response from nvdla: 00000000
+(8340) write to nvdla: addr ffff1002, data 81000000
+(8342) read from nvdla: addr ffff1002
+(8344) read response from nvdla: 81000000
+(8346) write to nvdla: addr ffff100c, data 00000001
+(8348) read from nvdla: addr ffff100c
+(8350) read response from nvdla: 00000001
+(8352) write to nvdla: addr ffff100d, data 00000001
+(8354) read from nvdla: addr ffff100d
+(8356) read response from nvdla: 00000001
+(8358) read from nvdla: addr ffff0003
+(8360) read response from nvdla: ffffffff
+done at 8762 ticks
+*** PASS

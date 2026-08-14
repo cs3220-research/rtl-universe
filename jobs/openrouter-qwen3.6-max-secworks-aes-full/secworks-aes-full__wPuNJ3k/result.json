@@ -1,0 +1,107 @@
+{
+    "id": "14f2aae5-33d6-4693-9317-2b5461e7086b",
+    "task_name": "secworks-aes-full",
+    "trial_name": "secworks-aes-full__wPuNJ3k",
+    "trial_uri": "file:///home/broyojo/code/rtl-universe/jobs/openrouter-qwen3.6-max-secworks-aes-full/secworks-aes-full__wPuNJ3k",
+    "task_id": {
+        "path": "minrepro_task/secworks-aes-full"
+    },
+    "source": null,
+    "task_checksum": "5868481780ae2d47bcbcb81a94c12ff6a9e717da4a6997fd6ade038b91ffa646",
+    "config": {
+        "task": {
+            "path": "minrepro_task/secworks-aes-full",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "secworks-aes-full__wPuNJ3k",
+        "trials_dir": "jobs/openrouter-qwen3.6-max-secworks-aes-full",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:OpenCodeSandboxed",
+            "model_name": "openrouter/qwen/qwen3.6-max-preview",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {
+                "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "b117eaff-2896-47b5-894d-462d0bdd2265"
+    },
+    "agent_info": {
+        "name": "opencode-sandboxed",
+        "version": "1.14.33",
+        "model_info": {
+            "name": "qwen/qwen3.6-max-preview",
+            "provider": "openrouter"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 752573,
+        "n_cache_tokens": 0,
+        "n_output_tokens": 12830,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-03T17:01:22.924273Z",
+    "finished_at": "2026-05-03T17:09:44.919453Z",
+    "environment_setup": {
+        "started_at": "2026-05-03T17:01:22.934996Z",
+        "finished_at": "2026-05-03T17:01:29.244344Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-03T17:01:29.244384Z",
+        "finished_at": "2026-05-03T17:01:34.493695Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-03T17:01:34.493777Z",
+        "finished_at": "2026-05-03T17:09:32.897107Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-03T17:09:32.968491Z",
+        "finished_at": "2026-05-03T17:09:34.229030Z"
+    },
+    "step_results": null
+}

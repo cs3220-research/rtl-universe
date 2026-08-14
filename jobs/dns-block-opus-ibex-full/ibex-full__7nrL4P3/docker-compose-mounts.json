@@ -1,0 +1,9 @@
+{
+  "services": {
+    "main": {
+      "volumes": [
+        "/tmp/harbor-claude-creds-dns-block-opus-ibex-full:/home/builder/.claude"
+      ]
+    }
+  }
+}

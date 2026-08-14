@@ -1,0 +1,11 @@
+=== Building simple-system simulator ===
+=== [1/4] SW test: hello_test ===
+hello_test: PASSED
+=== [2/4] SW test: dit_test ===
+dit_test: PASSED
+=== [3/4] SW test: dummy_instr_test ===
+dummy_instr_test: PASSED
+=== [4/4] SW test: pmp_smoke_test ===
+pmp_smoke_test: PASSED
+
+Total: passed=4 / total=4

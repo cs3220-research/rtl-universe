@@ -1,0 +1,7 @@
+converting /app/verif/traces/traceplayer/conv_8x8_fc_int16/input.txn to /app/outdir/nv_full/verilator/test/conv_8x8_fc_int16/trace.bin
+File 0 0x80000000 0x1000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x80100000 0x10000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x80400000 0x20
+okay, that's all the bytes I expected -- I'm stopping here

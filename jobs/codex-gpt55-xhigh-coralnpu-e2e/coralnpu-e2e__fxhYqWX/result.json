@@ -1,0 +1,109 @@
+{
+    "id": "3a955fae-c78e-4bd9-9047-90da025b7fe0",
+    "task_name": "coralnpu-e2e",
+    "trial_name": "coralnpu-e2e__fxhYqWX",
+    "trial_uri": "file:///localscratch/dandrews47/rtl-universe/jobs/codex-gpt55-xhigh-coralnpu-e2e/coralnpu-e2e__fxhYqWX",
+    "task_id": {
+        "path": "minrepro_task/coralnpu-e2e"
+    },
+    "source": null,
+    "task_checksum": "e1cdbe685c3ff65094b7860e3fc765880c2a0e3344e42c53c5a1e359ab44bad2",
+    "config": {
+        "task": {
+            "path": "minrepro_task/coralnpu-e2e",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "coralnpu-e2e__fxhYqWX",
+        "trials_dir": "jobs/codex-gpt55-xhigh-coralnpu-e2e",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.42,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.sandboxed:CodexSandboxed",
+            "model_name": "gpt-5.5",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+                "reasoning_effort": "xhigh"
+            },
+            "env": {
+                "CODEX_AUTH_JSON_PATH": "/net****son"
+            }
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/app"
+        ],
+        "job_id": "78fed2d7-fe47-4971-8478-e009020b06da"
+    },
+    "agent_info": {
+        "name": "codex-sandboxed",
+        "version": "0.128.0",
+        "model_info": {
+            "name": "gpt-5.5",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 46331959,
+        "n_cache_tokens": 44980224,
+        "n_output_tokens": 124139,
+        "cost_usd": 32.972957,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-05-04T13:04:00.549774Z",
+    "finished_at": "2026-05-04T15:40:25.356634Z",
+    "environment_setup": {
+        "started_at": "2026-05-04T13:04:00.665169Z",
+        "finished_at": "2026-05-04T13:04:07.279856Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-04T13:04:07.279923Z",
+        "finished_at": "2026-05-04T13:04:15.239053Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-05-04T13:04:15.239184Z",
+        "finished_at": "2026-05-04T15:23:38.672731Z"
+    },
+    "verifier": {
+        "started_at": "2026-05-04T15:23:38.929352Z",
+        "finished_at": "2026-05-04T15:39:00.566148Z"
+    },
+    "step_results": null
+}

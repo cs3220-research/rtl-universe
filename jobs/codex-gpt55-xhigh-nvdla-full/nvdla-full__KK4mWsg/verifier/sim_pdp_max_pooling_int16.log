@@ -1,0 +1,793 @@
+converting /app/verif/traces/traceplayer/pdp_max_pooling_int16/input.txn to /app/outdir/nv_full/verilator/test/pdp_max_pooling_int16/trace.bin
+File 0 0x80000000 0x2000
+okay, that's all the bytes I expected -- I'm stopping here
+File 0 0x80100000 0x1880
+okay, that's all the bytes I expected -- I'm stopping here
+CMD: write_reg ffff3406 00000006
+CMD: read_reg ffff3406 00001fff 00000006
+CMD: write_reg ffff340c 00701c07
+CMD: read_reg ffff340c 3fffffff 00701c07
+CMD: write_reg ffff341b 00000800
+CMD: read_reg ffff341b ffffffe0 00000800
+CMD: write_reg ffff300a 00000800
+CMD: read_reg ffff300a ffffffe0 00000800
+CMD: write_reg ffff341a 00000100
+CMD: read_reg ffff341a ffffffe0 00000100
+CMD: write_reg ffff3009 00000100
+CMD: read_reg ffff3009 ffffffe0 00000100
+CMD: write_reg ffff3407 00000006
+CMD: read_reg ffff3407 00001fff 00000006
+CMD: write_reg ffff300d 00000000
+CMD: read_reg ffff300d 000000ff 00000000
+CMD: write_reg ffff340d 00000101
+CMD: read_reg ffff340d 00ff0f0f 00000101
+CMD: write_reg ffff300e 00000001
+CMD: read_reg ffff300e 000000ff 00000001
+CMD: write_reg ffff3408 0000003f
+CMD: read_reg ffff3408 00001fff 0000003f
+CMD: write_reg ffff341e 000000e0
+CMD: read_reg ffff341e ffffffe0 000000e0
+CMD: write_reg ffff3421 00000101
+CMD: read_reg ffff3421 00000003 00000001
+CMD: write_reg ffff300c 00000101
+CMD: read_reg ffff300c 00000003 00000001
+CMD: write_reg ffff3410 00000000
+CMD: read_reg ffff3410 00007777 00000000
+CMD: write_reg ffff3404 00000007
+CMD: read_reg ffff3404 00001fff 00000007
+CMD: write_reg ffff3004 00000007
+CMD: read_reg ffff3004 00001fff 00000007
+CMD: write_reg ffff340b 00701c07
+CMD: read_reg ffff340b 3fffffff 00701c07
+CMD: write_reg ffff3010 00701c07
+CMD: read_reg ffff3010 3fffffff 00701c07
+CMD: write_reg ffff3403 00000007
+CMD: read_reg ffff3403 00001fff 00000007
+CMD: write_reg ffff3003 00000007
+CMD: read_reg ffff3003 00001fff 00000007
+CMD: write_reg ffff3409 00000011
+CMD: read_reg ffff3409 0000ff13 00000011
+CMD: write_reg ffff3006 00000001
+CMD: read_reg ffff3006 00000001 00000001
+CMD: write_reg ffff341f 00000620
+CMD: read_reg ffff341f ffffffe0 00000620
+CMD: write_reg ffff3420 00000001
+CMD: read_reg ffff3420 00000001 00000001
+CMD: write_reg ffff300b 00000001
+CMD: read_reg ffff300b 00000001 00000001
+CMD: write_reg ffff3405 0000003f
+CMD: read_reg ffff3405 00001fff 0000003f
+CMD: write_reg ffff3005 0000003f
+CMD: read_reg ffff3005 00001fff 0000003f
+CMD: load_mem 00002000 bytes to 80000000
+CMD: write_reg ffff3007 80000000
+CMD: read_reg ffff3007 ffffffe0 80000000
+CMD: write_reg ffff3008 00000000
+CMD: read_reg ffff3008 ffffffff 00000000
+CMD: write_reg ffff3418 80000000
+CMD: read_reg ffff3418 ffffffe0 80000000
+CMD: write_reg ffff3419 00000000
+CMD: read_reg ffff3419 ffffffff 00000000
+CMD: write_reg ffff341c 80100000
+CMD: read_reg ffff341c ffffffe0 80100000
+CMD: write_reg ffff341d 00000000
+CMD: read_reg ffff341d ffffffff 00000000
+CMD: write_reg ffff3002 00000001
+CMD: read_reg ffff3002 00000001 00000001
+CMD: write_reg ffff3402 00000001
+CMD: read_reg ffff3402 00000001 00000001
+CMD: wait
+CMD: write_reg ffff0003 ffffffff
+CMD: dump_mem 00001880 bytes from 80100000 -> output_feature_map.dat
+CMD: done
+reset...
+letting buffers clear after reset...
+running trace...
+(8272) write to nvdla: addr ffff3406, data 00000006
+(8274) read from nvdla: addr ffff3406
+(8310) read response from nvdla: 00000006
+(8312) write to nvdla: addr ffff340c, data 00701c07
+(8314) read from nvdla: addr ffff340c
+(8350) read response from nvdla: 00701c07
+(8352) write to nvdla: addr ffff341b, data 00000800
+(8354) read from nvdla: addr ffff341b
+(8390) read response from nvdla: 00000800
+(8392) write to nvdla: addr ffff300a, data 00000800
+(8394) read from nvdla: addr ffff300a
+(8430) read response from nvdla: 00000800
+(8432) write to nvdla: addr ffff341a, data 00000100
+(8434) read from nvdla: addr ffff341a
+(8470) read response from nvdla: 00000100
+(8472) write to nvdla: addr ffff3009, data 00000100
+(8474) read from nvdla: addr ffff3009
+(8510) read response from nvdla: 00000100
+(8512) write to nvdla: addr ffff3407, data 00000006
+(8514) read from nvdla: addr ffff3407
+(8550) read response from nvdla: 00000006
+(8552) write to nvdla: addr ffff300d, data 00000000
+(8554) read from nvdla: addr ffff300d
+(8590) read response from nvdla: 00000000
+(8592) write to nvdla: addr ffff340d, data 00000101
+(8594) read from nvdla: addr ffff340d
+(8630) read response from nvdla: 00000101
+(8632) write to nvdla: addr ffff300e, data 00000001
+(8634) read from nvdla: addr ffff300e
+(8670) read response from nvdla: 00000001
+(8672) write to nvdla: addr ffff3408, data 0000003f
+(8674) read from nvdla: addr ffff3408
+(8710) read response from nvdla: 0000003f
+(8712) write to nvdla: addr ffff341e, data 000000e0
+(8714) read from nvdla: addr ffff341e
+(8750) read response from nvdla: 000000e0
+(8752) write to nvdla: addr ffff3421, data 00000101
+(8754) read from nvdla: addr ffff3421
+(8790) read response from nvdla: 00000001
+(8792) write to nvdla: addr ffff300c, data 00000101
+(8794) read from nvdla: addr ffff300c
+(8830) read response from nvdla: 00000001
+(8832) write to nvdla: addr ffff3410, data 00000000
+(8834) read from nvdla: addr ffff3410
+(8870) read response from nvdla: 00000000
+(8872) write to nvdla: addr ffff3404, data 00000007
+(8874) read from nvdla: addr ffff3404
+(8910) read response from nvdla: 00000007
+(8912) write to nvdla: addr ffff3004, data 00000007
+(8914) read from nvdla: addr ffff3004
+(8950) read response from nvdla: 00000007
+(8952) write to nvdla: addr ffff340b, data 00701c07
+(8954) read from nvdla: addr ffff340b
+(8990) read response from nvdla: 00701c07
+(8992) write to nvdla: addr ffff3010, data 00701c07
+(8994) read from nvdla: addr ffff3010
+(9030) read response from nvdla: 00701c07
+(9032) write to nvdla: addr ffff3403, data 00000007
+(9034) read from nvdla: addr ffff3403
+(9070) read response from nvdla: 00000007
+(9072) write to nvdla: addr ffff3003, data 00000007
+(9074) read from nvdla: addr ffff3003
+(9110) read response from nvdla: 00000007
+(9112) write to nvdla: addr ffff3409, data 00000011
+(9114) read from nvdla: addr ffff3409
+(9150) read response from nvdla: 00000011
+(9152) write to nvdla: addr ffff3006, data 00000001
+(9154) read from nvdla: addr ffff3006
+(9190) read response from nvdla: 00000001
+(9192) write to nvdla: addr ffff341f, data 00000620
+(9194) read from nvdla: addr ffff341f
+(9230) read response from nvdla: 00000620
+(9232) write to nvdla: addr ffff3420, data 00000001
+(9234) read from nvdla: addr ffff3420
+(9270) read response from nvdla: 00000001
+(9272) write to nvdla: addr ffff300b, data 00000001
+(9274) read from nvdla: addr ffff300b
+(9310) read response from nvdla: 00000001
+(9312) write to nvdla: addr ffff3405, data 0000003f
+(9314) read from nvdla: addr ffff3405
+(9350) read response from nvdla: 0000003f
+(9352) write to nvdla: addr ffff3005, data 0000003f
+(9354) read from nvdla: addr ffff3005
+(9390) read response from nvdla: 0000003f
+AXI: loading memory at 0x80000000
+(9394) write to nvdla: addr ffff3007, data 80000000
+(9396) read from nvdla: addr ffff3007
+(9432) read response from nvdla: 80000000
+(9434) write to nvdla: addr ffff3008, data 00000000
+(9436) read from nvdla: addr ffff3008
+(9472) read response from nvdla: 00000000
+(9474) write to nvdla: addr ffff3418, data 80000000
+(9476) read from nvdla: addr ffff3418
+(9512) read response from nvdla: 80000000
+(9514) write to nvdla: addr ffff3419, data 00000000
+(9516) read from nvdla: addr ffff3419
+(9552) read response from nvdla: 00000000
+(9554) write to nvdla: addr ffff341c, data 80100000
+(9556) read from nvdla: addr ffff341c
+(9592) read response from nvdla: 80100000
+(9594) write to nvdla: addr ffff341d, data 00000000
+(9596) read from nvdla: addr ffff341d
+(9632) read response from nvdla: 00000000
+(9634) write to nvdla: addr ffff3002, data 00000001
+(9636) read from nvdla: addr ffff3002
+(9672) read response from nvdla: 00000001
+(9674) write to nvdla: addr ffff3402, data 00000001
+(9676) read from nvdla: addr ffff3402
+(9678) DBB: read request from dla, addr 80000000 burst 0 id 2
+(9682) DBB: read request from dla, addr 80000040 burst 0 id 2
+(9686) DBB: read request from dla, addr 80000080 burst 0 id 2
+(9690) DBB: read request from dla, addr 800000c0 burst 0 id 2
+(9694) DBB: read request from dla, addr 80000100 burst 0 id 2
+(9698) DBB: read request from dla, addr 80000140 burst 0 id 2
+(9702) DBB: read request from dla, addr 80000180 burst 0 id 2
+(9706) DBB: read request from dla, addr 800001c0 burst 0 id 2
+(9710) DBB: read request from dla, addr 80000200 burst 0 id 2
+(9712) read response from nvdla: 00000001
+(9714) waiting for interrupt...
+(9714) DBB: read request from dla, addr 80000240 burst 0 id 2
+(9718) DBB: read request from dla, addr 80000280 burst 0 id 2
+(9722) DBB: read request from dla, addr 800002c0 burst 0 id 2
+(9726) DBB: read request from dla, addr 80000300 burst 0 id 2
+(9730) DBB: read request from dla, addr 80000340 burst 0 id 2
+(9734) DBB: read request from dla, addr 80000380 burst 0 id 2
+(9738) DBB: read request from dla, addr 800003c0 burst 0 id 2
+(9742) DBB: read request from dla, addr 80000400 burst 0 id 2
+(9742) DBB: read push: id 2, da 21002000 23002200 25002400 27002600
+(9746) DBB: read request from dla, addr 80000440 burst 0 id 2
+(9746) DBB: read push: id 2, da 21202020 23202220 25202420 27202620
+(9750) DBB: read request from dla, addr 80000480 burst 0 id 2
+(9750) DBB: read push: id 2, da 21402040 23402240 25402440 27402640
+(9754) DBB: read request from dla, addr 800004c0 burst 0 id 2
+(9754) DBB: read push: id 2, da 21602060 23602260 25602460 27602660
+(9758) DBB: read request from dla, addr 80000500 burst 0 id 2
+(9758) DBB: read push: id 2, da 21012001 23012201 25012401 27012601
+(9762) DBB: read request from dla, addr 80000540 burst 0 id 2
+(9762) DBB: read push: id 2, da 21212021 23212221 25212421 27212621
+(9766) DBB: read request from dla, addr 80000580 burst 0 id 2
+(9766) DBB: read push: id 2, da 21412041 23412241 25412441 27412641
+(9770) DBB: read request from dla, addr 800005c0 burst 0 id 2
+(9770) DBB: read push: id 2, da 21612061 23612261 25612461 27612661
+(9774) DBB: read request from dla, addr 80000600 burst 0 id 2
+(9774) DBB: read push: id 2, da 21022002 23022202 25022402 27022602
+(9778) DBB: read request from dla, addr 80000640 burst 0 id 2
+(9778) DBB: read push: id 2, da 21222022 23222222 25222422 27222622
+(9782) DBB: read request from dla, addr 80000680 burst 0 id 2
+(9782) DBB: read push: id 2, da 21422042 23422242 25422442 27422642
+(9786) DBB: read request from dla, addr 800006c0 burst 0 id 2
+(9786) DBB: read push: id 2, da 21622062 23622262 25622462 27622662
+(9790) DBB: read request from dla, addr 80000700 burst 0 id 2
+(9790) DBB: read push: id 2, da 21032003 23032203 25032403 27032603
+(9794) DBB: read request from dla, addr 80000740 burst 0 id 2
+(9794) DBB: read push: id 2, da 21232023 23232223 25232423 27232623
+(9798) DBB: read request from dla, addr 80000780 burst 0 id 2
+(9798) DBB: read push: id 2, da 21432043 23432243 25432443 27432643
+(9802) DBB: read request from dla, addr 800007c0 burst 0 id 2
+(9802) DBB: read push: id 2, da 21632063 23632263 25632463 27632663
+(9806) DBB: read request from dla, addr 80000800 burst 0 id 2
+(9806) DBB: read push: id 2, da 21042004 23042204 25042404 27042604
+(9810) DBB: read request from dla, addr 80000840 burst 0 id 2
+(9810) DBB: read push: id 2, da 21242024 23242224 25242424 27242624
+(9814) DBB: read request from dla, addr 80000880 burst 0 id 2
+(9814) DBB: read push: id 2, da 21442044 23442244 25442444 27442644
+(9818) DBB: read request from dla, addr 800008c0 burst 0 id 2
+(9818) DBB: read push: id 2, da 21642064 23642264 25642464 27642664
+(9822) DBB: read request from dla, addr 80000900 burst 0 id 2
+(9822) DBB: read push: id 2, da 21052005 23052205 25052405 27052605
+(9826) DBB: read request from dla, addr 80000940 burst 0 id 2
+(9826) DBB: read push: id 2, da 21252025 23252225 25252425 27252625
+(9830) DBB: read request from dla, addr 80000980 burst 0 id 2
+(9830) DBB: read push: id 2, da 21452045 23452245 25452445 27452645
+(9834) DBB: read request from dla, addr 800009c0 burst 0 id 2
+(9834) DBB: read push: id 2, da 21652065 23652265 25652465 27652665
+(9838) DBB: read request from dla, addr 80000a00 burst 0 id 2
+(9838) DBB: read push: id 2, da 21062006 23062206 25062406 27062606
+(9842) DBB: read request from dla, addr 80000a40 burst 0 id 2
+(9842) DBB: read push: id 2, da 21262026 23262226 25262426 27262626
+(9846) DBB: read request from dla, addr 80000a80 burst 0 id 2
+(9846) DBB: read push: id 2, da 21462046 23462246 25462446 27462646
+(9850) DBB: read request from dla, addr 80000ac0 burst 0 id 2
+(9850) DBB: read push: id 2, da 21662066 23662266 25662466 27662666
+(9854) DBB: read request from dla, addr 80000b00 burst 0 id 2
+(9854) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(9858) DBB: read request from dla, addr 80000b40 burst 0 id 2
+(9858) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(9862) DBB: read request from dla, addr 80000b80 burst 0 id 2
+(9862) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(9866) DBB: read request from dla, addr 80000bc0 burst 0 id 2
+(9866) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(9870) DBB: read request from dla, addr 80000c00 burst 0 id 2
+(9870) DBB: read push: id 2, da 31003000 33003200 35003400 37003600
+(9874) DBB: read request from dla, addr 80000c40 burst 0 id 2
+(9874) DBB: read push: id 2, da 31203020 33203220 35203420 37203620
+(9878) DBB: read request from dla, addr 80000c80 burst 0 id 2
+(9878) DBB: read push: id 2, da 31403040 33403240 35403440 37403640
+(9882) DBB: read request from dla, addr 80000cc0 burst 0 id 2
+(9882) DBB: read push: id 2, da 31603060 33603260 35603460 37603660
+(9886) DBB: read request from dla, addr 80000d00 burst 0 id 2
+(9886) DBB: read push: id 2, da 31013001 33013201 35013401 37013601
+(9890) DBB: read request from dla, addr 80000d40 burst 0 id 2
+(9890) DBB: read push: id 2, da 31213021 33213221 35213421 37213621
+(9894) DBB: read request from dla, addr 80000d80 burst 0 id 2
+(9894) DBB: read push: id 2, da 31413041 33413241 35413441 37413641
+(9898) DBB: read request from dla, addr 80000dc0 burst 0 id 2
+(9898) DBB: read push: id 2, da 31613061 33613261 35613461 37613661
+(9902) DBB: read request from dla, addr 80000e00 burst 0 id 2
+(9902) DBB: read push: id 2, da 31023002 33023202 35023402 37023602
+(9906) DBB: read request from dla, addr 80000e40 burst 0 id 2
+(9906) DBB: read push: id 2, da 31223022 33223222 35223422 37223622
+(9910) DBB: read request from dla, addr 80000e80 burst 0 id 2
+(9910) DBB: read push: id 2, da 31423042 33423242 35423442 37423642
+(9914) DBB: read request from dla, addr 80000ec0 burst 0 id 2
+(9914) DBB: read push: id 2, da 31623062 33623262 35623462 37623662
+(9918) DBB: read request from dla, addr 80000f00 burst 0 id 2
+(9918) DBB: read push: id 2, da 31033003 33033203 35033403 37033603
+(9922) DBB: read request from dla, addr 80000f40 burst 0 id 2
+(9922) DBB: read push: id 2, da 31233023 33233223 35233423 37233623
+(9926) DBB: read request from dla, addr 80000f80 burst 0 id 2
+(9926) DBB: read push: id 2, da 31433043 33433243 35433443 37433643
+(9930) DBB: read request from dla, addr 80000fc0 burst 0 id 2
+(9930) DBB: read push: id 2, da 31633063 33633263 35633463 37633663
+(9934) DBB: read request from dla, addr 80001000 burst 0 id 2
+(9934) DBB: read push: id 2, da 31043004 33043204 35043404 37043604
+(9938) DBB: read request from dla, addr 80001040 burst 0 id 2
+(9938) DBB: read push: id 2, da 31243024 33243224 35243424 37243624
+(9942) DBB: read request from dla, addr 80001080 burst 0 id 2
+(9942) DBB: read push: id 2, da 31443044 33443244 35443444 37443644
+(9944) DBB: write request from dla, addr 80100000 id 2
+(9944) DBB: write data from dla (21112011 23112211...)
+(9944) DBB: write, last tick
+(9946) DBB: write data from dla (21312031 23312231...)
+(9946) DBB: read request from dla, addr 800010c0 burst 0 id 2
+(9946) DBB: read push: id 2, da 31643064 33643264 35643464 37643664
+(9948) DBB: write request from dla, addr 80100040 id 2
+(9948) DBB: write, last tick
+(9950) DBB: write data from dla (21512051 23512251...)
+(9950) DBB: read request from dla, addr 80001100 burst 0 id 2
+(9950) DBB: read push: id 2, da 31053005 33053205 35053405 37053605
+(9952) DBB: write request from dla, addr 80100080 id 2
+(9952) DBB: write, last tick
+(9954) DBB: write data from dla (21612061 23612261...)
+(9954) DBB: read request from dla, addr 80001140 burst 0 id 2
+(9954) DBB: read push: id 2, da 31253025 33253225 35253425 37253625
+(9956) DBB: write request from dla, addr 801000c0 id 2
+(9956) DBB: write, last tick
+(9958) DBB: read request from dla, addr 80001180 burst 0 id 2
+(9958) DBB: read push: id 2, da 31453045 33453245 35453445 37453645
+(9962) DBB: read request from dla, addr 800011c0 burst 0 id 2
+(9962) DBB: read push: id 2, da 31653065 33653265 35653465 37653665
+(9966) DBB: read request from dla, addr 80001200 burst 0 id 2
+(9966) DBB: read push: id 2, da 31063006 33063206 35063406 37063606
+(9968) DBB: write request from dla, addr 801000c0 id 2
+(9968) DBB: write data from dla (21222022 23222222...)
+(9968) DBB: write, last tick
+(9970) DBB: read request from dla, addr 80001240 burst 0 id 2
+(9970) DBB: read push: id 2, da 31263026 33263226 35263426 37263626
+(9974) DBB: read request from dla, addr 80001280 burst 0 id 2
+(9974) DBB: read push: id 2, da 31463046 33463246 35463446 37463646
+(9978) DBB: read request from dla, addr 800012c0 burst 0 id 2
+(9978) DBB: read push: id 2, da 31663066 33663266 35663466 37663666
+(9982) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(9986) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(9990) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(9994) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(9998) DBB: read push: id 2, da 21002000 23002200 25002400 27002600
+(10002) DBB: read push: id 2, da 21202020 23202220 25202420 27202620
+(10006) DBB: read push: id 2, da 21402040 23402240 25402440 27402640
+(10008) DBB: write request from dla, addr 80100100 id 2
+(10008) DBB: write data from dla (21222022 23222222...)
+(10008) DBB: write, last tick
+(10010) DBB: write data from dla (21422042 23422242...)
+(10010) DBB: read push: id 2, da 21602060 23602260 25602460 27602660
+(10012) DBB: write request from dla, addr 80100140 id 2
+(10012) DBB: write, last tick
+(10014) DBB: write data from dla (21622062 23622262...)
+(10014) DBB: read push: id 2, da 21012001 23012201 25012401 27012601
+(10016) DBB: write request from dla, addr 80100180 id 2
+(10016) DBB: write, last tick
+(10018) DBB: read push: id 2, da 21212021 23212221 25212421 27212621
+(10020) DBB: read request from dla, addr 80001300 burst 0 id 2
+(10022) DBB: read push: id 2, da 21412041 23412241 25412441 27412641
+(10024) DBB: read request from dla, addr 80001340 burst 0 id 2
+(10026) DBB: read push: id 2, da 21612061 23612261 25612461 27612661
+(10028) DBB: read request from dla, addr 80001380 burst 0 id 2
+(10030) DBB: read push: id 2, da 21022002 23022202 25022402 27022602
+(10032) DBB: write request from dla, addr 801001c0 id 2
+(10032) DBB: write data from dla (21132013 23132213...)
+(10032) DBB: read request from dla, addr 800013c0 burst 0 id 2
+(10032) DBB: write, last tick
+(10034) DBB: read push: id 2, da 21222022 23222222 25222422 27222622
+(10038) DBB: read push: id 2, da 21422042 23422242 25422442 27422642
+(10042) DBB: read push: id 2, da 21622062 23622262 25622462 27622662
+(10072) DBB: write request from dla, addr 80100200 id 2
+(10072) DBB: write data from dla (21332033 23332233...)
+(10072) DBB: write, last tick
+(10074) DBB: write data from dla (21532053 23532253...)
+(10076) DBB: write request from dla, addr 80100240 id 2
+(10076) DBB: write, last tick
+(10078) DBB: write data from dla (21632063 23632263...)
+(10080) DBB: write request from dla, addr 80100280 id 2
+(10080) DBB: write, last tick
+(10084) DBB: read request from dla, addr 80001400 burst 0 id 2
+(10084) DBB: read push: id 2, da 21032003 23032203 25032403 27032603
+(10088) DBB: read request from dla, addr 80001440 burst 0 id 2
+(10088) DBB: read push: id 2, da 21232023 23232223 25232423 27232623
+(10092) DBB: read request from dla, addr 80001480 burst 0 id 2
+(10092) DBB: read push: id 2, da 21432043 23432243 25432443 27432643
+(10096) DBB: read request from dla, addr 800014c0 burst 0 id 2
+(10096) DBB: read push: id 2, da 21632063 23632263 25632463 27632663
+(10112) DBB: write request from dla, addr 80100280 id 2
+(10112) DBB: write data from dla (21242024 23242224...)
+(10112) DBB: write, last tick
+(10114) DBB: write data from dla (21242024 23242224...)
+(10116) DBB: write request from dla, addr 801002c0 id 2
+(10116) DBB: write, last tick
+(10136) DBB: write request from dla, addr 80100300 id 2
+(10136) DBB: write data from dla (21442044 23442244...)
+(10136) DBB: write, last tick
+(10138) DBB: write data from dla (21642064 23642264...)
+(10140) DBB: write request from dla, addr 80100340 id 2
+(10140) DBB: write, last tick
+(10148) DBB: read request from dla, addr 80001500 burst 0 id 2
+(10148) DBB: read push: id 2, da 21042004 23042204 25042404 27042604
+(10152) DBB: read request from dla, addr 80001540 burst 0 id 2
+(10152) DBB: read push: id 2, da 21242024 23242224 25242424 27242624
+(10156) DBB: read request from dla, addr 80001580 burst 0 id 2
+(10156) DBB: read push: id 2, da 21442044 23442244 25442444 27442644
+(10160) DBB: read request from dla, addr 800015c0 burst 0 id 2
+(10160) DBB: read push: id 2, da 21642064 23642264 25642464 27642664
+(10176) DBB: write request from dla, addr 80100380 id 2
+(10176) DBB: write data from dla (21152015 23152215...)
+(10176) DBB: write, last tick
+(10178) DBB: write data from dla (21352035 23352235...)
+(10180) DBB: write request from dla, addr 801003c0 id 2
+(10180) DBB: write, last tick
+(10200) DBB: write request from dla, addr 80100400 id 2
+(10200) DBB: write data from dla (21552055 23552255...)
+(10200) DBB: write, last tick
+(10202) DBB: write data from dla (21652065 23652265...)
+(10204) DBB: write request from dla, addr 80100440 id 2
+(10204) DBB: write, last tick
+(10212) DBB: read request from dla, addr 80001600 burst 0 id 2
+(10212) DBB: read push: id 2, da 21052005 23052205 25052405 27052605
+(10216) DBB: read request from dla, addr 80001640 burst 0 id 2
+(10216) DBB: read push: id 2, da 21252025 23252225 25252425 27252625
+(10220) DBB: read request from dla, addr 80001680 burst 0 id 2
+(10220) DBB: read push: id 2, da 21452045 23452245 25452445 27452645
+(10224) DBB: read request from dla, addr 800016c0 burst 0 id 2
+(10224) DBB: read push: id 2, da 21652065 23652265 25652465 27652665
+(10256) DBB: write request from dla, addr 80100440 id 2
+(10256) DBB: write data from dla (21262026 23262226...)
+(10256) DBB: write, last tick
+(10258) DBB: write data from dla (21262026 23262226...)
+(10260) DBB: write request from dla, addr 80100480 id 2
+(10260) DBB: write, last tick
+(10262) DBB: write data from dla (21462046 23462246...)
+(10264) DBB: write request from dla, addr 801004c0 id 2
+(10264) DBB: write, last tick
+(10266) DBB: write data from dla (21662066 23662266...)
+(10268) DBB: write request from dla, addr 80100500 id 2
+(10268) DBB: write, last tick
+(10276) DBB: read request from dla, addr 80001700 burst 0 id 2
+(10276) DBB: read push: id 2, da 21062006 23062206 25062406 27062606
+(10280) DBB: read request from dla, addr 80001740 burst 0 id 2
+(10280) DBB: read push: id 2, da 21262026 23262226 25262426 27262626
+(10284) DBB: read request from dla, addr 80001780 burst 0 id 2
+(10284) DBB: read push: id 2, da 21462046 23462246 25462446 27462646
+(10288) DBB: read request from dla, addr 800017c0 burst 0 id 2
+(10288) DBB: read push: id 2, da 21662066 23662266 25662466 27662666
+(10320) DBB: write request from dla, addr 80100540 id 2
+(10320) DBB: write data from dla (21162016 23162216...)
+(10320) DBB: write, last tick
+(10322) DBB: write data from dla (21362036 23362236...)
+(10324) DBB: write request from dla, addr 80100580 id 2
+(10324) DBB: write, last tick
+(10326) DBB: write data from dla (21562056 23562256...)
+(10328) DBB: write request from dla, addr 801005c0 id 2
+(10328) DBB: write, last tick
+(10330) DBB: write data from dla (21662066 23662266...)
+(10332) DBB: write request from dla, addr 80100600 id 2
+(10332) DBB: write, last tick
+(10340) DBB: read request from dla, addr 80001800 burst 0 id 2
+(10340) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(10344) DBB: read request from dla, addr 80001840 burst 0 id 2
+(10344) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(10348) DBB: read request from dla, addr 80001880 burst 0 id 2
+(10348) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(10352) DBB: read request from dla, addr 800018c0 burst 0 id 2
+(10352) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(10404) DBB: read request from dla, addr 80001900 burst 0 id 2
+(10404) DBB: read push: id 2, da 31003000 33003200 35003400 37003600
+(10408) DBB: read request from dla, addr 80001940 burst 0 id 2
+(10408) DBB: read push: id 2, da 31203020 33203220 35203420 37203620
+(10412) DBB: read request from dla, addr 80001980 burst 0 id 2
+(10412) DBB: read push: id 2, da 31403040 33403240 35403440 37403640
+(10416) DBB: read request from dla, addr 800019c0 burst 0 id 2
+(10416) DBB: read push: id 2, da 31603060 33603260 35603460 37603660
+(10456) DBB: write request from dla, addr 80100600 id 2
+(10456) DBB: write data from dla (31213021 33213221...)
+(10456) DBB: write, last tick
+(10458) DBB: write data from dla (31213021 33213221...)
+(10460) DBB: write request from dla, addr 80100640 id 2
+(10460) DBB: write, last tick
+(10462) DBB: write data from dla (31413041 33413241...)
+(10464) DBB: write request from dla, addr 80100680 id 2
+(10464) DBB: write, last tick
+(10466) DBB: write data from dla (31613061 33613261...)
+(10468) DBB: write request from dla, addr 801006c0 id 2
+(10468) DBB: read request from dla, addr 80001a00 burst 0 id 2
+(10468) DBB: write, last tick
+(10468) DBB: read push: id 2, da 31013001 33013201 35013401 37013601
+(10472) DBB: read request from dla, addr 80001a40 burst 0 id 2
+(10472) DBB: read push: id 2, da 31213021 33213221 35213421 37213621
+(10476) DBB: read request from dla, addr 80001a80 burst 0 id 2
+(10476) DBB: read push: id 2, da 31413041 33413241 35413441 37413641
+(10480) DBB: read request from dla, addr 80001ac0 burst 0 id 2
+(10480) DBB: read push: id 2, da 31613061 33613261 35613461 37613661
+(10520) DBB: write request from dla, addr 80100700 id 2
+(10520) DBB: write data from dla (31123012 33123212...)
+(10520) DBB: write, last tick
+(10522) DBB: write data from dla (31323032 33323232...)
+(10524) DBB: write request from dla, addr 80100740 id 2
+(10524) DBB: write, last tick
+(10526) DBB: write data from dla (31523052 33523252...)
+(10528) DBB: write request from dla, addr 80100780 id 2
+(10528) DBB: write, last tick
+(10530) DBB: write data from dla (31623062 33623262...)
+(10532) DBB: write request from dla, addr 801007c0 id 2
+(10532) DBB: read request from dla, addr 80001b00 burst 0 id 2
+(10532) DBB: write, last tick
+(10532) DBB: read push: id 2, da 31023002 33023202 35023402 37023602
+(10536) DBB: read request from dla, addr 80001b40 burst 0 id 2
+(10536) DBB: read push: id 2, da 31223022 33223222 35223422 37223622
+(10540) DBB: read request from dla, addr 80001b80 burst 0 id 2
+(10540) DBB: read push: id 2, da 31423042 33423242 35423442 37423642
+(10544) DBB: write request from dla, addr 801007c0 id 2
+(10544) DBB: write data from dla (31233023 33233223...)
+(10544) DBB: read request from dla, addr 80001bc0 burst 0 id 2
+(10544) DBB: write, last tick
+(10544) DBB: read push: id 2, da 31623062 33623262 35623462 37623662
+(10584) DBB: write request from dla, addr 80100800 id 2
+(10584) DBB: write data from dla (31233023 33233223...)
+(10584) DBB: write, last tick
+(10586) DBB: write data from dla (31433043 33433243...)
+(10588) DBB: write request from dla, addr 80100840 id 2
+(10588) DBB: write, last tick
+(10590) DBB: write data from dla (31633063 33633263...)
+(10592) DBB: write request from dla, addr 80100880 id 2
+(10592) DBB: write, last tick
+(10596) DBB: read request from dla, addr 80001c00 burst 0 id 2
+(10596) DBB: read push: id 2, da 31033003 33033203 35033403 37033603
+(10600) DBB: read request from dla, addr 80001c40 burst 0 id 2
+(10600) DBB: read push: id 2, da 31233023 33233223 35233423 37233623
+(10604) DBB: read request from dla, addr 80001c80 burst 0 id 2
+(10604) DBB: read push: id 2, da 31433043 33433243 35433443 37433643
+(10608) DBB: write request from dla, addr 801008c0 id 2
+(10608) DBB: write data from dla (31143014 33143214...)
+(10608) DBB: read request from dla, addr 80001cc0 burst 0 id 2
+(10608) DBB: write, last tick
+(10608) DBB: read push: id 2, da 31633063 33633263 35633463 37633663
+(10648) DBB: write request from dla, addr 80100900 id 2
+(10648) DBB: write data from dla (31343034 33343234...)
+(10648) DBB: write, last tick
+(10650) DBB: write data from dla (31543054 33543254...)
+(10652) DBB: write request from dla, addr 80100940 id 2
+(10652) DBB: write, last tick
+(10654) DBB: write data from dla (31643064 33643264...)
+(10656) DBB: write request from dla, addr 80100980 id 2
+(10656) DBB: write, last tick
+(10660) DBB: read request from dla, addr 80001d00 burst 0 id 2
+(10660) DBB: read push: id 2, da 31043004 33043204 35043404 37043604
+(10664) DBB: read request from dla, addr 80001d40 burst 0 id 2
+(10664) DBB: read push: id 2, da 31243024 33243224 35243424 37243624
+(10668) DBB: read request from dla, addr 80001d80 burst 0 id 2
+(10668) DBB: read push: id 2, da 31443044 33443244 35443444 37443644
+(10672) DBB: read request from dla, addr 80001dc0 burst 0 id 2
+(10672) DBB: read push: id 2, da 31643064 33643264 35643464 37643664
+(10688) DBB: write request from dla, addr 80100980 id 2
+(10688) DBB: write data from dla (31253025 33253225...)
+(10688) DBB: write, last tick
+(10690) DBB: write data from dla (31253025 33253225...)
+(10692) DBB: write request from dla, addr 801009c0 id 2
+(10692) DBB: write, last tick
+(10712) DBB: write request from dla, addr 80100a00 id 2
+(10712) DBB: write data from dla (31453045 33453245...)
+(10712) DBB: write, last tick
+(10714) DBB: write data from dla (31653065 33653265...)
+(10716) DBB: write request from dla, addr 80100a40 id 2
+(10716) DBB: write, last tick
+(10724) DBB: read request from dla, addr 80001e00 burst 0 id 2
+(10724) DBB: read push: id 2, da 31053005 33053205 35053405 37053605
+(10728) DBB: read request from dla, addr 80001e40 burst 0 id 2
+(10728) DBB: read push: id 2, da 31253025 33253225 35253425 37253625
+(10732) DBB: read request from dla, addr 80001e80 burst 0 id 2
+(10732) DBB: read push: id 2, da 31453045 33453245 35453445 37453645
+(10736) DBB: read request from dla, addr 80001ec0 burst 0 id 2
+(10736) DBB: read push: id 2, da 31653065 33653265 35653465 37653665
+(10752) DBB: write request from dla, addr 80100a80 id 2
+(10752) DBB: write data from dla (31163016 33163216...)
+(10752) DBB: write, last tick
+(10754) DBB: write data from dla (31363036 33363236...)
+(10756) DBB: write request from dla, addr 80100ac0 id 2
+(10756) DBB: write, last tick
+(10776) DBB: write request from dla, addr 80100b00 id 2
+(10776) DBB: write data from dla (31563056 33563256...)
+(10776) DBB: write, last tick
+(10778) DBB: write data from dla (31663066 33663266...)
+(10780) DBB: write request from dla, addr 80100b40 id 2
+(10780) DBB: write, last tick
+(10788) DBB: read request from dla, addr 80001f00 burst 0 id 2
+(10788) DBB: read push: id 2, da 31063006 33063206 35063406 37063606
+(10792) DBB: read request from dla, addr 80001f40 burst 0 id 2
+(10792) DBB: read push: id 2, da 31263026 33263226 35263426 37263626
+(10796) DBB: read request from dla, addr 80001f80 burst 0 id 2
+(10796) DBB: read push: id 2, da 31463046 33463246 35463446 37463646
+(10800) DBB: read request from dla, addr 80001fc0 burst 0 id 2
+(10800) DBB: read push: id 2, da 31663066 33663266 35663466 37663666
+(10832) DBB: write request from dla, addr 80100b40 id 2
+(10832) DBB: write data from dla (31263026 33263226...)
+(10832) DBB: write, last tick
+(10834) DBB: write data from dla (31263026 33263226...)
+(10836) DBB: write request from dla, addr 80100b80 id 2
+(10836) DBB: write, last tick
+(10838) DBB: write data from dla (31463046 33463246...)
+(10840) DBB: write request from dla, addr 80100bc0 id 2
+(10840) DBB: write, last tick
+(10842) DBB: write data from dla (31663066 33663266...)
+(10844) DBB: write request from dla, addr 80100c00 id 2
+(10844) DBB: write, last tick
+(10852) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(10856) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(10860) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(10864) DBB: read push: id 2, da 00000000 00000000 00000000 00000000
+(10960) DBB: write request from dla, addr 80100c40 id 2
+(10960) DBB: write data from dla (21112011 23112211...)
+(10960) DBB: write, last tick
+(10962) DBB: write data from dla (21312031 23312231...)
+(10964) DBB: write request from dla, addr 80100c80 id 2
+(10964) DBB: write, last tick
+(10966) DBB: write data from dla (21512051 23512251...)
+(10968) DBB: write request from dla, addr 80100cc0 id 2
+(10968) DBB: write, last tick
+(10970) DBB: write data from dla (21612061 23612261...)
+(10972) DBB: write request from dla, addr 80100d00 id 2
+(10972) DBB: write, last tick
+(11032) DBB: write request from dla, addr 80100d00 id 2
+(11032) DBB: write data from dla (21222022 23222222...)
+(11032) DBB: write, last tick
+(11034) DBB: write data from dla (21222022 23222222...)
+(11036) DBB: write request from dla, addr 80100d40 id 2
+(11036) DBB: write, last tick
+(11038) DBB: write data from dla (21422042 23422242...)
+(11040) DBB: write request from dla, addr 80100d80 id 2
+(11040) DBB: write, last tick
+(11042) DBB: write data from dla (21622062 23622262...)
+(11044) DBB: write request from dla, addr 80100dc0 id 2
+(11044) DBB: write, last tick
+(11096) DBB: write request from dla, addr 80100e00 id 2
+(11096) DBB: write data from dla (21132013 23132213...)
+(11096) DBB: write, last tick
+(11098) DBB: write data from dla (21332033 23332233...)
+(11100) DBB: write request from dla, addr 80100e40 id 2
+(11100) DBB: write, last tick
+(11102) DBB: write data from dla (21532053 23532253...)
+(11104) DBB: write request from dla, addr 80100e80 id 2
+(11104) DBB: write, last tick
+(11106) DBB: write data from dla (21632063 23632263...)
+(11108) DBB: write request from dla, addr 80100ec0 id 2
+(11108) DBB: write, last tick
+(11120) DBB: write request from dla, addr 80100ec0 id 2
+(11120) DBB: write data from dla (21242024 23242224...)
+(11120) DBB: write, last tick
+(11160) DBB: write request from dla, addr 80100f00 id 2
+(11160) DBB: write data from dla (21242024 23242224...)
+(11160) DBB: write, last tick
+(11162) DBB: write data from dla (21442044 23442244...)
+(11164) DBB: write request from dla, addr 80100f40 id 2
+(11164) DBB: write, last tick
+(11166) DBB: write data from dla (21642064 23642264...)
+(11168) DBB: write request from dla, addr 80100f80 id 2
+(11168) DBB: write, last tick
+(11184) DBB: write request from dla, addr 80100fc0 id 2
+(11184) DBB: write data from dla (21152015 23152215...)
+(11184) DBB: write, last tick
+(11224) DBB: write request from dla, addr 80101000 id 2
+(11224) DBB: write data from dla (21352035 23352235...)
+(11224) DBB: write, last tick
+(11226) DBB: write data from dla (21552055 23552255...)
+(11228) DBB: write request from dla, addr 80101040 id 2
+(11228) DBB: write, last tick
+(11230) DBB: write data from dla (21652065 23652265...)
+(11232) DBB: write request from dla, addr 80101080 id 2
+(11232) DBB: write, last tick
+(11264) DBB: write request from dla, addr 80101080 id 2
+(11264) DBB: write data from dla (21262026 23262226...)
+(11264) DBB: write, last tick
+(11266) DBB: write data from dla (21262026 23262226...)
+(11268) DBB: write request from dla, addr 801010c0 id 2
+(11268) DBB: write, last tick
+(11288) DBB: write request from dla, addr 80101100 id 2
+(11288) DBB: write data from dla (21462046 23462246...)
+(11288) DBB: write, last tick
+(11290) DBB: write data from dla (21662066 23662266...)
+(11292) DBB: write request from dla, addr 80101140 id 2
+(11292) DBB: write, last tick
+(11328) DBB: write request from dla, addr 80101180 id 2
+(11328) DBB: write data from dla (21162016 23162216...)
+(11328) DBB: write, last tick
+(11330) DBB: write data from dla (21362036 23362236...)
+(11332) DBB: write request from dla, addr 801011c0 id 2
+(11332) DBB: write, last tick
+(11352) DBB: write request from dla, addr 80101200 id 2
+(11352) DBB: write data from dla (21562056 23562256...)
+(11352) DBB: write, last tick
+(11354) DBB: write data from dla (21662066 23662266...)
+(11356) DBB: write request from dla, addr 80101240 id 2
+(11356) DBB: write, last tick
+(11472) DBB: write request from dla, addr 80101240 id 2
+(11472) DBB: write data from dla (31213021 33213221...)
+(11472) DBB: write, last tick
+(11474) DBB: write data from dla (31213021 33213221...)
+(11476) DBB: write request from dla, addr 80101280 id 2
+(11476) DBB: write, last tick
+(11478) DBB: write data from dla (31413041 33413241...)
+(11480) DBB: write request from dla, addr 801012c0 id 2
+(11480) DBB: write, last tick
+(11482) DBB: write data from dla (31613061 33613261...)
+(11484) DBB: write request from dla, addr 80101300 id 2
+(11484) DBB: write, last tick
+(11536) DBB: write request from dla, addr 80101340 id 2
+(11536) DBB: write data from dla (31123012 33123212...)
+(11536) DBB: write, last tick
+(11538) DBB: write data from dla (31323032 33323232...)
+(11540) DBB: write request from dla, addr 80101380 id 2
+(11540) DBB: write, last tick
+(11542) DBB: write data from dla (31523052 33523252...)
+(11544) DBB: write request from dla, addr 801013c0 id 2
+(11544) DBB: write, last tick
+(11546) DBB: write data from dla (31623062 33623262...)
+(11548) DBB: write request from dla, addr 80101400 id 2
+(11548) DBB: write, last tick
+(11608) DBB: write request from dla, addr 80101400 id 2
+(11608) DBB: write data from dla (31233023 33233223...)
+(11608) DBB: write, last tick
+(11610) DBB: write data from dla (31233023 33233223...)
+(11612) DBB: write request from dla, addr 80101440 id 2
+(11612) DBB: write, last tick
+(11614) DBB: write data from dla (31433043 33433243...)
+(11616) DBB: write request from dla, addr 80101480 id 2
+(11616) DBB: write, last tick
+(11618) DBB: write data from dla (31633063 33633263...)
+(11620) DBB: write request from dla, addr 801014c0 id 2
+(11620) DBB: write, last tick
+(11672) DBB: write request from dla, addr 80101500 id 2
+(11672) DBB: write data from dla (31143014 33143214...)
+(11672) DBB: write, last tick
+(11674) DBB: write data from dla (31343034 33343234...)
+(11676) DBB: write request from dla, addr 80101540 id 2
+(11676) DBB: write, last tick
+(11678) DBB: write data from dla (31543054 33543254...)
+(11680) DBB: write request from dla, addr 80101580 id 2
+(11680) DBB: write, last tick
+(11682) DBB: write data from dla (31643064 33643264...)
+(11684) DBB: write request from dla, addr 801015c0 id 2
+(11684) DBB: write, last tick
+(11696) DBB: write request from dla, addr 801015c0 id 2
+(11696) DBB: write data from dla (31253025 33253225...)
+(11696) DBB: write, last tick
+(11736) DBB: write request from dla, addr 80101600 id 2
+(11736) DBB: write data from dla (31253025 33253225...)
+(11736) DBB: write, last tick
+(11738) DBB: write data from dla (31453045 33453245...)
+(11740) DBB: write request from dla, addr 80101640 id 2
+(11740) DBB: write, last tick
+(11742) DBB: write data from dla (31653065 33653265...)
+(11744) DBB: write request from dla, addr 80101680 id 2
+(11744) DBB: write, last tick
+(11760) DBB: write request from dla, addr 801016c0 id 2
+(11760) DBB: write data from dla (31163016 33163216...)
+(11760) DBB: write, last tick
+(11800) DBB: write request from dla, addr 80101700 id 2
+(11800) DBB: write data from dla (31363036 33363236...)
+(11800) DBB: write, last tick
+(11802) DBB: write data from dla (31563056 33563256...)
+(11804) DBB: write request from dla, addr 80101740 id 2
+(11804) DBB: write, last tick
+(11806) DBB: write data from dla (31663066 33663266...)
+(11808) DBB: write request from dla, addr 80101780 id 2
+(11808) DBB: write, last tick
+(11840) DBB: write request from dla, addr 80101780 id 2
+(11840) DBB: write data from dla (31263026 33263226...)
+(11840) DBB: write, last tick
+(11842) DBB: write data from dla (31263026 33263226...)
+(11844) DBB: write request from dla, addr 801017c0 id 2
+(11844) DBB: write, last tick
+(11864) DBB: write request from dla, addr 80101800 id 2
+(11864) DBB: write data from dla (31463046 33463246...)
+(11864) DBB: write, last tick
+(11866) DBB: write data from dla (31663066 33663266...)
+(11868) DBB: write request from dla, addr 80101840 id 2
+(11868) DBB: write, last tick
+(11892) interrupt!
+(11894) write to nvdla: addr ffff0003, data ffffffff
+AXI: dumping memory to output_feature_map.dat
+AXI: memory dump matched reference
+done at 12298 ticks
+*** PASS

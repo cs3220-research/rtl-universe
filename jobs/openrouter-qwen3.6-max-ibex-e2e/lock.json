@@ -1,0 +1,75 @@
+{
+    "schema_version": 1,
+    "created_at": "2026-05-03T23:04:06.917447Z",
+    "harbor": {
+        "version": "0.6.4",
+        "is_editable": false
+    },
+    "invocation": [
+        "/nethome/dandrews47/.local/bin/harbor",
+        "run",
+        "--path",
+        "minrepro_task/ibex-e2e",
+        "--agent-import-path",
+        "agents.sandboxed:OpenCodeSandboxed",
+        "--model",
+        "openrouter/qwen/qwen3.6-max-preview",
+        "-n",
+        "1",
+        "-y",
+        "--job-name",
+        "openrouter-qwen3.6-max-ibex-e2e",
+        "--artifact",
+        "/app",
+        "--agent-timeout-multiplier",
+        "0.42",
+        "--ae",
+        "OPENROUTER_API_KEY=${OPENROUTER_API_KEY}"
+    ],
+    "n_concurrent_trials": 1,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "RewardFileEmptyError",
+            "VerifierTimeoutError",
+            "AgentTimeoutError",
+            "RewardFileNotFoundError",
+            "VerifierOutputParseError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "task": {
+                "name": "ibex-e2e",
+                "type": "local",
+                "digest": "sha256:75d1a0b13b7d9a5d29876443f0b6169947cbfcfbe196c1ff8ef3d770b80aa2b0",
+                "path": "minrepro_task/ibex-e2e"
+            },
+            "timeout_multiplier": 1.0,
+            "agent_timeout_multiplier": 0.42,
+            "agent": {
+                "import_path": "agents.sandboxed:OpenCodeSandboxed",
+                "model_name": "openrouter/qwen/qwen3.6-max-preview",
+                "kwargs": {},
+                "env": {
+                    "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}"
+                }
+            },
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "suppress_override_warnings": false,
+                "env": {},
+                "kwargs": {}
+            },
+            "verifier": {
+                "env": {},
+                "disable": false
+            }
+        }
+    ]
+}

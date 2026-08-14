@@ -1,0 +1,440 @@
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+WARNING: Build option --java_runtime_version has changed, discarding analysis cache (this can be expensive, see https://bazel.build/advanced/performance/iteration-speed).
+Analyzing: 214 targets (6 packages loaded, 0 targets configured)
+Analyzing: 214 targets (6 packages loaded, 7 targets configured)
+
+Analyzing: 214 targets (84 packages loaded, 18170 targets configured)
+
+Analyzing: 214 targets (89 packages loaded, 23353 targets configured)
+[1 / 1] no actions running
+INFO: Analyzed 214 targets (89 packages loaded, 23514 targets configured).
+[103 / 2,516] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/tutorial/tfmicro/cocotb_conv2d_test_conv2d_16x1_cocotb_runner.sh.runfiles; 0s local ... (7 actions running)
+[182 / 2,656] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_single_step_cocotb_runner.sh.runfiles; 0s local ... (8 actions, 7 running)
+[702 / 3,453] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_probe_impl_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[742 / 3,562] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_breakpoint_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[826 / 3,587] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_sim_cocotb_core_mini_axi_rand_instr_test_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[899 / 3,604] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_load_store_test_store_unit_all_vtypes_test_cocotb_runner.sh.runfiles; 0s local ... (8 actions, 7 running)
+[984 / 3,620] Compiling absl/time/internal/cctz/src/time_zone_info.cc [for tool]; 1s processwrapper-sandbox ... (8 actions, 7 running)
+[1,045 / 3,645] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_halt_resume_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[1,069 / 3,661] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_halt_resume_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[1,094 / 3,673] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_load_store_test_load16_seg_unit_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[1,179 / 3,701] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_scalar_registers_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[1,218 / 3,718] Compiling absl/time/internal/cctz/src/time_zone_format.cc [for tool]; 1s processwrapper-sandbox ... (8 actions running)
+[1,268 / 3,737] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_sim_cocotb_core_mini_axi_write_read_memory_stress_test_cocotb_runner.sh.runfiles; 1s local ... (7 actions running)
+[1,297 / 3,744] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_assembly_cocotb_test_core_mini_viota_test_cocotb_runner.sh.runfiles; 1s local ... (8 actions running)
+[1,441 / 3,772] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_sim_cocotb_slow_core_mini_axi_run_wfi_in_all_slots_cocotb_runner.sh.runfiles; 1s local ... (9 actions, 8 running)
+[1,469 / 3,808] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_hartsel_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[1,563 / 3,832] Compiling absl/base/internal/sysinfo.cc [for tool]; 0s processwrapper-sandbox ... (8 actions, 7 running)
+[1,580 / 3,841] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[1,726 / 3,866] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_load_store_test_load8_segment2_stride6_m1_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[1,824 / 3,901] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_load_store_test_load_store8_unit_m2_cocotb_runner.sh.runfiles; 0s local ... (8 actions, 7 running)
+[1,852 / 3,936] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_ndmreset_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[1,942 / 3,957] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_sim_cocotb_core_mini_axi_riscv_dv_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[1,977 / 3,978] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_ml_ops_cocotb_test_core_mini_rvv_float_matmul_test_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[2,048 / 3,997] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver_cocotb_runner.sh.runfiles; 0s local ... (8 actions, 7 running)
+[2,120 / 4,005] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver_cocotb_runner.sh.runfiles; 2s local ... (8 actions, 7 running)
+[2,168 / 4,015] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/tutorial/tfmicro/cocotb_depthwise_conv_test_dwconv32to32stride2_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[2,190 / 4,030] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive_cocotb_runner.sh.runfiles; 1s local ... (7 actions, 6 running)
+[2,276 / 4,051] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_sim_cocotb_slow_unreachable_prefetch_fault_cocotb_runner.sh.runfiles; 0s local ... (8 actions running)
+[2,550 / 4,070] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive_cocotb_runner.sh.runfiles; 1s local ... (8 actions, 7 running)
+[2,581 / 4,112] Creating runfiles tree bazel-out/k8-fastbuild/bin/tests/cocotb/rvv_load_store_test_store32_seg_unit_cocotb_runner.sh.runfiles; 1s local ... (8 actions running)
+[2,609 / 4,130] Compiling absl/strings/internal/charconv_bigint.cc [for tool]; 1s processwrapper-sandbox ... (8 actions, 7 running)
+[2,679 / 4,197] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 2s multiplex-worker ... (8 actions, 7 running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/io_utils/libio_utils.jar (2 source files) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[2,718 / 4,242] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 4s multiplex-worker ... (8 actions, 7 running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/jar/libjar.jar (2 source files) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[2,743 / 4,263] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 5s multiplex-worker ... (8 actions running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/compileoptions/libcompileoptions.jar (1 source file) [for tool]:
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-reflect.jar": no such file or directory
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-library.jar": no such file or directory
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[2,814 / 4,289] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 6s multiplex-worker ... (8 actions running)
+[2,844 / 4,298] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 7s multiplex-worker ... (8 actions, 7 running)
+[3,365 / 4,717] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 8s multiplex-worker ... (8 actions, 7 running)
+[3,655 / 4,719] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 9s multiplex-worker ... (8 actions, 7 running)
+[3,714 / 4,738] Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]; 10s multiplex-worker ... (8 actions, 7 running)
+INFO: From Building external/com_google_protobuf/java/core/liblite_runtime_only.jar (93 source files) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[3,735 / 4,778] Compiling src/google/protobuf/compiler/importer.cc [for tool]; 4s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Compiling src/google/protobuf/compiler/rust/relative_path.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/rust/relative_path.cc: In member function 'std::string google::protobuf::compiler::rust::RelativePath::Relative(const google::protobuf::compiler::rust::RelativePath&) const':
+external/com_google_protobuf/src/google/protobuf/compiler/rust/relative_path.cc:65:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::basic_string_view<char> >::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   65 |   for (int i = 0; i < current_segments.size(); ++i) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+[3,747 / 4,796] Compiling src/google/protobuf/wire_format.cc [for tool]; 1s processwrapper-sandbox ... (8 actions, 7 running)
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:283:19: Compiling tests/cocotb/tutorial/tfmicro/fully_connected_test.cc failed: 5 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:fully_connected.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:80:11: Compiling sw/opt/litert-micro/fully_connected.cc failed: 5 input file(s) do not exist
+ERROR: /app/examples/BUILD.bazel:19:19: Compiling examples/hello_world_add_floats.cc failed: missing input file '//examples:hello_world_add_floats.cc'
+ERROR: /app/examples/BUILD.bazel:19:19: Compiling examples/hello_world_add_floats.cc failed: 1 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:119:19: Compiling tests/cocotb/tutorial/tfmicro/depthwise_conv_test.cc failed: 5 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:depthwise_conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:37:11: Compiling sw/opt/litert-micro/depthwise_conv.cc failed: 9 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:318:19: Compiling tests/cocotb/tutorial/tfmicro/logistic_test.cc failed: 4 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: missing input file '//sw/opt/litert-micro:logistic.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: missing input file '//sw/opt/litert-micro:logistic.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:93:11: Compiling sw/opt/litert-micro/logistic.cc failed: 3 input file(s) do not exist
+[3,767 / 4,796] Compiling src/google/protobuf/wire_format.cc [for tool]; 2s processwrapper-sandbox ... (8 actions, 7 running)
+[3,781 / 4,801] Compiling src/google/protobuf/wire_format.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[3,793 / 4,803] Compiling src/google/protobuf/wire_format.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[3,806 / 4,807] Compiling src/google/protobuf/wire_format.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[3,819 / 4,809] Compiling src/google/protobuf/wire_format.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[3,842 / 4,819] Compiling src/google/protobuf/compiler/parser.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[3,848 / 4,819] Compiling src/google/protobuf/compiler/parser.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[3,859 / 4,824] Compiling src/google/protobuf/parse_context.cc [for tool]; 2s processwrapper-sandbox ... (8 actions, 7 running)
+[3,875 / 4,830] Compiling src/google/protobuf/io/printer.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[3,895 / 4,834] Compiling src/google/protobuf/io/printer.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[3,904 / 4,834] Compiling src/google/protobuf/io/printer.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[3,931 / 4,844] Compiling src/google/protobuf/text_format.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[3,943 / 4,848] Compiling src/google/protobuf/text_format.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[3,955 / 4,853] Compiling src/google/protobuf/text_format.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[3,970 / 4,868] Compiling src/google/protobuf/text_format.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 7 running)
+[3,982 / 4,868] Compiling src/google/protobuf/text_format.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,005 / 4,878] Compiling src/google/protobuf/text_format.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,023 / 4,882] Compiling src/google/protobuf/compiler/retention.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[4,043 / 4,888] Compiling src/google/protobuf/compiler/retention.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,068 / 4,902] Compiling src/google/protobuf/reflection_ops.cc [for tool]; 1s processwrapper-sandbox ... (8 actions, 7 running)
+[4,079 / 4,904] Compiling src/google/protobuf/reflection_ops.cc [for tool]; 2s processwrapper-sandbox ... (9 actions, 8 running)
+[4,085 / 4,904] Compiling src/google/protobuf/compiler/code_generator.cc [for tool]; 2s processwrapper-sandbox ... (8 actions, 7 running)
+[4,095 / 4,911] Compiling src/google/protobuf/compiler/code_generator.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[4,103 / 4,911] Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[4,116 / 4,913] Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 4s processwrapper-sandbox ... (9 actions, 7 running)
+ERROR: /app/tests/cocotb/tutorial/counters/BUILD:27:19: Compiling tests/cocotb/tutorial/counters/inst_cycle_counter_example.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/counters/BUILD:27:19: Compiling tests/cocotb/tutorial/counters/inst_cycle_counter_example.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/counters/BUILD:27:19: Compiling tests/cocotb/tutorial/counters/inst_cycle_counter_example.cc failed: 2 input file(s) do not exist
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memset_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memset_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memset_test.cc failed: 2 input file(s) do not exist
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memcpy_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memcpy_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/rvv/rvv_opt/BUILD:28:14: Compiling tests/cocotb/rvv/rvv_opt/memcpy_test.cc failed: 2 input file(s) do not exist
+[4,325 / 4,919] Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 5s processwrapper-sandbox ... (7 actions running)
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:52:11: Compiling sw/opt/litert-micro/conv.cc failed: 9 input file(s) do not exist
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:accumulator_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:memory_util.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt:rvv_opt.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: missing input file '//sw/opt/litert-micro:conv.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:190:19: Compiling tests/cocotb/tutorial/tfmicro/conv2d_test.cc failed: 6 input file(s) do not exist
+[4,406 / 4,928] Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,414 / 4,930] Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 7 running)
+[4,423 / 4,935] Compiling src/google/protobuf/generated_message_tctable_lite.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,438 / 4,939] Compiling src/google/protobuf/compiler/plugin.pb.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[4,453 / 4,950] Compiling src/google/protobuf/map_field.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[4,464 / 4,952] Compiling src/google/protobuf/map_field.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,477 / 4,952] Compiling src/google/protobuf/compiler/csharp/csharp_doc_comment.cc [for tool]; 2s processwrapper-sandbox ... (8 actions, 7 running)
+[4,482 / 4,952] Compiling src/google/protobuf/compiler/csharp/csharp_doc_comment.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[4,493 / 4,952] Compiling src/google/protobuf/compiler/csharp/csharp_doc_comment.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,500 / 4,952] Compiling src/google/protobuf/generated_message_tctable_gen.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,511 / 4,952] Compiling src/google/protobuf/extension_set.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 7 running)
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/utils:utils.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/tests/cocotb/tutorial/tfmicro/BUILD:240:19: Compiling tests/cocotb/tutorial/tfmicro/pooling_test.cc failed: 4 input file(s) do not exist
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: missing input file '//sw/opt/litert-micro:pooling.cc'
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: missing input file '//sw/opt/litert-micro:pooling.h'
+ERROR: /app/sw/opt/litert-micro/BUILD:68:11: Compiling sw/opt/litert-micro/pooling.cc failed: 3 input file(s) do not exist
+[4,524 / 4,952] Compiling src/google/protobuf/extension_set.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,535 / 4,952] Compiling src/google/protobuf/extension_set.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,559 / 4,952] Compiling src/google/protobuf/compiler/csharp/csharp_enum.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,577 / 4,952] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 4s processwrapper-sandbox ... (8 actions running)
+[4,590 / 4,952] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 5s processwrapper-sandbox ... (8 actions running)
+[4,598 / 4,952] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 6s processwrapper-sandbox ... (8 actions running)
+[4,608 / 4,952] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,619 / 4,952] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,630 / 4,952] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 9s processwrapper-sandbox ... (8 actions, 7 running)
+[4,639 / 4,952] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 10s processwrapper-sandbox ... (8 actions, 7 running)
+[4,651 / 4,952] Compiling src/google/protobuf/compiler/cpp/helpers.cc [for tool]; 11s processwrapper-sandbox ... (8 actions running)
+[4,662 / 4,952] Compiling src/google/protobuf/compiler/csharp/csharp_field_base.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,672 / 4,952] Compiling src/google/protobuf/compiler/csharp/csharp_field_base.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,681 / 4,952] Compiling src/google/protobuf/compiler/csharp/csharp_field_base.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,692 / 4,952] Compiling src/google/protobuf/compiler/csharp/csharp_field_base.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,705 / 4,952] Compiling src/google/protobuf/descriptor.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,708 / 4,952] Compiling src/google/protobuf/descriptor.cc [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,709 / 4,952] Compiling src/google/protobuf/descriptor.cc [for tool]; 10s processwrapper-sandbox ... (8 actions running)
+[4,710 / 4,952] Compiling src/google/protobuf/descriptor.cc [for tool]; 11s processwrapper-sandbox ... (8 actions, 7 running)
+[4,716 / 4,952] Compiling src/google/protobuf/descriptor.cc [for tool]; 13s processwrapper-sandbox ... (8 actions, 7 running)
+[4,720 / 4,952] Compiling src/google/protobuf/descriptor.cc [for tool]; 14s processwrapper-sandbox ... (9 actions, 8 running)
+[4,721 / 4,952] Compiling src/google/protobuf/descriptor.cc [for tool]; 16s processwrapper-sandbox ... (8 actions, 7 running)
+[4,725 / 4,952] Compiling src/google/protobuf/descriptor.cc [for tool]; 17s processwrapper-sandbox ... (9 actions, 7 running)
+[4,726 / 4,952] Compiling src/google/protobuf/descriptor.cc [for tool]; 19s processwrapper-sandbox ... (9 actions, 8 running)
+[4,727 / 4,952] Compiling src/google/protobuf/descriptor.cc [for tool]; 21s processwrapper-sandbox ... (8 actions, 7 running)
+[4,730 / 4,952] Compiling src/google/protobuf/descriptor.cc [for tool]; 23s processwrapper-sandbox ... (8 actions, 7 running)
+[4,732 / 4,952] Compiling src/google/protobuf/descriptor.cc [for tool]; 24s processwrapper-sandbox ... (9 actions, 8 running)
+[4,735 / 4,952] Compiling src/google/protobuf/compiler/command_line_interface.cc [for tool]; 13s processwrapper-sandbox ... (9 actions, 8 running)
+[4,737 / 4,952] Compiling src/google/protobuf/compiler/rust/accessors/map.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,740 / 4,952] Compiling src/google/protobuf/descriptor_database.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,740 / 4,952] Compiling src/google/protobuf/descriptor_database.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[4,743 / 4,952] Compiling src/google/protobuf/descriptor_database.cc [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,746 / 4,952] Compiling src/google/protobuf/descriptor.pb.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[4,750 / 4,952] Compiling src/google/protobuf/descriptor.pb.cc [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+[4,751 / 4,952] Compiling src/google/protobuf/descriptor.pb.cc [for tool]; 9s processwrapper-sandbox ... (9 actions, 7 running)
+[4,757 / 4,952] Compiling src/google/protobuf/compiler/python/generator.cc [for tool]; 4s processwrapper-sandbox ... (9 actions, 8 running)
+[4,758 / 4,952] Compiling src/google/protobuf/compiler/python/generator.cc [for tool]; 6s processwrapper-sandbox ... (8 actions, 7 running)
+[4,758 / 4,952] Compiling src/google/protobuf/compiler/python/generator.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[4,760 / 4,952] Compiling src/google/protobuf/compiler/python/generator.cc [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+[4,763 / 4,952] Compiling src/google/protobuf/compiler/python/generator.cc [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,767 / 4,952] Compiling src/google/protobuf/compiler/csharp/csharp_repeated_primitive_field.cc [for tool]; 2s processwrapper-sandbox ... (9 actions, 8 running)
+[4,768 / 4,952] Compiling src/google/protobuf/compiler/objectivec/oneof.cc [for tool]; 3s processwrapper-sandbox ... (8 actions, 7 running)
+[4,769 / 4,952] Compiling src/google/protobuf/compiler/csharp/csharp_repeated_message_field.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,772 / 4,952] Compiling src/google/protobuf/compiler/java/helpers.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,774 / 4,952] Compiling src/google/protobuf/compiler/java/field_common.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,775 / 4,952] Compiling src/google/protobuf/compiler/cpp/extension.cc [for tool]; 4s processwrapper-sandbox ... (8 actions running)
+[4,776 / 4,952] Compiling src/google/protobuf/compiler/cpp/extension.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,779 / 4,952] Compiling src/google/protobuf/compiler/cpp/extension.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 7 running)
+[4,780 / 4,952] Compiling src/google/protobuf/compiler/cpp/extension.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,782 / 4,952] Compiling src/google/protobuf/compiler/objectivec/message.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,786 / 4,952] Compiling src/google/protobuf/compiler/java/full/enum.cc [for tool]; 4s processwrapper-sandbox ... (8 actions, 7 running)
+[4,786 / 4,952] Compiling src/google/protobuf/compiler/java/full/enum.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Compiling src/google/protobuf/compiler/java/full/enum.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc: In member function 'virtual void google::protobuf::compiler::java::EnumNonLiteGenerator::Generate(google::protobuf::io::Printer*)':
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:77:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   77 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:85:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   85 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:125:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<google::protobuf::compiler::java::EnumNonLiteGenerator::Alias>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  125 |   for (int i = 0; i < aliases_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:209:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  209 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc: In member function 'bool google::protobuf::compiler::java::EnumNonLiteGenerator::CanUseEnumValues()':
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/enum.cc:383:32: warning: comparison of integer expressions of different signedness: 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+  383 |   if (canonical_values_.size() != descriptor_->value_count()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[4,787 / 4,952] Compiling src/google/protobuf/compiler/java/lite/enum_field.cc [for tool]; 5s processwrapper-sandbox ... (8 actions running)
+[4,790 / 4,952] Compiling src/google/protobuf/compiler/java/lite/enum_field.cc [for tool]; 6s processwrapper-sandbox ... (8 actions running)
+[4,791 / 4,952] Compiling src/google/protobuf/compiler/cpp/field.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,793 / 4,952] Compiling src/google/protobuf/compiler/cpp/field.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[4,796 / 4,952] Compiling src/google/protobuf/compiler/objectivec/file.cc [for tool]; 8s processwrapper-sandbox ... (8 actions, 7 running)
+[4,798 / 4,952] Compiling src/google/protobuf/compiler/objectivec/file.cc [for tool]; 9s processwrapper-sandbox ... (9 actions, 8 running)
+[4,802 / 4,952] Compiling src/google/protobuf/compiler/cpp/service.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,803 / 4,952] Compiling src/google/protobuf/compiler/java/lite/string_field.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+[4,805 / 4,952] Compiling src/google/protobuf/compiler/java/lite/string_field.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,807 / 4,952] Compiling src/google/protobuf/compiler/cpp/parse_function_generator.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,810 / 4,952] Compiling src/google/protobuf/compiler/java/full/service.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+[4,812 / 4,952] Compiling src/google/protobuf/compiler/java/full/map_field.cc [for tool]; 6s processwrapper-sandbox ... (8 actions running)
+[4,813 / 4,952] Compiling src/google/protobuf/compiler/java/full/map_field.cc [for tool]; 7s processwrapper-sandbox ... (8 actions, 7 running)
+[4,815 / 4,952] Compiling src/google/protobuf/compiler/cpp/field_generators/enum_field.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,817 / 4,952] Compiling src/google/protobuf/compiler/java/lite/primitive_field.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,819 / 4,952] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 7s processwrapper-sandbox ... (9 actions, 8 running)
+[4,821 / 4,952] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+[4,822 / 4,952] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 11s processwrapper-sandbox ... (8 actions, 7 running)
+[4,824 / 4,952] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 13s processwrapper-sandbox ... (9 actions, 7 running)
+INFO: From Compiling src/google/protobuf/compiler/java/lite/enum.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/java/lite/enum.cc: In member function 'virtual void google::protobuf::compiler::java::EnumLiteGenerator::Generate(google::protobuf::io::Printer*)':
+external/com_google_protobuf/src/google/protobuf/compiler/java/lite/enum.cc:70:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   70 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/lite/enum.cc:94:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<google::protobuf::compiler::java::EnumLiteGenerator::Alias>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+   94 |   for (int i = 0; i < aliases_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/lite/enum.cc:165:21: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::EnumValueDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  165 |   for (int i = 0; i < canonical_values_.size(); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+[4,827 / 4,952] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 14s processwrapper-sandbox ... (8 actions running)
+[4,828 / 4,952] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 15s processwrapper-sandbox ... (8 actions, 7 running)
+[4,830 / 4,952] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 17s processwrapper-sandbox ... (9 actions, 8 running)
+[4,831 / 4,952] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 18s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Compiling src/google/protobuf/compiler/java/full/message_builder.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message_builder.cc: In member function 'void google::protobuf::compiler::java::MessageBuilderGenerator::GenerateDescriptorMethods(google::protobuf::io::Printer*)':
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message_builder.cc:214:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::FieldDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  214 |     for (int i = 0; i < map_fields.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message_builder.cc:240:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::FieldDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  240 |     for (int i = 0; i < map_fields.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+[4,833 / 4,952] Compiling src/google/protobuf/compiler/cpp/message.cc [for tool]; 20s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Compiling src/google/protobuf/compiler/java/full/message.cc [for tool]:
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message.cc: In member function 'void google::protobuf::compiler::java::ImmutableMessageGenerator::GenerateDescriptorMethods(google::protobuf::io::Printer*)':
+external/com_google_protobuf/src/google/protobuf/compiler/java/full/message.cc:807:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<const google::protobuf::FieldDescriptor*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  807 |     for (int i = 0; i < map_fields.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+[4,837 / 4,952] Compiling src/google/protobuf/compiler/cpp/field_generators/message_field.cc [for tool]; 8s processwrapper-sandbox ... (9 actions, 8 running)
+[4,838 / 4,952] Compiling src/google/protobuf/compiler/cpp/field_generators/string_field.cc [for tool]; 6s processwrapper-sandbox ... (9 actions, 8 running)
+[4,840 / 4,952] Compiling src/google/protobuf/compiler/cpp/field_generators/primitive_field.cc [for tool]; 5s processwrapper-sandbox ... (9 actions, 8 running)
+INFO: From Compiling src/google/protobuf/compiler/kotlin/file.cc [for tool]:
+In file included from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/java/_virtual_includes/helpers/google/protobuf/compiler/java/helpers.h:23,
+                 from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/java/_virtual_includes/helpers/google/protobuf/compiler/java/context.h:15,
+                 from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/kotlin/_virtual_includes/kotlin_internal/google/protobuf/compiler/kotlin/message.h:12,
+                 from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/kotlin/_virtual_includes/kotlin_internal/google/protobuf/compiler/kotlin/file.h:18,
+                 from external/com_google_protobuf/src/google/protobuf/compiler/kotlin/file.cc:8:
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h: In instantiation of 'void google::protobuf::io::AnnotationProtoCollector<AnnotationProto>::AddAnnotation(size_t, size_t, const std::string&, const std::vector<int>&, std::optional<google::protobuf::io::AnnotationCollector::Semantic>) [with AnnotationProto = google::protobuf::GeneratedCodeInfo; size_t = long unsigned int; std::string = std::__cxx11::basic_string<char>]':
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h:123:8:   required from here
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h:127:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<int>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  127 |     for (int i = 0; i < path.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~
+[4,842 / 4,952] Compiling src/google/protobuf/compiler/java/lite/message_builder.cc [for tool]; 4s processwrapper-sandbox ... (8 actions running)
+[4,843 / 4,952] Compiling src/google/protobuf/compiler/java/file.cc [for tool]; 5s processwrapper-sandbox ... (8 actions, 7 running)
+INFO: From Compiling src/google/protobuf/compiler/kotlin/generator.cc [for tool]:
+In file included from bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/compiler/java/_virtual_includes/helpers/google/protobuf/compiler/java/helpers.h:23,
+                 from external/com_google_protobuf/src/google/protobuf/compiler/kotlin/generator.cc:18:
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h: In instantiation of 'void google::protobuf::io::AnnotationProtoCollector<AnnotationProto>::AddAnnotation(size_t, size_t, const std::string&, const std::vector<int>&, std::optional<google::protobuf::io::AnnotationCollector::Semantic>) [with AnnotationProto = google::protobuf::GeneratedCodeInfo; size_t = long unsigned int; std::string = std::__cxx11::basic_string<char>]':
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h:123:8:   required from here
+bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/com_google_protobuf/src/google/protobuf/io/_virtual_includes/printer/google/protobuf/io/printer.h:127:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<int>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+  127 |     for (int i = 0; i < path.size(); ++i) {
+      |                     ~~^~~~~~~~~~~~~
+[4,849 / 4,952] Compiling src/google/protobuf/compiler/java/lite/message.cc [for tool]; 5s processwrapper-sandbox ... (4 actions, 3 running)
+[4,852 / 4,952] Compiling src/google/protobuf/compiler/java/lite/message.cc [for tool]; 6s processwrapper-sandbox ... (2 actions running)
+[4,854 / 4,952] Compiling src/google/protobuf/compiler/kotlin/message.cc [for tool]; 5s processwrapper-sandbox
+[4,857 / 4,952] [Prepa] Generating proto_library @io_bazel_rules_scala//src/java/io/bazel/rulesscala/scalac/reporter:scala_deps_proto [for tool]
+[4,874 / 4,952] Compiling Java headers external/com_google_protobuf/java/core/libcore-hjar.jar (43 source files, 1 source jar) [for tool]; 1s processwrapper-sandbox ... (2 actions running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/worker/libworker.jar (1 source file) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/reporter/libscala_deps_proto-speed.jar (1 source jar) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+INFO: From Building external/bazel_tools/src/main/protobuf/libworker_protocol_proto-speed.jar (1 source jar) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[4,882 / 4,952] Building external/com_google_protobuf/java/core/libcore.jar (43 source files, 1 source jar) [for tool]; 2s multiplex-worker ... (4 actions running)
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/reporter/libreporter.jar (2 source files) [for tool]:
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-reflect.jar": no such file or directory
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-library.jar": no such file or directory
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+INFO: From Building external/io_bazel_rules_scala/src/protobuf/io/bazel/rules_scala/libdiagnostics_proto-speed.jar (1 source jar) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+INFO: From Building external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/scalac.jar (4 source files) [for tool]:
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-reflect.jar": no such file or directory
+warning: [path] bad path element "/home/builder/.cache/bazel/_bazel_builder/8c069df52082beee3c95ca17836fb8e2/execroot/coralnpu_hw/bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala_scala_compiler_2_13_12/io_bazel_rules_scala_scala_compiler_2_13_12.stamp/scala-library.jar": no such file or directory
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[4,886 / 4,952] Building external/com_google_protobuf/java/core/libcore.jar (43 source files, 1 source jar) [for tool]; 4s multiplex-worker
+INFO: From Building external/com_google_protobuf/java/core/libcore.jar (43 source files, 1 source jar) [for tool]:
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+[4,887 / 4,952] checking cached actions
+[4,889 / 4,952] [Sched] scala @//hdl/chisel/src/coralnpu:coralnpu_params [for tool] ... (7 actions, 4 running)
+[4,889 / 4,952] [Sched] scala @//hdl/chisel/src/coralnpu:coralnpu_params [for tool]; 4s ... (7 actions, 5 running)
+[4,891 / 4,952] scala @//hdl/chisel/src/common:library [for tool]; 5s worker ... (6 actions, 5 running)
+ERROR: /app/hdl/chisel/src/common/BUILD:22:15: scala @//hdl/chisel/src/common:library [for tool] failed: (Exit 1): scalac failed: error executing Scalac command (from target //hdl/chisel/src/common:library) bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/scalac @bazel-out/k8-opt-exec-ST-a828a81199fe/bin/hdl/chisel/src/common/library.jar-0.params
+hdl/chisel/src/common/Library.scala:3: warning: Unused import
+import chisel3._
+               ^
+error: No warnings can be incurred under -Werror.
+1 warning
+1 error
+Build failed
+java.lang.RuntimeException: Build failed
+	at io.bazel.rulesscala.scalac.ScalacInvoker.invokeCompiler(ScalacInvoker.java:55)
+	at io.bazel.rulesscala.scalac.ScalacWorker.compileScalaSources(ScalacWorker.java:257)
+	at io.bazel.rulesscala.scalac.ScalacWorker.work(ScalacWorker.java:73)
+	at io.bazel.rulesscala.worker.Worker.persistentWorkerMain(Worker.java:86)
+	at io.bazel.rulesscala.worker.Worker.workerMain(Worker.java:39)
+	at io.bazel.rulesscala.scalac.ScalacWorker.main(ScalacWorker.java:33)
+ERROR: /app/hdl/chisel/src/common/BUILD:61:15: scala @//hdl/chisel/src/common:aligner [for tool] failed: (Exit 1): scalac failed: error executing Scalac command (from target //hdl/chisel/src/common:aligner) bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/scalac @bazel-out/k8-opt-exec-ST-a828a81199fe/bin/hdl/chisel/src/common/aligner.jar-0.params
+hdl/chisel/src/common/Aligner.scala:5: warning: Unused import
+import chisel3.util.experimental.BoringUtils
+                                 ^
+error: No warnings can be incurred under -Werror.
+1 warning
+1 error
+Build failed
+java.lang.RuntimeException: Build failed
+	at io.bazel.rulesscala.scalac.ScalacInvoker.invokeCompiler(ScalacInvoker.java:55)
+	at io.bazel.rulesscala.scalac.ScalacWorker.compileScalaSources(ScalacWorker.java:257)
+	at io.bazel.rulesscala.scalac.ScalacWorker.work(ScalacWorker.java:73)
+	at io.bazel.rulesscala.worker.Worker.persistentWorkerMain(Worker.java:86)
+	at io.bazel.rulesscala.worker.Worker.workerMain(Worker.java:39)
+	at io.bazel.rulesscala.scalac.ScalacWorker.main(ScalacWorker.java:33)
+[4,910 / 4,952] scala @//hdl/chisel/src/coralnpu:coralnpu_params [for tool]; 1s worker ... (3 actions, 2 running)
+ERROR: /app/hdl/chisel/src/coralnpu/BUILD:374:15: scala @//hdl/chisel/src/coralnpu:coralnpu_params [for tool] failed: (Exit 1): scalac failed: error executing Scalac command (from target //hdl/chisel/src/coralnpu:coralnpu_params) bazel-out/k8-opt-exec-ST-a828a81199fe/bin/external/io_bazel_rules_scala/src/java/io/bazel/rulesscala/scalac/scalac ... (remaining 1 argument skipped)
+hdl/chisel/src/coralnpu/MemorySize.scala:3: warning: Unused import
+import chisel3._
+               ^
+hdl/chisel/src/coralnpu/Parameters.scala:3: warning: Unused import
+import chisel3._
+               ^
+hdl/chisel/src/coralnpu/Parameters.scala:4: warning: Unused import
+import chisel3.util._
+                    ^
+error: No warnings can be incurred under -Werror.
+3 warnings
+1 error
+Build failed
+java.lang.RuntimeException: Build failed
+	at io.bazel.rulesscala.scalac.ScalacInvoker.invokeCompiler(ScalacInvoker.java:55)
+	at io.bazel.rulesscala.scalac.ScalacWorker.compileScalaSources(ScalacWorker.java:257)
+	at io.bazel.rulesscala.scalac.ScalacWorker.work(ScalacWorker.java:73)
+	at io.bazel.rulesscala.worker.Worker.persistentWorkerMain(Worker.java:86)
+	at io.bazel.rulesscala.worker.Worker.workerMain(Worker.java:39)
+	at io.bazel.rulesscala.scalac.ScalacWorker.main(ScalacWorker.java:33)
+[4,952 / 4,952] 1 / 214 tests, 1 failed; no actions running
+INFO: Found 214 test targets...
+Use --verbose_failures to see the command lines of failed build steps.
+INFO: Elapsed time: 216.508s, Critical Path: 43.70s
+INFO: 2047 processes: 1130 internal, 902 processwrapper-sandbox, 15 worker.
+ERROR: Build did NOT complete successfully
+FAILED: 
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_nonexistent_register FAILED TO BUILD
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_abstract_access_registers FAILED TO BUILD
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_breakpoint FAILED TO BUILD
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_dmactive FAILED TO BUILD
+//tests/cocotb:core_mini_axi_debug_cocotb_core_mini_axi_debug_gdbserver FAILED TO BUILD
+(Skipping other failed to build tests)
+
+Executed 0 out of 214 tests: 214 fail to build.
+INFO: Build Event Protocol files produced successfully.

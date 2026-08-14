@@ -1,0 +1,498 @@
+=== [1/2] Verilator elaboration ===
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:223:20: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  223 |             regfile[csb2nvdla_addr] <= csb2nvdla_wdat;
+      |                    ^
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.020
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:229:38: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  229 |             nvdla2csb_data <= regfile[csb2nvdla_addr];
+      |                                      ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:236:89: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  236 |         $display("(%0t) DBG: write to 2c0e, state=%0d, flying=%b", $time, state, regfile[16'h2c2c][0]);
+      |                                                                                         ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:244:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  244 |           op_feat_base  <= {regfile[16'h2807][7:0], regfile[16'h2806]};
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:244:60: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  244 |           op_feat_base  <= {regfile[16'h2807][7:0], regfile[16'h2806]};
+      |                                                            ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:244:25: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's REPLICATE generates 40 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  244 |           op_feat_base  <= {regfile[16'h2807][7:0], regfile[16'h2806]};
+      |                         ^~
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:246:40: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  246 |           sdp_sa_rd_total <= (((regfile[16'h2805] + 1) + 15) / 16) * regfile[16'h2809];
+      |                                        ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:246:77: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  246 |           sdp_sa_rd_total <= (((regfile[16'h2805] + 1) + 15) / 16) * regfile[16'h2809];
+      |                                                                             ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:247:40: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  247 |           sdp_sa_wr_total <= (((regfile[16'h2c11] + 1) + 15) / 16) * regfile[16'h2c15];
+      |                                        ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:247:77: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  247 |           sdp_sa_wr_total <= (((regfile[16'h2c11] + 1) + 15) / 16) * regfile[16'h2c15];
+      |                                                                             ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:248:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  248 |           op_out_base   <= {regfile[16'h2c13][7:0], regfile[16'h2c12]};
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:248:60: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  248 |           op_out_base   <= {regfile[16'h2c13][7:0], regfile[16'h2c12]};
+      |                                                            ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:248:25: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's REPLICATE generates 40 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  248 |           op_out_base   <= {regfile[16'h2c13][7:0], regfile[16'h2c12]};
+      |                         ^~
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:250:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  250 |           dma_rd_cvsram <= (regfile[16'h2806][31:28] == 4'h5) ? 1 : 0;
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:251:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  251 |           dma_wr_cvsram <= (regfile[16'h2c12][31:28] == 4'h5) ? 1 : 0;
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:258:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  258 |           pdp_W_in  <= regfile[16'h3003] + 1;
+      |                               ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:259:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  259 |           pdp_H_in  <= regfile[16'h3004] + 1;
+      |                               ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:260:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  260 |           pdp_C     <= regfile[16'h3005] + 1;
+      |                               ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:261:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  261 |           pdp_kw    <= regfile[16'h340d][3:0]  + 1;
+      |                               ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:261:48: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 4 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  261 |           pdp_kw    <= regfile[16'h340d][3:0]  + 1;
+      |                                                ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:262:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  262 |           pdp_kh    <= regfile[16'h340d][11:8] + 1;
+      |                               ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:262:48: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 4 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  262 |           pdp_kh    <= regfile[16'h340d][11:8] + 1;
+      |                                                ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:263:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  263 |           pdp_sw    <= regfile[16'h340d][19:16] + 1;
+      |                               ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:263:49: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 4 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  263 |           pdp_sw    <= regfile[16'h340d][19:16] + 1;
+      |                                                 ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:264:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  264 |           pdp_sh    <= regfile[16'h340d][27:24] + 1;
+      |                               ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:264:49: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 4 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  264 |           pdp_sh    <= regfile[16'h340d][27:24] + 1;
+      |                                                 ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:265:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  265 |           pdp_W_out <= regfile[16'h3406] + 1;
+      |                               ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:266:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  266 |           pdp_H_out <= regfile[16'h3407] + 1;
+      |                               ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:267:32: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  267 |           pdp_src_ls <= regfile[16'h3009];
+      |                                ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:268:32: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  268 |           pdp_src_ss <= regfile[16'h300a];
+      |                                ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:269:32: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  269 |           pdp_dst_ls <= regfile[16'h341e];
+      |                                ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:270:32: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  270 |           pdp_dst_ss <= regfile[16'h341f];
+      |                                ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:271:41: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  271 |           op_feat_base <= {8'h0, regfile[16'h3007]};
+      |                                         ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:271:24: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's REPLICATE generates 40 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  271 |           op_feat_base <= {8'h0, regfile[16'h3007]};
+      |                        ^~
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:272:41: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  272 |           op_out_base  <= {8'h0, regfile[16'h341c]};
+      |                                         ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:272:24: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's REPLICATE generates 40 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  272 |           op_out_base  <= {8'h0, regfile[16'h341c]};
+      |                        ^~
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:273:38: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  273 |           op_feat_total <= (((regfile[16'h3005] + 1) + 15) / 16) * regfile[16'h300a];
+      |                                      ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:273:75: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  273 |           op_feat_total <= (((regfile[16'h3005] + 1) + 15) / 16) * regfile[16'h300a];
+      |                                                                           ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:274:38: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  274 |           op_out_total  <= (((regfile[16'h3408] + 1) + 15) / 16) * regfile[16'h341f];
+      |                                      ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:274:75: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  274 |           op_out_total  <= (((regfile[16'h3408] + 1) + 15) / 16) * regfile[16'h341f];
+      |                                                                           ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:275:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  275 |           dma_rd_cvsram <= (regfile[16'h3007][31:28] == 4'h5) ? 1 : 0;
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:276:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  276 |           dma_wr_cvsram <= (regfile[16'h341c][31:28] == 4'h5) ? 1 : 0;
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:283:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  283 |           conv_W    <= regfile[16'h1407][12:0]  + 1;
+      |                               ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:283:49: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 13 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  283 |           conv_W    <= regfile[16'h1407][12:0]  + 1;
+      |                                                 ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:284:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  284 |           conv_H    <= regfile[16'h1407][28:16] + 1;
+      |                               ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:284:49: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 13 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  284 |           conv_H    <= regfile[16'h1407][28:16] + 1;
+      |                                                 ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:285:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  285 |           conv_C    <= regfile[16'h1408][12:0]  + 1;
+      |                               ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:285:49: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 13 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  285 |           conv_C    <= regfile[16'h1408][12:0]  + 1;
+      |                                                 ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:286:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  286 |           conv_Sk   <= regfile[16'h180b][4:0]   + 1;
+      |                               ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:286:49: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 5 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  286 |           conv_Sk   <= regfile[16'h180b][4:0]   + 1;
+      |                                                 ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:287:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  287 |           conv_Rk   <= regfile[16'h180b][20:16] + 1;
+      |                               ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:287:49: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 5 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  287 |           conv_Rk   <= regfile[16'h180b][20:16] + 1;
+      |                                                 ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:288:31: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  288 |           conv_K    <= regfile[16'h180c][28:16] + 1;
+      |                               ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:288:49: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 13 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  288 |           conv_K    <= regfile[16'h180c][28:16] + 1;
+      |                                                 ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:289:35: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  289 |           conv_stride_w <= regfile[16'h142c][2:0]   + 1;
+      |                                   ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:289:53: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 3 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  289 |           conv_stride_w <= regfile[16'h142c][2:0]   + 1;
+      |                                                     ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:290:35: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  290 |           conv_stride_h <= regfile[16'h142c][18:16] + 1;
+      |                                   ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:290:53: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 3 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  290 |           conv_stride_h <= regfile[16'h142c][18:16] + 1;
+      |                                                     ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:291:35: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  291 |           conv_pad_l    <= regfile[16'h142d][4:0];
+      |                                   ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:291:25: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's SEL generates 5 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  291 |           conv_pad_l    <= regfile[16'h142d][4:0];
+      |                         ^~
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:292:35: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  292 |           conv_pad_t    <= regfile[16'h142d][12:8];
+      |                                   ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:292:25: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's SEL generates 5 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  292 |           conv_pad_t    <= regfile[16'h142d][12:8];
+      |                         ^~
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:293:35: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  293 |           conv_feat_ls  <= regfile[16'h1410];
+      |                                   ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:294:35: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  294 |           conv_feat_ss  <= regfile[16'h1412];
+      |                                   ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:295:40: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  295 |           conv_wt_per_kernel <= regfile[16'h141b] + 1;
+      |                                        ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:296:33: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  296 |           conv_W_out  <= regfile[16'h2c0f][12:0] + 1;
+      |                                 ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:296:50: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 13 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  296 |           conv_W_out  <= regfile[16'h2c0f][12:0] + 1;
+      |                                                  ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:297:33: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  297 |           conv_H_out  <= regfile[16'h2c10][12:0] + 1;
+      |                                 ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:297:50: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 13 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  297 |           conv_H_out  <= regfile[16'h2c10][12:0] + 1;
+      |                                                  ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:298:33: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  298 |           sdp_out_ls  <= regfile[16'h2c14];
+      |                                 ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:299:33: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  299 |           sdp_out_ss  <= regfile[16'h2c15];
+      |                                 ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:300:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  300 |           conv_cacc_clip <= regfile[16'h240b][4:0];
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:301:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  301 |           sdp_bs_bypass  <= regfile[16'h2c16][0];
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:302:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  302 |           sdp_relu_bypass<= regfile[16'h2c16][6];
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:303:44: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  303 |           sdp_cvt_offset <= $signed(regfile[16'h2c30]);
+      |                                            ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:304:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  304 |           sdp_cvt_scale  <= regfile[16'h2c31][15:0];
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:305:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  305 |           sdp_cvt_shift  <= regfile[16'h2c32][5:0];
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:306:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  306 |           op_feat_base  <= {regfile[16'h140c][7:0], regfile[16'h140d]};
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:306:60: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  306 |           op_feat_base  <= {regfile[16'h140c][7:0], regfile[16'h140d]};
+      |                                                            ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:306:25: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's REPLICATE generates 40 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  306 |           op_feat_base  <= {regfile[16'h140c][7:0], regfile[16'h140d]};
+      |                         ^~
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:307:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  307 |           op_wt_base    <= {regfile[16'h141e][7:0], regfile[16'h141f]};
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:307:60: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  307 |           op_wt_base    <= {regfile[16'h141e][7:0], regfile[16'h141f]};
+      |                                                            ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:307:25: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's REPLICATE generates 40 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  307 |           op_wt_base    <= {regfile[16'h141e][7:0], regfile[16'h141f]};
+      |                         ^~
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:308:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  308 |           op_out_base   <= {regfile[16'h2c13][7:0], regfile[16'h2c12]};
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:308:60: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  308 |           op_out_base   <= {regfile[16'h2c13][7:0], regfile[16'h2c12]};
+      |                                                            ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:308:25: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's REPLICATE generates 40 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  308 |           op_out_base   <= {regfile[16'h2c13][7:0], regfile[16'h2c12]};
+      |                         ^~
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:309:38: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  309 |           op_feat_total <= (((regfile[16'h1408][12:0] + 1) + 15) / 16) * regfile[16'h1412];
+      |                                      ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:309:81: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  309 |           op_feat_total <= (((regfile[16'h1408][12:0] + 1) + 15) / 16) * regfile[16'h1412];
+      |                                                                                 ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:309:55: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 13 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  309 |           op_feat_total <= (((regfile[16'h1408][12:0] + 1) + 15) / 16) * regfile[16'h1412];
+      |                                                       ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:310:35: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  310 |           op_wt_total   <= regfile[16'h1420];
+      |                                   ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:311:38: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  311 |           op_out_total  <= (((regfile[16'h2c11][12:0] + 1) + 15) / 16) * regfile[16'h2c15];
+      |                                      ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:311:81: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  311 |           op_out_total  <= (((regfile[16'h2c11][12:0] + 1) + 15) / 16) * regfile[16'h2c15];
+      |                                                                                 ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:311:55: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 13 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  311 |           op_out_total  <= (((regfile[16'h2c11][12:0] + 1) + 15) / 16) * regfile[16'h2c15];
+      |                                                       ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:312:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  312 |           dma_rd_cvsram <= (regfile[16'h140d][31:28] == 4'h5) ? 1 : 0;
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:313:36: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  313 |           dma_wr_cvsram <= (regfile[16'h2c12][31:28] == 4'h5) ? 1 : 0;
+      |                                    ^
+%Warning-WIDTHTRUNC: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:240:23: Bit extraction of array[16383:0] requires 14 bit index, not 16 bits.
+                                                                          : ... note: In instance 'NV_nvdla'
+  240 |             && regfile[16'h2c2c][0] == 1'b0) begin
+      |                       ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:332:47: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  332 |           total_beats    = (op_feat_base[5:0] + sdp_sa_rd_total + 63) / 64;
+      |                                               ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:353:51: Operator SUB expects 32 bits on the RHS, but RHS's VARREF 'dma_rd_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  353 |               buf_idx = dma_rd_beat_cnt * 64 + bi - dma_rd_offset;
+      |                                                   ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:359:44: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'dma_rd_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  359 |               total_beats = (dma_rd_offset + dma_rd_total + 63) / 64;
+      |                                            ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:388:44: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'dma_wr_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  388 |           total_wr_beats  = (dma_wr_offset + dma_wr_total + 63) / 64;
+      |                                            ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:415:55: Operator SUB expects 32 bits on the RHS, but RHS's VARREF 'dma_wr_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  415 |               buf_idx = (dma_wr_beat_cnt) * 64 + bidx - dma_wr_offset;
+      |                                                       ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:446:45: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'dma_wr_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  446 |             total_wr_beats = (dma_wr_offset + dma_wr_total + 63) / 64;
+      |                                             ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:470:47: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  470 |           total_beats    = (op_feat_base[5:0] + op_feat_total + 63) / 64;
+      |                                               ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:490:51: Operator SUB expects 32 bits on the RHS, but RHS's VARREF 'dma_rd_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  490 |               buf_idx = dma_rd_beat_cnt * 64 + bi - dma_rd_offset;
+      |                                                   ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:496:44: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'dma_rd_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  496 |               total_beats = (dma_rd_offset + dma_rd_total + 63) / 64;
+      |                                            ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:545:44: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'dma_wr_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  545 |           total_wr_beats  = (dma_wr_offset + dma_wr_total + 63) / 64;
+      |                                            ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:571:53: Operator SUB expects 32 bits on the RHS, but RHS's VARREF 'dma_wr_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  571 |               buf_idx = dma_wr_beat_cnt * 64 + bidx - dma_wr_offset;
+      |                                                     ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:601:45: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'dma_wr_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  601 |             total_wr_beats = (dma_wr_offset + dma_wr_total + 63) / 64;
+      |                                             ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:624:47: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  624 |           total_beats    = (op_feat_base[5:0] + op_feat_total + 63) / 64;
+      |                                               ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:644:51: Operator SUB expects 32 bits on the RHS, but RHS's VARREF 'dma_rd_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  644 |               buf_idx = dma_rd_beat_cnt * 64 + bi - dma_rd_offset;
+      |                                                   ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:650:44: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'dma_rd_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  650 |               total_beats = (dma_rd_offset + dma_rd_total + 63) / 64;
+      |                                            ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:674:45: Operator ADD expects 32 bits on the LHS, but LHS's SEL generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  674 |           total_beats    = (op_wt_base[5:0] + op_wt_total + 63) / 64;
+      |                                             ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:694:51: Operator SUB expects 32 bits on the RHS, but RHS's VARREF 'dma_rd_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  694 |               buf_idx = dma_rd_beat_cnt * 64 + bi - dma_rd_offset;
+      |                                                   ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:700:44: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'dma_rd_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  700 |               total_beats = (dma_rd_offset + dma_rd_total + 63) / 64;
+      |                                            ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:840:44: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'dma_wr_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  840 |           total_wr_beats  = (dma_wr_offset + dma_wr_total + 63) / 64;
+      |                                            ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:866:53: Operator SUB expects 32 bits on the RHS, but RHS's VARREF 'dma_wr_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  866 |               buf_idx = dma_wr_beat_cnt * 64 + bidx - dma_wr_offset;
+      |                                                     ^
+%Warning-WIDTHEXPAND: ../../outdir/nv_full/vmod/nvdla/top/NV_nvdla.v:896:45: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'dma_wr_offset' generates 6 bits.
+                                                                           : ... note: In instance 'NV_nvdla'
+  896 |             total_wr_beats = (dma_wr_offset + dma_wr_total + 63) / 64;
+      |                                             ^
+=== [2/2] Compiling VNV_nvdla ===
+make: Entering directory '/app/outdir/nv_full/verilator'
+ccache g++  -I.  -MMD -I/tools/verilator/share/verilator/include -I/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -Os -c -o nvdla.o nvdla.cpp
+ccache g++ -Os  -I.  -MMD -I/tools/verilator/share/verilator/include -I/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o verilated.o /tools/verilator/share/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/tools/verilator/share/verilator/include -I/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -c -o verilated_threads.o /tools/verilator/share/verilator/include/verilated_threads.cpp
+ccache g++ -Os  -I.  -MMD -I/tools/verilator/share/verilator/include -I/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable       -x c++-header VNV_nvdla__pch.h -o VNV_nvdla__pch.h.fast.gch
+ccache: error: Failed to create temporary file for /home/builder/.cache/ccache/tmp/cpp_stdout.tmp.fx0GCh.ii: Permission denied
+ccache: error: Failed to create temporary file for /home/builder/.cache/ccache/tmp/cpp_stdout.tmp.h6iM8h.ii: Permission denied
+ccache: error: Failed to create temporary file for /home/builder/.cache/ccache/tmp/cpp_stdout.tmp.EaIEQz.ii: Permission denied
+ccache: error: Failed to create temporary file for /home/builder/.cache/ccache/tmp/cpp_stdout.tmp.GXm509.ii: Permission denied
+make: *** No rule to make target 'verilator.f', needed by '/app/outdir/nv_full/verilator/VNV_nvdla___024root.h'.  Stop.
+make: *** Waiting for unfinished jobs....
+make: *** [VNV_nvdla.mk:61: nvdla.o] Error 1
+make: *** [/tools/verilator/share/verilator/include/verilated.mk:278: verilated.o] Error 1
+make: *** [/tools/verilator/share/verilator/include/verilated.mk:278: verilated_threads.o] Error 1
+make: *** [/tools/verilator/share/verilator/include/verilated.mk:284: VNV_nvdla__pch.h.fast.gch] Error 1
+make: Leaving directory '/app/outdir/nv_full/verilator'
+PASS: sanity3
+PASS: sanity3_cvsram
+PASS: conv_8x8_fc_int16
+PASS: googlenet_conv2_3x3_int16
+PASS: pdp_max_pooling_int16
+PASS: sdp_relu_int16
+FAIL: cc_alexnet_conv5_relu5_int16_dtest_cvsram (exit=1)
+
+E2E results: passed=6 / total=7
+reward: 0.857143
